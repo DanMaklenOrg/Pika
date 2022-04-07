@@ -2,5 +2,5 @@ namespace Pika.Service.Dto;
 
 public enum ObjectiveTypeDto
 {
-    Check, // Boolean
+    Check = 1, // Boolean
 }
