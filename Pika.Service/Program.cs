@@ -8,7 +8,7 @@ WebApplication app = builder.Build();
 
 // Middleware Pipeline
 app.UseHttpsRedirection();
-app.MapControllers();
 app.UseHealthChecks("/health");
+app.MapControllers();
 
 app.Run();
