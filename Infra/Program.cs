@@ -32,20 +32,7 @@ var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new Cluste
     },
 });
 
-var ecr = new Repository(stack, "dockerImageRepo", new RepositoryProps
-{
-    RepositoryName = "pika",
-    RemovalPolicy = RemovalPolicy.DESTROY,
-    LifecycleRules = new ILifecycleRule[]
-    {
-        new LifecycleRule
-        {
-            Description = "Delete untagged images.",
-            TagStatus = TagStatus.UNTAGGED,
-            MaxImageAge = Duration.Days(1),
-        },
-    },
-});
+var ecr = Repository.FromRepositoryName(stack, "dockerImageRepo", "pika");
 
 var _ = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationLoadBalancedEc2ServiceProps
 {
