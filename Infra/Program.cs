@@ -1,11 +1,14 @@
 ﻿using Amazon.CDK;
+using Amazon.CDK.AWS.CertificateManager;
 using Amazon.CDK.AWS.EC2;
 using Amazon.CDK.AWS.ECR;
 using Amazon.CDK.AWS.ECS;
 using Amazon.CDK.AWS.ECS.Patterns;
+using Amazon.CDK.AWS.ElasticLoadBalancingV2;
 using Environment = Amazon.CDK.Environment;
 
 string clusterArn = "arn:aws:ecs:eu-west-1:464787150360:cluster/CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy";
+string certificateArn = "arn:aws:acm:eu-west-1:464787150360:certificate/76e11e53-a292-4ff3-9857-d374d19ca507";
 
 var app = new App();
 
@@ -38,11 +41,19 @@ var _ = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationL
 {
     Cluster = mainCluster,
     ServiceName = "pika",
+    SslPolicy = SslPolicy.RECOMMENDED,
+    ListenerPort = 55501,
+    Certificate = Certificate.FromCertificateArn(stack, "certificate", certificateArn),
     MemoryLimitMiB = 256,
     TaskImageOptions = new ApplicationLoadBalancedTaskImageOptions
     {
         Image = ContainerImage.FromEcrRepository(ecr, "latest"),
     },
+    CircuitBreaker = new DeploymentCircuitBreaker
+    {
+        Rollback = true,
+    },
+
 });
 
 app.Synth();
