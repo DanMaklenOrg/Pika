@@ -27,7 +27,7 @@ jobs:
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+#    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - name: Log in to ECR
@@ -37,3 +37,27 @@ jobs:
         working-directory: Service
       - name: Push Image to ECR
         run: docker push 464787150360.dkr.ecr.eu-west-1.amazonaws.com/pika:latest
+
+  deploy-infra:
+    name: Deploy Core Infrastructure
+    runs-on: ubuntu-latest
+#    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+      - uses: actions/checkout@v3
+      - run: sudo apt-get update -y
+      - run: sudo apt-get install nodejs npm -y
+      - run: sudo npm install -g aws-cdk
+      - run: cdk deploy --require-approval never
+        working-directory: Core
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+#    if: github.ref == 'refs/heads/master'
+    needs: [ build-image, deploy-infra ]
+    steps:
+      - run: aws ecs update-service --cluster CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy --service pika --force-new-deployment
