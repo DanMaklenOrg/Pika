@@ -27,7 +27,7 @@ jobs:
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - name: Log in to ECR
@@ -41,7 +41,7 @@ jobs:
   deploy-infra:
     name: Deploy Core Infrastructure
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
@@ -57,7 +57,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     needs: [ build-image, deploy-infra ]
     steps:
       - uses: unfor19/install-aws-cli-action@v1.0.2
