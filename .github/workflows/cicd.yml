@@ -52,7 +52,7 @@ jobs:
       - run: sudo apt-get install nodejs npm -y
       - run: sudo npm install -g aws-cdk
       - run: cdk deploy --require-approval never
-        working-directory: Core
+        working-directory: Service
 
   deploy:
     name: Deploy
@@ -60,4 +60,5 @@ jobs:
 #    if: github.ref == 'refs/heads/master'
     needs: [ build-image, deploy-infra ]
     steps:
+      - uses: unfor19/install-aws-cli-action@v1.0.2
       - run: aws ecs update-service --cluster CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy --service pika --force-new-deployment
