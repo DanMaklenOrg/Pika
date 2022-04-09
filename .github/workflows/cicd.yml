@@ -27,7 +27,7 @@ jobs:
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubunto-latest
-    if: github.ref == 'refs/heads/master'
+#    if: github.ref == 'refs/heads/master'
     steps:
       - name: Log in to ECR
         run: aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 464787150360.dkr.ecr.eu-west-1.amazonaws.com
