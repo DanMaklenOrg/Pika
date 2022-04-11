@@ -7,4 +7,8 @@
         <RootNamespace>Pika.Service</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    </ItemGroup>
+
 </Project>
