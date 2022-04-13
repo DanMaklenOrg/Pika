@@ -1,16 +1,20 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.Extensions.DependencyInjection;
+using Pika.DataLayer.Model;
 
 namespace Pika.DataLayer;
 
 public class PikaDataContext : DbContext
 {
-    public PikaDataContext(DbContextOptions options) : base(options)
+    internal PikaDataContext(DbContextOptions options) : base(options)
     {
     }
 
-    public DbSet<DomainModel> Domain { get; set; }
+    internal DbSet<DomainDbModel> Domains { get; set; } = null!;
+
+    internal DbSet<EntryDbModel> Entries { get; set; } = null!;
+
+    internal DbSet<ObjectiveDbModel> Objectives { get; set; } = null!;
 
     public static void RegisterService(IServiceCollection services)
     {
@@ -21,5 +25,4 @@ public class PikaDataContext : DbContext
     {
         options.UseNpgsql("User ID=postgres;Password=mysecretpassword;Host=localhost;Port=55401;Database=Pika");
     }
-
 }
