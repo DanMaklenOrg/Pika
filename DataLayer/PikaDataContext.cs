@@ -1,28 +1,36 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Npgsql;
 using Pika.DataLayer.Model;
 
 namespace Pika.DataLayer;
 
 public class PikaDataContext : DbContext
 {
-    internal PikaDataContext(DbContextOptions options) : base(options)
+    private readonly DatabaseConfig config;
+
+    public PikaDataContext(IOptions<DatabaseConfig> config)
     {
+        this.config = config.Value;
     }
 
-    internal DbSet<DomainDbModel> Domains { get; set; } = null!;
+    public DbSet<DomainDbModel> Domains { get; set; } = null!;
 
     internal DbSet<EntryDbModel> Entries { get; set; } = null!;
 
     internal DbSet<ObjectiveDbModel> Objectives { get; set; } = null!;
 
-    public static void RegisterService(IServiceCollection services)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        services.AddDbContext<PikaDataContext>(SetOptions);
-    }
+        var connectionString = new NpgsqlConnectionStringBuilder
+        {
+            Database = "Pika",
+            Host = this.config.Host,
+            Port = this.config.Port,
+            Username = this.config.Username,
+            Password = this.config.Password,
+        }.ToString();
 
-    internal static void SetOptions(DbContextOptionsBuilder options)
-    {
-        options.UseNpgsql("User ID=postgres;Password=mysecretpassword;Host=localhost;Port=55401;Database=Pika");
+        optionsBuilder.UseNpgsql(connectionString);
     }
 }
