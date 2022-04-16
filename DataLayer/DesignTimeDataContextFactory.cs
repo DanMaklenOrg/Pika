@@ -1,6 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace Pika.DataLayer;
 
@@ -9,8 +11,13 @@ public class DesignTimeDataContextFactory : IDesignTimeDbContextFactory<PikaData
 {
     public PikaDataContext CreateDbContext(string[] args)
     {
-        var optionsBuilder = new DbContextOptionsBuilder();
-        PikaDataContext.SetOptions(optionsBuilder);
-        return new PikaDataContext(optionsBuilder.Options);
+        DatabaseConfig config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetParent(Directory.GetCurrentDirectory())!.FullName)
+            .AddJsonFile("Service/dev.config.json", false, true)
+            .Build()
+            .GetRequiredSection("database")
+            .Get<DatabaseConfig>();
+
+        return new PikaDataContext(new OptionsWrapper<DatabaseConfig>(config));
     }
 }

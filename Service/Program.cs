@@ -2,11 +2,21 @@ using Pika.DataLayer;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-// DI Registry
+// Config
+builder.Configuration.AddSystemsManager("/pika");
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddJsonFile("dev.config.json", true, true);
+}
+
+
+// DB
+builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("database"));
+builder.Services.AddDbContext<PikaDataContext>();
+
+// APIs
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
-
-PikaDataContext.RegisterService(builder.Services);
 
 WebApplication app = builder.Build();
 
