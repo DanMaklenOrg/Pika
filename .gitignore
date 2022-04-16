@@ -6,4 +6,5 @@ obj/
 cdk.out/
 
 dev.config.json
+appsettings.Development.json
 efbundle

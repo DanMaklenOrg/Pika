@@ -14,7 +14,7 @@ public class PikaDataContext : DbContext
         this.config = config.Value;
     }
 
-    public DbSet<DomainDbModel> Domains { get; set; } = null!;
+    internal DbSet<DomainDbModel> Domains { get; set; } = null!;
 
     internal DbSet<EntryDbModel> Entries { get; set; } = null!;
 
