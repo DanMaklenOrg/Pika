@@ -68,7 +68,7 @@ jobs:
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
           ssm_parameter: "pika/database"
-          env_variable_name: "DATABASE_HOST"
+          env_variable_name: "DATABASE"
       - run: printenv
       - name: Run Migrations
         run: dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword
