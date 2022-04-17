@@ -64,8 +64,7 @@ jobs:
           dotnet-version: '6.0.x'
       - run: dotnet tool install --global dotnet-ef
       - uses: actions/checkout@v3
-      - run: printenv
-      - uses: "aws-actions/configure-aws-credentials@v1"
+      - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
@@ -90,10 +89,8 @@ jobs:
         with:
           ssm_parameter: /pika/database/password
           env_variable_name: DATABASE_PASSWORD
-      - run: printenv
-      - run: echo "dotnet ef database update -p DataLayer -- $DATABASE_HOST $DATABASE_PORT $DATABASE_USERNAME $DATABASE_PASSWORD"
       - name: Run Migrations
-        run: dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword
+        run: dotnet ef database update -p DataLayer -- $DATABASE_HOST $DATABASE_PORT $DATABASE_USERNAME $DATABASE_PASSWORD
 
   deploy:
     name: Deploy
