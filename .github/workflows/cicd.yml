@@ -70,13 +70,28 @@ jobs:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_DEFAULT_REGION }}
-      - name: AWS SSM Build Secrets for GitHub Actions
+      - name: Get SSM Parameter - Host
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
-          ssm_parameter: "/pika/database"
-          env_variable_name: "DATABASE_HOST"
+          ssm_parameter: /pika/database/host
+          env_variable_name: DATABASE_HOST
+      - name: Get SSM Parameter - PORT
+        uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
+        with:
+          ssm_parameter: /pika/database/port
+          env_variable_name: DATABASE_PORT
+      - name: Get SSM Parameter - Username
+        uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
+        with:
+          ssm_parameter: /pika/database/username
+          env_variable_name: DATABASE_USERNAME
+      - name: Get SSM Parameter - Password
+        uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
+        with:
+          ssm_parameter: /pika/database/password
+          env_variable_name: DATABASE_PASSWORD
       - run: printenv
-      - run: echo "dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword"
+      - run: echo "dotnet ef database update -p DataLayer -- $DATABASE_HOST $DATABASE_PORT $DATABASE_USERNAME $DATABASE_PASSWORD"
       - name: Run Migrations
         run: dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword
 
