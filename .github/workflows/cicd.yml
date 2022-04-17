@@ -62,6 +62,7 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '6.0.x'
+      - run: dotnet tools install --global dotnet-ef
       - uses: actions/checkout@v3
       - run: printenv
       - uses: "aws-actions/configure-aws-credentials@v1"
@@ -72,9 +73,10 @@ jobs:
       - name: AWS SSM Build Secrets for GitHub Actions
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
-          ssm_parameter: "/pika/database/host"
+          ssm_parameter: "/pika/database"
           env_variable_name: "DATABASE_HOST"
       - run: printenv
+      - run: echo "dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword"
       - name: Run Migrations
         run: dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword
 
