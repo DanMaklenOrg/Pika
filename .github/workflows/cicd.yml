@@ -72,7 +72,7 @@ jobs:
       - name: AWS SSM Build Secrets for GitHub Actions
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
-          ssm_parameter: "pika/database"
+          ssm_parameter: "/pika/database/host"
           env_variable_name: "DATABASE_HOST"
       - run: printenv
       - name: Run Migrations
