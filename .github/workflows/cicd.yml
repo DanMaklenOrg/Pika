@@ -53,11 +53,31 @@ jobs:
       - run: cdk deploy --require-approval never
         working-directory: Infra
 
+  deploy-db-migrations:
+    name: Deploy Database Migrations
+    runs-on: ubuntu-latest
+    #    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+      - uses: actions/checkout@v3
+      - run: printenv
+      - name: AWS SSM Build Secrets for GitHub Actions
+        uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
+        with:
+          ssm_parameter: "pika/database"
+          env_variable_name: "DATABASE_HOST"
+      - run: printenv
+      - name: Run Migrations
+        run: dotnet ef database update -p DataLayer -- localhost 55401 postgres mysecretpassword
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    needs: [ build-image, deploy-infra ]
+    needs: [ build-image, deploy-infra, deploy-db-migrations ]
     steps:
       - uses: unfor19/install-aws-cli-action@v1.0.2
       - run: aws ecs update-service --cluster CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy --service pika --force-new-deployment

@@ -2,6 +2,7 @@
 
 ###Development Environment Setup
 1. Make sure you have a postgres sql service up and running locally
+   - Run database migrations `dotnet ef database update -p DataLayer -- <host> <port> <username> <password>`
 2. (optional) Set development config
    - Create new file `Service/dev.config.json`
    - Populate/Modify any config fields you might want to change
