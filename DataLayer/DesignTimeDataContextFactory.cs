@@ -1,7 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace Pika.DataLayer;
@@ -11,12 +9,14 @@ public class DesignTimeDataContextFactory : IDesignTimeDbContextFactory<PikaData
 {
     public PikaDataContext CreateDbContext(string[] args)
     {
-        DatabaseConfig config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetParent(Directory.GetCurrentDirectory())!.FullName)
-            .AddJsonFile("Service/dev.config.json", false, true)
-            .Build()
-            .GetRequiredSection("database")
-            .Get<DatabaseConfig>();
+        if (args.Length != 4) throw new ArgumentException("Expected 4 arguments. <Host> <Port> <Username> <Password>");
+        var config = new DatabaseConfig
+        {
+            Host = args[0],
+            Port = int.Parse(args[1]),
+            Username = args[2],
+            Password = args[3],
+        };
 
         return new PikaDataContext(new OptionsWrapper<DatabaseConfig>(config));
     }
