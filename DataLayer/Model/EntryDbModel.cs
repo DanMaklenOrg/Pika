@@ -13,7 +13,6 @@ public class EntryDbModel
     [MaxLength(100)]
     public string Title { get; set; } = null!;
 
-    [MinLength(1)]
     public List<ObjectiveDbModel> Objectives { get; set; } = new();
 
     [InverseProperty("RequiredEntries")]
