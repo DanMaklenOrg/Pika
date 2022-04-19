@@ -25,7 +25,6 @@ builder.Services.AddHealthChecks();
 WebApplication app = builder.Build();
 
 // Middleware Pipeline
-app.UseHttpsRedirection();
 app.UseHealthChecks("/health");
 app.MapControllers();
 
