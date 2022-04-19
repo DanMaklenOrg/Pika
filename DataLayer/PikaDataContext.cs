@@ -14,11 +14,11 @@ public class PikaDataContext : DbContext
         this.config = config.Value;
     }
 
-    internal DbSet<DomainDbModel> Domains { get; set; } = null!;
+    public DbSet<DomainDbModel> Domains { get; set; } = null!;
 
-    internal DbSet<EntryDbModel> Entries { get; set; } = null!;
+    public DbSet<EntryDbModel> Entries { get; set; } = null!;
 
-    internal DbSet<ObjectiveDbModel> Objectives { get; set; } = null!;
+    public DbSet<ObjectiveDbModel> Objectives { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
