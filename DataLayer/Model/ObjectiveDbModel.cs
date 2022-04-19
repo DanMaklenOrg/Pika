@@ -20,5 +20,5 @@ public class ObjectiveDbModel
 
     public int RequiredCount { get; set; }
 
-    public List<EntryDbModel> RequiredEntries { get; } = new();
+    public List<EntryDbModel> RequiredEntries { get; set; } = new();
 }

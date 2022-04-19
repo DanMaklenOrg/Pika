@@ -1,5 +1,10 @@
+using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using Pika.Service.Dto;
+using Microsoft.EntityFrameworkCore;
+using Pika.DataLayer;
+using Pika.DataLayer.Model;
+using Pika.Service.Dto.Common;
+using Pika.Service.Dto.Request;
 
 namespace Pika.Service.Controllers;
 
@@ -7,46 +12,56 @@ namespace Pika.Service.Controllers;
 [Route("api/domain")]
 public class DomainController : ControllerBase
 {
-    [HttpGet]
-    public List<DomainDto> GetDomainList()
+    private readonly PikaDataContext db;
+
+    public DomainController(PikaDataContext db)
     {
-        return new List<DomainDto>
+        this.db = db;
+    }
+
+    [HttpGet]
+    public async Task<List<DomainDto>> GetDomainList()
+    {
+        List<DomainDbModel> allDomains = await this.db.Domains.ToListAsync();
+        return allDomains.Adapt<List<DomainDto>>();
+    }
+
+    [HttpPost]
+    public async Task<DomainDto> AddDomain(AddDomainRequestDto requestDto)
+    {
+        var model = new DomainDbModel
         {
-            new DomainDto
+            Name = requestDto.Name,
+            RootEntry = new EntryDbModel
             {
-                Id = Guid.NewGuid().ToString("N"),
-                Name = "Warframe",
+                Title = $"{requestDto.Name} Project",
             },
         };
+
+        await this.db.Domains.AddAsync(model);
+        await this.db.SaveChangesAsync();
+        return model.Adapt<DomainDto>();
     }
 
     [HttpGet("{domainId}/profile")]
-    public DomainProfileDto GetDomainProfile(string domainId)
+    public async Task<List<EntryDto>> GetDomainProfile(string domainId)
     {
-        return new DomainProfileDto
+        var entriesDto = new List<EntryDto>();
+
+        DomainDbModel domain = await this.db.Domains
+            .Include(model => model.RootEntry)
+            .ThenInclude(model => model.Objectives)
+            .SingleAsync(model => model.Id == Guid.Parse(domainId));
+        var queue = new Queue<EntryDbModel>();
+        queue.Enqueue(domain.RootEntry);
+        while (queue.Count > 0)
         {
-            ProjectList = new List<EntryDto>
-            {
-                new EntryDto
-                {
-                    Title = "Max Mastery Rank",
-                    Children = new List<EntryDto>
-                    {
-                        new EntryDto
-                        {
-                            Title = "Warframes",
-                            Objectives = new List<ObjectiveDto>
-                            {
-                                new ObjectiveDto
-                                {
-                                    Description = "Obtain",
-                                    ObjectiveTypeDto = ObjectiveTypeDto.Check,
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        };
+            EntryDbModel entry = queue.Dequeue();
+
+            foreach (EntryDbModel childModel in entry.Objectives.SelectMany(objective => objective.RequiredEntries)) queue.Enqueue(childModel);
+            entriesDto.Add(entry.Adapt<EntryDto>());
+        }
+
+        return entriesDto;
     }
 }

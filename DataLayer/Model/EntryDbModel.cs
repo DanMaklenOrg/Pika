@@ -16,5 +16,5 @@ public class EntryDbModel
     public List<ObjectiveDbModel> Objectives { get; set; } = new();
 
     [InverseProperty("RequiredEntries")]
-    public List<ObjectiveDbModel> ParentObjectives { get; set; } = null!;
+    public List<ObjectiveDbModel> ParentObjectives { get; set; } = new();
 }
