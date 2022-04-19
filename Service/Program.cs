@@ -1,5 +1,6 @@
 using Mapster;
 using Pika.DataLayer;
+using Pika.Service;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ if (builder.Environment.IsDevelopment())
 {
     builder.Configuration.AddJsonFile("dev.config.json", true, true);
 }
+
+builder.Services.Configure<ServiceConfig>(builder.Configuration);
 
 // Mapping Config
 TypeAdapterConfig.GlobalSettings.Default.EnumMappingStrategy(EnumMappingStrategy.ByName);
