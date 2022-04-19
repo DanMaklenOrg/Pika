@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 
 ENV ASPNETCORE_URLS=http://+:80
+ENV AWS_DEFAULT_REGION=eu-west-1
 
 COPY --from=build /app/bin .
 ENTRYPOINT ["dotnet", "Service.dll"]

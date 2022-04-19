@@ -26,7 +26,7 @@ jobs:
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+#    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - name: Log in to ECR
@@ -94,8 +94,8 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    needs: [ build-image, deploy-infra, deploy-db-migrations ]
+#    if: github.ref == 'refs/heads/master'
+    needs: [ build-image ]
     steps:
       - uses: unfor19/install-aws-cli-action@v1.0.2
       - run: aws ecs update-service --cluster CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy --service pika --force-new-deployment
