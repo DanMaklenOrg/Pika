@@ -1,12 +1,9 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-COPY *.csproj .
-RUN ls
-RUN dotnet restore
-RUN ls
 COPY . .
-RUN dotnet publish -c Release -o bin --no-restore
+RUN ls
+RUN dotnet publish Service -c Release -o bin
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
