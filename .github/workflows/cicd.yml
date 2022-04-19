@@ -95,7 +95,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
 #    if: github.ref == 'refs/heads/master'
-    needs: [ build-image ]
+    needs: [ build-image, deploy-infra, deploy-db-migrations ]
     steps:
       - uses: unfor19/install-aws-cli-action@v1.0.2
       - run: aws ecs update-service --cluster CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy --service pika --force-new-deployment
