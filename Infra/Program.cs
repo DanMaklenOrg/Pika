@@ -5,6 +5,7 @@ using Amazon.CDK.AWS.ECR;
 using Amazon.CDK.AWS.ECS;
 using Amazon.CDK.AWS.ECS.Patterns;
 using Amazon.CDK.AWS.ElasticLoadBalancingV2;
+using Amazon.CDK.AWS.IAM;
 using Environment = Amazon.CDK.Environment;
 
 string clusterArn = "arn:aws:ecs:eu-west-1:464787150360:cluster/CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy";
@@ -29,7 +30,7 @@ var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new Cluste
         VpcId = "vpc-0b6cfd6872c50c7b8",
     }),
     ClusterName = "CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy",
-    SecurityGroups = new ISecurityGroup[]
+    SecurityGroups = new[]
     {
         SecurityGroup.FromLookupById(stack, "mainSecurityGroup", "sg-019630ca5c46b7cf9"),
     },
@@ -48,12 +49,14 @@ var _ = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationL
     TaskImageOptions = new ApplicationLoadBalancedTaskImageOptions
     {
         Image = ContainerImage.FromEcrRepository(ecr, "latest"),
+        TaskRole = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole"),
+        Environment = new Dictionary<string, string> {{"AWS_REGION", stack.Region}},
+
     },
     CircuitBreaker = new DeploymentCircuitBreaker
     {
         Rollback = true,
     },
-
 });
 
 app.Synth();

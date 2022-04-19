@@ -8,7 +8,7 @@ on:
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: "eu-west-1"
+  AWS_REGION: "eu-west-1"
 
 jobs:
   build:
@@ -55,7 +55,7 @@ jobs:
   deploy-db-migrations:
     name: Deploy Database Migrations
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    #    if: github.ref == 'refs/heads/master'
     steps:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
@@ -63,11 +63,11 @@ jobs:
           dotnet-version: '6.0.x'
       - run: dotnet tool install --global dotnet-ef
       - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      #      - uses: aws-actions/configure-aws-credentials@v1
+      #        with:
+      #          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+      #          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+      #          aws-region: ${{ env.AWS_REGION }}
       - name: Get SSM Parameter - Host
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
