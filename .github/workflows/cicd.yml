@@ -26,7 +26,7 @@ jobs:
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - name: Log in to ECR
@@ -39,7 +39,7 @@ jobs:
   deploy-infra:
     name: Deploy Core Infrastructure
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
@@ -55,7 +55,7 @@ jobs:
   deploy-db-migrations:
     name: Deploy Database Migrations
     runs-on: ubuntu-latest
-    #    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
@@ -63,11 +63,6 @@ jobs:
           dotnet-version: '6.0.x'
       - run: dotnet tool install --global dotnet-ef
       - uses: actions/checkout@v3
-      #      - uses: aws-actions/configure-aws-credentials@v1
-      #        with:
-      #          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-      #          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-      #          aws-region: ${{ env.AWS_REGION }}
       - name: Get SSM Parameter - Host
         uses: marvinpinto/action-inject-ssm-secrets@v1.2.1
         with:
@@ -94,7 +89,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     needs: [ build-image, deploy-infra, deploy-db-migrations ]
     steps:
       - uses: unfor19/install-aws-cli-action@v1.0.2
