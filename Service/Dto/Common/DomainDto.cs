@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Pika.Service.Dto;
+namespace Pika.Service.Dto.Common;
 
 public readonly struct DomainDto
 {
