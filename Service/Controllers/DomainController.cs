@@ -1,6 +1,7 @@
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
@@ -13,10 +14,12 @@ namespace Pika.Service.Controllers;
 public class DomainController : ControllerBase
 {
     private readonly PikaDataContext db;
+    private readonly IOptionsMonitor<ServiceConfig> config;
 
-    public DomainController(PikaDataContext db)
+    public DomainController(PikaDataContext db, IOptionsMonitor<ServiceConfig> config)
     {
         this.db = db;
+        this.config = config;
     }
 
     [HttpGet]
@@ -27,8 +30,10 @@ public class DomainController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<DomainDto> AddDomain(AddDomainRequestDto requestDto)
+    public async Task<ActionResult<DomainDto>> AddDomain(AddDomainRequestDto requestDto, [FromHeader] string? authorization)
     {
+        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
+
         var model = new DomainDbModel
         {
             Name = requestDto.Name,
