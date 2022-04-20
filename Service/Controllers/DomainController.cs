@@ -6,6 +6,7 @@ using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
 using Pika.Service.Dto.Request;
+using Pika.Service.Dto.Response;
 
 namespace Pika.Service.Controllers;
 
@@ -39,7 +40,7 @@ public class DomainController : ControllerBase
             Name = requestDto.Name,
             RootEntry = new EntryDbModel
             {
-                Title = $"{requestDto.Name} Project",
+                Title = $"{requestDto.Name} Root Entry",
             },
         };
 
@@ -49,24 +50,19 @@ public class DomainController : ControllerBase
     }
 
     [HttpGet("{domainId}/profile")]
-    public async Task<List<EntryDto>> GetDomainProfile(string domainId)
+    public async Task<GetDomainProfileResponseDto> GetDomainProfile(string domainId)
     {
         var entriesDto = new List<EntryDto>();
 
         DomainDbModel domain = await this.db.Domains
             .Include(model => model.RootEntry)
-            .ThenInclude(model => model.Objectives)
+            .Include(model => model.Projects)
             .SingleAsync(model => model.Id == Guid.Parse(domainId));
-        var queue = new Queue<EntryDbModel>();
-        queue.Enqueue(domain.RootEntry);
-        while (queue.Count > 0)
+
+        return new GetDomainProfileResponseDto
         {
-            EntryDbModel entry = queue.Dequeue();
-
-            foreach (EntryDbModel childModel in entry.Objectives.SelectMany(objective => objective.RequiredEntries)) queue.Enqueue(childModel);
-            entriesDto.Add(entry.Adapt<EntryDto>());
-        }
-
-        return entriesDto;
+            RootEntry = domain.RootEntry.Adapt<EntryDto>(),
+            Projects = domain.Projects.Adapt<List<ProjectDto>>(),
+        };
     }
 }

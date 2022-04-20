@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Pika.DataLayer.Model;
 
-public class EntryDbModel
+public class ProjectDbModel
 {
     [Key]
     public Guid Id { get; set; }
@@ -12,9 +12,7 @@ public class EntryDbModel
     [MaxLength(100)]
     public string Title { get; set; } = default!;
 
-    public EntryDbModel? Parent { get; set; }
-
-    public List<EntryDbModel> Children { get; set; } = new();
+    public DomainDbModel Domain { get; set; } = default!;
 
     public List<ObjectiveDbModel> Objectives { get; set; } = new();
 }
