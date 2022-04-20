@@ -10,6 +10,6 @@ public readonly struct EntryDto
     [JsonPropertyName("title")]
     public string Title { get; init; }
 
-    [JsonPropertyName("objectives")]
-    public List<ObjectiveDto> Objectives { get; init; }
+    [JsonPropertyName("children")]
+    public List<EntryDto> Children { get; init; }
 }
