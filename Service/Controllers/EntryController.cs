@@ -1,5 +1,6 @@
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
@@ -25,10 +26,14 @@ public class EntryController : ControllerBase
     {
         if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
 
-        var entriesDbModel = entries.Adapt<List<EntryDbModel>>();
+        EntryDbModel parentEntry = await this.db.Entries.Include(entry => entry.Domain)
+            .SingleAsync(entry => entry.Id == Guid.Parse(entryId));
 
-        var parentEntry = new EntryDbModel {Id = entryId.Adapt<Guid>()};
-        this.db.Attach(parentEntry);
+        TypeAdapterConfig adapterConfig = TypeAdapterConfig.GlobalSettings
+            .Fork(c => c.ForType<EntryDto, EntryDbModel>().AfterMapping(model => model.Domain = parentEntry.Domain));
+
+        var entriesDbModel = entries.Adapt<List<EntryDbModel>>(adapterConfig);
+
         parentEntry.Children.AddRange(entriesDbModel);
         await this.db.SaveChangesAsync();
 
