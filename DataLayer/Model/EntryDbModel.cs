@@ -12,6 +12,8 @@ public class EntryDbModel
     [MaxLength(100)]
     public string Title { get; set; } = default!;
 
+    public DomainDbModel Domain { get; set; } = default!;
+
     public EntryDbModel? Parent { get; set; }
 
     public List<EntryDbModel> Children { get; set; } = new();
