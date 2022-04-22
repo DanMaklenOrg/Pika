@@ -1,6 +1,5 @@
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
@@ -28,7 +27,8 @@ public class EntryController : ControllerBase
 
         var entriesDbModel = entries.Adapt<List<EntryDbModel>>();
 
-        EntryDbModel parentEntry = await this.db.Entries.SingleAsync(entry => entry.Id == Guid.Parse(entryId));
+        var parentEntry = new EntryDbModel {Id = entryId.Adapt<Guid>()};
+        this.db.Attach(parentEntry);
         parentEntry.Children.AddRange(entriesDbModel);
         await this.db.SaveChangesAsync();
 
