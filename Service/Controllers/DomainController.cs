@@ -5,7 +5,6 @@ using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
-using Pika.Service.Dto.Request;
 using Pika.Service.Dto.Response;
 
 namespace Pika.Service.Controllers;
@@ -31,16 +30,16 @@ public class DomainController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<DomainDto>> AddDomain(AddDomainRequestDto requestDto, [FromHeader] string? authorization)
+    public async Task<ActionResult<DomainDto>> AddDomain(DomainDto domainDto, [FromHeader] string? authorization)
     {
         if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
 
         var model = new DomainDbModel
         {
-            Name = requestDto.Name,
+            Name = domainDto.Name,
             RootEntry = new EntryDbModel
             {
-                Title = $"{requestDto.Name} Root Entry",
+                Title = $"{domainDto.Name} Root Entry",
             },
         };
 
