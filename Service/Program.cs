@@ -16,6 +16,7 @@ builder.Services.Configure<ServiceConfig>(builder.Configuration);
 // Mapping Config
 TypeAdapterConfig.GlobalSettings.Default.EnumMappingStrategy(EnumMappingStrategy.ByName);
 TypeAdapterConfig<Guid, string>.ForType().MapWith(guid => guid.ToString("N"));
+TypeAdapterConfig<string, Guid>.ForType().MapWith(guidStr => string.IsNullOrWhiteSpace(guidStr) ? Guid.Empty : Guid.Parse(guidStr));
 
 // DB
 builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("database"));
