@@ -63,4 +63,19 @@ public class DomainController : ControllerBase
             Projects = domain.Projects.Adapt<List<ProjectDto>>(),
         };
     }
+
+    [HttpPost("{domainId}/project")]
+    public async Task<ActionResult> AddProjects(string domainId, [FromBody] List<ProjectDto> projects, [FromHeader] string? authorization)
+    {
+        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
+
+        var projectsDbModel = projects.Adapt<List<ProjectDbModel>>();
+
+        this.db.AttachRange(projectsDbModel.SelectMany(proj => proj.Objectives).SelectMany(obj => obj.Entries));
+        DomainDbModel domain = await this.db.Domains.SingleAsync(entry => entry.Id == Guid.Parse(domainId));
+        domain.Projects.AddRange(projectsDbModel);
+        await this.db.SaveChangesAsync();
+
+        return this.Ok();
+    }
 }
