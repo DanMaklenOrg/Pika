@@ -33,12 +33,15 @@ builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("dat
 builder.Services.AddDbContext<PikaDataContext>();
 
 // APIs
+builder.Services.AddCors(options => options.AddDefaultPolicy(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod()));
+
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
 
 WebApplication app = builder.Build();
 
 // Middleware Pipeline
+app.UseCors();
 app.UseHealthChecks("/health");
 app.MapControllers();
 
