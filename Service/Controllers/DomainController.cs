@@ -51,12 +51,9 @@ public class DomainController : ControllerBase
     [HttpGet("{domainId}/profile")]
     public async Task<GetDomainProfileResponseDto> GetDomainProfile(string domainId)
     {
-        await this.db.Entries.ToListAsync();
         DomainDbModel domain = await this.db.Domains
             .Include(model => model.RootEntry)
             .Include(model => model.Projects)
-            .ThenInclude(model => model.Objectives)
-            .ThenInclude(model => model.Entries)
             .SingleAsync(model => model.Id == Guid.Parse(domainId));
 
         return new GetDomainProfileResponseDto
