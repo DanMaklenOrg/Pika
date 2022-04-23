@@ -8,6 +8,6 @@ public struct GetDomainProfileResponseDto
     [JsonPropertyName("root_entry")]
     public EntryDto RootEntry { get; set; }
 
-    [JsonPropertyName("root_entry")]
+    [JsonPropertyName("projects")]
     public List<ProjectDto> Projects { get; set; }
 }
