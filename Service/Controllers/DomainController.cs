@@ -34,18 +34,22 @@ public class DomainController : ControllerBase
     {
         if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
 
-        var model = new DomainDbModel
+        var domainModel = new DomainDbModel
         {
             Name = domainDto.Name,
-            RootEntry = new EntryDbModel
-            {
-                Title = $"{domainDto.Name} Root Entry",
-            },
         };
 
-        await this.db.Domains.AddAsync(model);
+        await this.db.Domains.AddAsync(domainModel);
         await this.db.SaveChangesAsync();
-        return model.Adapt<DomainDto>();
+
+        domainModel.RootEntry = new EntryDbModel
+        {
+            Domain = domainModel,
+            Title = $"{domainDto.Name} Root Entry",
+        };
+
+        await this.db.SaveChangesAsync();
+        return domainModel.Adapt<DomainDto>();
     }
 
     [HttpGet("{domainId}/profile")]
@@ -61,7 +65,7 @@ public class DomainController : ControllerBase
 
         return new GetDomainProfileResponseDto
         {
-            RootEntry = domain.RootEntry.Adapt<EntryDto>(),
+            RootEntry = domain.RootEntry!.Adapt<EntryDto>(),
             Projects = domain.Projects.Adapt<List<ProjectDto>>(),
         };
     }

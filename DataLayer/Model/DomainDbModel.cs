@@ -10,10 +10,10 @@ public class DomainDbModel
 
     public string Name { get; init; } = default!;
 
-    public EntryDbModel RootEntry { get; set; } = default!;
+    public EntryDbModel? RootEntry { get; set; }
 
     public List<ProjectDbModel> Projects { get; set; } = new();
 
-    [InverseProperty("Domain")]
+    [InverseProperty(nameof(EntryDbModel.Domain))]
     public List<EntryDbModel> RelatedEntries { get; set; } = new();
 }

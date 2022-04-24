@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pika.DataLayer;
@@ -11,9 +12,10 @@ using Pika.DataLayer;
 namespace Pika.DataLayer.Migrations
 {
     [DbContext(typeof(PikaDataContext))]
-    partial class PikaDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220424051033_NullableRootEntry")]
+    partial class NullableRootEntry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace Pika.DataLayer.Migrations
 
                     b.HasIndex("ObjectivesId");
 
-                    b.ToTable("EntryDbModelObjectiveDbModel", (string)null);
+                    b.ToTable("EntryDbModelObjectiveDbModel");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.DomainDbModel", b =>
@@ -54,7 +56,7 @@ namespace Pika.DataLayer.Migrations
 
                     b.HasIndex("RootEntryId");
 
-                    b.ToTable("Domains", (string)null);
+                    b.ToTable("Domains");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.EntryDbModel", b =>
@@ -81,7 +83,7 @@ namespace Pika.DataLayer.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("Entries", (string)null);
+                    b.ToTable("Entries");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.ObjectiveDbModel", b =>
@@ -106,7 +108,7 @@ namespace Pika.DataLayer.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Objectives", (string)null);
+                    b.ToTable("Objectives");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.ProjectDbModel", b =>
@@ -128,7 +130,7 @@ namespace Pika.DataLayer.Migrations
 
                     b.HasIndex("DomainId");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("EntryDbModelObjectiveDbModel", b =>
