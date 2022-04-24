@@ -6,6 +6,7 @@ using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
 using Pika.Service.Dto.Response;
+using Pika.Service.Utilities;
 
 namespace Pika.Service.Controllers;
 
@@ -62,6 +63,9 @@ public class DomainController : ControllerBase
             .ThenInclude(model => model.Objectives)
             .ThenInclude(model => model.Entries)
             .SingleAsync(model => model.Id == Guid.Parse(domainId));
+
+        foreach (EntryDbModel entry in Traverse.Dfs(domain.RootEntry!, node => node.Children))
+            entry.Children = entry.Children.OrderBy(child => child.Title).ToList();
 
         return new GetDomainProfileResponseDto
         {
