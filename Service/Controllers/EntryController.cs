@@ -29,14 +29,19 @@ public class EntryController : ControllerBase
         EntryDbModel parentEntry = await this.db.Entries.Include(entry => entry.Domain)
             .SingleAsync(entry => entry.Id == Guid.Parse(entryId));
 
-        TypeAdapterConfig adapterConfig = TypeAdapterConfig.GlobalSettings
-            .Fork(c => c.ForType<EntryDto, EntryDbModel>().AfterMapping(model => model.Domain = parentEntry.Domain));
+        var entriesDbModel = entries.Adapt<List<EntryDbModel>>();
 
-        var entriesDbModel = entries.Adapt<List<EntryDbModel>>(adapterConfig);
+        foreach (EntryDbModel model in entriesDbModel.SelectMany(TraverseEntries)) model.Domain = parentEntry.Domain;
 
         parentEntry.Children.AddRange(entriesDbModel);
         await this.db.SaveChangesAsync();
 
         return this.Ok();
+    }
+
+    private static IEnumerable<EntryDbModel> TraverseEntries(EntryDbModel entry)
+    {
+        yield return entry;
+        foreach (EntryDbModel node in entry.Children.SelectMany(TraverseEntries)) yield return node;
     }
 }
