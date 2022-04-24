@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
+using Pika.Service.Utilities;
 
 namespace Pika.Service.Controllers;
 
@@ -31,17 +32,11 @@ public class EntryController : ControllerBase
 
         var entriesDbModel = entries.Adapt<List<EntryDbModel>>();
 
-        foreach (EntryDbModel model in entriesDbModel.SelectMany(TraverseEntries)) model.Domain = parentEntry.Domain;
+        foreach (EntryDbModel model in entriesDbModel.SelectMany(entry => Traverse.Dfs(entry, node => node.Children))) model.Domain = parentEntry.Domain;
 
         parentEntry.Children.AddRange(entriesDbModel);
         await this.db.SaveChangesAsync();
 
         return this.Ok();
-    }
-
-    private static IEnumerable<EntryDbModel> TraverseEntries(EntryDbModel entry)
-    {
-        yield return entry;
-        foreach (EntryDbModel node in entry.Children.SelectMany(TraverseEntries)) yield return node;
     }
 }
