@@ -1,6 +1,6 @@
-#Pika
+# Pika
 
-###Development Environment Setup
+### Development Environment Setup
 1. Make sure you have a postgres sql service up and running locally
    - Run database migrations `dotnet ef database update -p DataLayer -- <host> <port> <username> <password>`
 2. (optional) Set development config
