@@ -21,7 +21,7 @@ TypeAdapterConfig.GlobalSettings.Default.EnumMappingStrategy(EnumMappingStrategy
 TypeAdapterConfig<Guid, string>.ForType().MapWith(guid => guid.ToString("N"));
 TypeAdapterConfig<string, Guid>.ForType().MapWith(guidStr => string.IsNullOrWhiteSpace(guidStr) ? Guid.Empty : Guid.Parse(guidStr));
 
-TypeAdapterConfig<string, EntryDbModel>.ForType().MapWith(id => new EntryDbModel {Id = id.Adapt<Guid>()});
+TypeAdapterConfig<string, EntryDbModel>.ForType().MapWith(id => new EntryDbModel { Id = id.Adapt<Guid>() });
 TypeAdapterConfig<EntryDbModel, string>.ForType().MapWith(entry => entry.Id.Adapt<string>());
 
 TypeAdapterConfig<ObjectiveDto, ObjectiveDbModel>.ForType()
