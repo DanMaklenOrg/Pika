@@ -7,6 +7,7 @@ using Amazon.CDK.AWS.ECS.Patterns;
 using Amazon.CDK.AWS.ElasticLoadBalancingV2;
 using Amazon.CDK.AWS.IAM;
 using Environment = Amazon.CDK.Environment;
+using HealthCheck = Amazon.CDK.AWS.ElasticLoadBalancingV2.HealthCheck;
 
 string clusterArn = "arn:aws:ecs:eu-west-1:464787150360:cluster/CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy";
 string certificateArn = "arn:aws:acm:eu-west-1:464787150360:certificate/76e11e53-a292-4ff3-9857-d374d19ca507";
@@ -38,7 +39,7 @@ var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new Cluste
 
 var ecr = Repository.FromRepositoryName(stack, "dockerImageRepo", "pika");
 
-var _ = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationLoadBalancedEc2ServiceProps
+var lb = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationLoadBalancedEc2ServiceProps
 {
     Cluster = mainCluster,
     ServiceName = "pika",
@@ -50,13 +51,17 @@ var _ = new ApplicationLoadBalancedEc2Service(stack, "service", new ApplicationL
     {
         Image = ContainerImage.FromEcrRepository(ecr, "latest"),
         TaskRole = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole"),
-        Environment = new Dictionary<string, string> {{"AWS_REGION", stack.Region}},
-
+        Environment = new Dictionary<string, string> { { "AWS_REGION", stack.Region } },
     },
     CircuitBreaker = new DeploymentCircuitBreaker
     {
         Rollback = true,
     },
+});
+
+lb.TargetGroup.ConfigureHealthCheck(new HealthCheck
+{
+    Path = "/health",
 });
 
 app.Synth();
