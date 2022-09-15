@@ -1,4 +1,7 @@
 using Mapster;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service;
@@ -38,11 +41,15 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policyBuilder => po
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
 
+builder.AddAnaAuth();
+
 WebApplication app = builder.Build();
 
 // Middleware Pipeline
 app.UseCors();
 app.UseHealthChecks("/health");
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
