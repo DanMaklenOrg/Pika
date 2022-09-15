@@ -1,4 +1,5 @@
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -23,10 +24,9 @@ public class EntryController : ControllerBase
     }
 
     [HttpPost("{entryId}")]
-    public async Task<ActionResult> AddChildEntries(string entryId, [FromBody] List<EntryDto> entries, [FromHeader] string? authorization)
+    [Authorize]
+    public async Task<ActionResult> AddChildEntries(string entryId, [FromBody] List<EntryDto> entries)
     {
-        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
-
         EntryDbModel parentEntry = await this.db.Entries.Include(entry => entry.Domain)
             .SingleAsync(entry => entry.Id == Guid.Parse(entryId));
 

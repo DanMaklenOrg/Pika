@@ -1,4 +1,5 @@
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -22,10 +23,9 @@ public class ProjectController : ControllerBase
     }
 
     [HttpPost("{projectId}/objective")]
-    public async Task<ActionResult> AddObjectives(string projectId, [FromBody] List<ObjectiveDto> objectives, [FromHeader] string? authorization)
+    [Authorize]
+    public async Task<ActionResult> AddObjectives(string projectId, [FromBody] List<ObjectiveDto> objectives)
     {
-        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
-
         var objectiveDbModels = objectives.Adapt<List<ObjectiveDbModel>>();
 
         this.db.AttachRange(objectiveDbModels.SelectMany(obj => obj.Entries));

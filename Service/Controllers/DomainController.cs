@@ -1,4 +1,5 @@
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -31,10 +32,9 @@ public class DomainController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<DomainDto>> AddDomain(DomainDto domainDto, [FromHeader] string? authorization)
+    [Authorize]
+    public async Task<ActionResult<DomainDto>> AddDomain(DomainDto domainDto)
     {
-        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
-
         var domainModel = new DomainDbModel
         {
             Name = domainDto.Name,
@@ -75,10 +75,9 @@ public class DomainController : ControllerBase
     }
 
     [HttpPost("{domainId}/project")]
-    public async Task<ActionResult> AddProjects(string domainId, [FromBody] List<ProjectDto> projects, [FromHeader] string? authorization)
+    [Authorize]
+    public async Task<ActionResult> AddProjects(string domainId, [FromBody] List<ProjectDto> projects)
     {
-        if (authorization != this.config.CurrentValue.Token) return this.Unauthorized();
-
         var projectsDbModel = projects.Adapt<List<ProjectDbModel>>();
 
         this.db.AttachRange(projectsDbModel.SelectMany(proj => proj.Objectives).SelectMany(obj => obj.Entries));
