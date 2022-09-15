@@ -1,7 +1,4 @@
 using Mapster;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.IdentityModel.Tokens;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service;
