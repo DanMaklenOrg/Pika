@@ -22,7 +22,7 @@ public class PikaDataContext : DbContext
 
     public DbSet<ProjectDbModel> Projects { get; set; } = default!;
 
-    // public DbSet<ObjectiveTargetDbModel> ObjectiveTargets { get; set; } = default!;
+    public DbSet<ObjectiveTargetDbModel> ObjectiveTargets { get; set; } = default!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -45,9 +45,6 @@ public class PikaDataContext : DbContext
         modelBuilder.Entity<ObjectiveDbModel>()
             .HasMany(model => model.Targets)
             .WithMany(entry => entry.Objectives)
-            .UsingEntity(
-                o => o.HasOne(typeof(EntryDbModel)).WithMany().HasForeignKey("TargetId"),
-                o => o.HasOne(typeof(ObjectiveDbModel)).WithMany().HasForeignKey("ObjectiveId"),
-                o => o.ToTable("ObjectiveTargets"));
+            .UsingEntity<ObjectiveTargetDbModel>();
     }
 }

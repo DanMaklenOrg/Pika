@@ -27,12 +27,12 @@ namespace Pika.DataLayer.Migrations
             migrationBuilder.RenameColumn(
                 name: "ObjectivesId",
                 table: "ObjectiveTargets",
-                newName: "TargetId");
+                newName: "ObjectiveId");
 
             migrationBuilder.RenameColumn(
                 name: "EntriesId",
                 table: "ObjectiveTargets",
-                newName: "ObjectiveId");
+                newName: "TargetId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_EntryDbModelObjectiveDbModel_ObjectivesId",
@@ -80,12 +80,12 @@ namespace Pika.DataLayer.Migrations
                 newName: "EntryDbModelObjectiveDbModel");
 
             migrationBuilder.RenameColumn(
-                name: "TargetId",
+                name: "ObjectiveId",
                 table: "EntryDbModelObjectiveDbModel",
                 newName: "ObjectivesId");
 
             migrationBuilder.RenameColumn(
-                name: "ObjectiveId",
+                name: "TargetId",
                 table: "EntryDbModelObjectiveDbModel",
                 newName: "EntriesId");
 

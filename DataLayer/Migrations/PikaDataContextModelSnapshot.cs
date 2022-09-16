@@ -22,21 +22,6 @@ namespace Pika.DataLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("EntryDbModelObjectiveDbModel", b =>
-                {
-                    b.Property<Guid>("ObjectiveId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("TargetId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("ObjectiveId", "TargetId");
-
-                    b.HasIndex("TargetId");
-
-                    b.ToTable("ObjectiveTargets", (string)null);
-                });
-
             modelBuilder.Entity("Pika.DataLayer.Model.DomainDbModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -109,6 +94,21 @@ namespace Pika.DataLayer.Migrations
                     b.ToTable("Objectives");
                 });
 
+            modelBuilder.Entity("Pika.DataLayer.Model.ObjectiveTargetDbModel", b =>
+                {
+                    b.Property<Guid>("ObjectiveId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("TargetId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ObjectiveId", "TargetId");
+
+                    b.HasIndex("TargetId");
+
+                    b.ToTable("ObjectiveTargets");
+                });
+
             modelBuilder.Entity("Pika.DataLayer.Model.ProjectDbModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -129,21 +129,6 @@ namespace Pika.DataLayer.Migrations
                     b.HasIndex("DomainId");
 
                     b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("EntryDbModelObjectiveDbModel", b =>
-                {
-                    b.HasOne("Pika.DataLayer.Model.ObjectiveDbModel", null)
-                        .WithMany()
-                        .HasForeignKey("ObjectiveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Pika.DataLayer.Model.EntryDbModel", null)
-                        .WithMany()
-                        .HasForeignKey("TargetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.DomainDbModel", b =>
@@ -181,6 +166,25 @@ namespace Pika.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("Pika.DataLayer.Model.ObjectiveTargetDbModel", b =>
+                {
+                    b.HasOne("Pika.DataLayer.Model.ObjectiveDbModel", "Objective")
+                        .WithMany()
+                        .HasForeignKey("ObjectiveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pika.DataLayer.Model.EntryDbModel", "Target")
+                        .WithMany()
+                        .HasForeignKey("TargetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Objective");
+
+                    b.Navigation("Target");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.ProjectDbModel", b =>
