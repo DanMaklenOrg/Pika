@@ -23,14 +23,12 @@ public class ObjectiveController : ControllerBase
 
     [HttpPost("{objectiveId}/entry")]
     [Authorize]
-    public async Task<ActionResult> AddEntries(string objectiveId, [FromBody] List<string> entriesId)
+    public async Task AddEntries(string objectiveId, [FromBody] List<string> entriesId)
     {
         var entries = entriesId.Adapt<List<EntryDbModel>>();
         this.db.AttachRange(entries);
         ObjectiveDbModel objective = await this.db.Objectives.SingleAsync(obj => obj.Id == objectiveId.Adapt<Guid>());
-        objective.Entries.AddRange(entries);
+        objective.Targets.AddRange(entries);
         await this.db.SaveChangesAsync();
-
-        return this.Ok();
     }
 }

@@ -26,7 +26,7 @@ TypeAdapterConfig<EntryDbModel, string>.ForType().MapWith(entry => entry.Id.Adap
 
 TypeAdapterConfig<ObjectiveDto, ObjectiveDbModel>.ForType()
     .TwoWays()
-    .Map(model => model.Entries, dto => dto.EntriesId);
+    .Map(model => model.Targets, dto => dto.EntriesId);
 
 // DB
 builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("database"));

@@ -61,7 +61,7 @@ public class DomainController : ControllerBase
             .Include(model => model.RootEntry)
             .Include(model => model.Projects)
             .ThenInclude(model => model.Objectives)
-            .ThenInclude(model => model.Entries)
+            .ThenInclude(model => model.Targets)
             .SingleAsync(model => model.Id == Guid.Parse(domainId));
 
         foreach (EntryDbModel entry in Traverse.Dfs(domain.RootEntry!, node => node.Children))
@@ -76,15 +76,13 @@ public class DomainController : ControllerBase
 
     [HttpPost("{domainId}/project")]
     [Authorize]
-    public async Task<ActionResult> AddProjects(string domainId, [FromBody] List<ProjectDto> projects)
+    public async Task AddProjects(string domainId, [FromBody] List<ProjectDto> projects)
     {
         var projectsDbModel = projects.Adapt<List<ProjectDbModel>>();
 
-        this.db.AttachRange(projectsDbModel.SelectMany(proj => proj.Objectives).SelectMany(obj => obj.Entries));
+        this.db.AttachRange(projectsDbModel.SelectMany(proj => proj.Objectives).SelectMany(obj => obj.Targets));
         DomainDbModel domain = await this.db.Domains.SingleAsync(entry => entry.Id == Guid.Parse(domainId));
         domain.Projects.AddRange(projectsDbModel);
         await this.db.SaveChangesAsync();
-
-        return this.Ok();
     }
 }

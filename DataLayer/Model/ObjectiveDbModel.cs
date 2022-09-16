@@ -14,7 +14,7 @@ public class ObjectiveDbModel
     [MaxLength(100)]
     public string Title { get; set; } = default!;
 
-    public List<EntryDbModel> Entries { get; set; } = new();
+    public List<EntryDbModel> Targets { get; set; } = new();
 
     public int RequiredCount { get; set; }
 }
