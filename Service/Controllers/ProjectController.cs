@@ -24,16 +24,14 @@ public class ProjectController : ControllerBase
 
     [HttpPost("{projectId}/objective")]
     [Authorize]
-    public async Task<ActionResult> AddObjectives(string projectId, [FromBody] List<ObjectiveDto> objectives)
+    public async Task AddObjectives(string projectId, [FromBody] List<ObjectiveDto> objectives)
     {
         var objectiveDbModels = objectives.Adapt<List<ObjectiveDbModel>>();
 
-        this.db.AttachRange(objectiveDbModels.SelectMany(obj => obj.Entries));
+        this.db.AttachRange(objectiveDbModels.SelectMany(obj => obj.Targets));
 
         ProjectDbModel project = await this.db.Projects.SingleAsync(proj => proj.Id == projectId.Adapt<Guid>());
         project.Objectives.AddRange(objectiveDbModels);
         await this.db.SaveChangesAsync();
-
-        return this.Ok();
     }
 }

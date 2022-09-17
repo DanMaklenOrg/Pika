@@ -25,18 +25,17 @@ public class EntryController : ControllerBase
 
     [HttpPost("{entryId}")]
     [Authorize]
-    public async Task<ActionResult> AddChildEntries(string entryId, [FromBody] List<EntryDto> entries)
+    public async Task AddChildEntries(string entryId, [FromBody] List<EntryDto> entries)
     {
         EntryDbModel parentEntry = await this.db.Entries.Include(entry => entry.Domain)
             .SingleAsync(entry => entry.Id == Guid.Parse(entryId));
 
         var entriesDbModel = entries.Adapt<List<EntryDbModel>>();
 
-        foreach (EntryDbModel model in entriesDbModel.SelectMany(entry => Traverse.Dfs(entry, node => node.Children))) model.Domain = parentEntry.Domain;
+        foreach (EntryDbModel model in entriesDbModel.SelectMany(entry => Traverse.Dfs(entry, node => node.Children)))
+            model.Domain = parentEntry.Domain;
 
         parentEntry.Children.AddRange(entriesDbModel);
         await this.db.SaveChangesAsync();
-
-        return this.Ok();
     }
 }

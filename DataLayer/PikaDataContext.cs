@@ -22,6 +22,8 @@ public class PikaDataContext : DbContext
 
     public DbSet<ProjectDbModel> Projects { get; set; } = default!;
 
+    public DbSet<ObjectiveTargetDbModel> ObjectiveTargets { get; set; } = default!;
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var connectionString = new NpgsqlConnectionStringBuilder
@@ -34,5 +36,15 @@ public class PikaDataContext : DbContext
         }.ToString();
 
         optionsBuilder.UseNpgsql(connectionString);
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<ObjectiveDbModel>()
+            .HasMany(model => model.Targets)
+            .WithMany(entry => entry.Objectives)
+            .UsingEntity<ObjectiveTargetDbModel>();
     }
 }
