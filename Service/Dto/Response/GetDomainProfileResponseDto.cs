@@ -10,4 +10,7 @@ public struct GetDomainProfileResponseDto
 
     [JsonPropertyName("projects")]
     public List<ProjectDto> Projects { get; set; }
+
+    [JsonPropertyName("progress")]
+    public List<ProgressDto> Progress { get; set; }
 }
