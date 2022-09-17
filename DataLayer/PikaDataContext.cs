@@ -24,6 +24,8 @@ public class PikaDataContext : DbContext
 
     public DbSet<ObjectiveTargetDbModel> ObjectiveTargets { get; set; } = default!;
 
+    public DbSet<ProgressDbModel> Progress { get; set; } = default!;
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var connectionString = new NpgsqlConnectionStringBuilder
@@ -46,5 +48,12 @@ public class PikaDataContext : DbContext
             .HasMany(model => model.Targets)
             .WithMany(entry => entry.Objectives)
             .UsingEntity<ObjectiveTargetDbModel>();
+
+        modelBuilder.Entity<ProgressDbModel>()
+            .HasOne<ObjectiveTargetDbModel>()
+            .WithMany()
+            .HasForeignKey("ObjectiveId", "TargetId" );
+        modelBuilder.Entity<ProgressDbModel>()
+            .HasKey("UserId", "ObjectiveId", "TargetId");
     }
 }

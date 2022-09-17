@@ -109,6 +109,31 @@ namespace Pika.DataLayer.Migrations
                     b.ToTable("ObjectiveTargets");
                 });
 
+            modelBuilder.Entity("Pika.DataLayer.Model.ProgressDbModel", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ObjectiveId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("TargetId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Progress")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "ObjectiveId", "TargetId");
+
+                    b.HasIndex("TargetId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("ObjectiveId", "TargetId");
+
+                    b.ToTable("Progress");
+                });
+
             modelBuilder.Entity("Pika.DataLayer.Model.ProjectDbModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -179,6 +204,31 @@ namespace Pika.DataLayer.Migrations
                     b.HasOne("Pika.DataLayer.Model.EntryDbModel", "Target")
                         .WithMany()
                         .HasForeignKey("TargetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Objective");
+
+                    b.Navigation("Target");
+                });
+
+            modelBuilder.Entity("Pika.DataLayer.Model.ProgressDbModel", b =>
+                {
+                    b.HasOne("Pika.DataLayer.Model.ObjectiveDbModel", "Objective")
+                        .WithMany()
+                        .HasForeignKey("ObjectiveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pika.DataLayer.Model.EntryDbModel", "Target")
+                        .WithMany()
+                        .HasForeignKey("TargetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pika.DataLayer.Model.ObjectiveTargetDbModel", null)
+                        .WithMany()
+                        .HasForeignKey("ObjectiveId", "TargetId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -28,6 +28,14 @@ TypeAdapterConfig<ObjectiveDto, ObjectiveDbModel>.ForType()
     .TwoWays()
     .Map(model => model.Targets, dto => dto.EntriesId);
 
+TypeAdapterConfig<string, ObjectiveDbModel>.ForType().MapWith(id => new ObjectiveDbModel { Id = id.Adapt<Guid>() });
+TypeAdapterConfig<ObjectiveDbModel, string>.ForType().MapWith(entry => entry.Id.Adapt<string>());
+
+TypeAdapterConfig<ProgressDto, ProgressDbModel>.ForType()
+    .TwoWays()
+    .Map(model => model.Target, dto => dto.TargetId)
+    .Map(model => model.Objective, dto => dto.ObjectiveId);
+
 // DB
 builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("database"));
 builder.Services.AddDbContext<PikaDataContext>();

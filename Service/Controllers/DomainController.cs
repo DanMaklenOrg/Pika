@@ -67,10 +67,15 @@ public class DomainController : ControllerBase
         foreach (EntryDbModel entry in Traverse.Dfs(domain.RootEntry!, node => node.Children))
             entry.Children = entry.Children.OrderBy(child => child.Title).ToList();
 
+        var progress = new List<ProgressDbModel>();
+        if (this.User.Identity?.IsAuthenticated ?? false)
+            progress = await this.db.Progress.Where(model => model.Objective.Project.Domain.Id == domainId.Adapt<Guid>()).ToListAsync();
+
         return new GetDomainProfileResponseDto
         {
             RootEntry = domain.RootEntry!.Adapt<EntryDto>(),
             Projects = domain.Projects.Adapt<List<ProjectDto>>(),
+            Progress = progress.Adapt<List<ProgressDto>>(),
         };
     }
 
