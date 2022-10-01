@@ -41,8 +41,6 @@ builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("dat
 builder.Services.AddDbContext<PikaDataContext>();
 
 // APIs
-builder.Services.AddCors(options => options.AddDefaultPolicy(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod()));
-
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
 
@@ -51,7 +49,7 @@ builder.AddAnaAuth();
 WebApplication app = builder.Build();
 
 // Middleware Pipeline
-app.UseCors();
+app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseHealthChecks("/health");
 app.UseAuthentication();
 app.UseAuthorization();
