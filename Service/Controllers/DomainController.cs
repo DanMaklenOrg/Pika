@@ -54,6 +54,7 @@ public class DomainController : ControllerBase
     }
 
     [HttpGet("{domainId}/profile")]
+    [Authorize]
     public async Task<GetDomainProfileResponseDto> GetDomainProfile(string domainId)
     {
         await this.db.Entries.Where(entry => entry.Domain.Id == domainId.Adapt<Guid>()).ToListAsync();
@@ -67,9 +68,7 @@ public class DomainController : ControllerBase
         foreach (EntryDbModel entry in Traverse.Dfs(domain.RootEntry!, node => node.Children))
             entry.Children = entry.Children.OrderBy(child => child.Title).ToList();
 
-        var progress = new List<ProgressDbModel>();
-        if (this.User.Identity?.IsAuthenticated ?? false)
-            progress = await this.db.Progress.Where(model => model.Objective.Project.Domain.Id == domainId.Adapt<Guid>()).ToListAsync();
+        List<ProgressDbModel> progress = await this.db.Progress.Where(model => model.Objective.Project.Domain.Id == domainId.Adapt<Guid>()).ToListAsync();
 
         return new GetDomainProfileResponseDto
         {
