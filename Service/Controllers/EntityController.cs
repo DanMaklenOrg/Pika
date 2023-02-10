@@ -23,4 +23,28 @@ public class EntityController : ControllerBase
         List<EntityDbModel> entities = await this.db.Entities.Where(entity => entity.Domain.Id == domainId).ToListAsync();
         return entities.ConvertAll(EntityDto.FromDbModel);
     }
+
+    [HttpPost]
+    public async Task<EntityDto> AddEntity(Guid domainId, string name, Guid? parentId = null)
+    {
+        DomainDbModel domain = new DomainDbModel { Id = domainId };
+        this.db.Attach(domain);
+
+        EntityDbModel? parent = null;
+        if (parentId != null)
+        {
+            parent = new EntityDbModel { Id = parentId.Value };
+            this.db.Attach(parent);
+        }
+
+        EntityDbModel entity = new EntityDbModel
+        {
+            Name = name,
+            Domain = domain,
+            Parent = parent,
+        };
+        await this.db.Entities.AddAsync(entity);
+        await this.db.SaveChangesAsync();
+        return EntityDto.FromDbModel(entity);
+    }
 }
