@@ -1,19 +1,22 @@
 using System.Text.Json.Serialization;
+using Pika.DataLayer.Model;
 
 namespace Pika.Service.Dto.Common;
 
 public readonly struct DomainDto
 {
     [JsonPropertyName("id")]
-    public string Id { get; init; }
+    public Guid Id { get; init; }
 
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonConstructor]
-    public DomainDto(string name, string? id = null)
+    public static DomainDto FromDbModel(DomainDbModel model)
     {
-        this.Id = id ?? Guid.Empty.ToString("N");
-        this.Name = name;
+        return new DomainDto
+        {
+            Id = model.Id,
+            Name = model.Name,
+        };
     }
 }

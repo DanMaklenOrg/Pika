@@ -2,7 +2,6 @@ using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
 using Pika.Service.Dto.Common;
@@ -16,28 +15,26 @@ namespace Pika.Service.Controllers;
 public class DomainController : ControllerBase
 {
     private readonly PikaDataContext db;
-    private readonly IOptionsMonitor<ServiceConfig> config;
 
-    public DomainController(PikaDataContext db, IOptionsMonitor<ServiceConfig> config)
+    public DomainController(PikaDataContext db)
     {
         this.db = db;
-        this.config = config;
     }
 
     [HttpGet]
     public async Task<List<DomainDto>> GetDomainList()
     {
         List<DomainDbModel> allDomains = await this.db.Domains.ToListAsync();
-        return allDomains.Adapt<List<DomainDto>>();
+        return allDomains.ConvertAll(DomainDto.FromDbModel);
     }
 
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<DomainDto>> AddDomain(DomainDto domainDto)
+    public async Task<DomainDto> AddDomain(string domainName)
     {
         var domainModel = new DomainDbModel
         {
-            Name = domainDto.Name,
+            Name = domainName,
         };
 
         await this.db.Domains.AddAsync(domainModel);
@@ -46,11 +43,11 @@ public class DomainController : ControllerBase
         domainModel.RootEntry = new EntryDbModel
         {
             Domain = domainModel,
-            Title = $"{domainDto.Name} Root Entry",
+            Title = $"{domainName} Root Entry",
         };
 
         await this.db.SaveChangesAsync();
-        return domainModel.Adapt<DomainDto>();
+        return DomainDto.FromDbModel(domainModel);
     }
 
     [HttpGet("{domainId}/profile")]

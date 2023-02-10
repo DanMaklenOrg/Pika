@@ -16,6 +16,8 @@ public class PikaDataContext : DbContext
 
     public DbSet<DomainDbModel> Domains { get; set; } = default!;
 
+    public DbSet<EntityDbModel> Entities { get; set; } = default!;
+
     public DbSet<EntryDbModel> Entries { get; set; } = default!;
 
     public DbSet<ObjectiveDbModel> Objectives { get; set; } = default!;
