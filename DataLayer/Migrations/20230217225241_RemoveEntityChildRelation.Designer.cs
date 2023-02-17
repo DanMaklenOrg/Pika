@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pika.DataLayer;
@@ -11,9 +12,10 @@ using Pika.DataLayer;
 namespace Pika.DataLayer.Migrations
 {
     [DbContext(typeof(PikaDataContext))]
-    partial class PikaDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230217225241_RemoveEntityChildRelation")]
+    partial class RemoveEntityChildRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
