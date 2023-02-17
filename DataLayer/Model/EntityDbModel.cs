@@ -15,9 +15,4 @@ public class EntityDbModel
     public string Name { get; set; } = default!;
 
     public DomainDbModel Domain { get; set; } = default!;
-
-    public EntityDbModel? Parent { get; set; }
-
-    [InverseProperty(nameof(EntityDbModel.Parent))]
-    public List<EntityDbModel> Children { get; set; } = new();
 }
