@@ -18,6 +18,8 @@ public class PikaDataContext : DbContext
 
     public DbSet<EntityDbModel> Entities { get; set; } = default!;
 
+    public DbSet<TagDbModel> Tags { get; set; } = default!;
+
     public DbSet<EntryDbModel> Entries { get; set; } = default!;
 
     public DbSet<ObjectiveDbModel> Objectives { get; set; } = default!;
@@ -46,6 +48,10 @@ public class PikaDataContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.Entity<EntityDbModel>().HasMany(model => model.Tags)
+            .WithMany(model => model.Entities)
+            .UsingEntity(builder => builder.ToTable("EntityTag"));
+
         modelBuilder.Entity<ObjectiveDbModel>()
             .HasMany(model => model.Targets)
             .WithMany(entry => entry.Objectives)
@@ -54,7 +60,7 @@ public class PikaDataContext : DbContext
         modelBuilder.Entity<ProgressDbModel>()
             .HasOne<ObjectiveTargetDbModel>()
             .WithMany()
-            .HasForeignKey("ObjectiveId", "TargetId" );
+            .HasForeignKey("ObjectiveId", "TargetId");
         modelBuilder.Entity<ProgressDbModel>()
             .HasKey("UserId", "ObjectiveId", "TargetId");
     }
