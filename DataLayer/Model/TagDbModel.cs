@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Pika.DataLayer.Model;
 
-[Table("Entity")]
-public class EntityDbModel
+[Table("Tag")]
+public class TagDbModel
 {
     [Key]
     public Guid Id { get; set; }
@@ -16,5 +16,6 @@ public class EntityDbModel
 
     public DomainDbModel Domain { get; set; } = default!;
 
-    public List<TagDbModel> Tags { get; set; } = new();
+    [InverseProperty(nameof(EntityDbModel.Tags))]
+    public List<EntityDbModel> Entities { get; set; } = new();
 }

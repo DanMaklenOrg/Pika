@@ -3,7 +3,7 @@ using Pika.DataLayer.Model;
 
 namespace Pika.Service.Dto.Common;
 
-public readonly struct EntityDto
+public readonly struct TagDto
 {
     [JsonPropertyName("id")]
     public Guid Id { get; init; }
@@ -11,16 +11,12 @@ public readonly struct EntityDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonPropertyName("tags")]
-    public List<TagDto> Tags { get; init; }
-
-    public static EntityDto FromDbModel(EntityDbModel model)
+    public static TagDto FromDbModel(TagDbModel model)
     {
-        return new EntityDto
+        return new TagDto
         {
             Id = model.Id,
             Name = model.Name,
-            Tags = model.Tags.ConvertAll(TagDto.FromDbModel),
         };
     }
 }
