@@ -22,6 +22,21 @@ namespace Pika.DataLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ActionDbModelTagDbModel", b =>
+                {
+                    b.Property<Guid>("ActionsId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("TagsId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ActionsId", "TagsId");
+
+                    b.HasIndex("TagsId");
+
+                    b.ToTable("TagAction", (string)null);
+                });
+
             modelBuilder.Entity("EntityDbModelTagDbModel", b =>
                 {
                     b.Property<Guid>("EntitiesId")
@@ -35,6 +50,28 @@ namespace Pika.DataLayer.Migrations
                     b.HasIndex("TagsId");
 
                     b.ToTable("EntityTag", (string)null);
+                });
+
+            modelBuilder.Entity("Pika.DataLayer.Model.ActionDbModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("DomainId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DomainId");
+
+                    b.ToTable("Action");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.DomainDbModel", b =>
@@ -217,6 +254,21 @@ namespace Pika.DataLayer.Migrations
                     b.ToTable("Tag");
                 });
 
+            modelBuilder.Entity("ActionDbModelTagDbModel", b =>
+                {
+                    b.HasOne("Pika.DataLayer.Model.ActionDbModel", null)
+                        .WithMany()
+                        .HasForeignKey("ActionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pika.DataLayer.Model.TagDbModel", null)
+                        .WithMany()
+                        .HasForeignKey("TagsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("EntityDbModelTagDbModel", b =>
                 {
                     b.HasOne("Pika.DataLayer.Model.EntityDbModel", null)
@@ -230,6 +282,17 @@ namespace Pika.DataLayer.Migrations
                         .HasForeignKey("TagsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Pika.DataLayer.Model.ActionDbModel", b =>
+                {
+                    b.HasOne("Pika.DataLayer.Model.DomainDbModel", "Domain")
+                        .WithMany()
+                        .HasForeignKey("DomainId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Domain");
                 });
 
             modelBuilder.Entity("Pika.DataLayer.Model.DomainDbModel", b =>

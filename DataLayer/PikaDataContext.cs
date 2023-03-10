@@ -20,6 +20,8 @@ public class PikaDataContext : DbContext
 
     public DbSet<TagDbModel> Tags { get; set; } = default!;
 
+    public DbSet<ActionDbModel> Actions { get; set; } = default!;
+
     public DbSet<EntryDbModel> Entries { get; set; } = default!;
 
     public DbSet<ObjectiveDbModel> Objectives { get; set; } = default!;
@@ -48,9 +50,15 @@ public class PikaDataContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<EntityDbModel>().HasMany(model => model.Tags)
+        modelBuilder.Entity<EntityDbModel>()
+            .HasMany(model => model.Tags)
             .WithMany(model => model.Entities)
             .UsingEntity(builder => builder.ToTable("EntityTag"));
+
+        modelBuilder.Entity<TagDbModel>()
+            .HasMany(model => model.Actions)
+            .WithMany(model => model.Tags)
+            .UsingEntity(builder => builder.ToTable("TagAction"));
 
         modelBuilder.Entity<ObjectiveDbModel>()
             .HasMany(model => model.Targets)

@@ -18,4 +18,6 @@ public class TagDbModel
 
     [InverseProperty(nameof(EntityDbModel.Tags))]
     public List<EntityDbModel> Entities { get; set; } = new();
+
+    public List<ActionDbModel> Actions { get; set; } = new();
 }
