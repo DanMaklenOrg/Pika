@@ -22,5 +22,8 @@ public class DomainDbModel
     public List<EntryDbModel> RelatedEntries { get; set; } = new();
 
     [InverseProperty(nameof(EntityDbModel.Domain))]
+    public List<AchievementDbModel> Achievements { get; set; } = new();
+
+    [InverseProperty(nameof(EntityDbModel.Domain))]
     public List<EntityDbModel> Entities { get; set; } = new();
 }
