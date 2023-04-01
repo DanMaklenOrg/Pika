@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Npgsql;
 using Pika.DataLayer.Model;
@@ -23,6 +24,8 @@ public class PikaDataContext : DbContext
     public DbSet<TagDbModel> Tags { get; set; } = default!;
 
     public DbSet<ActionDbModel> Actions { get; set; } = default!;
+
+    public DbSet<UserAchievementDbModel> UserAchievements { get; set; } = default!;
 
     public DbSet<EntryDbModel> Entries { get; set; } = default!;
 
@@ -61,6 +64,9 @@ public class PikaDataContext : DbContext
             .HasMany(model => model.Actions)
             .WithMany(model => model.Tags)
             .UsingEntity(builder => builder.ToTable("TagAction"));
+
+        modelBuilder.Entity<UserAchievementDbModel>()
+            .HasKey(model => new { model.UserId, model.AchievementId });
 
         modelBuilder.Entity<ObjectiveDbModel>()
             .HasMany(model => model.Targets)

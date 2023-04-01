@@ -21,4 +21,7 @@ public class AchievementDbModel
     public string Description { get; set; } = default!;
 
     public Uri? Image { get; set; }
+
+    [InverseProperty(nameof(UserAchievementDbModel.Achievement))]
+    public List<UserAchievementDbModel> UserAchievements { get; set; } = new();
 }

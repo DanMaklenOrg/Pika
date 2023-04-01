@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -44,5 +45,40 @@ public class AchievementController : ControllerBase
         await this.db.Achievements.AddAsync(achievement);
         await this.db.SaveChangesAsync();
         return AchievementDto.FromDbModel(achievement);
+    }
+
+    [HttpPut("{id:guid}/unlock")]
+    [Authorize]
+    public async Task UnlockAchievement([FromRoute] Guid id)
+    {
+        Guid userId = new Guid(this.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+        // await this.db.UserAchievements.AnyAsync(userAchievement => userAchievement.Achievement.Id == id && userAchievement.UserId == userId);
+
+        UserAchievementDbModel userAchievement = new UserAchievementDbModel
+        {
+            UserId = userId,
+            AchievementId = id,
+            UnlockState = true,
+        };
+        if (await this.db.UserAchievements.ContainsAsync(userAchievement))
+            this.db.UserAchievements.Update(userAchievement);
+        else
+            await this.db.UserAchievements.AddAsync(userAchievement);
+        await this.db.SaveChangesAsync();
+    }
+
+
+    [HttpGet("unlocked")]
+    [Authorize]
+    public async Task<List<AchievementDto>> GetUnlockedAchievements([FromQuery] Guid domainId)
+    {
+        Guid userId = new Guid(this.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var unlockedAchievements = await this.db.UserAchievements
+            .Where(model => model.UserId == userId && model.Achievement.Domain.Id == domainId && model.UnlockState)
+            .Select(model => model.Achievement)
+            .ToListAsync();
+
+        return unlockedAchievements.ConvertAll(AchievementDto.FromDbModel);
     }
 }
