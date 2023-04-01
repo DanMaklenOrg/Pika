@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
-using Pika.Service.Dto.Common;
+using Pika.Service.Dto.Response;
 
 namespace Pika.Service.Controllers;
 
@@ -18,6 +19,7 @@ public class TagController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<List<TagDto>> GetDomainTags(Guid domainId)
     {
         List<TagDbModel> tags = await this.db.Tags.Where(tag => tag.Domain.Id == domainId).ToListAsync();
@@ -25,6 +27,7 @@ public class TagController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<TagDto> AddTag(Guid domainId, string name)
     {
         DomainDbModel domain = new DomainDbModel { Id = domainId };

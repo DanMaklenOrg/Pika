@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pika.DataLayer;
 using Pika.DataLayer.Model;
-using Pika.Service.Dto.Common;
+using Pika.Service.Dto.Response;
 
 namespace Pika.Service.Controllers;
 
@@ -18,13 +19,15 @@ public class EntityController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<EntityDto>> GetDomainEntities(Guid domainId)
+    [Authorize]
+    public async Task<List<EntityDto>> GetEntities(Guid domainId)
     {
         List<EntityDbModel> entities = await this.db.Entities.Where(entity => entity.Domain.Id == domainId).ToListAsync();
         return entities.ConvertAll(EntityDto.FromDbModel);
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<EntityDto> AddEntity(Guid domainId, string name)
     {
         DomainDbModel domain = new DomainDbModel { Id = domainId };
