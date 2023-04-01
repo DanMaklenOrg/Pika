@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Pika.DataLayer.Model;
 
-namespace Pika.Service.Dto.Common;
+namespace Pika.Service.Dto.Response;
 
 public readonly struct EntityDto
 {
