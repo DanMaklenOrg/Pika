@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace Pika.DataLayer;
