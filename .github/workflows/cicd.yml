@@ -23,6 +23,24 @@ jobs:
       - run: dotnet restore
       - run: dotnet publish -c Release --no-restore -o bin
 
+  deploy-lambda:
+    name: Deploy Lambda
+#    needs: [ deploy-db-migrations ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+      - uses: actions/checkout@v3
+      - run: sudo apt-get update -y
+      - run: sudo apt-get install nodejs npm -y
+      - run: sudo npm install -g aws-cdk
+      - run: dotnet tool install -g Amazon.Lambda.Tools
+      - run: cdk deploy --require-approval never
+        working-directory: Infra
+
+
   build-image:
     name: Build Image and Push to ECR
     runs-on: ubuntu-latest

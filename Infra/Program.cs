@@ -6,6 +6,7 @@ using Amazon.CDK.AWS.ECS;
 using Amazon.CDK.AWS.ECS.Patterns;
 using Amazon.CDK.AWS.ElasticLoadBalancingV2;
 using Amazon.CDK.AWS.IAM;
+using Amazon.CDK.AWS.Lambda;
 using Environment = Amazon.CDK.Environment;
 using HealthCheck = Amazon.CDK.AWS.ElasticLoadBalancingV2.HealthCheck;
 
@@ -21,6 +22,27 @@ var stack = new Stack(app, "pika", new StackProps
         Account = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_ACCOUNT"),
         Region = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_REGION"),
     },
+});
+
+var _ = new Function(stack, "lambdaService",new FunctionProps
+{
+    Runtime = Runtime.DOTNET_6,
+    Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
+    {
+        Bundling = new BundlingOptions
+        {
+            Image = Runtime.DOTNET_6.BundlingImage,
+            OutputType = BundlingOutput.ARCHIVED,
+            Command = new string[]
+            {
+                "/bin/sh",
+                "-c",
+                " dotnet tool install -g Amazon.Lambda.Tools",
+                " && dotnet build",
+                " && dotnet lambda package --output-package /asset-output/function.zip",
+            },
+        },
+    }),
 });
 
 var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new ClusterAttributes
