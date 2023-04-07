@@ -28,7 +28,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
 {
     Runtime = Runtime.DOTNET_6,
     Handler = "Pika.Service",
-    Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
+    Code = Code.FromAsset("../Service", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
         Bundling = new BundlingOptions
         {
