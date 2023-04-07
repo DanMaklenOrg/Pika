@@ -29,14 +29,6 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
     FunctionName = "Pika",
     Runtime = Runtime.DOTNET_6,
     Handler = "Service",
-    Vpc = Vpc.FromLookup(stack, "mainVpc", new VpcLookupOptions
-    {
-        VpcId = "vpc-0b6cfd6872c50c7b8",
-    }),
-    SecurityGroups = new[]
-    {
-        SecurityGroup.FromLookupById(stack, "mainSecurityGroup", "sg-019630ca5c46b7cf9"),
-    },
     Role = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole"),
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
