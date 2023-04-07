@@ -19,8 +19,8 @@ var stack = new Stack(app, "pika", new StackProps
 {
     Env = new Environment
     {
-        Account = "danmaklen",
-        Region = "eu-west1",
+        Account = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_ACCOUNT"),
+        Region = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_REGION"),
     },
 });
 
