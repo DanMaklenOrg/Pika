@@ -30,7 +30,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
     Handler = "Pika.Service",
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
-        Exclude = new [] { "Infra/*" },
+        Exclude = new [] { "Infra" },
         Bundling = new BundlingOptions
         {
             Image = Runtime.DOTNET_6.BundlingImage,
@@ -39,7 +39,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
             {
                 "/bin/sh",
                 "-c",
-                "dotnet build",
+                "dotnet build --project Service",
                 "dotnet lambda package --output-package /asset-output/function.zip",
             },
         },
