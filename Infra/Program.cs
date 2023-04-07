@@ -38,9 +38,9 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
             {
                 "/bin/sh",
                 "-c",
-                " dotnet tool install -g Amazon.Lambda.Tools",
-                " && dotnet build",
-                " && dotnet lambda package --output-package /asset-output/function.zip",
+                "dotnet tool install -g Amazon.Lambda.Tools",
+                "dotnet build",
+                "dotnet lambda package --output-package /asset-output/function.zip",
             },
         },
     }),
