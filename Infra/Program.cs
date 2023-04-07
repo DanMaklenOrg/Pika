@@ -23,13 +23,13 @@ var stack = new Stack(app, "pika", new StackProps
         Region = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_REGION"),
     },
 });
-
+var role = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole");
 var _ = new Function(stack, "lambdaService",new FunctionProps
 {
     FunctionName = "Pika",
     Runtime = Runtime.DOTNET_6,
     Handler = "Service",
-    Role = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole"),
+    Role = role,
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
         Exclude = new [] { "Infra" },
@@ -69,7 +69,7 @@ var lb = new ApplicationLoadBalancedEc2Service(stack, "service", new Application
     TaskImageOptions = new ApplicationLoadBalancedTaskImageOptions
     {
         Image = ContainerImage.FromEcrRepository(ecr, "latest"),
-        TaskRole = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole"),
+        TaskRole = role,
         Environment = new Dictionary<string, string> { { "AWS_REGION", stack.Region } },
     },
     CircuitBreaker = new DeploymentCircuitBreaker
