@@ -39,8 +39,9 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
             {
                 "/bin/sh",
                 "-c",
-                "dotnet build Service",
-                "dotnet lambda package -o /asset-output/function.zip -pl Service",
+                "cd Service",
+                "dotnet build",
+                "dotnet lambda package -o /asset-output/function.zip",
             },
         },
     }),
