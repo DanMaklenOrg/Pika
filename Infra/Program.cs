@@ -35,14 +35,12 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
         {
             Image = Runtime.DOTNET_6.BundlingImage,
             OutputType = BundlingOutput.ARCHIVED,
-            Command = new []
+            Command = new [] { "bash", "-c", string.Join(" && ", new[]
             {
-                "/bin/sh",
-                "-c",
                 "cd Service",
                 "dotnet build",
                 "dotnet lambda package -o /asset-output/function.zip",
-            },
+            })},
         },
     }),
 });
