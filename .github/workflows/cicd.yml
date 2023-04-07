@@ -37,7 +37,7 @@ jobs:
       - run: sudo apt-get install nodejs npm -y
       - run: sudo npm install -g aws-cdk
       - run: dotnet tool install -g Amazon.Lambda.Tools
-      - run: cdk deploy --require-approval never
+      - run: sudo cdk deploy --require-approval never
         working-directory: Infra
 
 
