@@ -30,6 +30,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
     Runtime = Runtime.DOTNET_6,
     Handler = "Service",
     Role = role,
+    Timeout = Duration.Seconds(30),
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
         Exclude = new [] { "Infra" },
