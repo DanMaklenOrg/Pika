@@ -23,6 +23,27 @@ public class DomainController : ControllerBase
         this.logger = logger;
     }
 
+    [HttpGet("test")]
+    public async Task<List<DomainDto>> GetDomainListTest()
+    {
+        this.logger.LogInformation("Called GetDomainList");
+        List<DomainDbModel> allDomains = new List<DomainDbModel>
+        {
+            new DomainDbModel
+            {
+                Id = Guid.NewGuid(),
+                Achievements = new List<AchievementDbModel>(),
+                Entities = new List<EntityDbModel>(),
+                Name = "Test Domain",
+                Projects = new List<ProjectDbModel>(),
+                RelatedEntries = new List<EntryDbModel>(),
+                RootEntry = null,
+            }
+        };
+        this.logger.LogInformation("got {DomainsCount} domains", allDomains.Count);
+        return allDomains.ConvertAll(DomainDto.FromDbModel);
+    }
+
     [HttpGet]
     public async Task<List<DomainDto>> GetDomainList()
     {
