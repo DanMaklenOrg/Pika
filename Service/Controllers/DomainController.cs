@@ -27,6 +27,7 @@ public class DomainController : ControllerBase
     public async Task<List<DomainDto>> GetDomainListTest()
     {
         this.logger.LogInformation("Called GetDomainList");
+        await Task.Delay(500);
         List<DomainDbModel> allDomains = new List<DomainDbModel>
         {
             new DomainDbModel
