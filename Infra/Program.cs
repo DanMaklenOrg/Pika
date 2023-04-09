@@ -23,13 +23,18 @@ var stack = new Stack(app, "pika", new StackProps
         Region = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_REGION"),
     },
 });
+
 var role = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole");
+var vpc = Vpc.FromLookup(stack, "mainVpc", new VpcLookupOptions { VpcId = "vpc-0b6cfd6872c50c7b8" });
+
 var _ = new Function(stack, "lambdaService",new FunctionProps
 {
     FunctionName = "Pika",
     Runtime = Runtime.DOTNET_6,
     Handler = "Service",
     Role = role,
+    Vpc = vpc,
+    AllowPublicSubnet = true,
     Timeout = Duration.Seconds(30),
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
     {
@@ -46,10 +51,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
 var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new ClusterAttributes
 {
     ClusterArn = clusterArn,
-    Vpc = Vpc.FromLookup(stack, "mainVpc", new VpcLookupOptions
-    {
-        VpcId = "vpc-0b6cfd6872c50c7b8",
-    }),
+    Vpc = vpc,
     ClusterName = "CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy",
     SecurityGroups = new[]
     {
