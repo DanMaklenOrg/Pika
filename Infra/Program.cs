@@ -26,6 +26,7 @@ var stack = new Stack(app, "pika", new StackProps
 
 var role = Role.FromRoleArn(stack, "role", "arn:aws:iam::464787150360:role/MainClusterServiceRole");
 var vpc = Vpc.FromLookup(stack, "mainVpc", new VpcLookupOptions { VpcId = "vpc-0b6cfd6872c50c7b8" });
+var securityGroup = SecurityGroup.FromLookupById(stack, "mainSecurityGroup", "sg-019630ca5c46b7cf9");
 
 var _ = new Function(stack, "lambdaService",new FunctionProps
 {
@@ -34,6 +35,7 @@ var _ = new Function(stack, "lambdaService",new FunctionProps
     Handler = "Service",
     Role = role,
     Vpc = vpc,
+    SecurityGroups = new [] { securityGroup },
     AllowPublicSubnet = true,
     Timeout = Duration.Seconds(30),
     Code = Code.FromAsset("../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
@@ -53,10 +55,7 @@ var mainCluster = Cluster.FromClusterAttributes(stack, "mainCluster", new Cluste
     ClusterArn = clusterArn,
     Vpc = vpc,
     ClusterName = "CoreStack-MainEcsCluster03D3CD1A-JeWB2ioJZQEy",
-    SecurityGroups = new[]
-    {
-        SecurityGroup.FromLookupById(stack, "mainSecurityGroup", "sg-019630ca5c46b7cf9"),
-    },
+    SecurityGroups = new[] { securityGroup },
 });
 
 var ecr = Repository.FromRepositoryName(stack, "dockerImageRepo", "pika");
