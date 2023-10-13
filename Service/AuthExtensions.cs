@@ -8,7 +8,7 @@ public static class AuthExtensions
 {
     public static void AddAnaAuth(this WebApplicationBuilder builder)
     {
-        byte[] authKey = Convert.FromBase64String(builder.Configuration["AuthKeyBase64"]);
+        byte[] authKey = Convert.FromBase64String(builder.Configuration["AuthJwtKeyBase64"]);
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters
             {

@@ -44,6 +44,9 @@ builder.Services.AddDbContext<PikaDataContext>();
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
 
+// Lambda Hosting
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
+
 builder.AddAnaAuth();
 
 WebApplication app = builder.Build();
