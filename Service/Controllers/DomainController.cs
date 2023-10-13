@@ -15,20 +15,16 @@ namespace Pika.Service.Controllers;
 public class DomainController : ControllerBase
 {
     private readonly PikaDataContext db;
-    private readonly ILogger<DomainController> logger;
 
-    public DomainController(PikaDataContext db, ILogger<DomainController> logger)
+    public DomainController(PikaDataContext db)
     {
         this.db = db;
-        this.logger = logger;
     }
 
     [HttpGet]
     public async Task<List<DomainDto>> GetDomainList()
     {
-        this.logger.LogInformation("Called GetDomainList");
         List<DomainDbModel> allDomains = await this.db.Domains.ToListAsync();
-        this.logger.LogInformation("got {DomainsCount} domains", allDomains.Count);
         return allDomains.ConvertAll(DomainDto.FromDbModel);
     }
 
