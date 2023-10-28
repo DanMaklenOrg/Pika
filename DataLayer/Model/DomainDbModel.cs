@@ -1,29 +1,14 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
 namespace Pika.DataLayer.Model;
 
-[Table("Domain")]
-public class DomainDbModel
+public class DomainDbModel : BaseDbModel
 {
-    [Key]
-    public Guid Id { get; set; }
+    public Guid Id { get; init; } = Guid.NewGuid();
 
-    [Unicode(false)]
-    [MaxLength(100)]
     public string Name { get; init; } = default!;
 
-    public EntryDbModel? RootEntry { get; set; }
-
-    public List<ProjectDbModel> Projects { get; set; } = new();
-
-    [InverseProperty(nameof(EntryDbModel.Domain))]
-    public List<EntryDbModel> RelatedEntries { get; set; } = new();
-
-    [InverseProperty(nameof(AchievementDbModel.Domain))]
-    public List<AchievementDbModel> Achievements { get; set; } = new();
-
-    [InverseProperty(nameof(EntityDbModel.Domain))]
-    public List<EntityDbModel> Entities { get; set; } = new();
+    public override void SetKeys()
+    {
+        PartitionKey = $"Domain#{Id.ToString()}";
+        SortKey = "Domain";
+    }
 }
