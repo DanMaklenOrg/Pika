@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Pika.Service.Dto;
 
-public readonly struct DomainDto
+public readonly struct GameDto
 {
     [JsonPropertyName("id")]
     public Guid Id { get; init; }
