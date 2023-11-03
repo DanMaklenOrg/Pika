@@ -9,4 +9,7 @@ public readonly struct GameDto
 
     [JsonPropertyName("name")]
     public string Name { get; init; }
+
+    [JsonPropertyName("version")]
+    public string Version { get; init; }
 }
