@@ -10,17 +10,17 @@ namespace Pika.Service.Controllers;
 [Route("game")]
 public class GameController : ControllerBase
 {
-    private readonly IGameRepo _gameRepo;
+    private readonly IGameRepo _gameDao;
 
-    public GameController(IGameRepo gameRepo)
+    public GameController(IGameRepo gameDao)
     {
-        _gameRepo = gameRepo;
+        _gameDao = gameDao;
     }
 
     [HttpGet("{gameId}")]
     public async Task<GameDto> Get(Guid gameId)
     {
-        var game = await _gameRepo.Get(gameId);
+        var game = await _gameDao.Get(gameId);
         return DtoMapper.ToDto(game);
     ;}
 
@@ -28,7 +28,7 @@ public class GameController : ControllerBase
     [HttpGet("all")]
     public async Task<List<GameDto>> GetAll()
     {
-        var allGames = await _gameRepo.GetAll();
+        var allGames = await _gameDao.GetAll();
         return allGames.ConvertAll(DtoMapper.ToDto);
     }
 
@@ -37,7 +37,7 @@ public class GameController : ControllerBase
     public async Task<GameDto> Add(string name)
     {
         var game = new GameDbModel { Name = name };
-        await _gameRepo.Create(game);
+        await _gameDao.Create(game);
         return DtoMapper.ToDto(game);
     }
 }
