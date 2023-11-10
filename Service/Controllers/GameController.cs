@@ -7,7 +7,7 @@ using Pika.Service.Dto;
 namespace Pika.Service.Controllers;
 
 [ApiController]
-[Route("api/game")]
+[Route("game")]
 public class GameController : ControllerBase
 {
     private readonly IGameRepo _gameDao;
