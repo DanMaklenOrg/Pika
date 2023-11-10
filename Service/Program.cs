@@ -29,6 +29,8 @@ app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().All
 app.UseHealthChecks("/health");
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseRouting();
 app.MapControllers();
 
 app.Run();
