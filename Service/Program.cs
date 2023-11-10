@@ -21,6 +21,7 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 builder.AddAnaAuth();
 
 WebApplication app = builder.Build();
+app.UsePathBase("/pika");
 
 // Middleware Pipeline
 app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
