@@ -22,15 +22,14 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 builder.AddAnaAuth();
 
 WebApplication app = builder.Build();
-app.UsePathBase("/pika");
 
-// Middleware Pipeline
+app.UsePathBase("/pika");
 app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseRouting();
+
 app.UseHealthChecks("/health");
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseRouting();
 app.MapControllers();
 
 app.Run();
