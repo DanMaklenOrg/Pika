@@ -5,7 +5,7 @@ namespace Pika.DataLayer.Model;
 public class GameDbModel : BaseDbModel
 {
     [JsonPropertyName("id")]
-    public Guid Id { get; init; } = Guid.NewGuid();
+    public string Id { get; init; } = default!;
 
     [JsonPropertyName("name")]
     public string Name { get; init; } = default!;

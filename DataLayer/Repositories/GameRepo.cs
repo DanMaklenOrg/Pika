@@ -24,18 +24,20 @@ public class GameRepo : IGameRepo
         await _db.PutItemAsync(request);
     }
 
-    public async Task<GameDbModel> Get(Guid id)
+    public async Task<GameDbModel?> Get(string id)
     {
         var request = new GetItemRequest
         {
             TableName = DynamoDbConstants.TableName,
             Key =
             {
-                { "pk", new AttributeValue($"Game#{id.ToString()}") },
+                { "pk", new AttributeValue($"Game#{id}") },
                 { "sk", new AttributeValue("Game") },
             }
         };
         var response = await _db.GetItemAsync(request);
+
+        if (!response.IsItemSet) return null;
         return BaseDbModel.Deserialize<GameDbModel>(response.Item);
     }
 

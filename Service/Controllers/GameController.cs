@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pika.DataLayer.Model;
@@ -10,34 +11,45 @@ namespace Pika.Service.Controllers;
 [Route("game")]
 public class GameController : ControllerBase
 {
-    private readonly IGameRepo _gameDao;
+    private static readonly Regex IdPattern = new("^[0-9a-z_]+$");
 
-    public GameController(IGameRepo gameDao)
+    private readonly IGameRepo _gameRepo;
+
+    public GameController(IGameRepo gameRepo)
     {
-        _gameDao = gameDao;
+        _gameRepo = gameRepo;
     }
 
     [HttpGet("{gameId}")]
-    public async Task<GameDto> Get(Guid gameId)
+    public async Task<GameDto> Get(string gameId)
     {
-        var game = await _gameDao.Get(gameId);
+        var game = await _gameRepo.Get(gameId);
+        if (game is null) throw new Exception("Game Not Found");
         return DtoMapper.ToDto(game);
-    ;}
+    }
 
 
     [HttpGet("all")]
-    public async Task<List<GameDto>> GetAll()
+    public async Task<List<GameSummaryDto>> GetAll()
     {
-        var allGames = await _gameDao.GetAll();
-        return allGames.ConvertAll(DtoMapper.ToDto);
+        var allGames = await _gameRepo.GetAll();
+        return allGames.ConvertAll(DtoMapper.ToSummaryDto);
     }
 
     [HttpPost]
     [Authorize]
-    public async Task<GameDto> Add(string name)
+    public async Task<GameSummaryDto> Add(string name, string id, string? version)
     {
-        var game = new GameDbModel { Name = name };
-        await _gameDao.Create(game);
-        return DtoMapper.ToDto(game);
+        if (!IdPattern.IsMatch(id)) throw new ArgumentException("Invalid Id Format", nameof(id));
+        // TODO: resolve race condition here
+        if (await _gameRepo.Get(id) != null) throw new Exception("Id already exist");
+        var game = new GameDbModel
+        {
+            Id = id,
+            Name = name,
+            Version = version ?? "0.0.0",
+        };
+        await _gameRepo.Create(game);
+        return DtoMapper.ToSummaryDto(game);
     }
 }
