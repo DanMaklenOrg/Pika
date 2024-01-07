@@ -6,7 +6,7 @@ public interface IGameRepo
 {
     Task Create(GameDbModel game);
 
-    Task<GameDbModel> Get(Guid id);
+    Task<GameDbModel?> Get(string id);
 
     Task<List<GameDbModel>> GetAll();
 }

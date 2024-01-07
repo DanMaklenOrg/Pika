@@ -15,7 +15,7 @@ public class PikaSchemaBuilder
 
     public async Task<GameSchema> BuildSchema(Guid gameId)
     {
-        var game = await _gameRepo.Get(gameId);
+        var game = await _gameRepo.Get(gameId.ToString());
         var achievements = await _achievementRepo.GetAll(gameId);
 
         return new GameSchema
