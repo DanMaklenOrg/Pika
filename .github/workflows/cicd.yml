@@ -37,4 +37,4 @@ jobs:
           dotnet-version: '8.0.x'
       - uses: actions/checkout@v3
       - run: dotnet tool install -g Amazon.Lambda.Tools
-      - run: dotnet lambda deploy-function Pika -pl Service -c Release --function-runtime dotnet6 --disable-interactive true
+      - run: dotnet lambda deploy-function Pika -pl Service -c Release --function-runtime dotnet8 --disable-interactive true
