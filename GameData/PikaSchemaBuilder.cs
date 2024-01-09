@@ -1,6 +1,6 @@
 using Pika.DataLayer.Repositories;
 
-namespace Pika.GameDataScrapper;
+namespace Pika.GameData;
 
 public class PikaSchemaBuilder
 {

@@ -1,4 +1,4 @@
-namespace Pika.GameDataScrapper.SchemaFetchers;
+namespace Pika.GameData.SchemaFetchers;
 
 public interface ISchemaFetcher
 {
