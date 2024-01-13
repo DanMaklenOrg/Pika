@@ -2,20 +2,25 @@ using HtmlAgilityPack;
 
 namespace Pika.GameData.Scrapper.MinecraftATM9;
 
-public class IronSpellsNSpellbooksScrapper
+public class IronSpellsNSpellbooksScrapper : IScrapper
 {
     private const string SubDomainId = "iron_spells_n_spellbooks.minecraft_atm9";
 
-    public async Task Scrape()
+    public async Task<Domain> Scrape()
     {
-        await ScrapeSpells();
+        var spells = await ScrapeSpells();
+        return new Domain
+        {
+            Id = SubDomainId,
+            Entities = spells,
+        };
     }
 
-    private static async Task ScrapeSpells()
+    private static async Task<List<Entity>> ScrapeSpells()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://iron431.github.io/Irons-Spellbooks-Docs/spells/");
         var spellNodes = doc.DocumentNode.SelectNodes("//div[@class='spell-container']");
-        var spells = spellNodes.Select(ParseSpell).ToList();
+        return spellNodes.Select(ParseSpell).ToList();
     }
 
     private static Entity ParseSpell(HtmlNode node)
@@ -37,12 +42,12 @@ public class IronSpellsNSpellbooksScrapper
 
         return new Entity
         {
-            Id = name,
+            Id = new ResourceId(IdUtilities.Normalize(name), SubDomainId),
             Name = name,
-            Stats = new List<PikaId>
+            Stats = new List<ResourceId>
             {
                 "_/owned",
-                new PikaId(SubDomainId, levelStat),
+                new ResourceId(levelStat, SubDomainId),
             }
         };
     }

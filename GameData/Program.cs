@@ -6,19 +6,22 @@ using Pika.DataLayer.Repositories;
 using Pika.GameData;
 using Pika.GameData.Planner;
 using Pika.GameData.SchemaFetchers;
+using Pika.GameData.Scrapper;
 using Pika.GameData.Scrapper.MinecraftATM9;
 
 var builder = CoconaApp.CreateBuilder(args);
 
-builder.Services.AddTransient<MinecraftAtm9Scrapper>();
-builder.Services.AddTransient<IronSpellsNSpellbooksScrapper>();
+builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
 
 var app = builder.Build();
 
-app.AddCommand("scrape", async (MinecraftAtm9Scrapper scrapper) =>
+app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers) =>
 {
-    await scrapper.Scrape();
-    Console.WriteLine("");
+    foreach (var s in scrappers)
+    {
+        var domain = await s.Scrape();
+
+    }
 });
 
 app.AddCommand("daveTheDiver", async () =>
