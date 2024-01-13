@@ -1,6 +1,5 @@
-id: iron_spells_n_spellbooks
+id: iron_spells_n_spellbooks.minecraft_atm9
 name: "Iron's Spells 'n Spellbooks"
-parentDomain: minecraft_atm9
 stats:
   - id: level10
     name: Level

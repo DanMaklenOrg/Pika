@@ -1,10 +1,13 @@
 using HtmlAgilityPack;
+using Pika.Model;
 
 namespace Pika.GameData.Scrapper.MinecraftATM9;
 
 public class IronSpellsNSpellbooksScrapper : IScrapper
 {
     private const string SubDomainId = "iron_spells_n_spellbooks.minecraft_atm9";
+
+    public string OutputFilePath => "MinecraftATM9/iron_spells_n_spellbooks.scraped";
 
     public async Task<Domain> Scrape()
     {
@@ -18,7 +21,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 
     private static async Task<List<Entity>> ScrapeSpells()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron431.github.io/Irons-Spellbooks-Docs/spells/");
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/spells/");
         var spellNodes = doc.DocumentNode.SelectNodes("//div[@class='spell-container']");
         return spellNodes.Select(ParseSpell).ToList();
     }

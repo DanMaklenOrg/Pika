@@ -1,4 +1,4 @@
-﻿namespace Pika;
+﻿namespace Pika.Model;
 
 public readonly struct Entity
 {

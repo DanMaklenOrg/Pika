@@ -2,6 +2,7 @@
 using Amazon.DynamoDBv2;
 using Cocona;
 using Microsoft.Extensions.DependencyInjection;
+using Pika.Converter;
 using Pika.DataLayer.Repositories;
 using Pika.GameData;
 using Pika.GameData.Planner;
@@ -20,7 +21,10 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers) =>
     foreach (var s in scrappers)
     {
         var domain = await s.Scrape();
-
+        var converter = new PikaConverter();
+        TextWriter stream = new StreamWriter($"Domains/{s.OutputFilePath}.yaml");
+        converter.Write(domain, stream);
+        await stream.FlushAsync();
     }
 });
 
