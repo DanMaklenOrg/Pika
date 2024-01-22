@@ -28,17 +28,7 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter 
     }
 });
 
-app.AddCommand("sync", (PikaConverter converter) =>
-{
-    foreach (var file in Directory.EnumerateFiles("Domains/", "*.yaml", SearchOption.AllDirectories))
-    {
-        Console.WriteLine(file);
-        TextReader stream = new StreamReader(file);
-        string domainId = Path.GetFileNameWithoutExtension(file).Replace(".scraped", string.Empty);
-        var domain = converter.Read(stream, domainId);
-        Console.WriteLine(domain.Name);
-    }
-});
+app.AddSyncCommand();
 
 app.AddCommand("daveTheDiver", async () =>
 {

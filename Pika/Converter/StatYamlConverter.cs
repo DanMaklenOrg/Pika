@@ -44,7 +44,7 @@ internal class StatYamlConverter : IYamlTypeConverter
             _ => throw new Exception("Unknown Stat Type"),
         };
 
-        var typeArgs = match.Groups[3].Value.Split(',');
+        var typeArgs = match.Groups[3].Value.Split(',', StringSplitOptions.TrimEntries);
         switch (stat.Type)
         {
             case StatType.IntegerRange:
