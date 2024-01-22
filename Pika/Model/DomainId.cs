@@ -1,9 +1,9 @@
 namespace Pika.Model;
 
-public readonly struct DomainId
+public struct DomainId
 {
-    public string Id { get; init; }
-    public List<string> SubDomainIds { get; init; }
+    public string Id { get; set; }
+    public List<string> SubDomainIds { get; set; }
     public string FullyQualifiedId => SubDomainIds.Count > 0 ? $"{string.Join('.', SubDomainIds)}.{Id}" : Id;
 
     public override string ToString() => FullyQualifiedId;

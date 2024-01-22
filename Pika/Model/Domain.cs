@@ -1,10 +1,10 @@
 namespace Pika.Model;
 
-public readonly struct Domain
+public struct Domain
 {
-    public DomainId Id { get; init; }
-    public string Name { get; init; }
-    public List<Stat> Stats { get; init; }
-    public List<Entity> Entities { get; init; }
-    private List<Domain> SubDomains { get; init; }
+    public DomainId Id { get; set; }
+    public string Name { get; set; }
+    public List<Stat> Stats { get; set; }
+    public List<Entity> Entities { get; set; }
+    private List<Domain> SubDomains { get; set; }
 }

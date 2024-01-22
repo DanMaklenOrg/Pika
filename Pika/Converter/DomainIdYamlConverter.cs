@@ -11,7 +11,8 @@ public class DomainIdYamlConverter : IYamlTypeConverter
 
     public object? ReadYaml(IParser parser, Type type)
     {
-        throw new NotImplementedException();
+        var idNode = parser.Consume<Scalar>();
+        return DomainId.ParseDomainId(idNode.Value);
     }
 
     public void WriteYaml(IEmitter emitter, object? value, Type type)

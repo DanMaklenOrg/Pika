@@ -13,18 +13,30 @@ using Pika.GameData.Scrapper.MinecraftATM9;
 var builder = CoconaApp.CreateBuilder(args);
 
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
+builder.Services.AddTransient<PikaConverter>();
 
 var app = builder.Build();
 
-app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers) =>
+app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter converter) =>
 {
     foreach (var s in scrappers)
     {
         var domain = await s.Scrape();
-        var converter = new PikaConverter();
         TextWriter stream = new StreamWriter($"Domains/{s.OutputFilePath}.yaml");
         converter.Write(domain, stream);
         await stream.FlushAsync();
+    }
+});
+
+app.AddCommand("sync", (PikaConverter converter) =>
+{
+    foreach (var file in Directory.EnumerateFiles("Domains/", "*.yaml", SearchOption.AllDirectories))
+    {
+        Console.WriteLine(file);
+        TextReader stream = new StreamReader(file);
+        string domainId = Path.GetFileNameWithoutExtension(file).Replace(".scraped", string.Empty);
+        var domain = converter.Read(stream, domainId);
+        Console.WriteLine(domain.Name);
     }
 });
 

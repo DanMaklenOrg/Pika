@@ -1,12 +1,12 @@
 namespace Pika.Model;
 
-public readonly struct Stat
+public struct Stat
 {
-    public ResourceId Id { get; init; }
-    public string Name { get; init; }
-    public StatType Type { get; init; }
-    public int? Min { get; init; }
-    public int? Max { get; init; }
+    public ResourceId Id { get; set; }
+    public string Name { get; set; }
+    public StatType Type { get; set; }
+    public int? Min { get; set; }
+    public int? Max { get; set; }
 }
 
 public enum StatType

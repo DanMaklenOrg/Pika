@@ -18,7 +18,8 @@ public class ResourceIdYamlConverter : IYamlTypeConverter
 
     public object? ReadYaml(IParser parser, Type type)
     {
-        throw new NotImplementedException();
+        var node = parser.Consume<Scalar>();
+        return ResourceId.ParseResourceId(node.Value, _scope);
     }
 
     public void WriteYaml(IEmitter emitter, object? value, Type type)
