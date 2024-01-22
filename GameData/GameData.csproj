@@ -5,15 +5,18 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Pika.GameDataScrapper</RootNamespace>
+        <RootNamespace>Pika.GameData</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Cocona" Version="2.2.0" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.57" />
       <PackageReference Include="SteamWebAPI2" Version="4.4.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+      <ProjectReference Include="..\Pika\Pika.csproj" />
     </ItemGroup>
 
 </Project>

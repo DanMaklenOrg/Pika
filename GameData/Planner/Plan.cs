@@ -1,6 +1,6 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.GameDataScrapper.Planner;
+namespace Pika.GameData.Planner;
 
 public struct Plan
 {

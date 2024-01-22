@@ -1,6 +1,6 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.GameDataScrapper;
+namespace Pika.GameData;
 
 public class GameSchema
 {
