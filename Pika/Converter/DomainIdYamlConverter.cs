@@ -5,7 +5,7 @@ using YamlDotNet.Serialization;
 
 namespace Pika.Converter;
 
-public class DomainIdYamlConverter : IYamlTypeConverter
+internal class DomainIdYamlConverter : IYamlTypeConverter
 {
     public bool Accepts(Type type) => type == typeof(DomainId);
 

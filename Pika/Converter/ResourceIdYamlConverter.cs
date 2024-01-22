@@ -5,7 +5,7 @@ using YamlDotNet.Serialization;
 
 namespace Pika.Converter;
 
-public class ResourceIdYamlConverter : IYamlTypeConverter
+internal class ResourceIdYamlConverter : IYamlTypeConverter
 {
     private readonly DomainId _scope;
 

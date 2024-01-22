@@ -3,8 +3,9 @@ namespace Pika.Model;
 public struct DomainId
 {
     public string Id { get; set; }
-    public List<string> SubDomainIds { get; set; }
-    public string FullyQualifiedId => SubDomainIds.Count > 0 ? $"{string.Join('.', SubDomainIds)}.{Id}" : Id;
+    public string? SubDomainId { get; set; }
+    public bool IsSubDomainId => !string.IsNullOrWhiteSpace(SubDomainId);
+    public string FullyQualifiedId => IsSubDomainId ? $"{SubDomainId}.{Id}" : Id;
 
     public override string ToString() => FullyQualifiedId;
 
@@ -16,7 +17,7 @@ public struct DomainId
         return new DomainId
         {
             Id = segments.Last(),
-            SubDomainIds = segments.SkipLast(1).ToList(),
+            SubDomainId = string.Join('.', segments.SkipLast(1)),
         };
     }
 }

@@ -6,7 +6,7 @@ using YamlDotNet.Serialization;
 
 namespace Pika.Converter;
 
-public class StatYamlConverter : IYamlTypeConverter
+internal class StatYamlConverter : IYamlTypeConverter
 {
     private static readonly Regex StatTypePattern = new Regex(@"^([A-Z_]+)(\((.*)\))?$");
 

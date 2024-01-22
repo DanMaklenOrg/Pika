@@ -4,7 +4,9 @@ namespace Pika.GameData.Scrapper;
 
 public interface IScrapper
 {
-    string OutputFilePath { get; }
+    DomainId DomainId { get; }
+
+    string OutputDirectory { get; }
 
     Task<Domain> Scrape();
 }

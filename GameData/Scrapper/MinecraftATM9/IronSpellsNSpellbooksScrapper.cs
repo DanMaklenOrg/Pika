@@ -5,28 +5,28 @@ namespace Pika.GameData.Scrapper.MinecraftATM9;
 
 public class IronSpellsNSpellbooksScrapper : IScrapper
 {
-    private const string SubDomainId = "iron_spells_n_spellbooks.minecraft_atm9";
+    public DomainId DomainId => "iron_spells_n_spellbooks.minecraft_atm9";
 
-    public string OutputFilePath => "MinecraftATM9/iron_spells_n_spellbooks.scraped";
+    public string OutputDirectory => $"MinecraftATM9";
 
     public async Task<Domain> Scrape()
     {
         var spells = await ScrapeSpells();
         return new Domain
         {
-            Id = SubDomainId,
+            Id = DomainId,
             Entities = spells,
         };
     }
 
-    private static async Task<List<Entity>> ScrapeSpells()
+    private async Task<List<Entity>> ScrapeSpells()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/spells/");
         var spellNodes = doc.DocumentNode.SelectNodes("//div[@class='spell-container']");
-        return spellNodes.Select(ParseSpell).ToList();
+        return spellNodes.Select(this.ParseSpell).ToList();
     }
 
-    private static Entity ParseSpell(HtmlNode node)
+    private Entity ParseSpell(HtmlNode node)
     {
         var name = node.SelectSingleNode("div[@class='spell-header']").InnerText;
 
@@ -45,12 +45,12 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), SubDomainId),
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {
                 "_/owned",
-                new ResourceId(levelStat, SubDomainId),
+                new ResourceId(levelStat, DomainId),
             }
         };
     }
