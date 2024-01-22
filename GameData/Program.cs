@@ -28,6 +28,8 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter 
     }
 });
 
+app.AddSyncCommand();
+
 app.AddCommand("daveTheDiver", async () =>
 {
     IAmazonDynamoDB db = new AmazonDynamoDBClient();
