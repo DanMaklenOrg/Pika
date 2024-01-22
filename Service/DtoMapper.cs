@@ -22,28 +22,6 @@ public static class DtoMapper
             Id = model.Id,
             Name = model.Name,
             Version = model.Version,
-            Entities = Enumerable.Range(0, 100).Select(i => new EntityDto
-            {
-                Id = $"entity{i}",
-                Name = $"e{i}",
-                Stats = new List<EntityStatsDto>
-                {
-                    new()
-                    {
-                        Id = "stat1",
-                        Name = "Boolean Stat",
-                        Type = StatTypeEnumDto.Boolean,
-                    },
-                    new()
-                    {
-                        Id = "stat2",
-                        Name = "Integer Range Stat",
-                        Type = StatTypeEnumDto.IntegerRange,
-                        Min = 0,
-                        Max = 10,
-                    },
-                }
-            }).ToList(),
         };
     }
 }
