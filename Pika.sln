@@ -16,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{0CCB514B-D577-49B4-B1C3-B2A6E31E62A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDataScrapper", "GameDataScrapper\GameDataScrapper.csproj", "{E4CED8BF-F9DE-473A-B1E4-FDA278591654}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameData", "GameData\GameData.csproj", "{E4CED8BF-F9DE-473A-B1E4-FDA278591654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pika", "Pika\Pika.csproj", "{D051FD9B-5699-4353-8530-198AC48F1ECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{E4CED8BF-F9DE-473A-B1E4-FDA278591654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4CED8BF-F9DE-473A-B1E4-FDA278591654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4CED8BF-F9DE-473A-B1E4-FDA278591654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E75A36D7-0827-4464-AC23-C20E1DA63178} = {F3C36DEF-9724-46C6-85BC-D638842D15C1}

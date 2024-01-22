@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pika.DataLayer.Model;
@@ -11,8 +10,6 @@ namespace Pika.Service.Controllers;
 [Route("game")]
 public class GameController : ControllerBase
 {
-    private static readonly Regex IdPattern = new("^[0-9a-z_]+$");
-
     private readonly IGameRepo _gameRepo;
 
     public GameController(IGameRepo gameRepo)
@@ -40,7 +37,7 @@ public class GameController : ControllerBase
     [Authorize]
     public async Task<GameSummaryDto> Add(string name, string id, string? version)
     {
-        if (!IdPattern.IsMatch(id)) throw new ArgumentException("Invalid Id Format", nameof(id));
+        if (IdUtilities.IsValidId(id)) throw new ArgumentException("Invalid Id Format", nameof(id));
         // TODO: resolve race condition here
         if (await _gameRepo.Get(id) != null) throw new Exception("Id already exist");
         var game = new GameDbModel

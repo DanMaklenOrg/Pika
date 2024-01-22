@@ -1,6 +1,6 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.GameDataScrapper.SchemaFetchers;
+namespace Pika.GameData.SchemaFetchers;
 
 public class DaveTheDiverSchemaFetcher : ISchemaFetcher
 {

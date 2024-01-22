@@ -1,0 +1,6 @@
+id: _
+name: Base
+stats:
+  - id: owned
+    name: Owned
+    type: BOOLEAN
