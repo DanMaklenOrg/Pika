@@ -7,8 +7,8 @@ public class AchievementDbModel : BaseDbModel
     [JsonPropertyName("id")]
     public Guid Id { get; init; } = Guid.NewGuid();
 
-    [JsonPropertyName("gameId")]
-    public Guid GameId { get; init; }
+    [JsonPropertyName("domainId")]
+    public Guid DomainId { get; init; }
 
     [JsonPropertyName("name")]
     public string Name { get; init; } = default!;
@@ -18,7 +18,7 @@ public class AchievementDbModel : BaseDbModel
 
     public override void SetKeys()
     {
-        PartitionKey = $"Game#{GameId}";
+        PartitionKey = $"Domain#{DomainId}";
         SortKey = $"Achievement#{Id}";
     }
 }

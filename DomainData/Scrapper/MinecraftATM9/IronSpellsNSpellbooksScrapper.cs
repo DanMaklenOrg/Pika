@@ -1,7 +1,7 @@
 using HtmlAgilityPack;
 using Pika.Model;
 
-namespace Pika.GameData.Scrapper.MinecraftATM9;
+namespace Pika.DomainData.Scrapper.MinecraftATM9;
 
 public class IronSpellsNSpellbooksScrapper : IScrapper
 {

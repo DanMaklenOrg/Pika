@@ -24,7 +24,7 @@ public class AchievementRepo : IAchievementRepo
         await _db.PutItemAsync(request);
     }
 
-    public async Task<List<AchievementDbModel>> GetAll(Guid gameId)
+    public async Task<List<AchievementDbModel>> GetAll(Guid domainId)
     {
         var request = new QueryRequest
         {
@@ -32,7 +32,7 @@ public class AchievementRepo : IAchievementRepo
             KeyConditionExpression = "pk = :pkVal and begins_with(sk, :skPrefix)",
             ExpressionAttributeValues = new Dictionary<string, AttributeValue>
             {
-                { ":pkVal", new AttributeValue($"Game#{gameId}") },
+                { ":pkVal", new AttributeValue($"Domain#{domainId}") },
                 { ":skPrefix", new AttributeValue("Achievement#") },
             },
         };

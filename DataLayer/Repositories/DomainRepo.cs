@@ -4,18 +4,18 @@ using Pika.DataLayer.Model;
 
 namespace Pika.DataLayer.Repositories;
 
-public class GameRepo : IGameRepo
+public class DomainRepo : IDomainRepo
 {
     private readonly IAmazonDynamoDB _db;
 
-    public GameRepo(IAmazonDynamoDB db)
+    public DomainRepo(IAmazonDynamoDB db)
     {
         _db = db;
     }
 
-    public async Task Create(GameDbModel game)
+    public async Task Create(DomainDbModel domain)
     {
-        var serializedItem = BaseDbModel.SetKeysAndSerialize(game);
+        var serializedItem = BaseDbModel.SetKeysAndSerialize(domain);
         var request = new PutItemRequest
         {
             TableName = DynamoDbConstants.TableName,
@@ -24,24 +24,24 @@ public class GameRepo : IGameRepo
         await _db.PutItemAsync(request);
     }
 
-    public async Task<GameDbModel?> Get(string id)
+    public async Task<DomainDbModel?> Get(string id)
     {
         var request = new GetItemRequest
         {
             TableName = DynamoDbConstants.TableName,
             Key =
             {
-                { "pk", new AttributeValue($"Game#{id}") },
-                { "sk", new AttributeValue("Game") },
+                { "pk", new AttributeValue($"Domain#{id}") },
+                { "sk", new AttributeValue("Domain") },
             }
         };
         var response = await _db.GetItemAsync(request);
 
         if (!response.IsItemSet) return null;
-        return BaseDbModel.Deserialize<GameDbModel>(response.Item);
+        return BaseDbModel.Deserialize<DomainDbModel>(response.Item);
     }
 
-    public async Task<List<GameDbModel>> GetAll()
+    public async Task<List<DomainDbModel>> GetAll()
     {
         var request = new QueryRequest
         {
@@ -49,11 +49,11 @@ public class GameRepo : IGameRepo
             KeyConditionExpression = "sk = :skValue",
             ExpressionAttributeValues = new Dictionary<string, AttributeValue>
             {
-                { ":skValue", new AttributeValue("Game") },
+                { ":skValue", new AttributeValue("Domain") },
             },
             IndexName = DynamoDbConstants.SkPkIndex,
         };
         var response = await _db.QueryAsync(request);
-        return response.Items.ConvertAll(BaseDbModel.Deserialize<GameDbModel>);
+        return response.Items.ConvertAll(BaseDbModel.Deserialize<DomainDbModel>);
     }
 }

@@ -4,11 +4,11 @@ using Cocona;
 using Microsoft.Extensions.DependencyInjection;
 using Pika.Converter;
 using Pika.DataLayer.Repositories;
-using Pika.GameData;
-using Pika.GameData.Planner;
-using Pika.GameData.SchemaFetchers;
-using Pika.GameData.Scrapper;
-using Pika.GameData.Scrapper.MinecraftATM9;
+using Pika.DomainData;
+using Pika.DomainData.Planner;
+using Pika.DomainData.SchemaFetchers;
+using Pika.DomainData.Scrapper;
+using Pika.DomainData.Scrapper.MinecraftATM9;
 
 var builder = CoconaApp.CreateBuilder(args);
 
@@ -33,7 +33,7 @@ app.AddSyncCommand();
 app.AddCommand("daveTheDiver", async () =>
 {
     IAmazonDynamoDB db = new AmazonDynamoDBClient();
-    var gameRepo = new GameRepo(db);
+    var gameRepo = new DomainRepo(db);
     var achievementRepo = new AchievementRepo(db);
     var pikaSchemaBuilder = new PikaSchemaBuilder(gameRepo, achievementRepo);
     var steamClient = new SteamClient();

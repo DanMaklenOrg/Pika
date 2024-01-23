@@ -1,6 +1,6 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.GameData.SchemaFetchers;
+namespace Pika.DomainData.SchemaFetchers;
 
 public class DaveTheDiverSchemaFetcher : ISchemaFetcher
 {
@@ -27,7 +27,7 @@ public class DaveTheDiverSchemaFetcher : ISchemaFetcher
         var achievements = await _steamClient.GetAchievements(AppId);
         return achievements.Select(a => new AchievementDbModel
         {
-            GameId = pikaGameId,
+            DomainId = pikaGameId,
             Name = a.DisplayName,
             SourceId = a.Name,
         }).ToList();

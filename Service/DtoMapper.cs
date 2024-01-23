@@ -5,9 +5,9 @@ namespace Pika.Service;
 
 public static class DtoMapper
 {
-    public static GameSummaryDto ToSummaryDto(GameDbModel model)
+    public static DomainSummaryDto ToSummaryDto(DomainDbModel model)
     {
-        return new GameSummaryDto
+        return new DomainSummaryDto
         {
             Id = model.Id,
             Name = model.Name,
@@ -15,9 +15,9 @@ public static class DtoMapper
         };
     }
 
-    public static GameDto ToDto(GameDbModel model)
+    public static DomainDto ToDto(DomainDbModel model)
     {
-        return new GameDto
+        return new DomainDto
         {
             Id = model.Id,
             Name = model.Name,

@@ -1,6 +1,6 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.GameData;
+namespace Pika.DomainData;
 
 public class GameSchema
 {

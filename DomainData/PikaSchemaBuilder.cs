@@ -1,21 +1,21 @@
 using Pika.DataLayer.Repositories;
 
-namespace Pika.GameData;
+namespace Pika.DomainData;
 
 public class PikaSchemaBuilder
 {
-    private readonly IGameRepo _gameRepo;
+    private readonly IDomainRepo _domainRepo;
     private readonly IAchievementRepo _achievementRepo;
 
-    public PikaSchemaBuilder(IGameRepo gameRepo, IAchievementRepo achievementRepo)
+    public PikaSchemaBuilder(IDomainRepo domainRepo, IAchievementRepo achievementRepo)
     {
-        _gameRepo = gameRepo;
+        _domainRepo = domainRepo;
         _achievementRepo = achievementRepo;
     }
 
     public async Task<GameSchema> BuildSchema(Guid gameId)
     {
-        var game = await _gameRepo.Get(gameId.ToString());
+        var game = await _domainRepo.Get(gameId.ToString());
         var achievements = await _achievementRepo.GetAll(gameId);
 
         return new GameSchema

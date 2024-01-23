@@ -1,4 +1,4 @@
-namespace Pika.GameData.Planner;
+namespace Pika.DomainData.Planner;
 
 public class PlanManager
 {
