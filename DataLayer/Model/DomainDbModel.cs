@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Pika.DataLayer.Model;
 
-public class GameDbModel : BaseDbModel
+public class DomainDbModel : BaseDbModel
 {
     [JsonPropertyName("id")]
     public string Id { get; init; } = default!;
@@ -15,7 +15,7 @@ public class GameDbModel : BaseDbModel
 
     public override void SetKeys()
     {
-        PartitionKey = $"Game#{Id}";
-        SortKey = "Game";
+        PartitionKey = $"Domain#{Id}";
+        SortKey = "Domain";
     }
 }

@@ -2,7 +2,7 @@ using Steam.Models;
 using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
 
-namespace Pika.GameData;
+namespace Pika.DomainData;
 
 public class SteamClient
 {

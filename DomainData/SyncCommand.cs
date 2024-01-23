@@ -2,7 +2,7 @@ using Cocona;
 using Pika.Converter;
 using Pika.Model;
 
-namespace Pika.GameData;
+namespace Pika.DomainData;
 
 public static class SyncCommand
 {

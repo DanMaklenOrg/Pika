@@ -5,5 +5,5 @@ namespace Pika.DataLayer.Repositories;
 public interface IAchievementRepo
 {
     public Task Create(AchievementDbModel achievement);
-    public Task<List<AchievementDbModel>> GetAll(Guid gameId);
+    public Task<List<AchievementDbModel>> GetAll(Guid domainId);
 }

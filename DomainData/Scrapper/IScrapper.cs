@@ -1,6 +1,6 @@
 using Pika.Model;
 
-namespace Pika.GameData.Scrapper;
+namespace Pika.DomainData.Scrapper;
 
 public interface IScrapper
 {
