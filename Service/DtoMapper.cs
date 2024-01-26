@@ -20,7 +20,9 @@ public static class DtoMapper
         {
             Id = model.Id.FullyQualifiedId,
             Name = model.Name,
-            Version = model.Version,
+            SubDomains = model.SubDomains.ConvertAll(ToDto),
+            Entities = model.Entities.ConvertAll(ToDto),
+            Stats = model.Stats.ConvertAll(ToDto),
         };
     }
 
