@@ -1,6 +1,7 @@
 using Cocona;
 using Pika.Converter;
 using Pika.Model;
+using Pika.Repository;
 
 namespace Pika.DomainData;
 
@@ -11,11 +12,15 @@ public static class SyncCommand
         app.AddCommand("sync", Sync);
     }
 
-    private static void Sync(PikaConverter converter)
+    private static async Task Sync(PikaConverter converter, IDomainRepo domainRepo)
     {
         var fileDomains = ReadAllDomains(converter);
         var subDomains = MergeScrappedDomains(fileDomains);
         var domains = MergeSubDomains(subDomains);
+        foreach (var domain in domains)
+        {
+            await domainRepo.Create(domain);
+        }
     }
 
     private static List<Domain> ReadAllDomains(PikaConverter converter)
