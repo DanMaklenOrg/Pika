@@ -75,4 +75,46 @@ public static class DbModelMapper
             Max = stat.Max,
         };
     }
+
+    public static UserStatsDbModel ToDbModel(UserStats userStats)
+    {
+        return new UserStatsDbModel
+        {
+            UserId = userStats.UserId,
+            DomainId = userStats.DomainId.FullyQualifiedId,
+            EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
+        };
+    }
+
+    private static UserEntityStatDbModel ToDbModel(UserEntityStat userEntityStat)
+    {
+        return new UserEntityStatDbModel
+        {
+            EntityId = userEntityStat.EntityId.FullyQualifiedId,
+            StatId = userEntityStat.StatId.FullyQualifiedId,
+            Value = userEntityStat.Value,
+        };
+    }
+
+    [return: NotNullIfNotNull("userStat")]
+    public static UserStats? FromDbModel(UserStatsDbModel? userStat)
+    {
+        if (userStat is null) return null;
+        return new UserStats
+        {
+            UserId =userStat.UserId,
+            DomainId = userStat.DomainId,
+            EntityStats = userStat.EntityStats.ConvertAll(FromDbModel),
+        };
+    }
+
+    private static UserEntityStat FromDbModel(UserEntityStatDbModel userEntityStatDbModel)
+    {
+        return new UserEntityStat
+        {
+            EntityId = userEntityStatDbModel.EntityId,
+            StatId = userEntityStatDbModel.StatId,
+            Value = userEntityStatDbModel.Value,
+        };
+    }
 }
