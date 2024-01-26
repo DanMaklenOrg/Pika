@@ -52,4 +52,42 @@ public static class DtoMapper
             Max = model.Max,
         };
     }
+
+    public static UserStatsDto ToDto(UserStats userStats)
+    {
+        return new UserStatsDto
+        {
+            EntityStats = userStats.EntityStats.ConvertAll(ToDto),
+        };
+    }
+
+    private static UserEntityStatDto ToDto(UserEntityStat entityStat)
+    {
+        return new UserEntityStatDto
+        {
+            EntityId = entityStat.EntityId.FullyQualifiedId,
+            StatId = entityStat.StatId.FullyQualifiedId,
+            Value = entityStat.Value,
+        };
+    }
+
+    public static UserStats FromDto(UserStatsDto statsDto, string userId, string domainId)
+    {
+        return new UserStats
+        {
+            UserId = userId,
+            DomainId = domainId,
+            EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
+        };
+    }
+
+    private static UserEntityStat FromDbModel(UserEntityStatDto entityStatDto)
+    {
+        return new UserEntityStat
+        {
+            EntityId = entityStatDto.EntityId,
+            StatId = entityStatDto.StatId,
+            Value = entityStatDto.Value,
+        };
+    }
 }

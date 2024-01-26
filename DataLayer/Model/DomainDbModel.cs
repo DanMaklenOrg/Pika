@@ -25,3 +25,33 @@ public class DomainDbModel : BaseDbModel
         SortKey = "Domain";
     }
 }
+
+public class EntityDbModel
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; } = default!;
+
+    [JsonPropertyName("name")]
+    public string Name { get; init; } = default!;
+
+    [JsonPropertyName("stats")]
+    public List<string> Stats { get; init; } = new();
+}
+
+public class StatDbModel
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; } = default!;
+
+    [JsonPropertyName("name")]
+    public string Name { get; init; } = default!;
+
+    [JsonPropertyName("type")]
+    public string Type { get; init; } = default!;
+
+    [JsonPropertyName("min")]
+    public int? Min { get; init; }
+
+    [JsonPropertyName("max")]
+    public int? Max { get; init; }
+}

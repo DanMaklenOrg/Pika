@@ -13,6 +13,8 @@ builder.Configuration.AddSystemsManager("/pika");
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IDomainDao, DomainDao>();
 builder.Services.AddTransient<IDomainRepo, DomainRepo>();
+builder.Services.AddTransient<IUserStatsRepo, UserStatsRepo>();
+builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 
 // APIs
 builder.Services.AddControllers();
