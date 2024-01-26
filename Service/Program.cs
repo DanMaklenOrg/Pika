@@ -1,5 +1,7 @@
 using Amazon.DynamoDBv2;
-using Pika.DataLayer.Repositories;
+using Pika.DataLayer.Dao;
+using Pika.DataLayer.Repository;
+using Pika.Repository;
 using Pika.Service;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,7 @@ builder.Configuration.AddSystemsManager("/pika");
 
 // DB
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
+builder.Services.AddTransient<IDomainDao, DomainDao>();
 builder.Services.AddTransient<IDomainRepo, DomainRepo>();
 
 // APIs

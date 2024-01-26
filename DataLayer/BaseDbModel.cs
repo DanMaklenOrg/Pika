@@ -13,7 +13,7 @@ public abstract class BaseDbModel
     [JsonPropertyName("sk")]
     public string SortKey { get; set; } = string.Empty;
 
-    public abstract void SetKeys();
+    protected abstract void SetKeys();
 
     public static Dictionary<string, AttributeValue> SetKeysAndSerialize<T>(T item)
         where T : BaseDbModel

@@ -9,7 +9,4 @@ public readonly struct DomainSummaryDto
 
     [JsonPropertyName("name")]
     public string Name { get; init; }
-
-    [JsonPropertyName("version")]
-    public string Version { get; init; }
 }

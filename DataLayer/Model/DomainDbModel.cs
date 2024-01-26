@@ -10,10 +10,16 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("name")]
     public string Name { get; init; } = default!;
 
-    [JsonPropertyName("version")]
-    public string Version { get; init; } = default!;
+    [JsonPropertyName("stats")]
+    public List<StatDbModel> Stats { get; init; } = new();
 
-    public override void SetKeys()
+    [JsonPropertyName("entries")]
+    public List<EntityDbModel> Entities { get; init; } = new();
+
+    [JsonPropertyName("subDomains")]
+    public List<DomainDbModel> SubDomains { get; init; } = new();
+
+    protected override void SetKeys()
     {
         PartitionKey = $"Domain#{Id}";
         SortKey = "Domain";

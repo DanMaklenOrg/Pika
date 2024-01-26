@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Pika.DataLayer.Dao;
 using Pika.DataLayer.Model;
-using Pika.DataLayer.Repositories;
+using Pika.Repository;
 using Pika.Service.Dto;
 
 namespace Pika.Service.Controllers;
@@ -31,22 +32,5 @@ public class DomainController : ControllerBase
     {
         var allDomains = await _domainRepo.GetAll();
         return allDomains.ConvertAll(DtoMapper.ToSummaryDto);
-    }
-
-    [HttpPost]
-    [Authorize]
-    public async Task<DomainSummaryDto> Add(string name, string id, string? version)
-    {
-        if (IdUtilities.IsValidId(id)) throw new ArgumentException("Invalid Id Format", nameof(id));
-        // TODO: resolve race condition here
-        if (await _domainRepo.Get(id) != null) throw new Exception("Id already exist");
-        var domain = new DomainDbModel
-        {
-            Id = id,
-            Name = name,
-            Version = version ?? "0.0.0",
-        };
-        await _domainRepo.Create(domain);
-        return DtoMapper.ToSummaryDto(domain);
     }
 }

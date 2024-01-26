@@ -10,8 +10,11 @@ public readonly struct DomainDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonPropertyName("version")]
-    public string Version { get; init; }
+    [JsonPropertyName("sub_domains")]
+    public List<DomainDto> SubDomains { get; init; }
+
+    [JsonPropertyName("stats")]
+    public List<StatDto> Stats { get; init; }
 
     [JsonPropertyName("entities")]
     public List<EntityDto> Entities { get; init; }
@@ -26,10 +29,10 @@ public readonly struct EntityDto
     public string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<EntityStatsDto> Stats {get; init; }
+    public List<string> Stats {get; init; }
 }
 
-public readonly struct EntityStatsDto
+public readonly struct StatDto
 {
     [JsonPropertyName("id")]
     public string Id { get; init; }
@@ -50,6 +53,6 @@ public readonly struct EntityStatsDto
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum StatTypeEnumDto
 {
-    Boolean = 1,
-    IntegerRange = 2,
+    Boolean,
+    IntegerRange,
 }
