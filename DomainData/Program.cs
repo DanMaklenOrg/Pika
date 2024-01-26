@@ -1,14 +1,22 @@
-﻿using Cocona;
+﻿using Amazon.DynamoDBv2;
+using Cocona;
 using Microsoft.Extensions.DependencyInjection;
 using Pika.Converter;
+using Pika.DataLayer.Dao;
+using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.Scrapper;
 using Pika.DomainData.Scrapper.MinecraftATM9;
+using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
 
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
 builder.Services.AddTransient<PikaConverter>();
+
+builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
+builder.Services.AddTransient<IDomainRepo, DomainRepo>();
+builder.Services.AddTransient<IDomainDao, DomainDao>();
 
 var app = builder.Build();
 

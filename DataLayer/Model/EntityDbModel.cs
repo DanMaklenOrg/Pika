@@ -4,12 +4,12 @@ namespace Pika.DataLayer.Model;
 
 public class EntityDbModel
 {
-    [JsonPropertyName("subDomains")]
+    [JsonPropertyName("id")]
     public string Id { get; init; } = default!;
 
-    [JsonPropertyName("subDomains")]
+    [JsonPropertyName("name")]
     public string Name { get; init; } = default!;
 
-    [JsonPropertyName("subDomains")]
+    [JsonPropertyName("stats")]
     public List<string> Stats { get; init; } = new();
 }

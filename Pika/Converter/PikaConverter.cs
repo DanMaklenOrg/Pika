@@ -13,7 +13,7 @@ public class PikaConverter
             .WithTypeConverter(new DomainIdYamlConverter())
             .WithTypeConverter(new ResourceIdYamlConverter(scope))
             .WithTypeConverter(new StatYamlConverter(scope))
-            .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
+            .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitDefaults | DefaultValuesHandling.OmitNull | DefaultValuesHandling.OmitEmptyCollections)
             .WithIndentedSequences()
             .WithNamingConvention(CamelCaseNamingConvention.Instance)
             .Build().Serialize(textWriter, domain);
