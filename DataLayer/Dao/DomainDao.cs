@@ -2,13 +2,13 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Pika.DataLayer.Model;
 
-namespace Pika.DataLayer.Repositories;
+namespace Pika.DataLayer.Dao;
 
-public class DomainRepo : IDomainRepo
+public class DomainDao : IDomainDao
 {
     private readonly IAmazonDynamoDB _db;
 
-    public DomainRepo(IAmazonDynamoDB db)
+    public DomainDao(IAmazonDynamoDB db)
     {
         _db = db;
     }

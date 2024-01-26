@@ -1,8 +1,8 @@
 using Pika.DataLayer.Model;
 
-namespace Pika.DataLayer.Repositories;
+namespace Pika.DataLayer.Dao;
 
-public interface IDomainRepo
+public interface IDomainDao
 {
     Task Create(DomainDbModel domain);
 

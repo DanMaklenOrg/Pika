@@ -6,9 +6,9 @@ public record Domain
 
     public string Name { get; set; } = string.Empty;
 
-    public List<Stat> Stats { get; set; } = new List<Stat>();
+    public List<Stat> Stats { get; set; } = new();
 
-    public List<Entity> Entities { get; set; } = new List<Entity>();
+    public List<Entity> Entities { get; set; } = new();
 
-    public List<Domain> SubDomains { get; set; } = new List<Domain>();
+    public List<Domain> SubDomains { get; set; } = new();
 }
