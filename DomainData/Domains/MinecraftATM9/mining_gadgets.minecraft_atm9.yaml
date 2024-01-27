@@ -46,3 +46,7 @@ entities:
       - mine_area_upgrade
       - battery_upgrade
       - efficiency_upgrade
+  - id: modification_table
+    name: Modification Table
+    stats:
+      - _/owned
