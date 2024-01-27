@@ -120,6 +120,11 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
     private Entity ParseCurio(HtmlNode node)
     {
         var name = node.InnerText;
+        name = name switch
+        {
+            "Ring of No Affinity" => "Ring of Affinity",
+            _ => name,
+        };
         return new Entity
         {
             Id = new ResourceId(IdUtilities.Normalize(name), DomainId),

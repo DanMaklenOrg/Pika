@@ -650,8 +650,8 @@ entities:
     name: Ring of Mana
     stats:
       - _/owned
-  - id: ring_of_no_affinity
-    name: Ring of No Affinity
+  - id: ring_of_affinity
+    name: Ring of Affinity
     stats:
       - _/owned
   - id: ring_of_recovery

@@ -110,3 +110,7 @@ entities:
     stats:
       - minecraft_atm9/spawn_egg_collected
       - _/killed
+  - id: ring_of_invisibility
+    name: Ring of Invisibility
+    stats:
+      - _/owned
