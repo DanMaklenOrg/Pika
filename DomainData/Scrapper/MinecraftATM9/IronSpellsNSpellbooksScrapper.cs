@@ -13,6 +13,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
     {
         var entityList = new List<Entity>();
         entityList.AddRange(await ScrapeSpells());
+        entityList.AddRange(await ScrapeSpellbooks());
         return new Domain
         {
             Id = DomainId,
@@ -23,13 +24,22 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
     private async Task<List<Entity>> ScrapeSpellbooks()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/spellbooks/");
-        var spellNodes = doc.DocumentNode.SelectNodes("//div[@class='spell-container']");
-        return spellNodes.Select(this.ParseSpell).ToList();
+        var spellNodes = doc.DocumentNode.SelectNodes("//h3[@class='crafting-title']");
+        return spellNodes.Select(this.ParseSpellbook).ToList();
     }
 
     private Entity ParseSpellbook(HtmlNode node)
     {
-
+        var name = node.InnerText;
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/owned",
+            }
+        };
     }
 
     private async Task<List<Entity>> ScrapeSpells()

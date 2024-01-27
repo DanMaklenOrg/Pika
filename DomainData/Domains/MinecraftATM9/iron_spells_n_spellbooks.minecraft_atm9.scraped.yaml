@@ -80,7 +80,7 @@ entities:
     stats:
       - _/owned
       - level1
-  - id: dragon_s_breath
+  - id: dragons_breath
     name: Dragon's Breath
     stats:
       - _/owned
@@ -390,3 +390,59 @@ entities:
     stats:
       - _/owned
       - level8
+  - id: ancient_codex
+    name: Ancient Codex
+    stats:
+      - _/owned
+  - id: apprentices_spell_book
+    name: Apprentice's Spell Book
+    stats:
+      - _/owned
+  - id: blaze_instruction_manual
+    name: Blaze Instruction Manual
+    stats:
+      - _/owned
+  - id: decrepit_flamberge
+    name: Decrepit Flamberge
+    stats:
+      - _/owned
+  - id: dragonskin_spell_book
+    name: Dragonskin Spell Book
+    stats:
+      - _/owned
+  - id: druidic_tome
+    name: Druidic Tome
+    stats:
+      - _/owned
+  - id: enchanted_spell_book
+    name: Enchanted Spell Book
+    stats:
+      - _/owned
+  - id: flimsy_journal
+    name: Flimsy Journal
+    stats:
+      - _/owned
+  - id: grimoire_of_evokation
+    name: Grimoire of Evokation
+    stats:
+      - _/owned
+  - id: ironbound_tome
+    name: Ironbound Tome
+    stats:
+      - _/owned
+  - id: magehunter
+    name: Magehunter
+    stats:
+      - _/owned
+  - id: rotten_spell_book
+    name: Rotten Spell Book
+    stats:
+      - _/owned
+  - id: the_blood_staff
+    name: The Blood Staff
+    stats:
+      - _/owned
+  - id: villager_bible
+    name: Villager Bible
+    stats:
+      - _/owned

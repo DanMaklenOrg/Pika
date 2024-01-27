@@ -24,6 +24,7 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter 
 {
     foreach (var s in scrappers)
     {
+        Console.Write($"Scraping {s.DomainId}");
         var domain = await s.Scrape();
         TextWriter stream = new StreamWriter($"Domains/{s.OutputDirectory}/{s.DomainId}.scraped.yaml");
         converter.Write(domain, stream);
