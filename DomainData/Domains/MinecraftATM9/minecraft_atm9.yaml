@@ -1,2 +1,6 @@
 id: minecraft_atm9
 name: Minecraft - ATM9
+stats:
+  - id: spawn_egg_collected
+    name: Spawn Egg Collected
+    type: BOOLEAN

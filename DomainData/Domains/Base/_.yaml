@@ -7,3 +7,6 @@ stats:
   - id: explored
     name: Explored
     type: BOOLEAN
+  - id: killed
+    name: Killed/Defeated
+    type: BOOLEAN
