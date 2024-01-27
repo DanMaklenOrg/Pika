@@ -51,6 +51,10 @@ entities:
     name: Firefly Jar
     stats:
       - _/owned
+  - id: wayward_compass
+    name: Wayward Compass
+    stats:
+      - _/owned
   - id: mountain_tower
     name: Mountain Tower
     stats:
