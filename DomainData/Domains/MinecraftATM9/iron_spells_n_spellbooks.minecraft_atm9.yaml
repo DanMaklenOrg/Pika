@@ -178,3 +178,7 @@ entities:
     name: Ancient Knowledge
     stats:
       - _/achieved
+  - id: getting_the_hang_of_it
+    name: Getting the Hang of It
+    stats:
+      - _/achieved
