@@ -1,0 +1,12 @@
+id: tool_belt.minecraft_atm9
+name: "Tool Belt"
+stats:
+  - id: slot_upgrade
+    name: Slot Upgrade Installed
+    type: INTEGER_RANGE(0, 7)
+entities:
+  - id: tool_belt
+    name: Tool Belt
+    stats:
+      - _/owned
+      - slot_upgrade
