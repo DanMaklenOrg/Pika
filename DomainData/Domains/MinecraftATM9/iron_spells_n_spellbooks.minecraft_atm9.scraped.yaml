@@ -610,3 +610,55 @@ entities:
     name: Wandering Magician Shoes
     stats:
       - _/owned
+  - id: amethyst_resonance_charm
+    name: Amethyst Resonance Charm
+    stats:
+      - _/owned
+  - id: amulet_of_concentration
+    name: Amulet of Concentration
+    stats:
+      - _/owned
+  - id: conjurers_talisman
+    name: Conjurer's Talisman
+    stats:
+      - _/owned
+  - id: emerald_stoneplate_ring
+    name: Emerald Stoneplate Ring
+    stats:
+      - _/owned
+  - id: fireward_ring
+    name: Fireward Ring
+    stats:
+      - _/owned
+  - id: frostward_ring
+    name: Frostward Ring
+    stats:
+      - _/owned
+  - id: heavy_chain
+    name: Heavy Chain
+    stats:
+      - _/owned
+  - id: poisonward_ring
+    name: Poisonward Ring
+    stats:
+      - _/owned
+  - id: ring_of_expediency
+    name: Ring of Expediency
+    stats:
+      - _/owned
+  - id: ring_of_mana
+    name: Ring of Mana
+    stats:
+      - _/owned
+  - id: ring_of_no_affinity
+    name: Ring of No Affinity
+    stats:
+      - _/owned
+  - id: ring_of_recovery
+    name: Ring of Recovery
+    stats:
+      - _/owned
+  - id: silver_ring
+    name: Silver Ring
+    stats:
+      - _/owned
