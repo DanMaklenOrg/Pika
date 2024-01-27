@@ -4,3 +4,6 @@ stats:
   - id: owned
     name: Owned
     type: BOOLEAN
+  - id: explored
+    name: Explored
+    type: BOOLEAN

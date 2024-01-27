@@ -22,3 +22,52 @@ stats:
   - id: level1
     name: Level
     type: INTEGER_RANGE(1, 1)
+entities:
+  - id: alchemist_cauldron
+    name: Alchemist Cauldron
+    stats:
+      - _/owned
+  - id: arcane_anvil
+    name: Arcane Anvil
+    stats:
+      - _/owned
+  - id: alchemist_cauldron
+    name: Alchemist Cauldron
+    stats:
+      - _/owned
+  - id: inscription_table
+    name: Inscription Table
+    stats:
+      - _/owned
+  - id: scroll_forge
+    name: Scroll Forge
+    stats:
+      - _/owned
+  - id: pedestal # Cosmetic
+    name: Pedestal
+    stats:
+      - _/owned
+  - id: firefly_jar
+    name: Firefly Jar
+    stats:
+      - _/owned
+  - id: mountain_tower
+    name: Mountain Tower
+    stats:
+      - _/explored
+  - id: mangrove_hut
+    name: Mangrove Hut
+    stats:
+      - _/explored
+  - id: evoker_fort
+    name: Evoker Fort
+    stats:
+      - _/explored
+  - id: catacombs
+    name: The Catacombs
+    stats:
+      - _/explored
+  - id: ancient_battlegrounds
+    name: Ancient Battlegrounds
+    stats:
+      - _/explored

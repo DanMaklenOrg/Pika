@@ -80,8 +80,8 @@ entities:
     stats:
       - _/owned
       - level1
-  - id: dragon_breath
-    name: Dragon Breath
+  - id: dragon_s_breath
+    name: Dragon's Breath
     stats:
       - _/owned
       - level10
@@ -340,8 +340,8 @@ entities:
     stats:
       - _/owned
       - level10
-  - id: acid_orb
-    name: Acid Orb
+  - id: acid_spit
+    name: Acid Spit
     stats:
       - _/owned
       - level10

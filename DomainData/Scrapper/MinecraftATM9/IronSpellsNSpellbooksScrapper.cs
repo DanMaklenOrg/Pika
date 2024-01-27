@@ -11,12 +11,25 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 
     public async Task<Domain> Scrape()
     {
-        var spells = await ScrapeSpells();
+        var entityList = new List<Entity>();
+        entityList.AddRange(await ScrapeSpells());
         return new Domain
         {
             Id = DomainId,
-            Entities = spells,
+            Entities = entityList,
         };
+    }
+
+    private async Task<List<Entity>> ScrapeSpellbooks()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/spellbooks/");
+        var spellNodes = doc.DocumentNode.SelectNodes("//div[@class='spell-container']");
+        return spellNodes.Select(this.ParseSpell).ToList();
+    }
+
+    private Entity ParseSpellbook(HtmlNode node)
+    {
+
     }
 
     private async Task<List<Entity>> ScrapeSpells()
@@ -44,7 +57,13 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         };
 
         // Handle corner cases
-        if (name == "Poison Breath") name = "Poison Spray";
+        name = name switch
+        {
+            "Poison Breath" => "Poison Spray",
+            "Dragon Breath" => "Dragon's Breath",
+            "Acid Orb" => "Acid Spit",
+            _ => name,
+        };
 
         return new Entity
         {
