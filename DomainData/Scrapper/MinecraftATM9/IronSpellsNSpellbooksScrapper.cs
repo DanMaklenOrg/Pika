@@ -14,6 +14,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         var entityList = new List<Entity>();
         entityList.AddRange(await ScrapeSpells());
         entityList.AddRange(await ScrapeSpellbooks());
+        entityList.AddRange(await ScrapeArmor());
         return new Domain
         {
             Id = DomainId,
@@ -86,4 +87,26 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
             }
         };
     }
+
+    private async Task<List<Entity>> ScrapeArmor()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/armor/");
+        var spellNodes = doc.DocumentNode.SelectNodes("//h3[@class='crafting-title']");
+        return spellNodes.Select(this.ParseSpellbook).ToList();
+    }
+
+    private Entity ParseArmor(HtmlNode node)
+    {
+        var name = node.InnerText;
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/owned",
+            }
+        };
+    }
+
 }

@@ -446,3 +446,167 @@ entities:
     name: Villager Bible
     stats:
       - _/owned
+  - id: tarnished_crown
+    name: Tarnished Crown
+    stats:
+      - _/owned
+  - id: archevoker_boots
+    name: Archevoker Boots
+    stats:
+      - _/owned
+  - id: archevoker_coat
+    name: Archevoker Coat
+    stats:
+      - _/owned
+  - id: archevoker_hat
+    name: Archevoker Hat
+    stats:
+      - _/owned
+  - id: archevoker_leggings
+    name: Archevoker Leggings
+    stats:
+      - _/owned
+  - id: cryomancer_boots
+    name: Cryomancer Boots
+    stats:
+      - _/owned
+  - id: cryomancer_coat
+    name: Cryomancer Coat
+    stats:
+      - _/owned
+  - id: cryomancer_hood
+    name: Cryomancer Hood
+    stats:
+      - _/owned
+  - id: cryomancer_leggings
+    name: Cryomancer Leggings
+    stats:
+      - _/owned
+  - id: cultist_armor
+    name: Cultist Armor
+    stats:
+      - _/owned
+  - id: cultist_boots
+    name: Cultist Boots
+    stats:
+      - _/owned
+  - id: cultist_hood
+    name: Cultist Hood
+    stats:
+      - _/owned
+  - id: cultist_leggings
+    name: Cultist Leggings
+    stats:
+      - _/owned
+  - id: electromancer_boots
+    name: Electromancer Boots
+    stats:
+      - _/owned
+  - id: electromancer_hat
+    name: Electromancer Hat
+    stats:
+      - _/owned
+  - id: electromancer_leggings
+    name: Electromancer Leggings
+    stats:
+      - _/owned
+  - id: electromancer_robe
+    name: Electromancer Robe
+    stats:
+      - _/owned
+  - id: plagued_boots
+    name: Plagued Boots
+    stats:
+      - _/owned
+  - id: plagued_coat
+    name: Plagued Coat
+    stats:
+      - _/owned
+  - id: plagued_leggings
+    name: Plagued Leggings
+    stats:
+      - _/owned
+  - id: plagued_mask
+    name: Plagued Mask
+    stats:
+      - _/owned
+  - id: priest_boots
+    name: Priest Boots
+    stats:
+      - _/owned
+  - id: priest_leggings
+    name: Priest Leggings
+    stats:
+      - _/owned
+  - id: priest_mask
+    name: Priest Mask
+    stats:
+      - _/owned
+  - id: priest_robes
+    name: Priest Robes
+    stats:
+      - _/owned
+  - id: pyromancer_boots
+    name: Pyromancer Boots
+    stats:
+      - _/owned
+  - id: pyromancer_hat
+    name: Pyromancer Hat
+    stats:
+      - _/owned
+  - id: pyromancer_leggings
+    name: Pyromancer Leggings
+    stats:
+      - _/owned
+  - id: pyromancer_robe
+    name: Pyromancer Robe
+    stats:
+      - _/owned
+  - id: scarecrow_boots
+    name: Scarecrow Boots
+    stats:
+      - _/owned
+  - id: scarecrow_coat
+    name: Scarecrow Coat
+    stats:
+      - _/owned
+  - id: scarecrow_hat
+    name: Scarecrow Hat
+    stats:
+      - _/owned
+  - id: scarecrow_leggings
+    name: Scarecrow Leggings
+    stats:
+      - _/owned
+  - id: shadow_walker_armor
+    name: Shadow-Walker Armor
+    stats:
+      - _/owned
+  - id: shadow_walker_boots
+    name: Shadow-Walker Boots
+    stats:
+      - _/owned
+  - id: shadow_walker_leggings
+    name: Shadow-Walker Leggings
+    stats:
+      - _/owned
+  - id: shadow_walker_mask
+    name: Shadow-Walker Mask
+    stats:
+      - _/owned
+  - id: wandering_magician_hood
+    name: Wandering Magician Hood
+    stats:
+      - _/owned
+  - id: wandering_magician_pants
+    name: Wandering Magician Pants
+    stats:
+      - _/owned
+  - id: wandering_magician_robe
+    name: Wandering Magician Robe
+    stats:
+      - _/owned
+  - id: wandering_magician_shoes
+    name: Wandering Magician Shoes
+    stats:
+      - _/owned
