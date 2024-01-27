@@ -1,4 +1,4 @@
-id: mining.minecraft_atm9
+id: mining_gadgets.minecraft_atm9
 name: "Mining Gadgets"
 stats:
   - id: silk_touch_upgrade

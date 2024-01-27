@@ -10,3 +10,6 @@ stats:
   - id: killed
     name: Killed/Defeated
     type: BOOLEAN
+  - id: achieved
+    name: Achievement Completed
+    type: BOOLEAN

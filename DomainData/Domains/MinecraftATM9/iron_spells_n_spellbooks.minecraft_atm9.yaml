@@ -114,3 +114,67 @@ entities:
     name: Ring of Invisibility
     stats:
       - _/owned
+  - id: quaint_scribe
+    name: Quaint Scribe
+    stats:
+      - _/achieved
+  - id: new_age_librarian
+    name: New Age Librarian
+    stats:
+      - _/achieved
+  - id: its_purple
+    name: It's Purple!
+    stats:
+      - _/achieved
+  - id: tools_of_the_trade
+    name: Tools of the Trade
+    stats:
+      - _/achieved
+  - id: premium
+    name: Premium!
+    stats:
+      - _/achieved
+  - id: and_so_a_quest_begins
+    name: And so a Quest Begins!
+    stats:
+      - _/achieved
+  - id: dungeon_delving
+    name: Dungeon Delving
+    stats:
+      - _/achieved
+  - id: magery
+    name: Magery
+    stats:
+      - _/achieved
+  - id: staff_of_blood
+    name: Staff of Blood
+    stats:
+      - _/achieved
+  - id: knowledge_unchained
+    name: Knowledge Unchained
+    stats:
+      - _/achieved
+  - id: how_longs_this_been_here
+    name: How long's this been here?
+    stats:
+      - _/achieved
+  - id: defunct_machinery
+    name: Defunct Machinery
+    stats:
+      - _/achieved
+  - id: one_with_nature
+    name: One with Nature
+    stats:
+      - _/achieved
+  - id: master_enchanter
+    name: Master Enchanter
+    stats:
+      - _/achieved
+  - id: elder_power
+    name: Elder Power
+    stats:
+      - _/achieved
+  - id: ancient_knowledge
+    name: Ancient Knowledge
+    stats:
+      - _/achieved
