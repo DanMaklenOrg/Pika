@@ -370,8 +370,8 @@ entities:
     stats:
       - _/owned
       - level10
-  - id: poison_breath
-    name: Poison Breath
+  - id: poison_spray
+    name: Poison Spray
     stats:
       - _/owned
       - level10
