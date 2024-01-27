@@ -1,0 +1,48 @@
+id: mining.minecraft_atm9
+name: "Mining Gadgets"
+stats:
+  - id: silk_touch_upgrade
+    name: Silk Touch Upgrade Installed
+    type: BOOLEAN
+  - id: void_upgrade
+    name: Void Upgrade Installed
+    type: BOOLEAN
+  - id: magnet_upgrade
+    name: Magnet Upgrade Installed
+    type: BOOLEAN
+  - id: light_upgrade
+    name: Light Upgrade Installed
+    type: BOOLEAN
+  - id: freeze_upgrade
+    name: Freeze Upgrade Installed
+    type: BOOLEAN
+  - id: range_upgrade
+    name: Range Upgrade Installed
+    type: INTEGER_RANGE(1, 3)
+  - id: fortune_upgrade
+    name: Fortune Upgrade Installed
+    type: INTEGER_RANGE(1, 3)
+  - id: mine_area_upgrade
+    name: Mine Area Upgrade Installed
+    type: INTEGER_RANGE(1, 3)
+  - id: battery_upgrade
+    name: Battery Upgrade Installed
+    type: INTEGER_RANGE(1, 3)
+  - id: efficiency_upgrade
+    name: Efficiency Upgrade Installed
+    type: INTEGER_RANGE(1, 5)
+entities:
+  - id: mining_gadget
+    name: Mining Gadget
+    stats:
+      - _/owned
+      - silk_touch_upgrade
+      - void_upgrade
+      - magnet_upgrade
+      - light_upgrade
+      - freeze_upgrade
+      - range_upgrade
+      - fortune_upgrade
+      - mine_area_upgrade
+      - battery_upgrade
+      - efficiency_upgrade
