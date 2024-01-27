@@ -43,6 +43,9 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
             _ => throw new Exception("Unknown Spell Level Range..."),
         };
 
+        // Handle corner cases
+        if (name == "Poison Breath") name = "Poison Spray";
+
         return new Entity
         {
             Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
