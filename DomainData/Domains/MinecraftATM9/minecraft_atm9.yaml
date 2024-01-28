@@ -7,3 +7,6 @@ stats:
   - id: villager_moved
     name: Moved to Village
     type: BOOLEAN
+  - id: tamed
+    name: Tamed
+    type: BOOLEAN

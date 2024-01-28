@@ -57,3 +57,7 @@ entities:
     name: The Arachnarch
     stats:
       - _/killed
+  - id: reindeer
+    name: Reindeer
+    stats:
+      - _/tamed
