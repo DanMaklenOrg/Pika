@@ -5,6 +5,7 @@ entities:
     name: The Gatekeeper
     stats:
       - minecraft_atm9/villager_moved
+      - minecraft_atm9/spawn_egg_collected
   - id: blue_journal
     name: Blue Journal
     stats:
@@ -61,7 +62,125 @@ entities:
     name: Reindeer
     stats:
       - minecraft_atm9/tamed
+      - minecraft_atm9/spawn_egg_collected
   - id: stardust_ram
     name: Stardust Ram
     stats:
       - minecraft_atm9/bred
+      - minecraft_atm9/spawn_egg_collected
+  - id: armored_frost_spirit
+    name: Armored Frost Spirit
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: artificial_golem
+    name: Artificial Golem
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: azulfo
+    name: Azulfo
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: charscale_moki
+    name: Charscale Moki
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: comic_fox
+    name: Cosmic Fox
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: crogre
+    name: Crogre
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: cryocerous
+    name: Cryocerou
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: crystal_camel
+    name: Crystal Camel
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: diophyde_prowler
+    name: Diophyde Prowler
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: emberback
+    name: Emberback
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: firefly
+    name: Firefly
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: frost_spirit
+    name: Frost Spirit
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: grittle_flatfish
+    name: Grittle Flatfish
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: horizonfin_tunid
+    name: Horizonfin Tunid
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: infested_swarmer
+    name: Infested Swarmer
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: jelly_drifter
+    name: Jelly Drifter
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: municipal_monkfish
+    name: Municipal Monkfish
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: nested_spider
+    name: Nested Spider
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: nyctofly
+    name: Nyctofly
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: polargeist
+    name: Polargeist
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: seclam
+    name: Seclam
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: shade_monitor
+    name: Shade Monitor
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: shrumpty
+    name: Shrumpty
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: sliv
+    name: liv
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: snow_owl
+    name: Snow Owl
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: spewter
+    name: spewter
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: stonelet
+    name: stonelet
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: venom_spider
+    name: Venom Spider
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: whistleshell_crab
+    name: Wistleshell Crab
+    stats:
+      - minecraft_atm9/spawn_egg_collected
