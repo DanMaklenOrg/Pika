@@ -13,3 +13,6 @@ stats:
   - id: achieved
     name: Achievement Completed
     type: BOOLEAN
+  - id: constructed
+    name: Constructed
+    type: BOOLEAN
