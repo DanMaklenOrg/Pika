@@ -24,7 +24,7 @@ entities:
   - id: everdawn_portal
     name: Everdawn Portal
     stats:
-      - _/explored_constructed
+      - _/constructed
   - id: everbright_blinding_dungeon
     name: Everbright Blinding Dungeon
     stats:
