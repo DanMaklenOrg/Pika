@@ -60,7 +60,7 @@ entities:
   - id: reindeer
     name: Reindeer
     stats:
-      - _/tamed
+      - minecraft_atm9/tamed
   - id: stardust_ram
     name: Stardust Ram
     stats:
