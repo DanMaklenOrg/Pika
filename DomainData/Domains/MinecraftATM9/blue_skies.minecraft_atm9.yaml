@@ -1,0 +1,51 @@
+id: blue_skies.minecraft_atm9
+name: "Blue Skies"
+entities:
+  - id: the_gatekeeper
+    name: The Gatekeeper
+    stats:
+      - minecraft_atm9/villager_moved
+  - id: blue_journal
+    name: Blue Journal
+    stats:
+      - _/owned
+  - id: everbright
+    name: Everbright
+    stats:
+      - _/explored
+  - id: everdawn
+    name: Everdawn
+    stats:
+      - _/explored
+  - id: everbright_blinding_dungeon
+    name: Everbright Blinding Dungeon
+    stats:
+      - _/explored
+  - id: everdawn_blinding_dungeon
+    name: Everdawn Blinding Dungeon
+    stats:
+      - _/explored
+  - id: nature_dungeon
+    name: Nature Dungeon
+    stats:
+      - _/explored
+  - id: poison_dungeon
+    name: Poison Dungeon
+    stats:
+      - _/explored
+  - id: the_summoner
+    name: The Summoner
+    stats:
+      - _/killed
+  - id: the_alchemist
+    name: The Alchemist
+    stats:
+      - _/killed
+  - id: starlit_crusher
+    name: Starlit Crusher
+    stats:
+      - _/killed
+  - id: the_arachnarch
+    name: The Arachnarch
+    stats:
+      - _/killed
