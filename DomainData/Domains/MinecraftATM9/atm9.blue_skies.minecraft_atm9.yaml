@@ -27,7 +27,7 @@ entities:
     stats:
       - _/quest_completed
   - id: something_isnt_quite_right
-    name: Something isn't Quite right.....
+    name: Something isn't quite right.....
     stats:
       - _/quest_completed
   - id: getting_an_upgrade
