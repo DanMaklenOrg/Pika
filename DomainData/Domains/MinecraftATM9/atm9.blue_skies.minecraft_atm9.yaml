@@ -46,6 +46,10 @@ entities:
     name: Tool Box
     stats:
       - _/quest_completed
+  - id: bonus_durability
+    name: Bonus Durability!
+    stats:
+      - _/quest_completed
   - id: falsite
     name: Falsite
     stats:
