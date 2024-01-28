@@ -10,3 +10,6 @@ stats:
   - id: tamed
     name: Tamed
     type: BOOLEAN
+  - id: bred
+    name: Bred
+    type: BOOLEAN

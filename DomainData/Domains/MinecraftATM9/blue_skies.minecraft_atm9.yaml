@@ -61,3 +61,7 @@ entities:
     name: Reindeer
     stats:
       - _/tamed
+  - id: stardust_ram
+    name: Stardust Ram
+    stats:
+      - minecraft_atm9/bred
