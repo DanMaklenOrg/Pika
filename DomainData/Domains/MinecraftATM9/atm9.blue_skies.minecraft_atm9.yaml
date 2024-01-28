@@ -186,6 +186,10 @@ entities:
     name: 1 Down, 3 to go
     stats:
       - _/quest_completed
+  - id: defying_nature
+    name: Defying Nature
+    stats:
+      - _/quest_completed
   - id: regrowth
     name: Regrowth
     stats:
