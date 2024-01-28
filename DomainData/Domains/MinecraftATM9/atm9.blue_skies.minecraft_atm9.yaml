@@ -198,3 +198,19 @@ entities:
     name: My, My, This Blue Sky Pie!
     stats:
       - _/quest_completed
+  - id: summoner_trophy
+    name: Summoner Trophy
+    stats:
+      - _/owned
+  - id: alchemist_trophy
+    name: Alchemist Trophy
+    stats:
+      - _/owned
+  - id: starlit_crusher_trophy
+    name: Starlit Crusher Trophy
+    stats:
+      - _/owned
+  - id: archnarch_trophy
+    name: Archnarch Trophy
+    stats:
+      - _/owned
