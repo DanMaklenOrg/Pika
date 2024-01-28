@@ -11,8 +11,11 @@ stats:
     name: Killed/Defeated
     type: BOOLEAN
   - id: achieved
-    name: Achievement Completed
+    name: Achievement Unlocked
     type: BOOLEAN
   - id: constructed
     name: Constructed
+    type: BOOLEAN
+  - id: quest_completed
+    name: Quest Completed
     type: BOOLEAN
