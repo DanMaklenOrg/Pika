@@ -161,7 +161,7 @@ entities:
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: sliv
-    name: liv
+    name: Sliv
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: snow_owl
@@ -169,11 +169,11 @@ entities:
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: spewter
-    name: spewter
+    name: Spewter
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: stonelet
-    name: stonelet
+    name: Stonelet
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: venom_spider
@@ -209,7 +209,7 @@ entities:
     stats:
       - _/achieved
   - id: tragic_magic
-    name: tragic_magic
+    name: Tragic Magic
     stats:
       - _/achieved
   - id: artificial_friend
