@@ -186,81 +186,81 @@ entities:
       - minecraft_atm9/spawn_egg_collected
   - id: forever_bright
     name: Forever Bright?
-    status:
+    stats:
       - _/achieved
   - id: a_bright_future
     name: A Bright Future!
-    status:
+    stats:
       - _/achieved
   - id: a_litte_hot_rod_red
     name: A Little Hot Rod Red
-    status:
+    stats:
       - _/achieved
   - id: tinkering_around
     name: Tinkering Around!
-    status:
+    stats:
       - _/achieved
   - id: now_were_cooking_with_shrooms
     name: No We're Cooking With... Shroomes?
-    status:
+    stats:
       - _/achieved
   - id: mysterious_metal
     name: Mysterious Metal
-    status:
+    stats:
       - _/achieved
   - id: tragic_magic
     name: tragic_magic
-    status:
+    stats:
       - _/achieved
   - id: artificial_friend
     name: Artificial Friend
-    status:
+    stats:
       - _/achieved
   - id: heart_of_nature
     name: Heart of Nature
-    status:
+    stats:
       - _/achieved
   - id: now_youre_thinking_with_portals
     name: Now You're Thinking with Portals!
-    status:
+    stats:
       - _/achieved
   - id: the_wizards_tower
     name: The Wizard's Tower
-    status:
+    stats:
       - _/achieved
   - id: light_up_the_world
     name: Light Up The World!
-    status:
+    stats:
       - _/achieved
   - id: a_swift_upgrade
     name: A Swift Upgrade
-    status:
+    stats:
       - _/achieved
   - id: quite_the_boost
     name: Quite The Boost
-    status:
+    stats:
       - _/achieved
   - id: purple_power
     name: Purple Power!
-    status:
+    stats:
       - _/achieved
   - id: tough_to_beat
     name: Tough to Beat
-    status:
+    stats:
       - _/achieved
   - id: well_seasoned
     name: Well Seasoned
-    status:
+    stats:
       - _/achieved
   - id: forever_dawn
     name: Forever Dawn?
-    status:
+    stats:
       - _/achieved
   - id: a_new_dawn
     name: A New Dawn
-    status:
+    stats:
       - _/achieved
   - id: bane_of_my_existence
     name: Bane if my Existence
-    status:
+    stats:
       - _/achieved
