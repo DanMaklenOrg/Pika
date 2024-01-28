@@ -38,12 +38,12 @@ entities:
     name: Ventium Tools
     stats:
       - _/quest_completed
-  - id: Ventium
-    name: ventium
+  - id: ventium
+    name: Ventium
     stats:
       - _/quest_completed
   - id: tool_box
-    name: tool_box
+    name: Tool Box
     stats:
       - _/quest_completed
   - id: falsite
