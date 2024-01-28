@@ -182,3 +182,19 @@ entities:
     name: Spike Shield
     stats:
       - _/quest_completed
+  - id: 1_down_3_to_go
+    name: 1 Down, 3 to go
+    stats:
+      - _/quest_completed
+  - id: regrowth
+    name: Regrowth
+    stats:
+      - _/quest_completed
+  - id: pretty_in_pink
+    name: Pretty in Pink
+    stats:
+      - _/quest_completed
+  - id: my_my_this_blue_sky_pie
+    name: My, My, This Blue Sky Pie!
+    stats:
+      - _/quest_completed
