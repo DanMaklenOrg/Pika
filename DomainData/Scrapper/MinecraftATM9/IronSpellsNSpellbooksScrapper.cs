@@ -11,11 +11,36 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 
     public async Task<Domain> Scrape()
     {
-        var spells = await ScrapeSpells();
+        var entityList = new List<Entity>();
+        entityList.AddRange(await ScrapeSpells());
+        entityList.AddRange(await ScrapeSpellbooks());
+        entityList.AddRange(await ScrapeArmors());
+        entityList.AddRange(await ScrapeCurios());
         return new Domain
         {
             Id = DomainId,
-            Entities = spells,
+            Entities = entityList,
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeSpellbooks()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/spellbooks/");
+        var spellNodes = doc.DocumentNode.SelectNodes("//h3[@class='crafting-title']");
+        return spellNodes.Select(this.ParseSpellbook).ToList();
+    }
+
+    private Entity ParseSpellbook(HtmlNode node)
+    {
+        var name = node.InnerText;
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/owned",
+            }
         };
     }
 
@@ -43,6 +68,15 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
             _ => throw new Exception("Unknown Spell Level Range..."),
         };
 
+        // Handle corner cases
+        name = name switch
+        {
+            "Poison Breath" => "Poison Spray",
+            "Dragon Breath" => "Dragon's Breath",
+            "Acid Orb" => "Acid Spit",
+            _ => name,
+        };
+
         return new Entity
         {
             Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
@@ -51,6 +85,53 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
             {
                 "_/owned",
                 new ResourceId(levelStat, DomainId),
+            }
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeArmors()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/armor/");
+        var spellNodes = doc.DocumentNode.SelectNodes("//h3[@class='crafting-title']");
+        return spellNodes.Select(this.ParseArmor).ToList();
+    }
+
+    private Entity ParseArmor(HtmlNode node)
+    {
+        var name = node.InnerText;
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/owned",
+            },
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeCurios()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://iron.wiki/curios/");
+        var spellNodes = doc.DocumentNode.SelectNodes("//h3[@class='crafting-title']");
+        return spellNodes.Select(this.ParseCurio).ToList();
+    }
+
+    private Entity ParseCurio(HtmlNode node)
+    {
+        var name = node.InnerText;
+        name = name switch
+        {
+            "Ring of No Affinity" => "Ring of Affinity",
+            _ => name,
+        };
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/owned",
             }
         };
     }

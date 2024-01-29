@@ -4,3 +4,18 @@ stats:
   - id: owned
     name: Owned
     type: BOOLEAN
+  - id: explored
+    name: Explored
+    type: BOOLEAN
+  - id: killed
+    name: Killed/Defeated
+    type: BOOLEAN
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
+  - id: constructed
+    name: Constructed
+    type: BOOLEAN
+  - id: quest_completed
+    name: Quest Completed
+    type: BOOLEAN

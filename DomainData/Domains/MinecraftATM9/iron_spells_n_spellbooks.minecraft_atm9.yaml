@@ -22,3 +22,163 @@ stats:
   - id: level1
     name: Level
     type: INTEGER_RANGE(1, 1)
+entities:
+  - id: alchemist_cauldron
+    name: Alchemist Cauldron
+    stats:
+      - _/owned
+  - id: arcane_anvil
+    name: Arcane Anvil
+    stats:
+      - _/owned
+  - id: alchemist_cauldron
+    name: Alchemist Cauldron
+    stats:
+      - _/owned
+  - id: inscription_table
+    name: Inscription Table
+    stats:
+      - _/owned
+  - id: scroll_forge
+    name: Scroll Forge
+    stats:
+      - _/owned
+  - id: pedestal # Cosmetic
+    name: Pedestal
+    stats:
+      - _/owned
+  - id: firefly_jar
+    name: Firefly Jar
+    stats:
+      - _/owned
+  - id: wayward_compass
+    name: Wayward Compass
+    stats:
+      - _/owned
+  - id: mountain_tower
+    name: Mountain Tower
+    stats:
+      - _/explored
+  - id: mangrove_hut
+    name: Mangrove Hut
+    stats:
+      - _/explored
+  - id: evoker_fort
+    name: Evoker Fort
+    stats:
+      - _/explored
+  - id: catacombs
+    name: The Catacombs
+    stats:
+      - _/explored
+  - id: ancient_battlegrounds
+    name: Ancient Battlegrounds
+    stats:
+      - _/explored
+  - id: ancient_knight
+    name: Ancient Knight
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: dead_king_corpse
+    name: Dead King Corpse
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: archevoker
+    name: Archevoker
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: necromancer
+    name: Necromancer
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: cryomancer
+    name: Cryomancer
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: pyromancer
+    name: Pyromancer
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: priest
+    name: Priest
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+      - _/killed
+  - id: ring_of_invisibility
+    name: Ring of Invisibility
+    stats:
+      - _/owned
+  - id: quaint_scribe
+    name: Quaint Scribe
+    stats:
+      - _/achieved
+  - id: new_age_librarian
+    name: New Age Librarian
+    stats:
+      - _/achieved
+  - id: its_purple
+    name: It's Purple!
+    stats:
+      - _/achieved
+  - id: tools_of_the_trade
+    name: Tools of the Trade
+    stats:
+      - _/achieved
+  - id: premium
+    name: Premium!
+    stats:
+      - _/achieved
+  - id: and_so_a_quest_begins
+    name: And so a Quest Begins!
+    stats:
+      - _/achieved
+  - id: dungeon_delving
+    name: Dungeon Delving
+    stats:
+      - _/achieved
+  - id: magery
+    name: Magery
+    stats:
+      - _/achieved
+  - id: staff_of_blood
+    name: Staff of Blood
+    stats:
+      - _/achieved
+  - id: knowledge_unchained
+    name: Knowledge Unchained
+    stats:
+      - _/achieved
+  - id: how_longs_this_been_here
+    name: How long's this been here?
+    stats:
+      - _/achieved
+  - id: defunct_machinery
+    name: Defunct Machinery
+    stats:
+      - _/achieved
+  - id: one_with_nature
+    name: One with Nature
+    stats:
+      - _/achieved
+  - id: master_enchanter
+    name: Master Enchanter
+    stats:
+      - _/achieved
+  - id: elder_power
+    name: Elder Power
+    stats:
+      - _/achieved
+  - id: ancient_knowledge
+    name: Ancient Knowledge
+    stats:
+      - _/achieved
+  - id: getting_the_hang_of_it
+    name: Getting the Hang of It
+    stats:
+      - _/achieved

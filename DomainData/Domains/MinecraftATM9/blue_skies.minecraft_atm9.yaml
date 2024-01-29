@@ -1,0 +1,365 @@
+id: blue_skies.minecraft_atm9
+name: "Blue Skies"
+stats:
+  - id: arc_rarity
+    name: Rarity
+    type: ORDERED_ENUM(Common, Uncommon, Rare)
+  - id: trophy_tier
+    name: Tier
+    type: ORDERED_ENUM(Gold, Platinum)
+entities:
+  - id: the_gatekeeper
+    name: The Gatekeeper
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/spawn_egg_collected
+  - id: blue_journal
+    name: Blue Journal
+    stats:
+      - _/owned
+  - id: everbright
+    name: Everbright
+    stats:
+      - _/explored
+  - id: everdawn
+    name: Everdawn
+    stats:
+      - _/explored
+  - id: everbright_portal
+    name: Everbright Portal
+    stats:
+      - _/constructed
+  - id: everdawn_portal
+    name: Everdawn Portal
+    stats:
+      - _/constructed
+  - id: everbright_blinding_dungeon
+    name: Everbright Blinding Dungeon
+    stats:
+      - _/explored
+  - id: everdawn_blinding_dungeon
+    name: Everdawn Blinding Dungeon
+    stats:
+      - _/explored
+  - id: nature_dungeon
+    name: Nature Dungeon
+    stats:
+      - _/explored
+  - id: poison_dungeon
+    name: Poison Dungeon
+    stats:
+      - _/explored
+  - id: the_summoner
+    name: The Summoner
+    stats:
+      - _/killed
+  - id: the_alchemist
+    name: The Alchemist
+    stats:
+      - _/killed
+  - id: starlit_crusher
+    name: Starlit Crusher
+    stats:
+      - _/killed
+  - id: the_arachnarch
+    name: The Arachnarch
+    stats:
+      - _/killed
+  - id: reindeer
+    name: Reindeer
+    stats:
+      - minecraft_atm9/tamed
+      - minecraft_atm9/spawn_egg_collected
+  - id: stardust_ram
+    name: Stardust Ram
+    stats:
+      - minecraft_atm9/bred
+      - minecraft_atm9/spawn_egg_collected
+  - id: armored_frost_spirit
+    name: Armored Frost Spirit
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: artificial_golem
+    name: Artificial Golem
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: azulfo
+    name: Azulfo
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: charscale_moki
+    name: Charscale Moki
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: comic_fox
+    name: Cosmic Fox
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: crogre
+    name: Crogre
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: cryocerous
+    name: Cryocerou
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: crystal_camel
+    name: Crystal Camel
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: diophyde_prowler
+    name: Diophyde Prowler
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: emberback
+    name: Emberback
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: firefly
+    name: Firefly
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: frost_spirit
+    name: Frost Spirit
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: grittle_flatfish
+    name: Grittle Flatfish
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: horizonfin_tunid
+    name: Horizonfin Tunid
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: infested_swarmer
+    name: Infested Swarmer
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: jelly_drifter
+    name: Jelly Drifter
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: municipal_monkfish
+    name: Municipal Monkfish
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: nested_spider
+    name: Nested Spider
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: nyctofly
+    name: Nyctofly
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: polargeist
+    name: Polargeist
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: seclam
+    name: Seclam
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: shade_monitor
+    name: Shade Monitor
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: shrumpty
+    name: Shrumpty
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: sliv
+    name: Sliv
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: snow_owl
+    name: Snow Owl
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: spewter
+    name: Spewter
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: stonelet
+    name: Stonelet
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: venom_spider
+    name: Venom Spider
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: whistleshell_crab
+    name: Wistleshell Crab
+    stats:
+      - minecraft_atm9/spawn_egg_collected
+  - id: forever_bright
+    name: Forever Bright?
+    stats:
+      - _/achieved
+  - id: a_bright_future
+    name: A Bright Future!
+    stats:
+      - _/achieved
+  - id: a_litte_hot_rod_red
+    name: A Little Hot Rod Red
+    stats:
+      - _/achieved
+  - id: tinkering_around
+    name: Tinkering Around!
+    stats:
+      - _/achieved
+  - id: now_were_cooking_with_shrooms
+    name: No We're Cooking With... Shroomes?
+    stats:
+      - _/achieved
+  - id: mysterious_metal
+    name: Mysterious Metal
+    stats:
+      - _/achieved
+  - id: tragic_magic
+    name: Tragic Magic
+    stats:
+      - _/achieved
+  - id: artificial_friend
+    name: Artificial Friend
+    stats:
+      - _/achieved
+  - id: heart_of_nature
+    name: Heart of Nature
+    stats:
+      - _/achieved
+  - id: now_youre_thinking_with_portals
+    name: Now You're Thinking with Portals!
+    stats:
+      - _/achieved
+  - id: the_wizards_tower
+    name: The Wizard's Tower
+    stats:
+      - _/achieved
+  - id: light_up_the_world
+    name: Light Up The World!
+    stats:
+      - _/achieved
+  - id: a_swift_upgrade
+    name: A Swift Upgrade
+    stats:
+      - _/achieved
+  - id: quite_the_boost
+    name: Quite The Boost
+    stats:
+      - _/achieved
+  - id: purple_power
+    name: Purple Power!
+    stats:
+      - _/achieved
+  - id: tough_to_beat
+    name: Tough to Beat
+    stats:
+      - _/achieved
+  - id: well_seasoned
+    name: Well Seasoned
+    stats:
+      - _/achieved
+  - id: forever_dawn
+    name: Forever Dawn?
+    stats:
+      - _/achieved
+  - id: a_new_dawn
+    name: A New Dawn
+    stats:
+      - _/achieved
+  - id: bane_of_my_existence
+    name: Bane if my Existence
+    stats:
+      - _/achieved
+  - id: 1_down_3_to_go
+    name: 1 Down, 3 to go
+    stats:
+      - _/achieved
+  - id: defying_nature
+    name: Defying Nature
+    stats:
+      - _/achieved
+  - id: regrowth
+    name: Regrowth
+    stats:
+      - _/achieved
+  - id: pretty_in_pink
+    name: Pretty in Pink
+    stats:
+      - _/achieved
+  - id: my_my_this_blue_sky_pie
+    name: My, My, This Blue Sky Pie!
+    stats:
+      - _/achieved
+  - id: summoner_trophy
+    name: Summoner Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: alchemist_trophy
+    name: Alchemist Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: starlit_crusher_trophy
+    name: Starlit Crusher Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: archnarch_trophy
+    name: Archnarch Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: ethereal_arc
+    name: Ethereal Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: dusk_arc
+    name: Dusk Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: nature_arc
+    name: Nature Arch
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: poisonous_arc
+    name: Poisonous Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: sky_music_disc_lachney_population
+    name: "Sky Music Disc: Lachney - Population"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_blinding_rage
+    name: "Sky Music Disc: Jonathing - Blinding Rage"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_defying_starlight
+    name: "Sky Music Disc: Jonathing - Defying Starlight"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_venomous_encounter
+    name: "Sky Music Disc: Jonathing - Venomous Encounter"
+    stats:
+      - _/owned
+  - id: smithing_template_banished_armor_trim
+    name: "Smithing Template: Banished Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_thwarted_armor_trim
+    name: "Smithing Template: Thwarted Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_regrowth_armor_trim
+    name: "Smithing Template: Regrowth Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_toxic_armor_trim
+    name: "Smithing Template: Toxic Armor Trim"
+    stats:
+      - _/owned

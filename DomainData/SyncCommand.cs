@@ -32,7 +32,6 @@ public static class SyncCommand
             TextReader stream = new StreamReader(file);
             var domainId = Path.GetFileNameWithoutExtension(file).Replace(".scraped", string.Empty);
             var d = converter.Read(stream, domainId);
-            Console.WriteLine($"Parsed Domain Id: {d.Id}, Name: {d.Name}.");
             domains.Add(d);
         }
 

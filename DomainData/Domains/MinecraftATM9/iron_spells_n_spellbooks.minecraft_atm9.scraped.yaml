@@ -80,8 +80,8 @@ entities:
     stats:
       - _/owned
       - level1
-  - id: dragon_breath
-    name: Dragon Breath
+  - id: dragons_breath
+    name: Dragon's Breath
     stats:
       - _/owned
       - level10
@@ -340,8 +340,8 @@ entities:
     stats:
       - _/owned
       - level10
-  - id: acid_orb
-    name: Acid Orb
+  - id: acid_spit
+    name: Acid Spit
     stats:
       - _/owned
       - level10
@@ -370,8 +370,8 @@ entities:
     stats:
       - _/owned
       - level10
-  - id: poison_breath
-    name: Poison Breath
+  - id: poison_spray
+    name: Poison Spray
     stats:
       - _/owned
       - level10
@@ -390,3 +390,275 @@ entities:
     stats:
       - _/owned
       - level8
+  - id: ancient_codex
+    name: Ancient Codex
+    stats:
+      - _/owned
+  - id: apprentices_spell_book
+    name: Apprentice's Spell Book
+    stats:
+      - _/owned
+  - id: blaze_instruction_manual
+    name: Blaze Instruction Manual
+    stats:
+      - _/owned
+  - id: decrepit_flamberge
+    name: Decrepit Flamberge
+    stats:
+      - _/owned
+  - id: dragonskin_spell_book
+    name: Dragonskin Spell Book
+    stats:
+      - _/owned
+  - id: druidic_tome
+    name: Druidic Tome
+    stats:
+      - _/owned
+  - id: enchanted_spell_book
+    name: Enchanted Spell Book
+    stats:
+      - _/owned
+  - id: flimsy_journal
+    name: Flimsy Journal
+    stats:
+      - _/owned
+  - id: grimoire_of_evokation
+    name: Grimoire of Evokation
+    stats:
+      - _/owned
+  - id: ironbound_tome
+    name: Ironbound Tome
+    stats:
+      - _/owned
+  - id: magehunter
+    name: Magehunter
+    stats:
+      - _/owned
+  - id: rotten_spell_book
+    name: Rotten Spell Book
+    stats:
+      - _/owned
+  - id: the_blood_staff
+    name: The Blood Staff
+    stats:
+      - _/owned
+  - id: villager_bible
+    name: Villager Bible
+    stats:
+      - _/owned
+  - id: tarnished_crown
+    name: Tarnished Crown
+    stats:
+      - _/owned
+  - id: archevoker_boots
+    name: Archevoker Boots
+    stats:
+      - _/owned
+  - id: archevoker_coat
+    name: Archevoker Coat
+    stats:
+      - _/owned
+  - id: archevoker_hat
+    name: Archevoker Hat
+    stats:
+      - _/owned
+  - id: archevoker_leggings
+    name: Archevoker Leggings
+    stats:
+      - _/owned
+  - id: cryomancer_boots
+    name: Cryomancer Boots
+    stats:
+      - _/owned
+  - id: cryomancer_coat
+    name: Cryomancer Coat
+    stats:
+      - _/owned
+  - id: cryomancer_hood
+    name: Cryomancer Hood
+    stats:
+      - _/owned
+  - id: cryomancer_leggings
+    name: Cryomancer Leggings
+    stats:
+      - _/owned
+  - id: cultist_armor
+    name: Cultist Armor
+    stats:
+      - _/owned
+  - id: cultist_boots
+    name: Cultist Boots
+    stats:
+      - _/owned
+  - id: cultist_hood
+    name: Cultist Hood
+    stats:
+      - _/owned
+  - id: cultist_leggings
+    name: Cultist Leggings
+    stats:
+      - _/owned
+  - id: electromancer_boots
+    name: Electromancer Boots
+    stats:
+      - _/owned
+  - id: electromancer_hat
+    name: Electromancer Hat
+    stats:
+      - _/owned
+  - id: electromancer_leggings
+    name: Electromancer Leggings
+    stats:
+      - _/owned
+  - id: electromancer_robe
+    name: Electromancer Robe
+    stats:
+      - _/owned
+  - id: plagued_boots
+    name: Plagued Boots
+    stats:
+      - _/owned
+  - id: plagued_coat
+    name: Plagued Coat
+    stats:
+      - _/owned
+  - id: plagued_leggings
+    name: Plagued Leggings
+    stats:
+      - _/owned
+  - id: plagued_mask
+    name: Plagued Mask
+    stats:
+      - _/owned
+  - id: priest_boots
+    name: Priest Boots
+    stats:
+      - _/owned
+  - id: priest_leggings
+    name: Priest Leggings
+    stats:
+      - _/owned
+  - id: priest_mask
+    name: Priest Mask
+    stats:
+      - _/owned
+  - id: priest_robes
+    name: Priest Robes
+    stats:
+      - _/owned
+  - id: pyromancer_boots
+    name: Pyromancer Boots
+    stats:
+      - _/owned
+  - id: pyromancer_hat
+    name: Pyromancer Hat
+    stats:
+      - _/owned
+  - id: pyromancer_leggings
+    name: Pyromancer Leggings
+    stats:
+      - _/owned
+  - id: pyromancer_robe
+    name: Pyromancer Robe
+    stats:
+      - _/owned
+  - id: scarecrow_boots
+    name: Scarecrow Boots
+    stats:
+      - _/owned
+  - id: scarecrow_coat
+    name: Scarecrow Coat
+    stats:
+      - _/owned
+  - id: scarecrow_hat
+    name: Scarecrow Hat
+    stats:
+      - _/owned
+  - id: scarecrow_leggings
+    name: Scarecrow Leggings
+    stats:
+      - _/owned
+  - id: shadow_walker_armor
+    name: Shadow-Walker Armor
+    stats:
+      - _/owned
+  - id: shadow_walker_boots
+    name: Shadow-Walker Boots
+    stats:
+      - _/owned
+  - id: shadow_walker_leggings
+    name: Shadow-Walker Leggings
+    stats:
+      - _/owned
+  - id: shadow_walker_mask
+    name: Shadow-Walker Mask
+    stats:
+      - _/owned
+  - id: wandering_magician_hood
+    name: Wandering Magician Hood
+    stats:
+      - _/owned
+  - id: wandering_magician_pants
+    name: Wandering Magician Pants
+    stats:
+      - _/owned
+  - id: wandering_magician_robe
+    name: Wandering Magician Robe
+    stats:
+      - _/owned
+  - id: wandering_magician_shoes
+    name: Wandering Magician Shoes
+    stats:
+      - _/owned
+  - id: amethyst_resonance_charm
+    name: Amethyst Resonance Charm
+    stats:
+      - _/owned
+  - id: amulet_of_concentration
+    name: Amulet of Concentration
+    stats:
+      - _/owned
+  - id: conjurers_talisman
+    name: Conjurer's Talisman
+    stats:
+      - _/owned
+  - id: emerald_stoneplate_ring
+    name: Emerald Stoneplate Ring
+    stats:
+      - _/owned
+  - id: fireward_ring
+    name: Fireward Ring
+    stats:
+      - _/owned
+  - id: frostward_ring
+    name: Frostward Ring
+    stats:
+      - _/owned
+  - id: heavy_chain
+    name: Heavy Chain
+    stats:
+      - _/owned
+  - id: poisonward_ring
+    name: Poisonward Ring
+    stats:
+      - _/owned
+  - id: ring_of_expediency
+    name: Ring of Expediency
+    stats:
+      - _/owned
+  - id: ring_of_mana
+    name: Ring of Mana
+    stats:
+      - _/owned
+  - id: ring_of_affinity
+    name: Ring of Affinity
+    stats:
+      - _/owned
+  - id: ring_of_recovery
+    name: Ring of Recovery
+    stats:
+      - _/owned
+  - id: silver_ring
+    name: Silver Ring
+    stats:
+      - _/owned
