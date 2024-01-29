@@ -37,6 +37,7 @@ public static class DbModelMapper
             Type = stat.Type.ToString(),
             Min = stat.Min,
             Max = stat.Max,
+            EnumValues = stat.EnumValues,
         };
     }
 
@@ -73,6 +74,7 @@ public static class DbModelMapper
             Type = Enum.Parse<StatType>(stat.Type),
             Min = stat.Min,
             Max = stat.Max,
+            EnumValues = stat.EnumValues,
         };
     }
 

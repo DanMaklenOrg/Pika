@@ -48,6 +48,9 @@ public readonly struct StatDto
 
     [JsonPropertyName("max")]
     public int? Max { get; init; }
+
+    [JsonPropertyName("enum_values")]
+    public List<string>? EnumValues { get; init; }
 }
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
@@ -55,4 +58,5 @@ public enum StatTypeEnumDto
 {
     Boolean,
     IntegerRange,
+    OrderedEnum,
 }

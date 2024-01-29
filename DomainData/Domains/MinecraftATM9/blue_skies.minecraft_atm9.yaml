@@ -295,42 +295,42 @@ entities:
     name: Summoner Trophy
     stats:
       - _/owned
-#      - trophy_tier
+      - trophy_tier
   - id: alchemist_trophy
     name: Alchemist Trophy
     stats:
       - _/owned
-#      - trophy_tier
+      - trophy_tier
   - id: starlit_crusher_trophy
     name: Starlit Crusher Trophy
     stats:
       - _/owned
-#      - trophy_tier
+      - trophy_tier
   - id: archnarch_trophy
     name: Archnarch Trophy
     stats:
       - _/owned
-#      - trophy_tier
+      - trophy_tier
   - id: ethereal_arc
     name: Ethereal Arc
     stats:
       - _/owned
-#      - arc_rarity
+      - arc_rarity
   - id: dusk_arc
     name: Dusk Arc
     stats:
       - _/owned
-#      - arc_rarity
+      - arc_rarity
   - id: nature_arc
     name: Nature Arch
     stats:
       - _/owned
-#      - arc_rarity
+      - arc_rarity
   - id: poisonous_arc
     name: Poisonous Arc
     stats:
       - _/owned
-#      - arc_rarity
+      - arc_rarity
   - id: sky_music_disc_lachney_population
     name: "Sky Music Disc: Lachney - Population"
     stats:
