@@ -28,5 +28,5 @@ public class UserEntityStatDbModel
     public string StatId { get; init; } = default!;
 
     [JsonPropertyName("value")]
-    public int Value { get; init; }
+    public string Value { get; init; } = default!;
 }

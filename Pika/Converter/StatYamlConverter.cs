@@ -41,6 +41,7 @@ internal class StatYamlConverter : IYamlTypeConverter
         {
             "BOOLEAN" => StatType.Boolean,
             "INTEGER_RANGE" => StatType.IntegerRange,
+            "ORDERED_ENUM" => StatType.OrderedEnum,
             _ => throw new Exception("Unknown Stat Type"),
         };
 
@@ -50,6 +51,9 @@ internal class StatYamlConverter : IYamlTypeConverter
             case StatType.IntegerRange:
                 stat.Min = int.Parse(typeArgs[0]);
                 stat.Max = int.Parse(typeArgs[1]);
+                break;
+            case StatType.OrderedEnum:
+                stat.EnumValues = typeArgs.ToList();
                 break;
         }
 

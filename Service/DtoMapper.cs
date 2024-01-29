@@ -46,10 +46,12 @@ public static class DtoMapper
             {
                 StatType.Boolean => StatTypeEnumDto.Boolean,
                 StatType.IntegerRange => StatTypeEnumDto.IntegerRange,
+                StatType.OrderedEnum => StatTypeEnumDto.OrderedEnum,
                 _ => throw new ArgumentOutOfRangeException()
             },
             Min = model.Min,
             Max = model.Max,
+            EnumValues = model.EnumValues,
         };
     }
 

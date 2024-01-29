@@ -54,4 +54,7 @@ public class StatDbModel
 
     [JsonPropertyName("max")]
     public int? Max { get; init; }
+
+    [JsonPropertyName("enum_values")]
+    public List<string>? EnumValues { get; init; }
 }

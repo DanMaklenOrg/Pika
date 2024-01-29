@@ -17,5 +17,5 @@ public readonly struct UserEntityStatDto
     public string StatId { get; init; }
 
     [JsonPropertyName("value")]
-    public int Value { get; init; }
+    public string Value { get; init; }
 }
