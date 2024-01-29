@@ -1,5 +1,12 @@
 id: blue_skies.minecraft_atm9
 name: "Blue Skies"
+stats:
+  - id: arc_rarity
+    name: Rarity
+    type: ORDERED_ENUM(Common, Uncommon, Rare)
+  - id: trophy_tier
+    name: Tier
+    type: ORDERED_ENUM(Gold, Platinum)
 entities:
   - id: the_gatekeeper
     name: The Gatekeeper
@@ -264,3 +271,95 @@ entities:
     name: Bane if my Existence
     stats:
       - _/achieved
+  - id: 1_down_3_to_go
+    name: 1 Down, 3 to go
+    stats:
+      - _/achieved
+  - id: defying_nature
+    name: Defying Nature
+    stats:
+      - _/achieved
+  - id: regrowth
+    name: Regrowth
+    stats:
+      - _/achieved
+  - id: pretty_in_pink
+    name: Pretty in Pink
+    stats:
+      - _/achieved
+  - id: my_my_this_blue_sky_pie
+    name: My, My, This Blue Sky Pie!
+    stats:
+      - _/achieved
+  - id: summoner_trophy
+    name: Summoner Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: alchemist_trophy
+    name: Alchemist Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: starlit_crusher_trophy
+    name: Starlit Crusher Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: archnarch_trophy
+    name: Archnarch Trophy
+    stats:
+      - _/owned
+#      - trophy_tier
+  - id: ethereal_arc
+    name: Ethereal Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: dusk_arc
+    name: Dusk Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: nature_arc
+    name: Nature Arch
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: poisonous_arc
+    name: Poisonous Arc
+    stats:
+      - _/owned
+#      - arc_rarity
+  - id: sky_music_disc_lachney_population
+    name: "Sky Music Disc: Lachney - Population"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_blinding_rage
+    name: "Sky Music Disc: Jonathing - Blinding Rage"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_defying_starlight
+    name: "Sky Music Disc: Jonathing - Defying Starlight"
+    stats:
+      - _/owned
+  - id: sky_music_disc_jonathing_venomous_encounter
+    name: "Sky Music Disc: Jonathing - Venomous Encounter"
+    stats:
+      - _/owned
+  - id: smithing_template_banished_armor_trim
+    name: "Smithing Template: Banished Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_thwarted_armor_trim
+    name: "Smithing Template: Thwarted Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_regrowth_armor_trim
+    name: "Smithing Template: Regrowth Armor Trim"
+    stats:
+      - _/owned
+  - id: smithing_template_toxic_armor_trim
+    name: "Smithing Template: Toxic Armor Trim"
+    stats:
+      - _/owned
