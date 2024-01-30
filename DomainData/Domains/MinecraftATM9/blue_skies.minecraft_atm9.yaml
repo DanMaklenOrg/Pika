@@ -94,12 +94,12 @@ entities:
   - id: comic_fox
     name: Cosmic Fox
     stats:
-      - _/tamed
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: crogre
     name: Crogre
     stats:
-      - _/tamed
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: cryocerous
     name: Cryocerou
@@ -108,7 +108,7 @@ entities:
   - id: crystal_camel
     name: Crystal Camel
     stats:
-      - _/tamed
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: diophyde_prowler
     name: Diophyde Prowler
