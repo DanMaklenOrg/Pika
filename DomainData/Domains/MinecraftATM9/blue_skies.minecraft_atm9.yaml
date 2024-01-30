@@ -317,8 +317,8 @@ entities:
     stats:
       - _/owned
       - trophy_tier
-  - id: archnarch_trophy
-    name: Archnarch Trophy
+  - id: arachnarch_trophy
+    name: Arachnarch Trophy
     stats:
       - _/owned
       - trophy_tier

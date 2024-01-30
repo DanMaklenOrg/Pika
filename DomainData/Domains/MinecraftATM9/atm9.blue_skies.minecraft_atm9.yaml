@@ -171,7 +171,7 @@ entities:
     stats:
       - _/quest_completed
   - id: dusk_arc
-    name: Dusk Arch
+    name: Dusk Arc
     stats:
       - _/quest_completed
   - id: spike_shield
