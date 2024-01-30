@@ -94,10 +94,12 @@ entities:
   - id: comic_fox
     name: Cosmic Fox
     stats:
+      - _/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: crogre
     name: Crogre
     stats:
+      - _/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: cryocerous
     name: Cryocerou
@@ -106,6 +108,7 @@ entities:
   - id: crystal_camel
     name: Crystal Camel
     stats:
+      - _/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: diophyde_prowler
     name: Diophyde Prowler
@@ -369,5 +372,29 @@ entities:
       - _/owned
   - id: smithing_template_toxic_armor_trim
     name: "Smithing Template: Toxic Armor Trim"
+    stats:
+      - _/owned
+  - id: astrolabe
+    name: Astrolabe
+    stats:
+      - _/owned
+  - id: bag_of_spoils
+    name: Bag of Spoils
+    stats:
+      - _/owned
+  - id: food_prep_table
+    name: Food Prep Table
+    stats:
+      - _/owned
+  - id: star_emitter
+    name: Star Emitter
+    stats:
+      - _/owned
+  - id: tool_box
+    name: Tool Box
+    stats:
+      - _/owned
+  - id: trough
+    name: Trough
     stats:
       - _/owned
