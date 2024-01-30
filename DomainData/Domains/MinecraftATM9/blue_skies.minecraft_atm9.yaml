@@ -303,7 +303,7 @@ entities:
     stats:
       - _/achieved
   - id: exterminator
-    name: Bane Exterminator!
+    name: Exterminator!
     stats:
       - _/achieved
   - id: preheated
