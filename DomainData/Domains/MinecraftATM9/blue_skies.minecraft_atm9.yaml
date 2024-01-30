@@ -326,7 +326,7 @@ entities:
       - _/owned
       - arc_rarity
   - id: nature_arc
-    name: Nature Arch
+    name: Nature Arc
     stats:
       - _/owned
       - arc_rarity
