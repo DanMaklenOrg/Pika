@@ -283,6 +283,10 @@ entities:
     name: Getting Wood
     stats:
       - _/achieved
+  - id: bonus_durability
+    name: Bonus Durability!
+    stats:
+      - _/achieved
   - id: regrowth
     name: Regrowth
     stats:
