@@ -279,6 +279,10 @@ entities:
     name: Defying Nature
     stats:
       - _/achieved
+  - id: getting_wood
+    name: Getting Wood
+    stats:
+      - _/achieved
   - id: regrowth
     name: Regrowth
     stats:
