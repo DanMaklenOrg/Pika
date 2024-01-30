@@ -271,7 +271,43 @@ entities:
     stats:
       - _/achieved
   - id: bane_of_my_existence
-    name: Bane if my Existence
+    name: Bane of my Existence
+    stats:
+      - _/achieved
+  - id: potent_opponent
+    name: Potent Opponent
+    stats:
+      - _/achieved
+  - id: the_spiders_lair
+    name: The Spider's Lair
+    stats:
+      - _/achieved
+  - id: squashed
+    name: Squashed!
+    stats:
+      - _/achieved
+  - id: quite_different
+    name: Quite Different!
+    stats:
+      - _/achieved
+  - id: nowhere_safe
+    name: Nowhere Safe
+    stats:
+      - _/achieved
+  - id: the_power_of_alchemy
+    name: The Power of Alchemy!
+    stats:
+      - _/achieved
+  - id: warm_inside
+    name: Warm inside
+    stats:
+      - _/achieved
+  - id: exterminator
+    name: Bane Exterminator!
+    stats:
+      - _/achieved
+  - id: preheated
+    name: Preheated
     stats:
       - _/achieved
   - id: 1_down_3_to_go
