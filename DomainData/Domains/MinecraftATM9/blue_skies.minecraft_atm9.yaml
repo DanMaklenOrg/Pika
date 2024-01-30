@@ -275,7 +275,7 @@ entities:
     stats:
       - _/achieved
   - id: potent_opponent
-    name: Potent Opponent
+    name: Potent Opponent!
     stats:
       - _/achieved
   - id: the_spiders_lair
