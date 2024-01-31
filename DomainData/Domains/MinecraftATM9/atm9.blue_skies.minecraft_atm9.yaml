@@ -1,7 +1,6 @@
 id: atm9.blue_skies.minecraft_atm9
 name: "Blue Skies: ATM9"
 entities:
-
   - id: welcome_to_blue_skies
     name: Welcome to Blue Skies!
     stats:

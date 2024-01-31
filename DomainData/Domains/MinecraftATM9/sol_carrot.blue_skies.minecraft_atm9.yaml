@@ -1,0 +1,7 @@
+id: atm9.blue_skies.minecraft_atm9
+name: "Blue Skies: SoL Carrot"
+entities:
+  - id: blue_skies.minecraft_atm9/pine_fruit
+    name: Pine Fruit
+    stats:
+      - sol_carrot/eaten

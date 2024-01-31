@@ -434,3 +434,159 @@ entities:
     name: Trough
     stats:
       - _/owned
+  - id: snowcap_oven
+    name: Snowcap Oven
+    stats:
+      - _/owned
+  - id: horizonite_forge
+    name: Horizonite Forge
+    stats:
+      - _/owned
+  - id: summoning_table
+    name: Summoning Table
+    stats:
+      - _/owned
+  - id: alchemy_table
+    name: Alchemy Table
+    stats:
+      - _/owned
+  - id: bluebright_wood_sword
+    name: Blueblight Wood Sword
+    stats:
+      - _/owned
+  - id: bluebright_wood_shovel
+    name: Blueblight Wood Shovel
+    stats:
+      - _/owned
+  - id: bluebright_wood_pickaxe
+    name: Blueblight Wood Pickaxe
+    stats:
+      - _/owned
+  - id: bluebright_wood_axe
+    name: Blueblight Wood Axe
+    stats:
+      - _/owned
+  - id: bluebright_wood_hoe
+    name: Blueblight Wood Hoe
+    stats:
+      - _/owned
+  - id: starlit_wood_sword
+    name: Starlit Wood Sword
+    stats:
+      - _/owned
+  - id: starlit_wood_shovel
+    name: Starlit Wood Shovel
+    stats:
+      - _/owned
+  - id: starlit_wood_pickaxe
+    name: Starlit Wood Pickaxe
+    stats:
+      - _/owned
+  - id: starlit_wood_axe
+    name: Starlit Wood Axe
+    stats:
+      - _/owned
+  - id: starlit_wood_hoe
+    name: Starlit Wood Hoe
+    stats:
+      - _/owned
+  - id: frostbright_wood_sword
+    name: Frostbright Wood Sword
+    stats:
+      - _/owned
+  - id: frostbright_wood_shovel
+    name: Frostbright Wood Shovel
+    stats:
+      - _/owned
+  - id: frostbright_wood_pickaxe
+    name: Frostbright Wood Pickaxe
+    stats:
+      - _/owned
+  - id: frostbright_wood_axe
+    name: Frostbright Wood Axe
+    stats:
+      - _/owned
+  - id: frostbright_wood_hoe
+    name: Frostbright Wood Hoe
+    stats:
+      - _/owned
+  - id: lunar_wood_sword
+    name: lunar Wood Sword
+    stats:
+      - _/owned
+  - id: lunar_wood_shovel
+    name: lunar Wood Shovel
+    stats:
+      - _/owned
+  - id: lunar_wood_pickaxe
+    name: lunar Wood Pickaxe
+    stats:
+      - _/owned
+  - id: lunar_wood_axe
+    name: lunar Wood Axe
+    stats:
+      - _/owned
+  - id: lunar_wood_hoe
+    name: lunar Wood Hoe
+    stats:
+      - _/owned
+  - id: dusk_wood_sword
+    name: Dusk Wood Sword
+    stats:
+      - _/owned
+  - id: dusk_wood_shovel
+    name: Dusk Wood Shovel
+    stats:
+      - _/owned
+  - id: dusk_wood_pickaxe
+    name: Dusk Wood Pickaxe
+    stats:
+      - _/owned
+  - id: dusk_wood_axe
+    name: Dusk Wood Axe
+    stats:
+      - _/owned
+  - id: dusk_wood_hoe
+    name: Dusk Wood Hoe
+    stats:
+      - _/owned
+  - id: maple_wood_sword
+    name: Maple Wood Sword
+    stats:
+      - _/owned
+  - id: maple_wood_shovel
+    name: Maple Wood Shovel
+    stats:
+      - _/owned
+  - id: maple_wood_pickaxe
+    name: Maple Wood Pickaxe
+    stats:
+      - _/owned
+  - id: maple_wood_axe
+    name: Maple Wood Axe
+    stats:
+      - _/owned
+  - id: maple_wood_hoe
+    name: Maple Wood Hoe
+    stats:
+      - _/owned
+  - id: comet_wood_sword
+    name: Comet Wood Sword
+    stats:
+      - _/owned
+  - id: comet_wood_shovel
+    name: Comet Wood Shovel
+    stats:
+      - _/owned
+  - id: comet_wood_pickaxe
+    name: Comet Wood Pickaxe
+    stats:
+      - _/owned
+  - id: comet_wood_axe
+    name: Comet Wood Axe
+    stats:
+      - _/owned
+  - id: comet_wood_hoe
+    name: Comet Wood Hoe
+    stats:
+      - _/owned
