@@ -451,23 +451,23 @@ entities:
     stats:
       - _/owned
   - id: bluebright_wood_sword
-    name: Blueblight Wood Sword
+    name: Bluebright Wood Sword
     stats:
       - _/owned
   - id: bluebright_wood_shovel
-    name: Blueblight Wood Shovel
+    name: Bluebright Wood Shovel
     stats:
       - _/owned
   - id: bluebright_wood_pickaxe
-    name: Blueblight Wood Pickaxe
+    name: Bluebright Wood Pickaxe
     stats:
       - _/owned
   - id: bluebright_wood_axe
-    name: Blueblight Wood Axe
+    name: Bluebright Wood Axe
     stats:
       - _/owned
   - id: bluebright_wood_hoe
-    name: Blueblight Wood Hoe
+    name: Bluebright Wood Hoe
     stats:
       - _/owned
   - id: starlit_wood_sword
