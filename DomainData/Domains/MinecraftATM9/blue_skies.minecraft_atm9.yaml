@@ -511,23 +511,23 @@ entities:
     stats:
       - _/owned
   - id: lunar_wood_sword
-    name: lunar Wood Sword
+    name: Lunar Wood Sword
     stats:
       - _/owned
   - id: lunar_wood_shovel
-    name: lunar Wood Shovel
+    name: Lunar Wood Shovel
     stats:
       - _/owned
   - id: lunar_wood_pickaxe
-    name: lunar Wood Pickaxe
+    name: Lunar Wood Pickaxe
     stats:
       - _/owned
   - id: lunar_wood_axe
-    name: lunar Wood Axe
+    name: Lunar Wood Axe
     stats:
       - _/owned
   - id: lunar_wood_hoe
-    name: lunar Wood Hoe
+    name: Lunar Wood Hoe
     stats:
       - _/owned
   - id: dusk_wood_sword
@@ -767,7 +767,7 @@ entities:
     stats:
       - _/owned
   - id: spike_shield
-    name: spike Shield
+    name: Spike Shield
     stats:
       - _/owned
   - id: summoning_tome
