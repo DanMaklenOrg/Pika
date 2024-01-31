@@ -5,3 +5,59 @@ entities:
     name: Pine Fruit
     stats:
       - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/winter_leaves
+    name: Winter Leaves
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/scale_fruit
+    name: Pine Fruit
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/scale_fruit
+    name: Pine Fruit
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/fiery_beans
+    name: Fiery Beans
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/crescent_fruit
+    name: Crescent Fruit
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/smoked_carabeef
+    name: Smoked Carabeef
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/venison_steak
+    name: Venison Steak
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/roasted_monitor_tail
+    name: Roasted Monitor Tail
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/raw_grittle_flatfish
+    name: Raw Grittle Flatfish
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/cooked_grittle_flatfish
+    name: Cooked Grittle Flatfish
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/cooked_municipal_monkfish
+    name: Cooked Municipal Monkfish
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/cooked_charscale_moki
+    name: Cooked Charscale Moki
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/cooked_horizonfin_tunid
+    name: Cooked Horizonfin Tunid
+    stats:
+      - sol_carrot/eaten
+  - id: blue_skies.minecraft_atm9/
+    name: Cooked Municipal Monkfish
+    stats:
+      - sol_carrot/eaten
