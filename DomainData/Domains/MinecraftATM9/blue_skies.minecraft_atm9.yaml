@@ -590,3 +590,291 @@ entities:
     name: Comet Wood Hoe
     stats:
       - _/owned
+  - id: turquoise_stone_sword
+    name: Turquoise Stone Sword
+    stats:
+      - _/owned
+  - id: turquoise_stone_shovel
+    name: Turquoise Stone Shovel
+    stats:
+      - _/owned
+  - id: turquoise_stone_pickaxe
+    name: Turquoise Stone Pickaxe
+    stats:
+      - _/owned
+  - id: turquoise_stone_axe
+    name: Turquoise Stone Axe
+    stats:
+      - _/owned
+  - id: turquoise_stone_hoe
+    name: Turquoise Stone Hoe
+    stats:
+      - _/owned
+  - id: lunar_stone_sword
+    name: Lunar Stone Sword
+    stats:
+      - _/owned
+  - id: lunar_stone_shovel
+    name: Lunar Stone Shovel
+    stats:
+      - _/owned
+  - id: lunar_stone_pickaxe
+    name: Lunar Stone Pickaxe
+    stats:
+      - _/owned
+  - id: lunar_stone_axe
+    name: Lunar Stone Axe
+    stats:
+      - _/owned
+  - id: lunar_stone_hoe
+    name: Lunar Stone Hoe
+    stats:
+      - _/owned
+  - id: pyrope_sword
+    name: Pyrope Sword
+    stats:
+      - _/owned
+  - id: pyrope_shovel
+    name: Pyrope Shovel
+    stats:
+      - _/owned
+  - id: pyrope_pickaxe
+    name: Pyrope Pickaxe
+    stats:
+      - _/owned
+  - id: pyrope_axe
+    name: Pyrope Axe
+    stats:
+      - _/owned
+  - id: pyrope_hoe
+    name: Pyrope Hoe
+    stats:
+      - _/owned
+  - id: aquite_sword
+    name: Aquite Sword
+    stats:
+      - _/owned
+  - id: aquite_shovel
+    name: Aquite Shovel
+    stats:
+      - _/owned
+  - id: aquite_pickaxe
+    name: Aquite Pickaxe
+    stats:
+      - _/owned
+  - id: aquite_axe
+    name: Aquite Axe
+    stats:
+      - _/owned
+  - id: aquite_hoe
+    name: Aquite Hoe
+    stats:
+      - _/owned
+  - id: diopside_sword
+    name: Diopide Sword
+    stats:
+      - _/owned
+  - id: diopside_shovel
+    name: Diopide Shovel
+    stats:
+      - _/owned
+  - id: diopside_pickaxe
+    name: Diopide Pickaxe
+    stats:
+      - _/owned
+  - id: diopside_axe
+    name: Diopide Axe
+    stats:
+      - _/owned
+  - id: diopside_hoe
+    name: Diopide Hoe
+    stats:
+      - _/owned
+  - id: charoite_sword
+    name: Charoite Sword
+    stats:
+      - _/owned
+  - id: charoite_shovel
+    name: Charoite Shovel
+    stats:
+      - _/owned
+  - id: charoite_pickaxe
+    name: Charoite Pickaxe
+    stats:
+      - _/owned
+  - id: charoite_axe
+    name: Charoite Axe
+    stats:
+      - _/owned
+  - id: charoite_hoe
+    name: Charoite Hoe
+    stats:
+      - _/owned
+  - id: horizonite_sword
+    name: Horizonite Sword
+    stats:
+      - _/owned
+  - id: horizonite_shovel
+    name: Horizonite Shovel
+    stats:
+      - _/owned
+  - id: horizonite_pickaxe
+    name: Horizonite Pickaxe
+    stats:
+      - _/owned
+  - id: horizonite_axe
+    name: Horizonite Axe
+    stats:
+      - _/owned
+  - id: horizonite_hoe
+    name: Horizonite Hoe
+    stats:
+      - _/owned
+  - id: bluebright_spear
+    name: Bluebright Spear
+    stats:
+      - _/owned
+  - id: starlit_spear
+    name: Starlit Spear
+    stats:
+      - _/owned
+  - id: frostbright_spear
+    name: Frostbright Spear
+    stats:
+      - _/owned
+  - id: lunar_spear
+    name: Lunar Spear
+    stats:
+      - _/owned
+  - id: duk_spear
+    name: Dusk Spear
+    stats:
+      - _/owned
+  - id: maple_spear
+    name: Maple Spear
+    stats:
+      - _/owned
+  - id: comet_spear
+    name: Comet Spear
+    stats:
+      - _/owned
+  - id: soulbound_spear
+    name: Soulbound Spear
+    stats:
+      - _/owned
+  - id: moonstone_shield
+    name: Moonstone Shield
+    stats:
+      - _/owned
+  - id: spike_shield
+    name: spike Shield
+    stats:
+      - _/owned
+  - id: summoning_tome
+    name: Summoning Tome
+    stats:
+      - _/owned
+  - id: alchemy_scroll
+    name: Alchemy Scroll
+    stats:
+      - _/owned
+  - id: crushing_hammer
+    name: Crushing Hammer
+    stats:
+      - _/owned
+  - id: venom_sac
+    name: Venom Sac
+    stats:
+      - _/owned
+  - id: different_sword
+    name: Different Sword
+    stats:
+      - _/owned
+  - id: ventium_shears
+    name: Ventium Shears
+    stats:
+      - _/owned
+  - id: moonstone_shield
+    name: Moonstone Shield
+    stats:
+      - _/owned
+  - id: pyrope_helmet
+    name: Pyrope Helmet
+    stats:
+      - _/owned
+  - id: pyrope_chestplate
+    name: Pyrope Chestplate
+    stats:
+      - _/owned
+  - id: pyrope_leggings
+    name: Pyrope Leggings
+    stats:
+      - _/owned
+  - id: pyrope_boots
+    name: Pyrope Boots
+    stats:
+      - _/owned
+  - id: aquite_helmet
+    name: Aquite Helmet
+    stats:
+      - _/owned
+  - id: aquite_chestplate
+    name: Aquite Chestplate
+    stats:
+      - _/owned
+  - id: aquite_leggings
+    name: Aquite Leggings
+    stats:
+      - _/owned
+  - id: aquite_boots
+    name: Aquite Boots
+    stats:
+      - _/owned
+  - id: diopside_helmet
+    name: Diopside Helmet
+    stats:
+      - _/owned
+  - id: diopside_chestplate
+    name: Diopside Chestplate
+    stats:
+      - _/owned
+  - id: diopside_leggings
+    name: Diopside Leggings
+    stats:
+      - _/owned
+  - id: diopside_boots
+    name: Diopside Boots
+    stats:
+      - _/owned
+  - id: charoite_helmet
+    name: Charoite Helmet
+    stats:
+      - _/owned
+  - id: charoite_chestplate
+    name: Charoite Chestplate
+    stats:
+      - _/owned
+  - id: charoite_leggings
+    name: Charoite Leggings
+    stats:
+      - _/owned
+  - id: charoite_boots
+    name: Charoite Boots
+    stats:
+      - _/owned
+  - id: horizonite_helmet
+    name: Horizonite Helmet
+    stats:
+      - _/owned
+  - id: horizonite_chestplate
+    name: Horizonite Chestplate
+    stats:
+      - _/owned
+  - id: horizonite_leggings
+    name: Horizonite Leggings
+    stats:
+      - _/owned
+  - id: horizonite_boots
+    name: Horizonite Boots
+    stats:
+      - _/owned
