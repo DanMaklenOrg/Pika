@@ -883,11 +883,7 @@ entities:
     stats:
       - sol_carrot.minecraft_atm9/eaten
   - id: scale_fruit
-    name: Pine Fruit
-    stats:
-      - sol_carrot.minecraft_atm9/eaten
-  - id: scale_fruit
-    name: Pine Fruit
+    name: Scale Fruit
     stats:
       - sol_carrot.minecraft_atm9/eaten
   - id: fiery_beans
