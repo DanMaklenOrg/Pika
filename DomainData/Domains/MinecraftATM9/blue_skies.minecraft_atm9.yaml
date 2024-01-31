@@ -671,23 +671,23 @@ entities:
     stats:
       - _/owned
   - id: diopside_sword
-    name: Diopide Sword
+    name: Diopside Sword
     stats:
       - _/owned
   - id: diopside_shovel
-    name: Diopide Shovel
+    name: Diopside Shovel
     stats:
       - _/owned
   - id: diopside_pickaxe
-    name: Diopide Pickaxe
+    name: Diopside Pickaxe
     stats:
       - _/owned
   - id: diopside_axe
-    name: Diopide Axe
+    name: Diopside Axe
     stats:
       - _/owned
   - id: diopside_hoe
-    name: Diopide Hoe
+    name: Diopside Hoe
     stats:
       - _/owned
   - id: charoite_sword
