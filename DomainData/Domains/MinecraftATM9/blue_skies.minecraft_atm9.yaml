@@ -881,60 +881,60 @@ entities:
   - id: pine_fruit
     name: Pine Fruit
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: winter_leaves
     name: Winter Leaves
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: scale_fruit
     name: Pine Fruit
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: scale_fruit
     name: Pine Fruit
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: fiery_beans
     name: Fiery Beans
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: crescent_fruit
     name: Crescent Fruit
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: smoked_carabeef
     name: Smoked Carabeef
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: venison_steak
     name: Venison Steak
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: roasted_monitor_tail
     name: Roasted Monitor Tail
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: raw_grittle_flatfish
     name: Raw Grittle Flatfish
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: cooked_grittle_flatfish
     name: Cooked Grittle Flatfish
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: cooked_municipal_monkfish
     name: Cooked Municipal Monkfish
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: cooked_charscale_moki
     name: Cooked Charscale Moki
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id: cooked_horizonfin_tunid
     name: Cooked Horizonfin Tunid
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten
   - id:
     name: Cooked Municipal Monkfish
     stats:
-      - sol_carrot/eaten
+      - sol_carrot.minecraft_atm9/eaten

@@ -1,5 +1,5 @@
-id: atm9.blue_skies.minecraft_atm9
-name: "Blue Skies: ATM9"
+id: blue_skies.atm9.minecraft_atm9
+name: "ATM9 Quests: Blue Skies"
 entities:
   - id: welcome_to_blue_skies
     name: Welcome to Blue Skies!
