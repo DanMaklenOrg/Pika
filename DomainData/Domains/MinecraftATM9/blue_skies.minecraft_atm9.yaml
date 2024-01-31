@@ -794,10 +794,6 @@ entities:
     name: Ventium Shears
     stats:
       - _/owned
-  - id: moonstone_shield
-    name: Moonstone Shield
-    stats:
-      - _/owned
   - id: pyrope_helmet
     name: Pyrope Helmet
     stats:
