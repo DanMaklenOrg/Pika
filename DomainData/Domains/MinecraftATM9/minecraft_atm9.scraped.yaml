@@ -1,0 +1,71 @@
+id: minecraft_atm9
+stats:
+  - id: career_level
+    name: Villager Career Level
+    type: ORDERED_ENUM(Novice, Apprentice, Journeyman, Expert, Master)
+entities:
+  - id: armorer
+    name: Armorer
+    stats:
+      - villager_moved
+      - career_level
+  - id: butcher
+    name: Butcher
+    stats:
+      - villager_moved
+      - career_level
+  - id: cartographer
+    name: Cartographer
+    stats:
+      - villager_moved
+      - career_level
+  - id: cleric
+    name: Cleric
+    stats:
+      - villager_moved
+      - career_level
+  - id: farmer
+    name: Farmer
+    stats:
+      - villager_moved
+      - career_level
+  - id: fisherman
+    name: Fisherman
+    stats:
+      - villager_moved
+      - career_level
+  - id: fletcher
+    name: Fletcher
+    stats:
+      - villager_moved
+      - career_level
+  - id: leatherworker
+    name: Leatherworker
+    stats:
+      - villager_moved
+      - career_level
+  - id: librarian
+    name: Librarian
+    stats:
+      - villager_moved
+      - career_level
+  - id: mason
+    name: Mason
+    stats:
+      - villager_moved
+      - career_level
+  - id: shepherd
+    name: Shepherd
+    stats:
+      - villager_moved
+      - career_level
+  - id: toolsmith
+    name: Toolsmith
+    stats:
+      - villager_moved
+      - career_level
+  - id: weaponsmith
+    name: Weaponsmith
+    stats:
+      - villager_moved
+      - career_level

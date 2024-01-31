@@ -62,6 +62,34 @@ internal class StatYamlConverter : IYamlTypeConverter
 
     public void WriteYaml(IEmitter emitter, object? value, Type type)
     {
-        throw new NotImplementedException();
+        var val = (Stat)value!;
+
+        var id = val.Id.FullyQualifiedId;
+        if (val.Id.Domain.FullyQualifiedId == _scope.FullyQualifiedId) id = val.Id.Id;
+
+        emitter.Emit(new MappingStart());
+
+        emitter.Emit(new Scalar("id"));
+        emitter.Emit(new Scalar(id));
+        emitter.Emit(new Scalar("name"));
+        emitter.Emit(new Scalar(val.Name));
+
+        emitter.Emit(new Scalar("type"));
+        switch (val.Type)
+        {
+            case StatType.Boolean:
+                emitter.Emit(new Scalar("BOOLEAN"));
+                break;
+            case StatType.IntegerRange:
+                emitter.Emit(new Scalar($"INTEGER_RANGE({val.Min}, {val.Max})"));
+                break;
+            case StatType.OrderedEnum:
+                emitter.Emit(new Scalar($"ORDERED_ENUM({string.Join(", ", val.EnumValues!)})"));
+                break;
+            default:
+                throw new Exception("Unknown Stat Type");
+        }
+
+        emitter.Emit(new MappingEnd());
     }
 }

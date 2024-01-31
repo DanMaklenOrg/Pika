@@ -13,3 +13,8 @@ stats:
   - id: bred
     name: Bred
     type: BOOLEAN
+entities:
+  - id: iron_golem
+    name: Iron Golem
+    stats:
+      - _/constructed
