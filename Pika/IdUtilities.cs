@@ -10,7 +10,7 @@ public static class IdUtilities
     public static string Normalize(string str)
     {
         str = str.Replace("\'", "");
-        return NonIdCharacter.Replace(str, "_").ToLower();
+        return NonIdCharacter.Replace(str, "_").Trim('_').ToLower();
     }
 
     public static bool IsValidId(string str) => IdPattern.IsMatch(str);

@@ -4,68 +4,68 @@ stats:
     name: Villager Career Level
     type: ORDERED_ENUM(Novice, Apprentice, Journeyman, Expert, Master)
 entities:
-  - id: armorer
-    name: Armorer
+  - id: villager_armorer
+    name: Villager (Armorer)
     stats:
       - villager_moved
       - career_level
-  - id: butcher
-    name: Butcher
+  - id: villager_butcher
+    name: Villager (Butcher)
     stats:
       - villager_moved
       - career_level
-  - id: cartographer
-    name: Cartographer
+  - id: villager_cartographer
+    name: Villager (Cartographer)
     stats:
       - villager_moved
       - career_level
-  - id: cleric
-    name: Cleric
+  - id: villager_cleric
+    name: Villager (Cleric)
     stats:
       - villager_moved
       - career_level
-  - id: farmer
-    name: Farmer
+  - id: villager_farmer
+    name: Villager (Farmer)
     stats:
       - villager_moved
       - career_level
-  - id: fisherman
-    name: Fisherman
+  - id: villager_fisherman
+    name: Villager (Fisherman)
     stats:
       - villager_moved
       - career_level
-  - id: fletcher
-    name: Fletcher
+  - id: villager_fletcher
+    name: Villager (Fletcher)
     stats:
       - villager_moved
       - career_level
-  - id: leatherworker
-    name: Leatherworker
+  - id: villager_leatherworker
+    name: Villager (Leatherworker)
     stats:
       - villager_moved
       - career_level
-  - id: librarian
-    name: Librarian
+  - id: villager_librarian
+    name: Villager (Librarian)
     stats:
       - villager_moved
       - career_level
-  - id: mason
-    name: Mason
+  - id: villager_mason
+    name: Villager (Mason)
     stats:
       - villager_moved
       - career_level
-  - id: shepherd
-    name: Shepherd
+  - id: villager_shepherd
+    name: Villager (Shepherd)
     stats:
       - villager_moved
       - career_level
-  - id: toolsmith
-    name: Toolsmith
+  - id: villager_toolsmith
+    name: Villager (Toolsmith)
     stats:
       - villager_moved
       - career_level
-  - id: weaponsmith
-    name: Weaponsmith
+  - id: villager_weaponsmith
+    name: Villager (Weaponsmith)
     stats:
       - villager_moved
       - career_level

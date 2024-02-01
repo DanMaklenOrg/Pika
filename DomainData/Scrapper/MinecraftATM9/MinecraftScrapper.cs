@@ -42,7 +42,7 @@ public class MinecraftScrapper : IScrapper
 
     private Entity ParseVillagerProfession(HtmlNode node)
     {
-        var name = node.InnerText;
+        var name = $"Villager ({node.InnerText})";
         return new Entity
         {
             Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
