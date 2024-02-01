@@ -51,6 +51,7 @@ public class MinecraftScrapper : IScrapper
             {
                 new("villager_moved", DomainId),
                 new("career_level", DomainId),
+                new("unzombified", DomainId),
             }
         };
     }
