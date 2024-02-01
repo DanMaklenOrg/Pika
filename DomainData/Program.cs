@@ -12,6 +12,7 @@ using Pika.Repository;
 var builder = CoconaApp.CreateBuilder(args);
 
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
+builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
 builder.Services.AddTransient<PikaConverter>();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
@@ -24,7 +25,7 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter 
 {
     foreach (var s in scrappers)
     {
-        Console.Write($"Scraping {s.DomainId}");
+        Console.WriteLine($"Scraping {s.DomainId}");
         var domain = await s.Scrape();
         TextWriter stream = new StreamWriter($"Domains/{s.OutputDirectory}/{s.DomainId}.scraped.yaml");
         converter.Write(domain, stream);

@@ -1,9 +1,8 @@
-id: atm9.blue_skies.minecraft_atm9
-name: "Blue Skies: ATM9"
+id: blue_skies.atm9.minecraft_atm9
+name: "ATM9 Quests: Blue Skies"
 entities:
-
   - id: welcome_to_blue_skies
-    name: Welcome to Blue Skies
+    name: Welcome to Blue Skies!
     stats:
       - _/quest_completed
   - id: finding_the_gatekeeper
@@ -44,10 +43,6 @@ entities:
       - _/quest_completed
   - id: tool_box
     name: Tool Box
-    stats:
-      - _/quest_completed
-  - id: bonus_durability
-    name: Bonus Durability!
     stats:
       - _/quest_completed
   - id: falsite
@@ -175,7 +170,7 @@ entities:
     stats:
       - _/quest_completed
   - id: dusk_arc
-    name: Dusk Arch
+    name: Dusk Arc
     stats:
       - _/quest_completed
   - id: spike_shield

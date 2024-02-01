@@ -94,10 +94,12 @@ entities:
   - id: comic_fox
     name: Cosmic Fox
     stats:
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: crogre
     name: Crogre
     stats:
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: cryocerous
     name: Cryocerou
@@ -106,6 +108,7 @@ entities:
   - id: crystal_camel
     name: Crystal Camel
     stats:
+      - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: diophyde_prowler
     name: Diophyde Prowler
@@ -268,7 +271,43 @@ entities:
     stats:
       - _/achieved
   - id: bane_of_my_existence
-    name: Bane if my Existence
+    name: Bane of my Existence
+    stats:
+      - _/achieved
+  - id: potent_opponent
+    name: Potent Opponent!
+    stats:
+      - _/achieved
+  - id: the_spiders_lair
+    name: The Spider's Lair
+    stats:
+      - _/achieved
+  - id: squashed
+    name: Squashed!
+    stats:
+      - _/achieved
+  - id: quite_different
+    name: Quite Different!
+    stats:
+      - _/achieved
+  - id: nowhere_safe
+    name: Nowhere Safe
+    stats:
+      - _/achieved
+  - id: the_power_of_alchemy
+    name: The Power of Alchemy!
+    stats:
+      - _/achieved
+  - id: warm_inside
+    name: Warm inside
+    stats:
+      - _/achieved
+  - id: exterminator
+    name: Exterminator!
+    stats:
+      - _/achieved
+  - id: preheated
+    name: Preheated
     stats:
       - _/achieved
   - id: 1_down_3_to_go
@@ -277,6 +316,14 @@ entities:
       - _/achieved
   - id: defying_nature
     name: Defying Nature
+    stats:
+      - _/achieved
+  - id: getting_wood
+    name: Getting Wood
+    stats:
+      - _/achieved
+  - id: bonus_durability
+    name: Bonus Durability!
     stats:
       - _/achieved
   - id: regrowth
@@ -306,8 +353,8 @@ entities:
     stats:
       - _/owned
       - trophy_tier
-  - id: archnarch_trophy
-    name: Archnarch Trophy
+  - id: arachnarch_trophy
+    name: Arachnarch Trophy
     stats:
       - _/owned
       - trophy_tier
@@ -322,7 +369,7 @@ entities:
       - _/owned
       - arc_rarity
   - id: nature_arc
-    name: Nature Arch
+    name: Nature Arc
     stats:
       - _/owned
       - arc_rarity
@@ -363,3 +410,523 @@ entities:
     name: "Smithing Template: Toxic Armor Trim"
     stats:
       - _/owned
+  - id: astrolabe
+    name: Astrolabe
+    stats:
+      - _/owned
+  - id: bag_of_spoils
+    name: Bag of Spoils
+    stats:
+      - _/owned
+  - id: food_prep_table
+    name: Food Prep Table
+    stats:
+      - _/owned
+  - id: star_emitter
+    name: Star Emitter
+    stats:
+      - _/owned
+  - id: tool_box
+    name: Tool Box
+    stats:
+      - _/owned
+  - id: trough
+    name: Trough
+    stats:
+      - _/owned
+  - id: snowcap_oven
+    name: Snowcap Oven
+    stats:
+      - _/owned
+  - id: horizonite_forge
+    name: Horizonite Forge
+    stats:
+      - _/owned
+  - id: summoning_table
+    name: Summoning Table
+    stats:
+      - _/owned
+  - id: alchemy_table
+    name: Alchemy Table
+    stats:
+      - _/owned
+  - id: bluebright_wood_sword
+    name: Bluebright Wood Sword
+    stats:
+      - _/owned
+  - id: bluebright_wood_shovel
+    name: Bluebright Wood Shovel
+    stats:
+      - _/owned
+  - id: bluebright_wood_pickaxe
+    name: Bluebright Wood Pickaxe
+    stats:
+      - _/owned
+  - id: bluebright_wood_axe
+    name: Bluebright Wood Axe
+    stats:
+      - _/owned
+  - id: bluebright_wood_hoe
+    name: Bluebright Wood Hoe
+    stats:
+      - _/owned
+  - id: starlit_wood_sword
+    name: Starlit Wood Sword
+    stats:
+      - _/owned
+  - id: starlit_wood_shovel
+    name: Starlit Wood Shovel
+    stats:
+      - _/owned
+  - id: starlit_wood_pickaxe
+    name: Starlit Wood Pickaxe
+    stats:
+      - _/owned
+  - id: starlit_wood_axe
+    name: Starlit Wood Axe
+    stats:
+      - _/owned
+  - id: starlit_wood_hoe
+    name: Starlit Wood Hoe
+    stats:
+      - _/owned
+  - id: frostbright_wood_sword
+    name: Frostbright Wood Sword
+    stats:
+      - _/owned
+  - id: frostbright_wood_shovel
+    name: Frostbright Wood Shovel
+    stats:
+      - _/owned
+  - id: frostbright_wood_pickaxe
+    name: Frostbright Wood Pickaxe
+    stats:
+      - _/owned
+  - id: frostbright_wood_axe
+    name: Frostbright Wood Axe
+    stats:
+      - _/owned
+  - id: frostbright_wood_hoe
+    name: Frostbright Wood Hoe
+    stats:
+      - _/owned
+  - id: lunar_wood_sword
+    name: Lunar Wood Sword
+    stats:
+      - _/owned
+  - id: lunar_wood_shovel
+    name: Lunar Wood Shovel
+    stats:
+      - _/owned
+  - id: lunar_wood_pickaxe
+    name: Lunar Wood Pickaxe
+    stats:
+      - _/owned
+  - id: lunar_wood_axe
+    name: Lunar Wood Axe
+    stats:
+      - _/owned
+  - id: lunar_wood_hoe
+    name: Lunar Wood Hoe
+    stats:
+      - _/owned
+  - id: dusk_wood_sword
+    name: Dusk Wood Sword
+    stats:
+      - _/owned
+  - id: dusk_wood_shovel
+    name: Dusk Wood Shovel
+    stats:
+      - _/owned
+  - id: dusk_wood_pickaxe
+    name: Dusk Wood Pickaxe
+    stats:
+      - _/owned
+  - id: dusk_wood_axe
+    name: Dusk Wood Axe
+    stats:
+      - _/owned
+  - id: dusk_wood_hoe
+    name: Dusk Wood Hoe
+    stats:
+      - _/owned
+  - id: maple_wood_sword
+    name: Maple Wood Sword
+    stats:
+      - _/owned
+  - id: maple_wood_shovel
+    name: Maple Wood Shovel
+    stats:
+      - _/owned
+  - id: maple_wood_pickaxe
+    name: Maple Wood Pickaxe
+    stats:
+      - _/owned
+  - id: maple_wood_axe
+    name: Maple Wood Axe
+    stats:
+      - _/owned
+  - id: maple_wood_hoe
+    name: Maple Wood Hoe
+    stats:
+      - _/owned
+  - id: comet_wood_sword
+    name: Comet Wood Sword
+    stats:
+      - _/owned
+  - id: comet_wood_shovel
+    name: Comet Wood Shovel
+    stats:
+      - _/owned
+  - id: comet_wood_pickaxe
+    name: Comet Wood Pickaxe
+    stats:
+      - _/owned
+  - id: comet_wood_axe
+    name: Comet Wood Axe
+    stats:
+      - _/owned
+  - id: comet_wood_hoe
+    name: Comet Wood Hoe
+    stats:
+      - _/owned
+  - id: turquoise_stone_sword
+    name: Turquoise Stone Sword
+    stats:
+      - _/owned
+  - id: turquoise_stone_shovel
+    name: Turquoise Stone Shovel
+    stats:
+      - _/owned
+  - id: turquoise_stone_pickaxe
+    name: Turquoise Stone Pickaxe
+    stats:
+      - _/owned
+  - id: turquoise_stone_axe
+    name: Turquoise Stone Axe
+    stats:
+      - _/owned
+  - id: turquoise_stone_hoe
+    name: Turquoise Stone Hoe
+    stats:
+      - _/owned
+  - id: lunar_stone_sword
+    name: Lunar Stone Sword
+    stats:
+      - _/owned
+  - id: lunar_stone_shovel
+    name: Lunar Stone Shovel
+    stats:
+      - _/owned
+  - id: lunar_stone_pickaxe
+    name: Lunar Stone Pickaxe
+    stats:
+      - _/owned
+  - id: lunar_stone_axe
+    name: Lunar Stone Axe
+    stats:
+      - _/owned
+  - id: lunar_stone_hoe
+    name: Lunar Stone Hoe
+    stats:
+      - _/owned
+  - id: pyrope_sword
+    name: Pyrope Sword
+    stats:
+      - _/owned
+  - id: pyrope_shovel
+    name: Pyrope Shovel
+    stats:
+      - _/owned
+  - id: pyrope_pickaxe
+    name: Pyrope Pickaxe
+    stats:
+      - _/owned
+  - id: pyrope_axe
+    name: Pyrope Axe
+    stats:
+      - _/owned
+  - id: pyrope_hoe
+    name: Pyrope Hoe
+    stats:
+      - _/owned
+  - id: aquite_sword
+    name: Aquite Sword
+    stats:
+      - _/owned
+  - id: aquite_shovel
+    name: Aquite Shovel
+    stats:
+      - _/owned
+  - id: aquite_pickaxe
+    name: Aquite Pickaxe
+    stats:
+      - _/owned
+  - id: aquite_axe
+    name: Aquite Axe
+    stats:
+      - _/owned
+  - id: aquite_hoe
+    name: Aquite Hoe
+    stats:
+      - _/owned
+  - id: diopside_sword
+    name: Diopside Sword
+    stats:
+      - _/owned
+  - id: diopside_shovel
+    name: Diopside Shovel
+    stats:
+      - _/owned
+  - id: diopside_pickaxe
+    name: Diopside Pickaxe
+    stats:
+      - _/owned
+  - id: diopside_axe
+    name: Diopside Axe
+    stats:
+      - _/owned
+  - id: diopside_hoe
+    name: Diopside Hoe
+    stats:
+      - _/owned
+  - id: charoite_sword
+    name: Charoite Sword
+    stats:
+      - _/owned
+  - id: charoite_shovel
+    name: Charoite Shovel
+    stats:
+      - _/owned
+  - id: charoite_pickaxe
+    name: Charoite Pickaxe
+    stats:
+      - _/owned
+  - id: charoite_axe
+    name: Charoite Axe
+    stats:
+      - _/owned
+  - id: charoite_hoe
+    name: Charoite Hoe
+    stats:
+      - _/owned
+  - id: horizonite_sword
+    name: Horizonite Sword
+    stats:
+      - _/owned
+  - id: horizonite_shovel
+    name: Horizonite Shovel
+    stats:
+      - _/owned
+  - id: horizonite_pickaxe
+    name: Horizonite Pickaxe
+    stats:
+      - _/owned
+  - id: horizonite_axe
+    name: Horizonite Axe
+    stats:
+      - _/owned
+  - id: horizonite_hoe
+    name: Horizonite Hoe
+    stats:
+      - _/owned
+  - id: bluebright_spear
+    name: Bluebright Spear
+    stats:
+      - _/owned
+  - id: starlit_spear
+    name: Starlit Spear
+    stats:
+      - _/owned
+  - id: frostbright_spear
+    name: Frostbright Spear
+    stats:
+      - _/owned
+  - id: lunar_spear
+    name: Lunar Spear
+    stats:
+      - _/owned
+  - id: duk_spear
+    name: Dusk Spear
+    stats:
+      - _/owned
+  - id: maple_spear
+    name: Maple Spear
+    stats:
+      - _/owned
+  - id: comet_spear
+    name: Comet Spear
+    stats:
+      - _/owned
+  - id: soulbound_spear
+    name: Soulbound Spear
+    stats:
+      - _/owned
+  - id: moonstone_shield
+    name: Moonstone Shield
+    stats:
+      - _/owned
+  - id: spike_shield
+    name: Spike Shield
+    stats:
+      - _/owned
+  - id: summoning_tome
+    name: Summoning Tome
+    stats:
+      - _/owned
+  - id: alchemy_scroll
+    name: Alchemy Scroll
+    stats:
+      - _/owned
+  - id: crushing_hammer
+    name: Crushing Hammer
+    stats:
+      - _/owned
+  - id: venom_sac
+    name: Venom Sac
+    stats:
+      - _/owned
+  - id: different_sword
+    name: Different Sword
+    stats:
+      - _/owned
+  - id: ventium_shears
+    name: Ventium Shears
+    stats:
+      - _/owned
+  - id: pyrope_helmet
+    name: Pyrope Helmet
+    stats:
+      - _/owned
+  - id: pyrope_chestplate
+    name: Pyrope Chestplate
+    stats:
+      - _/owned
+  - id: pyrope_leggings
+    name: Pyrope Leggings
+    stats:
+      - _/owned
+  - id: pyrope_boots
+    name: Pyrope Boots
+    stats:
+      - _/owned
+  - id: aquite_helmet
+    name: Aquite Helmet
+    stats:
+      - _/owned
+  - id: aquite_chestplate
+    name: Aquite Chestplate
+    stats:
+      - _/owned
+  - id: aquite_leggings
+    name: Aquite Leggings
+    stats:
+      - _/owned
+  - id: aquite_boots
+    name: Aquite Boots
+    stats:
+      - _/owned
+  - id: diopside_helmet
+    name: Diopside Helmet
+    stats:
+      - _/owned
+  - id: diopside_chestplate
+    name: Diopside Chestplate
+    stats:
+      - _/owned
+  - id: diopside_leggings
+    name: Diopside Leggings
+    stats:
+      - _/owned
+  - id: diopside_boots
+    name: Diopside Boots
+    stats:
+      - _/owned
+  - id: charoite_helmet
+    name: Charoite Helmet
+    stats:
+      - _/owned
+  - id: charoite_chestplate
+    name: Charoite Chestplate
+    stats:
+      - _/owned
+  - id: charoite_leggings
+    name: Charoite Leggings
+    stats:
+      - _/owned
+  - id: charoite_boots
+    name: Charoite Boots
+    stats:
+      - _/owned
+  - id: horizonite_helmet
+    name: Horizonite Helmet
+    stats:
+      - _/owned
+  - id: horizonite_chestplate
+    name: Horizonite Chestplate
+    stats:
+      - _/owned
+  - id: horizonite_leggings
+    name: Horizonite Leggings
+    stats:
+      - _/owned
+  - id: horizonite_boots
+    name: Horizonite Boots
+    stats:
+      - _/owned
+  - id: pine_fruit
+    name: Pine Fruit
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: winter_leaves
+    name: Winter Leaves
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: scale_fruit
+    name: Scale Fruit
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: fiery_beans
+    name: Fiery Beans
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: crescent_fruit
+    name: Crescent Fruit
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: smoked_carabeef
+    name: Smoked Carabeef
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: venison_steak
+    name: Venison Steak
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: roasted_monitor_tail
+    name: Roasted Monitor Tail
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: raw_grittle_flatfish
+    name: Raw Grittle Flatfish
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: cooked_grittle_flatfish
+    name: Cooked Grittle Flatfish
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: cooked_municipal_monkfish
+    name: Cooked Municipal Monkfish
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: cooked_charscale_moki
+    name: Cooked Charscale Moki
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id: cooked_horizonfin_tunid
+    name: Cooked Horizonfin Tunid
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
+  - id:
+    name: Cooked Municipal Monkfish
+    stats:
+      - sol_carrot.minecraft_atm9/eaten
