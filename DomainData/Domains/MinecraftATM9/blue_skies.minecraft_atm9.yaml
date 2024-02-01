@@ -377,10 +377,6 @@ entities:
     stats:
       - _/owned
       - arc_rarity
-  - id: sky_music_disc_lachney_population
-    name: "Sky Music Disc: Lachney - Population"
-    stats:
-      - _/owned
   - id: sky_music_disc_jonathing_blinding_rage
     name: "Sky Music Disc: Jonathing - Blinding Rage"
     stats:
