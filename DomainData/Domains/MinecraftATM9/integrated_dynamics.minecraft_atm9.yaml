@@ -1,2 +1,56 @@
 id: integrated_dynamics.minecraft_atm9
 name: "Integrated Dynamics"
+entities:
+  - id: on_the_dynamics_of_integration
+    name: On the Dynamics of Integration
+    stats:
+      - _/owned
+  - id: creative_energy_battery
+    name: Creative Energy Battery
+    stats:
+      - _/owned
+  - id: generator
+    name: Generator
+    stats:
+      - _/owned
+  - id: mechanical_drying_basin
+    name: Mechanical Drying Basin
+    stats:
+      - _/owned
+  - id: mechanical_squeezer
+    name: Mechanical Squeezer
+    stats:
+      - _/owned
+  - id: wrench
+    name: Wrench
+    stats:
+      - _/owned
+  - id: labeller
+    name: Labeller
+    stats:
+      - _/owned
+  - id: portable_logic_programmer
+    name: Portable Logic Programmer
+    stats:
+      - _/owned
+  - id: portable_storage_terminal
+    name: Portable Storage Terminal
+    stats:
+      - _/owned
+
+  - id: delayer
+    name: Delayer
+    stats:
+      - _/owned
+  - id: variable_store
+    name: Variable Store
+    stats:
+      - _/owned
+  - id: proxy
+    name: proxy
+    stats:
+      - _/owned
+  - id: materializer
+    name: Materializer
+    stats:
+      - _/owned
