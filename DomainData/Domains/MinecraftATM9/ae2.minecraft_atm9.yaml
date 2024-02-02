@@ -1,0 +1,13 @@
+id: ae2.minecraft_atm9
+name: "Applied Energistics 2"
+entities:
+  - id: me_controller
+    name: Me Controller
+    stats:
+      - _/owned
+  - id: villager_fluix_researcher
+    name: Villager (Fluix Researcher)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified

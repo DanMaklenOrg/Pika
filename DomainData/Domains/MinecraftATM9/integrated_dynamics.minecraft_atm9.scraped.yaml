@@ -1,0 +1,302 @@
+id: integrated_dynamics.minecraft_atm9
+entities:
+  - id: meneglin_discovery
+    name: Meneglin Discovery
+    stats:
+      - _/quest_completed
+  - id: squeezing_like_a_boss
+    name: Squeezing like a boss
+    stats:
+      - _/quest_completed
+  - id: drying_like_a_boss
+    name: Drying like a boss
+    stats:
+      - _/quest_completed
+  - id: menril_production
+    name: Menril Production
+    stats:
+      - _/quest_completed
+  - id: cables_for_logic
+    name: Cables, for logic
+    stats:
+      - _/quest_completed
+  - id: networks_for_logic
+    name: Networks, for logic
+    stats:
+      - _/quest_completed
+  - id: menril_wrenching
+    name: Menril Wrenching
+    stats:
+      - _/quest_completed
+  - id: variables_for_values
+    name: Variables, For Values
+    stats:
+      - _/quest_completed
+  - id: variable_input_transformation
+    name: Variable Input Transformation
+    stats:
+      - _/quest_completed
+  - id: variable_output_transformation
+    name: Variable Output Transformation
+    stats:
+      - _/quest_completed
+  - id: redstone_reading
+    name: Redstone Reading
+    stats:
+      - _/quest_completed
+  - id: block_reading
+    name: Block Reading
+    stats:
+      - _/quest_completed
+  - id: inventory_reading
+    name: Inventory Reading
+    stats:
+      - _/quest_completed
+  - id: machine_reading
+    name: Machine Reading
+    stats:
+      - _/quest_completed
+  - id: value_displaying
+    name: Value Displaying
+    stats:
+      - _/quest_completed
+  - id: redstone_capturing
+    name: Redstone Capturing
+    stats:
+      - _/quest_completed
+  - id: redstone_observement
+    name: Redstone Observement
+    stats:
+      - _/quest_completed
+  - id: redstone_transmission
+    name: Redstone Transmission
+    stats:
+      - _/quest_completed
+  - id: logic_programming
+    name: Logic Programming
+    stats:
+      - _/quest_completed
+  - id: constant_definition
+    name: Constant Definition
+    stats:
+      - _/quest_completed
+  - id: arithmetic_addition
+    name: Arithmetic Addition
+    stats:
+      - _/quest_completed
+  - id: variable_materialization
+    name: Variable Materialization
+    stats:
+      - _/quest_completed
+  - id: variable_proxying
+    name: Variable Proxying
+    stats:
+      - _/quest_completed
+  - id: logical_list_building
+    name: Logical List Building
+    stats:
+      - _/quest_completed
+  - id: item_origin_identification
+    name: Item Origin Identification
+    stats:
+      - _/quest_completed
+  - id: what_would_i_be_looking_at
+    name: What Would I Be Looking At?
+    stats:
+      - _/quest_completed
+  - id: dynamic_additions
+    name: Dynamic Additions
+    stats:
+      - _/quest_completed
+  - id: dynamic_list_filtering
+    name: Dynamic List Filtering
+    stats:
+      - _/quest_completed
+  - id: recipe_reading
+    name: Recipe Reading
+    stats:
+      - _/quest_completed
+  - id: recipe_creation
+    name: Recipe Creation
+    stats:
+      - _/quest_completed
+  - id: recipe_lookup
+    name: Recipe Lookup
+    stats:
+      - _/quest_completed
+  - id: lectern_nbt
+    name: Lectern NBT
+    stats:
+      - _/quest_completed
+  - id: lectern_nbt_book
+    name: Lectern NBT Book
+    stats:
+      - _/quest_completed
+  - id: lectern_nbt_book_name
+    name: Lectern NBT Book Name
+    stats:
+      - _/quest_completed
+  - id: creeper_taming
+    name: Creeper Taming
+    stats:
+      - _/quest_completed
+  - id: sponge_step_sound
+    name: Sponge Step Sound
+    stats:
+      - _/quest_completed
+  - id: recursive_recursion
+    name: Recursive Recursion
+    stats:
+      - _/quest_completed
+  - id: tools_for_obsidian
+    name: Tools for Obsidian?
+    stats:
+      - _/quest_completed
+  - id: smart_pressure_plate
+    name: Smart Pressure Plate
+    stats:
+      - _/quest_completed
+  - id: item_interfacing
+    name: Item Interfacing
+    stats:
+      - _/quest_completed
+  - id: fluid_interfacing
+    name: Fluid Interfacing
+    stats:
+      - _/quest_completed
+  - id: energy_interfacing
+    name: Energy Interfacing
+    stats:
+      - _/quest_completed
+  - id: advanced_item_exporting
+    name: Advanced Item Exporting
+    stats:
+      - _/quest_completed
+  - id: advanced_item_importing
+    name: Advanced Item Importing
+    stats:
+      - _/quest_completed
+  - id: omni_item_importing
+    name: Omni Item Importing
+    stats:
+      - _/quest_completed
+  - id: limited_item_exporting
+    name: Limited Item Exporting
+    stats:
+      - _/quest_completed
+  - id: list_based_item_importing
+    name: List-based Item Importing
+    stats:
+      - _/quest_completed
+  - id: export_enchantable_items
+    name: Export Enchantable Items
+    stats:
+      - _/quest_completed
+  - id: filter_item_storage_if_day
+    name: Filter Item Storage if Day
+    stats:
+      - _/quest_completed
+  - id: filter_item_storage_by_mod
+    name: Filter Item Storage by Mod
+    stats:
+      - _/quest_completed
+  - id: advanced_item_world_exporting
+    name: Advanced Item World Exporting
+    stats:
+      - _/quest_completed
+  - id: advanced_item_world_importing
+    name: Advanced Item World Importing
+    stats:
+      - _/quest_completed
+  - id: omni_item_dropping
+    name: Omni Item Dropping
+    stats:
+      - _/quest_completed
+  - id: limited_item_pickup
+    name: Limited Item Pickup
+    stats:
+      - _/quest_completed
+  - id: advanced_block_world_exporting
+    name: Advanced Block World Exporting
+    stats:
+      - _/quest_completed
+  - id: advanced_block_world_importing
+    name: Advanced Block World Importing
+    stats:
+      - _/quest_completed
+  - id: break_stone
+    name: Break Stone
+    stats:
+      - _/quest_completed
+  - id: place_logs
+    name: Place Logs
+    stats:
+      - _/quest_completed
+  - id: player_simulation
+    name: Player Simulation
+    stats:
+      - _/quest_completed
+  - id: click_with_a_diamond_sword
+    name: Click with a Diamond Sword
+    stats:
+      - _/quest_completed
+  - id: crafting_interface
+    name: Crafting² Interface
+    stats:
+      - _/quest_completed
+  - id: auto_planking
+    name: Auto-Planking
+    stats:
+      - _/quest_completed
+  - id: crafting_writer
+    name: Crafting² Writer
+    stats:
+      - _/quest_completed
+  - id: effective_auto_planking
+    name: Effective Auto-Planking
+    stats:
+      - _/quest_completed
+  - id: the_glass_of_illumination
+    name: The Glass of Illumination
+    stats:
+      - _/quest_completed
+  - id: the_creation_of_the_storage_terminal
+    name: The creation of the Storage Terminal
+    stats:
+      - _/quest_completed
+  - id: gui_simulator_9000
+    name: GUI Simulator 9000
+    stats:
+      - _/quest_completed
+  - id: dynamic_storage_terminal_filtering
+    name: Dynamic Storage Terminal Filtering
+    stats:
+      - _/quest_completed
+  - id: mendesite_galore
+    name: Mendesite Galore
+    stats:
+      - _/quest_completed
+  - id: not_a_floppy_disk
+    name: Not a floppy disk!
+    stats:
+      - _/quest_completed
+  - id: they_see_me_drivin
+    name: They see me drivin'
+    stats:
+      - _/quest_completed
+  - id: the_discovery_of_the_scripts
+    name: The Discovery of the Scripts
+    stats:
+      - _/quest_completed
+  - id: the_rise_of_the_scripts
+    name: The Rise of the Scripts
+    stats:
+      - _/quest_completed
+  - id: the_unleashing_of_the_scripts
+    name: The Unleashing of the Scripts
+    stats:
+      - _/quest_completed
+  - id: overpowered_item_list_filtering
+    name: Overpowered item list filtering
+    stats:
+      - _/quest_completed

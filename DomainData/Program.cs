@@ -13,6 +13,7 @@ var builder = CoconaApp.CreateBuilder(args);
 
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
 builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
+builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
 builder.Services.AddTransient<PikaConverter>();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
