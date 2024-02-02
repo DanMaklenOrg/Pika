@@ -42,15 +42,3 @@ entities:
     name: Delayer
     stats:
       - _/owned
-  - id: variable_store
-    name: Variable Store
-    stats:
-      - _/owned
-  - id: proxy
-    name: Proxy
-    stats:
-      - _/owned
-  - id: materializer
-    name: Materializer
-    stats:
-      - _/owned
