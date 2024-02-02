@@ -25,15 +25,7 @@ public class IntegratedDynamicsScrapper : IScrapper
         var advancementNodes = doc.DocumentNode.SelectNodes("//span[@class='advancement-title']");
 
         if (advancementNodes is not null)
-            entities.AddRange(advancementNodes.Select(node => new Entity
-            {
-                Id = new ResourceId(IdUtilities.Normalize(node.InnerText), DomainId),
-                Name = node.InnerText,
-                Stats = new List<ResourceId>
-                {
-                    "_/quest_completed",
-                },
-            }));
+            entities.AddRange(advancementNodes.Select(ParseAdvancement));
 
         var subPages = doc.DocumentNode.SelectNodes("//li[preceding-sibling::h2]/a");
 
@@ -42,5 +34,20 @@ public class IntegratedDynamicsScrapper : IScrapper
                 entities.AddRange(await ScrapeAdvancements(page.Attributes["href"].Value));
 
         return entities;
+    }
+
+    private Entity ParseAdvancement(HtmlNode node)
+    {
+        var name = node.InnerText;
+        name = name.Replace("\u00b2", "");
+        return new Entity
+        {
+            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Name = name,
+            Stats = new List<ResourceId>
+            {
+                "_/quest_completed",
+            },
+        };
     }
 }

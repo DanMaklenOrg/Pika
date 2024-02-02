@@ -241,7 +241,7 @@ entities:
     stats:
       - _/quest_completed
   - id: crafting_interface
-    name: Crafting² Interface
+    name: Crafting Interface
     stats:
       - _/quest_completed
   - id: auto_planking
@@ -249,7 +249,7 @@ entities:
     stats:
       - _/quest_completed
   - id: crafting_writer
-    name: Crafting² Writer
+    name: Crafting Writer
     stats:
       - _/quest_completed
   - id: effective_auto_planking
