@@ -47,7 +47,7 @@ entities:
     stats:
       - _/owned
   - id: proxy
-    name: proxy
+    name: Proxy
     stats:
       - _/owned
   - id: materializer
