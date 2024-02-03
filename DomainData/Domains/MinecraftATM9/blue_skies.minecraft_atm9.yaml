@@ -73,7 +73,6 @@ entities:
   - id: stardust_ram
     name: Stardust Ram
     stats:
-      - minecraft_atm9/bred
       - minecraft_atm9/spawn_egg_collected
   - id: armored_frost_spirit
     name: Armored Frost Spirit
@@ -378,10 +377,6 @@ entities:
     stats:
       - _/owned
       - arc_rarity
-  - id: sky_music_disc_lachney_population
-    name: "Sky Music Disc: Lachney - Population"
-    stats:
-      - _/owned
   - id: sky_music_disc_jonathing_blinding_rage
     name: "Sky Music Disc: Jonathing - Blinding Rage"
     stats:
@@ -930,3 +925,39 @@ entities:
     name: Cooked Municipal Monkfish
     stats:
       - sol_carrot.minecraft_atm9/eaten
+  - id: villager_alchemist
+    name: Villager (Alchemist)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified
+  - id: villager_summoner
+    name: Villager (Summoner)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified
+  - id: villager_nightwatcher
+    name: Villager (Nightwatcher)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified
+  - id: villager_shoveler
+    name: Villager (Shoveler)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified
+  - id: villager_wrangler
+    name: Villager (Wrangler)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified
+  - id: villager_stargazer
+    name: Villager (Stargazer)
+    stats:
+      - minecraft_atm9/villager_moved
+      - minecraft_atm9/career_level
+      - minecraft_atm9/unzombified

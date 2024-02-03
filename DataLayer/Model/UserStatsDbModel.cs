@@ -12,6 +12,8 @@ public class UserStatsDbModel : BaseDbModel
 
     public List<UserEntityStatDbModel> EntityStats { get; init; } = new();
 
+    public List<string> CompletedProjectIds { get; init; } = new();
+
     protected override void SetKeys()
     {
         PartitionKey = $"UserStat#{UserId}#{DomainId}";

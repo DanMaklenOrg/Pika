@@ -9,63 +9,76 @@ entities:
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_butcher
     name: Villager (Butcher)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_cartographer
     name: Villager (Cartographer)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_cleric
     name: Villager (Cleric)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_farmer
     name: Villager (Farmer)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_fisherman
     name: Villager (Fisherman)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_fletcher
     name: Villager (Fletcher)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_leatherworker
     name: Villager (Leatherworker)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_librarian
     name: Villager (Librarian)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_mason
     name: Villager (Mason)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_shepherd
     name: Villager (Shepherd)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_toolsmith
     name: Villager (Toolsmith)
     stats:
       - villager_moved
       - career_level
+      - unzombified
   - id: villager_weaponsmith
     name: Villager (Weaponsmith)
     stats:
       - villager_moved
       - career_level
+      - unzombified

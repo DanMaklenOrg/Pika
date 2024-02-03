@@ -13,8 +13,18 @@ public static class DbModelMapper
             Id = domain.Id.FullyQualifiedId,
             Name = domain.Name,
             Entities = domain.Entities.ConvertAll(ToDbModel),
+            Projects = domain.Projects.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
             SubDomains = domain.SubDomains.ConvertAll(ToDbModel),
+        };
+    }
+
+    private static ProjectDbModel ToDbModel(Project project)
+    {
+        return new ProjectDbModel
+        {
+            Id = project.Id.FullyQualifiedId,
+            Name = project.Name,
         };
     }
 
@@ -49,9 +59,19 @@ public static class DbModelMapper
         {
             Id = domain.Id,
             Name = domain.Name,
+            Projects = domain.Projects.ConvertAll(FromDbModel),
             Entities = domain.Entities.ConvertAll(FromDbModel),
             Stats = domain.Stats.ConvertAll(FromDbModel),
             SubDomains = domain.SubDomains.ConvertAll(FromDbModel)!,
+        };
+    }
+
+    private static Project FromDbModel(ProjectDbModel entity)
+    {
+        return new Project()
+        {
+            Id = entity.Id,
+            Name = entity.Name,
         };
     }
 
@@ -85,6 +105,7 @@ public static class DbModelMapper
             UserId = userStats.UserId,
             DomainId = userStats.DomainId.FullyQualifiedId,
             EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => pid.FullyQualifiedId),
         };
     }
 
@@ -98,15 +119,16 @@ public static class DbModelMapper
         };
     }
 
-    [return: NotNullIfNotNull("userStat")]
-    public static UserStats? FromDbModel(UserStatsDbModel? userStat)
+    [return: NotNullIfNotNull("userStats")]
+    public static UserStats? FromDbModel(UserStatsDbModel? userStats)
     {
-        if (userStat is null) return null;
+        if (userStats is null) return null;
         return new UserStats
         {
-            UserId =userStat.UserId,
-            DomainId = userStat.DomainId,
-            EntityStats = userStat.EntityStats.ConvertAll(FromDbModel),
+            UserId = userStats.UserId,
+            DomainId = userStats.DomainId,
+            EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => ResourceId.ParseResourceId(pid)),
         };
     }
 

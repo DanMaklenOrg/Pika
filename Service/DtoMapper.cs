@@ -22,7 +22,17 @@ public static class DtoMapper
             Name = model.Name,
             SubDomains = model.SubDomains.ConvertAll(ToDto),
             Entities = model.Entities.ConvertAll(ToDto),
+            Projects = model.Projects.ConvertAll(ToDto),
             Stats = model.Stats.ConvertAll(ToDto),
+        };
+    }
+
+    private static ProjectDto ToDto(Project model)
+    {
+        return new ProjectDto
+        {
+            Id = model.Id.FullyQualifiedId,
+            Name = model.Name,
         };
     }
 
@@ -60,6 +70,7 @@ public static class DtoMapper
         return new UserStatsDto
         {
             EntityStats = userStats.EntityStats.ConvertAll(ToDto),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => pid.FullyQualifiedId),
         };
     }
 
@@ -80,6 +91,7 @@ public static class DtoMapper
             UserId = userId,
             DomainId = domainId,
             EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
+            CompletedProjectIds = statsDto.CompletedProjectIds.ConvertAll(pid => ResourceId.ParseResourceId(pid)),
         };
     }
 

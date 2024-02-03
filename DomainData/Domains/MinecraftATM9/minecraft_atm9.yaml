@@ -10,9 +10,10 @@ stats:
   - id: tamed
     name: Tamed
     type: BOOLEAN
-  - id: bred
-    name: Bred
+  - id: unzombified
+    name: Unzombified
     type: BOOLEAN
+
 entities:
   - id: iron_golem
     name: Iron Golem

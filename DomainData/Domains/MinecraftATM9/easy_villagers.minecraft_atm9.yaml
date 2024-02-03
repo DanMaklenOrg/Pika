@@ -1,0 +1,31 @@
+id: easy_villagers.minecraft_atm9
+name: "Easy Villagers"
+entities:
+  - id: trader
+    name: Trader
+    stats:
+      - _/owned
+  - id: auto_trader
+    name: Auto Trader
+    stats:
+      - _/owned
+  - id: farmer
+    name: Farmer
+    stats:
+      - _/owned
+  - id: breeder
+    name: Breeder
+    stats:
+      - _/owned
+  - id: converter
+    name: Converter
+    stats:
+      - _/owned
+  - id: iron_farm
+    name: Iron Farm
+    stats:
+      - _/owned
+  - id: incubator
+    name: Incubator
+    stats:
+      - _/owned
