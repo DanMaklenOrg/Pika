@@ -158,10 +158,6 @@ entities:
     name: Meteroite Compass
     stats:
       - _/owned
-  - id: wireless_crafting_terminal
-    name: Wireless Crafting Terminal
-    stats:
-      - _/owned
   - id: guide
     name: Guide
     stats:
@@ -421,14 +417,6 @@ entities:
       - _/owned
   - id: me_ingredient_buffer
     name: ME Ingredient Buffer
-    stats:
-      - _/owned
-  - id: me_wireless_connector
-    name: ME Wireless Connector
-    stats:
-      - _/owned
-  - id: me_wireless_connector
-    name: ME Wireless Connector
     stats:
       - _/owned
   - id: fishbig
