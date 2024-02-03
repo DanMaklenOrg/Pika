@@ -1,32 +1,49 @@
 id: integrated_dynamics.minecraft_atm9
 name: "Integrated Dynamics"
+stats:
+  - id: mechanical_tire
+    name: Tire
+    type: ORDERED_ENUM(Base, Mechanical)
+  - id: energy_cell_tire
+    name: Tire
+    type: ORDERED_ENUM(Base, Creative)
+projects:
+  - id: automate_drying_basin_squeezer
+    name: Automate Drying Basin & Squeezer
 entities:
   - id: on_the_dynamics_of_integration
     name: On the Dynamics of Integration
     stats:
       - _/owned
-  - id: creative_energy_battery
-    name: Creative Energy Battery
+  - id: energy_battery
+    name: Energy Battery
     stats:
       - _/owned
+      - energy_cell_tire
   - id: generator
     name: Generator
     stats:
       - _/owned
-  - id: mechanical_drying_basin
-    name: Mechanical Drying Basin
+  - id: drying_basin
+    name: Drying Basin
     stats:
       - _/owned
-  - id: mechanical_squeezer
-    name: Mechanical Squeezer
+      - mechanical_tire
+  - id: squeezer
+    name: Squeezer
     stats:
       - _/owned
+      - mechanical_tire
   - id: wrench
     name: Wrench
     stats:
       - _/owned
   - id: labeller
     name: Labeller
+    stats:
+      - _/owned
+  - id: logic_programmer
+    name: Logic Programmer
     stats:
       - _/owned
   - id: portable_logic_programmer
