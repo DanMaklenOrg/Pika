@@ -45,6 +45,7 @@ public static class SyncCommand
             Id = a.Id,
             Name = string.IsNullOrEmpty(a.Name) ? b.Name : a.Name,
             Entities = a.Entities.UnionBy(b.Entities, e => e.Id.FullyQualifiedId).ToList(),
+            Projects = a.Projects.UnionBy(b.Projects, e => e.Id.FullyQualifiedId).ToList(),
             Stats = a.Stats.UnionBy(b.Stats, e => e.Id.FullyQualifiedId).ToList(),
         })).ToList();
     }

@@ -42,7 +42,7 @@ public class DomainController : ControllerBase
     {
         var userId = this.User.Identity!.Name!;
         var stats = await _userStatsRepo.Get(userId, domainId);
-        return DtoMapper.ToDto(stats);
+        return DtoMapper.ToDto(stats ?? new UserStats());
     }
 
     [Authorize]

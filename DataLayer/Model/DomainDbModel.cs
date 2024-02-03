@@ -16,6 +16,9 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("entries")]
     public List<EntityDbModel> Entities { get; init; } = new();
 
+    [JsonPropertyName("projects")]
+    public List<ProjectDbModel> Projects { get; init; } = new();
+
     [JsonPropertyName("subDomains")]
     public List<DomainDbModel> SubDomains { get; init; } = new();
 
@@ -24,6 +27,15 @@ public class DomainDbModel : BaseDbModel
         PartitionKey = $"Domain#{Id}";
         SortKey = "Domain";
     }
+}
+
+public class ProjectDbModel
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; } = default!;
+
+    [JsonPropertyName("name")]
+    public string Name { get; init; } = default!;
 }
 
 public class EntityDbModel

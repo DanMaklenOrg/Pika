@@ -6,5 +6,5 @@ public interface IUserStatsRepo
 {
     Task Create(UserStats uerStats);
 
-    Task<UserStats> Get(string userId, DomainId domainId);
+    Task<UserStats?> Get(string userId, DomainId domainId);
 }
