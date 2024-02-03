@@ -266,7 +266,7 @@ entities:
     stats:
       - _/quest_completed
   - id: loosely_speaking
-    name: Loosely_speaking
+    name: Loosely Speaking
     stats:
       - _/quest_completed
   - id: me_import_bus
