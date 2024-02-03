@@ -7,7 +7,7 @@ public readonly struct UserStatsDto
     [JsonPropertyName("entity_stats")]
     public List<UserEntityStatDto> EntityStats { get; init; }
 
-    [JsonPropertyName("project_stats")]
+    [JsonPropertyName("completed_project_ids")]
     public List<string> CompletedProjectIds { get; init; }
 }
 

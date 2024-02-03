@@ -10,8 +10,10 @@ public class UserStatsDbModel : BaseDbModel
     [JsonPropertyName("domain_id")]
     public string DomainId { get; init; } = default!;
 
+    [JsonPropertyName("entity_stats")]
     public List<UserEntityStatDbModel> EntityStats { get; init; } = new();
 
+    [JsonPropertyName("completed_project_ids")]
     public List<string> CompletedProjectIds { get; init; } = new();
 
     protected override void SetKeys()
