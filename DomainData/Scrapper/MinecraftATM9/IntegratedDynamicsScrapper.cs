@@ -20,6 +20,8 @@ public class IntegratedDynamicsScrapper : IScrapper
 
     private async Task<List<Entity>> ScrapeAdvancements(string url)
     {
+        if (url.Contains("integratedscripting")) return new List<Entity>();
+
         var entities = new List<Entity>();
         var doc = await new HtmlWeb().LoadFromWebAsync(url);
         var advancementNodes = doc.DocumentNode.SelectNodes("//span[@class='advancement-title']");

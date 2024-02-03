@@ -37,8 +37,3 @@ entities:
     name: Portable Storage Terminal
     stats:
       - _/owned
-
-  - id: delayer
-    name: Delayer
-    stats:
-      - _/owned
