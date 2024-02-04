@@ -57,7 +57,7 @@ projects:
     name: Automate All Processors (Logic, Calculation, Engineering, Accumulation)
 entities:
   - id: me_controller
-    name: Me Controller
+    name: ME Controller
     stats:
       - _/owned
   - id: villager_fluix_researcher
@@ -177,7 +177,7 @@ entities:
       - _/owned
       - extended_tire
   - id: me_wireless_access_point
-    name: Me Wireless Access Point
+    name: ME Wireless Access Point
     stats:
       - _/owned
       - wireless_access_upgrade
@@ -202,12 +202,12 @@ entities:
       - _/owned
       - mega_extended_tire
   - id: me_drive
-    name: Me Drive
+    name: ME Drive
     stats:
       - _/owned
       - extended_tire
   - id: me_chest
-    name: Me Chest
+    name: ME Chest
     stats:
       - _/owned
   - id: cell_workbench
@@ -284,27 +284,27 @@ entities:
       - _/owned
       - desk_size
   - id: me_super_storage_cell
-    name: Me Super Storage Cell
+    name: ME Super Storage Cell
     stats:
       - _/owned
       - desk_size
   - id: me_item_storage_cell
-    name: Me Item Storage Cell
+    name: ME Item Storage Cell
     stats:
       - _/owned
       - desk_size
   - id: me_fluid_storage_cell
-    name: Me Fluid Storage Cell
+    name: ME Fluid Storage Cell
     stats:
       - _/owned
       - desk_size
   - id: me_chemical_storage_cell
-    name: Me Chemical Storage Cell
+    name: ME Chemical Storage Cell
     stats:
       - _/owned
       - desk_size
   - id: me_mana_storage_cell
-    name: Me Mana Storage Cell
+    name: ME Mana Storage Cell
     stats:
       - _/owned
       - desk_size
