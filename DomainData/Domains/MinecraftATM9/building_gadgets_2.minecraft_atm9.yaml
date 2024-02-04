@@ -1,0 +1,36 @@
+id: building_gadgets_2.minecraft_atm9
+name: "Building Gadgets 2"
+stats:
+  - id: inventory_bound
+    name: Bound to Storage System
+    type: BOOLEAN
+  - id: silk_touched
+    name: Enchanted with Silk Touch
+    type: BOOLEAN
+entities:
+  - id: gadgets_for_derps
+    name: Gadgets for Derps
+    stats:
+      - _/owned
+      - inventory_bound
+  - id: exchanging_gadget
+    name: Exchanging Gadget
+    stats:
+      - _/owned
+      - silk_touched
+  - id: copy_paste_gadget
+    name: Copy Past Gadget
+    stats:
+      - _/owned
+  - id: cut_past_gadget
+    name: Cut Past Gadget
+    stats:
+      - _/owned
+  - id: destruction_gadget
+    name: Destruction Gadget
+    stats:
+      - _/owned
+  - id: template_manager
+    name: Template Manager
+    stats:
+      - _/owned
