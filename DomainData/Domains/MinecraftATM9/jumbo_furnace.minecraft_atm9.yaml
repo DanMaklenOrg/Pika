@@ -10,3 +10,19 @@ entities:
     stats:
       - _/owned
       - operations_upgrade_installed
+  - id: jumbo_furnace_advancement
+    name: Jumbo Furnace (Advancement)
+    stats:
+      - _/achieved
+  - id: smaller_on_the_outside
+    name: Smaller on the Outside
+    stats:
+      - _/achieved
+  - id: bigger_on_the_inside
+    name: Bigger on the Inside
+    stats:
+      - _/achieved
+  - id: furnaces_all_the_way_down
+    name: Furnaces All the Way Down
+    stats:
+      - _/achieved
