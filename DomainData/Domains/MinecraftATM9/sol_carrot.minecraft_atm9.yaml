@@ -4,6 +4,7 @@ stats:
   - id: eaten
     name: Eaten
     type: BOOLEAN
+entities:
   - id: food_book
     name: Food Book
     stats:
