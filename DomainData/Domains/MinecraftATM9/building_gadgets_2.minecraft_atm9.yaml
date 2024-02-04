@@ -12,16 +12,22 @@ entities:
     name: Gadgets for Derps
     stats:
       - _/owned
-      - inventory_bound
   - id: exchanging_gadget
     name: Exchanging Gadget
     stats:
       - _/owned
+      - inventory_bound
       - silk_touched
+  - id: building_gadget
+    name: Building Gadget
+    stats:
+      - _/owned
+      - inventory_bound
   - id: copy_paste_gadget
     name: Copy Past Gadget
     stats:
       - _/owned
+      - inventory_bound
   - id: cut_past_gadget
     name: Cut Past Gadget
     stats:
