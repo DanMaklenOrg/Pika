@@ -3,7 +3,7 @@ name: "Applied Energistics 2"
 stats:
   - id: desk_size
     name: Desk Size Installed
-    type: ORDERED_ENUM(1K, 4K, 16K, 64K, 256K, 1M, 4M, 16M, 65M, 256M)
+    type: ORDERED_ENUM(1K, 4K, 16K, 64K, 256K, 1M, 4M, 16M, 64M, 256M)
   - id: source_desk_size
     name: Desk Size Installed
     type: ORDERED_ENUM(1K, 4K, 16K, 64K, 256K)
