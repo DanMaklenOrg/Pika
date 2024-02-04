@@ -515,3 +515,7 @@ entities:
     name: To boldly go
     stats:
       - _/achieved
+  - id: fluix_energy_connectoin
+    name: Fluix Energy Connection
+    stats:
+      - _/achieved
