@@ -419,3 +419,99 @@ entities:
     name: Fishbig
     stats:
       - _/owned
+  - id: its_chargin_time
+    name: It's Chargin' Time !
+    stats:
+      - _/achieved
+  - id: meteorite_hunter
+    name: Meteorite Hunter
+    stats:
+      - _/achieved
+  - id: shocking
+    name: Shocking
+    stats:
+      - _/achieved
+  - id: unnatural
+    name: Unnatural
+    stats:
+      - _/achieved
+  - id: accelerator_is_an_understatement
+    name: Accelerator is an understatement
+    stats:
+      - _/achieved
+  - id: network_aesthetics
+    name: Network Aesthetics
+    stats:
+      - _/achieved
+  - id: network_apprentice
+    name: Network Apprentice
+    stats:
+      - _/achieved
+  - id: network_engineer
+    name: Network Engineer
+    stats:
+      - _/achieved
+  - id: network_administrator
+    name: Network Administrator
+    stats:
+      - _/achieved
+  - id: point_to_point_networking
+    name: Point to Point Networking
+    stats:
+      - _/achieved
+  - id: quantum_tunneling
+    name: Quantum Tunneling
+    stats:
+      - _/achieved
+  - id: limitless_potential
+    name: Limitless Potential
+    stats:
+      - _/achieved
+  - id: recursive_networking
+    name: Recursive Networking
+    stats:
+      - _/achieved
+  - id: unknown_technology
+    name: Unknown Technology
+    stats:
+      - _/achieved
+  - id: networking_switchboard
+    name: Networking Switchboard
+    stats:
+      - _/achieved
+  - id: network_diagnostics
+    name: Network Diagnostics
+    stats:
+      - _/achieved
+  - id: a_much_bigger_table
+    name: A (Much) Bigger Table
+    stats:
+      - _/achieved
+  - id: crafting_maestro
+    name: Crafting Maestro
+    stats:
+      - _/achieved
+  - id: next_gen_crafting
+    name: Next Gen Crafting
+    stats:
+      - _/achieved
+  - id: better_than_chests
+    name: Better Than Chests
+    stats:
+      - _/achieved
+  - id: storage_nomad
+    name: Storage Nomad
+    stats:
+      - _/achieved
+  - id: storage_cell_shuffle
+    name: Storage Cell Shuffle
+    stats:
+      - _/achieved
+  - id: spatial_coordination
+    name: Spatial Coordination
+    stats:
+      - _/achieved
+  - id: to_boldly_go
+    name: To boldly go
+    stats:
+      - _/achieved
