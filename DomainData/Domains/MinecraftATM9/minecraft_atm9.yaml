@@ -13,7 +13,12 @@ stats:
   - id: unzombified
     name: Unzombified
     type: BOOLEAN
-
+  - id: book_fully_unlocked
+    quest: Fully Unlocked
+    type: BOOLEAN
+  - id: book_fully_read
+    quest: Fully Read
+    type: BOOLEAN
 entities:
   - id: iron_golem
     name: Iron Golem

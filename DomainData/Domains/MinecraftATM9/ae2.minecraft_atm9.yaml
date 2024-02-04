@@ -166,10 +166,6 @@ entities:
     name: Not So Mysterious Cube
     stats:
       - _/owned
-  - id: guide
-    name: Guide
-    stats:
-      - _/owned
   - id: inscriber
     name: Inscriber
     stats:

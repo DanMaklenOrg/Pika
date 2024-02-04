@@ -4,3 +4,7 @@ stats:
   - id: eaten
     name: Eaten
     type: BOOLEAN
+  - id: food_book
+    name: Food Book
+    stats:
+      - _/owned
