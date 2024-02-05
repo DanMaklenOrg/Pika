@@ -1,0 +1,12 @@
+id: item_collectors.minecraft_atm9
+name: "Item Collectors - Carrot Edition"
+stats:
+  - id: tire
+    name: Tire
+    type: ORDERED_ENUM(Basic, Advanced)
+entities:
+  - id: item_collector
+    name: Item Collector
+    stats:
+      - _/owned
+      - _/tire
