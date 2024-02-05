@@ -1,0 +1,17 @@
+id: simple_magnets.minecraft_atm9
+name: "Simple Magnets"
+stats:
+  - id: tire
+    name: Tire
+    type: ORDERED_ENUM(Basic, Advanced)
+entities:
+  - id: magnet
+    name: Magnet
+    stats:
+      - _/owned
+      - tire
+  - id: demagnetization_coil
+    name: Demagnetization Coil
+    stats:
+      - _/owned
+      - tire

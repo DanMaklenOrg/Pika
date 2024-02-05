@@ -9,4 +9,4 @@ entities:
     name: Item Collector
     stats:
       - _/owned
-      - _/tire
+      - tire
