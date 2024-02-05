@@ -1,0 +1,11 @@
+id: modular_routers.minecraft_atm9
+name: "Modular Routers"
+entities:
+  - id: modular_routers_manual
+    name: Modular Routers Manual
+    stats:
+      - _/owned
+  - id: modular_router
+    name: Modular Router
+    stats:
+      - _/owned

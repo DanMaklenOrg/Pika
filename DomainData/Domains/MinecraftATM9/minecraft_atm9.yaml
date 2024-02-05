@@ -13,7 +13,9 @@ stats:
   - id: unzombified
     name: Unzombified
     type: BOOLEAN
-
+  - id: book_fully_unlocked
+    name: Fully Unlocked
+    type: BOOLEAN
 entities:
   - id: iron_golem
     name: Iron Golem

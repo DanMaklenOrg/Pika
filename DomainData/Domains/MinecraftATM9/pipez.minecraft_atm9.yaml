@@ -1,0 +1,15 @@
+id: pipez.minecraft_atm9
+name: "Pipez"
+entities:
+  - id: filter_destination_tool
+    name: Filter Destination Tool
+    stats:
+      - _/owned
+  - id: pipe_wrench
+    name: Pipe Wrench
+    stats:
+      - _/owned
+  - id: infinity_pipe_upgrade
+    name: Infinity Pipe Upgrade
+    stats:
+      - _/owned

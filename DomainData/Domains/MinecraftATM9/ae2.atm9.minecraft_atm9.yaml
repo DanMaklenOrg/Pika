@@ -1,0 +1,279 @@
+id: ae2.atm9.minecraft_atm9
+name: "ATM9 Quests: AE2"
+entities:
+  - id: applied_energistics_2
+    name: Applied Energistics 2
+    stats:
+      - _/quest_completed
+  - id: quartz_wrench
+    name: Quartz Wrench
+    stats:
+      - _/quest_completed
+  - id: first_things_first
+    name: Firt Things First
+    stats:
+      - _/quest_completed
+  - id: energy_acceptor
+    name: Energy Acceptor
+    stats:
+      - _/quest_completed
+  - id: energy_cell
+    name: Energy Call
+    stats:
+      - _/quest_completed
+  - id: energy_card
+    name: Energy Card
+    stats:
+      - _/quest_completed
+  - id: fluix_crystal
+    name: Fluix Crystal
+    stats:
+      - _/quest_completed
+  - id: basic_cabling
+    name: Basic Cabling
+    stats:
+      - _/quest_completed
+  - id: color_applicator
+    name: Color Applicator
+    stats:
+      - _/quest_completed
+  - id: advanced_cabling
+    name: Advanced Cabling
+    stats:
+      - _/quest_completed
+  - id: cable_anchor
+    name: Cable Anchor
+    stats:
+      - _/quest_completed
+  - id: foreword_on_channels
+    name: Foreword on Channel
+    stats:
+      - _/quest_completed
+  - id: meteorite_compass
+    name: Meteorite compass
+    stats:
+      - _/quest_completed
+  - id: processors
+    name: Processors
+    stats:
+      - _/quest_completed
+  - id: terminals
+    name: Terminals
+    stats:
+      - _/quest_completed
+  - id: network_tool
+    name: Network Tool
+    stats:
+      - _/quest_completed
+  - id: me_controller
+    name: ME Controller
+    stats:
+      - _/quest_completed
+  - id: the_storage
+    name: The Storage
+    stats:
+      - _/quest_completed
+  - id: me_io_port
+    name: ME IO Port
+    stats:
+      - _/quest_completed
+  - id: cell_workbench
+    name: Cell Workbench
+    stats:
+      - _/quest_completed
+  - id: equal_distribution_card
+    name: Equal Distribution Card
+    stats:
+      - _/quest_completed
+  - id: overflow_destruction_card
+    name: Overflow Destruction Card
+    stats:
+      - _/quest_completed
+  - id: creating_your_first_storage_cell
+    name: Creating your first Storage Cell
+    stats:
+      - _/quest_completed
+  - id: the_weapons
+    name: The... Weapons?
+    stats:
+      - _/quest_completed
+  - id: item_storage
+    name: Item Storage
+    stats:
+      - _/quest_completed
+  - id: bulk_item_storage
+    name: Bulk Item Storage
+    stats:
+      - _/quest_completed
+  - id: fluid_storage
+    name: Fluid Storage
+    stats:
+      - _/quest_completed
+  - id: me_portable_cell
+    name: ME Portable Cell
+    stats:
+      - _/quest_completed
+  - id: 4k_storage_component
+    name: 4k Storage Component
+    stats:
+      - _/quest_completed
+  - id: 16k_storage_component
+    name: 16k Storage Component
+    stats:
+      - _/quest_completed
+  - id: 64k_storage_component
+    name: 64k Storage Component
+    stats:
+      - _/quest_completed
+  - id: 256k_storage_component
+    name: 256k Storage Component
+    stats:
+      - _/quest_completed
+  - id: 1M_storage_component
+    name: 1M Storage Component
+    stats:
+      - _/quest_completed
+  - id: 4M_storage_component
+    name: 4M Storage Component
+    stats:
+      - _/quest_completed
+  - id: 16M_storage_component
+    name: 16M Storage Component
+    stats:
+      - _/quest_completed
+  - id: 64M_storage_component
+    name: 64M Storage Component
+    stats:
+      - _/quest_completed
+  - id: 256M_storage_component
+    name: 256M Storage Component
+    stats:
+      - _/quest_completed
+  - id: condensed_matter
+    name: Condensed Matter
+    stats:
+      - _/quest_completed
+  - id: hyper_condensed_matter
+    name: Hyper Condensed Matter
+    stats:
+      - _/quest_completed
+  - id: quantum_network_bridge
+    name: Quantum Network Bridge
+    stats:
+      - _/quest_completed
+  - id: me_wireless_access_point
+    name: ME Wireless Access Point
+    stats:
+      - _/quest_completed
+  - id: wireless_terminal
+    name: Wireless Terminal
+    stats:
+      - _/quest_completed
+  - id: aeinfinitybooster
+    name: AEInfinityBooster
+    stats:
+      - _/quest_completed
+  - id: spatial_io
+    name: Spatial IO
+    stats:
+      - _/quest_completed
+  - id: spatial_pylon
+    name: Spatial Pylon
+    stats:
+      - _/quest_completed
+  - id: spatial_storage_cell
+    name: Spatial Storage Cell
+    stats:
+      - _/quest_completed
+  - id: spatial_anchor
+    name: Spatial Anchor
+    stats:
+      - _/quest_completed
+  - id: auto_crafting
+    name: Auth-Crafting
+    stats:
+      - _/quest_completed
+  - id: growth_accelerator
+    name: Growth Accelerator
+    stats:
+      - _/quest_completed
+  - id: patterns
+    name: Patterns
+    stats:
+      - _/quest_completed
+  - id: molecular_assembler
+    name: Molecular Assembler
+    stats:
+      - _/quest_completed
+  - id: acceleration_card
+    name: Acceleration Card
+    stats:
+      - _/quest_completed
+  - id: me_level_emitter
+    name: Me Level Emitter
+    stats:
+      - _/quest_completed
+  - id: redstone_controlled_me
+    name: Redstone-Controlled ME
+    stats:
+      - _/quest_completed
+  - id: crafting_card
+    name: Crafting Card
+    stats:
+      - _/quest_completed
+  - id: crafting_storage
+    name: Crafting Storage
+    stats:
+      - _/quest_completed
+  - id: crafting_co_processor
+    name: Crafting Co-Processor
+    stats:
+      - _/quest_completed
+  - id: crafting_monitor
+    name: Crafting Monitor
+    stats:
+      - _/quest_completed
+  - id: the_io
+    name: The IO
+    stats:
+      - _/quest_completed
+  - id: forgot_to_mention
+    name: Forgot to Mention
+    stats:
+      - _/quest_completed
+  - id: p2p_tunnels
+    name: P2P Tunnels
+    stats:
+      - _/quest_completed
+  - id: memory_card
+    name: Memory Card
+    stats:
+      - _/quest_completed
+  - id: me_export_bus
+    name: ME Export Bus
+    stats:
+      - _/quest_completed
+  - id: me_formation_plane
+    name: ME Formation Plane
+    stats:
+      - _/quest_completed
+  - id: me_storage_bus
+    name: ME Storage Bus
+    stats:
+      - _/quest_completed
+  - id: capacity_card
+    name: Capacity Card
+    stats:
+      - _/quest_completed
+  - id: loosely_speaking
+    name: Loosely Speaking
+    stats:
+      - _/quest_completed
+  - id: me_import_bus
+    name: ME Import Bus
+    stats:
+      - _/quest_completed
+  - id: me_annihilation_plane
+    name: ME Annihilation Plane
+    stats:
+      - _/quest_completed

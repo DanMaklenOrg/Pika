@@ -1,0 +1,28 @@
+id: jumbo_furnace.minecraft_atm9
+name: "Jumbo Furnaces"
+stats:
+  - id: operations_upgrade_installed
+    name: Operations Upgrade Installed
+    type: INTEGER_RANGE(0, 64)
+entities:
+  - id: jumbo_furnace
+    name: Jumbo Furnace
+    stats:
+      - _/owned
+      - operations_upgrade_installed
+  - id: jumbo_furnace_advancement
+    name: Jumbo Furnace (Advancement)
+    stats:
+      - _/achieved
+  - id: smaller_on_the_outside
+    name: Smaller on the Outside
+    stats:
+      - _/achieved
+  - id: bigger_on_the_inside
+    name: Bigger on the Inside
+    stats:
+      - _/achieved
+  - id: furnaces_all_the_way_down
+    name: Furnaces All the Way Down
+    stats:
+      - _/achieved
