@@ -32,8 +32,7 @@ stats:
     name: Efficiency Upgrade Installed
     type: INTEGER_RANGE(0, 5)
 entities:
-  - id: mining_gadget
-    name: Mining Gadget
+  - name: Mining Gadget
     stats:
       - _/owned
       - silk_touch_upgrade
@@ -46,7 +45,6 @@ entities:
       - mine_area_upgrade
       - battery_upgrade
       - efficiency_upgrade
-  - id: modification_table
-    name: Modification Table
+  - name: Modification Table
     stats:
       - _/owned

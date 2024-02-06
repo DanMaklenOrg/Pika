@@ -1,7 +1,6 @@
 id: time_in_a_bottle.minecraft_atm9
 name: "Time in a Bottle"
 entities:
-  - id: time_in_a_bottle
-    name: Time in a Bottle
+  - name: Time in a Bottle
     stats:
       - _/owned
