@@ -154,31 +154,31 @@ entities:
     stats:
       - _/quest_completed
   - id: energy_cell_starter
-    name: Energy Discharger (Starter)
+    name: Energy Cell (Starter)
     stats:
       - _/quest_completed
   - id: energy_cell_basic
-    name: Energy Discharger (Basic)
+    name: Energy Cell (Basic)
     stats:
       - _/quest_completed
   - id: energy_cell_hardened
-    name: Energy Discharger (Hardened)
+    name: Energy Cell (Hardened)
     stats:
       - _/quest_completed
   - id: energy_cell_blazing
-    name: Energy Discharger (Blazing)
+    name: Energy Cell (Blazing)
     stats:
       - _/quest_completed
   - id: energy_cell_niotic
-    name: Energy Discharger (Niotic)
+    name: Energy Cell (Niotic)
     stats:
       - _/quest_completed
   - id: energy_cell_spirited
-    name: Energy Discharger (Spirited)
+    name: Energy Cell (Spirited)
     stats:
       - _/quest_completed
   - id: energy_cell_nitro
-    name: Energy Discharger (Nitro)
+    name: Energy Cell (Nitro)
     stats:
       - _/quest_completed
   - id: magmator_starter
