@@ -922,10 +922,6 @@ entities:
     name: Cooked Horizonfin Tunid
     stats:
       - sol_carrot.minecraft_atm9/eaten
-  - id:
-    name: Cooked Municipal Monkfish
-    stats:
-      - sol_carrot.minecraft_atm9/eaten
   - id: villager_alchemist
     name: Villager (Alchemist)
     stats:
