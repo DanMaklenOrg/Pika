@@ -44,7 +44,7 @@ public class IntegratedDynamicsScrapper : IScrapper
         name = name.Replace("\u00b2", "");
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {
