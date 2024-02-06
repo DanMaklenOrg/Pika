@@ -1,7 +1,7 @@
 id: iron_furnaces.minecraft_atm9
 name: "Iron Furnaces"
 stats:
-  - id: furnace_Tier
+  - id: furnace_tier
     name: Tier
     type: ORDERED_ENUM(Stone, Copper, Iron, Silver, Gold, Diamond, Emerald, Crystal, Obsidian, Netherite, Allthemodium, Vibranium, Unobtainium)
   - id: factory_augment_installed
@@ -18,7 +18,7 @@ entities:
     name: Furnace
     stats:
       - _/owned
-      - furnace_Tier
+      - furnace_tier
   - id: rainbow_furnace
     name: Rainbow Furnace
     stats:

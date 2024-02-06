@@ -10,16 +10,16 @@ stats:
   - id: spatial_desk_size
     name: Desk Size Installed
     type: ORDERED_ENUM(2x2x2, 16x16x16, 128x128x128)
-  - id: mega_extended_Tier
+  - id: mega_extended_tier
     name: Tier
     type: ORDERED_ENUM(Basic, MEGA, Extended)
-  - id: extended_Tier
+  - id: extended_tier
     name: Tier
     type: ORDERED_ENUM(Basic, Extended)
-  - id: energy_cell_Tier
+  - id: energy_cell_tier
     name: Tier
     type: ORDERED_ENUM(Basic, Dense, Superdense, Creative)
-  - id: mega_Tier
+  - id: mega_tier
     name: Tier
     type: ORDERED_ENUM(Basic, MEGA)
   - id: installed_crafting
@@ -170,12 +170,12 @@ entities:
     name: Inscriber
     stats:
       - _/owned
-      - extended_Tier
+      - extended_tier
   - id: charger
     name: Charger
     stats:
       - _/owned
-      - extended_Tier
+      - extended_tier
   - id: me_wireless_access_point
     name: ME Wireless Access Point
     stats:
@@ -200,12 +200,12 @@ entities:
     name: ME Interface
     stats:
       - _/owned
-      - mega_extended_Tier
+      - mega_extended_tier
   - id: me_drive
     name: ME Drive
     stats:
       - _/owned
-      - extended_Tier
+      - extended_tier
   - id: me_chest
     name: ME Chest
     stats:
@@ -239,12 +239,12 @@ entities:
     name: ME Pattern Provider
     stats:
       - _/owned
-      - mega_extended_Tier
+      - mega_extended_tier
   - id: molecular_assembler
     name: Molecular Assembler
     stats:
       - _/owned
-      - extended_Tier
+      - extended_tier
   - id: spatial_anchor
     name: Spatial Anchor
     stats:
@@ -257,12 +257,12 @@ entities:
     name: Crafting Monitor
     stats:
       - _/owned
-      - mega_Tier
+      - mega_tier
   - id: crafting_co_processing_unit
     name: Crafting Co-Processing Unit
     stats:
       - _/owned
-      - mega_Tier
+      - mega_tier
   - id: crafting_storage
     name: Crafting Storage
     stats:

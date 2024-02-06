@@ -29,17 +29,17 @@ entities:
     name: Battery
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: energy_cell
     name: Energy Cell
     stats:
       - _/owned
-      - Tier_creative
+      - tier_creative
   - id: ender_cell
     name: Ender Cell
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: energizing_orb
     name: Energizing Orb
     stats:
@@ -48,46 +48,46 @@ entities:
     name: Energizing Rod
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: furnator
     name: Furnator
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: magmator
     name: Magmator
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: thermo_generator
     name: Thermo Generator
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: solar_panel
     name: Solar Panel
     stats:
       - _/owned
-      - Tier
+      - tier
       - lens_of_ender_installed
   - id: reactor
     name: Reactor
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: player_transmitter
     name: Player Transmitter
     stats:
       - _/owned
-      - Tier
+      - tier
       - binding_card_installed
   - id: energy_hopper
     name: Energy Hopper
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: energy_discharger
     name: Energy Discharger
     stats:
       - _/owned
-      - Tier
+      - tier

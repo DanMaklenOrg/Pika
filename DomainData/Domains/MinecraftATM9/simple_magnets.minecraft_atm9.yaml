@@ -9,9 +9,9 @@ entities:
     name: Magnet
     stats:
       - _/owned
-      - Tier
+      - tier
   - id: demagnetization_coil
     name: Demagnetization Coil
     stats:
       - _/owned
-      - Tier
+      - tier

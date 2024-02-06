@@ -1,10 +1,10 @@
 id: integrated_dynamics.minecraft_atm9
 name: "Integrated Dynamics"
 stats:
-  - id: mechanical_Tier
+  - id: mechanical_tier
     name: Tier
     type: ORDERED_ENUM(Base, Mechanical)
-  - id: energy_cell_Tier
+  - id: energy_cell_tier
     name: Tier
     type: ORDERED_ENUM(Base, Creative)
 projects:
@@ -19,7 +19,7 @@ entities:
     name: Energy Battery
     stats:
       - _/owned
-      - energy_cell_Tier
+      - energy_cell_tier
   - id: generator
     name: Generator
     stats:
@@ -28,12 +28,12 @@ entities:
     name: Drying Basin
     stats:
       - _/owned
-      - mechanical_Tier
+      - mechanical_tier
   - id: squeezer
     name: Squeezer
     stats:
       - _/owned
-      - mechanical_Tier
+      - mechanical_tier
   - id: wrench
     name: Wrench
     stats:
