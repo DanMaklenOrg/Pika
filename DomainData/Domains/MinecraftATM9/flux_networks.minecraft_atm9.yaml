@@ -4,7 +4,7 @@ projects:
   - id: automate_flux_dust
     name: Automate Flux Dust Production
 stats:
-  - id: tier
+  - id: storage_tier
     name: Tier
     type: ORDERED_ENUM(Basic, Herculean, Gargantuan)
 entities:
