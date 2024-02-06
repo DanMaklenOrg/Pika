@@ -1,7 +1,7 @@
 id: simple_magnets.minecraft_atm9
 name: "Simple Magnets"
 stats:
-  - id: Tier
+  - id: tier
     name: Tier
     type: ORDERED_ENUM(Basic, Advanced)
 entities:

@@ -1,10 +1,10 @@
 id: powah.minecraft_atm9
 name: "Powah"
 stats:
-  - id: Tier
+  - id: tier
     name: Tier
     type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro)
-  - id: Tier_creative
+  - id: tier_creative
     name: Tier
     type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro, Creative)
   - id: binding_card_installed

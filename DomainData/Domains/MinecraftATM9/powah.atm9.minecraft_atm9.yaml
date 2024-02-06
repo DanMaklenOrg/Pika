@@ -377,31 +377,31 @@ entities:
     name: Ender Gate (Nitro)
     stats:
       - _/quest_completed
-  - id: Tier_tiny
+  - id: tier_tiny
     name: "Tier: Tiny"
     stats:
       - _/quest_completed
-  - id: Tier_basic
+  - id: tier_basic
     name: "Tier: Basic"
     stats:
       - _/quest_completed
-  - id: Tier_energized
+  - id: tier_energized
     name: "Tier: Energized"
     stats:
       - _/quest_completed
-  - id: Tier_blazing
+  - id: tier_blazing
     name: "Tier: Blazing"
     stats:
       - _/quest_completed
-  - id: Tier_niotic
+  - id: tier_niotic
     name: "Tier: Niotic"
     stats:
       - _/quest_completed
-  - id: Tier_spirited
+  - id: tier_spirited
     name: "Tier: Spirited"
     stats:
       - _/quest_completed
-  - id: Tier_nitro
+  - id: tier_nitro
     name: "Tier: Nitro"
     stats:
       - _/quest_completed

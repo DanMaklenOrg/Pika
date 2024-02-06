@@ -1,7 +1,7 @@
 id: item_collectors.minecraft_atm9
 name: "Item Collectors"
 stats:
-  - id: Tier
+  - id: tier
     name: Tier
     type: ORDERED_ENUM(Basic, Advanced)
 entities:
