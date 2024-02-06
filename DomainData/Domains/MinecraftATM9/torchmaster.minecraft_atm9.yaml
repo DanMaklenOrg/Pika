@@ -1,19 +1,15 @@
 id: torchmaster.minecraft_atm9
 name: "Torchmaster"
 entities:
-  - id: mega_torch
-    name: Mega Torch
+  - name: Mega Torch
     stats:
       - _/owned
-  - id: dread_lamp
-    name: Dread Lamp
+  - name: Dread Lamp
     stats:
       - _/owned
-  - id: feral_flare_lantern
-    name: Feral Flare Lanter
+  - name: Feral Flare Lantern
     stats:
       - _/owned
-  - id: frozen_pearl
-    name: Frozen Pearl
+  - name: Frozen Pearl
     stats:
       - _/owned

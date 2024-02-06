@@ -1,17 +1,14 @@
 id: simple_magnets.minecraft_atm9
 name: "Simple Magnets"
 stats:
-  - id: tier
-    name: Tier
+  - name: Tier
     type: ORDERED_ENUM(Basic, Advanced)
 entities:
-  - id: magnet
-    name: Magnet
+  - name: Magnet
     stats:
       - _/owned
       - tier
-  - id: demagnetization_coil
-    name: Demagnetization Coil
+  - name: Demagnetization Coil
     stats:
       - _/owned
       - tier

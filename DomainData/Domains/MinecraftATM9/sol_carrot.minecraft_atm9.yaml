@@ -1,11 +1,9 @@
 id: sol_carrot.minecraft_atm9
 name: "Spice of Life - Carrot Edition"
 stats:
-  - id: eaten
-    name: Eaten
+  - name: Eaten
     type: BOOLEAN
 entities:
-  - id: food_book
-    name: Food Book
+  - name: Food Book
     stats:
       - _/owned

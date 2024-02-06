@@ -1,17 +1,13 @@
 id: minecraft_atm9
 name: Minecraft - ATM9
 stats:
-  - id: spawn_egg_collected
-    name: Spawn Egg Collected
+  - name: Spawn Egg Collected
     type: BOOLEAN
-  - id: villager_moved
-    name: Moved to Village
+  - name: Moved to Village
     type: BOOLEAN
-  - id: tamed
-    name: Tamed
+  - name: Tamed
     type: BOOLEAN
-  - id: unzombified
-    name: Unzombified
+  - name: Unzombified
     type: BOOLEAN
   - id: book_fully_unlocked
     name: Fully Unlocked

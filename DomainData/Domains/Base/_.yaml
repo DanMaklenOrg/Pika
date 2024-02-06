@@ -1,11 +1,9 @@
 id: _
 name: Base
 stats:
-  - id: owned
-    name: Owned
+  - name: Owned
     type: BOOLEAN
-  - id: explored
-    name: Explored
+  - name: Explored
     type: BOOLEAN
   - id: killed
     name: Killed/Defeated
@@ -13,9 +11,7 @@ stats:
   - id: achieved
     name: Achievement Unlocked
     type: BOOLEAN
-  - id: constructed
-    name: Constructed
+  - name: Constructed
     type: BOOLEAN
-  - id: quest_completed
-    name: Quest Completed
+  - name: Quest Completed
     type: BOOLEAN

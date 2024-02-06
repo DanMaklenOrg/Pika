@@ -5,8 +5,7 @@ stats:
     name: Slot Upgrade Installed
     type: INTEGER_RANGE(0, 7)
 entities:
-  - id: tool_belt
-    name: Tool Belt
+  - name: Tool Belt
     stats:
       - _/owned
       - slot_upgrade

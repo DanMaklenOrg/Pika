@@ -31,7 +31,7 @@ public class Deserializer
     {
         return new Project
         {
-            Id = ParseId(node.Id),
+            Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
         };
     }
@@ -40,7 +40,7 @@ public class Deserializer
     {
         return new Entity
         {
-            Id = ParseId(node.Id),
+            Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
             Stats = node.Stats.ConvertAll(ParseId),
         };
@@ -50,7 +50,7 @@ public class Deserializer
     {
         var stat = new Stat
         {
-            Id = ParseId(node.Id),
+            Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
         };
 
@@ -78,14 +78,13 @@ public class Deserializer
         return stat;
     }
 
+    private ResourceId ParseOrInduceId(string? id, string name)
+    {
+        return string.IsNullOrWhiteSpace(id) ? ResourceId.InduceFromName(name, _context.ScopeDomainId) : ParseId(id);
+    }
+
     private ResourceId ParseId(string id)
     {
-        var segments = id.Split('/');
-        return segments.Length switch
-        {
-            1 => new ResourceId(segments[0], _context.ScopeDomainId),
-            2 => new ResourceId(segments[1], segments[0]),
-            _ => throw new ArgumentException("Id must be of form {{domain}}/{{id}} or {{id}}"),
-        };
+        return !id.Contains('/') ? new ResourceId(id, _context.ScopeDomainId) : ResourceId.ParseResourceId(id);
     }
 }

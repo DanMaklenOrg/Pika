@@ -34,7 +34,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         var name = node.InnerText;
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {
@@ -78,7 +78,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {
@@ -100,7 +100,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         var name = node.InnerText;
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {
@@ -126,7 +126,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         };
         return new Entity
         {
-            Id = new ResourceId(IdUtilities.Normalize(name), DomainId),
+            Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Stats = new List<ResourceId>
             {

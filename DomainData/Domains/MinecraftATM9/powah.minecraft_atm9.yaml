@@ -1,93 +1,75 @@
 id: powah.minecraft_atm9
 name: "Powah"
 stats:
-  - id: tier
-    name: Tier
+  - name: Tier
     type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro)
   - id: tier_creative
     name: Tier
     type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro, Creative)
-  - id: binding_card_installed
-    name: Binding Card Installed
+  - name: Binding Card Installed
     type: ORDERED_ENUM(None, Basic, Dimensional)
-  - id: lens_of_ender_installed
-    name: Lens Of Ender Installed
+  - name: Lens Of Ender Installed
     type: BOOLEAN
 projects:
-  - id: automate_energizing_orb
-    name: Automate Energizing Orb
+  - name: Automate Energizing Orb
 entities:
   - id: manual
     name: Manual (Powah!)
     stats:
       - _/owned
-  - id: wrench
-    name: Wrench
+  - name: Wrench
     stats:
       - _/owned
-  - id: Battery
-    name: Battery
+  - name: Battery
     stats:
       - _/owned
       - tier
-  - id: energy_cell
-    name: Energy Cell
+  - name: Energy Cell
     stats:
       - _/owned
       - tier_creative
-  - id: ender_cell
-    name: Ender Cell
+  - name: Ender Cell
     stats:
       - _/owned
       - tier
-  - id: energizing_orb
-    name: Energizing Orb
+  - name: Energizing Orb
     stats:
       - _/owned
-  - id: energizing_rod
-    name: Energizing Rod
-    stats:
-      - _/owned
-      - tier
-  - id: furnator
-    name: Furnator
+  - name: Energizing Rod
     stats:
       - _/owned
       - tier
-  - id: magmator
-    name: Magmator
+  - name: Furnator
     stats:
       - _/owned
       - tier
-  - id: thermo_generator
-    name: Thermo Generator
+  - name: Magmator
     stats:
       - _/owned
       - tier
-  - id: solar_panel
-    name: Solar Panel
+  - name: Thermo Generator
+    stats:
+      - _/owned
+      - tier
+  - name: Solar Panel
     stats:
       - _/owned
       - tier
       - lens_of_ender_installed
-  - id: reactor
-    name: Reactor
+  - name: Reactor
     stats:
       - _/owned
       - tier
-  - id: player_transmitter
-    name: Player Transmitter
+  - name: Player Transmitter
     stats:
       - _/owned
       - tier
       - binding_card_installed
-  - id: energy_hopper
-    name: Energy Hopper
+  - name: Energy Hopper
     stats:
       - _/owned
       - tier
-  - id: energy_discharger
-    name: Energy Discharger
+  - name: Energy Discharger
     stats:
       - _/owned
       - tier

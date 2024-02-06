@@ -12,20 +12,20 @@ public readonly struct DomainNode
 
 public readonly struct EntityNode
 {
-    public string Id { get; init; }
+    public string? Id { get; init; }
     public string Name { get; init; }
     public List<string> Stats { get; init; }
 }
 
 public readonly struct StatNode
 {
-    public string Id { get; init; }
+    public string? Id { get; init; }
     public string Name { get; init; }
     public string Type { get; init; }
 }
 
 public readonly struct ProjectNode
 {
-    public string Id { get; init; }
+    public string? Id { get; init; }
     public string Name { get; init; }
 }
