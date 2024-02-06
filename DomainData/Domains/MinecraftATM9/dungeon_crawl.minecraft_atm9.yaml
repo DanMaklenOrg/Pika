@@ -4,4 +4,4 @@ entities:
   - id: dungeon
     name: Dungeon
     stats:
-      - _/owned
+      - _/explored
