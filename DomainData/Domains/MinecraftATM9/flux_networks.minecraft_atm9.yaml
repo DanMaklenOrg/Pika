@@ -13,7 +13,7 @@ entities:
     stats:
       - _/owned
   - id: flux_storage
-    name: flux Storage
+    name: Flux Storage
     stats:
       - _/owned
       - storage_tier
