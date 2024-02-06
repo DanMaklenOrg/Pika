@@ -14,7 +14,7 @@ public class PikaConverter
         _fileHandler.Write(domainNode, textWriter);
     }
 
-    public Domain Read(TextReader textReader, string domainId)
+    public Domain Read(TextReader textReader)
     {
         var domainNode = _fileHandler.Read(textReader);
         var context = _contextExtractor.ExtractContext(domainNode);
