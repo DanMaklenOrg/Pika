@@ -1,0 +1,23 @@
+id: flux_networks.minecraft_atm9
+name: "Flux Networks"
+projects:
+  - id: automate_flux_dust
+    name: Automate Flux Dust Production
+stats:
+  - id: storage_tier
+    name: Tier
+    type: ORDERED_ENUM(Basic, Herculean, Gargantuan)
+entities:
+  - id: flux_controller
+    name: Flux Controller
+    stats:
+      - _/owned
+  - id: flux_storage
+    name: Flux Storage
+    stats:
+      - _/owned
+      - storage_tier
+  - id: flux_configurator
+    name: Flux Configurator
+    stats:
+      - _/owned

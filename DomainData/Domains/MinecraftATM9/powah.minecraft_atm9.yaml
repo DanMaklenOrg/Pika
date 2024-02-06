@@ -1,0 +1,93 @@
+id: powah.minecraft_atm9
+name: "Powah"
+stats:
+  - id: tier
+    name: Tier
+    type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro)
+  - id: tier_creative
+    name: Tier
+    type: ORDERED_ENUM(Starter, Basic, Hardened, Blazing, Niotic, Spirited, Nitro, Creative)
+  - id: binding_card_installed
+    name: Binding Card Installed
+    type: ORDERED_ENUM(None, Basic, Dimensional)
+  - id: lens_of_ender_installed
+    name: Lens Of Ender Installed
+    type: BOOLEAN
+projects:
+  - id: automate_energizing_orb
+    name: Automate Energizing Orb
+entities:
+  - id: manual
+    name: Manual (Powah!)
+    stats:
+      - _/owned
+  - id: wrench
+    name: Wrench
+    stats:
+      - _/owned
+  - id: Battery
+    name: Battery
+    stats:
+      - _/owned
+      - tier
+  - id: energy_cell
+    name: Energy Cell
+    stats:
+      - _/owned
+      - tier_creative
+  - id: ender_cell
+    name: Ender Cell
+    stats:
+      - _/owned
+      - tier
+  - id: energizing_orb
+    name: Energizing Orb
+    stats:
+      - _/owned
+  - id: energizing_rod
+    name: Energizing Rod
+    stats:
+      - _/owned
+      - tier
+  - id: furnator
+    name: Furnator
+    stats:
+      - _/owned
+      - tier
+  - id: magmator
+    name: Magmator
+    stats:
+      - _/owned
+      - tier
+  - id: thermo_generator
+    name: Thermo Generator
+    stats:
+      - _/owned
+      - tier
+  - id: solar_panel
+    name: Solar Panel
+    stats:
+      - _/owned
+      - tier
+      - lens_of_ender_installed
+  - id: reactor
+    name: Reactor
+    stats:
+      - _/owned
+      - tier
+  - id: player_transmitter
+    name: Player Transmitter
+    stats:
+      - _/owned
+      - tier
+      - binding_card_installed
+  - id: energy_hopper
+    name: Energy Hopper
+    stats:
+      - _/owned
+      - tier
+  - id: energy_discharger
+    name: Energy Discharger
+    stats:
+      - _/owned
+      - tier

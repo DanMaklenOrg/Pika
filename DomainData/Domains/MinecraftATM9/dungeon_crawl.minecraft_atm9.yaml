@@ -1,0 +1,7 @@
+id: dungeon_crawl.minecraft_atm9
+name: "Dungeon Crawl"
+entities:
+  - id: dungeon
+    name: Dungeon
+    stats:
+      - _/explored
