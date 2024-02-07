@@ -104,7 +104,10 @@ entities:
     stats:
       - _/quest_completed
   - name: Chemical Washer
-    stats: Chemical Crystallizer
+    stats:
+      - _/quest_completed
+  - name: Chemical Crystallizer
+    stats:
       - _/quest_completed
   - name: Tier 4 Ore Processing Factory Summary
     stats:
