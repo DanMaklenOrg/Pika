@@ -102,7 +102,7 @@ entities:
       - minecraft_atm9/tamed
       - minecraft_atm9/spawn_egg_collected
   - id: cryocerous
-    name: Cryocerou
+    name: Cryocerous
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: crystal_camel
@@ -150,48 +150,39 @@ entities:
     name: Nested Spider
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: nyctofly
-    name: Nyctofly
+  - name: Nyctofly
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: polargeist
-    name: Polargeist
+  - name: Polargeist
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: seclam
-    name: Seclam
+  - name: Seclam
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: shade_monitor
     name: Shade Monitor
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: shrumpty
-    name: Shrumpty
+  - name: Shrumpty
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: sliv
-    name: Sliv
+  - name: Sliv
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: snow_owl
-    name: Snow Owl
+  - name: Snow Owl
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: spewter
-    name: Spewter
+  - name: Spewter
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: stonelet
-    name: Stonelet
+  - name: Stonelet
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: venom_spider
     name: Venom Spider
     stats:
       - minecraft_atm9/spawn_egg_collected
-  - id: whistleshell_crab
-    name: Wistleshell Crab
+  - name: Whistleshell Crab
     stats:
       - minecraft_atm9/spawn_egg_collected
   - id: forever_bright
@@ -202,7 +193,7 @@ entities:
     name: A Bright Future!
     stats:
       - _/achieved
-  - id: a_litte_hot_rod_red
+  - id: a_little_hot_rod_red
     name: A Little Hot Rod Red
     stats:
       - _/achieved
@@ -211,7 +202,7 @@ entities:
     stats:
       - _/achieved
   - id: now_were_cooking_with_shrooms
-    name: No We're Cooking With... Shroomes?
+    name: No We're Cooking With... Shrooms?
     stats:
       - _/achieved
   - id: mysterious_metal
@@ -230,8 +221,7 @@ entities:
     name: Heart of Nature
     stats:
       - _/achieved
-  - id: now_youre_thinking_with_portals
-    name: Now You're Thinking with Portals!
+  - name: Now You're Thinking with Portals!
     stats:
       - _/achieved
   - id: the_wizards_tower
@@ -430,8 +420,7 @@ entities:
     name: Trough
     stats:
       - _/owned
-  - id: snowcap_oven
-    name: Snowcap Oven
+  - name: Snowcap Oven
     stats:
       - _/owned
   - id: horizonite_forge
@@ -934,8 +923,7 @@ entities:
       - minecraft_atm9/villager_moved
       - minecraft_atm9/career_level
       - minecraft_atm9/unzombified
-  - id: villager_nightwatcher
-    name: Villager (Nightwatcher)
+  - name: Villager (Nightwatcher)
     stats:
       - minecraft_atm9/villager_moved
       - minecraft_atm9/career_level

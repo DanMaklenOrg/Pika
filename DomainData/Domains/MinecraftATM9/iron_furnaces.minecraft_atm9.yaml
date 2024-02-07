@@ -14,16 +14,13 @@ projects:
   - id: generate_rainbow_power
     name: Generate power using Rainbow Furnace (with all furnaces)
 entities:
-  - id: furnace
-    name: Furnace
+  - name: Furnace
     stats:
       - _/owned
       - furnace_tier
-  - id: rainbow_furnace
-    name: Rainbow Furnace
+  - name: Rainbow Furnace
     stats:
       - _/owned
-  - id: rainbow_coal
-    name: Rainbow Coal
+  - name: Rainbow Coal
     stats:
       - _/owned

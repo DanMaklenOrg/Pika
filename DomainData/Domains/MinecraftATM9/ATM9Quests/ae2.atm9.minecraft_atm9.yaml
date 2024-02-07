@@ -10,7 +10,7 @@ entities:
     stats:
       - _/quest_completed
   - id: first_things_first
-    name: Firt Things First
+    name: First Things First
     stats:
       - _/quest_completed
   - id: energy_acceptor
@@ -18,7 +18,7 @@ entities:
     stats:
       - _/quest_completed
   - id: energy_cell
-    name: Energy Call
+    name: Energy Cell
     stats:
       - _/quest_completed
   - id: energy_card
@@ -169,7 +169,7 @@ entities:
     name: Wireless Terminal
     stats:
       - _/quest_completed
-  - id: aeinfinitybooster
+  - id: ae_infinity_booster
     name: AEInfinityBooster
     stats:
       - _/quest_completed

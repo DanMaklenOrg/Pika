@@ -1,19 +1,15 @@
 id: laserio.minecraft_atm9
 name: "LaserIO"
 entities:
-  - id: laser_wrench
-    name: Laser Wrench
+  - name: Laser Wrench
     stats:
       - _/owned
-  - id: card_holder
-    name: Card Holder
+  - name: Card Holder
     stats:
       - _/owned
-  - id: card_cloner
-    name: Card Cloner
+  - name: Card Cloner
     stats:
       - _/owned
-  - id: laserio_101
-    name: LaserIO 101
+  - name: LaserIO 101
     stats:
       - _/owned

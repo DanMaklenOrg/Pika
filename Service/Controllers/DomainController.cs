@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pika.DataLayer.Dao;
-using Pika.DataLayer.Model;
 using Pika.Model;
 using Pika.Repository;
 using Pika.Service.Dto;

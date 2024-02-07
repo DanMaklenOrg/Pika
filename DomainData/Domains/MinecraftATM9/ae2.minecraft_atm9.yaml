@@ -87,23 +87,23 @@ entities:
     stats:
       - _/owned
   - id: certus_quartz_hoe
-    name: Nether Quartz Hoe
+    name: Certus Quartz Hoe
     stats:
       - _/owned
   - id: certus_quartz_shovel
-    name: Nether Quartz Shovel
+    name: Certus Quartz Shovel
     stats:
       - _/owned
   - id: certus_quartz_pickaxe
-    name: Nether Quartz Pickaxe
+    name: Certus Quartz Pickaxe
     stats:
       - _/owned
   - id: certus_quartz_axe
-    name: Nether Quartz Axe
+    name: Certus Quartz Axe
     stats:
       - _/owned
   - id: certus_quartz_sword
-    name: Nether Quartz Sword
+    name: Certus Quartz Sword
     stats:
       - _/owned
   - id: fluix_hoe
@@ -135,7 +135,7 @@ entities:
     stats:
       - _/owned
   - id: entropy_manipulator
-    name: Entropy Manipulatr
+    name: Entropy Manipulator
     stats:
       - _/owned
   - id: charged_staff
@@ -155,7 +155,7 @@ entities:
     stats:
       - _/owned
   - id: meteorite_compass
-    name: Meteroite Compass
+    name: Meteorite Compass
     stats:
       - _/owned
   - id: guide
@@ -515,7 +515,7 @@ entities:
     name: To boldly go
     stats:
       - _/achieved
-  - id: fluix_energy_connectoin
+  - id: fluix_energy_connection
     name: Fluix Energy Connection
     stats:
       - _/achieved

@@ -1,7 +1,6 @@
 id: charging_gadgets.minecraft_atm9
 name: "Charging Gadgets"
 entities:
-  - id: charging_station
-    name: Charging Station
+  - name: Charging Station
     stats:
       - _/owned
