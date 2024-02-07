@@ -13,7 +13,6 @@ stats:
     name: Fully Unlocked
     type: BOOLEAN
 entities:
-  - id: iron_golem
-    name: Iron Golem
+  - name: Iron Golem
     stats:
       - _/constructed

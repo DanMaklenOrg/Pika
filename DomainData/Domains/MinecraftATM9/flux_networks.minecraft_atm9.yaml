@@ -8,16 +8,13 @@ stats:
     name: Tier
     type: ORDERED_ENUM(Basic, Herculean, Gargantuan)
 entities:
-  - id: flux_controller
-    name: Flux Controller
+  - name: Flux Controller
     stats:
       - _/owned
-  - id: flux_storage
-    name: Flux Storage
+  - name: Flux Storage
     stats:
       - _/owned
       - storage_tier
-  - id: flux_configurator
-    name: Flux Configurator
+  - name: Flux Configurator
     stats:
       - _/owned

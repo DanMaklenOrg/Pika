@@ -142,8 +142,7 @@ entities:
     name: Dungeon Delving
     stats:
       - _/achieved
-  - id: magery
-    name: Magery
+  - name: Magery
     stats:
       - _/achieved
   - id: staff_of_blood

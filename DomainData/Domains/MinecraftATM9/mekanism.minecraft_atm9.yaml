@@ -32,98 +32,78 @@ stats:
     name: Speed Upgrade Installed
     type: INTEGER_RANGE(0, 8)
 entities:
-  - id: energized_smelter
-    name: Energized Smelter
+  - name: Energized Smelter
     stats:
       - _/owned
       - tier_base
-  - id: enrichment_chamber
-    name: Enrichment Chamber
+  - name: Enrichment Chamber
     stats:
       - _/owned
       - tier_base
-  - id: crusher
-    name: Crusher
+  - name: Crusher
     stats:
       - _/owned
       - tier_base
-  - id: osmium_compressor
-    name: Osmium Compressor
+  - name: Osmium Compressor
     stats:
       - _/owned
       - tier_base
-  - id: combiner
-    name: Combiner
+  - name: Combiner
     stats:
       - _/owned
       - tier_base
-  - id: purification_chamber
-    name: Purification Chamber
+  - name: Purification Chamber
     stats:
       - _/owned
       - tier_base
-  - id: chemical_injection_chamber
-    name: Chemical Injection Chamber
+  - name: Chemical Injection Chamber
     stats:
       - _/owned
       - tier_base
-  - id: metallurgic_infuser
-    name: Metallurgic Infuser
+  - name: Metallurgic Infuser
     stats:
       - _/owned
       - tier_base
-  - id: precision_sawmill
-    name: precision_sawmill
+  - name: precision_sawmill
     stats:
       - _/owned
       - tier_base
-  - id: bin
-    name: Bin
+  - name: Bin
     stats:
       - _/owned
       - tier_base
-  - id: digital_miner
-    name: Digital Miner
+  - name: Digital Miner
     stats:
       - _/owned
   - id: teleporter
     name: Teleporter Multi-Block
     stats:
       - _/constructed
-  - id: electric_pipe
-    name: Electric Pipe
+  - name: Electric Pipe
     stats:
       - _/owned
-  - id: logistical_sorter
-    name: Logistical Sorter
+  - name: Logistical Sorter
     stats:
       - _/owned
-  - id: rotary_condensentrator
-    name: Rotary Condensentrator
+  - name: Rotary Condensentrator
     stats:
       - _/owned
-  - id: chemical_oxidizer
-    name: Chemical Oxidizer
+  - name: Chemical Oxidizer
     stats:
       - _/owned
-  - id: chemical_infuser
-    name: Chemical Infuser
+  - name: Chemical Infuser
     stats:
       - _/owned
-  - id: electrolytic_separator
-    name: Electrolytic Separator
+  - name: Electrolytic Separator
     stats:
       - _/owned
-  - id: chemical_dissolution_chamber
-    name: Chemical Dissolution Chamber
+  - name: Chemical Dissolution Chamber
     stats:
       - _/owned
-  - id: chemical_washer
-    name: Chemical Washer
+  - name: Chemical Washer
     stats:
       - _/owned
-  - id: chemical_crystallizer
-    name: Chemical Crystallizer
+  - name: Chemical Crystallizer
     stats:
       - _/owned
   - id: seismic_vibrator
@@ -147,8 +127,7 @@ entities:
     stats:
       - _/owned
       - tier
-  - id: fluid_plenisher
-    name: Fluid Plenisher
+  - name: Fluid Plenisher
     stats:
       - _/owned
   - id: solar_neutron_activator
@@ -163,7 +142,7 @@ entities:
     name: Formulaic Assemblicator
     stats:
       - _/owned
-  - id: antiportonic_nucleosynthesizer
+  - id: antiprotonic_nucleosynthesizer
     name: Antiprotonic Nucleosynthesizer
     stats:
       - _/owned
@@ -329,8 +308,7 @@ entities:
     stats:
       - _/owned
       - armored
-  - id: hdpe_reinforced_elytra
-    name: HDPE Reinforced Elytra
+  - name: HDPE Reinforced Elytra
     stats:
       - _/owned
   - id: hazmat_mask
@@ -357,32 +335,26 @@ entities:
     name: Electric Bow
     stats:
       - _/owned
-  - id: mekasuit_helmet
-    name: MekaSuit Helmet
+  - name: MekaSuit Helmet
     stats:
       - _/owned
-  - id: mekasuit_bodyarmor
-    name: MekaSuit Bodyarmor
+  - name: MekaSuit Bodyarmor
     stats:
       - _/owned
-  - id: mekasuit_pants
-    name: MekaSuit Pants
+  - name: MekaSuit Pants
     stats:
       - _/owned
-  - id: mekasuit_boots
-    name: MekaSuit Boots
+  - name: MekaSuit Boots
     stats:
       - _/owned
   - id: canteen
     name: Canteen
     stats:
       - _/owned
-  - id: robit
-    name: Robit
+  - name: Robit
     stats:
       - _/owned
-  - id: portable_teleporter
-    name: Portable Teleporter
+  - name: Portable Teleporter
     stats:
       - _/owned
   - id: seismic_reader
@@ -393,33 +365,27 @@ entities:
     name: QIO Drive
     stats:
       - _/owned
-  - id: superheating_element
-    name: Superheating Element
+  - name: Superheating Element
     stats:
       - _/owned
   - id: industrial_turbine
     name: Industrial Turbine Multi-Block
     stats:
       - _/constructed
-  - id: heat_generator
-    name: Heat Generator
+  - name: Heat Generator
     stats:
       - _/owned
-  - id: solar_generator
-    name: solar_generator
+  - name: solar_generator
     stats:
       - _/owned
       - advanced
-  - id: wind_generator
-    name: Wind Generator
+  - name: Wind Generator
     stats:
       - _/owned
-  - id: bio_generator
-    name: Bio-Generator
+  - name: Bio-Generator
     stats:
       - _/owned
-  - id: gas_burning_generator
-    name: Gas-Burning Generator
+  - name: Gas-Burning Generator
     stats:
       - _/owned
   - id: fusion_reactor
@@ -430,28 +396,22 @@ entities:
     name: Fission Reactor Multi-Block
     stats:
       - _/constructed
-  - id: wood_paxel
-    name: Wood Paxel
+  - name: Wood Paxel
     stats:
       - _/owned
-  - id: stone_paxel
-    name: Stone Paxel
+  - name: Stone Paxel
     stats:
       - _/owned
-  - id: iron_paxel
-    name: Iron Paxel
+  - name: Iron Paxel
     stats:
       - _/owned
-  - id: diamond_paxel
-    name: Diamond Paxel
+  - name: Diamond Paxel
     stats:
       - _/owned
-  - id: gold_paxel
-    name: Gold Paxel
+  - name: Gold Paxel
     stats:
       - _/owned
-  - id: netherite_paxel
-    name: Netherite Paxel
+  - name: Netherite Paxel
     stats:
       - _/owned
   - id: bronze_pickaxe
@@ -470,8 +430,7 @@ entities:
     name: Bronze Hoe
     stats:
       - _/owned
-  - id: bronze_paxel
-    name: Bronze Paxel
+  - name: Bronze Paxel
     stats:
       - _/owned
   - id: bronze_sword
@@ -498,48 +457,37 @@ entities:
     name: Bronze Shield
     stats:
       - _/owned
-  - id: lapis_lazuli_pickaxe
-    name: Lapis Lazuli Pickaxe
+  - name: Lapis Lazuli Pickaxe
     stats:
       - _/owned
-  - id: lapis_lazuli_axe
-    name: Lapis Lazuli Axe
+  - name: Lapis Lazuli Axe
     stats:
       - _/owned
-  - id: lapis_lazuli_shovel
-    name: Lapis Lazuli Shovel
+  - name: Lapis Lazuli Shovel
     stats:
       - _/owned
-  - id: lapis_lazuli_hoe
-    name: Lapis Lazuli Hoe
+  - name: Lapis Lazuli Hoe
     stats:
       - _/owned
-  - id: lapis_lazuli_paxel
-    name: Lapis Lazuli Paxel
+  - name: Lapis Lazuli Paxel
     stats:
       - _/owned
-  - id: lapis_lazuli_sword
-    name: Lapis Lazuli Sword
+  - name: Lapis Lazuli Sword
     stats:
       - _/owned
-  - id: lapis_lazuli_helmet
-    name: Lapis Lazuli Helmet
+  - name: Lapis Lazuli Helmet
     stats:
       - _/owned
-  - id: lapis_lazuli_chestplate
-    name: Lapis Lazuli Chestplate
+  - name: Lapis Lazuli Chestplate
     stats:
       - _/owned
-  - id: lapis_lazuli_leggings
-    name: Lapis Lazuli Leggings
+  - name: Lapis Lazuli Leggings
     stats:
       - _/owned
-  - id: lapis_lazuli_boots
-    name: Lapis Lazuli Boots
+  - name: Lapis Lazuli Boots
     stats:
       - _/owned
-  - id: lapis_lazuli_shield
-    name: Lapis Lazuli Shield
+  - name: Lapis Lazuli Shield
     stats:
       - _/owned
   - id: osmium_pickaxe
@@ -558,8 +506,7 @@ entities:
     name: Osmium Hoe
     stats:
       - _/owned
-  - id: osmium_paxel
-    name: Osmium Paxel
+  - name: Osmium Paxel
     stats:
       - _/owned
   - id: osmium_sword
@@ -587,7 +534,7 @@ entities:
     stats:
       - _/owned
   - id: refined_glowstone_pickaxe
-    name: Refined Glowstone Pickxe
+    name: Refined Glowstone Pickaxe
     stats:
       - _/owned
   - id: refined_glowstone_axe
@@ -602,8 +549,7 @@ entities:
     name: Refined Glowstone Hoe
     stats:
       - _/owned
-  - id: refined_glowstone_paxel
-    name: Refined Glowstone Paxel
+  - name: Refined Glowstone Paxel
     stats:
       - _/owned
   - id: refined_glowstone_sword
@@ -646,8 +592,7 @@ entities:
     name: Refined Obsidian Hoe
     stats:
       - _/owned
-  - id: refined_obsidian_paxel
-    name: Refined Obsidian Paxel
+  - name: Refined Obsidian Paxel
     stats:
       - _/owned
   - id: refined_obsidian_sword
