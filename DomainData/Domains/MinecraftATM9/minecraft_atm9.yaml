@@ -3,7 +3,8 @@ name: Minecraft - ATM9
 stats:
   - name: Spawn Egg Collected
     type: BOOLEAN
-  - name: Moved to Village
+  - id: villager_moved
+    name: Moved to Village
     type: BOOLEAN
   - name: Tamed
     type: BOOLEAN
