@@ -576,46 +576,186 @@ entities:
     name: Refined Glowstone Shield
     stats:
       - _/owned
-  - id: refined_obsidian_pickaxe
-    name: Refined Obsidian Pickaxe
+  - name: Refined Obsidian Pickaxe
     stats:
       - _/owned
-  - id: refined_obsidian_axe
-    name: Refined Obsidian Axe
+  - name: Refined Obsidian Axe
     stats:
       - _/owned
-  - id: refined_obsidian_shovel
-    name: Refined Obsidian Shovel
+  - name: Refined Obsidian Shovel
     stats:
       - _/owned
-  - id: refined_obsidian_hoe
-    name: Refined Obsidian Hoe
+  - name: Refined Obsidian Hoe
     stats:
       - _/owned
   - name: Refined Obsidian Paxel
     stats:
       - _/owned
-  - id: refined_obsidian_sword
-    name: Refined Obsidian Sword
+  - name: Refined Obsidian Sword
     stats:
       - _/owned
-  - id: refined_obsidian_helmet
-    name: Refined Obsidian Helmet
+  - name: Refined Obsidian Helmet
     stats:
       - _/owned
-  - id: refined_obsidian_chestplate
-    name: Refined Obsidian Chestplate
+  - name: Refined Obsidian Chestplate
     stats:
       - _/owned
-  - id: refined_obsidian_leggings
-    name: Refined Obsidian Leggings
+  - name: Refined Obsidian Leggings
     stats:
       - _/owned
-  - id: refined_obsidian_boots
-    name: Refined Obsidian Boots
+  - name: Refined Obsidian Boots
     stats:
       - _/owned
-  - id: refined_obsidian_shield
-    name: Refined Obsidian Shield
+  - name: Refined Obsidian Shield
     stats:
       - _/owned
+  - name: Multi-Tool
+    stats:
+      - _/achieved
+  - name: First Steps
+    stats:
+      - _/achieved
+  - name: Not Enough shielding
+    stats:
+      - _/achieved
+  - name: More Tool Types!
+    stats:
+      - _/achieved
+  - name: More Armor Types!
+    stats:
+      - _/achieved
+  - name: Loved By Piglins
+    stats:
+      - _/achieved
+  - name: Better Than Netherite
+    stats:
+      - _/achieved
+  - name: A Metallur-what?
+    stats:
+      - _/achieved
+  - name: Industrial Revolution
+    stats:
+      - _/achieved
+  - name: Just Like A Straw
+    stats:
+      - _/achieved
+  - name: Under Pressure
+    stats:
+      - _/achieved
+  - name: Spread The Warmth
+    stats:
+      - _/achieved
+  - name: Conveyors Are So Yesterday
+    stats:
+      - _/achieved
+  - name: Green Light, Red Light
+    stats:
+      - _/achieved
+  - name: Pick and Place
+    stats:
+      - _/achieved
+  - name: It's Getting Cosy In Here
+    stats:
+      - _/achieved
+  - name: Electron Super Highway
+    stats:
+      - _/achieved
+  - name: The Perfect Foundation
+    stats:
+      - _/achieved
+  - name: Getting More From Less
+    stats:
+      - _/achieved
+  - name: Infusing Efficiency
+    stats:
+      - _/achieved
+  - name: Look, Don't Eat
+    stats:
+      - _/achieved
+  - name: Continue Purifying
+    stats:
+      - _/achieved
+  - name: Injecting... 1, 2, 3, 4
+    stats:
+      - _/achieved
+  - name: Liquefy Then Drink
+    stats:
+      - _/achieved
+  - name: Slurp Slurp!
+    stats:
+      - _/achieved
+  - name: Cut Cut Cut
+    stats:
+      - _/achieved
+  - name: Save it for later
+    stats:
+      - _/achieved
+  - name: Just Vibing
+    stats:
+      - _/achieved
+  - name: A Smart Crafting Table
+    stats:
+      - _/achieved
+  - name: The Alloy That Started it All
+    stats:
+      - _/achieved
+  - name: Reading the Network
+    stats:
+      - _/achieved
+  - name: In Place Transmitter Upgrade
+    stats:
+      - _/achieved
+  - name: Make it Stronger
+    stats:
+      - _/achieved
+  - name: He's Really Advanced For His Age
+    stats:
+      - _/achieved
+  - name: Bigger Buckets
+    stats:
+      - _/achieved
+  - name: Configure Everything
+    stats:
+      - _/achieved
+  - name: Inhalation Not Recommended
+    stats:
+      - _/achieved
+  - name: Tricking a Rock Into Thinking
+    stats:
+      - _/achieved
+  - name: Yea I'm Freeeeee Fallin'
+    stats:
+      - _/achieved
+  - name: Ctrl+C, Ctrl+V
+    stats:
+      - _/achieved
+  - name: Mine, Mine! All Mine
+    stats:
+      - _/achieved
+  - name: Your Distinctiveness Will Be Added to Our Own
+    stats:
+      - _/achieved
+  - name: The Factory Must Grow!
+    stats:
+      - _/achieved
+  - name: Woop Woop Woop!
+    stats:
+      - _/achieved
+  - name: You Could Fit Your Whole House In There
+    stats:
+      - _/achieved
+  - name: Cleaning Gauges
+    stats:
+      - _/achieved
+  - name: Your First Generator
+    stats:
+      - _/achieved
+  - name: Spint Baby Spin
+    stats:
+      - _/achieved
+  - name: Burn the Gas
+    stats:
+      - _/achieved
+  - name: Power of the Sun
+    stats:
+      - _/achieved
