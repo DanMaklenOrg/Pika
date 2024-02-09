@@ -1,0 +1,291 @@
+id: mekanism.atm9.minecraft_atm9
+name: "ATM9 Quests: Mekanism"
+entities:
+  - name: Mekanism
+    stats:
+      - _/quest_completed
+  - name: Osmium
+    stats:
+      - _/quest_completed
+  - name: Heat Generator
+    stats:
+      - _/quest_completed
+  - name: Metallurgic Infuser
+    stats:
+      - _/quest_completed
+  - name: Osmium Compressor
+    stats:
+      - _/quest_completed
+  - name: Refined Glowstone Ingot
+    stats:
+      - _/quest_completed
+  - name: Refined Obsidian Ingot
+    stats:
+      - _/quest_completed
+  - name: Energized Smelter
+    stats:
+      - _/quest_completed
+  - name: Basic Control Circuit
+    stats:
+      - _/quest_completed
+  - name: Infused Alloy
+    stats:
+      - _/quest_completed
+  - name: Advanced Control Circuit
+    stats:
+      - _/quest_completed
+  - name: Reinforced Alloy
+    stats:
+      - _/quest_completed
+  - name: Elite Control Circuit
+    stats:
+      - _/quest_completed
+  - name: Atomic alloy
+    stats:
+      - _/quest_completed
+  - name: Ultimate Control Circuit
+    stats:
+      - _/quest_completed
+  - name: Enrichment Chamber
+    stats:
+      - _/quest_completed
+  - name: Pressurized Reaction Chamber
+    stats:
+      - _/quest_completed
+  - name: Enriched Items
+    stats:
+      - _/quest_completed
+  - name: Electrolytic Separator
+    stats:
+      - _/quest_completed
+  - name: Water Source
+    stats:
+      - _/quest_completed
+  - name: Gas-Burning Generator
+    stats:
+      - _/quest_completed
+  - name: Purification Chamber
+    stats:
+      - _/quest_completed
+  - name: Crusher
+    stats:
+      - _/quest_completed
+  - name: Bio Fuel
+    stats:
+      - _/quest_completed
+  - name: Substrates
+    stats:
+      - _/quest_completed
+  - name: HDPE Pellets
+    stats:
+      - _/quest_completed
+  - name: HDPE Sheet
+    stats:
+      - _/quest_completed
+  - name: Our Setup So Far
+    stats:
+      - _/quest_completed
+  - name: Chemical Injection Chamber
+    stats:
+      - _/quest_completed
+  - name: Thermal Evaporation Plant
+    stats:
+      - _/quest_completed
+  - name: Heating Up our Brine Production
+    stats:
+      - _/quest_completed
+  - name: Chemical Infuser
+    stats:
+      - _/quest_completed
+  - name: The Hard Part
+    stats:
+      - _/quest_completed
+  - name: The Start of a Tier 4 Ore Factory
+    stats:
+      - _/quest_completed
+  - name: Chemical Washer
+    stats:
+      - _/quest_completed
+  - name: Chemical Crystallizer
+    stats:
+      - _/quest_completed
+  - name: Tier 4 Ore Processing Factory Summary
+    stats:
+      - _/quest_completed
+  - name: Rotary Condensentrator
+    stats:
+      - _/quest_completed
+  - name: Chemical Oxidizer
+    stats:
+      - _/quest_completed
+  - name: Advanced Mekanism
+    stats:
+      - _/quest_completed
+  - name: Energy Tablet
+    stats:
+      - _/quest_completed
+  - name: Robit
+    stats:
+      - _/quest_completed
+  - name: Chargepad
+    stats:
+      - _/quest_completed
+  - name: Custom Portals!
+    stats:
+      - _/quest_completed
+  - name: Digital Miner
+    stats:
+      - _/quest_completed
+  - name: Jetpack
+    stats:
+      - _/quest_completed
+  - name: Configurator
+    stats:
+      - _/quest_completed
+  - name: Quantum Entangloporter
+    stats:
+      - _/quest_completed
+  - name: Atomic Disassembler
+    stats:
+      - _/quest_completed
+  - name: Solar Generator
+    stats:
+      - _/quest_completed
+  - name: Advanced Solar Generator
+    stats:
+      - _/quest_completed
+  - name: Wind Generator
+    stats:
+      - _/quest_completed
+  - name: Bio-Generator
+    stats:
+      - _/quest_completed
+  - name: Steel
+    stats:
+      - _/quest_completed
+  - name: Basic Universal Cable
+    stats:
+      - _/quest_completed
+  - name: Advanced Universal Cable
+    stats:
+      - _/quest_completed
+  - name: Elite Universal Cable
+    stats:
+      - _/quest_completed
+  - name: Ultimate Universal Cable
+    stats:
+      - _/quest_completed
+  - name: Basic Mechanical Pipe
+    stats:
+      - _/quest_completed
+  - name: Advanced Mechanical Pipe
+    stats:
+      - _/quest_completed
+  - name: Elite Mechanical Pipe
+    stats:
+      - _/quest_completed
+  - name: Ultimate Mechanical Pipe
+    stats:
+      - _/quest_completed
+  - name: Basic Pressurized Tube
+    stats:
+      - _/quest_completed
+  - name: Advanced Pressurized Tube
+    stats:
+      - _/quest_completed
+  - name: Elite Pressurized Tube
+    stats:
+      - _/quest_completed
+  - name: Ultimate Pressurized Tube
+    stats:
+      - _/quest_completed
+  - name: Basic Logistical Transporter
+    stats:
+      - _/quest_completed
+  - name: Advanced Logistical Transporter
+    stats:
+      - _/quest_completed
+  - name: Elite Logistical Transporter
+    stats:
+      - _/quest_completed
+  - name: Ultimate Logistical Transporter
+    stats:
+      - _/quest_completed
+  - name: Basic Thermodynamic Conductor
+    stats:
+      - _/quest_completed
+  - name: Advanced Thermodynamic Conductor
+    stats:
+      - _/quest_completed
+  - name: Elite Thermodynamic Conductor
+    stats:
+      - _/quest_completed
+  - name: Ultimate Thermodynamic Conductor
+    stats:
+      - _/quest_completed
+  - name: Basic Energy Cube
+    stats:
+      - _/quest_completed
+  - name: Advanced Energy Cube
+    stats:
+      - _/quest_completed
+  - name: Elite Energy Cube
+    stats:
+      - _/quest_completed
+  - name: Ultimate Energy Cube
+    stats:
+      - _/quest_completed
+  - name: Basic Tier Installer
+    stats:
+      - _/quest_completed
+  - name: Advanced Tier Installer
+    stats:
+      - _/quest_completed
+  - name: Elite Tier Installer
+    stats:
+      - _/quest_completed
+  - name: Ultimate Tier Installer
+    stats:
+      - _/quest_completed
+  - name: Basic Chemical Tank
+    stats:
+      - _/quest_completed
+  - name: Advanced Chemical Tank
+    stats:
+      - _/quest_completed
+  - name: Elite Chemical Tank
+    stats:
+      - _/quest_completed
+  - name: Ultimate Chemical Tank
+    stats:
+      - _/quest_completed
+  - name: Basic Fluid Tank
+    stats:
+      - _/quest_completed
+  - name: Advanced Fluid Tank
+    stats:
+      - _/quest_completed
+  - name: Elite Fluid Tank
+    stats:
+      - _/quest_completed
+  - name: Ultimate Fluid Tank
+    stats:
+      - _/quest_completed
+  - name: Filter Upgrade
+    stats:
+      - _/quest_completed
+  - name: Speed Upgrade
+    stats:
+      - _/quest_completed
+  - name: Stone Generator Upgrade
+    stats:
+      - _/quest_completed
+  - name: Muffling Upgrade
+    stats:
+      - _/quest_completed
+  - name: Energy Upgrade
+    stats:
+      - _/quest_completed
+  - name: Gas Upgrade
+    stats:
+      - _/quest_completed

@@ -1,0 +1,129 @@
+id: mekanism_advanced.atm9.minecraft_atm9
+name: "ATM9 Quests: Mekanism - Advanced"
+entities:
+  - name: "Mekanism: Advanced"
+    stats:
+      - _/quest_completed
+  - name: Advanced Power Storage
+    stats:
+      - _/quest_completed
+  - name: Building the Induction Matrix
+    stats:
+      - _/quest_completed
+  - name:  Completing the Matrix
+    stats:
+      - _/quest_completed
+  - name: Customizing Our Power Limits
+    stats:
+      - _/quest_completed
+  - name: Suiting Up for Reactors
+    stats:
+      - _/quest_completed
+  - name: Fission Reactor Building Basics
+    stats:
+      - _/quest_completed
+  - name: Example Circuit Breaker
+    stats:
+      - _/quest_completed
+  - name:  Reactor Fail Safe
+    stats:
+      - _/quest_completed
+  - name: Interacting with the Fission Reactor
+    stats:
+      - _/quest_completed
+  - name: "Inside the Reactor: Fuel Control"
+    stats:
+      - _/quest_completed
+  - name: The Fission Reactor Interface
+    stats:
+      - _/quest_completed
+  - name: Cooling Our Reactor
+    stats:
+      - _/quest_completed
+  - name: Fissile Fuel Production
+    stats:
+      - _/quest_completed
+  - name: Sulfuric Acid
+    stats:
+      - _/quest_completed
+  - name: Uranium
+    stats:
+      - _/quest_completed
+  - name: Hydrofluoric Acid
+    stats:
+      - _/quest_completed
+  - name: Uranium Oxide
+    stats:
+      - _/quest_completed
+  - name: Uranium Hexafluoride
+    stats:
+      - _/quest_completed
+  - name: Fissile Fuel
+    stats:
+      - _/quest_completed
+  - name: Dealing with Nuclear Waste
+    stats:
+      - _/quest_completed
+  - name: The Industrial Turbine
+    stats:
+      - _/quest_completed
+  - name: The Ports
+    stats:
+      - _/quest_completed
+  - name:  The Rotor
+    stats:
+      - _/quest_completed
+  - name: Electromagnetic Coil
+    stats:
+      - _/quest_completed
+  - name: Creating Power with the Turbine!
+    stats:
+      - _/quest_completed
+  - name: Booting Up The Reactor
+    stats:
+      - _/quest_completed
+  - name: Plutonium Pellet
+    stats:
+      - _/quest_completed
+  - name: Supercritical Phase Shifter
+    stats:
+      - _/quest_completed
+  - name: The Supercharged Coils
+    stats:
+      - _/quest_completed
+  - name: Build the SPS!
+    stats:
+      - _/quest_completed
+  - name: Antimatter Pellet
+    stats:
+      - _/quest_completed
+  - name: Polonium Pellet
+    stats:
+      - _/quest_completed
+  - name: The Fusion Reactor
+    stats:
+      - _/quest_completed
+  - name: Frickin' Laser Beam
+    stats:
+      - _/quest_completed
+  - name: "Jumpstarting Method: Laser Focus Array"
+    stats:
+      - _/quest_completed
+  - name: Fueling the Fusion Reactor
+    stats:
+      - _/quest_completed
+  - name: "Fueling the Fusion Reactor: Tritium"
+    stats:
+      - _/quest_completed
+  - name: "Fueling the Reactor: Deuterium"
+    stats:
+      - _/quest_completed
+  - name: The Fuel Injector
+    stats:
+      - _/quest_completed
+  - name: I Think We're Ready
+    stats:
+      - _/quest_completed
+  - name: The End Game Power Source
+    stats:
+      - _/quest_completed

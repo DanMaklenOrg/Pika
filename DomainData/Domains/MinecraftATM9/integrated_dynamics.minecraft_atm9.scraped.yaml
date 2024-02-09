@@ -64,7 +64,8 @@ entities:
     name: Redstone Capturing
     stats:
       - _/quest_completed
-  - name: Redstone Observement
+  - id: redstone_observement
+    name: Redstone Observement
     stats:
       - _/quest_completed
   - id: redstone_transmission
