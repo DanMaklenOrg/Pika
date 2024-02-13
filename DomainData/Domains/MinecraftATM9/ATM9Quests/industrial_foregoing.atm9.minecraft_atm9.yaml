@@ -124,6 +124,9 @@ entities:
   - name: Disenchantment Mycelial Generator
     stats:
       - _/quest_completed
+  - name: Dissolution Chamber
+    stats:
+      - _/quest_completed
   - name: Magma Mycelial Generator
     stats:
       - _/quest_completed
