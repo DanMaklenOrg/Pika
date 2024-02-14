@@ -1,0 +1,256 @@
+id: building_gadgets_2.minecraft_atm9
+name: "Building Gadgets 2"
+projects:
+  - name: Automate Latex Processing
+  - name: Automate Dissolution Chamber
+stats:
+  - id: tool_tier
+    name: Tier
+    type: ORDERED_ENUM(Poor, Common, Uncommon, Rare, Epic, Legendary, Artifact, Shiny Artifact)
+  - id: black_hole_storage_tier
+    name: Tier
+    type: ORDERED_ENUM(Common, Pity, Simple, Advanced, Supreme)
+entities:
+  - name: industrial_foregoings_manual
+    stats:
+      - _/owned
+  - name: Soul Laser Base
+    stats:
+      - _/owned
+  - name: Plant Gatherer
+    stats:
+      - _/owned
+  - name: Sewer
+    stats:
+      - _/owned
+  - name: Sewage Composter
+    stats:
+      - _/owned
+  - name: Plant Fertilizer
+    stats:
+      - _/owned
+  - name: Plant Sower
+    stats:
+      - _/owned
+  - name: Mob Slaughter Factory
+    stats:
+      - _/owned
+  - name: Animal Rancher
+    stats:
+      - _/owned
+  - name: Animal feeder
+    stats:
+      - _/owned
+  - name: Animal Baby Separator
+    stats:
+      - _/owned
+  - name: Mob Crusher
+    stats:
+      - _/owned
+  - name: Hydroponic Bed
+    stats:
+      - _/owned
+  - name: Mob Duplicator
+    stats:
+      - _/owned
+  - name: Wither Builder
+    stats:
+      - _/owned
+  - name: Straw
+    stats:
+      - _/owned
+  - name: Fluid Extractor
+    stats:
+      - _/owned
+  - name: Latex Processing Unit
+    stats:
+      - _/owned
+  - name: Dissolution Chamber
+    stats:
+      - _/owned
+  - name: Pitiful Generator
+    stats:
+      - _/owned
+  - name: Pitiful Generator
+    stats:
+      - _/owned
+  - name: Bioreactor
+    stats:
+      - _/owned
+  - name: Biofuel Generator
+    stats:
+      - _/owned
+  - name: Mycelial Reactor
+    stats:
+      - _/owned
+  - name: Furnace Mycelial Generator
+    stats:
+      - _/owned
+  - name: Slimey Mycelial Generator
+    stats:
+      - _/owned
+  - name: Culinary Mycelial Generator
+    stats:
+      - _/owned
+  - name: Potion Mycelial Generator
+    stats:
+      - _/owned
+  - name: Disenchantment Mycelial Generator
+    stats:
+      - _/owned
+  - name: Ender Mycelial Generator
+    stats:
+      - _/owned
+  - name: Explosive Mycelial Generator
+    stats:
+      - _/owned
+  - name: Frosty Mycelial Generator
+    stats:
+      - _/owned
+  - name: Halitosis Mycelial Generator
+    stats:
+      - _/owned
+  - name: Magma Mycelial Generator
+    stats:
+      - _/owned
+  - name: Pink Mycelial Generator
+    stats:
+      - _/owned
+  - name: Netherstar Mycelial Generator
+    stats:
+      - _/owned
+  - name: Death Mycelial Generator
+    stats:
+      - _/owned
+  - name: Rocket Mycelial Generator
+    stats:
+      - _/owned
+  - name: Crimed Mycelial Generator
+    stats:
+      - _/owned
+  - name: Meatallurgic Mycelial Generator
+    stats:
+      - _/owned
+  - name: Stasis Chamber
+    stats:
+      - _/owned
+  - name: Mob Detector
+    stats:
+      - _/owned
+  - name: Enchantment Sorter
+    stats:
+      - _/owned
+  - name: Enchantment Applicator
+    stats:
+      - _/owned
+  - name: Enchantment Extractor
+    stats:
+      - _/owned
+  - name: Enchantment Factory
+    stats:
+      - _/owned
+  - name: Infinity Charger
+    stats:
+      - _/owned
+  - name: Resourceful Furnace
+    stats:
+      - _/owned
+  - name: Sludge Refiner
+    stats:
+      - _/owned
+  - name: Water Condensator
+    stats:
+      - _/owned
+  - name: Mechanical Dirt
+    stats:
+      - _/owned
+  - name: Block Placer
+    stats:
+      - _/owned
+  - name: Block Breaker
+    stats:
+      - _/owned
+  - name: Fluid Collector
+    stats:
+      - _/owned
+  - name: Fluid Placer
+    stats:
+      - _/owned
+  - name: Dye Mixer
+    stats:
+      - _/owned
+  - name: Spores Recreator
+    stats:
+      - _/owned
+  - name: Material StoneWork Factory
+    stats:
+      - _/owned
+  - name: Marine Fisher
+    stats:
+      - _/owned
+  - name: Potion Brewer
+    stats:
+      - _/owned
+  - name: Ore Laser Base
+    stats:
+      - _/owned
+  - name: Laser Drill
+    stats:
+      - _/owned
+  - name: Fluid Laser Base
+    stats:
+      - _/owned
+  - name: Washing Factory
+    stats:
+      - _/owned
+  - name: Fermentation Station
+    stats:
+      - _/owned
+  - name: Fluid Sieving Machine
+    stats:
+      - _/owned
+  - name: Meat Feeder
+    stats:
+      - _/owned
+  - name: Mob Imprisonment Tool
+    stats:
+      - _/owned
+  - name: Infinity Drill
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Saw
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Hammer
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Trident
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Backpack
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Launcher
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Infinity Nuke
+    stats:
+      - _/owned
+      - tool_tier
+  - name: Black Hole Unit
+    stats:
+      - _/owned
+      - black_hole_storage_tier
+  - name: Black Hole Tank
+    stats:
+      - _/owned
+      - black_hole_storage_tier
+  - name: Black Hole Controller
+    stats:
+      - _/owned
