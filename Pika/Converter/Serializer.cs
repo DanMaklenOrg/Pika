@@ -40,6 +40,7 @@ public class Serializer
             Id = MinifyId(node.Id),
             Name = node.Name,
             Stats = node.Stats.ConvertAll(MinifyId),
+            Classes = node.Classes.ConvertAll(MinifyId),
         };
     }
 

@@ -13,23 +13,7 @@ public class MinecraftScrapper : IScrapper
         return new Domain
         {
             Id = DomainId,
-            Stats = new List<Stat> { await ScrapeVillagerCareerLevelStat() },
             Entities = await ScrapeVillagerProfessions(),
-        };
-    }
-
-    private async Task<Stat> ScrapeVillagerCareerLevelStat()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://minecraft.fandom.com/wiki/Trading");
-        var tableNode = doc.DocumentNode.SelectSingleNode("//table[@data-description='Villager trade levels']");
-        var levelNodes = tableNode.SelectNodes(".//tr/td[3]");
-        var careerLevels = levelNodes.Select(node => node.InnerText.Trim()).ToList();
-        return new Stat
-        {
-            Id = new ResourceId("career_level", DomainId),
-            Name = "Villager Career Level",
-            Type = StatType.OrderedEnum,
-            EnumValues = careerLevels,
         };
     }
 
@@ -47,12 +31,7 @@ public class MinecraftScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                new("villager_moved", DomainId),
-                new("career_level", DomainId),
-                new("unzombified", DomainId),
-            }
+            Classes = new List<ResourceId> { new("villager", DomainId) },
         };
     }
 }
