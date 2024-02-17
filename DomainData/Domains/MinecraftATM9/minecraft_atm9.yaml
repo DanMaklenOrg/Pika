@@ -13,6 +13,11 @@ stats:
   - id: book_fully_unlocked
     name: Fully Unlocked
     type: BOOLEAN
+projects:
+  - name: Collect All Spawn Eggs
+  - name: Gather All Villager Professions
+  - name: Collect All Armor and Weapon Sets
+  - name: Unlock All Advancements
 entities:
   - name: Iron Golem
     stats:
