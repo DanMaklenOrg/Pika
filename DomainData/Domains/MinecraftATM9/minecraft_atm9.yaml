@@ -18,6 +18,7 @@ projects:
   - name: Gather All Villager Professions
   - name: Collect All Armor and Weapon Sets
   - name: Unlock All Advancements
+  - name: Collect All Music Disks
 entities:
   - name: Iron Golem
     stats:
