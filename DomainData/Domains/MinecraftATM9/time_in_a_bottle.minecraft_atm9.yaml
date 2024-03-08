@@ -1,5 +1,7 @@
 id: time_in_a_bottle.minecraft_atm9
 name: "Time in a Bottle"
+projects:
+  - name: Own a Time in a Bottle
 entities:
   - name: Time in a Bottle
     stats:

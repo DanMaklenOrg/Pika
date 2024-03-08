@@ -3,6 +3,8 @@ name: "Jumbo Furnaces"
 stats:
   - name: Operations Upgrade Installed
     type: INTEGER_RANGE(0, 64)
+projects:
+  - name: Build a Maxed Jumbo Furnace
 entities:
   - name: Jumbo Furnace
     stats:

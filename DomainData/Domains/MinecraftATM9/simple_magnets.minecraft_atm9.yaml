@@ -3,6 +3,8 @@ name: "Simple Magnets"
 stats:
   - name: Tier
     type: ORDERED_ENUM(Basic, Advanced)
+projects:
+  - name: Acquire a maxed Magnet
 entities:
   - name: Magnet
     stats:

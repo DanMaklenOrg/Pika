@@ -4,6 +4,8 @@ stats:
   - id: slot_upgrade
     name: Slot Upgrade Installed
     type: INTEGER_RANGE(0, 7)
+projects:
+  - name: Acquire a Fully Upgraded Tool Belt
 entities:
   - name: Tool Belt
     stats:
