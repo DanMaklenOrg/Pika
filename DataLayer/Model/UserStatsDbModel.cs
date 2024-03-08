@@ -5,16 +5,16 @@ namespace Pika.DataLayer.Model;
 public class UserStatsDbModel : BaseDbModel
 {
     [JsonPropertyName("user_id")]
-    public string UserId { get; init; } = default!;
+    public required string UserId { get; init; }
 
     [JsonPropertyName("domain_id")]
-    public string DomainId { get; init; } = default!;
+    public required string DomainId { get; init; }
 
     [JsonPropertyName("entity_stats")]
-    public List<UserEntityStatDbModel> EntityStats { get; init; } = new();
+    public List<UserEntityStatDbModel> EntityStats { get; init; } = [];
 
     [JsonPropertyName("completed_project_ids")]
-    public List<string> CompletedProjectIds { get; init; } = new();
+    public List<string> CompletedProjectIds { get; init; } = [];
 
     protected override void SetKeys()
     {
@@ -26,11 +26,11 @@ public class UserStatsDbModel : BaseDbModel
 public class UserEntityStatDbModel
 {
     [JsonPropertyName("entity_id")]
-    public string EntityId { get; init; } = default!;
+    public required string EntityId { get; init; }
 
     [JsonPropertyName("stat_id")]
-    public string StatId { get; init; } = default!;
+    public required string StatId { get; init; }
 
     [JsonPropertyName("value")]
-    public string Value { get; init; } = default!;
+    public required string Value { get; init; }
 }

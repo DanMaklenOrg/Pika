@@ -36,10 +36,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                "_/owned",
-            }
+            Stats = ["_/owned"]
         };
     }
 
@@ -80,11 +77,11 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
+            Stats =
+            [
                 "_/owned",
-                new ResourceId(levelStat, DomainId),
-            }
+                new ResourceId(levelStat, DomainId)
+            ]
         };
     }
 
@@ -102,10 +99,10 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                "_/owned",
-            },
+            Stats =
+            [
+                "_/owned"
+            ],
         };
     }
 
@@ -128,10 +125,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                "_/owned",
-            }
+            Stats = ["_/owned"]
         };
     }
 }

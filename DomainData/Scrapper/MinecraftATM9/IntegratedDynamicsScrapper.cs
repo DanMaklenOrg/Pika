@@ -46,10 +46,7 @@ public class IntegratedDynamicsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                "_/quest_completed",
-            },
+            Stats = ["_/quest_completed"],
         };
     }
 }
