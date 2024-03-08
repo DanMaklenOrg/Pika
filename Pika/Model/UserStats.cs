@@ -10,7 +10,7 @@ public struct UserStats
 
     public List<ResourceId> CompletedProjectIds { get; init; } = [];
 
-    public UserStats(string userId, DomainId domainId)
+    public UserStats(string userId, string domainId)
     {
         UserId = userId;
         DomainId = domainId;
