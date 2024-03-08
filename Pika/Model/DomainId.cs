@@ -2,8 +2,8 @@ namespace Pika.Model;
 
 public struct DomainId
 {
-    public string Id { get; set; }
-    public string? SubDomainId { get; set; }
+    public string Id { get; init; }
+    public string? SubDomainId { get; init; }
     public bool IsSubDomainId => !string.IsNullOrWhiteSpace(SubDomainId);
     public string FullyQualifiedId => IsSubDomainId ? $"{SubDomainId}.{Id}" : Id;
 

@@ -13,7 +13,7 @@ public class MinecraftScrapper : IScrapper
         return new Domain
         {
             Id = DomainId,
-            Stats = new List<Stat> { await ScrapeVillagerCareerLevelStat() },
+            Stats = [await ScrapeVillagerCareerLevelStat()],
             Entities = await ScrapeVillagerProfessions(),
         };
     }
@@ -47,12 +47,12 @@ public class MinecraftScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Stats = new List<ResourceId>
-            {
-                new("villager_moved", DomainId),
-                new("career_level", DomainId),
-                new("unzombified", DomainId),
-            }
+            Stats =
+            [
+                new ResourceId("villager_moved", DomainId),
+                new ResourceId("career_level", DomainId),
+                new ResourceId("unzombified", DomainId)
+            ]
         };
     }
 }

@@ -20,10 +20,10 @@ public class Deserializer
         {
             Id = node.Id,
             Name = node.Name ?? string.Empty,
-            Stats = node.Stats?.ConvertAll(Deserialize) ?? new List<Stat>(),
-            Entities = node.Entities?.ConvertAll(Deserialize) ?? new List<Entity>(),
-            Projects = node.Projects?.ConvertAll(Deserialize) ?? new List<Project>(),
-            SubDomains = node.SubDomains?.ConvertAll(Deserialize) ?? new List<Domain>(),
+            Stats = node.Stats?.ConvertAll(Deserialize) ?? [],
+            Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
+            Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
+            SubDomains = node.SubDomains?.ConvertAll(Deserialize) ?? [],
         };
     }
 
