@@ -14,6 +14,7 @@ public static class DbModelMapper
             Name = domain.Name,
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
+            Classes = domain.Classes.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
             SubDomains = domain.SubDomains.ConvertAll(ToDbModel),
         };
@@ -28,12 +29,22 @@ public static class DbModelMapper
         };
     }
 
+    private static ClassDbModel ToDbModel(Class model)
+    {
+        return new ClassDbModel
+        {
+            Id = model.Id.FullyQualifiedId,
+            Stats = model.Stats.ConvertAll(c => c.FullyQualifiedId),
+        };
+    }
+
     private static EntityDbModel ToDbModel(Entity entity)
     {
         return new EntityDbModel
         {
             Id = entity.Id.FullyQualifiedId,
             Name = entity.Name,
+            Classes = entity.Classes.ConvertAll(c => c.FullyQualifiedId),
             Stats = entity.Stats.ConvertAll(s => s.FullyQualifiedId),
         };
     }
@@ -59,29 +70,39 @@ public static class DbModelMapper
         {
             Id = domain.Id,
             Name = domain.Name,
-            Projects = domain.Projects.ConvertAll(FromDbModel),
-            Entities = domain.Entities.ConvertAll(FromDbModel),
-            Stats = domain.Stats.ConvertAll(FromDbModel),
-            SubDomains = domain.SubDomains.ConvertAll(FromDbModel)!,
+            Projects = domain.Projects?.ConvertAll(FromDbModel) ?? [],
+            Classes = domain.Classes?.ConvertAll(FromDbModel) ?? [],
+            Entities = domain.Entities?.ConvertAll(FromDbModel) ?? [],
+            Stats = domain.Stats?.ConvertAll(FromDbModel) ?? [],
+            SubDomains = (domain.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
         };
     }
 
     private static Project FromDbModel(ProjectDbModel entity)
     {
-        return new Project()
+        return new Project
         {
             Id = entity.Id,
             Name = entity.Name,
         };
     }
 
+    private static Class FromDbModel(ClassDbModel model)
+    {
+        return new Class
+        {
+            Id = model.Id,
+            Stats = model.Stats.ConvertAll(ResourceId.ParseResourceId),
+        };
+    }
     private static Entity FromDbModel(EntityDbModel entity)
     {
         return new Entity
         {
             Id = entity.Id,
             Name = entity.Name,
-            Stats = entity.Stats.ConvertAll(s => ResourceId.ParseResourceId(s)),
+            Classes = entity.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Stats = entity.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }
 
@@ -128,7 +149,7 @@ public static class DbModelMapper
             UserId = userStats.UserId,
             DomainId = userStats.DomainId,
             EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => ResourceId.ParseResourceId(pid)),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(ResourceId.ParseResourceId),
         };
     }
 

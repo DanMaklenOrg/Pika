@@ -19,7 +19,7 @@ public abstract class BaseDbModel
         where T : BaseDbModel
     {
         item.SetKeys();
-        var json = JsonSerializer.Serialize(item);
+        var json = JsonSerializer.Serialize(item, JsonOptions);
         var doc = Document.FromJson(json);
         return doc.ToAttributeMap();
     }
@@ -29,6 +29,8 @@ public abstract class BaseDbModel
     {
         var doc = Document.FromAttributeMap(serializedItem);
         var json = doc.ToJson();
-        return JsonSerializer.Deserialize<T>(json)!;
+        return JsonSerializer.Deserialize<T>(json, JsonOptions)!;
     }
+
+    private static readonly JsonSerializerOptions JsonOptions = new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 }

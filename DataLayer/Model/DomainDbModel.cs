@@ -11,16 +11,19 @@ public class DomainDbModel : BaseDbModel
     public required string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<StatDbModel> Stats { get; init; } = [];
+    public List<StatDbModel>? Stats { get; init; }
 
     [JsonPropertyName("entries")]
-    public List<EntityDbModel> Entities { get; init; } = [];
+    public List<EntityDbModel>? Entities { get; init; }
 
     [JsonPropertyName("projects")]
-    public List<ProjectDbModel> Projects { get; init; } = [];
+    public List<ProjectDbModel>? Projects { get; init; }
+
+    [JsonPropertyName("classes")]
+    public List<ClassDbModel>? Classes { get; init; }
 
     [JsonPropertyName("subDomains")]
-    public List<DomainDbModel> SubDomains { get; init; } = [];
+    public List<DomainDbModel>? SubDomains { get; init; }
 
     protected override void SetKeys()
     {
@@ -47,7 +50,10 @@ public class EntityDbModel
     public required string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string> Stats { get; init; } = [];
+    public List<string>? Stats { get; init; }
+
+    [JsonPropertyName("classes")]
+    public List<string>? Classes { get; init; }
 }
 
 public class StatDbModel
@@ -69,4 +75,13 @@ public class StatDbModel
 
     [JsonPropertyName("enum_values")]
     public List<string>? EnumValues { get; init; }
+}
+
+public class ClassDbModel
+{
+    [JsonPropertyName("id")]
+    public required string Id { get; init; }
+
+    [JsonPropertyName("stats")]
+    public required List<string> Stats { get; init; } = [];
 }
