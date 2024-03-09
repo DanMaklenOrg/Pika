@@ -25,7 +25,7 @@ public static class SyncCommand
 
     private static List<Domain> ReadAllDomains(PikaConverter converter)
     {
-        List<Domain> domains = new();
+        List<Domain> domains = [];
         foreach (var file in Directory.EnumerateFiles("Domains/", "*.yaml", SearchOption.AllDirectories))
         {
             Console.WriteLine($"Parsing File {file}...");

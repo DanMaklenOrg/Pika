@@ -5,22 +5,22 @@ namespace Pika.DataLayer.Model;
 public class DomainDbModel : BaseDbModel
 {
     [JsonPropertyName("id")]
-    public string Id { get; init; } = default!;
+    public required string Id { get; init; }
 
     [JsonPropertyName("name")]
-    public string Name { get; init; } = default!;
+    public required string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<StatDbModel> Stats { get; init; } = new();
+    public List<StatDbModel> Stats { get; init; } = [];
 
     [JsonPropertyName("entries")]
-    public List<EntityDbModel> Entities { get; init; } = new();
+    public List<EntityDbModel> Entities { get; init; } = [];
 
     [JsonPropertyName("projects")]
-    public List<ProjectDbModel> Projects { get; init; } = new();
+    public List<ProjectDbModel> Projects { get; init; } = [];
 
     [JsonPropertyName("subDomains")]
-    public List<DomainDbModel> SubDomains { get; init; } = new();
+    public List<DomainDbModel> SubDomains { get; init; } = [];
 
     protected override void SetKeys()
     {
@@ -32,34 +32,34 @@ public class DomainDbModel : BaseDbModel
 public class ProjectDbModel
 {
     [JsonPropertyName("id")]
-    public string Id { get; init; } = default!;
+    public required string Id { get; init; }
 
     [JsonPropertyName("name")]
-    public string Name { get; init; } = default!;
+    public required string Name { get; init; }
 }
 
 public class EntityDbModel
 {
     [JsonPropertyName("id")]
-    public string Id { get; init; } = default!;
+    public required string Id { get; init; }
 
     [JsonPropertyName("name")]
-    public string Name { get; init; } = default!;
+    public required string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string> Stats { get; init; } = new();
+    public List<string> Stats { get; init; } = [];
 }
 
 public class StatDbModel
 {
     [JsonPropertyName("id")]
-    public string Id { get; init; } = default!;
+    public required string Id { get; init; }
 
     [JsonPropertyName("name")]
-    public string Name { get; init; } = default!;
+    public required string Name { get; init; }
 
     [JsonPropertyName("type")]
-    public string Type { get; init; } = default!;
+    public required string Type { get; init; }
 
     [JsonPropertyName("min")]
     public int? Min { get; init; }

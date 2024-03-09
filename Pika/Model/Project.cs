@@ -1,9 +1,9 @@
 ﻿namespace Pika.Model;
 
-public struct Project
+public readonly struct Project
 {
-    public ResourceId Id { get; set; }
-    public string Name { get; set; }
+    public ResourceId Id { get; init; }
+    public string Name { get; init; }
 
     public override string ToString() => Id.FullyQualifiedId;
 }

@@ -2,15 +2,15 @@ namespace Pika.Model;
 
 public struct UserStats
 {
-    public string UserId { get; set; }
+    public string UserId { get; init; }
 
-    public DomainId DomainId { get; set; }
+    public DomainId DomainId { get; init; }
 
-    public List<UserEntityStat> EntityStats { get; set; } = new();
+    public List<UserEntityStat> EntityStats { get; init; } = [];
 
-    public List<ResourceId> CompletedProjectIds { get; set; } = new();
+    public List<ResourceId> CompletedProjectIds { get; init; } = [];
 
-    public UserStats(string userId, DomainId domainId)
+    public UserStats(string userId, string domainId)
     {
         UserId = userId;
         DomainId = domainId;

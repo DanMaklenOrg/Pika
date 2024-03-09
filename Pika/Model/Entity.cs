@@ -1,11 +1,11 @@
 ﻿namespace Pika.Model;
 
-public class Entity
+public readonly struct Entity
 {
-    public ResourceId Id { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public List<ResourceId> Classes { get; set; } = new();
-    public List<ResourceId> Stats { get; set; } = new();
+    public ResourceId Id { get; init; }
+    public string Name { get; init; }
+    public List<ResourceId> Classes { get; init; }
+    public List<ResourceId> Stats { get; init; }
 
     public override string ToString() => Id.FullyQualifiedId;
 }

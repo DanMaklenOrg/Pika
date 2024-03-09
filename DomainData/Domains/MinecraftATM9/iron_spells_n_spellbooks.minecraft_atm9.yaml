@@ -22,6 +22,10 @@ stats:
   - id: level1
     name: Level
     type: INTEGER_RANGE(1, 1)
+projects:
+  - name: Collect All Spell Books
+  - name: Collect All Maxed Scrolls
+  - name: Collect All Unique Rings
 entities:
   - id: alchemist_cauldron
     name: Alchemist Cauldron

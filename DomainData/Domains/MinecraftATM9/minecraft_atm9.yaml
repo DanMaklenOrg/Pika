@@ -13,15 +13,21 @@ stats:
   - id: book_fully_unlocked
     name: Fully Unlocked
     type: BOOLEAN
-  - id: career_level
-    name: Villager Career Level
-    type: ORDERED_ENUM(Novice, Apprentice, Journeyman, Expert, Master)
+      - id: career_level
+        name: Villager Career Level
+        type: ORDERED_ENUM(Novice, Apprentice, Journeyman, Expert, Master)
 classes:
   - id: villager
     stats:
       - villager_moved
       - career_level
       - unzombified
+projects:
+  - name: Collect All Spawn Eggs
+  - name: Gather All Villager Professions
+  - name: Collect All Armor and Weapon Sets
+  - name: Unlock All Advancements
+  - name: Collect All Music Disks
 entities:
   - name: Iron Golem
     stats:

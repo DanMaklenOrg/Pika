@@ -31,6 +31,8 @@ stats:
   - id: efficiency_upgrade
     name: Efficiency Upgrade Installed
     type: INTEGER_RANGE(0, 5)
+projects:
+  - name: Acquire a Maxed Mining Gadget
 entities:
   - name: Mining Gadget
     stats:
