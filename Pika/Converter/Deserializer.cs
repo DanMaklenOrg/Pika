@@ -21,9 +21,19 @@ public class Deserializer
             Id = node.Id,
             Name = node.Name ?? string.Empty,
             Stats = node.Stats?.ConvertAll(Deserialize) ?? [],
+            Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
             SubDomains = node.SubDomains?.ConvertAll(Deserialize) ?? [],
+        };
+    }
+
+    private Class Deserialize(ClassNode node)
+    {
+        return new Class
+        {
+            Id = ParseId(node.Id),
+            Stats = node.Stats.ConvertAll(ParseId),
         };
     }
 
@@ -42,7 +52,8 @@ public class Deserializer
         {
             Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
-            Stats = node.Stats.ConvertAll(ParseId),
+            Stats = node.Stats?.ConvertAll(ParseId) ?? [],
+            Classes = node.Classes?.ConvertAll(ParseId) ?? [],
         };
     }
 

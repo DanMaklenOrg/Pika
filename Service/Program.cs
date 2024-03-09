@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Amazon.DynamoDBv2;
 using Pika.DataLayer.Dao;
 using Pika.DataLayer.Repository;
@@ -17,7 +19,8 @@ builder.Services.AddTransient<IUserStatsRepo, UserStatsRepo>();
 builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 
 // APIs
-builder.Services.AddControllers();
+// builder.Services.Configure<JsonSerializerOptions>(options => options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
 builder.Services.AddHealthChecks();
 
 // Lambda Hosting

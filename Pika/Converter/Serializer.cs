@@ -18,9 +18,19 @@ public class Serializer
             Id = domain.Id.FullyQualifiedId,
             Name = domain.Name,
             Stats = domain.Stats.ConvertAll(Serialize),
+            Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
             SubDomains = domain.SubDomains.ConvertAll(Serialize),
+        };
+    }
+
+    private ClassNode Serialize(Class node)
+    {
+        return new ClassNode
+        {
+            Id = MinifyId(node.Id),
+            Stats = node.Stats.ConvertAll(MinifyId),
         };
     }
 
