@@ -71,6 +71,7 @@ public static class DbModelMapper
             Id = domain.Id,
             Name = domain.Name,
             Projects = domain.Projects?.ConvertAll(FromDbModel) ?? [],
+            Classes = domain.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = domain.Entities?.ConvertAll(FromDbModel) ?? [],
             Stats = domain.Stats?.ConvertAll(FromDbModel) ?? [],
             SubDomains = (domain.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
@@ -79,13 +80,21 @@ public static class DbModelMapper
 
     private static Project FromDbModel(ProjectDbModel entity)
     {
-        return new Project()
+        return new Project
         {
             Id = entity.Id,
             Name = entity.Name,
         };
     }
 
+    private static Class FromDbModel(ClassDbModel model)
+    {
+        return new Class
+        {
+            Id = model.Id,
+            Stats = model.Stats.ConvertAll(ResourceId.ParseResourceId),
+        };
+    }
     private static Entity FromDbModel(EntityDbModel entity)
     {
         return new Entity
