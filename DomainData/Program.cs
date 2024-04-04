@@ -7,6 +7,7 @@ using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.Scrapper;
 using Pika.DomainData.Scrapper.MinecraftATM9;
+using Pika.DomainData.Scrapper.VampireSurvivors;
 using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
@@ -14,6 +15,7 @@ var builder = CoconaApp.CreateBuilder(args);
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
 builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
 builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<PikaConverter>();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
