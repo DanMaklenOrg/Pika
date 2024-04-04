@@ -3,6 +3,8 @@ name: Base
 stats:
   - name: Owned
     type: BOOLEAN
+  - name: Unlocked
+    type: BOOLEAN
   - name: Explored
     type: BOOLEAN
   - id: killed
