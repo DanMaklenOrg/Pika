@@ -1,4 +1,5 @@
 id: power_ups.vampire_survivors
+name: 'Vampire Survivors: Power Ups'
 entities:
   - id: might
     name: Might

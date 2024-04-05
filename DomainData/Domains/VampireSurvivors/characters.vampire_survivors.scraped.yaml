@@ -1,4 +1,5 @@
 id: characters.vampire_survivors
+name: 'Vampire Survivors: Characters'
 entities:
   - id: antonio_belpaese
     name: Antonio Belpaese

@@ -1,4 +1,5 @@
 id: relics.vampire_survivors
+name: 'Vampire Survivors: Relics'
 entities:
   - id: grim_grimoire
     name: Grim Grimoire

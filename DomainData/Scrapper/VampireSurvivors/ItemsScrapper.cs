@@ -13,6 +13,7 @@ public class ItemsScrapper : IScrapper
         return new Domain
         {
             Id = DomainId,
+            Name = "Vampire Survivors: Items",
             Entities =
             [
                 ..await ScrapePassiveItems(),

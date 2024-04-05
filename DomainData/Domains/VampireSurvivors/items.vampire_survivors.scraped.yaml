@@ -1,4 +1,5 @@
 id: items.vampire_survivors
+name: 'Vampire Survivors: Items'
 entities:
   - id: spinach
     name: Spinach

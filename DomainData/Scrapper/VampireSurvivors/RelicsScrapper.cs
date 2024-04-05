@@ -13,6 +13,7 @@ public class RelicsScrapper : IScrapper
         return new Domain
         {
             Id = DomainId,
+            Name = "Vampire Survivors: Relics",
             Entities = await ScrapeRelics(),
         };
     }
