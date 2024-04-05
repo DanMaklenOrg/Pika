@@ -46,3 +46,7 @@ classes:
       - _/unlocked
 projects:
   - name: Unlock All Characters
+  - name: Max All Power Ups
+  - name: Collect All Relics
+  - name: Find All Items
+  - name: Complete All Stages on All Characters

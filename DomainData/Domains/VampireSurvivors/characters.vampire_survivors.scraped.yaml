@@ -1,0 +1,282 @@
+id: characters.vampire_survivors
+entities:
+  - id: antonio_belpaese
+    name: Antonio Belpaese
+    classes:
+      - character
+  - id: imelda_belpaese
+    name: Imelda Belpaese
+    classes:
+      - character
+  - id: pasqualina_belpaese
+    name: Pasqualina Belpaese
+    classes:
+      - character
+  - id: gennaro_belpaese
+    name: Gennaro Belpaese
+    classes:
+      - character
+  - id: arca_ladonna
+    name: Arca Ladonna
+    classes:
+      - character
+  - id: porta_ladonna
+    name: Porta Ladonna
+    classes:
+      - character
+  - id: lama_ladonna
+    name: Lama Ladonna
+    classes:
+      - character
+  - id: poe_ratcho
+    name: Poe Ratcho
+    classes:
+      - character
+  - id: suor_clerici
+    name: Suor Clerici
+    classes:
+      - character
+  - id: dommario
+    name: Dommario
+    classes:
+      - character
+  - id: krochi_freetto
+    name: Krochi Freetto
+    classes:
+      - character
+  - id: christine_davain
+    name: Christine Davain
+    classes:
+      - character
+  - id: pugnala_provola
+    name: Pugnala Provola
+    classes:
+      - character
+  - id: giovanna_grana
+    name: Giovanna Grana
+    classes:
+      - character
+  - id: poppea_pecorina
+    name: Poppea Pecorina
+    classes:
+      - character
+  - id: concetta_caciotta
+    name: Concetta Caciotta
+    classes:
+      - character
+  - id: mortaccio
+    name: Mortaccio
+    classes:
+      - character
+  - id: yatta_cavallo
+    name: Yatta Cavallo
+    classes:
+      - character
+  - id: bianca_ramba
+    name: Bianca Ramba
+    classes:
+      - character
+  - id: osole_meeo
+    name: O'Sole Meeo
+    classes:
+      - character
+  - id: sir_ambrojoe
+    name: Sir Ambrojoe
+    classes:
+      - character
+  - id: iguana_gallo_valletto
+    name: Iguana Gallo Valletto
+    classes:
+      - character
+  - id: divano_thelma
+    name: Divano Thelma
+    classes:
+      - character
+  - id: ziassunta_belpaese
+    name: Zi'Assunta Belpaese
+    classes:
+      - character
+  - id: queen_sigma
+    name: Queen Sigma
+    classes:
+      - character
+  - id: bat_robbert
+    name: Bat Robbert
+    classes:
+      - character
+  - id: she_moon
+    name: She-Moon
+    classes:
+      - character
+  - id: space_dude
+    name: Space Dude
+    classes:
+      - character
+  - id: miang_moonspell
+    name: Miang Moonspell
+    classes:
+      - character
+  - id: menya_moonspell
+    name: Menya Moonspell
+    classes:
+      - character
+  - id: syuuto_moonspell
+    name: Syuuto Moonspell
+    classes:
+      - character
+  - id: babi_onna
+    name: Babi-Onna
+    classes:
+      - character
+  - id: mccoy_oni
+    name: McCoy-Oni
+    classes:
+      - character
+  - id: megalo_menya_moonspell
+    name: Megalo Menya Moonspell
+    classes:
+      - character
+  - id: megalo_syuuto_moonspell
+    name: Megalo Syuuto Moonspell
+    classes:
+      - character
+  - id: gavet_oni
+    name: Gav'Et-Oni
+    classes:
+      - character
+  - id: eleanor_uziron
+    name: Eleanor Uziron
+    classes:
+      - character
+  - id: maruto_cuts
+    name: Maruto Cuts
+    classes:
+      - character
+  - id: keitha_muort
+    name: Keitha Muort
+    classes:
+      - character
+  - id: luminaire_foscari
+    name: Luminaire Foscari
+    classes:
+      - character
+  - id: genevieve_gruy_re
+    name: Genevieve Gruyère
+    classes:
+      - character
+  - id: je_ne_viv
+    name: Je-Ne-Viv
+    classes:
+      - character
+  - id: sammy
+    name: Sammy
+    classes:
+      - character
+  - id: rottinghoul
+    name: Rottin'Ghoul
+    classes:
+      - character
+  - id: crewmate_dino
+    name: Crewmate Dino
+    classes:
+      - character
+  - id: engineer_gino
+    name: Engineer Gino
+    classes:
+      - character
+  - id: ghost_lino
+    name: Ghost Lino
+    classes:
+      - character
+  - id: shapeshifter_nino
+    name: Shapeshifter Nino
+    classes:
+      - character
+  - id: guardian_pina
+    name: Guardian Pina
+    classes:
+      - character
+  - id: impostor_rina
+    name: Impostor Rina
+    classes:
+      - character
+  - id: scientist_mina
+    name: Scientist Mina
+    classes:
+      - character
+  - id: horse
+    name: Horse
+    classes:
+      - character
+  - id: megalo_impostor_rina
+    name: Megalo Impostor Rina
+    classes:
+      - character
+  - id: exdash_exiviiq
+    name: Exdash Exiviiq
+    classes:
+      - character
+  - id: toastie
+    name: Toastie
+    classes:
+      - character
+  - id: smith_iv
+    name: Smith IV
+    classes:
+      - character
+  - id: random
+    name: Random
+    classes:
+      - character
+  - id: boon_marrabbio
+    name: Boon Marrabbio
+    classes:
+      - character
+  - id: avatar_infernas
+    name: Avatar Infernas
+    classes:
+      - character
+  - id: minnah_mannarah
+    name: Minnah Mannarah
+    classes:
+      - character
+  - id: leda
+    name: Leda
+    classes:
+      - character
+  - id: cosmo_pavone
+    name: Cosmo Pavone
+    classes:
+      - character
+  - id: peppino
+    name: Peppino
+    classes:
+      - character
+  - id: big_trouser
+    name: Big Trouser
+    classes:
+      - character
+  - id: missingn
+    name: missingN▯
+    classes:
+      - character
+  - id: gains_boros
+    name: Gains Boros
+    classes:
+      - character
+  - id: gyorunton
+    name: Gyorunton
+    classes:
+      - character
+  - id: mask_of_the_red_death
+    name: Mask of the Red Death
+    classes:
+      - character
+  - id: rose_de_infernas
+    name: Rose De Infernas
+    classes:
+      - character
+  - id: scorej_oni
+    name: Scorej-Oni
+    classes:
+      - character

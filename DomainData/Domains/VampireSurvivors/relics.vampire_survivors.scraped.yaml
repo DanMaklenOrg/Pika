@@ -1,0 +1,102 @@
+id: relics.vampire_survivors
+entities:
+  - id: grim_grimoire
+    name: Grim Grimoire
+    classes:
+      - relic
+  - id: ars_gouda
+    name: Ars Gouda
+    classes:
+      - relic
+  - id: milky_way_map
+    name: Milky Way Map
+    classes:
+      - relic
+  - id: magic_banger
+    name: Magic Banger
+    classes:
+      - relic
+  - id: sorceress_tears
+    name: Sorceress' Tears
+    classes:
+      - relic
+  - id: glass_vizard
+    name: Glass Vizard
+    classes:
+      - relic
+  - id: mindbender
+    name: Mindbender
+    classes:
+      - relic
+  - id: yellow_sign
+    name: Yellow Sign
+    classes:
+      - relic
+  - id: forbidden_scrolls_of_morbane
+    name: Forbidden Scrolls of Morbane
+    classes:
+      - relic
+  - id: great_gospel
+    name: Great Gospel
+    classes:
+      - relic
+  - id: gracias_mirror
+    name: Gracia's Mirror
+    classes:
+      - relic
+  - id: seventh_trumpet
+    name: Seventh Trumpet
+    classes:
+      - relic
+  - id: atlas_gate
+    name: Atlas Gate
+    classes:
+      - relic
+  - id: chaos_malachite
+    name: Chaos Malachite
+    classes:
+      - relic
+  - id: chaos_rosalia
+    name: Chaos Rosalia
+    classes:
+      - relic
+  - id: chaos_altemanna
+    name: Chaos Altemanna
+    classes:
+      - relic
+  - id: apoplexy
+    name: Apoplexy
+    classes:
+      - relic
+  - id: antidote
+    name: Antidote
+    classes:
+      - relic
+  - id: trisection
+    name: Trisection
+    classes:
+      - relic
+  - id: brave_story
+    name: Brave Story
+    classes:
+      - relic
+  - id: astral_stair_map
+    name: Astral Stair Map
+    classes:
+      - relic
+  - id: randomazzo
+    name: Randomazzo
+    classes:
+      - relic
+  - id: mt_moonspell_map
+    name: Mt.Moonspell Map
+    classes:
+      - relic
+  - id: lake_foscari_map
+    name: Lake Foscari Map
+    classes:
+      - relic
+  - id: polus_replica_map
+    name: Polus Replica Map
+    classes:
+      - relic

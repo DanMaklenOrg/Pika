@@ -1,0 +1,98 @@
+id: power_ups.vampire_survivors
+entities:
+  - id: might
+    name: Might
+    classes:
+      - power_up_5
+  - id: armor
+    name: Armor
+    classes:
+      - power_up_3
+  - id: max_health
+    name: Max Health
+    classes:
+      - power_up_3
+  - id: recovery
+    name: Recovery
+    classes:
+      - power_up_5
+  - id: cooldown
+    name: Cooldown
+    classes:
+      - power_up_2
+  - id: area
+    name: Area
+    classes:
+      - power_up_2
+  - id: speed
+    name: Speed
+    classes:
+      - power_up_2
+  - id: duration
+    name: Duration
+    classes:
+      - power_up_2
+  - id: amount
+    name: Amount
+    classes:
+      - power_up_1
+  - id: move_speed
+    name: Move Speed
+    classes:
+      - power_up_2
+  - id: magnet
+    name: Magnet
+    classes:
+      - power_up_2
+  - id: luck
+    name: Luck
+    classes:
+      - power_up_3
+  - id: growth
+    name: Growth
+    classes:
+      - power_up_5
+  - id: greed
+    name: Greed
+    classes:
+      - power_up_5
+  - id: curse
+    name: Curse
+    classes:
+      - power_up_5
+  - id: revival
+    name: Revival
+    classes:
+      - power_up_1
+  - id: omni
+    name: Omni
+    classes:
+      - power_up_5
+  - id: charm
+    name: Charm
+    classes:
+      - power_up_5
+  - id: defang
+    name: Defang
+    classes:
+      - power_up_5
+  - id: reroll
+    name: Reroll
+    classes:
+      - power_up_5
+  - id: skip
+    name: Skip
+    classes:
+      - power_up_5
+  - id: banish
+    name: Banish
+    classes:
+      - power_up_5
+  - id: seal_i
+    name: Seal I
+    classes:
+      - power_up_10
+  - id: seal_ii
+    name: Seal II
+    classes:
+      - power_up_10
