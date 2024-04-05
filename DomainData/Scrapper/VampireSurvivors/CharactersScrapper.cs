@@ -32,7 +32,7 @@ public class CharactersScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new("character", DomainId)],
+            Classes = ["vampire_survivors/character"],
         };
     }
 }

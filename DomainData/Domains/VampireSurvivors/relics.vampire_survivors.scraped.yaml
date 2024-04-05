@@ -4,100 +4,100 @@ entities:
   - id: grim_grimoire
     name: Grim Grimoire
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: ars_gouda
     name: Ars Gouda
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: milky_way_map
     name: Milky Way Map
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: magic_banger
     name: Magic Banger
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: sorceress_tears
     name: Sorceress' Tears
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: glass_vizard
     name: Glass Vizard
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: mindbender
     name: Mindbender
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: yellow_sign
     name: Yellow Sign
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: forbidden_scrolls_of_morbane
     name: Forbidden Scrolls of Morbane
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: great_gospel
     name: Great Gospel
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: gracias_mirror
     name: Gracia's Mirror
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: seventh_trumpet
     name: Seventh Trumpet
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: atlas_gate
     name: Atlas Gate
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: chaos_malachite
     name: Chaos Malachite
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: chaos_rosalia
     name: Chaos Rosalia
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: chaos_altemanna
     name: Chaos Altemanna
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: apoplexy
     name: Apoplexy
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: antidote
     name: Antidote
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: trisection
     name: Trisection
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: brave_story
     name: Brave Story
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: astral_stair_map
     name: Astral Stair Map
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: randomazzo
     name: Randomazzo
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: mt_moonspell_map
     name: Mt.Moonspell Map
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: lake_foscari_map
     name: Lake Foscari Map
     classes:
-      - relic
+      - vampire_survivors/relic
   - id: polus_replica_map
     name: Polus Replica Map
     classes:
-      - relic
+      - vampire_survivors/relic

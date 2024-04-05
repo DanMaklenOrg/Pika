@@ -4,123 +4,123 @@ entities:
   - id: spinach
     name: Spinach
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: armor
     name: Armor
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: hollow_heart
     name: Hollow Heart
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: pummarola
     name: Pummarola
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: empty_tome
     name: Empty Tome
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: candelabrador
     name: Candelabrador
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: bracer
     name: Bracer
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: spellbinder
     name: Spellbinder
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: duplicator
     name: Duplicator
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: wings
     name: Wings
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: attractorb
     name: Attractorb
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: clover
     name: Clover
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: crown
     name: Crown
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: stone_mask
     name: Stone Mask
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: tirajis
     name: Tirajisú
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: skull_omaniac
     name: Skull O'Maniac
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: silver_ring
     name: Silver Ring
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: gold_ring
     name: Gold Ring
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: metaglio_left
     name: Metaglio Left
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: metaglio_right
     name: Metaglio Right
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: torronas_box
     name: Torrona's Box
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: academy_badge
     name: Academy Badge
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_crewmate
     name: Mini Crewmate
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_engineer
     name: Mini Engineer
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_ghost
     name: Mini Ghost
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_shapeshifter
     name: Mini Shapeshifter
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_guardian
     name: Mini Guardian
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_impostor
     name: Mini Impostor
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_scientist
     name: Mini Scientist
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: mini_horse
     name: Mini Horse
     classes:
-      - passive_item
+      - vampire_survivors/passive_item
   - id: whip
     name: Whip
     classes:

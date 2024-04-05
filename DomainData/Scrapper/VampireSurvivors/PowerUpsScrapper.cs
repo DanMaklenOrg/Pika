@@ -39,7 +39,7 @@ public class PowerUpsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new($"power_up_{maxRank}", DomainId)],
+            Classes = [$"vampire_survivors/power_up_{maxRank}"],
         };
     }
 }

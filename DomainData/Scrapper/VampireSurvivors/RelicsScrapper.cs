@@ -32,7 +32,7 @@ public class RelicsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new($"relic", DomainId)],
+            Classes = ["vampire_survivors/relic"],
         };
     }
 }

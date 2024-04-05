@@ -12,9 +12,12 @@ using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
 
-builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
-builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
-builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
+// Minecraft
+// builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
+// builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
+// builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
+
+// Vampire Survivors
 builder.Services.AddTransient<IScrapper, CharactersScrapper>();
 builder.Services.AddTransient<IScrapper, ItemsScrapper>();
 builder.Services.AddTransient<IScrapper, RelicsScrapper>();

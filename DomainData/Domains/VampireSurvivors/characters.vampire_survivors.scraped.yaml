@@ -4,280 +4,280 @@ entities:
   - id: antonio_belpaese
     name: Antonio Belpaese
     classes:
-      - character
+      - vampire_survivors/character
   - id: imelda_belpaese
     name: Imelda Belpaese
     classes:
-      - character
+      - vampire_survivors/character
   - id: pasqualina_belpaese
     name: Pasqualina Belpaese
     classes:
-      - character
+      - vampire_survivors/character
   - id: gennaro_belpaese
     name: Gennaro Belpaese
     classes:
-      - character
+      - vampire_survivors/character
   - id: arca_ladonna
     name: Arca Ladonna
     classes:
-      - character
+      - vampire_survivors/character
   - id: porta_ladonna
     name: Porta Ladonna
     classes:
-      - character
+      - vampire_survivors/character
   - id: lama_ladonna
     name: Lama Ladonna
     classes:
-      - character
+      - vampire_survivors/character
   - id: poe_ratcho
     name: Poe Ratcho
     classes:
-      - character
+      - vampire_survivors/character
   - id: suor_clerici
     name: Suor Clerici
     classes:
-      - character
+      - vampire_survivors/character
   - id: dommario
     name: Dommario
     classes:
-      - character
+      - vampire_survivors/character
   - id: krochi_freetto
     name: Krochi Freetto
     classes:
-      - character
+      - vampire_survivors/character
   - id: christine_davain
     name: Christine Davain
     classes:
-      - character
+      - vampire_survivors/character
   - id: pugnala_provola
     name: Pugnala Provola
     classes:
-      - character
+      - vampire_survivors/character
   - id: giovanna_grana
     name: Giovanna Grana
     classes:
-      - character
+      - vampire_survivors/character
   - id: poppea_pecorina
     name: Poppea Pecorina
     classes:
-      - character
+      - vampire_survivors/character
   - id: concetta_caciotta
     name: Concetta Caciotta
     classes:
-      - character
+      - vampire_survivors/character
   - id: mortaccio
     name: Mortaccio
     classes:
-      - character
+      - vampire_survivors/character
   - id: yatta_cavallo
     name: Yatta Cavallo
     classes:
-      - character
+      - vampire_survivors/character
   - id: bianca_ramba
     name: Bianca Ramba
     classes:
-      - character
+      - vampire_survivors/character
   - id: osole_meeo
     name: O'Sole Meeo
     classes:
-      - character
+      - vampire_survivors/character
   - id: sir_ambrojoe
     name: Sir Ambrojoe
     classes:
-      - character
+      - vampire_survivors/character
   - id: iguana_gallo_valletto
     name: Iguana Gallo Valletto
     classes:
-      - character
+      - vampire_survivors/character
   - id: divano_thelma
     name: Divano Thelma
     classes:
-      - character
+      - vampire_survivors/character
   - id: ziassunta_belpaese
     name: Zi'Assunta Belpaese
     classes:
-      - character
+      - vampire_survivors/character
   - id: queen_sigma
     name: Queen Sigma
     classes:
-      - character
+      - vampire_survivors/character
   - id: bat_robbert
     name: Bat Robbert
     classes:
-      - character
+      - vampire_survivors/character
   - id: she_moon
     name: She-Moon
     classes:
-      - character
+      - vampire_survivors/character
   - id: space_dude
     name: Space Dude
     classes:
-      - character
+      - vampire_survivors/character
   - id: miang_moonspell
     name: Miang Moonspell
     classes:
-      - character
+      - vampire_survivors/character
   - id: menya_moonspell
     name: Menya Moonspell
     classes:
-      - character
+      - vampire_survivors/character
   - id: syuuto_moonspell
     name: Syuuto Moonspell
     classes:
-      - character
+      - vampire_survivors/character
   - id: babi_onna
     name: Babi-Onna
     classes:
-      - character
+      - vampire_survivors/character
   - id: mccoy_oni
     name: McCoy-Oni
     classes:
-      - character
+      - vampire_survivors/character
   - id: megalo_menya_moonspell
     name: Megalo Menya Moonspell
     classes:
-      - character
+      - vampire_survivors/character
   - id: megalo_syuuto_moonspell
     name: Megalo Syuuto Moonspell
     classes:
-      - character
+      - vampire_survivors/character
   - id: gavet_oni
     name: Gav'Et-Oni
     classes:
-      - character
+      - vampire_survivors/character
   - id: eleanor_uziron
     name: Eleanor Uziron
     classes:
-      - character
+      - vampire_survivors/character
   - id: maruto_cuts
     name: Maruto Cuts
     classes:
-      - character
+      - vampire_survivors/character
   - id: keitha_muort
     name: Keitha Muort
     classes:
-      - character
+      - vampire_survivors/character
   - id: luminaire_foscari
     name: Luminaire Foscari
     classes:
-      - character
+      - vampire_survivors/character
   - id: genevieve_gruy_re
     name: Genevieve Gruyère
     classes:
-      - character
+      - vampire_survivors/character
   - id: je_ne_viv
     name: Je-Ne-Viv
     classes:
-      - character
+      - vampire_survivors/character
   - id: sammy
     name: Sammy
     classes:
-      - character
+      - vampire_survivors/character
   - id: rottinghoul
     name: Rottin'Ghoul
     classes:
-      - character
+      - vampire_survivors/character
   - id: crewmate_dino
     name: Crewmate Dino
     classes:
-      - character
+      - vampire_survivors/character
   - id: engineer_gino
     name: Engineer Gino
     classes:
-      - character
+      - vampire_survivors/character
   - id: ghost_lino
     name: Ghost Lino
     classes:
-      - character
+      - vampire_survivors/character
   - id: shapeshifter_nino
     name: Shapeshifter Nino
     classes:
-      - character
+      - vampire_survivors/character
   - id: guardian_pina
     name: Guardian Pina
     classes:
-      - character
+      - vampire_survivors/character
   - id: impostor_rina
     name: Impostor Rina
     classes:
-      - character
+      - vampire_survivors/character
   - id: scientist_mina
     name: Scientist Mina
     classes:
-      - character
+      - vampire_survivors/character
   - id: horse
     name: Horse
     classes:
-      - character
+      - vampire_survivors/character
   - id: megalo_impostor_rina
     name: Megalo Impostor Rina
     classes:
-      - character
+      - vampire_survivors/character
   - id: exdash_exiviiq
     name: Exdash Exiviiq
     classes:
-      - character
+      - vampire_survivors/character
   - id: toastie
     name: Toastie
     classes:
-      - character
+      - vampire_survivors/character
   - id: smith_iv
     name: Smith IV
     classes:
-      - character
+      - vampire_survivors/character
   - id: random
     name: Random
     classes:
-      - character
+      - vampire_survivors/character
   - id: boon_marrabbio
     name: Boon Marrabbio
     classes:
-      - character
+      - vampire_survivors/character
   - id: avatar_infernas
     name: Avatar Infernas
     classes:
-      - character
+      - vampire_survivors/character
   - id: minnah_mannarah
     name: Minnah Mannarah
     classes:
-      - character
+      - vampire_survivors/character
   - id: leda
     name: Leda
     classes:
-      - character
+      - vampire_survivors/character
   - id: cosmo_pavone
     name: Cosmo Pavone
     classes:
-      - character
+      - vampire_survivors/character
   - id: peppino
     name: Peppino
     classes:
-      - character
+      - vampire_survivors/character
   - id: big_trouser
     name: Big Trouser
     classes:
-      - character
+      - vampire_survivors/character
   - id: missingn
     name: missingN▯
     classes:
-      - character
+      - vampire_survivors/character
   - id: gains_boros
     name: Gains Boros
     classes:
-      - character
+      - vampire_survivors/character
   - id: gyorunton
     name: Gyorunton
     classes:
-      - character
+      - vampire_survivors/character
   - id: mask_of_the_red_death
     name: Mask of the Red Death
     classes:
-      - character
+      - vampire_survivors/character
   - id: rose_de_infernas
     name: Rose De Infernas
     classes:
-      - character
+      - vampire_survivors/character
   - id: scorej_oni
     name: Scorej-Oni
     classes:
-      - character
+      - vampire_survivors/character
