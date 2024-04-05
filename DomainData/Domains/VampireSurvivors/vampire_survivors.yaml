@@ -16,10 +16,73 @@ stats:
   - id: power_up_rank_1
     name: Rank
     type: INTEGER_RANGE(0, 1)
+  - id: map_mad_forest
+    name: Completed Run in Mad Forest
+  - id: map_inlaid_library
+    name: Completed Run in Inlaid Library
+  - id: map_dairy_plant
+    name: Completed Run in Dairy Plant
+  - id: map_gallo_tower
+    name: Completed Run in Gallo Tower
+  - id: map_cappella_magna
+    name: Completed Run in Cappella Magna
+  - id: map_il_molise
+    name: Completed Run in Il Molise
+  - id: map_moongolow
+    name: Completed Run in Moongolow
+  - id: map_holy_forbidden
+    name: Completed Run in Holy Forbidden
+  - id: map_green_acres
+    name: Completed Run in Green Acres
+  - id: map_the_bone_zone
+    name: Completed Run in The Bone Zone
+  - id: map_boss_rash
+    name: Completed Run in Boss Rash
+  - id: map_whiteout
+    name: Completed Run in Whiteout
+  - id: map_space_54
+    name: Completed Run in Space 54
+  - id: map_bat_country
+    name: Completed Run in Bat Country
+  - id: map_astral_stair
+    name: Completed Run in Astral Stair
+  - id: map_tiny_bridge
+    name: Completed Run in Tiny Bridge
+  - id: map_euaimonia_machine
+    name: Completed Run in Eudaimonia Machine
+  - id: map_mt_moonpsell
+    name: Completed Run in Mt.Moonspell
+  - id: map_lake_foscari
+    name: Completed Run in Lake Foscari
+  - id: map_abyss_foscari
+    name: Completed Run in Abyss Foscari
+  - id: map_polus_replica
+    name: Completed Run in Polus Replica
 classes:
   - id: character
     stats:
       - _/unlocked
+      - map_mad_forest
+      - map_inlaid_library
+      - map_dairy_plant
+      - map_gallo_tower
+      - map_cappella_magna
+      - map_il_molise
+      - map_moongolow
+      - map_holy_forbidden
+      - map_green_acres
+      - map_the_bone_zone
+      - map_boss_rash
+      - map_whiteout
+      - map_space_54
+      - map_bat_country
+      - map_astral_stair
+      - map_tiny_bridge
+      - map_euaimonia_machine
+      - map_mt_moonpsell
+      - map_lake_foscari
+      - map_abyss_foscari
+      - map_polus_replica
   - id: power_up_10
     stats:
       - power_up_rank_10
