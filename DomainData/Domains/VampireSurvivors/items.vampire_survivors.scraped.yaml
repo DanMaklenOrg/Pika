@@ -1,0 +1,543 @@
+id: items.vampire_survivors
+name: 'Vampire Survivors: Items'
+entities:
+  - id: spinach
+    name: Spinach
+    classes:
+      - vampire_survivors/passive_item
+  - id: armor
+    name: Armor
+    classes:
+      - vampire_survivors/passive_item
+  - id: hollow_heart
+    name: Hollow Heart
+    classes:
+      - vampire_survivors/passive_item
+  - id: pummarola
+    name: Pummarola
+    classes:
+      - vampire_survivors/passive_item
+  - id: empty_tome
+    name: Empty Tome
+    classes:
+      - vampire_survivors/passive_item
+  - id: candelabrador
+    name: Candelabrador
+    classes:
+      - vampire_survivors/passive_item
+  - id: bracer
+    name: Bracer
+    classes:
+      - vampire_survivors/passive_item
+  - id: spellbinder
+    name: Spellbinder
+    classes:
+      - vampire_survivors/passive_item
+  - id: duplicator
+    name: Duplicator
+    classes:
+      - vampire_survivors/passive_item
+  - id: wings
+    name: Wings
+    classes:
+      - vampire_survivors/passive_item
+  - id: attractorb
+    name: Attractorb
+    classes:
+      - vampire_survivors/passive_item
+  - id: clover
+    name: Clover
+    classes:
+      - vampire_survivors/passive_item
+  - id: crown
+    name: Crown
+    classes:
+      - vampire_survivors/passive_item
+  - id: stone_mask
+    name: Stone Mask
+    classes:
+      - vampire_survivors/passive_item
+  - id: tirajis
+    name: Tirajisú
+    classes:
+      - vampire_survivors/passive_item
+  - id: skull_omaniac
+    name: Skull O'Maniac
+    classes:
+      - vampire_survivors/passive_item
+  - id: silver_ring
+    name: Silver Ring
+    classes:
+      - vampire_survivors/passive_item
+  - id: gold_ring
+    name: Gold Ring
+    classes:
+      - vampire_survivors/passive_item
+  - id: metaglio_left
+    name: Metaglio Left
+    classes:
+      - vampire_survivors/passive_item
+  - id: metaglio_right
+    name: Metaglio Right
+    classes:
+      - vampire_survivors/passive_item
+  - id: torronas_box
+    name: Torrona's Box
+    classes:
+      - vampire_survivors/passive_item
+  - id: academy_badge
+    name: Academy Badge
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_crewmate
+    name: Mini Crewmate
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_engineer
+    name: Mini Engineer
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_ghost
+    name: Mini Ghost
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_shapeshifter
+    name: Mini Shapeshifter
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_guardian
+    name: Mini Guardian
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_impostor
+    name: Mini Impostor
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_scientist
+    name: Mini Scientist
+    classes:
+      - vampire_survivors/passive_item
+  - id: mini_horse
+    name: Mini Horse
+    classes:
+      - vampire_survivors/passive_item
+  - id: whip
+    name: Whip
+    classes:
+      - vampire_survivors/weapon
+  - id: magic_wand
+    name: Magic Wand
+    classes:
+      - vampire_survivors/weapon
+  - id: knife
+    name: Knife
+    classes:
+      - vampire_survivors/weapon
+  - id: axe
+    name: Axe
+    classes:
+      - vampire_survivors/weapon
+  - id: cross
+    name: Cross
+    classes:
+      - vampire_survivors/weapon
+  - id: king_bible
+    name: King Bible
+    classes:
+      - vampire_survivors/weapon
+  - id: fire_wand
+    name: Fire Wand
+    classes:
+      - vampire_survivors/weapon
+  - id: garlic
+    name: Garlic
+    classes:
+      - vampire_survivors/weapon
+  - id: santa_water
+    name: Santa Water
+    classes:
+      - vampire_survivors/weapon
+  - id: runetracer
+    name: Runetracer
+    classes:
+      - vampire_survivors/weapon
+  - id: lightning_ring
+    name: Lightning Ring
+    classes:
+      - vampire_survivors/weapon
+  - id: pentagram
+    name: Pentagram
+    classes:
+      - vampire_survivors/weapon
+  - id: peachone
+    name: Peachone
+    classes:
+      - vampire_survivors/weapon
+  - id: ebony_wings
+    name: Ebony Wings
+    classes:
+      - vampire_survivors/weapon
+  - id: phiera_der_tuphello
+    name: Phiera Der Tuphello
+    classes:
+      - vampire_survivors/weapon
+  - id: eight_the_sparrow
+    name: Eight The Sparrow
+    classes:
+      - vampire_survivors/weapon
+  - id: gatti_amari
+    name: Gatti Amari
+    classes:
+      - vampire_survivors/weapon
+  - id: song_of_mana
+    name: Song of Mana
+    classes:
+      - vampire_survivors/weapon
+  - id: shadow_pinion
+    name: Shadow Pinion
+    classes:
+      - vampire_survivors/weapon
+  - id: clock_lancet
+    name: Clock Lancet
+    classes:
+      - vampire_survivors/weapon
+  - id: laurel
+    name: Laurel
+    classes:
+      - vampire_survivors/weapon
+  - id: vento_sacro
+    name: Vento Sacro
+    classes:
+      - vampire_survivors/weapon
+  - id: bone
+    name: Bone
+    classes:
+      - vampire_survivors/weapon
+  - id: cherry_bomb
+    name: Cherry Bomb
+    classes:
+      - vampire_survivors/weapon
+  - id: carr_llo
+    name: Carréllo
+    classes:
+      - vampire_survivors/weapon
+  - id: celestial_dusting
+    name: Celestial Dusting
+    classes:
+      - vampire_survivors/weapon
+  - id: la_robba
+    name: La Robba
+    classes:
+      - vampire_survivors/weapon
+  - id: greatest_jubilee
+    name: Greatest Jubilee
+    classes:
+      - vampire_survivors/weapon
+  - id: bracelet
+    name: Bracelet
+    classes:
+      - vampire_survivors/weapon
+  - id: candybox
+    name: Candybox
+    classes:
+      - vampire_survivors/weapon
+  - id: pako_battiliar
+    name: Pako Battiliar
+    classes:
+      - vampire_survivors/weapon
+  - id: victory_sword
+    name: Victory Sword
+    classes:
+      - vampire_survivors/weapon
+  - id: flames_of_misspell
+    name: Flames of Misspell
+    classes:
+      - vampire_survivors/weapon
+  - id: glass_fandango
+    name: Glass Fandango
+    classes:
+      - vampire_survivors/weapon
+  - id: phas3r
+    name: Phas3r
+    classes:
+      - vampire_survivors/weapon
+  - id: silver_wind
+    name: Silver Wind
+    classes:
+      - vampire_survivors/weapon
+  - id: four_seasons
+    name: Four Seasons
+    classes:
+      - vampire_survivors/weapon
+  - id: summon_night
+    name: Summon Night
+    classes:
+      - vampire_survivors/weapon
+  - id: mirage_robe
+    name: Mirage Robe
+    classes:
+      - vampire_survivors/weapon
+  - id: mille_bolle_blu
+    name: Mille Bolle Blu
+    classes:
+      - vampire_survivors/weapon
+  - id: night_sword
+    name: Night Sword
+    classes:
+      - vampire_survivors/weapon
+  - id: 108_bocce
+    name: 108 Bocce
+    classes:
+      - vampire_survivors/weapon
+  - id: spellstring
+    name: SpellString
+    classes:
+      - vampire_survivors/weapon
+  - id: spellstream
+    name: SpellStream
+    classes:
+      - vampire_survivors/weapon
+  - id: spellstrike
+    name: SpellStrike
+    classes:
+      - vampire_survivors/weapon
+  - id: eskizzibur
+    name: Eskizzibur
+    classes:
+      - vampire_survivors/weapon
+  - id: flash_arrow
+    name: Flash Arrow
+    classes:
+      - vampire_survivors/weapon
+  - id: prismatic_missile
+    name: Prismatic Missile
+    classes:
+      - vampire_survivors/weapon
+  - id: shadow_servant
+    name: Shadow Servant
+    classes:
+      - vampire_survivors/weapon
+  - id: party_popper
+    name: Party Popper
+    classes:
+      - vampire_survivors/weapon
+  - id: report
+    name: Report!
+    classes:
+      - vampire_survivors/weapon
+  - id: lucky_swipe
+    name: Lucky Swipe
+    classes:
+      - vampire_survivors/weapon
+  - id: lifesign_scan
+    name: Lifesign Scan
+    classes:
+      - vampire_survivors/weapon
+  - id: just_vent
+    name: Just Vent
+    classes:
+      - vampire_survivors/weapon
+  - id: clear_debris
+    name: Clear Debris
+    classes:
+      - vampire_survivors/weapon
+  - id: sharp_tongue
+    name: Sharp Tongue
+    classes:
+      - vampire_survivors/weapon
+  - id: science_rocks
+    name: Science Rocks
+    classes:
+      - vampire_survivors/weapon
+  - id: hats
+    name: Hats
+    classes:
+      - vampire_survivors/weapon
+  - id: bloody_tear
+    name: Bloody Tear
+    classes:
+      - vampire_survivors/weapon
+  - id: holy_wand
+    name: Holy Wand
+    classes:
+      - vampire_survivors/weapon
+  - id: thousand_edge
+    name: Thousand Edge
+    classes:
+      - vampire_survivors/weapon
+  - id: death_spiral
+    name: Death Spiral
+    classes:
+      - vampire_survivors/weapon
+  - id: heaven_sword
+    name: Heaven Sword
+    classes:
+      - vampire_survivors/weapon
+  - id: unholy_vespers
+    name: Unholy Vespers
+    classes:
+      - vampire_survivors/weapon
+  - id: hellfire
+    name: Hellfire
+    classes:
+      - vampire_survivors/weapon
+  - id: soul_eater
+    name: Soul Eater
+    classes:
+      - vampire_survivors/weapon
+  - id: la_borra
+    name: La Borra
+    classes:
+      - vampire_survivors/weapon
+  - id: no_future
+    name: NO FUTURE
+    classes:
+      - vampire_survivors/weapon
+  - id: thunder_loop
+    name: Thunder Loop
+    classes:
+      - vampire_survivors/weapon
+  - id: gorgeous_moon
+    name: Gorgeous Moon
+    classes:
+      - vampire_survivors/weapon
+  - id: vicious_hunger
+    name: Vicious Hunger
+    classes:
+      - vampire_survivors/weapon
+  - id: mannajja
+    name: Mannajja
+    classes:
+      - vampire_survivors/weapon
+  - id: valkyrie_turner
+    name: Valkyrie Turner
+    classes:
+      - vampire_survivors/weapon
+  - id: infinite_corridor
+    name: Infinite Corridor
+    classes:
+      - vampire_survivors/weapon
+  - id: crimson_shroud
+    name: Crimson Shroud
+    classes:
+      - vampire_survivors/weapon
+  - id: bi_bracelet
+    name: Bi-Bracelet
+    classes:
+      - vampire_survivors/weapon
+  - id: tri_bracelet
+    name: Tri-Bracelet
+    classes:
+      - vampire_survivors/weapon
+  - id: mazo_familiar
+    name: Mazo Familiar
+    classes:
+      - vampire_survivors/weapon
+  - id: ashes_of_muspell
+    name: Ashes of Muspell
+    classes:
+      - vampire_survivors/weapon
+  - id: celestial_voulge
+    name: Celestial Voulge
+    classes:
+      - vampire_survivors/weapon
+  - id: photonstorm
+    name: Photonstorm
+    classes:
+      - vampire_survivors/weapon
+  - id: anima_of_mortaccio
+    name: Anima of Mortaccio
+    classes:
+      - vampire_survivors/weapon
+  - id: yatta_daikarin
+    name: Yatta Daikarin
+    classes:
+      - vampire_survivors/weapon
+  - id: profusione_damore
+    name: Profusione D'Amore
+    classes:
+      - vampire_survivors/weapon
+  - id: festive_winds
+    name: Festive Winds
+    classes:
+      - vampire_survivors/weapon
+  - id: godai_shuffle
+    name: Godai Shuffle
+    classes:
+      - vampire_survivors/weapon
+  - id: echo_night
+    name: Echo Night
+    classes:
+      - vampire_survivors/weapon
+  - id: jodore
+    name: J'Odore
+    classes:
+      - vampire_survivors/weapon
+  - id: boo_roo_boolle
+    name: Boo Roo Boolle
+    classes:
+      - vampire_survivors/weapon
+  - id: muramasa
+    name: Muramasa
+    classes:
+      - vampire_survivors/weapon
+  - id: legionnaire
+    name: Legionnaire
+    classes:
+      - vampire_survivors/weapon
+  - id: millionaire
+    name: Millionaire
+    classes:
+      - vampire_survivors/weapon
+  - id: luminaire
+    name: Luminaire
+    classes:
+      - vampire_survivors/weapon
+  - id: ophion
+    name: Ophion
+    classes:
+      - vampire_survivors/weapon
+  - id: emergency_meeting_weapon
+    name: Emergency Meeting (weapon)
+    classes:
+      - vampire_survivors/weapon
+  - id: crossed_wires
+    name: Crossed Wires
+    classes:
+      - vampire_survivors/weapon
+  - id: paranormal_scan
+    name: Paranormal Scan
+    classes:
+      - vampire_survivors/weapon
+  - id: unjust_ejection
+    name: Unjust Ejection
+    classes:
+      - vampire_survivors/weapon
+  - id: clear_asteroids
+    name: Clear Asteroids
+    classes:
+      - vampire_survivors/weapon
+  - id: impostongue
+    name: Impostongue
+    classes:
+      - vampire_survivors/weapon
+  - id: rocket_science
+    name: Rocket Science
+    classes:
+      - vampire_survivors/weapon
+  - id: vandalier
+    name: Vandalier
+    classes:
+      - vampire_survivors/weapon
+  - id: phieraggi
+    name: Phieraggi
+    classes:
+      - vampire_survivors/weapon
+  - id: fuwalafuwaloo
+    name: Fuwalafuwaloo
+    classes:
+      - vampire_survivors/weapon
+  - id: spellstrom
+    name: SpellStrom
+    classes:
+      - vampire_survivors/weapon

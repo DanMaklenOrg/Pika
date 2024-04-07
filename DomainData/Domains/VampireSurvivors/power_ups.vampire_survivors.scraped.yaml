@@ -1,0 +1,99 @@
+id: power_ups.vampire_survivors
+name: 'Vampire Survivors: Power Ups'
+entities:
+  - id: might
+    name: Might
+    classes:
+      - vampire_survivors/power_up_5
+  - id: armor
+    name: Armor
+    classes:
+      - vampire_survivors/power_up_3
+  - id: max_health
+    name: Max Health
+    classes:
+      - vampire_survivors/power_up_3
+  - id: recovery
+    name: Recovery
+    classes:
+      - vampire_survivors/power_up_5
+  - id: cooldown
+    name: Cooldown
+    classes:
+      - vampire_survivors/power_up_2
+  - id: area
+    name: Area
+    classes:
+      - vampire_survivors/power_up_2
+  - id: speed
+    name: Speed
+    classes:
+      - vampire_survivors/power_up_2
+  - id: duration
+    name: Duration
+    classes:
+      - vampire_survivors/power_up_2
+  - id: amount
+    name: Amount
+    classes:
+      - vampire_survivors/power_up_1
+  - id: move_speed
+    name: Move Speed
+    classes:
+      - vampire_survivors/power_up_2
+  - id: magnet
+    name: Magnet
+    classes:
+      - vampire_survivors/power_up_2
+  - id: luck
+    name: Luck
+    classes:
+      - vampire_survivors/power_up_3
+  - id: growth
+    name: Growth
+    classes:
+      - vampire_survivors/power_up_5
+  - id: greed
+    name: Greed
+    classes:
+      - vampire_survivors/power_up_5
+  - id: curse
+    name: Curse
+    classes:
+      - vampire_survivors/power_up_5
+  - id: revival
+    name: Revival
+    classes:
+      - vampire_survivors/power_up_1
+  - id: omni
+    name: Omni
+    classes:
+      - vampire_survivors/power_up_5
+  - id: charm
+    name: Charm
+    classes:
+      - vampire_survivors/power_up_5
+  - id: defang
+    name: Defang
+    classes:
+      - vampire_survivors/power_up_5
+  - id: reroll
+    name: Reroll
+    classes:
+      - vampire_survivors/power_up_5
+  - id: skip
+    name: Skip
+    classes:
+      - vampire_survivors/power_up_5
+  - id: banish
+    name: Banish
+    classes:
+      - vampire_survivors/power_up_5
+  - id: seal_i
+    name: Seal I
+    classes:
+      - vampire_survivors/power_up_10
+  - id: seal_ii
+    name: Seal II
+    classes:
+      - vampire_survivors/power_up_10
