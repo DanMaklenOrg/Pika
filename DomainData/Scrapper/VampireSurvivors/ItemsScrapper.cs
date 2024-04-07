@@ -55,7 +55,7 @@ public class ItemsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new($"weapon", DomainId)],
+            Classes = ["vampire_survivors/weapon"],
         };
     }
 }
