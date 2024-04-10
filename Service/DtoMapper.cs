@@ -24,6 +24,7 @@ public static class DtoMapper
             Entities = model.Entities.ConvertAll(ToDto),
             Projects = model.Projects.ConvertAll(ToDto),
             Stats = model.Stats.ConvertAll(ToDto),
+            Tags = model.Tags.ConvertAll(ToDto),
             Classes = model.Classes.ConvertAll(ToDto),
         };
     }
@@ -34,6 +35,16 @@ public static class DtoMapper
         {
             Id = model.Id.FullyQualifiedId,
             Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
+            Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
+        };
+    }
+
+    private static TagDto ToDto(Tag model)
+    {
+        return new TagDto
+        {
+            Id = model.Id.FullyQualifiedId,
+            Name = model.Name,
         };
     }
 
@@ -53,6 +64,7 @@ public static class DtoMapper
             Id = model.Id.FullyQualifiedId,
             Name = model.Name,
             Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
+            Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
             Classes = model.Classes.ConvertAll(x => x.FullyQualifiedId),
         };
     }

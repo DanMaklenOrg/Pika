@@ -79,6 +79,12 @@ stats:
   - id: map_polus_replica
     name: Completed Run in Polus Replica
     type: BOOLEAN
+tags:
+  - name: Character
+  - name: Power Up
+  - name: Weapon
+  - name: Relic
+  - name: Passive Item
 classes:
   - id: character
     stats:
@@ -104,30 +110,48 @@ classes:
       - map_lake_foscari
       - map_abyss_foscari
       - map_polus_replica
+    tags:
+      - character
   - id: power_up_10
     stats:
       - power_up_rank_10
+    tags:
+      - power_up
   - id: power_up_5
     stats:
       - power_up_rank_5
+    tags:
+      - power_up
   - id: power_up_3
     stats:
       - power_up_rank_3
+    tags:
+      - power_up
   - id: power_up_2
     stats:
       - power_up_rank_2
+    tags:
+      - power_up
   - id: power_up_1
     stats:
       - power_up_rank_1
+    tags:
+      - power_up
   - id: relic
     stats:
       - _/unlocked
+    tags:
+      - relic
   - id: passive_item
     stats:
       - _/unlocked
+    tags:
+      - passive_item
   - id: weapon
     stats:
       - _/unlocked
+    tags:
+      - weapon
 projects:
   - name: Unlock All Characters
   - name: Max All Power Ups
