@@ -61,7 +61,7 @@ stats:
   - id: map_tiny_bridge
     name: Completed Run in Tiny Bridge
     type: BOOLEAN
-  - id: map_mt_moonpsell
+  - id: map_mt_moonspell
     name: Completed Run in Mt.Moonspell
     type: BOOLEAN
   - id: map_lake_foscari
@@ -81,6 +81,7 @@ tags:
   - name: Passive Item
   - name: Pickup
   - name: Arcana
+  - name: Secret
 classes:
   - id: character
     stats:
@@ -100,7 +101,7 @@ classes:
       - map_bat_country
       - map_astral_stair
       - map_tiny_bridge
-      - map_mt_moonpsell
+      - map_mt_moonspell
       - map_lake_foscari
       - map_abyss_foscari
       - map_polus_replica
@@ -137,12 +138,24 @@ classes:
   - id: map
     stats:
       - _/unlocked
+  - id: secret_unlock
+    stats:
+      - _/unlocked
+    tags:
+      - secret
 projects:
   - name: Unlock All Characters
   - name: Max All Power Ups
   - name: Unlock all entries in the collection
   - name: Unlock all entries in the bestiary
+  - name: Unlock all secrets
+  - name: Unlock all achievements
 entities:
+  - name: Friendship Amulet
+    classes:
+      - collection_entry
+    tags:
+      - pickup
   - name: Mad Forest
     classes:
       - map

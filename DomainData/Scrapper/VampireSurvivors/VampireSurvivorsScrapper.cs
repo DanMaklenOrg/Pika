@@ -23,6 +23,8 @@ public class VampireSurvivorsScrapper : IScrapper
                 ..await ScrapeWeapons(),
                 ..await ScrapePikcups(),
                 ..await ScrapeArcana(),
+                ..await ScrapeSecrets(),
+                ..await ScrapeAchievements(),
             ],
         };
     }
@@ -168,6 +170,43 @@ public class VampireSurvivorsScrapper : IScrapper
             Name = name,
             Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("arcana", DomainId)],
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeSecrets()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Secret");
+        var nodes = doc.DocumentNode.SelectNodes("//tr");
+        return nodes.Skip(1).Select(ParseSecret).ToList();
+    }
+
+    private Entity ParseSecret(HtmlNode node)
+    {
+        var name = node.SelectSingleNode(".//td[3]").InnerText.Trim();
+        name += "_secret";
+        return new Entity
+        {
+            Id = ResourceId.InduceFromName(name, DomainId),
+            Name = name,
+            Classes = [new ResourceId("secret_unlock", DomainId)],
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeAchievements()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Secret");
+        var nodes = doc.DocumentNode.SelectNodes("//tr");
+        return nodes.Skip(1).Select(ParseAchievement).ToList();
+    }
+
+    private Entity ParseAchievement(HtmlNode node)
+    {
+        var name = node.SelectSingleNode(".//td[3]").InnerText.Trim();
+        return new Entity
+        {
+            Id = ResourceId.InduceFromName(name, DomainId),
+            Name = name,
+            Classes = ["_/achievement"],
         };
     }
 }
