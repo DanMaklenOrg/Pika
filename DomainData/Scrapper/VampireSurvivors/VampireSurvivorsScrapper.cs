@@ -21,6 +21,8 @@ public class VampireSurvivorsScrapper : IScrapper
                 ..await ScrapePowerUps(),
                 ..await ScrapePassiveItems(),
                 ..await ScrapeWeapons(),
+                ..await ScrapePikcups(),
+                ..await ScrapeArcanas(),
             ],
         };
     }
@@ -57,7 +59,8 @@ public class VampireSurvivorsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new ResourceId("relic", DomainId)],
+            Classes = [new ResourceId("collection_entry", DomainId)],
+            Tags = [new ResourceId("relic", DomainId)],
         };
     }
 
@@ -100,7 +103,8 @@ public class VampireSurvivorsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new ResourceId("passive_item", DomainId)],
+            Classes = [new ResourceId("collection_entry", DomainId)],
+            Tags = [new ResourceId("passive_item", DomainId)],
         };
     }
 
@@ -119,7 +123,46 @@ public class VampireSurvivorsScrapper : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new ResourceId("weapon", DomainId)],
+            Classes = [new ResourceId("collection_entry", DomainId)],
+            Tags = [new ResourceId("weapon", DomainId)],
+        };
+    }
+
+    private async Task<List<Entity>> ScrapePikcups()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Pickups");
+        var nodes = doc.DocumentNode.SelectNodes("//tr");
+        return nodes.Skip(2).Select(ParsePickups).ToList();
+    }
+
+    private Entity ParsePickups(HtmlNode node)
+    {
+        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        return new Entity
+        {
+            Id = ResourceId.InduceFromName(name, DomainId),
+            Name = name,
+            Classes = [new ResourceId("collection_entry", DomainId)],
+            Tags = [new ResourceId("pickup", DomainId)],
+        };
+    }
+
+    private async Task<List<Entity>> ScrapeArcanas()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
+        var nodes = doc.DocumentNode.SelectNodes("//tr");
+        return nodes.Skip(1).Select(ParseArcana).ToList();
+    }
+
+    private Entity ParseArcana(HtmlNode node)
+    {
+        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim('—', ' ');
+        return new Entity
+        {
+            Id = ResourceId.InduceFromName(name, DomainId),
+            Name = name,
+            Classes = [new ResourceId("collection_entry", DomainId)],
+            Tags = [new ResourceId("arcana", DomainId)],
         };
     }
 }

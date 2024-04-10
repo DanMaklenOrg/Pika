@@ -284,102 +284,152 @@ entities:
   - id: grim_grimoire
     name: Grim Grimoire
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: ars_gouda
     name: Ars Gouda
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: milky_way_map
     name: Milky Way Map
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: magic_banger
     name: Magic Banger
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: sorceress_tears
     name: Sorceress' Tears
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: glass_vizard
     name: Glass Vizard
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: mindbender
     name: Mindbender
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: yellow_sign
     name: Yellow Sign
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: forbidden_scrolls_of_morbane
     name: Forbidden Scrolls of Morbane
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: great_gospel
     name: Great Gospel
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: gracias_mirror
     name: Gracia's Mirror
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: seventh_trumpet
     name: Seventh Trumpet
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: atlas_gate
     name: Atlas Gate
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: chaos_malachite
     name: Chaos Malachite
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: chaos_rosalia
     name: Chaos Rosalia
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: chaos_altemanna
     name: Chaos Altemanna
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: apoplexy
     name: Apoplexy
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: antidote
     name: Antidote
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: trisection
     name: Trisection
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: brave_story
     name: Brave Story
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: astral_stair_map
     name: Astral Stair Map
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: randomazzo
     name: Randomazzo
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: mt_moonspell_map
     name: Mt.Moonspell Map
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: lake_foscari_map
     name: Lake Foscari Map
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: polus_replica_map
     name: Polus Replica Map
     classes:
+      - collection_entry
+    tags:
       - relic
   - id: might
     name: Might
@@ -480,540 +530,1078 @@ entities:
   - id: spinach
     name: Spinach
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: armor
     name: Armor
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: hollow_heart
     name: Hollow Heart
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: pummarola
     name: Pummarola
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: empty_tome
     name: Empty Tome
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: candelabrador
     name: Candelabrador
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: bracer
     name: Bracer
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: spellbinder
     name: Spellbinder
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: duplicator
     name: Duplicator
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: wings
     name: Wings
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: attractorb
     name: Attractorb
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: clover
     name: Clover
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: crown
     name: Crown
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: stone_mask
     name: Stone Mask
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: tirajis
     name: Tirajisú
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: skull_omaniac
     name: Skull O'Maniac
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: silver_ring
     name: Silver Ring
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: gold_ring
     name: Gold Ring
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: metaglio_left
     name: Metaglio Left
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: metaglio_right
     name: Metaglio Right
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: torronas_box
     name: Torrona's Box
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: academy_badge
     name: Academy Badge
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_crewmate
     name: Mini Crewmate
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_engineer
     name: Mini Engineer
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_ghost
     name: Mini Ghost
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_shapeshifter
     name: Mini Shapeshifter
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_guardian
     name: Mini Guardian
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_impostor
     name: Mini Impostor
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_scientist
     name: Mini Scientist
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: mini_horse
     name: Mini Horse
     classes:
+      - collection_entry
+    tags:
       - passive_item
   - id: whip
     name: Whip
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: magic_wand
     name: Magic Wand
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: knife
     name: Knife
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: axe
     name: Axe
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: cross
     name: Cross
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: king_bible
     name: King Bible
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: fire_wand
     name: Fire Wand
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: garlic
     name: Garlic
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: santa_water
     name: Santa Water
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: runetracer
     name: Runetracer
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: lightning_ring
     name: Lightning Ring
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: pentagram
     name: Pentagram
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: peachone
     name: Peachone
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: ebony_wings
     name: Ebony Wings
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: phiera_der_tuphello
     name: Phiera Der Tuphello
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: eight_the_sparrow
     name: Eight The Sparrow
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: gatti_amari
     name: Gatti Amari
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: song_of_mana
     name: Song of Mana
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: shadow_pinion
     name: Shadow Pinion
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: clock_lancet
     name: Clock Lancet
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: laurel
     name: Laurel
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: vento_sacro
     name: Vento Sacro
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: bone
     name: Bone
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: cherry_bomb
     name: Cherry Bomb
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: carr_llo
     name: Carréllo
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: celestial_dusting
     name: Celestial Dusting
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: la_robba
     name: La Robba
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: greatest_jubilee
     name: Greatest Jubilee
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: bracelet
     name: Bracelet
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: candybox
     name: Candybox
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: pako_battiliar
     name: Pako Battiliar
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: victory_sword
     name: Victory Sword
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: flames_of_misspell
     name: Flames of Misspell
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: glass_fandango
     name: Glass Fandango
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: phas3r
     name: Phas3r
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: silver_wind
     name: Silver Wind
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: four_seasons
     name: Four Seasons
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: summon_night
     name: Summon Night
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: mirage_robe
     name: Mirage Robe
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: mille_bolle_blu
     name: Mille Bolle Blu
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: night_sword
     name: Night Sword
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: 108_bocce
     name: 108 Bocce
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: spellstring
     name: SpellString
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: spellstream
     name: SpellStream
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: spellstrike
     name: SpellStrike
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: eskizzibur
     name: Eskizzibur
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: flash_arrow
     name: Flash Arrow
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: prismatic_missile
     name: Prismatic Missile
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: shadow_servant
     name: Shadow Servant
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: party_popper
     name: Party Popper
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: report
     name: Report!
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: lucky_swipe
     name: Lucky Swipe
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: lifesign_scan
     name: Lifesign Scan
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: just_vent
     name: Just Vent
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: clear_debris
     name: Clear Debris
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: sharp_tongue
     name: Sharp Tongue
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: science_rocks
     name: Science Rocks
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: hats
     name: Hats
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: bloody_tear
     name: Bloody Tear
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: holy_wand
     name: Holy Wand
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: thousand_edge
     name: Thousand Edge
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: death_spiral
     name: Death Spiral
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: heaven_sword
     name: Heaven Sword
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: unholy_vespers
     name: Unholy Vespers
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: hellfire
     name: Hellfire
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: soul_eater
     name: Soul Eater
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: la_borra
     name: La Borra
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: no_future
     name: NO FUTURE
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: thunder_loop
     name: Thunder Loop
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: gorgeous_moon
     name: Gorgeous Moon
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: vicious_hunger
     name: Vicious Hunger
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: mannajja
     name: Mannajja
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: valkyrie_turner
     name: Valkyrie Turner
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: infinite_corridor
     name: Infinite Corridor
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: crimson_shroud
     name: Crimson Shroud
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: bi_bracelet
     name: Bi-Bracelet
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: tri_bracelet
     name: Tri-Bracelet
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: mazo_familiar
     name: Mazo Familiar
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: ashes_of_muspell
     name: Ashes of Muspell
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: celestial_voulge
     name: Celestial Voulge
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: photonstorm
     name: Photonstorm
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: anima_of_mortaccio
     name: Anima of Mortaccio
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: yatta_daikarin
     name: Yatta Daikarin
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: profusione_damore
     name: Profusione D'Amore
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: festive_winds
     name: Festive Winds
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: godai_shuffle
     name: Godai Shuffle
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: echo_night
     name: Echo Night
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: jodore
     name: J'Odore
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: boo_roo_boolle
     name: Boo Roo Boolle
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: muramasa
     name: Muramasa
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: legionnaire
     name: Legionnaire
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: millionaire
     name: Millionaire
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: luminaire
     name: Luminaire
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: ophion
     name: Ophion
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: emergency_meeting_weapon
     name: Emergency Meeting (weapon)
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: crossed_wires
     name: Crossed Wires
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: paranormal_scan
     name: Paranormal Scan
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: unjust_ejection
     name: Unjust Ejection
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: clear_asteroids
     name: Clear Asteroids
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: impostongue
     name: Impostongue
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: rocket_science
     name: Rocket Science
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: vandalier
     name: Vandalier
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: phieraggi
     name: Phieraggi
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: fuwalafuwaloo
     name: Fuwalafuwaloo
     classes:
+      - collection_entry
+    tags:
       - weapon
   - id: spellstrom
     name: SpellStrom
     classes:
+      - collection_entry
+    tags:
       - weapon
+  - id: experience_gem
+    name: Experience Gem
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: gold_coin
+    name: Gold Coin
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: coin_bag
+    name: Coin Bag
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: big_coin_bag
+    name: Big Coin Bag
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: rich_coin_bag
+    name: Rich Coin Bag
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: rosary
+    name: Rosary
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: nduja_fritta_tanto
+    name: Nduja Fritta Tanto
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: orologion
+    name: Orologion
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: vacuum
+    name: Vacuum
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: floor_chicken
+    name: Floor Chicken
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: gilded_clover
+    name: Gilded Clover
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: little_clover
+    name: Little Clover
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: gold_finger
+    name: Gold Finger
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: treasure_chest
+    name: Treasure Chest
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: little_heart
+    name: Little Heart
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: golden_egg
+    name: Golden Egg
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: pie
+    name: Pie
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: cheese
+    name: Cheese
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: corn
+    name: Corn
+    classes:
+      - collection_entry
+    tags:
+      - pickup
+  - id: game_killer
+    name: >
+      Game Killer
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: gemini
+    name: >
+      Gemini
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: twilight_requiem
+    name: >
+      Twilight Requiem
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: tragic_princess
+    name: >
+      Tragic Princess
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: awake
+    name: >
+      Awake
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: chaos_in_the_dark_night
+    name: >
+      Chaos in the Dark Night
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: sarabande_of_healing
+    name: >
+      Sarabande of Healing
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: iron_blue_will
+    name: >
+      Iron Blue Will
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: mad_groove
+    name: >
+      Mad Groove
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: divine_bloodline
+    name: >
+      Divine Bloodline
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: beginning
+    name: >
+      Beginning
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: waltz_of_pearls
+    name: >
+      Waltz of Pearls
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: out_of_bounds
+    name: >
+      Out of Bounds
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: wicked_season
+    name: >
+      Wicked Season
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: jail_of_crystal
+    name: >
+      Jail of Crystal
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: disco_of_gold
+    name: >
+      Disco of Gold
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: slash
+    name: >
+      Slash
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: lost_amp_found_painting
+    name: >
+      Lost &amp; Found Painting
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: boogaloo_of_illusions
+    name: >
+      Boogaloo of Illusions
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: heart_of_fire
+    name: >
+      Heart of Fire
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: silent_old_sanctuary
+    name: >
+      Silent Old Sanctuary
+    classes:
+      - collection_entry
+    tags:
+      - arcana
+  - id: blood_astronomia
+    name: >
+      Blood Astronomia
+    classes:
+      - collection_entry
+    tags:
+      - arcana

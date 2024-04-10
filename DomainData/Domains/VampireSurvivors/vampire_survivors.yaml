@@ -37,9 +37,6 @@ stats:
   - id: map_moongolow
     name: Completed Run in Moongolow
     type: BOOLEAN
-  - id: map_holy_forbidden
-    name: Completed Run in Holy Forbidden
-    type: BOOLEAN
   - id: map_green_acres
     name: Completed Run in Green Acres
     type: BOOLEAN
@@ -64,9 +61,6 @@ stats:
   - id: map_tiny_bridge
     name: Completed Run in Tiny Bridge
     type: BOOLEAN
-  - id: map_euaimonia_machine
-    name: Completed Run in Eudaimonia Machine
-    type: BOOLEAN
   - id: map_mt_moonpsell
     name: Completed Run in Mt.Moonspell
     type: BOOLEAN
@@ -85,6 +79,8 @@ tags:
   - name: Weapon
   - name: Relic
   - name: Passive Item
+  - name: Pickup
+  - name: Arcana
 classes:
   - id: character
     stats:
@@ -96,7 +92,6 @@ classes:
       - map_cappella_magna
       - map_il_molise
       - map_moongolow
-      - map_holy_forbidden
       - map_green_acres
       - map_the_bone_zone
       - map_boss_rash
@@ -105,7 +100,6 @@ classes:
       - map_bat_country
       - map_astral_stair
       - map_tiny_bridge
-      - map_euaimonia_machine
       - map_mt_moonpsell
       - map_lake_foscari
       - map_abyss_foscari
@@ -137,24 +131,72 @@ classes:
       - power_up_rank_1
     tags:
       - power_up
-  - id: relic
+  - id: collection_entry
     stats:
       - _/unlocked
-    tags:
-      - relic
-  - id: passive_item
+  - id: map
     stats:
       - _/unlocked
-    tags:
-      - passive_item
-  - id: weapon
-    stats:
-      - _/unlocked
-    tags:
-      - weapon
 projects:
   - name: Unlock All Characters
   - name: Max All Power Ups
-  - name: Collect All Relics
-  - name: Find All Items
-  - name: Complete All Stages on All Characters
+  - name: Unlock all entries in the collection
+  - name: Unlock all entries in the bestiary
+entries:
+  - name: Mad Forest
+    class:
+      - map
+  - name: Inlaid Library
+    class:
+      - map
+  - name: Dairy Plant
+    class:
+      - map
+  - name: Gallo Tower
+    class:
+      - map
+  - name: Cappella Magna
+    class:
+      - map
+  - name: Il Molise
+    class:
+      - map
+  - name: Moongolow
+    class:
+      - map
+  - name: Green Acres
+    class:
+      - map
+  - name: The Bone Zone
+    class:
+      - map
+  - name: Boss Rash
+    class:
+      - map
+  - name: Whiteout
+    class:
+      - map
+  - name: Space 54
+    class:
+      - map
+  - name: Bat Country
+    class:
+      - map
+  - name: Astral Stair
+    class:
+      - map
+  - name: Tiny Bridge
+    class:
+      - map
+  - name: Mt.Moonspell
+    class:
+      - map
+  - name: Lake Foscari
+    class:
+      - map
+  - name: Abyss Foscari
+    class:
+      - map
+  - name: Polus Replica
+    class:
+      - map
