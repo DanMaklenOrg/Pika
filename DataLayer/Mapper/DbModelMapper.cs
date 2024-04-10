@@ -14,6 +14,7 @@ public static class DbModelMapper
             Name = domain.Name,
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
+            Tags = domain.Tags.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
             SubDomains = domain.SubDomains.ConvertAll(ToDbModel),
@@ -34,7 +35,17 @@ public static class DbModelMapper
         return new ClassDbModel
         {
             Id = model.Id.FullyQualifiedId,
-            Stats = model.Stats.ConvertAll(c => c.FullyQualifiedId),
+            Stats = model.Stats.ConvertAll(s => s.FullyQualifiedId),
+            Tags = model.Tags.ConvertAll(t => t.FullyQualifiedId),
+        };
+    }
+
+    private static TagDbModel ToDbModel(Tag model)
+    {
+        return new TagDbModel
+        {
+            Id = model.Id.FullyQualifiedId,
+            Name = model.Name,
         };
     }
 
@@ -46,6 +57,7 @@ public static class DbModelMapper
             Name = entity.Name,
             Classes = entity.Classes.ConvertAll(c => c.FullyQualifiedId),
             Stats = entity.Stats.ConvertAll(s => s.FullyQualifiedId),
+            Tags = entity.Tags.ConvertAll(t => t.FullyQualifiedId),
         };
     }
 
@@ -62,28 +74,38 @@ public static class DbModelMapper
         };
     }
 
-    [return: NotNullIfNotNull("domain")]
-    public static Domain? FromDbModel(DomainDbModel? domain)
+    [return: NotNullIfNotNull("model")]
+    public static Domain? FromDbModel(DomainDbModel? model)
     {
-        if (domain is null) return null;
+        if (model is null) return null;
         return new Domain
         {
-            Id = domain.Id,
-            Name = domain.Name,
-            Projects = domain.Projects?.ConvertAll(FromDbModel) ?? [],
-            Classes = domain.Classes?.ConvertAll(FromDbModel) ?? [],
-            Entities = domain.Entities?.ConvertAll(FromDbModel) ?? [],
-            Stats = domain.Stats?.ConvertAll(FromDbModel) ?? [],
-            SubDomains = (domain.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
+            Id = model.Id,
+            Name = model.Name,
+            Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
+            Tags = model.Tags?.ConvertAll(FromDbModel) ?? [],
+            Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
+            Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
+            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
+            SubDomains = (model.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
         };
     }
 
-    private static Project FromDbModel(ProjectDbModel entity)
+    private static Project FromDbModel(ProjectDbModel model)
     {
         return new Project
         {
-            Id = entity.Id,
-            Name = entity.Name,
+            Id = model.Id,
+            Name = model.Name,
+        };
+    }
+
+    private static Tag FromDbModel(TagDbModel model)
+    {
+        return new Tag
+        {
+            Id = model.Id,
+            Name = model.Name,
         };
     }
 
@@ -92,17 +114,19 @@ public static class DbModelMapper
         return new Class
         {
             Id = model.Id,
-            Stats = model.Stats.ConvertAll(ResourceId.ParseResourceId),
+            Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }
-    private static Entity FromDbModel(EntityDbModel entity)
+    private static Entity FromDbModel(EntityDbModel model)
     {
         return new Entity
         {
-            Id = entity.Id,
-            Name = entity.Name,
-            Classes = entity.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
-            Stats = entity.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Id = model.Id,
+            Name = model.Name,
+            Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Classes = model.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }
 

@@ -18,6 +18,7 @@ public class Serializer
             Id = domain.Id.FullyQualifiedId,
             Name = domain.Name,
             Stats = domain.Stats.ConvertAll(Serialize),
+            Tags = domain.Tags.ConvertAll(Serialize),
             Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
@@ -31,6 +32,16 @@ public class Serializer
         {
             Id = MinifyId(node.Id),
             Stats = node.Stats.ConvertAll(MinifyId),
+            Tags = node.Tags.ConvertAll(MinifyId),
+        };
+    }
+
+    private TagNode Serialize(Tag node)
+    {
+        return new TagNode
+        {
+            Id = MinifyId(node.Id),
+            Name = node.Name,
         };
     }
 
@@ -50,6 +61,7 @@ public class Serializer
             Id = MinifyId(node.Id),
             Name = node.Name,
             Stats = node.Stats.ConvertAll(MinifyId),
+            Tags = node.Tags.ConvertAll(MinifyId),
             Classes = node.Classes.ConvertAll(MinifyId),
         };
     }

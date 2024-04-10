@@ -6,6 +6,7 @@ public readonly struct Entity
     public required string Name { get; init; }
     public List<ResourceId> Classes { get; init; } = [];
     public List<ResourceId> Stats { get; init; } = [];
+    public List<ResourceId> Tags { get; init; } = [];
 
     public Entity()
     {
