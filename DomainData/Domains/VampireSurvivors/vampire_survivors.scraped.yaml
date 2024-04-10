@@ -533,8 +533,8 @@ entities:
       - collection_entry
     tags:
       - passive_item
-  - id: armor
-    name: Armor
+  - id: armor_passive_item
+    name: Armor (Passive Item)
     classes:
       - collection_entry
     tags:

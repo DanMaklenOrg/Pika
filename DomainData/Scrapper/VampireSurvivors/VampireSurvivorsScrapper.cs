@@ -99,6 +99,11 @@ public class VampireSurvivorsScrapper : IScrapper
     private Entity ParsePassiveItem(HtmlNode node)
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        name = name switch
+        {
+            "Armor" => "Armor (Passive Item)",
+            _ => name,
+        };
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
