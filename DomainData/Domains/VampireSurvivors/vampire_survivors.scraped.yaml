@@ -1452,155 +1452,133 @@ entities:
     tags:
       - pickup
   - id: game_killer
-    name: >
-      Game Killer
+    name: Game Killer
     classes:
       - collection_entry
     tags:
       - arcana
   - id: gemini
-    name: >
-      Gemini
+    name: Gemini
     classes:
       - collection_entry
     tags:
       - arcana
   - id: twilight_requiem
-    name: >
-      Twilight Requiem
+    name: Twilight Requiem
     classes:
       - collection_entry
     tags:
       - arcana
   - id: tragic_princess
-    name: >
-      Tragic Princess
+    name: Tragic Princess
     classes:
       - collection_entry
     tags:
       - arcana
   - id: awake
-    name: >
-      Awake
+    name: Awake
     classes:
       - collection_entry
     tags:
       - arcana
   - id: chaos_in_the_dark_night
-    name: >
-      Chaos in the Dark Night
+    name: Chaos in the Dark Night
     classes:
       - collection_entry
     tags:
       - arcana
   - id: sarabande_of_healing
-    name: >
-      Sarabande of Healing
+    name: Sarabande of Healing
     classes:
       - collection_entry
     tags:
       - arcana
   - id: iron_blue_will
-    name: >
-      Iron Blue Will
+    name: Iron Blue Will
     classes:
       - collection_entry
     tags:
       - arcana
   - id: mad_groove
-    name: >
-      Mad Groove
+    name: Mad Groove
     classes:
       - collection_entry
     tags:
       - arcana
   - id: divine_bloodline
-    name: >
-      Divine Bloodline
+    name: Divine Bloodline
     classes:
       - collection_entry
     tags:
       - arcana
   - id: beginning
-    name: >
-      Beginning
+    name: Beginning
     classes:
       - collection_entry
     tags:
       - arcana
   - id: waltz_of_pearls
-    name: >
-      Waltz of Pearls
+    name: Waltz of Pearls
     classes:
       - collection_entry
     tags:
       - arcana
   - id: out_of_bounds
-    name: >
-      Out of Bounds
+    name: Out of Bounds
     classes:
       - collection_entry
     tags:
       - arcana
   - id: wicked_season
-    name: >
-      Wicked Season
+    name: Wicked Season
     classes:
       - collection_entry
     tags:
       - arcana
   - id: jail_of_crystal
-    name: >
-      Jail of Crystal
+    name: Jail of Crystal
     classes:
       - collection_entry
     tags:
       - arcana
   - id: disco_of_gold
-    name: >
-      Disco of Gold
+    name: Disco of Gold
     classes:
       - collection_entry
     tags:
       - arcana
   - id: slash
-    name: >
-      Slash
+    name: Slash
     classes:
       - collection_entry
     tags:
       - arcana
   - id: lost_amp_found_painting
-    name: >
-      Lost &amp; Found Painting
+    name: Lost &amp; Found Painting
     classes:
       - collection_entry
     tags:
       - arcana
   - id: boogaloo_of_illusions
-    name: >
-      Boogaloo of Illusions
+    name: Boogaloo of Illusions
     classes:
       - collection_entry
     tags:
       - arcana
   - id: heart_of_fire
-    name: >
-      Heart of Fire
+    name: Heart of Fire
     classes:
       - collection_entry
     tags:
       - arcana
   - id: silent_old_sanctuary
-    name: >
-      Silent Old Sanctuary
+    name: Silent Old Sanctuary
     classes:
       - collection_entry
     tags:
       - arcana
   - id: blood_astronomia
-    name: >
-      Blood Astronomia
+    name: Blood Astronomia
     classes:
       - collection_entry
     tags:

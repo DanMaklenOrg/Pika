@@ -22,7 +22,7 @@ public class VampireSurvivorsScrapper : IScrapper
                 ..await ScrapePassiveItems(),
                 ..await ScrapeWeapons(),
                 ..await ScrapePikcups(),
-                ..await ScrapeArcanas(),
+                ..await ScrapeArcana(),
             ],
         };
     }
@@ -147,7 +147,7 @@ public class VampireSurvivorsScrapper : IScrapper
         };
     }
 
-    private async Task<List<Entity>> ScrapeArcanas()
+    private async Task<List<Entity>> ScrapeArcana()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
         var nodes = doc.DocumentNode.SelectNodes("//tr");
@@ -156,7 +156,7 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseArcana(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim('—', ' ');
+        var name = node.SelectSingleNode(".//td[2]").InnerText.Replace('—', ' ').Trim();
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
