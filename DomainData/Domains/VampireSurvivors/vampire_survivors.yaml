@@ -142,61 +142,61 @@ projects:
   - name: Max All Power Ups
   - name: Unlock all entries in the collection
   - name: Unlock all entries in the bestiary
-entries:
+entities:
   - name: Mad Forest
-    class:
+    classes:
       - map
   - name: Inlaid Library
-    class:
+    classes:
       - map
   - name: Dairy Plant
-    class:
+    classes:
       - map
   - name: Gallo Tower
-    class:
+    classes:
       - map
   - name: Cappella Magna
-    class:
+    classes:
       - map
   - name: Il Molise
-    class:
+    classes:
       - map
   - name: Moongolow
-    class:
+    classes:
       - map
   - name: Green Acres
-    class:
+    classes:
       - map
   - name: The Bone Zone
-    class:
+    classes:
       - map
   - name: Boss Rash
-    class:
+    classes:
       - map
   - name: Whiteout
-    class:
+    classes:
       - map
   - name: Space 54
-    class:
+    classes:
       - map
   - name: Bat Country
-    class:
+    classes:
       - map
   - name: Astral Stair
-    class:
+    classes:
       - map
   - name: Tiny Bridge
-    class:
+    classes:
       - map
   - name: Mt.Moonspell
-    class:
+    classes:
       - map
   - name: Lake Foscari
-    class:
+    classes:
       - map
   - name: Abyss Foscari
-    class:
+    classes:
       - map
   - name: Polus Replica
-    class:
+    classes:
       - map
