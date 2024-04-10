@@ -17,3 +17,11 @@ stats:
     type: BOOLEAN
   - name: Quest Completed
     type: BOOLEAN
+tags:
+  - name: Achievement
+classes:
+  - id: achievement
+    stats:
+      - achieved
+    tags:
+      - achievement

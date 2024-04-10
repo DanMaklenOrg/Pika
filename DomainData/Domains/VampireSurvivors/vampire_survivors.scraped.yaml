@@ -1583,3 +1583,139 @@ entities:
       - collection_entry
     tags:
       - arcana
+  - id: boon_marrabbio_secret
+    name: Boon Marrabbio_secret
+    classes:
+      - secret_unlock
+  - id: avatar_infernas_secret
+    name: Avatar Infernas_secret
+    classes:
+      - secret_unlock
+  - id: minnah_mannarah_secret
+    name: Minnah Mannarah_secret
+    classes:
+      - secret_unlock
+  - id: leda_secret
+    name: Leda_secret
+    classes:
+      - secret_unlock
+  - id: cosmo_pavone_secret
+    name: Cosmo Pavone_secret
+    classes:
+      - secret_unlock
+  - id: peppino_secret
+    name: Peppino_secret
+    classes:
+      - secret_unlock
+  - id: big_trouser_secret
+    name: Big Trouser_secret
+    classes:
+      - secret_unlock
+  - id: missingn_secret
+    name: MissingN▯_secret
+    classes:
+      - secret_unlock
+  - id: gains_boros_secret
+    name: Gains Boros_secret
+    classes:
+      - secret_unlock
+  - id: gyorunton_secret
+    name: Gyorunton_secret
+    classes:
+      - secret_unlock
+  - id: mask_of_the_red_death_secret
+    name: Mask of the Red Death_secret
+    classes:
+      - secret_unlock
+  - id: exdash_exiviiq_secret
+    name: Exdash Exiviiq_secret
+    classes:
+      - secret_unlock
+  - id: toastie_secret
+    name: Toastie_secret
+    classes:
+      - secret_unlock
+  - id: smith_iv_secret
+    name: Smith IV_secret
+    classes:
+      - secret_unlock
+  - id: random_secret
+    name: Random_secret
+    classes:
+      - secret_unlock
+  - id: rose_de_infernas_secret
+    name: Rose De Infernas_secret
+    classes:
+      - secret_unlock
+  - id: scorej_oni_secret
+    name: Scorej-Oni_secret
+    classes:
+      - secret_unlock
+  - id: boon_marrabbio
+    name: Boon Marrabbio
+    classes:
+      - _/achievement
+  - id: avatar_infernas
+    name: Avatar Infernas
+    classes:
+      - _/achievement
+  - id: minnah_mannarah
+    name: Minnah Mannarah
+    classes:
+      - _/achievement
+  - id: leda
+    name: Leda
+    classes:
+      - _/achievement
+  - id: cosmo_pavone
+    name: Cosmo Pavone
+    classes:
+      - _/achievement
+  - id: peppino
+    name: Peppino
+    classes:
+      - _/achievement
+  - id: big_trouser
+    name: Big Trouser
+    classes:
+      - _/achievement
+  - id: missingn
+    name: MissingN▯
+    classes:
+      - _/achievement
+  - id: gains_boros
+    name: Gains Boros
+    classes:
+      - _/achievement
+  - id: gyorunton
+    name: Gyorunton
+    classes:
+      - _/achievement
+  - id: mask_of_the_red_death
+    name: Mask of the Red Death
+    classes:
+      - _/achievement
+  - id: exdash_exiviiq
+    name: Exdash Exiviiq
+    classes:
+      - _/achievement
+  - id: toastie
+    name: Toastie
+    classes:
+      - _/achievement
+  - id: smith_iv
+    name: Smith IV
+    classes:
+      - _/achievement
+  - id: random
+    name: Random
+    classes:
+      - _/achievement
+  - id: rose_de_infernas
+    name: Rose De Infernas
+    classes:
+      - _/achievement
+  - id: scorej_oni
+    name: Scorej-Oni
+    classes:
+      - _/achievement
