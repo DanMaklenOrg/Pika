@@ -1,3 +1,4 @@
+using System.Net;
 using HtmlAgilityPack;
 using Pika.Model;
 
@@ -164,6 +165,7 @@ public class VampireSurvivorsScrapper : IScrapper
     private Entity ParseArcana(HtmlNode node)
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText.Replace('—', ' ').Trim();
+        name = WebUtility.HtmlDecode(name);
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),

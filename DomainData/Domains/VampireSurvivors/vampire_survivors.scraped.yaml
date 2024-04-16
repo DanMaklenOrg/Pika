@@ -1553,8 +1553,8 @@ entities:
       - collection_entry
     tags:
       - arcana
-  - id: lost_amp_found_painting
-    name: Lost &amp; Found Painting
+  - id: lost_found_painting
+    name: Lost & Found Painting
     classes:
       - collection_entry
     tags:
