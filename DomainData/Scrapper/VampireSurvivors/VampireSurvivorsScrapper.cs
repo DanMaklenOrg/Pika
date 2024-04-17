@@ -199,7 +199,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Achievement");
         var nodes = doc.DocumentNode.SelectNodes("//tr/td/..");
-        return nodes.Skip(1).Select(ParseAchievement).ToList();
+        return nodes.Select(ParseAchievement).ToList();
     }
 
     private Entity ParseAchievement(HtmlNode node)

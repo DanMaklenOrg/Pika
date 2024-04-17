@@ -1651,6 +1651,10 @@ entities:
     name: Scorej-Oni (Secret)
     classes:
       - secret_unlock
+  - id: wings_achievement
+    name: Wings (Achievement)
+    classes:
+      - _/achievement
   - id: crown_achievement
     name: Crown (Achievement)
     classes:
