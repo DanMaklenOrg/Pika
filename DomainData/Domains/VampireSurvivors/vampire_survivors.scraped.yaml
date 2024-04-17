@@ -431,110 +431,14 @@ entities:
       - collection_entry
     tags:
       - relic
-  - id: might
-    name: Might
-    classes:
-      - power_up_5
-  - id: armor
-    name: Armor
-    classes:
-      - power_up_3
-  - id: max_health
-    name: Max Health
-    classes:
-      - power_up_3
-  - id: recovery
-    name: Recovery
-    classes:
-      - power_up_5
-  - id: cooldown
-    name: Cooldown
-    classes:
-      - power_up_2
-  - id: area
-    name: Area
-    classes:
-      - power_up_2
-  - id: speed
-    name: Speed
-    classes:
-      - power_up_2
-  - id: duration
-    name: Duration
-    classes:
-      - power_up_2
-  - id: amount
-    name: Amount
-    classes:
-      - power_up_1
-  - id: move_speed
-    name: Move Speed
-    classes:
-      - power_up_2
-  - id: magnet
-    name: Magnet
-    classes:
-      - power_up_2
-  - id: luck
-    name: Luck
-    classes:
-      - power_up_3
-  - id: growth
-    name: Growth
-    classes:
-      - power_up_5
-  - id: greed
-    name: Greed
-    classes:
-      - power_up_5
-  - id: curse
-    name: Curse
-    classes:
-      - power_up_5
-  - id: revival
-    name: Revival
-    classes:
-      - power_up_1
-  - id: omni
-    name: Omni
-    classes:
-      - power_up_5
-  - id: charm
-    name: Charm
-    classes:
-      - power_up_5
-  - id: defang
-    name: Defang
-    classes:
-      - power_up_5
-  - id: reroll
-    name: Reroll
-    classes:
-      - power_up_5
-  - id: skip
-    name: Skip
-    classes:
-      - power_up_5
-  - id: banish
-    name: Banish
-    classes:
-      - power_up_5
-  - id: seal_i
-    name: Seal I
-    classes:
-      - power_up_10
-  - id: seal_ii
-    name: Seal II
-    classes:
-      - power_up_10
   - id: spinach
     name: Spinach
     classes:
       - collection_entry
     tags:
       - passive_item
-  - id: armor_passive_item
-    name: Armor (Passive Item)
+  - id: armor
+    name: Armor
     classes:
       - collection_entry
     tags:
@@ -1337,6 +1241,102 @@ entities:
       - collection_entry
     tags:
       - weapon
+  - id: might
+    name: Might
+    classes:
+      - power_up_5
+  - id: armor_power_up
+    name: Armor (Power Up)
+    classes:
+      - power_up_3
+  - id: max_health
+    name: Max Health
+    classes:
+      - power_up_3
+  - id: recovery
+    name: Recovery
+    classes:
+      - power_up_5
+  - id: cooldown
+    name: Cooldown
+    classes:
+      - power_up_2
+  - id: area
+    name: Area
+    classes:
+      - power_up_2
+  - id: speed
+    name: Speed
+    classes:
+      - power_up_2
+  - id: duration
+    name: Duration
+    classes:
+      - power_up_2
+  - id: amount
+    name: Amount
+    classes:
+      - power_up_1
+  - id: move_speed
+    name: Move Speed
+    classes:
+      - power_up_2
+  - id: magnet
+    name: Magnet
+    classes:
+      - power_up_2
+  - id: luck
+    name: Luck
+    classes:
+      - power_up_3
+  - id: growth
+    name: Growth
+    classes:
+      - power_up_5
+  - id: greed
+    name: Greed
+    classes:
+      - power_up_5
+  - id: curse
+    name: Curse
+    classes:
+      - power_up_5
+  - id: revival
+    name: Revival
+    classes:
+      - power_up_1
+  - id: omni
+    name: Omni
+    classes:
+      - power_up_5
+  - id: charm
+    name: Charm
+    classes:
+      - power_up_5
+  - id: defang
+    name: Defang
+    classes:
+      - power_up_5
+  - id: reroll
+    name: Reroll
+    classes:
+      - power_up_5
+  - id: skip
+    name: Skip
+    classes:
+      - power_up_5
+  - id: banish
+    name: Banish
+    classes:
+      - power_up_5
+  - id: seal_i
+    name: Seal I
+    classes:
+      - power_up_10
+  - id: seal_ii
+    name: Seal II
+    classes:
+      - power_up_10
   - id: experience_gem
     name: Experience Gem
     classes:
@@ -1584,138 +1584,826 @@ entities:
     tags:
       - arcana
   - id: boon_marrabbio_secret
-    name: Boon Marrabbio_secret
+    name: Boon Marrabbio (Secret)
     classes:
       - secret_unlock
   - id: avatar_infernas_secret
-    name: Avatar Infernas_secret
+    name: Avatar Infernas (Secret)
     classes:
       - secret_unlock
   - id: minnah_mannarah_secret
-    name: Minnah Mannarah_secret
+    name: Minnah Mannarah (Secret)
     classes:
       - secret_unlock
   - id: leda_secret
-    name: Leda_secret
+    name: Leda (Secret)
     classes:
       - secret_unlock
   - id: cosmo_pavone_secret
-    name: Cosmo Pavone_secret
+    name: Cosmo Pavone (Secret)
     classes:
       - secret_unlock
   - id: peppino_secret
-    name: Peppino_secret
+    name: Peppino (Secret)
     classes:
       - secret_unlock
   - id: big_trouser_secret
-    name: Big Trouser_secret
+    name: Big Trouser (Secret)
     classes:
       - secret_unlock
-  - id: missingn_secret
-    name: MissingN▯_secret
-    classes:
-      - secret_unlock
-  - id: gains_boros_secret
-    name: Gains Boros_secret
-    classes:
-      - secret_unlock
-  - id: gyorunton_secret
-    name: Gyorunton_secret
-    classes:
-      - secret_unlock
-  - id: mask_of_the_red_death_secret
-    name: Mask of the Red Death_secret
-    classes:
-      - secret_unlock
-  - id: exdash_exiviiq_secret
-    name: Exdash Exiviiq_secret
-    classes:
-      - secret_unlock
-  - id: toastie_secret
-    name: Toastie_secret
-    classes:
-      - secret_unlock
-  - id: smith_iv_secret
-    name: Smith IV_secret
-    classes:
-      - secret_unlock
-  - id: random_secret
-    name: Random_secret
-    classes:
-      - secret_unlock
-  - id: rose_de_infernas_secret
-    name: Rose De Infernas_secret
-    classes:
-      - secret_unlock
-  - id: scorej_oni_secret
-    name: Scorej-Oni_secret
-    classes:
-      - secret_unlock
-  - id: boon_marrabbio
-    name: Boon Marrabbio
-    classes:
-      - _/achievement
-  - id: avatar_infernas
-    name: Avatar Infernas
-    classes:
-      - _/achievement
-  - id: minnah_mannarah
-    name: Minnah Mannarah
-    classes:
-      - _/achievement
-  - id: leda
-    name: Leda
-    classes:
-      - _/achievement
-  - id: cosmo_pavone
-    name: Cosmo Pavone
-    classes:
-      - _/achievement
-  - id: peppino
-    name: Peppino
-    classes:
-      - _/achievement
-  - id: big_trouser
-    name: Big Trouser
-    classes:
-      - _/achievement
   - id: missingn
     name: MissingN▯
     classes:
-      - _/achievement
-  - id: gains_boros
-    name: Gains Boros
+      - secret_unlock
+  - id: gains_boros_secret
+    name: Gains Boros (Secret)
+    classes:
+      - secret_unlock
+  - id: gyorunton_secret
+    name: Gyorunton (Secret)
+    classes:
+      - secret_unlock
+  - id: mask_of_the_red_death_secret
+    name: Mask of the Red Death (Secret)
+    classes:
+      - secret_unlock
+  - id: exdash_exiviiq_secret
+    name: Exdash Exiviiq (Secret)
+    classes:
+      - secret_unlock
+  - id: toastie_secret
+    name: Toastie (Secret)
+    classes:
+      - secret_unlock
+  - id: smith_iv_secret
+    name: Smith IV (Secret)
+    classes:
+      - secret_unlock
+  - id: random_secret
+    name: Random (Secret)
+    classes:
+      - secret_unlock
+  - id: rose_de_infernas_secret
+    name: Rose De Infernas (Secret)
+    classes:
+      - secret_unlock
+  - id: scorej_oni_secret
+    name: Scorej-Oni (Secret)
+    classes:
+      - secret_unlock
+  - id: crown_achievement
+    name: Crown (Achievement)
     classes:
       - _/achievement
-  - id: gyorunton
-    name: Gyorunton
+  - id: inlaid_library
+    name: Inlaid Library
     classes:
       - _/achievement
-  - id: mask_of_the_red_death
-    name: Mask of the Red Death
+  - id: dairy_plant
+    name: Dairy Plant
     classes:
       - _/achievement
-  - id: exdash_exiviiq
-    name: Exdash Exiviiq
+  - id: gallo_tower
+    name: Gallo Tower
     classes:
       - _/achievement
-  - id: toastie
-    name: Toastie
+  - id: cappella_magna
+    name: Cappella Magna
     classes:
       - _/achievement
-  - id: smith_iv
-    name: Smith IV
+  - id: extra_bat_country
+    name: 'EXTRA: Bat Country'
     classes:
       - _/achievement
-  - id: random
-    name: Random
+  - id: extra_astral_stair
+    name: 'EXTRA: Astral Stair'
     classes:
       - _/achievement
-  - id: rose_de_infernas
-    name: Rose De Infernas
+  - id: extra_tiny_bridge
+    name: 'EXTRA: Tiny Bridge'
     classes:
       - _/achievement
-  - id: scorej_oni
-    name: Scorej-Oni
+  - id: hollow_heart_achievement
+    name: Hollow Heart (Achievement)
+    classes:
+      - _/achievement
+  - id: runetracer_achievement
+    name: Runetracer (Achievement)
+    classes:
+      - _/achievement
+  - id: pummarola_achievement
+    name: Pummarola (Achievement)
+    classes:
+      - _/achievement
+  - id: peachone_achievement
+    name: Peachone (Achievement)
+    classes:
+      - _/achievement
+  - id: phiera_der_tuphello_achievement
+    name: Phiera Der Tuphello (Achievement)
+    classes:
+      - _/achievement
+  - id: eight_the_sparrow_achievement
+    name: Eight The Sparrow (Achievement)
+    classes:
+      - _/achievement
+  - id: gatti_amari_achievement
+    name: Gatti Amari (Achievement)
+    classes:
+      - _/achievement
+  - id: song_of_mana
+    name: Song Of Mana
+    classes:
+      - _/achievement
+  - id: shadow_pinion_achievement
+    name: Shadow Pinion (Achievement)
+    classes:
+      - _/achievement
+  - id: vento_sacro_achievement
+    name: Vento Sacro (Achievement)
+    classes:
+      - _/achievement
+  - id: pentagram_achievement
+    name: Pentagram (Achievement)
+    classes:
+      - _/achievement
+  - id: tiragis
+    name: Tiragisú
+    classes:
+      - _/achievement
+  - id: lama
+    name: Lama
+    classes:
+      - _/achievement
+  - id: skull_omaniac_achievement
+    name: Skull O'Maniac (Achievement)
+    classes:
+      - _/achievement
+  - id: bracer_achievement
+    name: Bracer (Achievement)
+    classes:
+      - _/achievement
+  - id: candelabrador_achievement
+    name: Candelabrador (Achievement)
+    classes:
+      - _/achievement
+  - id: arca
+    name: Arca
+    classes:
+      - _/achievement
+  - id: porta
+    name: Porta
+    classes:
+      - _/achievement
+  - id: duplicator_achievement
+    name: Duplicator (Achievement)
+    classes:
+      - _/achievement
+  - id: ebony_wings_achievement
+    name: Ebony Wings (Achievement)
+    classes:
+      - _/achievement
+  - id: spellbinder_achievement
+    name: Spellbinder (Achievement)
+    classes:
+      - _/achievement
+  - id: poe_ratcho_achievement
+    name: Poe Ratcho (Achievement)
+    classes:
+      - _/achievement
+  - id: christine
+    name: Christine
+    classes:
+      - _/achievement
+  - id: omni_achievement
+    name: Omni (Achievement)
+    classes:
+      - _/achievement
+  - id: torronas_box_achievement
+    name: Torrona's Box (Achievement)
+    classes:
+      - _/achievement
+  - id: empty_tome_achievement
+    name: Empty Tome (Achievement)
+    classes:
+      - _/achievement
+  - id: suor_clerici_achievement
+    name: Suor Clerici (Achievement)
+    classes:
+      - _/achievement
+  - id: dommario_achievement
+    name: Dommario (Achievement)
+    classes:
+      - _/achievement
+  - id: bracelet_achievement
+    name: Bracelet (Achievement)
+    classes:
+      - _/achievement
+  - id: fire_wand_achievement
+    name: Fire Wand (Achievement)
+    classes:
+      - _/achievement
+  - id: garlic_achievement
+    name: Garlic (Achievement)
+    classes:
+      - _/achievement
+  - id: clover_achievement
+    name: Clover (Achievement)
+    classes:
+      - _/achievement
+  - id: magnet_achievement
+    name: Magnet (Achievement)
+    classes:
+      - _/achievement
+  - id: lancet
+    name: Lancet
+    classes:
+      - _/achievement
+  - id: cross_achievement
+    name: Cross (Achievement)
+    classes:
+      - _/achievement
+  - id: stone_mask_achievement
+    name: Stone Mask (Achievement)
+    classes:
+      - _/achievement
+  - id: grim_grimoire_achievement
+    name: Grim Grimoire (Achievement)
+    classes:
+      - _/achievement
+  - id: magic_banger_achievement
+    name: Magic Banger (Achievement)
+    classes:
+      - _/achievement
+  - id: milky_way_map_achievement
+    name: Milky Way Map (Achievement)
+    classes:
+      - _/achievement
+  - id: ars_gouda_achievement
+    name: Ars Gouda (Achievement)
+    classes:
+      - _/achievement
+  - id: sorceress_tears_achievement
+    name: Sorceress' Tears (Achievement)
+    classes:
+      - _/achievement
+  - id: randomazzo_achievement
+    name: Randomazzo (Achievement)
+    classes:
+      - _/achievement
+  - id: glass_vizard_achievement
+    name: Glass Vizard (Achievement)
+    classes:
+      - _/achievement
+  - id: i_cant_see_anything
+    name: I can't see anything...
+    classes:
+      - _/achievement
+  - id: forbidden_scrolls
+    name: Forbidden Scrolls
+    classes:
+      - _/achievement
+  - id: great_gospel_achievement
+    name: Great Gospel (Achievement)
+    classes:
+      - _/achievement
+  - id: gracias_mirror_achievement
+    name: Gracia's Mirror (Achievement)
+    classes:
+      - _/achievement
+  - id: seventh_trumpet_achievement
+    name: Seventh Trumpet (Achievement)
+    classes:
+      - _/achievement
+  - id: extra_apoplexy
+    name: 'EXTRA: Apoplexy'
+    classes:
+      - _/achievement
+  - id: extra_trisection
+    name: 'EXTRA: Trisection'
+    classes:
+      - _/achievement
+  - id: extra_chaos_malachite
+    name: 'EXTRA: Chaos Malachite'
+    classes:
+      - _/achievement
+  - id: extra_chaos_rosalia
+    name: 'EXTRA: Chaos Rosalia'
+    classes:
+      - _/achievement
+  - id: extra_astral_stair_map
+    name: 'EXTRA: Astral Stair Map'
+    classes:
+      - _/achievement
+  - id: the_eudaimonia_machine
+    name: The Eudaimonia Machine
+    classes:
+      - _/achievement
+  - id: coffin_mad_forest
+    name: 'Coffin: Mad Forest'
+    classes:
+      - _/achievement
+  - id: coffin_inlaid_library
+    name: 'Coffin: Inlaid Library'
+    classes:
+      - _/achievement
+  - id: coffin_dairy_plant
+    name: 'Coffin: Dairy Plant'
+    classes:
+      - _/achievement
+  - id: coffin_gallo_tower
+    name: 'Coffin: Gallo Tower'
+    classes:
+      - _/achievement
+  - id: coffin_cappella_magna
+    name: 'Coffin: Cappella Magna'
+    classes:
+      - _/achievement
+  - id: mortaccio_achievement
+    name: Mortaccio (Achievement)
+    classes:
+      - _/achievement
+  - id: yatta_cavallo_achievement
+    name: Yatta Cavallo (Achievement)
+    classes:
+      - _/achievement
+  - id: bianca_ramba_achievement
+    name: Bianca Ramba (Achievement)
+    classes:
+      - _/achievement
+  - id: osole_meeo_achievement
+    name: O'Sole Meeo (Achievement)
+    classes:
+      - _/achievement
+  - id: sir_ambrojoe_achievement
+    name: Sir Ambrojoe (Achievement)
+    classes:
+      - _/achievement
+  - id: lightning_ring_achievement
+    name: Lightning Ring (Achievement)
+    classes:
+      - _/achievement
+  - id: krochi
+    name: Krochi
+    classes:
+      - _/achievement
+  - id: victory_sword_achievement
+    name: Victory Sword (Achievement)
+    classes:
+      - _/achievement
+  - id: hyper_mad_forest
+    name: Hyper Mad Forest
+    classes:
+      - _/achievement
+  - id: hyper_inlaid_library
+    name: Hyper Inlaid Library
+    classes:
+      - _/achievement
+  - id: hyper_dairy_plant
+    name: Hyper Dairy Plant
+    classes:
+      - _/achievement
+  - id: hyper_gallo_tower
+    name: Hyper Gallo Tower
+    classes:
+      - _/achievement
+  - id: hyper_cappella_magna
+    name: Hyper Cappella Magna
+    classes:
+      - _/achievement
+  - id: il_molise
+    name: Il Molise
+    classes:
+      - _/achievement
+  - id: green_acres
+    name: Green Acres
+    classes:
+      - _/achievement
+  - id: the_bone_zone
+    name: The Bone Zone
+    classes:
+      - _/achievement
+  - id: moongolow
+    name: Moongolow
+    classes:
+      - _/achievement
+  - id: boss_rash
+    name: Boss Rash
+    classes:
+      - _/achievement
+  - id: game_killer_achievement
+    name: Game Killer (Achievement)
+    classes:
+      - _/achievement
+  - id: i_gemini
+    name: I - Gemini
+    classes:
+      - _/achievement
+  - id: ii_twilight_requiem
+    name: II - Twilight Requiem
+    classes:
+      - _/achievement
+  - id: iii_tragic_princess
+    name: III - Tragic Princess
+    classes:
+      - _/achievement
+  - id: iv_awake
+    name: IV - Awake
+    classes:
+      - _/achievement
+  - id: v_chaos_in_the_dark_night
+    name: V - Chaos in the Dark Night
+    classes:
+      - _/achievement
+  - id: vi_sarabande_of_healing
+    name: VI - Sarabande of Healing
+    classes:
+      - _/achievement
+  - id: vii_iron_blue_will
+    name: VII - Iron Blue Will
+    classes:
+      - _/achievement
+  - id: viii_mad_groove
+    name: VIII - Mad Groove
+    classes:
+      - _/achievement
+  - id: ix_divine_bloodline
+    name: IX - Divine Bloodline
+    classes:
+      - _/achievement
+  - id: x_beginning
+    name: X - Beginning
+    classes:
+      - _/achievement
+  - id: xi_waltz_of_pearls
+    name: XI - Waltz of Pearls
+    classes:
+      - _/achievement
+  - id: xii_out_of_bounds
+    name: XII - Out of Bounds
+    classes:
+      - _/achievement
+  - id: xiii_wicked_season
+    name: XIII - Wicked Season
+    classes:
+      - _/achievement
+  - id: xiv_jail_of_crystal
+    name: XIV - Jail of Crystal
+    classes:
+      - _/achievement
+  - id: xv_disco_of_gold
+    name: XV - Disco of Gold
+    classes:
+      - _/achievement
+  - id: xvi_slash
+    name: XVI - Slash
+    classes:
+      - _/achievement
+  - id: xvii_lost_amp_found_painting
+    name: XVII - Lost &amp; Found Painting
+    classes:
+      - _/achievement
+  - id: xviii_boogaloo_of_illusions
+    name: XVIII - Boogaloo of Illusions
+    classes:
+      - _/achievement
+  - id: xix_heart_of_fire
+    name: XIX - Heart of Fire
+    classes:
+      - _/achievement
+  - id: xx_silent_old_sanctuary
+    name: XX - Silent Old Sanctuary
+    classes:
+      - _/achievement
+  - id: xxi_blood_astronomia
+    name: XXI - Blood Astronomia
+    classes:
+      - _/achievement
+  - id: reroll_1
+    name: Reroll 1
+    classes:
+      - _/achievement
+  - id: reroll_2
+    name: Reroll 2
+    classes:
+      - _/achievement
+  - id: reroll_3
+    name: Reroll 3
+    classes:
+      - _/achievement
+  - id: reroll_4
+    name: Reroll 4
+    classes:
+      - _/achievement
+  - id: reroll_5
+    name: Reroll 5
+    classes:
+      - _/achievement
+  - id: skip_1
+    name: Skip 1
+    classes:
+      - _/achievement
+  - id: skip_4
+    name: Skip 4
+    classes:
+      - _/achievement
+  - id: skip_2
+    name: Skip 2
+    classes:
+      - _/achievement
+  - id: skip_3
+    name: Skip 3
+    classes:
+      - _/achievement
+  - id: skip_5
+    name: Skip 5
+    classes:
+      - _/achievement
+  - id: mindbender_achievement
+    name: Mindbender (Achievement)
+    classes:
+      - _/achievement
+  - id: banish_1
+    name: Banish 1
+    classes:
+      - _/achievement
+  - id: banish_2
+    name: Banish 2
+    classes:
+      - _/achievement
+  - id: banish_3
+    name: Banish 3
+    classes:
+      - _/achievement
+  - id: banish_4
+    name: Banish 4
+    classes:
+      - _/achievement
+  - id: banish_5
+    name: Banish 5
+    classes:
+      - _/achievement
+  - id: extra_seal_i
+    name: 'EXTRA: Seal I'
+    classes:
+      - _/achievement
+  - id: extra_seal_ii
+    name: 'EXTRA: Seal II'
+    classes:
+      - _/achievement
+  - id: queen_sigma_achievement
+    name: Queen Sigma (Achievement)
+    classes:
+      - _/achievement
+  - id: greatest_jubilee_achievement
+    name: Greatest Jubilee (Achievement)
+    classes:
+      - _/achievement
+  - id: seeker_of_the_infinite_corridor
+    name: Seeker of the Infinite Corridor
+    classes:
+      - _/achievement
+  - id: seeker_of_the_crimson_shroud
+    name: Seeker of the Crimson Shroud
+    classes:
+      - _/achievement
+  - id: bloody_tear_achievement
+    name: Bloody Tear (Achievement)
+    classes:
+      - _/achievement
+  - id: holy_wand_achievement
+    name: Holy Wand (Achievement)
+    classes:
+      - _/achievement
+  - id: thousand_edge_achievement
+    name: Thousand Edge (Achievement)
+    classes:
+      - _/achievement
+  - id: death_spiral_achievement
+    name: Death Spiral (Achievement)
+    classes:
+      - _/achievement
+  - id: la_borra_achievement
+    name: La Borra (Achievement)
+    classes:
+      - _/achievement
+  - id: thunder_loop_achievement
+    name: Thunder Loop (Achievement)
+    classes:
+      - _/achievement
+  - id: unholy_vespers_achievement
+    name: Unholy Vespers (Achievement)
+    classes:
+      - _/achievement
+  - id: heaven_sword_achievement
+    name: Heaven Sword (Achievement)
+    classes:
+      - _/achievement
+  - id: hellfire_achievement
+    name: Hellfire (Achievement)
+    classes:
+      - _/achievement
+  - id: soul_eater_achievement
+    name: Soul Eater (Achievement)
+    classes:
+      - _/achievement
+  - id: no_future_achievement
+    name: NO FUTURE (Achievement)
+    classes:
+      - _/achievement
+  - id: gorgeous_moon_achievement
+    name: Gorgeous Moon (Achievement)
+    classes:
+      - _/achievement
+  - id: vandalier_achievement
+    name: Vandalier (Achievement)
+    classes:
+      - _/achievement
+  - id: phieraggi_achievement
+    name: Phieraggi (Achievement)
+    classes:
+      - _/achievement
+  - id: vicious_hunger_achievement
+    name: Vicious Hunger (Achievement)
+    classes:
+      - _/achievement
+  - id: mannajja_achievement
+    name: Mannajja (Achievement)
+    classes:
+      - _/achievement
+  - id: valkyrie_turner_achievement
+    name: Valkyrie Turner (Achievement)
+    classes:
+      - _/achievement
+  - id: fuwalafuwaloo_achievement
+    name: Fuwalafuwaloo (Achievement)
+    classes:
+      - _/achievement
+  - id: tri_bracelet_achievement
+    name: Tri-Bracelet (Achievement)
+    classes:
+      - _/achievement
+  - id: candybox_achievement
+    name: Candybox (Achievement)
+    classes:
+      - _/achievement
+  - id: miang
+    name: Miang
+    classes:
+      - _/achievement
+  - id: silver_wind_achievement
+    name: Silver Wind (Achievement)
+    classes:
+      - _/achievement
+  - id: menya
+    name: Menya
+    classes:
+      - _/achievement
+  - id: four_seasons_achievement
+    name: Four Seasons (Achievement)
+    classes:
+      - _/achievement
+  - id: syuuto
+    name: Syuuto
+    classes:
+      - _/achievement
+  - id: summon_night_achievement
+    name: Summon Night (Achievement)
+    classes:
+      - _/achievement
+  - id: babi_onna_achievement
+    name: Babi-Onna (Achievement)
+    classes:
+      - _/achievement
+  - id: mirage_robe_achievement
+    name: Mirage Robe (Achievement)
+    classes:
+      - _/achievement
+  - id: mccoy_oni_achievement
+    name: McCoy-Oni (Achievement)
+    classes:
+      - _/achievement
+  - id: 108_bocce_achievement
+    name: 108 Bocce (Achievement)
+    classes:
+      - _/achievement
+  - id: megalo_menya
+    name: Megalo Menya
+    classes:
+      - _/achievement
+  - id: megalo_syuuto
+    name: Megalo Syuuto
+    classes:
+      - _/achievement
+  - id: gavet_oni_achievement
+    name: Gav'Et-Oni (Achievement)
+    classes:
+      - _/achievement
+  - id: night_sword_achievement
+    name: Night Sword (Achievement)
+    classes:
+      - _/achievement
+  - id: muramasa_achievement
+    name: Muramasa (Achievement)
+    classes:
+      - _/achievement
+  - id: boo_roo_boolle_achievement
+    name: Boo Roo Boolle (Achievement)
+    classes:
+      - _/achievement
+  - id: hyper_mt_moonspell
+    name: Hyper Mt.Moonspell
+    classes:
+      - _/achievement
+  - id: mt_moonspell_map_achievement
+    name: Mt.Moonspell Map (Achievement)
+    classes:
+      - _/achievement
+  - id: eleanor_uziron_achievement
+    name: Eleanor Uziron (Achievement)
+    classes:
+      - _/achievement
+  - id: spellstring_achievement
+    name: SpellString (Achievement)
+    classes:
+      - _/achievement
+  - id: spellstream_achievement
+    name: SpellStream (Achievement)
+    classes:
+      - _/achievement
+  - id: spellstrike_achievement
+    name: SpellStrike (Achievement)
+    classes:
+      - _/achievement
+  - id: maruto_cuts_achievement
+    name: Maruto Cuts (Achievement)
+    classes:
+      - _/achievement
+  - id: eskizzibur_achievement
+    name: Eskizzibur (Achievement)
+    classes:
+      - _/achievement
+  - id: keitha_muort_achievement
+    name: Keitha Muort (Achievement)
+    classes:
+      - _/achievement
+  - id: flash_arrow_achievement
+    name: Flash Arrow (Achievement)
+    classes:
+      - _/achievement
+  - id: millionaire_achievement
+    name: Millionaire (Achievement)
+    classes:
+      - _/achievement
+  - id: abyss_foscari
+    name: Abyss Foscari
+    classes:
+      - _/achievement
+  - id: luminaire_foscari_achievement
+    name: Luminaire Foscari (Achievement)
+    classes:
+      - _/achievement
+  - id: genevieve_gruy_re_achievement
+    name: Genevieve Gruyère (Achievement)
+    classes:
+      - _/achievement
+  - id: prismatic_missile_achievement
+    name: Prismatic Missile (Achievement)
+    classes:
+      - _/achievement
+  - id: luminaire_achievement
+    name: Luminaire (Achievement)
+    classes:
+      - _/achievement
+  - id: shadow_servant_achievement
+    name: Shadow Servant (Achievement)
+    classes:
+      - _/achievement
+  - id: ophion_achievement
+    name: Ophion (Achievement)
+    classes:
+      - _/achievement
+  - id: je_ne_viv_achievement
+    name: Je-Ne-Viv (Achievement)
+    classes:
+      - _/achievement
+  - id: happy_birthday
+    name: Happy Birthday
+    classes:
+      - _/achievement
+  - id: rottinghoul_achievement
+    name: Rottin'Ghoul (Achievement)
+    classes:
+      - _/achievement
+  - id: hyper_lake_foscari
+    name: Hyper Lake Foscari
+    classes:
+      - _/achievement
+  - id: hyper_abyss_foscari
+    name: Hyper Abyss Foscari
+    classes:
+      - _/achievement
+  - id: lake_foscari_map_achievement
+    name: Lake Foscari Map (Achievement)
     classes:
       - _/achievement

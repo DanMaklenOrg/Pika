@@ -4,7 +4,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
-public class VampireSurvivorsScrapper : IScrapper
+public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "vampire_survivors";
     public string OutputDirectory => "VampireSurvivors";
@@ -19,10 +19,10 @@ public class VampireSurvivorsScrapper : IScrapper
             [
                 ..await ScrapeCharacters(),
                 ..await ScrapeRelics(),
-                ..await ScrapePowerUps(),
                 ..await ScrapePassiveItems(),
                 ..await ScrapeWeapons(),
-                ..await ScrapePikcups(),
+                ..await ScrapePowerUps(),
+                ..await ScrapePickups(),
                 ..await ScrapeArcana(),
                 ..await ScrapeSecrets(),
                 ..await ScrapeAchievements(),
@@ -39,7 +39,7 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseCharacter(HtmlNode node)
     {
-        var name = node.InnerText;
+        var name = nameContainer.RegisterAndNormalize(node.InnerText, "Character");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -57,7 +57,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseRelic(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Relic");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -76,7 +77,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParsePowerUp(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Power Up");
         name = name switch
         {
             "MoveSpeed" => "Move Speed",
@@ -101,12 +103,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParsePassiveItem(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
-        name = name switch
-        {
-            "Armor" => "Armor (Passive Item)",
-            _ => name,
-        };
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Passive Item");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -126,7 +124,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseWeapon(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Weapon");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -136,7 +135,7 @@ public class VampireSurvivorsScrapper : IScrapper
         };
     }
 
-    private async Task<List<Entity>> ScrapePikcups()
+    private async Task<List<Entity>> ScrapePickups()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Pickups");
         var nodes = doc.DocumentNode.SelectNodes("//tr");
@@ -145,7 +144,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParsePickups(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Pickup");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -164,7 +164,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseArcana(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[2]").InnerText.Replace('—', ' ').Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText.Replace('—', ' ');
+        name = nameContainer.RegisterAndNormalize(name, "Arcana");
         name = WebUtility.HtmlDecode(name);
         return new Entity
         {
@@ -184,8 +185,8 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private Entity ParseSecret(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[3]").InnerText.Trim();
-        name += "_secret";
+        var name = node.SelectSingleNode(".//td[3]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Secret");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -196,14 +197,15 @@ public class VampireSurvivorsScrapper : IScrapper
 
     private async Task<List<Entity>> ScrapeAchievements()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Secret");
-        var nodes = doc.DocumentNode.SelectNodes("//tr");
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Achievement");
+        var nodes = doc.DocumentNode.SelectNodes("//tr/td/..");
         return nodes.Skip(1).Select(ParseAchievement).ToList();
     }
 
     private Entity ParseAchievement(HtmlNode node)
     {
-        var name = node.SelectSingleNode(".//td[3]").InnerText.Trim();
+        var name = node.SelectSingleNode(".//td[2]").InnerText;
+        name = nameContainer.RegisterAndNormalize(name, "Achievement");
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),

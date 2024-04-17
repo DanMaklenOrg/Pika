@@ -19,6 +19,7 @@ var builder = CoconaApp.CreateBuilder(args);
 
 // Vampire Survivors
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+builder.Services.AddScoped<EntityNameContainer>();
 builder.Services.AddTransient<PikaConverter>();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
