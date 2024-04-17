@@ -1715,8 +1715,8 @@ entities:
     name: Gatti Amari (Achievement)
     classes:
       - _/achievement
-  - id: song_of_mana
-    name: Song Of Mana
+  - id: song_of_mana_achievement
+    name: Song Of Mana (Achievement)
     classes:
       - _/achievement
   - id: shadow_pinion_achievement

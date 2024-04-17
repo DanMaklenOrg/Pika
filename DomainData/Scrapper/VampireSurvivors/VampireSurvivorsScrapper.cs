@@ -205,6 +205,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     private Entity ParseAchievement(HtmlNode node)
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
+        if (name == "Song Of Mana") name = "Song of Mana";
         name = nameContainer.RegisterAndNormalize(name, "Achievement");
         List<string> x =
         [
@@ -226,7 +227,8 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             "Mt.Moonspell",
             "Lake Foscari",
             "Abyss Foscari",
-            "Polus Replica"
+            "Polus Replica",
+            "Song Of Mana"
         ];
         if (x.Contains(name)) name = $"{name} (Achievement)";
         return new Entity
