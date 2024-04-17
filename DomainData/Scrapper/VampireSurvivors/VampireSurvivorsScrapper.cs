@@ -206,6 +206,29 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
         name = nameContainer.RegisterAndNormalize(name, "Achievement");
+        List<string> x =
+        [
+            "Mad Forest",
+            "Inlaid Library",
+            "Dairy Plant",
+            "Gallo Tower",
+            "Cappella Magna",
+            "Il Molise",
+            "Moongolow",
+            "Green Acres",
+            "The Bone Zone",
+            "Boss Rash",
+            "Whiteout",
+            "Space 54",
+            "Bat Country",
+            "Astral Stair",
+            "Tiny Bridge",
+            "Mt.Moonspell",
+            "Lake Foscari",
+            "Abyss Foscari",
+            "Polus Replica"
+        ];
+        if (x.Contains(name)) name = $"{name} (Achievement)";
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),

@@ -1659,20 +1659,20 @@ entities:
     name: Crown (Achievement)
     classes:
       - _/achievement
-  - id: inlaid_library
-    name: Inlaid Library
+  - id: inlaid_library_achievement
+    name: Inlaid Library (Achievement)
     classes:
       - _/achievement
-  - id: dairy_plant
-    name: Dairy Plant
+  - id: dairy_plant_achievement
+    name: Dairy Plant (Achievement)
     classes:
       - _/achievement
-  - id: gallo_tower
-    name: Gallo Tower
+  - id: gallo_tower_achievement
+    name: Gallo Tower (Achievement)
     classes:
       - _/achievement
-  - id: cappella_magna
-    name: Cappella Magna
+  - id: cappella_magna_achievement
+    name: Cappella Magna (Achievement)
     classes:
       - _/achievement
   - id: extra_bat_country
@@ -1975,24 +1975,24 @@ entities:
     name: Hyper Cappella Magna
     classes:
       - _/achievement
-  - id: il_molise
-    name: Il Molise
+  - id: il_molise_achievement
+    name: Il Molise (Achievement)
     classes:
       - _/achievement
-  - id: green_acres
-    name: Green Acres
+  - id: green_acres_achievement
+    name: Green Acres (Achievement)
     classes:
       - _/achievement
-  - id: the_bone_zone
-    name: The Bone Zone
+  - id: the_bone_zone_achievement
+    name: The Bone Zone (Achievement)
     classes:
       - _/achievement
-  - id: moongolow
-    name: Moongolow
+  - id: moongolow_achievement
+    name: Moongolow (Achievement)
     classes:
       - _/achievement
-  - id: boss_rash
-    name: Boss Rash
+  - id: boss_rash_achievement
+    name: Boss Rash (Achievement)
     classes:
       - _/achievement
   - id: game_killer_achievement
@@ -2359,8 +2359,8 @@ entities:
     name: Millionaire (Achievement)
     classes:
       - _/achievement
-  - id: abyss_foscari
-    name: Abyss Foscari
+  - id: abyss_foscari_achievement
+    name: Abyss Foscari (Achievement)
     classes:
       - _/achievement
   - id: luminaire_foscari_achievement
