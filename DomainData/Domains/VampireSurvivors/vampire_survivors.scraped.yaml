@@ -1655,759 +1655,1005 @@ entities:
     name: Wings (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: crown_achievement
     name: Crown (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: inlaid_library_achievement
     name: Inlaid Library (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: dairy_plant_achievement
     name: Dairy Plant (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: gallo_tower_achievement
     name: Gallo Tower (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: cappella_magna_achievement
     name: Cappella Magna (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_bat_country
     name: 'EXTRA: Bat Country'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_astral_stair
     name: 'EXTRA: Astral Stair'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_tiny_bridge
     name: 'EXTRA: Tiny Bridge'
     classes:
       - _/achievement
+      - steam_achievement
   - id: hollow_heart_achievement
     name: Hollow Heart (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: runetracer_achievement
     name: Runetracer (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: pummarola_achievement
     name: Pummarola (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: peachone_achievement
     name: Peachone (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: phiera_der_tuphello_achievement
     name: Phiera Der Tuphello (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: eight_the_sparrow_achievement
     name: Eight The Sparrow (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: gatti_amari_achievement
     name: Gatti Amari (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: song_of_mana_achievement
-    name: Song Of Mana (Achievement)
+    name: Song of Mana (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: shadow_pinion_achievement
     name: Shadow Pinion (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: vento_sacro_achievement
     name: Vento Sacro (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: pentagram_achievement
     name: Pentagram (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: tiragis
     name: Tiragisú
     classes:
       - _/achievement
+      - steam_achievement
   - id: lama
     name: Lama
     classes:
       - _/achievement
+      - steam_achievement
   - id: skull_omaniac_achievement
     name: Skull O'Maniac (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: bracer_achievement
     name: Bracer (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: candelabrador_achievement
     name: Candelabrador (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: arca
     name: Arca
     classes:
       - _/achievement
+      - steam_achievement
   - id: porta
     name: Porta
     classes:
       - _/achievement
+      - steam_achievement
   - id: duplicator_achievement
     name: Duplicator (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: ebony_wings_achievement
     name: Ebony Wings (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: spellbinder_achievement
     name: Spellbinder (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: poe_ratcho_achievement
     name: Poe Ratcho (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: christine
     name: Christine
     classes:
       - _/achievement
+      - steam_achievement
   - id: omni_achievement
     name: Omni (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: torronas_box_achievement
     name: Torrona's Box (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: empty_tome_achievement
     name: Empty Tome (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: suor_clerici_achievement
     name: Suor Clerici (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: dommario_achievement
     name: Dommario (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: bracelet_achievement
     name: Bracelet (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: fire_wand_achievement
     name: Fire Wand (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: garlic_achievement
     name: Garlic (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: clover_achievement
     name: Clover (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: magnet_achievement
     name: Magnet (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: lancet
     name: Lancet
     classes:
       - _/achievement
+      - steam_achievement
   - id: cross_achievement
     name: Cross (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: stone_mask_achievement
     name: Stone Mask (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: grim_grimoire_achievement
     name: Grim Grimoire (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: magic_banger_achievement
     name: Magic Banger (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: milky_way_map_achievement
     name: Milky Way Map (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: ars_gouda_achievement
     name: Ars Gouda (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: sorceress_tears_achievement
     name: Sorceress' Tears (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: randomazzo_achievement
     name: Randomazzo (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: glass_vizard_achievement
     name: Glass Vizard (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: i_cant_see_anything
     name: I can't see anything...
     classes:
       - _/achievement
+      - steam_achievement
   - id: forbidden_scrolls
     name: Forbidden Scrolls
     classes:
       - _/achievement
+      - steam_achievement
   - id: great_gospel_achievement
     name: Great Gospel (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: gracias_mirror_achievement
     name: Gracia's Mirror (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: seventh_trumpet_achievement
     name: Seventh Trumpet (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_apoplexy
     name: 'EXTRA: Apoplexy'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_trisection
     name: 'EXTRA: Trisection'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_chaos_malachite
     name: 'EXTRA: Chaos Malachite'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_chaos_rosalia
     name: 'EXTRA: Chaos Rosalia'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_astral_stair_map
     name: 'EXTRA: Astral Stair Map'
     classes:
       - _/achievement
+      - steam_achievement
   - id: the_eudaimonia_machine
     name: The Eudaimonia Machine
     classes:
       - _/achievement
+      - steam_achievement
   - id: coffin_mad_forest
     name: 'Coffin: Mad Forest'
     classes:
       - _/achievement
+      - steam_achievement
   - id: coffin_inlaid_library
     name: 'Coffin: Inlaid Library'
     classes:
       - _/achievement
+      - steam_achievement
   - id: coffin_dairy_plant
     name: 'Coffin: Dairy Plant'
     classes:
       - _/achievement
+      - steam_achievement
   - id: coffin_gallo_tower
     name: 'Coffin: Gallo Tower'
     classes:
       - _/achievement
+      - steam_achievement
   - id: coffin_cappella_magna
     name: 'Coffin: Cappella Magna'
     classes:
       - _/achievement
+      - steam_achievement
   - id: mortaccio_achievement
     name: Mortaccio (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: yatta_cavallo_achievement
     name: Yatta Cavallo (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: bianca_ramba_achievement
     name: Bianca Ramba (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: osole_meeo_achievement
     name: O'Sole Meeo (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: sir_ambrojoe_achievement
     name: Sir Ambrojoe (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: lightning_ring_achievement
     name: Lightning Ring (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: krochi
     name: Krochi
     classes:
       - _/achievement
+      - steam_achievement
   - id: victory_sword_achievement
     name: Victory Sword (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_mad_forest
     name: Hyper Mad Forest
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_inlaid_library
     name: Hyper Inlaid Library
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_dairy_plant
     name: Hyper Dairy Plant
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_gallo_tower
     name: Hyper Gallo Tower
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_cappella_magna
     name: Hyper Cappella Magna
     classes:
       - _/achievement
+      - steam_achievement
   - id: il_molise_achievement
     name: Il Molise (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: green_acres_achievement
     name: Green Acres (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: the_bone_zone_achievement
     name: The Bone Zone (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: moongolow_achievement
     name: Moongolow (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: boss_rash_achievement
     name: Boss Rash (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: game_killer_achievement
     name: Game Killer (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: i_gemini
     name: I - Gemini
     classes:
       - _/achievement
+      - steam_achievement
   - id: ii_twilight_requiem
     name: II - Twilight Requiem
     classes:
       - _/achievement
+      - steam_achievement
   - id: iii_tragic_princess
     name: III - Tragic Princess
     classes:
       - _/achievement
+      - steam_achievement
   - id: iv_awake
     name: IV - Awake
     classes:
       - _/achievement
+      - steam_achievement
   - id: v_chaos_in_the_dark_night
     name: V - Chaos in the Dark Night
     classes:
       - _/achievement
+      - steam_achievement
   - id: vi_sarabande_of_healing
     name: VI - Sarabande of Healing
     classes:
       - _/achievement
+      - steam_achievement
   - id: vii_iron_blue_will
     name: VII - Iron Blue Will
     classes:
       - _/achievement
+      - steam_achievement
   - id: viii_mad_groove
     name: VIII - Mad Groove
     classes:
       - _/achievement
+      - steam_achievement
   - id: ix_divine_bloodline
     name: IX - Divine Bloodline
     classes:
       - _/achievement
+      - steam_achievement
   - id: x_beginning
     name: X - Beginning
     classes:
       - _/achievement
+      - steam_achievement
   - id: xi_waltz_of_pearls
     name: XI - Waltz of Pearls
     classes:
       - _/achievement
+      - steam_achievement
   - id: xii_out_of_bounds
     name: XII - Out of Bounds
     classes:
       - _/achievement
+      - steam_achievement
   - id: xiii_wicked_season
     name: XIII - Wicked Season
     classes:
       - _/achievement
+      - steam_achievement
   - id: xiv_jail_of_crystal
     name: XIV - Jail of Crystal
     classes:
       - _/achievement
+      - steam_achievement
   - id: xv_disco_of_gold
     name: XV - Disco of Gold
     classes:
       - _/achievement
+      - steam_achievement
   - id: xvi_slash
     name: XVI - Slash
     classes:
       - _/achievement
-  - id: xvii_lost_amp_found_painting
-    name: XVII - Lost &amp; Found Painting
+      - steam_achievement
+  - id: xvii_lost_found_painting
+    name: XVII - Lost & Found Painting
     classes:
       - _/achievement
+      - steam_achievement
   - id: xviii_boogaloo_of_illusions
     name: XVIII - Boogaloo of Illusions
     classes:
       - _/achievement
+      - steam_achievement
   - id: xix_heart_of_fire
     name: XIX - Heart of Fire
     classes:
       - _/achievement
+      - steam_achievement
   - id: xx_silent_old_sanctuary
     name: XX - Silent Old Sanctuary
     classes:
       - _/achievement
+      - steam_achievement
   - id: xxi_blood_astronomia
     name: XXI - Blood Astronomia
     classes:
       - _/achievement
+      - steam_achievement
   - id: reroll_1
     name: Reroll 1
     classes:
       - _/achievement
+      - steam_achievement
   - id: reroll_2
     name: Reroll 2
     classes:
       - _/achievement
+      - steam_achievement
   - id: reroll_3
     name: Reroll 3
     classes:
       - _/achievement
+      - steam_achievement
   - id: reroll_4
     name: Reroll 4
     classes:
       - _/achievement
+      - steam_achievement
   - id: reroll_5
     name: Reroll 5
     classes:
       - _/achievement
+      - steam_achievement
   - id: skip_1
     name: Skip 1
     classes:
       - _/achievement
+      - steam_achievement
   - id: skip_4
     name: Skip 4
     classes:
       - _/achievement
+      - steam_achievement
   - id: skip_2
     name: Skip 2
     classes:
       - _/achievement
+      - steam_achievement
   - id: skip_3
     name: Skip 3
     classes:
       - _/achievement
+      - steam_achievement
   - id: skip_5
     name: Skip 5
     classes:
       - _/achievement
+      - steam_achievement
   - id: mindbender_achievement
     name: Mindbender (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: banish_1
     name: Banish 1
     classes:
       - _/achievement
+      - steam_achievement
   - id: banish_2
     name: Banish 2
     classes:
       - _/achievement
+      - steam_achievement
   - id: banish_3
     name: Banish 3
     classes:
       - _/achievement
+      - steam_achievement
   - id: banish_4
     name: Banish 4
     classes:
       - _/achievement
+      - steam_achievement
   - id: banish_5
     name: Banish 5
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_seal_i
     name: 'EXTRA: Seal I'
     classes:
       - _/achievement
+      - steam_achievement
   - id: extra_seal_ii
     name: 'EXTRA: Seal II'
     classes:
       - _/achievement
+      - steam_achievement
   - id: queen_sigma_achievement
     name: Queen Sigma (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: greatest_jubilee_achievement
     name: Greatest Jubilee (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: seeker_of_the_infinite_corridor
     name: Seeker of the Infinite Corridor
     classes:
       - _/achievement
+      - steam_achievement
   - id: seeker_of_the_crimson_shroud
     name: Seeker of the Crimson Shroud
     classes:
       - _/achievement
+      - steam_achievement
   - id: bloody_tear_achievement
     name: Bloody Tear (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: holy_wand_achievement
     name: Holy Wand (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: thousand_edge_achievement
     name: Thousand Edge (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: death_spiral_achievement
     name: Death Spiral (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: la_borra_achievement
     name: La Borra (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: thunder_loop_achievement
     name: Thunder Loop (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: unholy_vespers_achievement
     name: Unholy Vespers (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: heaven_sword_achievement
     name: Heaven Sword (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: hellfire_achievement
     name: Hellfire (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: soul_eater_achievement
     name: Soul Eater (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: no_future_achievement
     name: NO FUTURE (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: gorgeous_moon_achievement
     name: Gorgeous Moon (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: vandalier_achievement
     name: Vandalier (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: phieraggi_achievement
     name: Phieraggi (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: vicious_hunger_achievement
     name: Vicious Hunger (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: mannajja_achievement
     name: Mannajja (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: valkyrie_turner_achievement
     name: Valkyrie Turner (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: fuwalafuwaloo_achievement
     name: Fuwalafuwaloo (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: tri_bracelet_achievement
     name: Tri-Bracelet (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: candybox_achievement
     name: Candybox (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: miang
     name: Miang
     classes:
       - _/achievement
+      - steam_achievement
   - id: silver_wind_achievement
     name: Silver Wind (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: menya
     name: Menya
     classes:
       - _/achievement
+      - steam_achievement
   - id: four_seasons_achievement
     name: Four Seasons (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: syuuto
     name: Syuuto
     classes:
       - _/achievement
+      - steam_achievement
   - id: summon_night_achievement
     name: Summon Night (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: babi_onna_achievement
     name: Babi-Onna (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: mirage_robe_achievement
     name: Mirage Robe (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: mccoy_oni_achievement
     name: McCoy-Oni (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: 108_bocce_achievement
     name: 108 Bocce (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: megalo_menya
     name: Megalo Menya
     classes:
       - _/achievement
+      - steam_achievement
   - id: megalo_syuuto
     name: Megalo Syuuto
     classes:
       - _/achievement
+      - steam_achievement
   - id: gavet_oni_achievement
     name: Gav'Et-Oni (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: night_sword_achievement
     name: Night Sword (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: muramasa_achievement
     name: Muramasa (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: boo_roo_boolle_achievement
     name: Boo Roo Boolle (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_mt_moonspell
     name: Hyper Mt.Moonspell
     classes:
       - _/achievement
+      - steam_achievement
   - id: mt_moonspell_map_achievement
     name: Mt.Moonspell Map (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: eleanor_uziron_achievement
     name: Eleanor Uziron (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: spellstring_achievement
     name: SpellString (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: spellstream_achievement
     name: SpellStream (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: spellstrike_achievement
     name: SpellStrike (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: maruto_cuts_achievement
     name: Maruto Cuts (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: eskizzibur_achievement
     name: Eskizzibur (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: keitha_muort_achievement
     name: Keitha Muort (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: flash_arrow_achievement
     name: Flash Arrow (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: millionaire_achievement
     name: Millionaire (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: abyss_foscari_achievement
     name: Abyss Foscari (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: luminaire_foscari_achievement
     name: Luminaire Foscari (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: genevieve_gruy_re_achievement
     name: Genevieve Gruyère (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: prismatic_missile_achievement
     name: Prismatic Missile (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: luminaire_achievement
     name: Luminaire (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: shadow_servant_achievement
     name: Shadow Servant (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: ophion_achievement
     name: Ophion (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: je_ne_viv_achievement
     name: Je-Ne-Viv (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: happy_birthday
     name: Happy Birthday
     classes:
       - _/achievement
+      - steam_achievement
   - id: rottinghoul_achievement
     name: Rottin'Ghoul (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_lake_foscari
     name: Hyper Lake Foscari
     classes:
       - _/achievement
+      - steam_achievement
   - id: hyper_abyss_foscari
     name: Hyper Abyss Foscari
     classes:
       - _/achievement
+      - steam_achievement
   - id: lake_foscari_map_achievement
     name: Lake Foscari Map (Achievement)
     classes:
       - _/achievement
+      - steam_achievement
+  - id: extra_chaos_altemanna
+    name: 'EXTRA: Chaos Altemanna'
+    classes:
+      - steam_achievement
+  - id: extra_whiteout
+    name: 'EXTRA: Whiteout'
+    classes:
+      - steam_achievement
+  - id: extra_glass_fandango
+    name: 'EXTRA: Glass Fandango'
+    classes:
+      - steam_achievement
+  - id: extra_celestial_voulge
+    name: 'EXTRA: Celestial Voulge'
+    classes:
+      - steam_achievement
+  - id: extra_she_moon_eeta
+    name: 'EXTRA: She-Moon Eeta'
+    classes:
+      - steam_achievement
+  - id: extra_antidote
+    name: 'EXTRA: Antidote'
+    classes:
+      - steam_achievement
+  - id: extra_adventures
+    name: 'EXTRA: Adventures'
+    classes:
+      - steam_achievement
+  - id: extra_space_54
+    name: 'EXTRA: Space 54'
+    classes:
+      - steam_achievement
+  - id: extra_phas3r
+    name: 'EXTRA: Phas3r'
+    classes:
+      - steam_achievement
+  - id: extra_photonstorm
+    name: 'EXTRA: Photonstorm'
+    classes:
+      - steam_achievement
+  - id: extra_space_dude
+    name: 'EXTRA: Space Dude'
+    classes:
+      - steam_achievement
+  - id: extra_brave_story
+    name: 'EXTRA: Brave Story'
+    classes:
+      - steam_achievement
+  - id: extra_pako_battiliar
+    name: 'EXTRA: Pako Battiliar'
+    classes:
+      - steam_achievement
+  - id: extra_bat_robbert
+    name: 'EXTRA: Bat Robbert'
+    classes:
+      - steam_achievement

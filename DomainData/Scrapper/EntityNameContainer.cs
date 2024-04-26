@@ -1,3 +1,6 @@
+using System.Net;
+using HtmlAgilityPack;
+
 namespace Pika.DomainData.Scrapper;
 
 public class EntityNameContainer
@@ -13,9 +16,9 @@ public class EntityNameContainer
         return discriminatedName;
     }
 
-    private string Normalize(string name)
+    public static string Normalize(string name)
     {
-        return name.Trim();
+        return WebUtility.HtmlDecode(name.Trim());
     }
 
     private string Discriminate(string name, string discriminator)

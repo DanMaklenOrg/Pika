@@ -19,6 +19,8 @@ var builder = CoconaApp.CreateBuilder(args);
 
 // Vampire Survivors
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+
+builder.Services.AddTransient<SteamClient>();
 builder.Services.AddScoped<EntityNameContainer>();
 builder.Services.AddTransient<PikaConverter>();
 

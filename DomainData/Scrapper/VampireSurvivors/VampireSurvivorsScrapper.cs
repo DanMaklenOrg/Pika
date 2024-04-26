@@ -1,11 +1,14 @@
 using System.Net;
 using HtmlAgilityPack;
 using Pika.Model;
+using Steam.Models;
 
 namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
-public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
+public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
 {
+    private readonly uint _steamAppId = 1794680;
+
     public DomainId DomainId => "vampire_survivors";
     public string OutputDirectory => "VampireSurvivors";
 
@@ -166,7 +169,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText.Replace('—', ' ');
         name = nameContainer.RegisterAndNormalize(name, "Arcana");
-        name = WebUtility.HtmlDecode(name);
         return new Entity
         {
             Id = ResourceId.InduceFromName(name, DomainId),
@@ -197,17 +199,11 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
 
     private async Task<List<Entity>> ScrapeAchievements()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Achievement");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td/..");
-        return nodes.Select(ParseAchievement).ToList();
-    }
+        var inGameAchievements = await ScrapeInGameAchievements();
+        var steamAchievements = await ScrapeSteamAchievements();
 
-    private Entity ParseAchievement(HtmlNode node)
-    {
-        var name = node.SelectSingleNode(".//td[2]").InnerText;
-        if (name == "Song Of Mana") name = "Song of Mana";
-        name = nameContainer.RegisterAndNormalize(name, "Achievement");
-        List<string> x =
+        // List of names that are part of another subdomain and not visible to the name container.
+        HashSet<string> namesToAnnotate =
         [
             "Mad Forest",
             "Inlaid Library",
@@ -227,15 +223,46 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             "Mt.Moonspell",
             "Lake Foscari",
             "Abyss Foscari",
-            "Polus Replica",
-            "Song Of Mana"
+            "Polus Replica"
         ];
-        if (x.Contains(name)) name = $"{name} (Achievement)";
-        return new Entity
+
+        var achievements = inGameAchievements.Union(steamAchievements).Select(rawName =>
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
-            Name = name,
-            Classes = ["_/achievement"],
-        };
+            var name = nameContainer.RegisterAndNormalize(rawName, "Achievement");
+            if (namesToAnnotate.Contains(name)) name = $"{name} (Achievement)";
+
+            List<ResourceId> classes = [];
+            if (inGameAchievements.Contains(rawName)) classes.Add("_/achievement");
+            if(steamAchievements.Contains(rawName)) classes.Add(new ResourceId("steam_achievement", DomainId));
+            return new Entity
+            {
+                Id = ResourceId.InduceFromName(name, DomainId),
+                Name = name,
+                Classes = classes,
+            };
+        }).ToList();
+
+        return achievements;
+    }
+
+    private async Task<HashSet<string>> ScrapeInGameAchievements()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Achievement");
+        var nodes = doc.DocumentNode.SelectNodes("//tr/td/..");
+        var achievements = nodes.Select(n => EntityNameContainer.Normalize(n.SelectSingleNode(".//td[2]").InnerText)).ToHashSet();
+        achievements.Remove("Song Of Mana");
+        achievements.Add("Song of Mana");
+        return achievements;
+    }
+
+    private async Task<HashSet<string>> ScrapeSteamAchievements()
+    {
+        var steamRawAchievements = await steamClient.GetAchievements(_steamAppId);
+        var achievements = steamRawAchievements.Select(a => EntityNameContainer.Normalize(a.DisplayName)).ToHashSet();
+        achievements.Remove("Song Of Mana");
+        achievements.Add("Song of Mana");
+        achievements.Remove("Ebony WIngs");
+        achievements.Add("Ebony Wings");
+        return achievements;
     }
 }

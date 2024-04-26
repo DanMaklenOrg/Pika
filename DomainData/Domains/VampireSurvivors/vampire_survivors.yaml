@@ -16,6 +16,9 @@ stats:
   - id: power_up_rank_1
     name: Rank
     type: INTEGER_RANGE(0, 1)
+  - id: achieved_steam
+    name: Achievement Unlocked (Steam)
+    type: BOOLEAN
   - id: map_mad_forest
     name: Completed Run in Mad Forest
     type: BOOLEAN
@@ -143,6 +146,11 @@ classes:
       - _/unlocked
     tags:
       - secret
+  - id: achievement_steam
+    stats:
+      - achieved_steam
+    tags:
+      - _/achievement
 projects:
   - name: Unlock All Characters
   - name: Max All Power Ups
