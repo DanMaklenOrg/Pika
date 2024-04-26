@@ -2606,16 +2606,17 @@ entities:
     classes:
       - _/achievement
       - steam_achievement
+  - id: extra_glass_fandango
+    name: 'EXTRA: Glass Fandango'
+    classes:
+      - _/achievement
+      - steam_achievement
   - id: extra_chaos_altemanna
     name: 'EXTRA: Chaos Altemanna'
     classes:
       - steam_achievement
   - id: extra_whiteout
     name: 'EXTRA: Whiteout'
-    classes:
-      - steam_achievement
-  - id: extra_glass_fandango
-    name: 'EXTRA: Glass Fandango'
     classes:
       - steam_achievement
   - id: extra_celestial_voulge

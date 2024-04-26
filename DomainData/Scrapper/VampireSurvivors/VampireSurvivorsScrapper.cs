@@ -255,6 +255,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         achievements.Remove("Tiragisú");
         achievements.Add("Tirajisú");
         achievements.Add("EXTRA: Space Dude");
+        achievements.Add("EXTRA: Glass Fandango");
         return achievements;
     }
 
