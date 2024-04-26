@@ -2611,17 +2611,45 @@ entities:
     classes:
       - _/achievement
       - steam_achievement
-  - id: extra_chaos_altemanna
-    name: 'EXTRA: Chaos Altemanna'
+  - id: extra_phas3r
+    name: 'EXTRA: Phas3r'
     classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_space_54
+    name: 'EXTRA: Space 54'
+    classes:
+      - _/achievement
       - steam_achievement
   - id: extra_whiteout
     name: 'EXTRA: Whiteout'
     classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_chaos_altemanna
+    name: 'EXTRA: Chaos Altemanna'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_pako_battiliar
+    name: 'EXTRA: Pako Battiliar'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_bat_robbert
+    name: 'EXTRA: Bat Robbert'
+    classes:
+      - _/achievement
       - steam_achievement
   - id: extra_celestial_voulge
     name: 'EXTRA: Celestial Voulge'
     classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_photonstorm
+    name: 'EXTRA: Photonstorm'
+    classes:
+      - _/achievement
       - steam_achievement
   - id: extra_she_moon_eeta
     name: 'EXTRA: She-Moon Eeta'
@@ -2635,27 +2663,7 @@ entities:
     name: 'EXTRA: Adventures'
     classes:
       - steam_achievement
-  - id: extra_space_54
-    name: 'EXTRA: Space 54'
-    classes:
-      - steam_achievement
-  - id: extra_phas3r
-    name: 'EXTRA: Phas3r'
-    classes:
-      - steam_achievement
-  - id: extra_photonstorm
-    name: 'EXTRA: Photonstorm'
-    classes:
-      - steam_achievement
   - id: extra_brave_story
     name: 'EXTRA: Brave Story'
-    classes:
-      - steam_achievement
-  - id: extra_pako_battiliar
-    name: 'EXTRA: Pako Battiliar'
-    classes:
-      - steam_achievement
-  - id: extra_bat_robbert
-    name: 'EXTRA: Bat Robbert'
     classes:
       - steam_achievement

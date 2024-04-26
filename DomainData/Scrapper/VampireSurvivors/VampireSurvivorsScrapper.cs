@@ -256,6 +256,14 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         achievements.Add("Tirajisú");
         achievements.Add("EXTRA: Space Dude");
         achievements.Add("EXTRA: Glass Fandango");
+        achievements.Add("EXTRA: Phas3r");
+        achievements.Add("EXTRA: Space 54");
+        achievements.Add("EXTRA: Whiteout");
+        achievements.Add("EXTRA: Chaos Altemanna");
+        achievements.Add("EXTRA: Pako Battiliar");
+        achievements.Add("EXTRA: Bat Robbert");
+        achievements.Add("EXTRA: Celestial Voulge");
+        achievements.Add("EXTRA: Photonstorm");
         return achievements;
     }
 
