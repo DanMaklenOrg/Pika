@@ -2601,6 +2601,11 @@ entities:
     classes:
       - _/achievement
       - steam_achievement
+  - id: extra_space_dude
+    name: 'EXTRA: Space Dude'
+    classes:
+      - _/achievement
+      - steam_achievement
   - id: extra_chaos_altemanna
     name: 'EXTRA: Chaos Altemanna'
     classes:
@@ -2639,10 +2644,6 @@ entities:
       - steam_achievement
   - id: extra_photonstorm
     name: 'EXTRA: Photonstorm'
-    classes:
-      - steam_achievement
-  - id: extra_space_dude
-    name: 'EXTRA: Space Dude'
     classes:
       - steam_achievement
   - id: extra_brave_story

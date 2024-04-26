@@ -233,7 +233,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
 
             List<ResourceId> classes = [];
             if (inGameAchievements.Contains(rawName)) classes.Add("_/achievement");
-            if(steamAchievements.Contains(rawName)) classes.Add(new ResourceId("steam_achievement", DomainId));
+            if (steamAchievements.Contains(rawName)) classes.Add(new ResourceId("steam_achievement", DomainId));
             return new Entity
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
@@ -252,6 +252,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         var achievements = nodes.Select(n => EntityNameContainer.Normalize(n.SelectSingleNode(".//td[2]").InnerText)).ToHashSet();
         achievements.Remove("Song Of Mana");
         achievements.Add("Song of Mana");
+        achievements.Add("EXTRA: Space Dude");
         return achievements;
     }
 

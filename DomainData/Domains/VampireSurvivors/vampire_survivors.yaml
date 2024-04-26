@@ -146,7 +146,7 @@ classes:
       - _/unlocked
     tags:
       - secret
-  - id: achievement_steam
+  - id: steam_achievement
     stats:
       - achieved_steam
     tags:
