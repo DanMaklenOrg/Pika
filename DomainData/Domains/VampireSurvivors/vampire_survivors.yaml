@@ -221,6 +221,3 @@ entities:
   - name: Polus Replica
     classes:
       - map
-  - name: 'EXTRA: Space Dude'
-    classes:
-      - _/achievement
