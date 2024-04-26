@@ -252,6 +252,8 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         var achievements = nodes.Select(n => EntityNameContainer.Normalize(n.SelectSingleNode(".//td[2]").InnerText)).ToHashSet();
         achievements.Remove("Song Of Mana");
         achievements.Add("Song of Mana");
+        achievements.Remove("Tiragisú");
+        achievements.Add("Tirajisú");
         achievements.Add("EXTRA: Space Dude");
         return achievements;
     }
@@ -262,6 +264,8 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         var achievements = steamRawAchievements.Select(a => EntityNameContainer.Normalize(a.DisplayName)).ToHashSet();
         achievements.Remove("Song Of Mana");
         achievements.Add("Song of Mana");
+        achievements.Remove("Tiragisú");
+        achievements.Add("Tirajisú");
         achievements.Remove("Ebony WIngs");
         achievements.Add("Ebony Wings");
         return achievements;

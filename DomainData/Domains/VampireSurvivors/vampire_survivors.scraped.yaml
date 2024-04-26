@@ -1751,8 +1751,8 @@ entities:
     classes:
       - _/achievement
       - steam_achievement
-  - id: tiragis
-    name: Tiragisú
+  - id: tirajis_achievement
+    name: Tirajisú (Achievement)
     classes:
       - _/achievement
       - steam_achievement
