@@ -76,6 +76,8 @@ stats:
   - id: map_polus_replica
     name: Completed Run in Polus Replica
     type: BOOLEAN
+  - name: Hper Mode Unlocked
+    type: BOOLEAN
 tags:
   - name: Character
   - name: Power Up
@@ -85,6 +87,7 @@ tags:
   - name: Pickup
   - name: Arcana
   - name: Secret
+  - name: Stage
 classes:
   - id: character
     stats:
@@ -138,9 +141,12 @@ classes:
   - id: collection_entry
     stats:
       - _/unlocked
-  - id: map
+  - id: stage
     stats:
       - _/unlocked
+      - hyper_mode_unlocked
+    tags:
+      - stage
   - id: secret_unlock
     stats:
       - _/unlocked
@@ -152,12 +158,13 @@ classes:
     tags:
       - _/achievement
 projects:
-  - name: Unlock All Characters
-  - name: Max All Power Ups
+  - name: Unlock all characters
+  - name: Max all power ups
   - name: Unlock all entries in the collection
   - name: Unlock all entries in the bestiary
   - name: Unlock all secrets
   - name: Unlock all achievements
+  - name: Unlock all stages and their hyper mode
 entities:
   - name: Friendship Amulet
     classes:
@@ -166,61 +173,61 @@ entities:
       - pickup
   - name: Mad Forest
     classes:
-      - map
+      - stage
   - name: Inlaid Library
     classes:
-      - map
+      - stage
   - name: Dairy Plant
     classes:
-      - map
+      - stage
   - name: Gallo Tower
     classes:
-      - map
+      - stage
   - name: Cappella Magna
     classes:
-      - map
+      - stage
   - name: Il Molise
     classes:
-      - map
+      - stage
   - name: Moongolow
     classes:
-      - map
+      - stage
   - name: Green Acres
     classes:
-      - map
+      - stage
   - name: The Bone Zone
     classes:
-      - map
+      - stage
   - name: Boss Rash
     classes:
-      - map
+      - stage
   - name: Whiteout
     classes:
-      - map
+      - stage
   - name: Space 54
     classes:
-      - map
+      - stage
   - name: Bat Country
     classes:
-      - map
+      - stage
   - name: Astral Stair
     classes:
-      - map
+      - stage
   - name: Tiny Bridge
     classes:
-      - map
+      - stage
   - name: Mt.Moonspell
     classes:
-      - map
+      - stage
   - name: Lake Foscari
     classes:
-      - map
+      - stage
   - name: Abyss Foscari
     classes:
-      - map
+      - stage
   - name: Polus Replica
     classes:
-      - map
+      - stage
   - name: Crewmate (Achievement)
     classes:
       - _/achievement
@@ -281,3 +288,8 @@ entities:
   - name: Polus Replica Map (Achievement)
     classes:
       - _/achievement
+  - name: Super Candybox II Turbo
+    classes:
+      - collection_entry
+    tags:
+      - weapon
