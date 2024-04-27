@@ -1,7 +1,5 @@
-using System.Net;
 using HtmlAgilityPack;
 using Pika.Model;
-using Steam.Models;
 
 namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
@@ -264,6 +262,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         achievements.Add("EXTRA: Bat Robbert");
         achievements.Add("EXTRA: Celestial Voulge");
         achievements.Add("EXTRA: Photonstorm");
+        achievements.Add("EXTRA: She-Moon Eeta");
         return achievements;
     }
 

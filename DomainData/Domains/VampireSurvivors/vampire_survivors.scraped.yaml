@@ -2654,6 +2654,7 @@ entities:
   - id: extra_she_moon_eeta
     name: 'EXTRA: She-Moon Eeta'
     classes:
+      - _/achievement
       - steam_achievement
   - id: extra_antidote
     name: 'EXTRA: Antidote'
