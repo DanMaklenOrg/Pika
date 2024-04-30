@@ -76,7 +76,7 @@ stats:
   - id: map_polus_replica
     name: Completed Run in Polus Replica
     type: BOOLEAN
-  - name: Hper Mode Unlocked
+  - name: Hyper Mode Unlocked
     type: BOOLEAN
 tags:
   - name: Character
