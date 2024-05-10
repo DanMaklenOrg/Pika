@@ -113,6 +113,10 @@ entities:
     name: Space Dude
     classes:
       - character
+  - id: santa_ladonna
+    name: Santa Ladonna
+    classes:
+      - character
   - id: miang_moonspell
     name: Miang Moonspell
     classes:
@@ -279,6 +283,10 @@ entities:
       - character
   - id: scorej_oni
     name: Scorej-Oni
+    classes:
+      - character
+  - id: gyoruntin
+    name: Gyoruntin
     classes:
       - character
   - id: grim_grimoire
@@ -959,6 +967,30 @@ entities:
       - collection_entry
     tags:
       - weapon
+  - id: long_gun
+    name: Long Gun
+    classes:
+      - collection_entry
+    tags:
+      - weapon
+  - id: homing_miss
+    name: Homing Miss
+    classes:
+      - collection_entry
+    tags:
+      - weapon
+  - id: prism_lass
+    name: Prism Lass
+    classes:
+      - collection_entry
+    tags:
+      - weapon
+  - id: metal_claw
+    name: Metal Claw
+    classes:
+      - collection_entry
+    tags:
+      - weapon
   - id: bloody_tear
     name: Bloody Tear
     classes:
@@ -1337,6 +1369,10 @@ entities:
     name: Seal II
     classes:
       - power_up_10
+  - id: seal_iii
+    name: Seal III
+    classes:
+      - power_up_10
   - id: experience_gem
     name: Experience Gem
     classes:
@@ -1649,6 +1685,10 @@ entities:
       - secret_unlock
   - id: scorej_oni_secret
     name: Scorej-Oni (Secret)
+    classes:
+      - secret_unlock
+  - id: gyoruntin_secret
+    name: Gyoruntin (Secret)
     classes:
       - secret_unlock
   - id: wings_achievement
@@ -2666,5 +2706,33 @@ entities:
       - steam_achievement
   - id: extra_brave_story
     name: 'EXTRA: Brave Story'
+    classes:
+      - steam_achievement
+  - id: extra_laborratory
+    name: 'EXTRA: Laborratory'
+    classes:
+      - steam_achievement
+  - id: extra_santa_javelin
+    name: 'EXTRA: Santa Javelin'
+    classes:
+      - steam_achievement
+  - id: extra_seraphic_cry
+    name: 'EXTRA: Seraphic Cry'
+    classes:
+      - steam_achievement
+  - id: extra_santa_ladonna
+    name: 'EXTRA: Santa Ladonna'
+    classes:
+      - steam_achievement
+  - id: extra_arma_dio
+    name: 'EXTRA: Arma Dio'
+    classes:
+      - steam_achievement
+  - id: extra_carlo_cart
+    name: 'EXTRA: Carlo Cart'
+    classes:
+      - steam_achievement
+  - id: extra_seal_iii
+    name: 'EXTRA: Seal III'
     classes:
       - steam_achievement
