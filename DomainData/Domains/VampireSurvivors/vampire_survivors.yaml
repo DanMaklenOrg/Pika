@@ -174,10 +174,16 @@ entities:
   - name: Mad Forest
     classes:
       - stage
-  - name: Laborratory Forest
+  - name: Laborratory
+    classes:
+      - stage
+  - name: Eudaimonia M.
     classes:
       - stage
   - name: Inlaid Library
+    classes:
+      - stage
+  - name: Neo Galuga
     classes:
       - stage
   - name: Dairy Plant
@@ -193,6 +199,9 @@ entities:
     classes:
       - stage
   - name: Moongolow
+    classes:
+      - stage
+  - name: Carlo Cart
     classes:
       - stage
   - name: Green Acres

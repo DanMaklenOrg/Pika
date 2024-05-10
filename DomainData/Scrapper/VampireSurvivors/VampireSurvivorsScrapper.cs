@@ -263,6 +263,13 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         achievements.Add("EXTRA: Celestial Voulge");
         achievements.Add("EXTRA: Photonstorm");
         achievements.Add("EXTRA: She-Moon Eeta");
+        achievements.Add("EXTRA: Laborratory");
+        achievements.Add("EXTRA: Santa Javelin");
+        achievements.Add("EXTRA: Arma Dio");
+        achievements.Add("EXTRA: Carlo Cart");
+        achievements.Add("EXTRA: Seraphic Cry");
+        achievements.Add("EXTRA: Santa Ladonna");
+        achievements.Add("EXTRA: Seal III");
         return achievements;
     }
 

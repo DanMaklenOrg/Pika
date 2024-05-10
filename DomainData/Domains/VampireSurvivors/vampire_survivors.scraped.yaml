@@ -2696,6 +2696,41 @@ entities:
     classes:
       - _/achievement
       - steam_achievement
+  - id: extra_laborratory
+    name: 'EXTRA: Laborratory'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_santa_javelin
+    name: 'EXTRA: Santa Javelin'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_arma_dio
+    name: 'EXTRA: Arma Dio'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_carlo_cart
+    name: 'EXTRA: Carlo Cart'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_seraphic_cry
+    name: 'EXTRA: Seraphic Cry'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_santa_ladonna
+    name: 'EXTRA: Santa Ladonna'
+    classes:
+      - _/achievement
+      - steam_achievement
+  - id: extra_seal_iii
+    name: 'EXTRA: Seal III'
+    classes:
+      - _/achievement
+      - steam_achievement
   - id: extra_antidote
     name: 'EXTRA: Antidote'
     classes:
@@ -2706,33 +2741,5 @@ entities:
       - steam_achievement
   - id: extra_brave_story
     name: 'EXTRA: Brave Story'
-    classes:
-      - steam_achievement
-  - id: extra_laborratory
-    name: 'EXTRA: Laborratory'
-    classes:
-      - steam_achievement
-  - id: extra_santa_javelin
-    name: 'EXTRA: Santa Javelin'
-    classes:
-      - steam_achievement
-  - id: extra_seraphic_cry
-    name: 'EXTRA: Seraphic Cry'
-    classes:
-      - steam_achievement
-  - id: extra_santa_ladonna
-    name: 'EXTRA: Santa Ladonna'
-    classes:
-      - steam_achievement
-  - id: extra_arma_dio
-    name: 'EXTRA: Arma Dio'
-    classes:
-      - steam_achievement
-  - id: extra_carlo_cart
-    name: 'EXTRA: Carlo Cart'
-    classes:
-      - steam_achievement
-  - id: extra_seal_iii
-    name: 'EXTRA: Seal III'
     classes:
       - steam_achievement
