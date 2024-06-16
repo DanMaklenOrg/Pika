@@ -228,15 +228,11 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         {
             var name = nameContainer.RegisterAndNormalize(rawName, "Achievement");
             if (namesToAnnotate.Contains(name)) name = $"{name} (Achievement)";
-
-            List<ResourceId> classes = [];
-            if (inGameAchievements.Contains(rawName)) classes.Add("_/achievement");
-            if (steamAchievements.Contains(rawName)) classes.Add(new ResourceId("steam_achievement", DomainId));
             return new Entity
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
-                Classes = classes,
+                Classes = ["_/achievement"],
             };
         }).ToList();
 
