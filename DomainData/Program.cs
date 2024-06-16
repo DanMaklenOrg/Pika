@@ -19,6 +19,8 @@ var builder = CoconaApp.CreateBuilder(args);
 
 // Vampire Survivors
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddScoped<EntityNameContainer>();
@@ -34,9 +36,9 @@ app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter 
 {
     foreach (var s in scrappers)
     {
-        Console.WriteLine($"Scraping {s.DomainId}");
+        Console.WriteLine($"Scraping {s.DomainId} ({s.FileName})");
         var domain = await s.Scrape();
-        TextWriter stream = new StreamWriter($"Domains/{s.OutputDirectory}/{s.DomainId}.scraped.yaml");
+        TextWriter stream = new StreamWriter($"Domains/{s.OutputDirectory}/{s.FileName}.scraped.yaml");
         converter.Write(domain, stream);
         await stream.FlushAsync();
     }

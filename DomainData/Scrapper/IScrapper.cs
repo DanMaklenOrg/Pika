@@ -8,5 +8,7 @@ public interface IScrapper
 
     string OutputDirectory { get; }
 
+    string FileName { get; }
+
     Task<Domain> Scrape();
 }

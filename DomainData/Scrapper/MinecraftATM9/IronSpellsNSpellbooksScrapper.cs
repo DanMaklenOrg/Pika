@@ -7,6 +7,7 @@ public class IronSpellsNSpellbooksScrapper : IScrapper
 {
     public DomainId DomainId => "iron_spells_n_spellbooks.minecraft_atm9";
     public string OutputDirectory => $"MinecraftATM9";
+    public string FileName => DomainId.ToString();
 
     public async Task<Domain> Scrape()
     {

@@ -7,6 +7,7 @@ public class IntegratedDynamicsScrapper : IScrapper
 {
     public DomainId DomainId => "integrated_dynamics.minecraft_atm9";
     public string OutputDirectory => $"MinecraftATM9";
+    public string FileName => DomainId.ToString();
 
     public async Task<Domain> Scrape()
     {
