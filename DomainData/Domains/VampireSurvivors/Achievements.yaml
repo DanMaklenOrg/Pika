@@ -61,3 +61,93 @@ entities:
   - name: Polus Replica Map (Achievement)
     classes:
       - _/achievement
+  - name: Bill
+    classes:
+      - _/achievement
+  - name: Long Gun (Achievement)
+    classes:
+      - _/achievement
+  - name: Lance
+    classes:
+      - _/achievement
+  - name: Short Gun (Achievement)
+    classes:
+      - _/achievement
+  - name: Ariana (Achievement)
+    classes:
+      - _/achievement
+  - name: Spread Shot (Achievement)
+    classes:
+      - _/achievement
+  - name: Lucia
+    classes:
+      - _/achievement
+  - name: C-U-Laser (Achievement)
+    classes:
+      - _/achievement
+  - name: Hyper Hectic Highway
+    classes:
+      - _/achievement
+  - name: Brad
+    classes:
+      - _/achievement
+  - name: Firearm (Achievement)
+    classes:
+      - _/achievement
+  - name: Browny (Achievement)
+    classes:
+      - _/achievement
+  - name: Sonic Bloom (Achievement)
+    classes:
+      - _/achievement
+  - name: Sheena
+    classes:
+      - _/achievement
+  - name: Blade Crossbow (Achievement)
+    classes:
+      - _/achievement
+  - name: Probotector (Achievement)
+    classes:
+      - _/achievement
+  - name: BFC2000-AD (Achievement)
+    classes:
+      - _/achievement
+  - name: Prism Lass (Achievement)
+    classes:
+      - _/achievement
+  - name: Time Warp (Achievement)
+    classes:
+      - _/achievement
+  - name: Stanley (Achievement)
+    classes:
+      - _/achievement
+  - name: Homing Miss (Achievement)
+    classes:
+      - _/achievement
+  - name: Multistage Missiles (Achievement)
+    classes:
+      - _/achievement
+  - name: Newt
+    classes:
+      - _/achievement
+  - name: Diver Mines (Achievement)
+    classes:
+      - _/achievement
+  - name: Simondo
+    classes:
+      - _/achievement
+  - name: Bahamut
+    classes:
+      - _/achievement
+  - name: Metal Claw (Achievement)
+    classes:
+      - _/achievement
+  - name: Big Fuzzy Fist (Achievement)
+    classes:
+      - _/achievement
+  - name: Hyper Neo Galuga
+    classes:
+      - _/achievement
+  - name: Neo Galuga Map (Achievement)
+    classes:
+      - _/achievement
