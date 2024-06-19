@@ -12,7 +12,7 @@ public class EntityNameContainer
         var normalizedName = Normalize(name);
         var discriminatedName = Discriminate(normalizedName, discriminator);
 
-        _registeredNames.Add(normalizedName);
+        _registeredNames.Add(normalizedName.ToLower());
         return discriminatedName;
     }
 
@@ -23,6 +23,6 @@ public class EntityNameContainer
 
     private string Discriminate(string name, string discriminator)
     {
-        return _registeredNames.Contains(name) ? $"{name} ({discriminator})" : name;
+        return _registeredNames.Contains(name.ToLower()) ? $"{name} ({discriminator})" : name;
     }
 }
