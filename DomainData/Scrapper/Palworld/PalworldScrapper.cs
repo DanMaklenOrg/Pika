@@ -5,7 +5,7 @@ namespace Pika.DomainData.Scrapper.Palworld;
 
 public class PalworldScrapper(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
 {
-    public DomainId DomainId => "palword";
+    public DomainId DomainId => "palworld";
     public string OutputDirectory => "Palworld";
     public string FileName => DomainId.ToString();
 
