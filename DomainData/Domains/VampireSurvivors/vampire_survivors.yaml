@@ -172,3 +172,8 @@ entities:
       - collection_entry
     tags:
       - weapon
+  - name: Sole Solution
+    classes:
+      - collection_entry
+    tags:
+      - weapon
