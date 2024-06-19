@@ -1,0 +1,595 @@
+id: palword
+name: Palworld
+entities:
+  - id: lamball
+    name: '001: Lamball'
+    classes:
+      - pal
+  - id: cattiva
+    name: '002: Cattiva'
+    classes:
+      - pal
+  - id: chikipi
+    name: '003: Chikipi'
+    classes:
+      - pal
+  - id: lifmunk
+    name: '004: Lifmunk'
+    classes:
+      - pal
+  - id: foxparks
+    name: '005: Foxparks'
+    classes:
+      - pal
+  - id: fuack
+    name: '006: Fuack'
+    classes:
+      - pal
+  - id: sparkit
+    name: '007: Sparkit'
+    classes:
+      - pal
+  - id: tanzee
+    name: '008: Tanzee'
+    classes:
+      - pal
+  - id: rooby
+    name: '009: Rooby'
+    classes:
+      - pal
+  - id: pengullet
+    name: '010: Pengullet'
+    classes:
+      - pal
+  - id: penking
+    name: '011: Penking'
+    classes:
+      - pal
+  - id: jolthog
+    name: '012: Jolthog'
+    classes:
+      - pal
+  - id: jolthog_cryst
+    name: '012B: Jolthog Cryst'
+    classes:
+      - pal
+  - id: gumoss
+    name: '013: Gumoss'
+    classes:
+      - pal
+  - id: gumoss_special
+    name: '013B: Gumoss (Special)'
+    classes:
+      - pal
+  - id: vixy
+    name: '014: Vixy'
+    classes:
+      - pal
+  - id: hoocrates
+    name: '015: Hoocrates'
+    classes:
+      - pal
+  - id: teafant
+    name: '016: Teafant'
+    classes:
+      - pal
+  - id: depresso
+    name: '017: Depresso'
+    classes:
+      - pal
+  - id: cremis
+    name: '018: Cremis'
+    classes:
+      - pal
+  - id: daedream
+    name: '019: Daedream'
+    classes:
+      - pal
+  - id: rushoar
+    name: '020: Rushoar'
+    classes:
+      - pal
+  - id: nox
+    name: '021: Nox'
+    classes:
+      - pal
+  - id: fuddler
+    name: '022: Fuddler'
+    classes:
+      - pal
+  - id: killamari
+    name: '023: Killamari'
+    classes:
+      - pal
+  - id: mau
+    name: '024: Mau'
+    classes:
+      - pal
+  - id: mau_cryst
+    name: '024B: Mau Cryst'
+    classes:
+      - pal
+  - id: celaray
+    name: '025: Celaray'
+    classes:
+      - pal
+  - id: direhowl
+    name: '026: Direhowl'
+    classes:
+      - pal
+  - id: tocotoco
+    name: '027: Tocotoco'
+    classes:
+      - pal
+  - id: flopie
+    name: '028: Flopie'
+    classes:
+      - pal
+  - id: mozzarina
+    name: '029: Mozzarina'
+    classes:
+      - pal
+  - id: bristla
+    name: '030: Bristla'
+    classes:
+      - pal
+  - id: gobfin
+    name: '031: Gobfin'
+    classes:
+      - pal
+  - id: gobfin_ignis
+    name: '031B: Gobfin Ignis'
+    classes:
+      - pal
+  - id: hangyu
+    name: '032: Hangyu'
+    classes:
+      - pal
+  - id: hangyu_cryst
+    name: '032B: Hangyu Cryst'
+    classes:
+      - pal
+  - id: mossanda
+    name: '033: Mossanda'
+    classes:
+      - pal
+  - id: mossanda_lux
+    name: '033B: Mossanda Lux'
+    classes:
+      - pal
+  - id: woolipop
+    name: '034: Woolipop'
+    classes:
+      - pal
+  - id: caprity
+    name: '035: Caprity'
+    classes:
+      - pal
+  - id: melpaca
+    name: '036: Melpaca'
+    classes:
+      - pal
+  - id: eikthyrdeer
+    name: '037: Eikthyrdeer'
+    classes:
+      - pal
+  - id: eikthyrdeer_terra
+    name: '037B: Eikthyrdeer Terra'
+    classes:
+      - pal
+  - id: nitewing
+    name: '038: Nitewing'
+    classes:
+      - pal
+  - id: ribbuny
+    name: '039: Ribbuny'
+    classes:
+      - pal
+  - id: incineram
+    name: '040: Incineram'
+    classes:
+      - pal
+  - id: incineram_noct
+    name: '040B: Incineram Noct'
+    classes:
+      - pal
+  - id: cinnamoth
+    name: '041: Cinnamoth'
+    classes:
+      - pal
+  - id: arsox
+    name: '042: Arsox'
+    classes:
+      - pal
+  - id: dumud
+    name: '043: Dumud'
+    classes:
+      - pal
+  - id: cawgnito
+    name: '044: Cawgnito'
+    classes:
+      - pal
+  - id: leezpunk
+    name: '045: Leezpunk'
+    classes:
+      - pal
+  - id: leezpunk_ignis
+    name: '045B: Leezpunk Ignis'
+    classes:
+      - pal
+  - id: loupmoon
+    name: '046: Loupmoon'
+    classes:
+      - pal
+  - id: galeclaw
+    name: '047: Galeclaw'
+    classes:
+      - pal
+  - id: robinquill
+    name: '048: Robinquill'
+    classes:
+      - pal
+  - id: robinquill_terra
+    name: '048B: Robinquill Terra'
+    classes:
+      - pal
+  - id: gorirat
+    name: '049: Gorirat'
+    classes:
+      - pal
+  - id: gorirat_terra
+    name: '049B: Gorirat Terra'
+    classes:
+      - pal
+  - id: beegarde
+    name: '050: Beegarde'
+    classes:
+      - pal
+  - id: elizabee
+    name: '051: Elizabee'
+    classes:
+      - pal
+  - id: grintale
+    name: '052: Grintale'
+    classes:
+      - pal
+  - id: swee
+    name: '053: Swee'
+    classes:
+      - pal
+  - id: sweepa
+    name: '054: Sweepa'
+    classes:
+      - pal
+  - id: chillet
+    name: '055: Chillet'
+    classes:
+      - pal
+  - id: chillet_ignis
+    name: '055B: Chillet Ignis'
+    classes:
+      - pal
+  - id: univolt
+    name: '056: Univolt'
+    classes:
+      - pal
+  - id: foxcicle
+    name: '057: Foxcicle'
+    classes:
+      - pal
+  - id: pyrin
+    name: '058: Pyrin'
+    classes:
+      - pal
+  - id: pyrin_noct
+    name: '058B: Pyrin Noct'
+    classes:
+      - pal
+  - id: reindrix
+    name: '059: Reindrix'
+    classes:
+      - pal
+  - id: rayhound
+    name: '060: Rayhound'
+    classes:
+      - pal
+  - id: kitsun
+    name: '061: Kitsun'
+    classes:
+      - pal
+  - id: dazzi
+    name: '062: Dazzi'
+    classes:
+      - pal
+  - id: lunaris
+    name: '063: Lunaris'
+    classes:
+      - pal
+  - id: dinossom
+    name: '064: Dinossom'
+    classes:
+      - pal
+  - id: dinossom_lux
+    name: '064B: Dinossom Lux'
+    classes:
+      - pal
+  - id: surfent
+    name: '065: Surfent'
+    classes:
+      - pal
+  - id: surfent_terra
+    name: '065B: Surfent Terra'
+    classes:
+      - pal
+  - id: maraith
+    name: '066: Maraith'
+    classes:
+      - pal
+  - id: digtoise
+    name: '067: Digtoise'
+    classes:
+      - pal
+  - id: tombat
+    name: '068: Tombat'
+    classes:
+      - pal
+  - id: lovander
+    name: '069: Lovander'
+    classes:
+      - pal
+  - id: flambelle
+    name: '070: Flambelle'
+    classes:
+      - pal
+  - id: vanwyrm
+    name: '071: Vanwyrm'
+    classes:
+      - pal
+  - id: vanwyrm_cryst
+    name: '071B: Vanwyrm Cryst'
+    classes:
+      - pal
+  - id: bushi
+    name: '072: Bushi'
+    classes:
+      - pal
+  - id: bushi_noct
+    name: '072B: Bushi Noct'
+    classes:
+      - pal
+  - id: beakon
+    name: '073: Beakon'
+    classes:
+      - pal
+  - id: ragnahawk
+    name: '074: Ragnahawk'
+    classes:
+      - pal
+  - id: katress
+    name: '075: Katress'
+    classes:
+      - pal
+  - id: katress_ignis
+    name: '075B: Katress Ignis'
+    classes:
+      - pal
+  - id: wixen
+    name: '076: Wixen'
+    classes:
+      - pal
+  - id: wixen_noct
+    name: '076B: Wixen Noct'
+    classes:
+      - pal
+  - id: verdash
+    name: '077: Verdash'
+    classes:
+      - pal
+  - id: vaelet
+    name: '078: Vaelet'
+    classes:
+      - pal
+  - id: sibelyx
+    name: '079: Sibelyx'
+    classes:
+      - pal
+  - id: elphidran
+    name: '080: Elphidran'
+    classes:
+      - pal
+  - id: elphidran_aqua
+    name: '080B: Elphidran Aqua'
+    classes:
+      - pal
+  - id: kelpsea
+    name: '081: Kelpsea'
+    classes:
+      - pal
+  - id: kelpsea_ignis
+    name: '081B: Kelpsea Ignis'
+    classes:
+      - pal
+  - id: azurobe
+    name: '082: Azurobe'
+    classes:
+      - pal
+  - id: cryolinx
+    name: '083: Cryolinx'
+    classes:
+      - pal
+  - id: blazehowl
+    name: '084: Blazehowl'
+    classes:
+      - pal
+  - id: blazehowl_noct
+    name: '084B: Blazehowl Noct'
+    classes:
+      - pal
+  - id: relaxaurus
+    name: '085: Relaxaurus'
+    classes:
+      - pal
+  - id: relaxaurus_lux
+    name: '085B: Relaxaurus Lux'
+    classes:
+      - pal
+  - id: broncherry
+    name: '086: Broncherry'
+    classes:
+      - pal
+  - id: broncherry_aqua
+    name: '086B: Broncherry Aqua'
+    classes:
+      - pal
+  - id: petallia
+    name: '087: Petallia'
+    classes:
+      - pal
+  - id: reptyro
+    name: '088: Reptyro'
+    classes:
+      - pal
+  - id: reptyro_cryst
+    name: '088B: Reptyro Cryst'
+    classes:
+      - pal
+  - id: kingpaca
+    name: '089: Kingpaca'
+    classes:
+      - pal
+  - id: kingpaca_cryst
+    name: '089B: Kingpaca Cryst'
+    classes:
+      - pal
+  - id: mammorest
+    name: '090: Mammorest'
+    classes:
+      - pal
+  - id: mammorest_cryst
+    name: '090B: Mammorest Cryst'
+    classes:
+      - pal
+  - id: wumpo
+    name: '091: Wumpo'
+    classes:
+      - pal
+  - id: wumpo_botan
+    name: '091B: Wumpo Botan'
+    classes:
+      - pal
+  - id: warsect
+    name: '092: Warsect'
+    classes:
+      - pal
+  - id: fenglope
+    name: '093: Fenglope'
+    classes:
+      - pal
+  - id: felbat
+    name: '094: Felbat'
+    classes:
+      - pal
+  - id: quivern
+    name: '095: Quivern'
+    classes:
+      - pal
+  - id: quivern_botan
+    name: '095B: Quivern Botan'
+    classes:
+      - pal
+  - id: blazamut
+    name: '096: Blazamut'
+    classes:
+      - pal
+  - id: blazamut_raid
+    name: '096B: Blazamut (Raid)'
+    classes:
+      - pal
+  - id: helzephyr
+    name: '097: Helzephyr'
+    classes:
+      - pal
+  - id: astegon
+    name: '098: Astegon'
+    classes:
+      - pal
+  - id: menasting
+    name: '099: Menasting'
+    classes:
+      - pal
+  - id: menasting_terra
+    name: '099B: Menasting Terra'
+    classes:
+      - pal
+  - id: anubis
+    name: '100: Anubis'
+    classes:
+      - pal
+  - id: jormuntide
+    name: '101: Jormuntide'
+    classes:
+      - pal
+  - id: jormuntide_ignis
+    name: '101B: Jormuntide Ignis'
+    classes:
+      - pal
+  - id: suzaku
+    name: '102: Suzaku'
+    classes:
+      - pal
+  - id: suzaku_aqua
+    name: '102B: Suzaku Aqua'
+    classes:
+      - pal
+  - id: grizzbolt
+    name: '103: Grizzbolt'
+    classes:
+      - pal
+  - id: lyleen
+    name: '104: Lyleen'
+    classes:
+      - pal
+  - id: lyleen_noct
+    name: '104B: Lyleen Noct'
+    classes:
+      - pal
+  - id: faleris
+    name: '105: Faleris'
+    classes:
+      - pal
+  - id: orserk
+    name: '106: Orserk'
+    classes:
+      - pal
+  - id: shadowbeak
+    name: '107: Shadowbeak'
+    classes:
+      - pal
+  - id: paladius
+    name: '108: Paladius'
+    classes:
+      - pal
+  - id: necromus
+    name: '109: Necromus'
+    classes:
+      - pal
+  - id: frostallion
+    name: '110: Frostallion'
+    classes:
+      - pal
+  - id: frostallion_noct
+    name: '110B: Frostallion Noct'
+    classes:
+      - pal
+  - id: jetragon
+    name: '111: Jetragon'
+    classes:
+      - pal
+  - id: bellanoir
+    name: '112: Bellanoir'
+    classes:
+      - pal
+  - id: bellanoir_libero
+    name: '112B: Bellanoir Libero'
+    classes:
+      - pal
