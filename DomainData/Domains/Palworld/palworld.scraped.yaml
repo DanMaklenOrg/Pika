@@ -257,10 +257,6 @@ entities:
     name: '055: Chillet'
     classes:
       - pal
-  - id: chillet_ignis
-    name: '055B: Chillet Ignis'
-    classes:
-      - pal
   - id: univolt
     name: '056: Univolt'
     classes:

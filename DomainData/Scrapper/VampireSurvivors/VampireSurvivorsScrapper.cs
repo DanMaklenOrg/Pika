@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
-public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "vampire_survivors";
     public string OutputDirectory => "VampireSurvivors";

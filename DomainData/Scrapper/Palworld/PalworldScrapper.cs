@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Palworld;
 
-public class PalworldScrapper(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class PalworldScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "palworld";
     public string OutputDirectory => "Palworld";
@@ -31,7 +31,7 @@ public class PalworldScrapper(EntityNameContainer nameContainer, SteamClient ste
         var name = nameContainer.RegisterAndNormalize(node.SelectSingleNode("td/span").InnerText, "Pal");
         var index = node.SelectSingleNode("td[2]").InnerText.Trim();
 
-        List<string> blacklist = ["Gumoss (Special)", "Gorirat Terra"];
+        List<string> blacklist = ["Gumoss (Special)", "Gorirat Terra", "Chillet Ignis"];
 
         if (blacklist.Contains(name)) return null;
         return new Entity
