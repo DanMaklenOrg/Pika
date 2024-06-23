@@ -57,10 +57,6 @@ entities:
     name: '013: Gumoss'
     classes:
       - pal
-  - id: gumoss_special
-    name: '013B: Gumoss (Special)'
-    classes:
-      - pal
   - id: vixy
     name: '014: Vixy'
     classes:
@@ -235,10 +231,6 @@ entities:
       - pal
   - id: gorirat
     name: '049: Gorirat'
-    classes:
-      - pal
-  - id: gorirat_terra
-    name: '049B: Gorirat Terra'
     classes:
       - pal
   - id: beegarde
