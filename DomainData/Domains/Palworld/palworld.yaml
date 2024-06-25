@@ -7,5 +7,9 @@ classes:
   - id: pal
     stats:
       - captured
+    tags:
+      - pal
+tags:
+  - name: Pal
 projects:
   - name: Capture all pals at least 10 times
