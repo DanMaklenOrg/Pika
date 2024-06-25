@@ -3,11 +3,11 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Palworld;
 
-public class PalworldScrapper(EntityNameContainer nameContainer) : IScrapper
+public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "palworld";
     public string OutputDirectory => "Palworld";
-    public string FileName => DomainId.ToString();
+    public string FileName => "Pals";
 
     public async Task<Domain> Scrape()
     {
@@ -31,7 +31,7 @@ public class PalworldScrapper(EntityNameContainer nameContainer) : IScrapper
         var name = nameContainer.RegisterAndNormalize(node.SelectSingleNode("td/span").InnerText, "Pal");
         var index = node.SelectSingleNode("td[2]").InnerText.Trim();
 
-        List<string> blacklist = ["Gumoss (Special)", "Gorirat Terra", "Chillet Ignis"];
+        List<string> blacklist = ["Gumoss (Special)"];
 
         if (blacklist.Contains(name)) return null;
         return new Entity

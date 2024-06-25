@@ -233,6 +233,10 @@ entities:
     name: '049: Gorirat'
     classes:
       - pal
+  - id: gorirat_terra
+    name: '049B: Gorirat Terra'
+    classes:
+      - pal
   - id: beegarde
     name: '050: Beegarde'
     classes:
@@ -255,6 +259,10 @@ entities:
       - pal
   - id: chillet
     name: '055: Chillet'
+    classes:
+      - pal
+  - id: chillet_ignis
+    name: '055B: Chillet Ignis'
     classes:
       - pal
   - id: univolt
@@ -489,12 +497,16 @@ entities:
     name: '096: Blazamut'
     classes:
       - pal
-  - id: blazamut_raid
-    name: '096B: Blazamut (Raid)'
+  - id: blazamut_ryu
+    name: '096B: Blazamut Ryu'
     classes:
       - pal
   - id: helzephyr
     name: '097: Helzephyr'
+    classes:
+      - pal
+  - id: helzephyr_lux
+    name: '097B: Helzephyr Lux'
     classes:
       - pal
   - id: astegon
@@ -579,5 +591,65 @@ entities:
       - pal
   - id: bellanoir_libero
     name: '112B: Bellanoir Libero'
+    classes:
+      - pal
+  - id: selyne
+    name: '113: Selyne'
+    classes:
+      - pal
+  - id: croajiro
+    name: '114: Croajiro'
+    classes:
+      - pal
+  - id: lullu
+    name: '115: Lullu'
+    classes:
+      - pal
+  - id: shroomer
+    name: '116: Shroomer'
+    classes:
+      - pal
+  - id: shroomer_noct
+    name: '116B: Shroomer Noct'
+    classes:
+      - pal
+  - id: kikit
+    name: '117: Kikit'
+    classes:
+      - pal
+  - id: sootseer
+    name: '118: Sootseer'
+    classes:
+      - pal
+  - id: prixter
+    name: '119: Prixter'
+    classes:
+      - pal
+  - id: knocklem
+    name: '120: Knocklem'
+    classes:
+      - pal
+  - id: yakumo
+    name: '121: Yakumo'
+    classes:
+      - pal
+  - id: dogen
+    name: '122: Dogen'
+    classes:
+      - pal
+  - id: dazemu
+    name: '123: Dazemu'
+    classes:
+      - pal
+  - id: mimog
+    name: '124: Mimog'
+    classes:
+      - pal
+  - id: xenovader
+    name: '125: Xenovader'
+    classes:
+      - pal
+  - id: xenogard
+    name: '126: Xenogard'
     classes:
       - pal

@@ -1,0 +1,63 @@
+id: palworld
+name: Palworld
+entities:
+  - id: hillside_sovereign
+    name: Hillside Sovereign
+    classes:
+      - _/achievement
+  - id: snowfall_sovereign
+    name: Snowfall Sovereign
+    classes:
+      - _/achievement
+  - id: desert_sovereign
+    name: Desert Sovereign
+    classes:
+      - _/achievement
+  - id: volcano_sovereign
+    name: Volcano Sovereign
+    classes:
+      - _/achievement
+  - id: astral_sovereign
+    name: Astral Sovereign
+    classes:
+      - _/achievement
+  - id: beginning_of_the_legend
+    name: Beginning of the Legend
+    classes:
+      - _/achievement
+  - id: newbie_pal_tamer
+    name: Newbie Pal Tamer
+    classes:
+      - _/achievement
+  - id: intermediate_pal_tamer
+    name: Intermediate Pal Tamer
+    classes:
+      - _/achievement
+  - id: skilled_pal_tamer
+    name: Skilled Pal Tamer
+    classes:
+      - _/achievement
+  - id: seasoned_pal_tamer
+    name: Seasoned Pal Tamer
+    classes:
+      - _/achievement
+  - id: twilight_siren
+    name: Twilight Siren
+    classes:
+      - _/achievement
+  - id: eclipsed_siren
+    name: Eclipsed Siren
+    classes:
+      - _/achievement
+  - id: song_of_mana
+    name: Song of Mana
+    classes:
+      - _/achievement
+  - id: tirajis
+    name: Tirajisú
+    classes:
+      - _/achievement
+  - id: ebony_wings
+    name: Ebony Wings
+    classes:
+      - _/achievement
