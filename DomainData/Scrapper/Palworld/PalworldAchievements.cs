@@ -43,12 +43,6 @@ public class PalworldPalsAchievements(EntityNameContainer nameContainer, SteamCl
     {
         var steamRawAchievements = await steamClient.GetAchievements(_steamAppId);
         var achievements = steamRawAchievements.Select(a => EntityNameContainer.Normalize(a.DisplayName)).ToHashSet();
-        achievements.Remove("Song Of Mana");
-        achievements.Add("Song of Mana");
-        achievements.Remove("Tiragisú");
-        achievements.Add("Tirajisú");
-        achievements.Remove("Ebony WIngs");
-        achievements.Add("Ebony Wings");
         return achievements;
     }
 }

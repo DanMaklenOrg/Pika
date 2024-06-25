@@ -49,15 +49,3 @@ entities:
     name: Eclipsed Siren
     classes:
       - _/achievement
-  - id: song_of_mana
-    name: Song of Mana
-    classes:
-      - _/achievement
-  - id: tirajis
-    name: Tirajisú
-    classes:
-      - _/achievement
-  - id: ebony_wings
-    name: Ebony Wings
-    classes:
-      - _/achievement

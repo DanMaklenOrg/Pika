@@ -3,6 +3,11 @@ name: Palworld
 stats:
   - name: Captured
     type: INTEGER_RANGE(0, 10)
+  - name: Base Level
+    type: INTEGER_RANGE(0, 25)
+  - id: capture_power
+    name: Lifemunk Effigy Capture Power
+    type: INTEGER_RANGE(0, 12)
 classes:
   - id: pal
     stats:
@@ -13,3 +18,11 @@ tags:
   - name: Pal
 projects:
   - name: Capture all pals at least 10 times
+  - name: Reach Max Base Level
+entities:
+  - name: Base
+    stats:
+      - base_level
+  - name: player
+    stats:
+      - capture_power
