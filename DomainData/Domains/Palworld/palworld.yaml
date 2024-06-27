@@ -17,8 +17,9 @@ classes:
 tags:
   - name: Pal
 projects:
-  - name: Capture all pals at least 10 times
+  - name: Capture all pals at least 12 times
   - name: Reach Max Base Level
+  - name: Max Capture Power
 entities:
   - name: Base
     stats:
