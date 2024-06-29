@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Palworld;
 
-public class PalworldPalsAchievements(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class PalworldAchievements(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
 {
     private readonly uint _steamAppId = 1623730;
 

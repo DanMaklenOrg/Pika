@@ -25,7 +25,7 @@ var builder = CoconaApp.CreateBuilder(args);
 
 // Palworld
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
-builder.Services.AddTransient<IScrapper, PalworldPalsAchievements>();
+builder.Services.AddTransient<IScrapper, PalworldAchievements>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddScoped<EntityNameContainer>();

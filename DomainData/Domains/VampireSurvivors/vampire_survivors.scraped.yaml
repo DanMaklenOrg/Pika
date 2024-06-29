@@ -1249,20 +1249,8 @@ entities:
       - collection_entry
     tags:
       - weapon
-  - id: anima_of_mortaccio
-    name: Anima of Mortaccio
-    classes:
-      - collection_entry
-    tags:
-      - weapon
   - id: yatta_daikarin
     name: Yatta Daikarin
-    classes:
-      - collection_entry
-    tags:
-      - weapon
-  - id: profusione_damore
-    name: Profusione D'Amore
     classes:
       - collection_entry
     tags:
@@ -1661,32 +1649,8 @@ entities:
       - collection_entry
     tags:
       - pickup
-  - id: little_heart
-    name: Little Heart
-    classes:
-      - collection_entry
-    tags:
-      - pickup
   - id: golden_egg
     name: Golden Egg
-    classes:
-      - collection_entry
-    tags:
-      - pickup
-  - id: pie
-    name: Pie
-    classes:
-      - collection_entry
-    tags:
-      - pickup
-  - id: cheese
-    name: Cheese
-    classes:
-      - collection_entry
-    tags:
-      - pickup
-  - id: corn
-    name: Corn
     classes:
       - collection_entry
     tags:
