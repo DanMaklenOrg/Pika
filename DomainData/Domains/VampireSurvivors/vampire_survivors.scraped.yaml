@@ -1249,12 +1249,6 @@ entities:
       - collection_entry
     tags:
       - weapon
-  - id: yatta_daikarin
-    name: Yatta Daikarin
-    classes:
-      - collection_entry
-    tags:
-      - weapon
   - id: festive_winds
     name: Festive Winds
     classes:
@@ -1561,12 +1555,6 @@ entities:
       - pickup
   - id: coin_bag
     name: Coin Bag
-    classes:
-      - collection_entry
-    tags:
-      - pickup
-  - id: big_coin_bag
-    name: Big Coin Bag
     classes:
       - collection_entry
     tags:

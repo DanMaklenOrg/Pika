@@ -124,7 +124,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
 
-        List<string> blacklist = ["Anima of Mortaccio", "Profusione D'Amore", "Yatta Cavallo"];
+        List<string> blacklist = ["Anima of Mortaccio", "Profusione D'Amore", "Yatta Daikarin"];
         if (blacklist.Contains(EntityNameContainer.Normalize(name))) return null;
 
         name = nameContainer.RegisterAndNormalize(name, "Weapon");
@@ -148,7 +148,7 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
 
-        List<string> blacklist = ["Big Bag Coin", "Cheese", "Corn", "Little Heart", "Pie"];
+        List<string> blacklist = ["Big Coin Bag", "Cheese", "Corn", "Little Heart", "Pie"];
         if (blacklist.Contains(EntityNameContainer.Normalize(name))) return null;
 
         name = nameContainer.RegisterAndNormalize(name, "Pickup");
