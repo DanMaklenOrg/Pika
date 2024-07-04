@@ -26,6 +26,7 @@ projects:
   - name: Reach Max Level
   - name: Defeat all Tower Bosses (On Hard Mode as well)
   - name: Collect all journal entries
+  - name: Unlock all achievements
 entities:
   - name: Base
     stats:
