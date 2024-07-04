@@ -20,6 +20,12 @@ projects:
   - name: Capture all pals at least 12 times
   - name: Reach Max Base Level
   - name: Max Capture Power
+  - name: Build a Maxed Breeding Base
+  - name: Build a Maxed Raid Base
+  - name: Build a Maxed Mining Base
+  - name: Reach Max Level
+  - name: Defeat all Tower Bosses (On Hard Mode as well)
+  - name: Collect all journal entries
 entities:
   - name: Base
     stats:
