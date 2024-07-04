@@ -31,7 +31,7 @@ public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
         var name = nameContainer.RegisterAndNormalize(node.SelectSingleNode("td/span").InnerText, "Pal");
         var index = node.SelectSingleNode("td[2]").InnerText.Trim();
 
-        List<string> blacklist = ["Gumoss (Special)"];
+        List<string> blacklist = ["Gumoss (Special)", "Warsect Terra"];
 
         if (blacklist.Contains(name)) return null;
         return new Entity

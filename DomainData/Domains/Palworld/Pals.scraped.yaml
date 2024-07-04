@@ -477,10 +477,6 @@ entities:
     name: '092: Warsect'
     classes:
       - pal
-  - id: warsect_terra
-    name: '092B: Warsect Terra'
-    classes:
-      - pal
   - id: fenglope
     name: '093: Fenglope'
     classes:

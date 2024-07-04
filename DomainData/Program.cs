@@ -19,9 +19,9 @@ var builder = CoconaApp.CreateBuilder(args);
 // builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
 
 // Vampire Survivors
-builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
-builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
-builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
 
 // Palworld
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
