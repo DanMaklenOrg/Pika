@@ -1,12 +1,10 @@
-﻿using Pika.Converter;
-
-namespace Pika.Model;
+﻿namespace Pika.Model;
 
 public readonly struct Project
 {
-    public ResourceId Id { get; init; }
-    public string Name { get; init; }
-    public List<Objective> Objectives { get; init; }
+    public required ResourceId Id { get; init; }
+    public required string Title { get; init; }
+    public required  List<Objective> Objectives { get; init; }
 
 
     public override string ToString() => Id.FullyQualifiedId;
@@ -14,5 +12,16 @@ public readonly struct Project
 
 public readonly struct Objective
 {
+    public required string Title { get; init; }
 
+    public required List<ObjectiveRequirement> Requirements { get; init; }
+}
+
+public readonly struct ObjectiveRequirement
+{
+    public required ResourceId Class { get; init; }
+
+    public required ResourceId Stat { get; init; }
+
+    public required int Min { get; init; }
 }

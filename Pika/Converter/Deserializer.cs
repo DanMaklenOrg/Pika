@@ -52,8 +52,28 @@ public class Deserializer
     {
         return new Project
         {
-            Id = ParseOrInduceId(node.Id, node.Name),
-            Name = node.Name,
+            Id = ParseId(node.Id),
+            Title = node.Title,
+            Objectives = node.Objectives.ConvertAll(Deserialize),
+        };
+    }
+
+    private Objective Deserialize(ObjectiveNode node)
+    {
+        return new Objective
+        {
+            Title = node.Title,
+            Requirements = node.Requirements.ConvertAll(Deserialize),
+        };
+    }
+
+    private ObjectiveRequirement Deserialize(ObjectiveRequirementNode node)
+    {
+        return new ObjectiveRequirement
+        {
+            Class = ParseId(node.Class),
+            Stat = ParseId(node.Stat),
+            Min = node.Min,
         };
     }
 
