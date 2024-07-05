@@ -17,16 +17,14 @@ classes:
 tags:
   - name: Pal
 projects:
-  - name: Capture all pals at least 12 times
-  - name: Reach Max Base Level
-  - name: Max Capture Power
-  - name: Build a Maxed Breeding Base
-  - name: Build a Maxed Raid Base
-  - name: Build a Maxed Mining Base
-  - name: Reach Max Level
-  - name: Defeat all Tower Bosses (On Hard Mode as well)
-  - name: Collect all journal entries
-  - name: Unlock all achievements
+  - id: pal_capture
+    title: Capture All Pals
+    objectives:
+      - title: Capture all pals at least 12 times each
+        require:
+          - class: pal
+            stat: captured
+            min: 12
 entities:
   - name: Base
     stats:

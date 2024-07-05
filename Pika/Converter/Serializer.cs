@@ -50,7 +50,8 @@ public class Serializer
         return new ProjectNode
         {
             Id = MinifyId(node.Id),
-            Name = node.Name,
+            Title = node.Name,
+            Objectives = node.Objective...
         };
     }
 

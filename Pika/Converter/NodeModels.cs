@@ -1,3 +1,5 @@
+using YamlDotNet.Serialization;
+
 namespace Pika.Converter;
 
 public readonly struct DomainNode
@@ -30,8 +32,26 @@ public readonly struct StatNode
 
 public readonly struct ProjectNode
 {
-    public string? Id { get; init; }
-    public string Name { get; init; }
+    public string Id { get; init; }
+    public string Title { get; init; }
+    public List<ObjectiveNode> Objectives { get; init; }
+}
+
+public readonly struct ObjectiveNode
+{
+    public string Title { get; init; }
+
+    [YamlMember(Alias = "require")]
+    public List<ObjectiveRequirementNode> Requirements { get; init; }
+}
+
+public readonly struct ObjectiveRequirementNode
+{
+    public string Class { get; init; }
+
+    public string Stat { get; init; }
+
+    public int Min { get; init; }
 }
 
 public readonly struct TagNode
