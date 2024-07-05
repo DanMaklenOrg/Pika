@@ -18,7 +18,7 @@ public class EntityNameContainer
 
     public static string Normalize(string name)
     {
-        return WebUtility.HtmlDecode(name.Trim());
+        return WebUtility.HtmlDecode(name).Trim();
     }
 
     private string Discriminate(string name, string discriminator)

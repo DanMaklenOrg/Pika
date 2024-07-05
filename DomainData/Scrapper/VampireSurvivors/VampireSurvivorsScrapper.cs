@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
-public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "vampire_survivors";
     public string OutputDirectory => "VampireSurvivors";
@@ -117,12 +117,16 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Weapons");
         var nodes =
             doc.DocumentNode.SelectNodes("//table[preceding-sibling::h3[span/.='Base Weapons'] and following-sibling::h3[span/.='Gifts']]/tbody/tr/td/..");
-        return nodes.Select(ParseWeapon).ToList();
+        return nodes.Select(ParseWeapon).Where(x => x is not null).Cast<Entity>().ToList();
     }
 
-    private Entity ParseWeapon(HtmlNode node)
+    private Entity? ParseWeapon(HtmlNode node)
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
+
+        List<string> blacklist = ["Anima of Mortaccio", "Profusione D'Amore", "Yatta Daikarin"];
+        if (blacklist.Contains(EntityNameContainer.Normalize(name))) return null;
+
         name = nameContainer.RegisterAndNormalize(name, "Weapon");
         return new Entity
         {
@@ -137,12 +141,16 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer, SteamCl
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Pickups");
         var nodes = doc.DocumentNode.SelectNodes("//tr");
-        return nodes.Skip(2).Select(ParsePickups).ToList();
+        return nodes.Skip(2).Select(ParsePickups).Where(x => x is not null).Cast<Entity>().ToList();
     }
 
-    private Entity ParsePickups(HtmlNode node)
+    private Entity? ParsePickups(HtmlNode node)
     {
         var name = node.SelectSingleNode(".//td[2]").InnerText;
+
+        List<string> blacklist = ["Big Coin Bag", "Cheese", "Corn", "Little Heart", "Pie"];
+        if (blacklist.Contains(EntityNameContainer.Normalize(name))) return null;
+
         name = nameContainer.RegisterAndNormalize(name, "Pickup");
         return new Entity
         {

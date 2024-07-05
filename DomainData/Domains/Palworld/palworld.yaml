@@ -1,0 +1,36 @@
+id: palworld
+name: Palworld
+stats:
+  - name: Captured
+    type: INTEGER_RANGE(0, 12)
+  - name: Base Level
+    type: INTEGER_RANGE(0, 25)
+  - id: capture_power
+    name: Lifemunk Effigy Capture Power
+    type: INTEGER_RANGE(0, 12)
+classes:
+  - id: pal
+    stats:
+      - captured
+    tags:
+      - pal
+tags:
+  - name: Pal
+projects:
+  - name: Capture all pals at least 12 times
+  - name: Reach Max Base Level
+  - name: Max Capture Power
+  - name: Build a Maxed Breeding Base
+  - name: Build a Maxed Raid Base
+  - name: Build a Maxed Mining Base
+  - name: Reach Max Level
+  - name: Defeat all Tower Bosses (On Hard Mode as well)
+  - name: Collect all journal entries
+  - name: Unlock all achievements
+entities:
+  - name: Base
+    stats:
+      - base_level
+  - name: player
+    stats:
+      - capture_power

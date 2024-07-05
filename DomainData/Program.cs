@@ -7,6 +7,7 @@ using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.Scrapper;
 using Pika.DomainData.Scrapper.MinecraftATM9;
+using Pika.DomainData.Scrapper.Palworld;
 using Pika.DomainData.Scrapper.VampireSurvivors;
 using Pika.Repository;
 
@@ -18,9 +19,13 @@ var builder = CoconaApp.CreateBuilder(args);
 // builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
 
 // Vampire Survivors
-builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
-builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
-builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
+// builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
+
+// Palworld
+builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
+builder.Services.AddTransient<IScrapper, PalworldAchievements>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddScoped<EntityNameContainer>();

@@ -1,0 +1,127 @@
+id: palworld
+name: Palworld
+entities:
+  - id: hillside_sovereign
+    name: Hillside Sovereign
+    classes:
+      - _/achievement
+  - id: snowfall_sovereign
+    name: Snowfall Sovereign
+    classes:
+      - _/achievement
+  - id: desert_sovereign
+    name: Desert Sovereign
+    classes:
+      - _/achievement
+  - id: volcano_sovereign
+    name: Volcano Sovereign
+    classes:
+      - _/achievement
+  - id: astral_sovereign
+    name: Astral Sovereign
+    classes:
+      - _/achievement
+  - id: beginning_of_the_legend
+    name: Beginning of the Legend
+    classes:
+      - _/achievement
+  - id: newbie_pal_tamer
+    name: Newbie Pal Tamer
+    classes:
+      - _/achievement
+  - id: intermediate_pal_tamer
+    name: Intermediate Pal Tamer
+    classes:
+      - _/achievement
+  - id: skilled_pal_tamer
+    name: Skilled Pal Tamer
+    classes:
+      - _/achievement
+  - id: seasoned_pal_tamer
+    name: Seasoned Pal Tamer
+    classes:
+      - _/achievement
+  - id: twilight_siren
+    name: Twilight Siren
+    classes:
+      - _/achievement
+  - id: eclipsed_siren
+    name: Eclipsed Siren
+    classes:
+      - _/achievement
+  - id: blossom_sovereign
+    name: Blossom Sovereign
+    classes:
+      - _/achievement
+  - id: incarnation_of_the_eternal_flame
+    name: Incarnation of the Eternal Flame
+    classes:
+      - _/achievement
+  - id: exceptional_pal_tamer
+    name: Exceptional Pal Tamer
+    classes:
+      - _/achievement
+  - id: overhunting
+    name: Overhunting
+    classes:
+      - _/achievement
+  - id: inhuman_act
+    name: Inhuman Act
+    classes:
+      - _/achievement
+  - id: legendary_celestial_dragon
+    name: Legendary Celestial Dragon
+    classes:
+      - _/achievement
+  - id: holy_knight_of_legend
+    name: Holy Knight of Legend
+    classes:
+      - _/achievement
+  - id: dark_knight_of_legend
+    name: Dark Knight of Legend
+    classes:
+      - _/achievement
+  - id: legendary_steed_of_ice
+    name: Legendary Steed of Ice
+    classes:
+      - _/achievement
+  - id: trail_of_the_castaway
+    name: Trail of the Castaway
+    classes:
+      - _/achievement
+  - id: palpagos_guru
+    name: Palpagos Guru
+    classes:
+      - _/achievement
+  - id: all_for_one
+    name: All for One
+    classes:
+      - _/achievement
+  - id: voice_of_resentment
+    name: Voice of Resentment
+    classes:
+      - _/achievement
+  - id: senior_adventurer
+    name: Senior Adventurer
+    classes:
+      - _/achievement
+  - id: conqueror_of_the_sea
+    name: Conqueror of the Sea
+    classes:
+      - _/achievement
+  - id: champion_of_the_palpagos_islands
+    name: Champion of the Palpagos Islands
+    classes:
+      - _/achievement
+  - id: sphere_craftsman
+    name: Sphere Craftsman
+    classes:
+      - _/achievement
+  - id: iron_heart
+    name: Iron Heart
+    classes:
+      - _/achievement
+  - id: blood_and_iron
+    name: Blood and Iron
+    classes:
+      - _/achievement
