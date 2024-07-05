@@ -26,7 +26,27 @@ public static class DbModelMapper
         return new ProjectDbModel
         {
             Id = project.Id.FullyQualifiedId,
-            Name = project.Name,
+            Title = project.Title,
+            Objectives = project.Objectives.ConvertAll(ToDbModel),
+        };
+    }
+
+    private static ObjectiveDbModel ToDbModel(Objective project)
+    {
+        return new ObjectiveDbModel
+        {
+            Title = project.Title,
+            Requirements = project.Requirements.ConvertAll(ToDbModel),
+        };
+    }
+
+    private static ObjectiveRequirementDbModel ToDbModel(ObjectiveRequirement project)
+    {
+        return new ObjectiveRequirementDbModel
+        {
+            Class = project.Class.FullyQualifiedId,
+            Stat = project.Stat.FullyQualifiedId,
+            Min = project.Min,
         };
     }
 
@@ -96,7 +116,27 @@ public static class DbModelMapper
         return new Project
         {
             Id = model.Id,
-            Name = model.Name,
+            Title = model.Title,
+            Objectives = model.Objectives.ConvertAll(FromDbModel),
+        };
+    }
+
+    private static Objective FromDbModel(ObjectiveDbModel model)
+    {
+        return new Objective
+        {
+            Title = model.Title,
+            Requirements = model.Requirements.ConvertAll(FromDbModel),
+        };
+    }
+
+    private static ObjectiveRequirement FromDbModel(ObjectiveRequirementDbModel model)
+    {
+        return new ObjectiveRequirement
+        {
+            Class = model.Class,
+            Stat = model.Stat,
+            Min = model.Min,
         };
     }
 

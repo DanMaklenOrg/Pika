@@ -50,7 +50,27 @@ public class Serializer
         return new ProjectNode
         {
             Id = MinifyId(node.Id),
-            Name = node.Name,
+            Title = node.Title,
+            Objectives = node.Objectives.ConvertAll(Serialize),
+        };
+    }
+
+    private ObjectiveNode Serialize(Objective node)
+    {
+        return new ObjectiveNode
+        {
+            Title = node.Title,
+            Requirements = node.Requirements.ConvertAll(Serialize),
+        };
+    }
+
+    private ObjectiveRequirementNode Serialize(ObjectiveRequirement node)
+    {
+        return new ObjectiveRequirementNode
+        {
+            Class = MinifyId(node.Class),
+            Stat = MinifyId(node.Stat),
+            Min = node.Min,
         };
     }
 

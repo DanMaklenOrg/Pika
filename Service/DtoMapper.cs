@@ -53,9 +53,30 @@ public static class DtoMapper
         return new ProjectDto
         {
             Id = model.Id.FullyQualifiedId,
-            Name = model.Name,
+            Title = model.Title,
+            Objectives = model.Objectives.ConvertAll(ToDto),
         };
     }
+
+    private static ObjectiveDto ToDto(Objective model)
+    {
+        return new ObjectiveDto
+        {
+            Title = model.Title,
+            Requirements = model.Requirements.ConvertAll(ToDto),
+        };
+    }
+
+    private static ObjectiveRequirementDto ToDto(ObjectiveRequirement model)
+    {
+        return new ObjectiveRequirementDto
+        {
+            Class = model.Class.FullyQualifiedId,
+            Stat = model.Stat.FullyQualifiedId,
+            Min = model.Min,
+        };
+    }
+
 
     private static EntityDto ToDto(Entity model)
     {
