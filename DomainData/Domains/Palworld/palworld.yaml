@@ -25,10 +25,11 @@ projects:
           - class: pal
             stat: captured
             min: 12
-entities:
-  - name: Base
-    stats:
-      - base_level
-  - name: player
-    stats:
-      - capture_power
+  - id: achievement_hunter
+    title: Unlock all achievements
+    objectives:
+      - title: Unlock all steam achievements
+        require:
+          - class: _/achievement
+            stat: _/achieved
+            min: 1
