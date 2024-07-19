@@ -33,10 +33,3 @@ projects:
           - class: _/achievement
             stat: _/achieved
             min: 1
-entities:
-  - name: Base
-    stats:
-      - base_level
-  - name: player
-    stats:
-      - capture_power

@@ -16,9 +16,6 @@ stats:
   - id: power_up_rank_1
     name: Rank
     type: INTEGER_RANGE(0, 1)
-  - id: achieved_steam
-    name: Achievement Unlocked (Steam)
-    type: BOOLEAN
   - name: Hyper Mode Unlocked
     type: BOOLEAN
 tags:
@@ -76,19 +73,72 @@ classes:
       - _/unlocked
     tags:
       - secret
-  - id: steam_achievement
-    stats:
-      - achieved_steam
-    tags:
-      - _/achievement
 projects:
-  - name: Unlock all characters
-  - name: Max all power ups
-  - name: Unlock all entries in the collection
-  - name: Unlock all entries in the bestiary
-  - name: Unlock all secrets
-  - name: Unlock all achievements
-  - name: Unlock all stages and their hyper mode
+  - id: unlock_characters
+    title: Unlock All Characters
+    objectives:
+      - title: Unlock all characters
+        require:
+          - class: character
+            stat: _/unlocked
+            min: 1
+  - id: max_power_ups
+    title: Max All Power Ups
+    objectives:
+      - title: Max all power ups
+        require:
+          - class: power_up_10
+            stat: power_up_rank_10
+            min: 10
+          - class: power_up_5
+            stat: power_up_rank_5
+            min: 5
+          - class: power_up_3
+            stat: power_up_rank_3
+            min: 3
+          - class: power_up_2
+            stat: power_up_rank_2
+            min: 2
+          - class: power_up_1
+            stat: power_up_rank_1
+            min: 1
+  - id: unlock_collection
+    title: Unlock All Collection Entries
+    objectives:
+      - title: Unlock all characters
+        require:
+          - class: collection_entry
+            stat: _/unlocked
+            min: 1
+  - id: unlock_secrets
+    title: Unlock All Secrets
+    objectives:
+      - title: Unlock all secrets
+        require:
+          - class: secret_unlock
+            stat: _/unlocked
+            min: 1
+  - id: unlock_achievements
+    title: Unlock All Achievements
+    objectives:
+      - title: Unlock all achievements
+        require:
+          - class: _/achievement
+            stat: _/achieved
+            min: 1
+  - id: unlock_stage
+    title: Unlock All Stages and Their Hyper Mode
+    objectives:
+      - title: Unlock all stages
+        require:
+          - class: stage
+            stat: _/unlocked
+            min: 1
+      - title: Unlock hyper mode on all Stages
+        require:
+          - class: stage
+            stat: hyper_mode_unlocked
+            min: 1
 entities:
   - name: Friendship Amulet
     classes:
