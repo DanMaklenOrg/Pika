@@ -6,7 +6,7 @@ projects:
     objectives:
       - title: Unlock all steam achievements
         require:
-          - class: _/achievement
+          - classes: _/achievement
             stat: _/achieved
             min: 1
 stats:
@@ -22,40 +22,40 @@ classes:
       - _/unlocked
 entities:
   - name: Stamina
-    class: passive
+    classes: passive
   - name: Attack Damage
-    class: passive
+    classes: passive
   - name: Regeneration
-    class: passive
+    classes: passive
   - name: Focus
-    class: passive
+    classes: passive
   - name: Armor
-    class: passive
+    classes: passive
   - name: Agility
-    class: passive
+    classes: passive
   - name: Magic Damage
-    class: passive
+    classes: passive
   - name: Purity
-    class: passive
+    classes: passive
   - name: Greed
-    class: passive
+    classes: passive
   - name: Barbarian
-    class: hero
+    classes: hero
   - name: Archer
-    class: hero
+    classes: hero
   - name: Thief
-    class: hero
+    classes: hero
   - name: Warrior
-    class: hero
+    classes: hero
   - name: Wizard
-    class: hero
+    classes: hero
   - name: Cleric
-    class: hero
+    classes: hero
   - name: Necromancer
-    class: hero
+    classes: hero
   - name: Brawler
-    class: hero
+    classes: hero
   - name: Engineer
-    class: hero
+    classes: hero
   - name: Nightblade
-    class: hero
+    classes: hero
