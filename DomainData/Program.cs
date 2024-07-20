@@ -6,6 +6,7 @@ using Pika.DataLayer.Dao;
 using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.Scrapper;
+using Pika.DomainData.Scrapper.DungeonSouls;
 using Pika.DomainData.Scrapper.MinecraftATM9;
 using Pika.DomainData.Scrapper.Palworld;
 using Pika.DomainData.Scrapper.VampireSurvivors;
@@ -24,8 +25,11 @@ var builder = CoconaApp.CreateBuilder(args);
 // builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
 
 // Palworld
-builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
-builder.Services.AddTransient<IScrapper, PalworldAchievements>();
+// builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
+// builder.Services.AddTransient<IScrapper, PalworldAchievements>();
+
+// Dungeon Souls
+builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
