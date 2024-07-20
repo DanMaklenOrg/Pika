@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Palworld;
 
-public class PalworldAchievements(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class PalworldAchievements(SteamScrapper steamScrapper) : IScrapper
 {
     private readonly uint _steamAppId = 1623730;
 
@@ -17,32 +17,7 @@ public class PalworldAchievements(EntityNameContainer nameContainer, SteamClient
         {
             Id = DomainId,
             Name = "Palworld",
-            Entities = await ScrapeAchievements(),
+            Entities = await steamScrapper.ScrapAchievements(DomainId, _steamAppId)
         };
-    }
-
-    private async Task<List<Entity>> ScrapeAchievements()
-    {
-        var steamAchievements = await ScrapeSteamAchievements();
-
-        var achievements = steamAchievements.Select(rawName =>
-        {
-            var name = nameContainer.RegisterAndNormalize(rawName, "Achievement");
-            return new Entity
-            {
-                Id = ResourceId.InduceFromName(name, DomainId),
-                Name = name,
-                Classes = ["_/achievement"],
-            };
-        }).ToList();
-
-        return achievements;
-    }
-
-    private async Task<HashSet<string>> ScrapeSteamAchievements()
-    {
-        var steamRawAchievements = await steamClient.GetAchievements(_steamAppId);
-        var achievements = steamRawAchievements.Select(a => EntityNameContainer.Normalize(a.DisplayName)).ToHashSet();
-        return achievements;
     }
 }

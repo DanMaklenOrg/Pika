@@ -28,6 +28,7 @@ builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldAchievements>();
 
 builder.Services.AddTransient<SteamClient>();
+builder.Services.AddTransient<SteamScrapper>();
 builder.Services.AddScoped<EntityNameContainer>();
 builder.Services.AddTransient<PikaConverter>();
 
