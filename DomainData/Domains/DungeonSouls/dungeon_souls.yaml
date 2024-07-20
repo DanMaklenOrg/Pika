@@ -13,7 +13,7 @@ stats:
   - name: Level
     type: INTEGER_RANGE(0, 10)
 
-classes:
+class:
   - id: passive
     stats:
       - level
