@@ -19,8 +19,4 @@
       <ProjectReference Include="..\Pika\Pika.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Domains\Dungeon Souls\" />
-    </ItemGroup>
-
 </Project>

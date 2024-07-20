@@ -4,7 +4,7 @@ namespace Pika.DomainData.Scrapper.DungeonSouls;
 
 public class DungeonSoulsScrapper(SteamScrapper steamScrapper) : IScrapper
 {
-    private readonly uint _steamAppId = 1623730;
+    private readonly uint _steamAppId = 383230;
 
     public DomainId DomainId => "dungeon_souls";
     public string OutputDirectory => "DungeonSouls";

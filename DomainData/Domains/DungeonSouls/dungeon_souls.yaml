@@ -1,0 +1,11 @@
+id: dungeon_souls
+name: Dungeon Souls
+projects:
+  - id: achievement_hunter
+    title: Unlock all achievements
+    objectives:
+      - title: Unlock all steam achievements
+        require:
+          - class: _/achievement
+            stat: _/achieved
+            min: 1
