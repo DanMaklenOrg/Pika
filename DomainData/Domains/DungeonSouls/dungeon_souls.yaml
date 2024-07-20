@@ -6,14 +6,29 @@ projects:
     objectives:
       - title: Unlock all steam achievements
         require:
-          - classes: _/achievement
+          - class: _/achievement
             stat: _/achieved
+            min: 1
+  - id: max_passives
+    title: Max all passives
+    objectives:
+      - title: Reach level 10 in all passives
+        require:
+          - class: _/passive
+            stat: level
+            min: 10
+  - id: unlock_heroes
+    title: Unlock all heroes
+    objectives:
+      - title: Unlock all heroes
+        require:
+          - class: hero
+            stat: _/unlocked
             min: 1
 stats:
   - name: Level
     type: INTEGER_RANGE(0, 10)
-
-class:
+classes:
   - id: passive
     stats:
       - level
@@ -22,40 +37,59 @@ class:
       - _/unlocked
 entities:
   - name: Stamina
-    classes: passive
+    classes:
+    - passive
   - name: Attack Damage
-    classes: passive
+    classes:
+      - passive
   - name: Regeneration
-    classes: passive
+    classes:
+      - passive
   - name: Focus
-    classes: passive
+    classes:
+      - passive
   - name: Armor
-    classes: passive
+    classes:
+      - passive
   - name: Agility
-    classes: passive
+    classes:
+      - passive
   - name: Magic Damage
-    classes: passive
+    classes:
+      - passive
   - name: Purity
-    classes: passive
+    classes:
+      - passive
   - name: Greed
-    classes: passive
+    classes:
+      - passive
   - name: Barbarian
-    classes: hero
+    classes:
+      - hero
   - name: Archer
-    classes: hero
+    classes:
+      - hero
   - name: Thief
-    classes: hero
+    classes:
+      - hero
   - name: Warrior
-    classes: hero
+    classes:
+      - hero
   - name: Wizard
-    classes: hero
+    classes:
+      - hero
   - name: Cleric
-    classes: hero
+    classes:
+      - hero
   - name: Necromancer
-    classes: hero
+    classes:
+      - hero
   - name: Brawler
-    classes: hero
+    classes:
+      - hero
   - name: Engineer
-    classes: hero
+    classes:
+      - hero
   - name: Nightblade
-    classes: hero
+    classes:
+      - hero
