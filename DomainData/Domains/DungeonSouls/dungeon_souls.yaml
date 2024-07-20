@@ -9,36 +9,75 @@ projects:
           - class: _/achievement
             stat: _/achieved
             min: 1
+  - id: craft_forge_items
+    title: Craft all forge items
+    objectives:
+      - title: Find all forge items' recipes
+        require:
+          - class: forge_item
+            stat: recipe_found
+            min: 1
+      - title: Craft all forge items
+        require:
+          - class: forge_item
+            stat: _/crafted
+            min: 1
   - id: max_passives
     title: Max all passives
     objectives:
       - title: Reach level 10 in all passives
         require:
-          - class: _/passive
-            stat: level
+          - class: passive
+            stat: passive_level
             min: 10
-  - id: unlock_heroes
-    title: Unlock all heroes
+  - id: max_heroes
+    title: Max all heroes
     objectives:
       - title: Unlock all heroes
         require:
           - class: hero
             stat: _/unlocked
             min: 1
+      - title: Max rank all heroes
+        require:
+          - class: hero
+            stat: hero_rank
+            min: 5
+      - title: Free the soul of all heroes
+        require:
+          - class: hero
+            stat: soul_freed
+            min: 1
 stats:
-  - name: Level
+  - id: passive_level
+    name: Level
     type: INTEGER_RANGE(0, 10)
+  - id: hero_rank
+    name: Rank
+    type: INTEGER_RANGE(0, 5)
+  - id: recipe_found
+    name: Recipe Found
+    type: BOOLEAN
+  - id: soul_freed
+    name: Soul Freed
+    type: BOOLEAN
 classes:
   - id: passive
     stats:
-      - level
+      - passive_level
   - id: hero
     stats:
       - _/unlocked
+      - hero_rank
+      - soul_freed
+  - id: forge_item
+    stats:
+      - _/crafted
+      - recipe_found
 entities:
   - name: Stamina
     classes:
-    - passive
+      - passive
   - name: Attack Damage
     classes:
       - passive
@@ -93,3 +132,108 @@ entities:
   - name: Nightblade
     classes:
       - hero
+  - name: Fire Axe
+    classes:
+      - forge_item
+  - name: Fire Bow
+    classes:
+      - forge_item
+  - name: Fire Dagger
+    classes:
+      - forge_item
+  - name: Fire Scepter
+    classes:
+      - forge_item
+  - name: Fire Staff
+    classes:
+      - forge_item
+  - name: Fire Sword
+    classes:
+      - forge_item
+  - name: Friendly Cloud
+    classes:
+      - forge_item
+  - name: Herberk's Pendant
+    classes:
+      - forge_item
+  - name: Ice Axe
+    classes:
+      - forge_item
+  - name: Ice Bow
+    classes:
+      - forge_item
+  - name: Ice Dagger
+    classes:
+      - forge_item
+  - name: Ice Scepter
+    classes:
+      - forge_item
+  - name: Ice Staff
+    classes:
+      - forge_item
+  - name: Ice Sword
+    classes:
+      - forge_item
+  - name: Magic Core
+    classes:
+      - forge_item
+  - name: Ninby's Essence
+    classes:
+      - forge_item
+  - name: Ninby's Grace
+    classes:
+      - forge_item
+  - name: Poltergeist Bow
+    classes:
+      - forge_item
+  - name: Poltergeist Dagger
+    classes:
+      - forge_item
+  - name: Poltergeist Staff
+    classes:
+      - forge_item
+  - name: Shell
+    classes:
+      - forge_item
+  - name: Storm Shield
+    classes:
+      - forge_item
+  - name: Wind Axe
+    classes:
+      - forge_item
+  - name: Wind Bow
+    classes:
+      - forge_item
+  - name: Wind Dagger
+    classes:
+      - forge_item
+  - name: Wind Scepter
+    classes:
+      - forge_item
+  - name: Wind Staff
+    classes:
+      - forge_item
+  - name: Wind Sword
+    classes:
+      - forge_item
+  - name: Power Axe
+    classes:
+      - forge_item
+  - name: Power Bow
+    classes:
+      - forge_item
+  - name: Power Dagger
+    classes:
+      - forge_item
+  - name: Power Scepter
+    classes:
+      - forge_item
+  - name: Power Staff
+    classes:
+      - forge_item
+  - name: Power Sword
+    classes:
+      - forge_item
+  - name: Murderer Ring
+    classes:
+      - forge_item
