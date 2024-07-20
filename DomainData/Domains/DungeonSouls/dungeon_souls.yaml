@@ -9,3 +9,53 @@ projects:
           - class: _/achievement
             stat: _/achieved
             min: 1
+stats:
+  - name: Level
+    type: INTEGER_RANGE(0, 10)
+
+classes:
+  - id: passive
+    stats:
+      - level
+  - id: hero
+    stats:
+      - _/unlocked
+entities:
+  - name: Stamina
+    class: passive
+  - name: Attack Damage
+    class: passive
+  - name: Regeneration
+    class: passive
+  - name: Focus
+    class: passive
+  - name: Armor
+    class: passive
+  - name: Agility
+    class: passive
+  - name: Magic Damage
+    class: passive
+  - name: Purity
+    class: passive
+  - name: Greed
+    class: passive
+  - name: Barbarian
+    class: hero
+  - name: Archer
+    class: hero
+  - name: Thief
+    class: hero
+  - name: Warrior
+    class: hero
+  - name: Wizard
+    class: hero
+  - name: Cleric
+    class: hero
+  - name: Necromancer
+    class: hero
+  - name: Brawler
+    class: hero
+  - name: Engineer
+    class: hero
+  - name: Nightblade
+    class: hero
