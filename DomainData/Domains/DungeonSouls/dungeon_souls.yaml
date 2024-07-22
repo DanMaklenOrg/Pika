@@ -231,3 +231,6 @@ entities:
   - name: Murderer Ring
     classes:
       - forge_recipe
+  - name: Zior's Wisdom
+    classes:
+      - forge_recipe
