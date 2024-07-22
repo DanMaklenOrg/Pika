@@ -9,18 +9,13 @@ projects:
           - class: _/achievement
             stat: _/achieved
             min: 1
-  - id: craft_forge_items
-    title: Craft all forge items
+  - id: collect_recipes
+    title: Collect all Arcane Forge Recipes
     objectives:
-      - title: Find all forge items' recipes
+      - title: Find all arcane forge recipes
         require:
-          - class: forge_item
-            stat: recipe_found
-            min: 1
-      - title: Craft all forge items
-        require:
-          - class: forge_item
-            stat: _/crafted
+          - class: forge_recipe
+            stat: _/owned
             min: 1
   - id: max_passives
     title: Max all passives
@@ -70,10 +65,9 @@ classes:
       - _/unlocked
       - hero_rank
       - soul_freed
-  - id: forge_item
+  - id: forge_recipe
     stats:
-      - _/crafted
-      - recipe_found
+      - _/owned
 entities:
   - name: Stamina
     classes:
@@ -134,106 +128,106 @@ entities:
       - hero
   - name: Fire Axe
     classes:
-      - forge_item
+      - forge_recipe
   - name: Fire Bow
     classes:
-      - forge_item
+      - forge_recipe
   - name: Fire Dagger
     classes:
-      - forge_item
+      - forge_recipe
   - name: Fire Scepter
     classes:
-      - forge_item
+      - forge_recipe
   - name: Fire Staff
     classes:
-      - forge_item
+      - forge_recipe
   - name: Fire Sword
     classes:
-      - forge_item
+      - forge_recipe
   - name: Friendly Cloud
     classes:
-      - forge_item
+      - forge_recipe
   - name: Herberk's Pendant
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Axe
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Bow
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Dagger
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Scepter
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Staff
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ice Sword
     classes:
-      - forge_item
+      - forge_recipe
   - name: Magic Core
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ninby's Essence
     classes:
-      - forge_item
+      - forge_recipe
   - name: Ninby's Grace
     classes:
-      - forge_item
+      - forge_recipe
   - name: Poltergeist Bow
     classes:
-      - forge_item
+      - forge_recipe
   - name: Poltergeist Dagger
     classes:
-      - forge_item
+      - forge_recipe
   - name: Poltergeist Staff
     classes:
-      - forge_item
+      - forge_recipe
   - name: Shell
     classes:
-      - forge_item
+      - forge_recipe
   - name: Storm Shield
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Axe
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Bow
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Dagger
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Scepter
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Staff
     classes:
-      - forge_item
+      - forge_recipe
   - name: Wind Sword
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Axe
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Bow
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Dagger
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Scepter
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Staff
     classes:
-      - forge_item
+      - forge_recipe
   - name: Power Sword
     classes:
-      - forge_item
+      - forge_recipe
   - name: Murderer Ring
     classes:
-      - forge_item
+      - forge_recipe
