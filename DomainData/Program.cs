@@ -9,27 +9,22 @@ using Pika.DomainData.Scrapper;
 using Pika.DomainData.Scrapper.DungeonSouls;
 using Pika.DomainData.Scrapper.MinecraftATM9;
 using Pika.DomainData.Scrapper.Palworld;
+using Pika.DomainData.Scrapper.ShapezIo;
 using Pika.DomainData.Scrapper.VampireSurvivors;
 using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
 
-// Minecraft
 builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
 builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
 builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
-
-// Vampire Survivors
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
 builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
-
-// Palworld
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldAchievements>();
-
-// Dungeon Souls
 builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
+builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
@@ -48,7 +43,9 @@ app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrappe
     {
         Console.WriteLine($"Scraping {s.DomainId} ({s.FileName})");
         var domain = await s.Scrape();
-        TextWriter stream = new StreamWriter($"Domains/{s.OutputDirectory}/{s.FileName}.scraped.yaml");
+        var directory = $"Domains/{s.OutputDirectory}";
+        Directory.CreateDirectory(directory);
+        TextWriter stream = new StreamWriter($"{directory}/{s.FileName}.scraped.yaml");
         converter.Write(domain, stream);
         await stream.FlushAsync();
     }
