@@ -12,9 +12,9 @@ public static class SyncCommand
         app.AddCommand("sync", Sync);
     }
 
-    private static async Task Sync(PikaConverter converter, IDomainRepo domainRepo)
+    private static async Task Sync([Argument] string domainId, PikaConverter converter, IDomainRepo domainRepo)
     {
-        var fileDomains = ReadAllDomains(converter);
+        var fileDomains = ReadAllDomains(converter, domainId);
         var subDomains = MergeScrappedDomains(fileDomains);
         var domains = MergeSubDomains(subDomains);
         foreach (var domain in domains)
@@ -23,10 +23,10 @@ public static class SyncCommand
         }
     }
 
-    private static List<Domain> ReadAllDomains(PikaConverter converter)
+    private static List<Domain> ReadAllDomains(PikaConverter converter, string domainId)
     {
         List<Domain> domains = [];
-        foreach (var file in Directory.EnumerateFiles("Domains/", "*.yaml", SearchOption.AllDirectories))
+        foreach (var file in Directory.EnumerateFiles($"Domains/{domainId}", "*.yaml", SearchOption.AllDirectories))
         {
             Console.WriteLine($"Parsing File {file}...");
             TextReader stream = new StreamReader(file);

@@ -15,18 +15,18 @@ using Pika.Repository;
 var builder = CoconaApp.CreateBuilder(args);
 
 // Minecraft
-// builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
-// builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
-// builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
+builder.Services.AddTransient<IScrapper, IronSpellsNSpellbooksScrapper>();
+builder.Services.AddTransient<IScrapper, MinecraftScrapper>();
+builder.Services.AddTransient<IScrapper, IntegratedDynamicsScrapper>();
 
 // Vampire Survivors
-// builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
-// builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
-// builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsAchievements>();
+builder.Services.AddTransient<IScrapper, VampireSurvivorsSecrets>();
 
 // Palworld
-// builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
-// builder.Services.AddTransient<IScrapper, PalworldAchievements>();
+builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
+builder.Services.AddTransient<IScrapper, PalworldAchievements>();
 
 // Dungeon Souls
 builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
@@ -42,9 +42,9 @@ builder.Services.AddTransient<IDomainDao, DomainDao>();
 
 var app = builder.Build();
 
-app.AddCommand("scrape", async (IEnumerable<IScrapper> scrappers, PikaConverter converter) =>
+app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrapper> scrappers, PikaConverter converter) =>
 {
-    foreach (var s in scrappers)
+    foreach (var s in scrappers.Where(s => s.DomainId.FullyQualifiedId == domainId))
     {
         Console.WriteLine($"Scraping {s.DomainId} ({s.FileName})");
         var domain = await s.Scrape();
