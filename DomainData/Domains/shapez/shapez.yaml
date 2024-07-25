@@ -43,9 +43,6 @@ entities:
   - name: Hub
     classes:
       - hub
-  - name: Belt Upgrade
-    classes:
-      - upgrade
   - name: Transporters
     classes:
       - upgrade
