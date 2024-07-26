@@ -31,7 +31,7 @@ stats:
     type: INTEGER_RANGE(0, 26)
   - id: upgrade_tier
     name: Tier
-    type: INTEGER_RANGE(0, 1000)
+    type: INTEGER_RANGE(0, 8)
 classes:
   - id: hub
     stats:
