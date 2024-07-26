@@ -24,7 +24,7 @@ projects:
         require:
           - class: upgrade
             stat: upgrade_tier
-            min: 1000
+            min: 8
 stats:
   - id: hub_level
     name: Level
