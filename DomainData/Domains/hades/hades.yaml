@@ -26,32 +26,14 @@ projects:
             stat: upgrade_tier
             min: 8
 stats:
-  - id: hub_level
-    name: Level
-    type: INTEGER_RANGE(0, 26)
-  - id: upgrade_tier
-    name: Tier
-    type: INTEGER_RANGE(0, 8)
+  - id: keepsake_rank
+    name: Rank
+    type: INTEGER_RANGE(1, 3)
 classes:
-  - id: hub
+  - id: keepsake
     stats:
-      - hub_level
-  - id: upgrade
+      - _/unlocked
+      - keepsake_rank
+  - id: infernal_arm
     stats:
-      - upgrade_tier
-entities:
-  - name: Hub
-    classes:
-      - hub
-  - name: Transporters
-    classes:
-      - upgrade
-  - name: Extractors
-    classes:
-      - upgrade
-  - name: Shape Manipulators
-    classes:
-      - upgrade
-  - name: Color Manipulators
-    classes:
-      - upgrade
+      - _/unlocked

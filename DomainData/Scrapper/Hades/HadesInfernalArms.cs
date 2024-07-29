@@ -3,11 +3,11 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Hades;
 
-public class HadesKeepsakes(EntityNameContainer nameContainer) : IScrapper
+public class HadesInfernalArms(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "hades";
     public string OutputDirectory => DomainId.ToString();
-    public string FileName => "Keepsakes";
+    public string FileName => "InfernalArms";
 
     public async Task<Domain> Scrape()
     {
@@ -21,16 +21,18 @@ public class HadesKeepsakes(EntityNameContainer nameContainer) : IScrapper
 
     private async Task<List<Entity>> ScrapeKeepsakes()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Keepsakes");
-        var nodes = doc.DocumentNode.SelectNodes("//table[@class='fandom-table']/tbody/tr/td[1]");
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Infernal_Arms");
+        var nodes = doc.DocumentNode.SelectNodes("(//table[contains(@class,'wikitable')])[1]/tbody/tr/td[2]");
         return nodes.Select(n =>
         {
-            var name = nameContainer.RegisterAndNormalize(n.InnerText, "Keepsake");
+            var name = n.InnerText;
+            name = name.Split('/').First().Replace("\"", "");
+            name = nameContainer.RegisterAndNormalize(name, "Infernal Arms");
             return new Entity
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
-                Classes = [new ResourceId("keepsake", DomainId)],
+                Classes = [new ResourceId("infernal_arm", DomainId)],
             };
         }).ToList();
     }

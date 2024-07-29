@@ -1,0 +1,103 @@
+id: hades
+name: Hades
+entities:
+  - id: old_spiked_collar
+    name: Old Spiked Collar
+    classes:
+      - keepsake
+  - id: myrmidon_bracer
+    name: Myrmidon Bracer
+    classes:
+      - keepsake
+  - id: black_shawl
+    name: Black Shawl
+    classes:
+      - keepsake
+  - id: pierced_butterfly
+    name: Pierced Butterfly
+    classes:
+      - keepsake
+  - id: bone_hourglass
+    name: Bone Hourglass
+    classes:
+      - keepsake
+  - id: chthonic_coin_purse
+    name: Chthonic Coin Purse
+    classes:
+      - keepsake
+  - id: skull_earring
+    name: Skull Earring
+    classes:
+      - keepsake
+  - id: distant_memory
+    name: Distant Memory
+    classes:
+      - keepsake
+  - id: harpy_feather_duster
+    name: Harpy Feather Duster
+    classes:
+      - keepsake
+  - id: lucky_tooth
+    name: Lucky Tooth
+    classes:
+      - keepsake
+  - id: thunder_signet
+    name: Thunder Signet
+    classes:
+      - keepsake
+  - id: conch_shell
+    name: Conch Shell
+    classes:
+      - keepsake
+  - id: owl_pendant
+    name: Owl Pendant
+    classes:
+      - keepsake
+  - id: eternal_rose
+    name: Eternal Rose
+    classes:
+      - keepsake
+  - id: blood_filled_vial
+    name: Blood-Filled Vial
+    classes:
+      - keepsake
+  - id: adamant_arrowhead
+    name: Adamant Arrowhead
+    classes:
+      - keepsake
+  - id: overflowing_cup
+    name: Overflowing Cup
+    classes:
+      - keepsake
+  - id: lambent_plume
+    name: Lambent Plume
+    classes:
+      - keepsake
+  - id: frostbitten_horn
+    name: Frostbitten Horn
+    classes:
+      - keepsake
+  - id: cosmic_egg
+    name: Cosmic Egg
+    classes:
+      - keepsake
+  - id: shattered_shackle
+    name: Shattered Shackle
+    classes:
+      - keepsake
+  - id: evergreen_acorn
+    name: Evergreen Acorn
+    classes:
+      - keepsake
+  - id: broken_spearpoint
+    name: Broken Spearpoint
+    classes:
+      - keepsake
+  - id: pom_blossom
+    name: Pom Blossom
+    classes:
+      - keepsake
+  - id: sigil_of_the_dead
+    name: Sigil of the Dead
+    classes:
+      - keepsake

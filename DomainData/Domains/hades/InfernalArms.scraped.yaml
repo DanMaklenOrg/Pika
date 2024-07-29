@@ -1,0 +1,27 @@
+id: hades
+name: Hades
+entities:
+  - id: stygius
+    name: Stygius
+    classes:
+      - infernal_arm
+  - id: varatha
+    name: Varatha
+    classes:
+      - infernal_arm
+  - id: aegis
+    name: Aegis
+    classes:
+      - infernal_arm
+  - id: coronacht
+    name: Coronacht
+    classes:
+      - infernal_arm
+  - id: malphon
+    name: Malphon
+    classes:
+      - infernal_arm
+  - id: exagryph
+    name: Exagryph
+    classes:
+      - infernal_arm
