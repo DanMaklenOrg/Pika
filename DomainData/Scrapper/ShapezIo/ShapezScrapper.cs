@@ -1,12 +1,12 @@
 using Pika.Model;
 
-namespace Pika.DomainData.Scrapper.DungeonSouls;
+namespace Pika.DomainData.Scrapper.ShapezIo;
 
-public class DungeonSoulsScrapper(SteamScrapper steamScrapper) : IScrapper
+public class ShapezScrapper(SteamScrapper steamScrapper) : IScrapper
 {
-    private readonly uint _steamAppId = 383230;
+    private readonly uint _steamAppId = 1318690;
 
-    public DomainId DomainId => "dungeon_souls";
+    public DomainId DomainId => "shapez";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 
@@ -15,7 +15,7 @@ public class DungeonSoulsScrapper(SteamScrapper steamScrapper) : IScrapper
         return new Domain
         {
             Id = DomainId,
-            Name = "Dungeon Souls",
+            Name = "Shapez",
             Entities = await steamScrapper.ScrapAchievements(DomainId, _steamAppId)
         };
     }

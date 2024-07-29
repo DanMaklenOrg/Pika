@@ -6,7 +6,7 @@ namespace Pika.DomainData.Scrapper.VampireSurvivors;
 public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "vampire_survivors";
-    public string OutputDirectory => "VampireSurvivors";
+    public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 
     public async Task<Domain> Scrape()

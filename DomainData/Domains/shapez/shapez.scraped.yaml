@@ -1,0 +1,183 @@
+id: shapez
+name: Shapez
+entities:
+  - id: painter
+    name: Painter
+    classes:
+      - _/achievement
+  - id: cutter
+    name: Cutter
+    classes:
+      - _/achievement
+  - id: rotater
+    name: Rotater
+    classes:
+      - _/achievement
+  - id: wait_they_stack
+    name: Wait, they stack?
+    classes:
+      - _/achievement
+  - id: now_its_easy
+    name: Now it's easy
+    classes:
+      - _/achievement
+  - id: wires
+    name: Wires
+    classes:
+      - _/achievement
+  - id: storage
+    name: Storage
+    classes:
+      - _/achievement
+  - id: freedom
+    name: Freedom
+    classes:
+      - _/achievement
+  - id: computer_guy
+    name: Computer Guy
+    classes:
+      - _/achievement
+  - id: the_logo
+    name: The logo!
+    classes:
+      - _/achievement
+  - id: to_the_moon
+    name: To the moon
+    classes:
+      - _/achievement
+  - id: its_piling_up
+    name: It's piling up
+    classes:
+      - _/achievement
+  - id: ill_use_it_later
+    name: I'll use it later
+    classes:
+      - _/achievement
+  - id: speedrun_master
+    name: Speedrun Master
+    classes:
+      - _/achievement
+  - id: speedrun_novice
+    name: Speedrun Novice
+    classes:
+      - _/achievement
+  - id: not_an_idle_game
+    name: Not an idle game
+    classes:
+      - _/achievement
+  - id: efficiency_1
+    name: Efficiency 1
+    classes:
+      - _/achievement
+  - id: efficiency_2
+    name: Efficiency 2
+    classes:
+      - _/achievement
+  - id: branding_specialist_1
+    name: Branding specialist 1
+    classes:
+      - _/achievement
+  - id: branding_specialist_2
+    name: Branding specialist 2
+    classes:
+      - _/achievement
+  - id: preparing_to_launch
+    name: Preparing to launch
+    classes:
+      - _/achievement
+  - id: spacey
+    name: SpaceY
+    classes:
+      - _/achievement
+  - id: stack_overflow
+    name: Stack overflow
+    classes:
+      - _/achievement
+  - id: its_a_mess
+    name: It's a mess
+    classes:
+      - _/achievement
+  - id: i_need_trains
+    name: I need trains
+    classes:
+      - _/achievement
+  - id: my_eyes_no_longer_hurt
+    name: My eyes no longer hurt
+    classes:
+      - _/achievement
+  - id: king_of_inefficiency
+    name: King of Inefficiency
+    classes:
+      - _/achievement
+  - id: its_so_slow
+    name: It's so slow
+    classes:
+      - _/achievement
+  - id: faster
+    name: Faster
+    classes:
+      - _/achievement
+  - id: even_faster
+    name: Even faster
+    classes:
+      - _/achievement
+  - id: oops
+    name: Oops
+    classes:
+      - _/achievement
+  - id: mam_make_anything_machine
+    name: MAM (Make Anything Machine)
+    classes:
+      - _/achievement
+  - id: perfectionist
+    name: Perfectionist
+    classes:
+      - _/achievement
+  - id: copy_pasta
+    name: Copy-Pasta
+    classes:
+      - _/achievement
+  - id: get_rid_of_them
+    name: Get rid of them
+    classes:
+      - _/achievement
+  - id: its_been_a_long_time
+    name: It's been a long time
+    classes:
+      - _/achievement
+  - id: addicted
+    name: Addicted
+    classes:
+      - _/achievement
+  - id: a_bit_early
+    name: A bit early?
+    classes:
+      - _/achievement
+  - id: cant_stop
+    name: Can't stop
+    classes:
+      - _/achievement
+  - id: is_this_the_end
+    name: Is this the end?
+    classes:
+      - _/achievement
+  - id: getting_into_it
+    name: Getting into it
+    classes:
+      - _/achievement
+  - id: the_next_dimension
+    name: The next dimension
+    classes:
+      - _/achievement
+  - id: gps
+    name: GPS
+    classes:
+      - _/achievement
+  - id: ive_seen_that_before
+    name: I've seen that before ..
+    classes:
+      - _/achievement
+  - id: memories_from_the_past
+    name: Memories from the past
+    classes:
+      - _/achievement

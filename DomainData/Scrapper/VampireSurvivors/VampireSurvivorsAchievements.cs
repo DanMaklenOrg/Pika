@@ -8,7 +8,7 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
     private readonly uint _steamAppId = 1794680;
 
     public DomainId DomainId => "vampire_survivors";
-    public string OutputDirectory => "VampireSurvivors";
+    public string OutputDirectory => DomainId.ToString();
     public string FileName => "Achievements";
 
     public async Task<Domain> Scrape()

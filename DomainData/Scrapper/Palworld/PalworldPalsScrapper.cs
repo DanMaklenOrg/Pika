@@ -6,7 +6,7 @@ namespace Pika.DomainData.Scrapper.Palworld;
 public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "palworld";
-    public string OutputDirectory => "Palworld";
+    public string OutputDirectory => DomainId.ToString();
     public string FileName => "Pals";
 
     public async Task<Domain> Scrape()
