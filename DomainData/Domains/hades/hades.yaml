@@ -1,0 +1,57 @@
+id: hades
+name: Hades
+projects:
+  - id: achievement_hunter
+    title: Unlock all achievements
+    objectives:
+      - title: Unlock all steam achievements
+        require:
+          - class: _/achievement
+            stat: _/achieved
+            min: 1
+  - id: max_all_keep_sakes
+    title: Max Hub Level
+    objectives:
+      - title: Reach max hub level
+        require:
+          - class: hub
+            stat: hub_level
+            min: 26
+  - id: max_upgrades
+    title: Max All Upgrades
+    objectives:
+      - title: Max all upgrades
+        require:
+          - class: upgrade
+            stat: upgrade_tier
+            min: 8
+stats:
+  - id: hub_level
+    name: Level
+    type: INTEGER_RANGE(0, 26)
+  - id: upgrade_tier
+    name: Tier
+    type: INTEGER_RANGE(0, 8)
+classes:
+  - id: hub
+    stats:
+      - hub_level
+  - id: upgrade
+    stats:
+      - upgrade_tier
+entities:
+  - name: Hub
+    classes:
+      - hub
+  - name: Transporters
+    classes:
+      - upgrade
+  - name: Extractors
+    classes:
+      - upgrade
+  - name: Shape Manipulators
+    classes:
+      - upgrade
+  - name: Color Manipulators
+    classes:
+      - upgrade

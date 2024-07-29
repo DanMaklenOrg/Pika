@@ -7,6 +7,7 @@ using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.Scrapper;
 using Pika.DomainData.Scrapper.DungeonSouls;
+using Pika.DomainData.Scrapper.Hades;
 using Pika.DomainData.Scrapper.MinecraftATM9;
 using Pika.DomainData.Scrapper.Palworld;
 using Pika.DomainData.Scrapper.ShapezIo;
@@ -25,6 +26,8 @@ builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldAchievements>();
 builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
 builder.Services.AddTransient<IScrapper, ShapezScrapper>();
+builder.Services.AddTransient<IScrapper, HadesScrapper>();
+builder.Services.AddTransient<IScrapper, HadesKeepsakes>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
