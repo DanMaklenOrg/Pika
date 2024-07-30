@@ -9,22 +9,27 @@ projects:
           - class: _/achievement
             stat: _/achieved
             min: 1
-  - id: max_all_keep_sakes
-    title: Max Hub Level
+  - id: max_keepsakes
+    title: Max all keepsakes
     objectives:
-      - title: Reach max hub level
+      - title: Unlock all keepsakes
         require:
-          - class: hub
-            stat: hub_level
-            min: 26
-  - id: max_upgrades
-    title: Max All Upgrades
+          - class: keepsake
+            stat: _/unlocked
+            min: 1
+      - title: Rank all kepsakes to max rank
+        require:
+          - class: keepsake
+            stat: keepsake_rank
+            min: 3
+  - id: max_infernal_arm
+    title: Max all infernal arms
     objectives:
-      - title: Max all upgrades
+      - title: Unlock all infernal arms
         require:
-          - class: upgrade
-            stat: upgrade_tier
-            min: 8
+          - class: infernal_arm
+            stat: _/unlocked
+            min: 1
 stats:
   - id: keepsake_rank
     name: Rank
