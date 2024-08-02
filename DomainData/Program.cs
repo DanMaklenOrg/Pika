@@ -28,7 +28,6 @@ builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
 builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, HadesKeepsakes>();
-builder.Services.AddTransient<IScrapper, HadesInfernalArms>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
