@@ -4,13 +4,13 @@ stats:
   - id: stygius_aspect_zagreus
     name: Aspect of Zagreus Rank
     type: INTEGER_RANGE(0, 5)
-  - id: stygian_aspect_nemesis
+  - id: stygius_aspect_nemesis
     name: Aspect of Nemesis Rank
     type: INTEGER_RANGE(0, 5)
-  - id: stygian_aspect_poseidon
+  - id: stygius_aspect_poseidon
     name: Aspect of Poseidon Rank
     type: INTEGER_RANGE(0, 5)
-  - id: stygian_aspect_arthur
+  - id: stygius_aspect_arthur
     name: Aspect of Arthur Rank
     type: INTEGER_RANGE(0, 5)
   - id: varatha_aspect_zagreus
@@ -76,16 +76,16 @@ stats:
 classes:
   - id: infernal_arm
     stats:
-      - fulfilled
+      - _/unlocked
 entities:
   - name: Stygius
     classes:
       - infernal_arm
     stats:
-      - stygian_blade_aspect_zagreus
-      - stygian_blade_aspect_nemesis
-      - stygian_blade_aspect_poseidon
-      - stygian_blade_aspect_arthur
+      - stygius_aspect_zagreus
+      - stygius_aspect_nemesis
+      - stygius_aspect_poseidon
+      - stygius_aspect_arthur
   - name: Varatha
     classes:
       - infernal_arm

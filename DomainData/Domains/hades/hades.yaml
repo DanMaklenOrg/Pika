@@ -30,6 +30,14 @@ projects:
           - class: infernal_arm
             stat: _/unlocked
             min: 1
+  - id: fulfill_fates
+    title: Fulfill all fates
+    objectives:
+      - title: Fulfil all fates
+        require:
+          - class: fate
+            stat: fate_fulfilled
+            min: 1
 stats:
   - id: keepsake_rank
     name: Rank
@@ -44,4 +52,4 @@ classes:
       - keepsake_rank
   - id: fate
     stats:
-      - _/achieved
+      - fate_fulfilled
