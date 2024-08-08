@@ -3,11 +3,11 @@ using Pika.Model;
 
 namespace Pika.DomainData.Scrapper.Hades;
 
-public class HadesFates(EntityNameContainer nameContainer) : IScrapper
+public class HadesProphecies(EntityNameContainer nameContainer) : IScrapper
 {
     public DomainId DomainId => "hades";
     public string OutputDirectory => DomainId.ToString();
-    public string FileName => "Fates";
+    public string FileName => "Prophecies";
 
     public async Task<Domain> Scrape()
     {
@@ -30,7 +30,7 @@ public class HadesFates(EntityNameContainer nameContainer) : IScrapper
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
-                Classes = [new ResourceId("fate", DomainId)],
+                Classes = [new ResourceId("prophecy", DomainId)],
             };
         }).ToList();
     }

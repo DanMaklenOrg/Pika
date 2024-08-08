@@ -4,220 +4,220 @@ entities:
   - id: family_reunion
     name: Family Reunion
     classes:
-      - fate
+      - prophecy
   - id: the_queens_plan
     name: The Queen's Plan
     classes:
-      - fate
+      - prophecy
   - id: is_there_no_escape_fate
     name: Is There No Escape? (Fate)
     classes:
-      - fate
+      - prophecy
   - id: distant_relatives
     name: Distant Relatives
     classes:
-      - fate
+      - prophecy
   - id: chthonic_colleagues_fate
     name: Chthonic Colleagues (Fate)
     classes:
-      - fate
+      - prophecy
   - id: night_and_darkness_fate
     name: Night and Darkness (Fate)
     classes:
-      - fate
+      - prophecy
   - id: the_reluctant_musician
     name: The Reluctant Musician
     classes:
-      - fate
+      - prophecy
   - id: musician_and_muse_fate
     name: Musician and Muse (Fate)
     classes:
-      - fate
+      - prophecy
   - id: end_to_torment_fate
     name: End To Torment (Fate)
     classes:
-      - fate
+      - prophecy
   - id: divided_by_death_fate
     name: Divided by Death (Fate)
     classes:
-      - fate
+      - prophecy
   - id: eternal_rest
     name: Eternal Rest
     classes:
-      - fate
+      - prophecy
   - id: a_place_of_revelry
     name: A Place of Revelry
     classes:
-      - fate
+      - prophecy
   - id: amusing_chaos
     name: Amusing Chaos
     classes:
-      - fate
+      - prophecy
   - id: sea_gods_spite
     name: Sea-God's Spite
     classes:
-      - fate
+      - prophecy
   - id: war_gods_bloodlust_fate
     name: War-God's Bloodlust (Fate)
     classes:
-      - fate
+      - prophecy
   - id: a_friendly_wager
     name: A Friendly Wager
     classes:
-      - fate
+      - prophecy
   - id: goddess_of_wisdom
     name: Goddess of Wisdom
     classes:
-      - fate
+      - prophecy
   - id: god_of_the_heavens
     name: God of the Heavens
     classes:
-      - fate
+      - prophecy
   - id: god_of_the_sea
     name: God of the Sea
     classes:
-      - fate
+      - prophecy
   - id: goddess_of_love
     name: Goddess of Love
     classes:
-      - fate
+      - prophecy
   - id: god_of_war
     name: God of War
     classes:
-      - fate
+      - prophecy
   - id: goddess_of_the_hunt
     name: Goddess of the Hunt
     classes:
-      - fate
+      - prophecy
   - id: god_of_wine
     name: God of Wine
     classes:
-      - fate
+      - prophecy
   - id: god_of_swiftness
     name: God of Swiftness
     classes:
-      - fate
+      - prophecy
   - id: goddess_of_seasons
     name: Goddess of Seasons
     classes:
-      - fate
+      - prophecy
   - id: power_without_equal
     name: Power Without Equal
     classes:
-      - fate
+      - prophecy
   - id: divine_pairings
     name: Divine Pairings
     classes:
-      - fate
+      - prophecy
   - id: primordial_boons
     name: Primordial Boons
     classes:
-      - fate
+      - prophecy
   - id: primordial_banes
     name: Primordial Banes
     classes:
-      - fate
+      - prophecy
   - id: infernal_arms_fate
     name: Infernal Arms (Fate)
     classes:
-      - fate
+      - prophecy
   - id: the_stygian_blade
     name: The Stygian Blade
     classes:
-      - fate
+      - prophecy
   - id: the_holy_liege
     name: The Holy Liege
     classes:
-      - fate
+      - prophecy
   - id: the_fated_saint_of_war
     name: The Fated Saint of War
     classes:
-      - fate
+      - prophecy
   - id: the_preservers_avatar
     name: The Preserver's Avatar
     classes:
-      - fate
+      - prophecy
   - id: the_dragons_rival
     name: The Dragon's Rival
     classes:
-      - fate
+      - prophecy
   - id: the_god_like_king
     name: The God-like King
     classes:
-      - fate
+      - prophecy
   - id: the_dawn_bringer
     name: The Dawn Bringer
     classes:
-      - fate
+      - prophecy
   - id: the_heart_seeking_bow
     name: The Heart-Seeking Bow
     classes:
-      - fate
+      - prophecy
   - id: the_shield_of_chaos
     name: The Shield of Chaos
     classes:
-      - fate
+      - prophecy
   - id: the_eternal_spear
     name: The Eternal Spear
     classes:
-      - fate
+      - prophecy
   - id: the_twin_fists
     name: The Twin Fists
     classes:
-      - fate
+      - prophecy
   - id: the_adamant_rail
     name: The Adamant Rail
     classes:
-      - fate
+      - prophecy
   - id: master_of_arms_fate
     name: Master of Arms (Fate)
     classes:
-      - fate
+      - prophecy
   - id: a_violent_past
     name: A Violent Past
     classes:
-      - fate
+      - prophecy
   - id: harsh_conditions_fate
     name: Harsh Conditions (Fate)
     classes:
-      - fate
+      - prophecy
   - id: slashed_benefits_fate
     name: Slashed Benefits (Fate)
     classes:
-      - fate
+      - prophecy
   - id: wanton_ransacking
     name: Wanton Ransacking
     classes:
-      - fate
+      - prophecy
   - id: a_simple_job
     name: A Simple Job
     classes:
-      - fate
+      - prophecy
   - id: chthonic_knowledge
     name: Chthonic Knowledge
     classes:
-      - fate
+      - prophecy
   - id: customer_loyalty
     name: Customer Loyalty
     classes:
-      - fate
+      - prophecy
   - id: dark_reflections_fate
     name: Dark Reflections (Fate)
     classes:
-      - fate
+      - prophecy
   - id: close_at_heart
     name: Close at Heart
     classes:
-      - fate
+      - prophecy
   - id: denizens_of_the_deep
     name: Denizens of the Deep
     classes:
-      - fate
+      - prophecy
   - id: the_gift_of_song
     name: The Gift of Song
     classes:
-      - fate
+      - prophecy
   - id: the_useless_trinket_fate
     name: The Useless Trinket (Fate)
     classes:
-      - fate
+      - prophecy
