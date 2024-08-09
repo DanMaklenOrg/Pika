@@ -34,6 +34,8 @@ builder.Services.AddTransient<PikaConverter>();
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IDomainRepo, DomainRepo>();
 builder.Services.AddTransient<IDomainDao, DomainDao>();
+builder.Services.AddTransient<IUserStatsRepo, UserStatsRepo>();
+builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 
 var app = builder.Build();
 
@@ -53,5 +55,6 @@ app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrappe
 
 app.AddSyncCommand();
 app.AddTestCommand();
+app.AddMigrateCommand();
 
 app.Run();
