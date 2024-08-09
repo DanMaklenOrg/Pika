@@ -31,7 +31,7 @@ public class Serializer
         return new ClassNode
         {
             Id = MinifyId(node.Id),
-            Stats = node.Stats.ConvertAll(MinifyId),
+            Stats = node.StatsIds.ConvertAll(MinifyId),
             Tags = node.Tags.ConvertAll(MinifyId),
         };
     }
@@ -49,8 +49,7 @@ public class Serializer
     {
         return new ProjectNode
         {
-            Id = MinifyId(node.Id),
-            Title = node.Title,
+            Title = node.Name,
             Objectives = node.Objectives.ConvertAll(Serialize),
         };
     }
@@ -59,7 +58,7 @@ public class Serializer
     {
         return new ObjectiveNode
         {
-            Title = node.Title,
+            Title = node.Name,
             Requirements = node.Requirements.ConvertAll(Serialize),
         };
     }

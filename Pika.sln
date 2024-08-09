@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainData", "DomainData\Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pika", "Pika\Pika.csproj", "{D051FD9B-5699-4353-8530-198AC48F1ECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PikaLang", "PikaLang\PikaLang.csproj", "{204543D6-5723-44D1-BEF9-58CCAE470FCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D051FD9B-5699-4353-8530-198AC48F1ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204543D6-5723-44D1-BEF9-58CCAE470FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204543D6-5723-44D1-BEF9-58CCAE470FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204543D6-5723-44D1-BEF9-58CCAE470FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204543D6-5723-44D1-BEF9-58CCAE470FCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E75A36D7-0827-4464-AC23-C20E1DA63178} = {F3C36DEF-9724-46C6-85BC-D638842D15C1}

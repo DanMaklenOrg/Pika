@@ -37,9 +37,6 @@ public class DomainDbModel : BaseDbModel
 
 public class ProjectDbModel
 {
-    [JsonPropertyName("id")]
-    public required string Id { get; init; }
-
     [JsonPropertyName("title")]
     public required string Title { get; init; }
 

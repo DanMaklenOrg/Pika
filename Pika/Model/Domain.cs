@@ -1,9 +1,7 @@
 namespace Pika.Model;
 
-public record Domain
+public readonly record struct Domain(DomainId Id, string Name)
 {
-    public DomainId Id { get; init; }
-    public string Name { get; init; } = string.Empty;
     public List<Stat> Stats { get; init; } = [];
     public List<Class> Classes { get; init; } = [];
     public List<Tag> Tags { get; init; } = [];

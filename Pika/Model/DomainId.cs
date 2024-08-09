@@ -1,6 +1,6 @@
 namespace Pika.Model;
 
-public struct DomainId
+public readonly record struct DomainId
 {
     public string Id { get; init; }
     public string? SubDomainId { get; init; }

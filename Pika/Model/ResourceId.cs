@@ -1,16 +1,8 @@
 namespace Pika.Model;
 
-public struct ResourceId
+public readonly record struct ResourceId(string Id, DomainId Domain)
 {
-    public string Id { get; set; }
-    public DomainId Domain { get; set; }
     public string FullyQualifiedId => $"{Domain}/{Id}";
-
-    public ResourceId(string id, DomainId domain)
-    {
-        Id = id;
-        Domain = domain;
-    }
 
     public override string ToString() => FullyQualifiedId;
 

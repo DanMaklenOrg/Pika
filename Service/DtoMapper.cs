@@ -34,7 +34,7 @@ public static class DtoMapper
         return new ClassDto
         {
             Id = model.Id.FullyQualifiedId,
-            Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
+            Stats = model.StatsIds.ConvertAll(x => x.FullyQualifiedId),
             Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
         };
     }
@@ -52,8 +52,7 @@ public static class DtoMapper
     {
         return new ProjectDto
         {
-            Id = model.Id.FullyQualifiedId,
-            Title = model.Title,
+            Title = model.Name,
             Objectives = model.Objectives.ConvertAll(ToDto),
         };
     }
@@ -62,7 +61,7 @@ public static class DtoMapper
     {
         return new ObjectiveDto
         {
-            Title = model.Title,
+            Title = model.Name,
             Requirements = model.Requirements.ConvertAll(ToDto),
         };
     }

@@ -1,27 +1,18 @@
 ﻿namespace Pika.Model;
 
-public readonly struct Project
+public readonly record struct Project(string Name)
 {
-    public required ResourceId Id { get; init; }
-    public required string Title { get; init; }
-    public required  List<Objective> Objectives { get; init; }
-
-
-    public override string ToString() => Id.FullyQualifiedId;
+    public required List<Objective> Objectives { get; init; }
 }
 
-public readonly struct Objective
+public readonly record struct Objective(string Name)
 {
-    public required string Title { get; init; }
-
     public required List<ObjectiveRequirement> Requirements { get; init; }
 }
 
-public readonly struct ObjectiveRequirement
+public readonly record struct ObjectiveRequirement(ResourceId Class)
 {
-    public required ResourceId Class { get; init; }
+    public ResourceId Stat { get; init; } = "_/dummy";
 
-    public required ResourceId Stat { get; init; }
-
-    public required int Min { get; init; }
+    public int Min { get; init; } = 0;
 }

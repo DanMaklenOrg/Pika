@@ -25,8 +25,7 @@ public static class DbModelMapper
     {
         return new ProjectDbModel
         {
-            Id = project.Id.FullyQualifiedId,
-            Title = project.Title,
+            Title = project.Name,
             Objectives = project.Objectives.ConvertAll(ToDbModel),
         };
     }
@@ -35,7 +34,7 @@ public static class DbModelMapper
     {
         return new ObjectiveDbModel
         {
-            Title = project.Title,
+            Title = project.Name,
             Requirements = project.Requirements.ConvertAll(ToDbModel),
         };
     }
@@ -55,7 +54,7 @@ public static class DbModelMapper
         return new ClassDbModel
         {
             Id = model.Id.FullyQualifiedId,
-            Stats = model.Stats.ConvertAll(s => s.FullyQualifiedId),
+            Stats = model.StatsIds.ConvertAll(s => s.FullyQualifiedId),
             Tags = model.Tags.ConvertAll(t => t.FullyQualifiedId),
         };
     }
@@ -107,7 +106,7 @@ public static class DbModelMapper
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
-            SubDomains = (model.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
+            SubDomains = (model.SubDomains?.ConvertAll(FromDbModel) ?? []).Cast<Domain>().ToList(),
         };
     }
 
@@ -115,8 +114,7 @@ public static class DbModelMapper
     {
         return new Project
         {
-            Id = model.Id,
-            Title = model.Title,
+            Name = model.Title,
             Objectives = model.Objectives.ConvertAll(FromDbModel),
         };
     }
@@ -125,7 +123,7 @@ public static class DbModelMapper
     {
         return new Objective
         {
-            Title = model.Title,
+            Name = model.Title,
             Requirements = model.Requirements.ConvertAll(FromDbModel),
         };
     }
@@ -154,7 +152,7 @@ public static class DbModelMapper
         return new Class
         {
             Id = model.Id,
-            Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            StatsIds = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
             Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }

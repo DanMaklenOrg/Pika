@@ -12,6 +12,7 @@ using Pika.DomainData.Scrapper.MinecraftATM9;
 using Pika.DomainData.Scrapper.Palworld;
 using Pika.DomainData.Scrapper.ShapezIo;
 using Pika.DomainData.Scrapper.VampireSurvivors;
+using Pika.PikaLang;
 using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
@@ -34,6 +35,7 @@ builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
 builder.Services.AddScoped<EntityNameContainer>();
 builder.Services.AddTransient<PikaConverter>();
+builder.Services.AddPikaParser();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IDomainRepo, DomainRepo>();

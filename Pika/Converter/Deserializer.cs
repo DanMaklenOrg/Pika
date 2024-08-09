@@ -34,7 +34,7 @@ public class Deserializer
         return new Class
         {
             Id = ParseId(node.Id),
-            Stats = node.Stats?.ConvertAll(ParseId) ?? [],
+            StatsIds = node.Stats?.ConvertAll(ParseId) ?? [],
             Tags = node.Tags?.ConvertAll(ParseId) ?? [],
         };
     }
@@ -52,8 +52,7 @@ public class Deserializer
     {
         return new Project
         {
-            Id = ParseId(node.Id),
-            Title = node.Title,
+            Name = node.Title,
             Objectives = node.Objectives.ConvertAll(Deserialize),
         };
     }
@@ -62,7 +61,7 @@ public class Deserializer
     {
         return new Objective
         {
-            Title = node.Title,
+            Name = node.Title,
             Requirements = node.Requirements.ConvertAll(Deserialize),
         };
     }
@@ -91,34 +90,40 @@ public class Deserializer
 
     private Stat Deserialize(StatNode node)
     {
-        var stat = new Stat
-        {
-            Id = ParseOrInduceId(node.Id, node.Name),
-            Name = node.Name,
-        };
-
+        var id = ParseOrInduceId(node.Id, node.Name);
+        var name = node.Name;
         var match = StatTypePattern.Match(node.Type);
-        stat.Type = match.Groups[1].Value switch
+        var type = match.Groups[1].Value switch
         {
             "BOOLEAN" => StatType.Boolean,
             "INTEGER_RANGE" => StatType.IntegerRange,
             "ORDERED_ENUM" => StatType.OrderedEnum,
             _ => throw new Exception("Unknown Stat Type"),
         };
-
         var typeArgs = match.Groups[3].Value.Split(',', StringSplitOptions.TrimEntries);
-        switch (stat.Type)
+        int? min = null;
+        int? max = null;
+        List<string> enumValues = [];
+        switch (type)
         {
             case StatType.IntegerRange:
-                stat.Min = int.Parse(typeArgs[0]);
-                stat.Max = int.Parse(typeArgs[1]);
+                min = int.Parse(typeArgs[0]);
+                max = int.Parse(typeArgs[1]);
                 break;
             case StatType.OrderedEnum:
-                stat.EnumValues = typeArgs.ToList();
+                enumValues = typeArgs.ToList();
                 break;
         }
 
-        return stat;
+        return new Stat
+        {
+            Id = id,
+            Name = name,
+            Type = type,
+            Min = min,
+            Max = max,
+            EnumValues = enumValues,
+        };
     }
 
     private ResourceId ParseOrInduceId(string? id, string name)

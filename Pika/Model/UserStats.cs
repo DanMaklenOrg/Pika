@@ -1,18 +1,10 @@
 namespace Pika.Model;
 
-public struct UserStats
+public readonly record struct UserEntityStat(ResourceId EntityId, ResourceId StatId, string Value);
+
+public readonly record struct UserStats(string UserId, DomainId DomainId)
 {
-    public string UserId { get; init; }
-
-    public DomainId DomainId { get; init; }
-
     public List<UserEntityStat> EntityStats { get; init; } = [];
 
     public List<ResourceId> CompletedProjectIds { get; init; } = [];
-
-    public UserStats(string userId, string domainId)
-    {
-        UserId = userId;
-        DomainId = domainId;
-    }
 }
