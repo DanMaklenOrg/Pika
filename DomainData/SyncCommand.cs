@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Cocona;
 using Pika.Model;
 using Pika.PikaLang;
@@ -20,6 +22,7 @@ public static class SyncCommand
         await RunAllScrapersAndUpdateDomain(domain, scrappers);
 
         await domainRepo.Create(domain);
+        DumpDomain(domain);
     }
 
     private static List<Domain> ReadAllPikaDomainFiles(PikaParser parser, string domainId)
@@ -43,5 +46,24 @@ public static class SyncCommand
             Console.WriteLine($"Scrapping {scrapper.DomainId}...");
             await scrapper.ScrapeInto(domain);
         }
+    }
+
+    // Useful for noticing unintended changes. This dump is not used anywhere else.
+    // The dump is pushed into VCS to simplify checking for diffs in IDE. It can be mostly ignored if the diff looks satisfying.
+    private static void DumpDomain(Domain domain)
+    {
+        var filePath = $"DomainDump/{domain.Id}.dump.json";
+        Console.WriteLine($"Dumping {domain.Id} ({domain.Name}) into {filePath}...");
+
+        domain.Classes.Sort((a, b) => a.Id.ToString().CompareTo(b.Id));
+        domain.Entities.Sort((a, b) => a.Id.ToString().CompareTo(b.Id));
+        domain.Projects.Sort((a, b) => a.Name.ToString().CompareTo(b.Name));
+
+        var json = JsonSerializer.Serialize(domain, new JsonSerializerOptions
+        {
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = true,
+        });
+        File.WriteAllText(filePath, json);
     }
 }

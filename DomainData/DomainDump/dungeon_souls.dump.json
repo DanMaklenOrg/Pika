@@ -1,0 +1,867 @@
+{
+  "Id": {
+    "Id": "dungeon_souls"
+  },
+  "Name": "Dungeon Souls",
+  "Stats": [
+    {
+      "Id": {
+        "Id": "achieved"
+      },
+      "Name": "Achievement Unlocked",
+      "Type": 1
+    },
+    {
+      "Id": {
+        "Id": "hero_rank"
+      },
+      "Name": "Rank",
+      "Type": 2,
+      "Min": 0,
+      "Max": 5
+    },
+    {
+      "Id": {
+        "Id": "owned"
+      },
+      "Name": "Owned",
+      "Type": 1
+    },
+    {
+      "Id": {
+        "Id": "passive_level"
+      },
+      "Name": "Level",
+      "Type": 2,
+      "Min": 0,
+      "Max": 10
+    },
+    {
+      "Id": {
+        "Id": "recipe_found"
+      },
+      "Name": "Recipe Found",
+      "Type": 1
+    },
+    {
+      "Id": {
+        "Id": "soul_freed"
+      },
+      "Name": "Soul Freed",
+      "Type": 1
+    },
+    {
+      "Id": {
+        "Id": "unlocked"
+      },
+      "Name": "Unlocked",
+      "Type": 1
+    }
+  ],
+  "Classes": [
+    {
+      "Id": {
+        "Id": "achievement"
+      },
+      "Stats": [
+        {
+          "Id": "achieved"
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Id": "forge_recipe"
+      },
+      "Stats": [
+        {
+          "Id": "owned"
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Id": "hero"
+      },
+      "Stats": [
+        {
+          "Id": "unlocked"
+        },
+        {
+          "Id": "hero_rank"
+        },
+        {
+          "Id": "soul_freed"
+        }
+      ]
+    },
+    {
+      "Id": {
+        "Id": "passive"
+      },
+      "Stats": [
+        {
+          "Id": "passive_level"
+        }
+      ]
+    }
+  ],
+  "Entities": [
+    {
+      "Id": {
+        "Id": "agility"
+      },
+      "Name": "Agility",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "archer"
+      },
+      "Name": "Archer",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "armor"
+      },
+      "Name": "Armor",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "attack_damage"
+      },
+      "Name": "Attack Damage",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "barbarian"
+      },
+      "Name": "Barbarian",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "brawler"
+      },
+      "Name": "Brawler",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "can_someone_call_a_witch_doctor"
+      },
+      "Name": "Can Someone Call a Witch Doctor?",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "cleric"
+      },
+      "Name": "Cleric",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "engineer"
+      },
+      "Name": "Engineer",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_axe"
+      },
+      "Name": "Fire Axe",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_bow"
+      },
+      "Name": "Fire Bow",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_dagger"
+      },
+      "Name": "Fire Dagger",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_scepter"
+      },
+      "Name": "Fire Scepter",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_staff"
+      },
+      "Name": "Fire Staff",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "fire_sword"
+      },
+      "Name": "Fire Sword",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "focus"
+      },
+      "Name": "Focus",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "freedom"
+      },
+      "Name": "Freedom",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "friendly_cloud"
+      },
+      "Name": "Friendly Cloud",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "gold_swimming"
+      },
+      "Name": "Gold Swimming",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "good_architecture"
+      },
+      "Name": "Good Architecture",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "greed"
+      },
+      "Name": "Greed",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "herberks_pendant"
+      },
+      "Name": "Herberk\u0027s Pendant",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "i_am_now_ready"
+      },
+      "Name": "I Am Now Ready!",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_axe"
+      },
+      "Name": "Ice Axe",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_bow"
+      },
+      "Name": "Ice Bow",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_dagger"
+      },
+      "Name": "Ice Dagger",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_scepter"
+      },
+      "Name": "Ice Scepter",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_staff"
+      },
+      "Name": "Ice Staff",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ice_sword"
+      },
+      "Name": "Ice Sword",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "indiana_jonesd"
+      },
+      "Name": "Indiana Jones\u0027d",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "keep_em_coming"
+      },
+      "Name": "Keep \u0027Em Coming!",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "magic_core"
+      },
+      "Name": "Magic Core",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "magic_damage"
+      },
+      "Name": "Magic Damage",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "murderer_ring"
+      },
+      "Name": "Murderer Ring",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "necromancer"
+      },
+      "Name": "Necromancer",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "nightblade"
+      },
+      "Name": "Nightblade",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ninbys_essence"
+      },
+      "Name": "Ninby\u0027s Essence",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ninbys_grace"
+      },
+      "Name": "Ninby\u0027s Grace",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "poltergeist_bow"
+      },
+      "Name": "Poltergeist Bow",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "poltergeist_dagger"
+      },
+      "Name": "Poltergeist Dagger",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "poltergeist_staff"
+      },
+      "Name": "Poltergeist Staff",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_axe"
+      },
+      "Name": "Power Axe",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_bow"
+      },
+      "Name": "Power Bow",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_dagger"
+      },
+      "Name": "Power Dagger",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_scepter"
+      },
+      "Name": "Power Scepter",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_staff"
+      },
+      "Name": "Power Staff",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "power_sword"
+      },
+      "Name": "Power Sword",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "professional_baker"
+      },
+      "Name": "Professional Baker!",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "puny_skeleton_king"
+      },
+      "Name": "Puny Skeleton King",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "purity"
+      },
+      "Name": "Purity",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "regeneration"
+      },
+      "Name": "Regeneration",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "shell"
+      },
+      "Name": "Shell",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "stamina"
+      },
+      "Name": "Stamina",
+      "Class": {
+        "Id": "passive"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "storm_shield"
+      },
+      "Name": "Storm Shield",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "the_whole_crews_here"
+      },
+      "Name": "The Whole Crew\u0027s Here!",
+      "Class": {
+        "Id": "achievement"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "thief"
+      },
+      "Name": "Thief",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "warrior"
+      },
+      "Name": "Warrior",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_axe"
+      },
+      "Name": "Wind Axe",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_bow"
+      },
+      "Name": "Wind Bow",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_dagger"
+      },
+      "Name": "Wind Dagger",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_scepter"
+      },
+      "Name": "Wind Scepter",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_staff"
+      },
+      "Name": "Wind Staff",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wind_sword"
+      },
+      "Name": "Wind Sword",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "wizard"
+      },
+      "Name": "Wizard",
+      "Class": {
+        "Id": "hero"
+      },
+      "Stats": []
+    },
+    {
+      "Id": {
+        "Id": "ziors_wisdom"
+      },
+      "Name": "Zior\u0027s Wisdom",
+      "Class": {
+        "Id": "forge_recipe"
+      },
+      "Stats": []
+    }
+  ],
+  "Projects": [
+    {
+      "Name": "Collect all Arcane Forge Recipes",
+      "Objectives": [
+        {
+          "Name": "Find all arcane forge recipes",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "forge_recipe"
+              },
+              "Stat": {
+                "Id": "owned"
+              },
+              "Min": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Max all heroes",
+      "Objectives": [
+        {
+          "Name": "Unlock all heroes",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "hero"
+              },
+              "Stat": {
+                "Id": "unlocked"
+              },
+              "Min": 1
+            }
+          ]
+        },
+        {
+          "Name": "Max rank all heroes",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "hero"
+              },
+              "Stat": {
+                "Id": "hero_rank"
+              },
+              "Min": 5
+            }
+          ]
+        },
+        {
+          "Name": "Free the soul of all heroes",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "hero"
+              },
+              "Stat": {
+                "Id": "soul_freed"
+              },
+              "Min": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Max all passives",
+      "Objectives": [
+        {
+          "Name": "Reach level 10 in all passives",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "passive"
+              },
+              "Stat": {
+                "Id": "passive_level"
+              },
+              "Min": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Unlock all achievements",
+      "Objectives": [
+        {
+          "Name": "Unlock all steam achievements",
+          "Requirements": [
+            {
+              "Class": {
+                "Id": "achievement"
+              },
+              "Stat": {
+                "Id": "achieved"
+              },
+              "Min": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
