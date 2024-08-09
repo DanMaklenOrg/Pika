@@ -17,7 +17,6 @@ public static class DbModelMapper
             Tags = domain.Tags.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
-            SubDomains = domain.SubDomains.ConvertAll(ToDbModel),
         };
     }
 
@@ -107,7 +106,6 @@ public static class DbModelMapper
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
-            SubDomains = (model.SubDomains?.ConvertAll(FromDbModel) ?? [])!,
         };
     }
 

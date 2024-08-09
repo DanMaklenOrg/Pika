@@ -25,9 +25,6 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("classes")]
     public List<ClassDbModel>? Classes { get; init; }
 
-    [JsonPropertyName("subDomains")]
-    public List<DomainDbModel>? SubDomains { get; init; }
-
     protected override void SetKeys()
     {
         PartitionKey = $"Domain#{Id}";

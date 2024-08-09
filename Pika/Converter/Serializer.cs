@@ -22,7 +22,6 @@ public class Serializer
             Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
-            SubDomains = domain.SubDomains.ConvertAll(Serialize),
         };
     }
 
