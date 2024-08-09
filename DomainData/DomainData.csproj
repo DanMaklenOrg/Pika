@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+      <ProjectReference Include="..\PikaLang\PikaLang.csproj" />
       <ProjectReference Include="..\Pika\Pika.csproj" />
     </ItemGroup>
 

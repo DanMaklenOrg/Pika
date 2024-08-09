@@ -15,7 +15,6 @@ public static class DbModelMapper
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
-            Stats = domain.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -52,7 +51,7 @@ public static class DbModelMapper
         return new ClassDbModel
         {
             Id = model.Id,
-            Stats = model.Stats.ConvertAll<string>(s => s),
+            Stats = model.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -63,7 +62,7 @@ public static class DbModelMapper
             Id = entity.Id,
             Name = entity.Name,
             Class = entity.Class,
-            Stats = entity.Stats.ConvertAll<string>(s => s),
+            Stats = entity.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -84,14 +83,11 @@ public static class DbModelMapper
     public static Domain? FromDbModel(DomainDbModel? model)
     {
         if (model is null) return null;
-        return new Domain
+        return new Domain(model.Id, model.Name)
         {
-            Id = model.Id,
-            Name = model.Name,
             Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
-            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
@@ -128,7 +124,7 @@ public static class DbModelMapper
         return new Class
         {
             Id = model.Id,
-            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Stats = model.Stats.ConvertAll(FromDbModel),
         };
     }
     private static Entity FromDbModel(EntityDbModel model)
@@ -138,7 +134,7 @@ public static class DbModelMapper
             Id = model.Id,
             Name = model.Name,
             Class = model.Class,
-            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
     }
 

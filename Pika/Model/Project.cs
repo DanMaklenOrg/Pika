@@ -12,4 +12,8 @@ public readonly record struct Objective(string Name)
     public required List<ObjectiveRequirement> Requirements { get; init; }
 }
 
-public readonly record struct ObjectiveRequirement(ResourceId Class, ResourceId Stat, int Min);
+public readonly record struct ObjectiveRequirement(ResourceId Class)
+{
+    public ResourceId Stat { get; init; } = "dummyId";
+    public int Min { get; init; }= 0;
+}

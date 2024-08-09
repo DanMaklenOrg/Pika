@@ -10,9 +10,6 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
-    [JsonPropertyName("stats")]
-    public List<StatDbModel>? Stats { get; init; }
-
     [JsonPropertyName("entities")]
     public List<EntityDbModel>? Entities { get; init; }
 
@@ -71,7 +68,7 @@ public class EntityDbModel
     public required string Class { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string>? Stats { get; init; }
+    public List<StatDbModel>? Stats { get; init; }
 }
 
 public class StatDbModel
@@ -101,5 +98,5 @@ public class ClassDbModel
     public required string Id { get; init; }
 
     [JsonPropertyName("stats")]
-    public required List<string>? Stats { get; init; }
+    public required List<StatDbModel> Stats { get; init; }
 }

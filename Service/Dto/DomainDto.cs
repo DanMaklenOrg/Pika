@@ -10,9 +10,6 @@ public readonly struct DomainDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonPropertyName("stats")]
-    public List<StatDto> Stats { get; init; }
-
     [JsonPropertyName("classes")]
     public List<ClassDto> Classes { get; init; }
 
@@ -29,7 +26,7 @@ public readonly struct ClassDto
     public string Id { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string> Stats { get; init; }
+    public List<StatDto> Stats { get; init; }
 }
 
 public readonly struct ProjectDto
@@ -72,7 +69,7 @@ public readonly struct EntityDto
     public string Name { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string> Stats { get; init; }
+    public List<StatDto> Stats { get; init; }
 
     [JsonPropertyName("class")]
     public string Class { get; init; }

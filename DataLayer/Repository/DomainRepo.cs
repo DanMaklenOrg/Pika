@@ -29,6 +29,6 @@ public class DomainRepo : IDomainRepo
     public async Task<List<Domain>> GetAll()
     {
         var domains = await _domainDao.GetAll();
-        return domains.ConvertAll(d => DbModelMapper.FromDbModel(d).Value);
+        return domains.ConvertAll(DbModelMapper.FromDbModel)!;
     }
 }
