@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Pika.PikaLang</RootNamespace>
+        <NoWarn>CS3021</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>

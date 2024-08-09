@@ -22,7 +22,7 @@ public class Serializer
         return new ClassNode
         {
             Id = node.Id,
-            Stats = node.Stats.ConvertAll<string>(s => s),
+            // Stats = node.Stats.ConvertAll<string>(s => s),
         };
     }
 

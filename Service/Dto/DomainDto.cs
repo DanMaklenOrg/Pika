@@ -29,7 +29,7 @@ public readonly struct ClassDto
     public string Id { get; init; }
 
     [JsonPropertyName("stats")]
-    public List<string> Stats { get; init; }
+    public List<StatDto> Stats { get; init; }
 }
 
 public readonly struct ProjectDto

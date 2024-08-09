@@ -20,7 +20,6 @@ public static class SyncCommand
 
         if (domains.Count != 1) throw new NotSupportedException();
 
-        return; // Test Run
         foreach (var domain in domains)
         {
             await domainRepo.Create(domain);

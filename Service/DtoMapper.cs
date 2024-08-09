@@ -32,7 +32,7 @@ public static class DtoMapper
         return new ClassDto
         {
             Id = model.Id,
-            Stats = model.Stats.ConvertAll<string>(s => s),
+            Stats = model.Stats.ConvertAll(ToDto),
         };
     }
 

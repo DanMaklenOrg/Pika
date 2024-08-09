@@ -7,8 +7,6 @@ namespace Pika.PikaLang;
 
 public class PikaParser
 {
-    private ParsingContext _parsingContext;
-
     public Domain Parse(TextReader textReader)
     {
         var antlrStream = new AntlrInputStream(textReader);
@@ -23,9 +21,8 @@ public class PikaParser
 
     private Domain ParseDomain(PikaLangParser.RootContext context)
     {
-        (string id, string name) = ParseNamedIdentifier(context.domainDecl().namedIdentifier());
-        _parsingContext.DomainId = id;
-        var domain = new Domain(_parsingContext.DomainId, name);
+        (ResourceId id, string name) = ParseNamedIdentifier(context.domainDecl().namedIdentifier());
+        var domain = new Domain(id, name);
 
         domain.Projects.AddRange(context.declStmt().OfType<PikaLangParser.ProjectDeclarationContext>().Select(ParseProject));
         domain.Classes.AddRange(context.declStmt().OfType<PikaLangParser.ClassDeclarationContext>().Select(ParseClass));
@@ -48,13 +45,13 @@ public class PikaParser
         var name = ParseStringLiteral(context.STRING_LITERAL());
         return new Objective(name)
         {
-            Requirements = [new(ParseResourceId(context.IDENTIFIER().GetText()))],
+            Requirements = [new (context.IDENTIFIER().GetText())],
         };
     }
 
     private Class ParseClass(PikaLangParser.ClassDeclarationContext context)
     {
-        var id = ParseResourceId(context.classDecl().IDENTIFIER().GetText());
+        ResourceId id = context.classDecl().IDENTIFIER().GetText();
         return new Class(id)
         {
             Stats = context.classDecl().statDecl().Select(ParseStat).ToList(),
@@ -63,21 +60,18 @@ public class PikaParser
 
     private Entity ParseEntity(PikaLangParser.EntityDeclarationContext context)
     {
-        (string id, string name) = ParseNamedIdentifier(context.entityDecl().namedIdentifier());
-        var classId = ParseResourceId(context.entityDecl().IDENTIFIER().GetText());
-        return new Entity(ParseResourceId(id), name)
-        {
-            Class = classId,
-        };
+        (ResourceId id, string name) = ParseNamedIdentifier(context.entityDecl().namedIdentifier());
+        ResourceId classId = context.entityDecl().IDENTIFIER().GetText();
+        return new Entity(id, name, classId);
     }
 
     private Stat ParseStat(PikaLangParser.StatDeclContext context)
     {
-        (string id, string name) = ParseNamedIdentifier(context.namedIdentifier());
+        (ResourceId id, string name) = ParseNamedIdentifier(context.namedIdentifier());
         return context.statType() switch
         {
-            PikaLangParser.BoolStatTypeContext => new Stat(ParseResourceId(id), name, StatType.Boolean),
-            PikaLangParser.IntRangeStatTypeContext intRangeContext => new Stat(ParseResourceId(id), name, StatType.IntegerRange)
+            PikaLangParser.BoolStatTypeContext => new Stat(id, name, StatType.Boolean),
+            PikaLangParser.IntRangeStatTypeContext intRangeContext => new Stat(id, name, StatType.IntegerRange)
             {
                 Min = int.Parse(intRangeContext.INTEGER_LITERAL(0).GetText()),
                 Max = int.Parse(intRangeContext.INTEGER_LITERAL(1).GetText()),
@@ -86,18 +80,12 @@ public class PikaParser
         };
     }
 
-    private ResourceId ParseResourceId(string identifier)
-    {
-        var id = identifier;
-        return !id.Contains('/') ? new ResourceId(id, _parsingContext.DomainId) : ResourceId.ParseResourceId(id);
-    }
-
-    private (string id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
+    private (ResourceId id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
     {
         var name = ParseStringLiteral(context.STRING_LITERAL());
         var idNode = context.IDENTIFIER();
         return idNode is null
-            ? (IdUtilities.Normalize(name), name)
+            ? (ResourceId.InduceFromName(name), name)
             : (idNode.GetText(), name);
     }
 

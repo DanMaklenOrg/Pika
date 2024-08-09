@@ -25,7 +25,7 @@ public class Deserializer
         return new Class
         {
             Id = node.Id,
-            Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            // Stats = node.Stats.ConvertAll(Deserialize) ?? [],
         };
     }
 

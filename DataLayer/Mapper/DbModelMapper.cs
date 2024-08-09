@@ -52,7 +52,7 @@ public static class DbModelMapper
         return new ClassDbModel
         {
             Id = model.Id,
-            Stats = model.Stats.ConvertAll<string>(s => s),
+            Stats = model.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -128,7 +128,7 @@ public static class DbModelMapper
         return new Class
         {
             Id = model.Id,
-            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Stats = model.Stats.ConvertAll(FromDbModel),
         };
     }
     private static Entity FromDbModel(EntityDbModel model)

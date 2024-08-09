@@ -101,5 +101,5 @@ public class ClassDbModel
     public required string Id { get; init; }
 
     [JsonPropertyName("stats")]
-    public required List<string>? Stats { get; init; }
+    public required List<StatDbModel> Stats { get; init; }
 }
