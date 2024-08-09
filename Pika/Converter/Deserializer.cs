@@ -44,7 +44,7 @@ public class Deserializer
     {
         return new Project
         {
-            Title = node.Title,
+            Name = node.Name,
             Objectives = node.Objectives.ConvertAll(Deserialize),
         };
     }
@@ -53,7 +53,7 @@ public class Deserializer
     {
         return new Objective
         {
-            Title = node.Title,
+            Name = node.Name,
             Requirements = node.Requirements.ConvertAll(Deserialize),
         };
     }

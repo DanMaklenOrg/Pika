@@ -1,40 +1,40 @@
 id: dungeon_souls
 name: Dungeon Souls
 projects:
-  - title: Unlock all achievements
+  - name: Unlock all achievements
     objectives:
-      - title: Unlock all steam achievements
+      - name: Unlock all steam achievements
         require:
           - class: achievement
             stat: achieved
             min: 1
-  - title: Collect all Arcane Forge Recipes
+  - name: Collect all Arcane Forge Recipes
     objectives:
-      - title: Find all arcane forge recipes
+      - name: Find all arcane forge recipes
         require:
           - class: forge_recipe
             stat: owned
             min: 1
-  - title: Max all passives
+  - name: Max all passives
     objectives:
-      - title: Reach level 10 in all passives
+      - name: Reach level 10 in all passives
         require:
           - class: passive
             stat: passive_level
             min: 10
-  - title: Max all heroes
+  - name: Max all heroes
     objectives:
-      - title: Unlock all heroes
+      - name: Unlock all heroes
         require:
           - class: hero
             stat: unlocked
             min: 1
-      - title: Max rank all heroes
+      - name: Max rank all heroes
         require:
           - class: hero
             stat: hero_rank
             min: 5
-      - title: Free the soul of all heroes
+      - name: Free the soul of all heroes
         require:
           - class: hero
             stat: soul_freed

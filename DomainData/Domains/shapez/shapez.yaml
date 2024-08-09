@@ -1,23 +1,23 @@
 id: shapez
 name: Shapez
 projects:
-  - title: Unlock all achievements
+  - name: Unlock all achievements
     objectives:
-      - title: Unlock all steam achievements
+      - name: Unlock all steam achievements
         require:
           - class: achievement
             stat: achieved
             min: 1
-  - title: Max Hub Level
+  - name: Max Hub Level
     objectives:
-      - title: Reach max hub level
+      - name: Reach max hub level
         require:
           - class: hub
             stat: hub_level
             min: 26
-  - title: Max All Upgrades
+  - name: Max All Upgrades
     objectives:
-      - title: Max all upgrades
+      - name: Max all upgrades
         require:
           - class: upgrade
             stat: upgrade_tier

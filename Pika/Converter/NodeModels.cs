@@ -31,13 +31,13 @@ public readonly struct StatNode
 
 public readonly struct ProjectNode
 {
-    public string Title { get; init; }
+    public string Name { get; init; }
     public List<ObjectiveNode> Objectives { get; init; }
 }
 
 public readonly struct ObjectiveNode
 {
-    public string Title { get; init; }
+    public string Name { get; init; }
 
     [YamlMember(Alias = "require")]
     public List<ObjectiveRequirementNode> Requirements { get; init; }

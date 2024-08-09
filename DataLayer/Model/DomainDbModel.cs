@@ -34,8 +34,8 @@ public class DomainDbModel : BaseDbModel
 
 public class ProjectDbModel
 {
-    [JsonPropertyName("title")]
-    public required string Title { get; init; }
+    [JsonPropertyName("name")]
+    public required string Name { get; init; }
 
     [JsonPropertyName("objectives")]
     public required List<ObjectiveDbModel> Objectives { get; init; }
@@ -43,8 +43,8 @@ public class ProjectDbModel
 
 public class ObjectiveDbModel
 {
-    [JsonPropertyName("title")]
-    public required string Title { get; init; }
+    [JsonPropertyName("name")]
+    public required string Name { get; init; }
 
     [JsonPropertyName("requirements")]
     public required List<ObjectiveRequirementDbModel> Requirements { get; init; }

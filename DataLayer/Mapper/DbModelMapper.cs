@@ -24,7 +24,7 @@ public static class DbModelMapper
     {
         return new ProjectDbModel
         {
-            Title = project.Title,
+            Name = project.Name,
             Objectives = project.Objectives.ConvertAll(ToDbModel),
         };
     }
@@ -33,7 +33,7 @@ public static class DbModelMapper
     {
         return new ObjectiveDbModel
         {
-            Title = project.Title,
+            Title = project.Name,
             Requirements = project.Requirements.ConvertAll(ToDbModel),
         };
     }
@@ -112,7 +112,7 @@ public static class DbModelMapper
     {
         return new Project
         {
-            Title = model.Title,
+            Name = model.Name,
             Objectives = model.Objectives.ConvertAll(FromDbModel),
         };
     }
@@ -121,7 +121,7 @@ public static class DbModelMapper
     {
         return new Objective
         {
-            Title = model.Title,
+            Name = model.Title,
             Requirements = model.Requirements.ConvertAll(FromDbModel),
         };
     }
