@@ -1,0 +1,36 @@
+domain palworld ~> 'Palworld';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Max hub level' {
+    objective 'Reach max hub level' {
+        require hub; //.level >= 26;
+    }
+}
+project 'Max all upgrades' {
+    objective 'Max all upgrades' {
+        require upgrade; //tier >= 8;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class hub {
+    stat<int(0, 26)> level ~> 'Level';
+}
+class upgrade {
+    stat<int(0, 8)> tier ~> 'Tier';
+}
+
+// Entities
+hub 'Hub';
+upgrade 'Transporters';
+upgrade 'Extractors';
+upgrade 'Shape Manipulators';
+upgrade 'Color Manipulators';

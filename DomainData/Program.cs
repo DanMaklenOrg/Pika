@@ -5,7 +5,6 @@ using Pika.DataLayer.Dao;
 using Pika.DataLayer.Repository;
 using Pika.DomainData;
 using Pika.DomainData.DomainScrapper;
-using Pika.DomainData.DomainScrapper.ShapezIo;
 using Pika.DomainData.DomainScrapper.VampireSurvivors;
 using Pika.DomainData.ScrapperHelpers;
 using Pika.PikaLang;
@@ -18,7 +17,7 @@ builder.Services.AddTransient<IScrapperOld, VampireSurvivorsAchievements>();
 builder.Services.AddTransient<IScrapperOld, VampireSurvivorsSecrets>();
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
-builder.Services.AddTransient<IScrapperOld, ShapezScrapper>();
+builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
