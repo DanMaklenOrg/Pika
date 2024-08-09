@@ -21,8 +21,8 @@ public static class SyncCommand
 
         await RunAllScrapersAndUpdateDomain(domain, scrappers);
 
-        await domainRepo.Create(domain);
-        DumpDomain(domain);
+        // await domainRepo.Create(domain);
+        DumpDomain((await domainRepo.Get(domain.Id))!);
     }
 
     private static List<Domain> ReadAllPikaDomainFiles(PikaParser parser, string domainId)
