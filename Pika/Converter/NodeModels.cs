@@ -31,7 +31,6 @@ public readonly struct StatNode
 
 public readonly struct ProjectNode
 {
-    public string Id { get; init; }
     public string Title { get; init; }
     public List<ObjectiveNode> Objectives { get; init; }
 }

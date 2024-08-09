@@ -51,7 +51,6 @@ public static class DtoMapper
     {
         return new ProjectDto
         {
-            Id = model.Id,
             Title = model.Title,
             Objectives = model.Objectives.ConvertAll(ToDto),
         };
@@ -114,7 +113,6 @@ public static class DtoMapper
         return new UserStatsDto
         {
             EntityStats = userStats.EntityStats.ConvertAll(ToDto),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll<string>(pid => pid),
         };
     }
 
@@ -135,7 +133,6 @@ public static class DtoMapper
             UserId = userId,
             DomainId = domainId,
             EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
-            CompletedProjectIds = statsDto.CompletedProjectIds.ConvertAll<ResourceId>(p => p),
         };
     }
 
