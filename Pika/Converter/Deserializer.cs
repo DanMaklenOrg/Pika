@@ -14,7 +14,6 @@ public class Deserializer
             Id = node.Id,
             Name = node.Name ?? string.Empty,
             Stats = node.Stats?.ConvertAll(Deserialize) ?? [],
-            Tags = node.Tags?.ConvertAll(Deserialize) ?? [],
             Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
@@ -27,16 +26,6 @@ public class Deserializer
         {
             Id = node.Id,
             Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
-            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
-        };
-    }
-
-    private Tag Deserialize(TagNode node)
-    {
-        return new Tag
-        {
-            Id = ParseOrInduceId(node.Id, node.Name),
-            Name = node.Name,
         };
     }
 
@@ -75,7 +64,6 @@ public class Deserializer
             Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
             Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
-            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
             Class = node.Class,
         };
     }
@@ -84,6 +72,7 @@ public class Deserializer
     {
         var id = ParseOrInduceId(node.Id, node.Name);
         var name = node.Name;
+
         var match = StatTypePattern.Match(node.Type);
         var type = match.Groups[1].Value switch
         {
@@ -93,28 +82,18 @@ public class Deserializer
             _ => throw new Exception("Unknown Stat Type"),
         };
         var typeArgs = match.Groups[3].Value.Split(',', StringSplitOptions.TrimEntries);
-        int? min = null;
-        int? max = null;
-        List<string> enumValues = [];
-        switch (type)
+        return type switch
         {
-            case StatType.IntegerRange:
-                min = int.Parse(typeArgs[0]);
-                max = int.Parse(typeArgs[1]);
-                break;
-            case StatType.OrderedEnum:
-                enumValues = typeArgs.ToList();
-                break;
-        }
-
-        return new Stat
-        {
-            Id = id,
-            Name = name,
-            Type = type,
-            Min = min,
-            Max = max,
-            EnumValues = enumValues,
+            StatType.IntegerRange => new Stat(id, name, type)
+            {
+                Min = int.Parse(typeArgs[0]),
+                Max = int.Parse(typeArgs[1]),
+            },
+            StatType.OrderedEnum => new Stat(id, name, type)
+            {
+                EnumValues = typeArgs.ToList(),
+            },
+            _ => new Stat(id, name, type),
         };
     }
 

@@ -14,7 +14,6 @@ public static class DbModelMapper
             Name = domain.Name,
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
-            Tags = domain.Tags.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
         };
@@ -54,16 +53,6 @@ public static class DbModelMapper
         {
             Id = model.Id,
             Stats = model.Stats.ConvertAll<string>(s => s),
-            Tags = model.Tags.ConvertAll<string>(t => t),
-        };
-    }
-
-    private static TagDbModel ToDbModel(Tag model)
-    {
-        return new TagDbModel
-        {
-            Id = model.Id,
-            Name = model.Name,
         };
     }
 
@@ -75,7 +64,6 @@ public static class DbModelMapper
             Name = entity.Name,
             Class = entity.Class,
             Stats = entity.Stats.ConvertAll<string>(s => s),
-            Tags = entity.Tags.ConvertAll<string>(t => t),
         };
     }
 
@@ -101,7 +89,6 @@ public static class DbModelMapper
             Id = model.Id,
             Name = model.Name,
             Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
-            Tags = model.Tags?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
@@ -136,22 +123,12 @@ public static class DbModelMapper
         };
     }
 
-    private static Tag FromDbModel(TagDbModel model)
-    {
-        return new Tag
-        {
-            Id = model.Id,
-            Name = model.Name,
-        };
-    }
-
     private static Class FromDbModel(ClassDbModel model)
     {
         return new Class
         {
             Id = model.Id,
             Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
-            Tags = model.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
         };
     }
     private static Entity FromDbModel(EntityDbModel model)
@@ -160,7 +137,6 @@ public static class DbModelMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Tags = model.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
             Class = model.Class,
             Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
         };

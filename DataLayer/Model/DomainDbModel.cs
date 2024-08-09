@@ -16,9 +16,6 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("entities")]
     public List<EntityDbModel>? Entities { get; init; }
 
-    [JsonPropertyName("tags")]
-    public List<TagDbModel>? Tags { get; init; }
-
     [JsonPropertyName("projects")]
     public List<ProjectDbModel>? Projects { get; init; }
 
@@ -62,15 +59,6 @@ public class ObjectiveRequirementDbModel
     public required int Min { get; init; }
 }
 
-public class TagDbModel
-{
-    [JsonPropertyName("id")]
-    public required string Id { get; init; }
-
-    [JsonPropertyName("name")]
-    public required string Name { get; init; }
-}
-
 public class EntityDbModel
 {
     [JsonPropertyName("id")]
@@ -84,9 +72,6 @@ public class EntityDbModel
 
     [JsonPropertyName("stats")]
     public List<string>? Stats { get; init; }
-
-    [JsonPropertyName("tags")]
-    public List<string>? Tags { get; init; }
 }
 
 public class StatDbModel
@@ -117,7 +102,4 @@ public class ClassDbModel
 
     [JsonPropertyName("stats")]
     public required List<string>? Stats { get; init; }
-
-    [JsonPropertyName("tags")]
-    public required List<string>? Tags { get; init; }
 }

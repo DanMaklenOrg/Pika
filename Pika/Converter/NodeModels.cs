@@ -8,7 +8,6 @@ public readonly struct DomainNode
     public string? Name { get; init; }
     public List<StatNode>? Stats { get; init; }
     public List<ClassNode>? Classes { get; init; }
-    public List<TagNode>? Tags { get; init; }
     public List<EntityNode>? Entities { get; init; }
     public List<ProjectNode>? Projects { get; init; }
 }
@@ -19,7 +18,6 @@ public readonly struct EntityNode
     public string Name { get; init; }
     public string Class { get; init; }
     public List<string>? Stats { get; init; }
-    public List<string>? Tags { get; init; }
 }
 
 public readonly struct StatNode
@@ -52,15 +50,8 @@ public readonly struct ObjectiveRequirementNode
     public int Min { get; init; }
 }
 
-public readonly struct TagNode
-{
-    public string? Id { get; init; }
-    public string Name { get; init; }
-}
-
 public readonly struct ClassNode
 {
     public string Id { get; init; }
     public List<string>? Stats { get; init; }
-    public List<string>? Tags { get; init; }
 }

@@ -15,13 +15,9 @@ classes:
   - id: pal
     stats:
       - captured
-    tags:
-      - pal
   - id: achievement
     stats:
       - achieved
-tags:
-  - name: Pal
 projects:
   - name: Capture All Pals
     objectives:

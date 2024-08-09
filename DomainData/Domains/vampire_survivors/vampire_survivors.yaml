@@ -20,47 +20,25 @@ stats:
     type: BOOLEAN
   - name: Unlocked
     type: BOOLEAN
-tags:
-  - name: Character
-  - name: Power Up
-  - name: Weapon
-  - name: Relic
-  - name: Passive Item
-  - name: Pickup
-  - name: Arcana
-  - name: Secret
-  - name: Stage
 classes:
   - id: character
     stats:
       - unlocked
-    tags:
-      - character
   - id: power_up_10
     stats:
       - power_up_rank_10
-    tags:
-      - power_up
   - id: power_up_5
     stats:
       - power_up_rank_5
-    tags:
-      - power_up
   - id: power_up_3
     stats:
       - power_up_rank_3
-    tags:
-      - power_up
   - id: power_up_2
     stats:
       - power_up_rank_2
-    tags:
-      - power_up
   - id: power_up_1
     stats:
       - power_up_rank_1
-    tags:
-      - power_up
   - id: collection_entry
     stats:
       - unlocked
@@ -68,13 +46,9 @@ classes:
     stats:
       - unlocked
       - hyper_mode_unlocked
-    tags:
-      - stage
   - id: secret_unlock
     stats:
       - unlocked
-    tags:
-      - secret
 projects:
   - name: Unlock All Characters
     objectives:
@@ -138,8 +112,6 @@ projects:
 entities:
   - name: Friendship Amulet
     class: collection_entry
-    tags:
-      - pickup
   - name: Mad Forest
     class: stage
   - name: Laborratory
@@ -190,9 +162,5 @@ entities:
     class: stage
   - name: Super Candybox II Turbo
     class: collection_entry
-    tags:
-      - weapon
   - name: Sole Solution
     class: collection_entry
-    tags:
-      - weapon

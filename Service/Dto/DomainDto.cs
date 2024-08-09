@@ -13,9 +13,6 @@ public readonly struct DomainDto
     [JsonPropertyName("stats")]
     public List<StatDto> Stats { get; init; }
 
-    [JsonPropertyName("tags")]
-    public List<TagDto> Tags { get; init; }
-
     [JsonPropertyName("classes")]
     public List<ClassDto> Classes { get; init; }
 
@@ -33,18 +30,6 @@ public readonly struct ClassDto
 
     [JsonPropertyName("stats")]
     public List<string> Stats { get; init; }
-
-    [JsonPropertyName("tags")]
-    public List<string> Tags { get; init; }
-}
-
-public readonly struct TagDto
-{
-    [JsonPropertyName("id")]
-    public string Id { get; init; }
-
-    [JsonPropertyName("name")]
-    public string Name { get; init; }
 }
 
 public readonly struct ProjectDto
@@ -89,14 +74,8 @@ public readonly struct EntityDto
     [JsonPropertyName("stats")]
     public List<string> Stats { get; init; }
 
-    [JsonPropertyName("tags")]
-    public List<string> Tags { get; init; }
-
     [JsonPropertyName("class")]
     public string Class { get; init; }
-
-    [JsonPropertyName("classes")]
-    public List<string> Classes_Deprecated { get; init; }
 }
 
 public readonly struct StatDto
