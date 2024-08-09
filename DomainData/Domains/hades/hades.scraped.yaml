@@ -3,148 +3,148 @@ name: Hades
 entities:
   - id: escaped_tartarus
     name: Escaped Tartarus
-    class: _/achievement
+    class: achievement
   - id: escaped_asphodel
     name: Escaped Asphodel
-    class: _/achievement
+    class: achievement
   - id: escaped_elysium
     name: Escaped Elysium
-    class: _/achievement
+    class: achievement
   - id: champion_of_elysium
     name: Champion of Elysium
-    class: _/achievement
+    class: achievement
   - id: hold_the_onions
     name: Hold the Onions
-    class: _/achievement
+    class: achievement
   - id: is_there_no_escape
     name: Is There No Escape?
-    class: _/achievement
+    class: achievement
   - id: weapon_of_fate
     name: Weapon of Fate
-    class: _/achievement
+    class: achievement
   - id: to_charons_credit
     name: To Charon's Credit
-    class: _/achievement
+    class: achievement
   - id: the_useless_trinket
     name: The Useless Trinket
-    class: _/achievement
+    class: achievement
   - id: skellys_last_lamentations
     name: Skelly's Last Lamentations
-    class: _/achievement
+    class: achievement
   - id: something_from_everyone
     name: Something From Everyone
-    class: _/achievement
+    class: achievement
   - id: friends_forever
     name: Friends Forever
-    class: _/achievement
+    class: achievement
   - id: rare_collectible
     name: Rare Collectible
-    class: _/achievement
+    class: achievement
   - id: complete_set
     name: Complete Set
-    class: _/achievement
+    class: achievement
   - id: blood_bound
     name: Blood Bound
-    class: _/achievement
+    class: achievement
   - id: infernal_arms
     name: Infernal Arms
-    class: _/achievement
+    class: achievement
   - id: blessed_by_the_gods
     name: Blessed by the Gods
-    class: _/achievement
+    class: achievement
   - id: thanks_but_no_thanks
     name: Thanks, But No Thanks
-    class: _/achievement
+    class: achievement
   - id: tools_of_the_architect
     name: Tools of the Architect
-    class: _/achievement
+    class: achievement
   - id: arms_collector
     name: Arms Collector
-    class: _/achievement
+    class: achievement
   - id: grown_close
     name: Grown Close
-    class: _/achievement
+    class: achievement
   - id: well_versed
     name: Well Versed
-    class: _/achievement
+    class: achievement
   - id: day_or_night_trader
     name: Day-or-Night Trader
-    class: _/achievement
+    class: achievement
   - id: home_makeover
     name: Home Makeover
-    class: _/achievement
+    class: achievement
   - id: had_to_happen
     name: Had to Happen
-    class: _/achievement
+    class: achievement
   - id: river_denizens
     name: River Denizens
-    class: _/achievement
+    class: achievement
   - id: urge_to_sing
     name: Urge to Sing
-    class: _/achievement
+    class: achievement
   - id: nyxs_mirror
     name: Nyx's Mirror
-    class: _/achievement
+    class: achievement
   - id: night_and_darkness
     name: Night and Darkness
-    class: _/achievement
+    class: achievement
   - id: chthonic_colleagues
     name: Chthonic Colleagues
-    class: _/achievement
+    class: achievement
   - id: war_gods_bloodlust
     name: War-God's Bloodlust
-    class: _/achievement
+    class: achievement
   - id: end_to_torment
     name: End to Torment
-    class: _/achievement
+    class: achievement
   - id: musician_and_muse
     name: Musician and Muse
-    class: _/achievement
+    class: achievement
   - id: divided_by_death
     name: Divided by Death
-    class: _/achievement
+    class: achievement
   - id: dark_reflections
     name: Dark Reflections
-    class: _/achievement
+    class: achievement
   - id: harsh_conditions
     name: Harsh Conditions
-    class: _/achievement
+    class: achievement
   - id: master_of_arms
     name: Master of Arms
-    class: _/achievement
+    class: achievement
   - id: slashed_benefits
     name: Slashed Benefits
-    class: _/achievement
+    class: achievement
   - id: back_to_work
     name: Back to Work
-    class: _/achievement
+    class: achievement
   - id: the_family_secret
     name: The Family Secret
-    class: _/achievement
+    class: achievement
   - id: one_for_the_ages
     name: One for the Ages
-    class: _/achievement
+    class: achievement
   - id: well_stocked
     name: Well Stocked
-    class: _/achievement
+    class: achievement
   - id: thorn_of_thanatos
     name: Thorn of Thanatos
-    class: _/achievement
+    class: achievement
   - id: haste_of_hermes
     name: Haste of Hermes
-    class: _/achievement
+    class: achievement
   - id: death_dealer
     name: Death Dealer
-    class: _/achievement
+    class: achievement
   - id: friends_in_high_places
     name: Friends in High Places
-    class: _/achievement
+    class: achievement
   - id: bad_call
     name: Bad Call
-    class: _/achievement
+    class: achievement
   - id: skelly_slayer
     name: Skelly Slayer
-    class: _/achievement
+    class: achievement
   - id: three_headed_boy
     name: Three-Headed Boy
-    class: _/achievement
+    class: achievement

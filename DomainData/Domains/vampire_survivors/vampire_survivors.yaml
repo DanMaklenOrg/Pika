@@ -18,6 +18,8 @@ stats:
     type: INTEGER_RANGE(0, 1)
   - name: Hyper Mode Unlocked
     type: BOOLEAN
+  - name: Unlocked
+    type: BOOLEAN
 tags:
   - name: Character
   - name: Power Up
@@ -31,7 +33,7 @@ tags:
 classes:
   - id: character
     stats:
-      - _/unlocked
+      - unlocked
     tags:
       - character
   - id: power_up_10
@@ -61,16 +63,16 @@ classes:
       - power_up
   - id: collection_entry
     stats:
-      - _/unlocked
+      - unlocked
   - id: stage
     stats:
-      - _/unlocked
+      - unlocked
       - hyper_mode_unlocked
     tags:
       - stage
   - id: secret_unlock
     stats:
-      - _/unlocked
+      - unlocked
     tags:
       - secret
 projects:
@@ -80,7 +82,7 @@ projects:
       - title: Unlock all characters
         require:
           - class: character
-            stat: _/unlocked
+            stat: unlocked
             min: 1
   - id: max_power_ups
     title: Max All Power Ups
@@ -108,7 +110,7 @@ projects:
       - title: Unlock all characters
         require:
           - class: collection_entry
-            stat: _/unlocked
+            stat: unlocked
             min: 1
   - id: unlock_secrets
     title: Unlock All Secrets
@@ -116,15 +118,15 @@ projects:
       - title: Unlock all secrets
         require:
           - class: secret_unlock
-            stat: _/unlocked
+            stat: unlocked
             min: 1
   - id: unlock_achievements
     title: Unlock All Achievements
     objectives:
       - title: Unlock all achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
   - id: unlock_stage
     title: Unlock All Stages and Their Hyper Mode
@@ -132,7 +134,7 @@ projects:
       - title: Unlock all stages
         require:
           - class: stage
-            stat: _/unlocked
+            stat: unlocked
             min: 1
       - title: Unlock hyper mode on all Stages
         require:

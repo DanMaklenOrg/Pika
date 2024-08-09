@@ -57,7 +57,7 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
-                Class = "_/achievement",
+                Class = "achievement",
             };
         }).ToList();
 

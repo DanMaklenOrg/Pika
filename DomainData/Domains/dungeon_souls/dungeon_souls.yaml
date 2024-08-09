@@ -6,8 +6,8 @@ projects:
     objectives:
       - title: Unlock all steam achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
   - id: collect_recipes
     title: Collect all Arcane Forge Recipes
@@ -15,7 +15,7 @@ projects:
       - title: Find all arcane forge recipes
         require:
           - class: forge_recipe
-            stat: _/owned
+            stat: owned
             min: 1
   - id: max_passives
     title: Max all passives
@@ -31,7 +31,7 @@ projects:
       - title: Unlock all heroes
         require:
           - class: hero
-            stat: _/unlocked
+            stat: unlocked
             min: 1
       - title: Max rank all heroes
         require:
@@ -44,6 +44,11 @@ projects:
             stat: soul_freed
             min: 1
 stats:
+  - name: Owned
+    type: BOOLEAN
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
   - id: passive_level
     name: Level
     type: INTEGER_RANGE(0, 10)
@@ -56,18 +61,23 @@ stats:
   - id: soul_freed
     name: Soul Freed
     type: BOOLEAN
+  - name: Unlocked
+    type: BOOLEAN
 classes:
   - id: passive
     stats:
       - passive_level
   - id: hero
     stats:
-      - _/unlocked
+      - unlocked
       - hero_rank
       - soul_freed
   - id: forge_recipe
     stats:
-      - _/owned
+      - owned
+  - id: achievement
+    stats:
+      - achieved
 entities:
   - name: Stamina
     class: passive

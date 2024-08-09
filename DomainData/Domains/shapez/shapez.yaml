@@ -6,8 +6,8 @@ projects:
     objectives:
       - title: Unlock all steam achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
   - id: max_level
     title: Max Hub Level
@@ -32,6 +32,9 @@ stats:
   - id: upgrade_tier
     name: Tier
     type: INTEGER_RANGE(0, 8)
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
 classes:
   - id: hub
     stats:
@@ -39,6 +42,9 @@ classes:
   - id: upgrade
     stats:
       - upgrade_tier
+  - id: achievement
+    stats:
+      - achieved
 entities:
   - name: Hub
     class: hub

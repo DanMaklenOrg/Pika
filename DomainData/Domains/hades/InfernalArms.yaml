@@ -76,7 +76,7 @@ stats:
 classes:
   - id: infernal_arm
     stats:
-      - _/unlocked
+      - unlocked
 entities:
   - name: Stygius
     class: infernal_arm
