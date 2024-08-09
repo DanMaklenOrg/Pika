@@ -48,6 +48,7 @@ stats:
     type: BOOLEAN
   - id: achieved
     name: Achievement Unlocked
+    type: BOOLEAN
   - id: passive_level
     name: Level
     type: INTEGER_RANGE(0, 10)
