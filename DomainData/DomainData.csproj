@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="Cocona" Version="2.2.0" />
+      <PackageReference Include="FluentAssertions" Version="6.12.0" />
       <PackageReference Include="HtmlAgilityPack" Version="1.11.59" />
       <PackageReference Include="SteamWebAPI2" Version="4.4.1" />
     </ItemGroup>

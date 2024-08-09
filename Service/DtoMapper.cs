@@ -9,7 +9,7 @@ public static class DtoMapper
     {
         return new DomainSummaryDto
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id.ToString(),
             Name = model.Name,
         };
     }
@@ -18,7 +18,7 @@ public static class DtoMapper
     {
         return new DomainDto
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id,
             Name = model.Name,
             Entities = model.Entities.ConvertAll(ToDto),
             Projects = model.Projects.ConvertAll(ToDto),
@@ -32,9 +32,9 @@ public static class DtoMapper
     {
         return new ClassDto
         {
-            Id = model.Id.FullyQualifiedId,
-            Stats = model.StatsIds.ConvertAll(x => x.FullyQualifiedId),
-            Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
+            Id = model.Id,
+            Stats = model.Stats.ConvertAll<string>(s => s),
+            Tags = model.Tags.ConvertAll<string>(t => t),
         };
     }
 
@@ -42,7 +42,7 @@ public static class DtoMapper
     {
         return new TagDto
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id,
             Name = model.Name,
         };
     }
@@ -51,7 +51,7 @@ public static class DtoMapper
     {
         return new ProjectDto
         {
-            Title = model.Name,
+            Name = model.Name,
             Objectives = model.Objectives.ConvertAll(ToDto),
         };
     }
@@ -60,7 +60,7 @@ public static class DtoMapper
     {
         return new ObjectiveDto
         {
-            Title = model.Name,
+            Name = model.Name,
             Requirements = model.Requirements.ConvertAll(ToDto),
         };
     }
@@ -69,8 +69,8 @@ public static class DtoMapper
     {
         return new ObjectiveRequirementDto
         {
-            Class = model.Class.FullyQualifiedId,
-            Stat = model.Stat.FullyQualifiedId,
+            Class = model.Class,
+            Stat = model.Stat,
             Min = model.Min,
         };
     }
@@ -80,12 +80,12 @@ public static class DtoMapper
     {
         return new EntityDto
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id,
             Name = model.Name,
-            Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
-            Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
-            Class = model.Class.FullyQualifiedId,
-            Classes_Deprecated = [model.Class.FullyQualifiedId],
+            Stats = model.Stats.ConvertAll<string>(s => s),
+            Tags = model.Tags.ConvertAll<string>(t => t),
+            Class = model.Class,
+            Classes_Deprecated = [model.Class],
         };
     }
 
@@ -93,7 +93,7 @@ public static class DtoMapper
     {
         return new StatDto
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id,
             Name = model.Name,
             Type = model.Type switch
             {
@@ -113,7 +113,6 @@ public static class DtoMapper
         return new UserStatsDto
         {
             EntityStats = userStats.EntityStats.ConvertAll(ToDto),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => pid.FullyQualifiedId),
         };
     }
 
@@ -121,8 +120,8 @@ public static class DtoMapper
     {
         return new UserEntityStatDto
         {
-            EntityId = entityStat.EntityId.FullyQualifiedId,
-            StatId = entityStat.StatId.FullyQualifiedId,
+            EntityId = entityStat.EntityId,
+            StatId = entityStat.StatId,
             Value = entityStat.Value,
         };
     }
@@ -134,7 +133,6 @@ public static class DtoMapper
             UserId = userId,
             DomainId = domainId,
             EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
-            CompletedProjectIds = statsDto.CompletedProjectIds.ConvertAll(ResourceId.ParseResourceId),
         };
     }
 

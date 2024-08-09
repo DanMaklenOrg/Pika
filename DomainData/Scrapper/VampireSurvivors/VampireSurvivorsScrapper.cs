@@ -5,7 +5,7 @@ namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
 public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
-    public DomainId DomainId => "vampire_survivors";
+    public ResourceId DomainId => "vampire_survivors";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 
@@ -40,9 +40,9 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         var name = nameContainer.RegisterAndNormalize(node.InnerText, "Character");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("character", DomainId),
+            Class = "character",
         };
     }
 
@@ -59,10 +59,10 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         name = nameContainer.RegisterAndNormalize(name, "Relic");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("collection_entry", DomainId),
-            Tags = [new ResourceId("relic", DomainId)],
+            Class = "collection_entry",
+            Tags = ["relic"],
         };
     }
 
@@ -86,9 +86,9 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         var maxRank = node.SelectSingleNode(".//td[4]").InnerText.Trim();
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId($"power_up_{maxRank}", DomainId),
+            Class = $"power_up_{maxRank}",
         };
     }
 
@@ -105,10 +105,10 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         name = nameContainer.RegisterAndNormalize(name, "Passive Item");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("collection_entry", DomainId),
-            Tags = [new ResourceId("passive_item", DomainId)],
+            Class = "collection_entry",
+            Tags = ["passive_item"],
         };
     }
 
@@ -130,10 +130,10 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         name = nameContainer.RegisterAndNormalize(name, "Weapon");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("collection_entry", DomainId),
-            Tags = [new ResourceId("weapon", DomainId)],
+            Class = "collection_entry",
+            Tags = ["weapon"],
         };
     }
 
@@ -154,10 +154,10 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         name = nameContainer.RegisterAndNormalize(name, "Pickup");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("collection_entry", DomainId),
-            Tags = [new ResourceId("pickup", DomainId)],
+            Class = "collection_entry",
+            Tags = ["pickup"],
         };
     }
 
@@ -174,10 +174,10 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
         name = nameContainer.RegisterAndNormalize(name, "Arcana");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("collection_entry", DomainId),
-            Tags = [new ResourceId("arcana", DomainId)],
+            Class = "collection_entry",
+            Tags = ["arcana"],
         };
     }
 }

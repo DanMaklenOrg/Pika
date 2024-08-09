@@ -6,7 +6,7 @@ public class DungeonSoulsScrapper(SteamScrapper steamScrapper) : IScrapper
 {
     private readonly uint _steamAppId = 383230;
 
-    public DomainId DomainId => "dungeon_souls";
+    public ResourceId DomainId => "dungeon_souls";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 

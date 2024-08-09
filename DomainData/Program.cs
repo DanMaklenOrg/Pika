@@ -36,12 +36,14 @@ builder.Services.AddPikaParser();
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IDomainRepo, DomainRepo>();
 builder.Services.AddTransient<IDomainDao, DomainDao>();
+builder.Services.AddTransient<IUserStatsRepo, UserStatsRepo>();
+builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 
 var app = builder.Build();
 
 app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrapper> scrappers, PikaConverter converter) =>
 {
-    foreach (var s in scrappers.Where(s => s.DomainId.FullyQualifiedId == domainId))
+    foreach (var s in scrappers.Where(s => s.DomainId == domainId))
     {
         Console.WriteLine($"Scraping {s.DomainId} ({s.FileName})");
         var domain = await s.Scrape();

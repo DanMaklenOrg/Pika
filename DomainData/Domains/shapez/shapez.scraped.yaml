@@ -3,136 +3,136 @@ name: Shapez
 entities:
   - id: painter
     name: Painter
-    class: _/achievement
+    class: achievement
   - id: cutter
     name: Cutter
-    class: _/achievement
+    class: achievement
   - id: rotater
     name: Rotater
-    class: _/achievement
+    class: achievement
   - id: wait_they_stack
     name: Wait, they stack?
-    class: _/achievement
+    class: achievement
   - id: now_its_easy
     name: Now it's easy
-    class: _/achievement
+    class: achievement
   - id: wires
     name: Wires
-    class: _/achievement
+    class: achievement
   - id: storage
     name: Storage
-    class: _/achievement
+    class: achievement
   - id: freedom
     name: Freedom
-    class: _/achievement
+    class: achievement
   - id: computer_guy
     name: Computer Guy
-    class: _/achievement
+    class: achievement
   - id: the_logo
     name: The logo!
-    class: _/achievement
+    class: achievement
   - id: to_the_moon
     name: To the moon
-    class: _/achievement
+    class: achievement
   - id: its_piling_up
     name: It's piling up
-    class: _/achievement
+    class: achievement
   - id: ill_use_it_later
     name: I'll use it later
-    class: _/achievement
+    class: achievement
   - id: speedrun_master
     name: Speedrun Master
-    class: _/achievement
+    class: achievement
   - id: speedrun_novice
     name: Speedrun Novice
-    class: _/achievement
+    class: achievement
   - id: not_an_idle_game
     name: Not an idle game
-    class: _/achievement
+    class: achievement
   - id: efficiency_1
     name: Efficiency 1
-    class: _/achievement
+    class: achievement
   - id: efficiency_2
     name: Efficiency 2
-    class: _/achievement
+    class: achievement
   - id: branding_specialist_1
     name: Branding specialist 1
-    class: _/achievement
+    class: achievement
   - id: branding_specialist_2
     name: Branding specialist 2
-    class: _/achievement
+    class: achievement
   - id: preparing_to_launch
     name: Preparing to launch
-    class: _/achievement
+    class: achievement
   - id: spacey
     name: SpaceY
-    class: _/achievement
+    class: achievement
   - id: stack_overflow
     name: Stack overflow
-    class: _/achievement
+    class: achievement
   - id: its_a_mess
     name: It's a mess
-    class: _/achievement
+    class: achievement
   - id: i_need_trains
     name: I need trains
-    class: _/achievement
+    class: achievement
   - id: my_eyes_no_longer_hurt
     name: My eyes no longer hurt
-    class: _/achievement
+    class: achievement
   - id: king_of_inefficiency
     name: King of Inefficiency
-    class: _/achievement
+    class: achievement
   - id: its_so_slow
     name: It's so slow
-    class: _/achievement
+    class: achievement
   - id: faster
     name: Faster
-    class: _/achievement
+    class: achievement
   - id: even_faster
     name: Even faster
-    class: _/achievement
+    class: achievement
   - id: oops
     name: Oops
-    class: _/achievement
+    class: achievement
   - id: mam_make_anything_machine
     name: MAM (Make Anything Machine)
-    class: _/achievement
+    class: achievement
   - id: perfectionist
     name: Perfectionist
-    class: _/achievement
+    class: achievement
   - id: copy_pasta
     name: Copy-Pasta
-    class: _/achievement
+    class: achievement
   - id: get_rid_of_them
     name: Get rid of them
-    class: _/achievement
+    class: achievement
   - id: its_been_a_long_time
     name: It's been a long time
-    class: _/achievement
+    class: achievement
   - id: addicted
     name: Addicted
-    class: _/achievement
+    class: achievement
   - id: a_bit_early
     name: A bit early?
-    class: _/achievement
+    class: achievement
   - id: cant_stop
     name: Can't stop
-    class: _/achievement
+    class: achievement
   - id: is_this_the_end
     name: Is this the end?
-    class: _/achievement
+    class: achievement
   - id: getting_into_it
     name: Getting into it
-    class: _/achievement
+    class: achievement
   - id: the_next_dimension
     name: The next dimension
-    class: _/achievement
+    class: achievement
   - id: gps
     name: GPS
-    class: _/achievement
+    class: achievement
   - id: ive_seen_that_before
     name: I've seen that before ..
-    class: _/achievement
+    class: achievement
   - id: memories_from_the_past
     name: Memories from the past
-    class: _/achievement
+    class: achievement

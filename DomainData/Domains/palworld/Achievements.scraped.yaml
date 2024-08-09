@@ -3,94 +3,94 @@ name: Palworld
 entities:
   - id: hillside_sovereign
     name: Hillside Sovereign
-    class: _/achievement
+    class: achievement
   - id: snowfall_sovereign
     name: Snowfall Sovereign
-    class: _/achievement
+    class: achievement
   - id: desert_sovereign
     name: Desert Sovereign
-    class: _/achievement
+    class: achievement
   - id: volcano_sovereign
     name: Volcano Sovereign
-    class: _/achievement
+    class: achievement
   - id: astral_sovereign
     name: Astral Sovereign
-    class: _/achievement
+    class: achievement
   - id: beginning_of_the_legend
     name: Beginning of the Legend
-    class: _/achievement
+    class: achievement
   - id: newbie_pal_tamer
     name: Newbie Pal Tamer
-    class: _/achievement
+    class: achievement
   - id: intermediate_pal_tamer
     name: Intermediate Pal Tamer
-    class: _/achievement
+    class: achievement
   - id: skilled_pal_tamer
     name: Skilled Pal Tamer
-    class: _/achievement
+    class: achievement
   - id: seasoned_pal_tamer
     name: Seasoned Pal Tamer
-    class: _/achievement
+    class: achievement
   - id: twilight_siren
     name: Twilight Siren
-    class: _/achievement
+    class: achievement
   - id: eclipsed_siren
     name: Eclipsed Siren
-    class: _/achievement
+    class: achievement
   - id: blossom_sovereign
     name: Blossom Sovereign
-    class: _/achievement
+    class: achievement
   - id: incarnation_of_the_eternal_flame
     name: Incarnation of the Eternal Flame
-    class: _/achievement
+    class: achievement
   - id: exceptional_pal_tamer
     name: Exceptional Pal Tamer
-    class: _/achievement
+    class: achievement
   - id: overhunting
     name: Overhunting
-    class: _/achievement
+    class: achievement
   - id: inhuman_act
     name: Inhuman Act
-    class: _/achievement
+    class: achievement
   - id: legendary_celestial_dragon
     name: Legendary Celestial Dragon
-    class: _/achievement
+    class: achievement
   - id: holy_knight_of_legend
     name: Holy Knight of Legend
-    class: _/achievement
+    class: achievement
   - id: dark_knight_of_legend
     name: Dark Knight of Legend
-    class: _/achievement
+    class: achievement
   - id: legendary_steed_of_ice
     name: Legendary Steed of Ice
-    class: _/achievement
+    class: achievement
   - id: trail_of_the_castaway
     name: Trail of the Castaway
-    class: _/achievement
+    class: achievement
   - id: palpagos_guru
     name: Palpagos Guru
-    class: _/achievement
+    class: achievement
   - id: all_for_one
     name: All for One
-    class: _/achievement
+    class: achievement
   - id: voice_of_resentment
     name: Voice of Resentment
-    class: _/achievement
+    class: achievement
   - id: senior_adventurer
     name: Senior Adventurer
-    class: _/achievement
+    class: achievement
   - id: conqueror_of_the_sea
     name: Conqueror of the Sea
-    class: _/achievement
+    class: achievement
   - id: champion_of_the_palpagos_islands
     name: Champion of the Palpagos Islands
-    class: _/achievement
+    class: achievement
   - id: sphere_craftsman
     name: Sphere Craftsman
-    class: _/achievement
+    class: achievement
   - id: iron_heart
     name: Iron Heart
-    class: _/achievement
+    class: achievement
   - id: blood_and_iron
     name: Blood and Iron
-    class: _/achievement
+    class: achievement

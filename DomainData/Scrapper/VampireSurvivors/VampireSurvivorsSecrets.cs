@@ -5,7 +5,7 @@ namespace Pika.DomainData.Scrapper.VampireSurvivors;
 
 public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrapper
 {
-    public DomainId DomainId => "vampire_survivors";
+    public ResourceId DomainId => "vampire_survivors";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => "Secrets";
 
@@ -32,9 +32,9 @@ public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrap
         name = nameContainer.RegisterAndNormalize(name, "Secret");
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = name,
-            Class = new ResourceId("secret_unlock", DomainId),
+            Class = "secret_unlock",
         };
     }
 }

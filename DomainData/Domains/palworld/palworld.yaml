@@ -8,28 +8,32 @@ stats:
   - id: capture_power
     name: Lifemunk Effigy Capture Power
     type: INTEGER_RANGE(0, 12)
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
 classes:
   - id: pal
     stats:
       - captured
     tags:
       - pal
+  - id: achievement
+    stats:
+      - achieved
 tags:
   - name: Pal
 projects:
-  - id: pal_capture
-    title: Capture All Pals
+  - name: Capture All Pals
     objectives:
-      - title: Capture all pals at least 12 times each
+      - name: Capture all pals at least 12 times each
         require:
           - class: pal
             stat: captured
             min: 12
-  - id: achievement_hunter
-    title: Unlock all achievements
+  - name: Unlock all achievements
     objectives:
-      - title: Unlock all steam achievements
+      - name: Unlock all steam achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1

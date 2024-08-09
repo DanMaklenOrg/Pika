@@ -1,103 +1,111 @@
 id: vampire_survivors
 name: Vampire Survivors
+stats:
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
+classes:
+  - id: achievement
+    stats:
+      - achieved
 entities:
   - name: Crewmate (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Report! (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Impostor
-    class: _/achievement
+    class: achievement
   - name: Sharp Tongue (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Scientist
-    class: _/achievement
+    class: achievement
   - name: Engineer
-    class: _/achievement
+    class: achievement
   - name: Lucky Swipe (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Science Rocks (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Shapeshifter
-    class: _/achievement
+    class: achievement
   - name: Just Vent (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Unjust Ejection (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Lifesign Scan (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Ghost
-    class: _/achievement
+    class: achievement
   - name: Guardian
-    class: _/achievement
+    class: achievement
   - name: Clear Debris (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Clear Asteroids (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Horse (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Megalo Impostor
-    class: _/achievement
+    class: achievement
   - name: Hyper Polus Replica
-    class: _/achievement
+    class: achievement
   - name: Polus Replica Map (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Bill
-    class: _/achievement
+    class: achievement
   - name: Long Gun (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Lance
-    class: _/achievement
+    class: achievement
   - name: Short Gun (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Ariana (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Spread Shot (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Lucia
-    class: _/achievement
+    class: achievement
   - name: C-U-Laser (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Hyper Hectic Highway
-    class: _/achievement
+    class: achievement
   - name: Brad
-    class: _/achievement
+    class: achievement
   - name: Firearm (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Browny (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Sonic Bloom (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Sheena
-    class: _/achievement
+    class: achievement
   - name: Blade Crossbow (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Probotector (Achievement)
-    class: _/achievement
+    class: achievement
   - name: BFC2000-AD (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Prism Lass (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Time Warp (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Stanley (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Homing Miss (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Multistage Missiles (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Newt
-    class: _/achievement
+    class: achievement
   - name: Diver Mines (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Simondo
-    class: _/achievement
+    class: achievement
   - name: Bahamut
-    class: _/achievement
+    class: achievement
   - name: Metal Claw (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Big Fuzzy Fist (Achievement)
-    class: _/achievement
+    class: achievement
   - name: Hyper Neo Galuga
-    class: _/achievement
+    class: achievement
   - name: Neo Galuga Map (Achievement)
-    class: _/achievement
+    class: achievement

@@ -6,7 +6,7 @@ public readonly record struct Stat(ResourceId Id, string Name, StatType Type)
     public int? Max { get; init; }
     public List<string>? EnumValues { get; init; }
 
-    public override string ToString() => Id.FullyQualifiedId;
+    public override string ToString() => Id;
 }
 
 public enum StatType

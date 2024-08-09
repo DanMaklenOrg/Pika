@@ -1,21 +1,14 @@
 namespace Pika.Model;
 
-public readonly record struct ResourceId(string Id, DomainId Domain)
+public readonly record struct ResourceId(string Id)
 {
-    public string FullyQualifiedId => $"{Domain}/{Id}";
+    public override string ToString() => Id;
 
-    public override string ToString() => FullyQualifiedId;
-
-    public static ResourceId ParseResourceId(string id)
+    public static ResourceId InduceFromName(string resourceName)
     {
-        var segments = id.Split('/');
-        return new ResourceId(segments[1], segments[0]);
+        return IdUtilities.Normalize(resourceName);
     }
 
-    public static ResourceId InduceFromName(string resourceName, DomainId domainId)
-    {
-        return new ResourceId(IdUtilities.Normalize(resourceName), domainId);
-    }
-
-    public static implicit operator ResourceId(string id) => ParseResourceId(id);
+    public static implicit operator ResourceId(string id) => new(id);
+    public static implicit operator string(ResourceId id) => id.ToString();
 }

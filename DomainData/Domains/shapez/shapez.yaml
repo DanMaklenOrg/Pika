@@ -1,26 +1,23 @@
 id: shapez
 name: Shapez
 projects:
-  - id: achievement_hunter
-    title: Unlock all achievements
+  - name: Unlock all achievements
     objectives:
-      - title: Unlock all steam achievements
+      - name: Unlock all steam achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
-  - id: max_level
-    title: Max Hub Level
+  - name: Max Hub Level
     objectives:
-      - title: Reach max hub level
+      - name: Reach max hub level
         require:
           - class: hub
             stat: hub_level
             min: 26
-  - id: max_upgrades
-    title: Max All Upgrades
+  - name: Max All Upgrades
     objectives:
-      - title: Max all upgrades
+      - name: Max all upgrades
         require:
           - class: upgrade
             stat: upgrade_tier
@@ -32,6 +29,9 @@ stats:
   - id: upgrade_tier
     name: Tier
     type: INTEGER_RANGE(0, 8)
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
 classes:
   - id: hub
     stats:
@@ -39,6 +39,9 @@ classes:
   - id: upgrade
     stats:
       - upgrade_tier
+  - id: achievement
+    stats:
+      - achieved
 entities:
   - name: Hub
     class: hub
