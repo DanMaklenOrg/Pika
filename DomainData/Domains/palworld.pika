@@ -1,0 +1,21 @@
+domain palworld ~> 'Palworld';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Capture All Pals' {
+    objective 'Capture all pals at least 12 times each' {
+        require pal; //.captured >= 12;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class pal {
+    stat<bool> captured ~> 'Captured';
+}
