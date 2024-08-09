@@ -1,16 +1,14 @@
 id: hades
 name: Hades
 projects:
-  - id: achievement_hunter
-    title: Unlock all achievements
+  - title: Unlock all achievements
     objectives:
       - title: Unlock all steam achievements
         require:
           - class: achievement
             stat: achieved
             min: 1
-  - id: max_keepsakes
-    title: Max all keepsakes
+  - title: Max all keepsakes
     objectives:
       - title: Unlock all keepsakes
         require:
@@ -22,16 +20,14 @@ projects:
           - class: keepsake
             stat: keepsake_rank
             min: 3
-  - id: max_infernal_arm
-    title: Max all infernal arms
+  - title: Max all infernal arms
     objectives:
       - title: Unlock all infernal arms
         require:
           - class: infernal_arm
             stat: unlocked
             min: 1
-  - id: fulfill_prophecy
-    title: Fulfill all prophecies
+  - title: Fulfill all prophecies
     objectives:
       - title: Fulfil all prophecies
         require:
