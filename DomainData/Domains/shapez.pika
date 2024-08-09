@@ -1,4 +1,4 @@
-domain palworld ~> 'Palworld';
+domain shapez ~> 'Shapez';
 
 // Projects
 project 'Unlock all achievements' {
