@@ -25,7 +25,7 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
     {
         var steamAchievements = await ScrapeSteamAchievements();
 
-        // List of names that are part of another subdomain and not visible to the name container.
+        // List of names that are part of another file and not visible to the name container.
         HashSet<string> namesToAnnotate =
         [
             "Mad Forest",
@@ -58,7 +58,6 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
                 Class = "_/achievement",
-                Classes = ["_/achievement"],
             };
         }).ToList();
 

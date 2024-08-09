@@ -20,7 +20,6 @@ public static class DtoMapper
         {
             Id = model.Id.FullyQualifiedId,
             Name = model.Name,
-            SubDomains = model.SubDomains.ConvertAll(ToDto),
             Entities = model.Entities.ConvertAll(ToDto),
             Projects = model.Projects.ConvertAll(ToDto),
             Stats = model.Stats.ConvertAll(ToDto),
@@ -85,7 +84,8 @@ public static class DtoMapper
             Name = model.Name,
             Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
             Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
-            Classes = model.Classes.ConvertAll(x => x.FullyQualifiedId),
+            Class = model.Class.FullyQualifiedId,
+            Classes_Deprecated = [model.Class.FullyQualifiedId],
         };
     }
 

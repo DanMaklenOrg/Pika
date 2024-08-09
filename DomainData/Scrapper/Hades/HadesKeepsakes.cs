@@ -31,7 +31,6 @@ public class HadesKeepsakes(EntityNameContainer nameContainer) : IScrapper
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
                 Class = new ResourceId("keepsake", DomainId),
-                Classes = [new ResourceId("keepsake", DomainId)],
             };
         }).ToList();
     }

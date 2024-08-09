@@ -7,5 +7,4 @@ public readonly record struct Domain(DomainId Id, string Name)
     public List<Tag> Tags { get; init; } = [];
     public List<Entity> Entities { get; init; } = [];
     public List<Project> Projects { get; init; } = [];
-    public List<Domain> SubDomains { get; init; } = [];
 }

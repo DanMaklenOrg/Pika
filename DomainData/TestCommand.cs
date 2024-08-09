@@ -6,7 +6,7 @@ namespace Pika.DomainData;
 
 public static class TestCommand
 {
-    private class TestFailureException(Domain domain, string testName) : Exception($"Domain {domain.Id} ({domain.Name}) failed a test: {testName}");
+    private class TestFailureException(Domain domain, string reason) : Exception($"Domain {domain.Id} ({domain.Name}) failed a test: {reason}");
 
     public static void AddTestCommand(this CoconaApp app)
     {
@@ -24,12 +24,6 @@ public static class TestCommand
 
     private static void TestDomain(Domain domain)
     {
-        TestDomainHasNoSubDomains(domain);
-    }
-
-    private static void TestDomainHasNoSubDomains(Domain domain)
-    {
-        if (domain.SubDomains.Count > 0) throw new TestFailureException(domain, nameof(TestDomainHasNoSubDomains));
     }
 
     private static async IAsyncEnumerable<Domain> GetAllDomains(IDomainRepo domainRepo)

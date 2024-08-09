@@ -15,7 +15,6 @@ public class SteamScrapper(SteamClient client, EntityNameContainer nameContainer
                 Id = ResourceId.InduceFromName(name, domainId),
                 Name = name,
                 Class = "_/achievement",
-                Classes = ["_/achievement"],
             };
         }).ToList();
     }

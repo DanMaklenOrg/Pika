@@ -11,14 +11,13 @@ public readonly struct DomainNode
     public List<TagNode>? Tags { get; init; }
     public List<EntityNode>? Entities { get; init; }
     public List<ProjectNode>? Projects { get; init; }
-    public List<DomainNode>? SubDomains { get; init; }
 }
 
 public readonly struct EntityNode
 {
     public string? Id { get; init; }
     public string Name { get; init; }
-    public List<string>? Classes { get; init; }
+    public string Class { get; init; }
     public List<string>? Stats { get; init; }
     public List<string>? Tags { get; init; }
 }

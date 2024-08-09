@@ -22,7 +22,6 @@ public class Serializer
             Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
-            SubDomains = domain.SubDomains.ConvertAll(Serialize),
         };
     }
 
@@ -81,7 +80,7 @@ public class Serializer
             Name = node.Name,
             Stats = node.Stats.ConvertAll(MinifyId),
             Tags = node.Tags.ConvertAll(MinifyId),
-            Classes = node.Classes.ConvertAll(MinifyId),
+            Class = MinifyId(node.Class),
         };
     }
 

@@ -25,7 +25,6 @@ public class Deserializer
             Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
-            SubDomains = node.SubDomains?.ConvertAll(Deserialize) ?? [],
         };
     }
 
@@ -84,8 +83,7 @@ public class Deserializer
             Name = node.Name,
             Stats = node.Stats?.ConvertAll(ParseId) ?? [],
             Tags = node.Tags?.ConvertAll(ParseId) ?? [],
-            Classes = node.Classes?.ConvertAll(ParseId) ?? [],
-            Class = ParseId(node.Classes![0]),
+            Class = ParseId(node.Class),
         };
     }
 

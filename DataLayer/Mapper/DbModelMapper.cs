@@ -17,7 +17,6 @@ public static class DbModelMapper
             Tags = domain.Tags.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
             Stats = domain.Stats.ConvertAll(ToDbModel),
-            SubDomains = domain.SubDomains.ConvertAll(ToDbModel),
         };
     }
 
@@ -74,7 +73,7 @@ public static class DbModelMapper
         {
             Id = entity.Id.FullyQualifiedId,
             Name = entity.Name,
-            Classes = entity.Classes.ConvertAll(c => c.FullyQualifiedId),
+            Class = entity.Class.FullyQualifiedId,
             Stats = entity.Stats.ConvertAll(s => s.FullyQualifiedId),
             Tags = entity.Tags.ConvertAll(t => t.FullyQualifiedId),
         };
@@ -106,7 +105,6 @@ public static class DbModelMapper
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
-            SubDomains = (model.SubDomains?.ConvertAll(FromDbModel) ?? []).Cast<Domain>().ToList(),
         };
     }
 
@@ -163,8 +161,7 @@ public static class DbModelMapper
             Id = model.Id,
             Name = model.Name,
             Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
-            Classes = model.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
-            Class = ResourceId.ParseResourceId(model.Classes![0]),
+            Class = model.Class,
             Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }

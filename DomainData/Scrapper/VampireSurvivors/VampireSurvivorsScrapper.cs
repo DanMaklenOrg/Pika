@@ -43,7 +43,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("character", DomainId),
-            Classes = [new ResourceId("character", DomainId)],
         };
     }
 
@@ -63,7 +62,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("collection_entry", DomainId),
-            Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("relic", DomainId)],
         };
     }
@@ -91,7 +89,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId($"power_up_{maxRank}", DomainId),
-            Classes = [new ResourceId($"power_up_{maxRank}", DomainId)],
         };
     }
 
@@ -111,7 +108,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("collection_entry", DomainId),
-            Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("passive_item", DomainId)],
         };
     }
@@ -137,7 +133,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("collection_entry", DomainId),
-            Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("weapon", DomainId)],
         };
     }
@@ -162,7 +157,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("collection_entry", DomainId),
-            Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("pickup", DomainId)],
         };
     }
@@ -183,7 +177,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
             Class = new ResourceId("collection_entry", DomainId),
-            Classes = [new ResourceId("collection_entry", DomainId)],
             Tags = [new ResourceId("arcana", DomainId)],
         };
     }

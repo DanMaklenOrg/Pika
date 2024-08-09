@@ -13,7 +13,7 @@ public class DomainDbModel : BaseDbModel
     [JsonPropertyName("stats")]
     public List<StatDbModel>? Stats { get; init; }
 
-    [JsonPropertyName("entries")]
+    [JsonPropertyName("entities")]
     public List<EntityDbModel>? Entities { get; init; }
 
     [JsonPropertyName("tags")]
@@ -24,9 +24,6 @@ public class DomainDbModel : BaseDbModel
 
     [JsonPropertyName("classes")]
     public List<ClassDbModel>? Classes { get; init; }
-
-    [JsonPropertyName("subDomains")]
-    public List<DomainDbModel>? SubDomains { get; init; }
 
     protected override void SetKeys()
     {
@@ -82,14 +79,14 @@ public class EntityDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("class")]
+    public required string Class { get; init; }
+
     [JsonPropertyName("stats")]
     public List<string>? Stats { get; init; }
 
     [JsonPropertyName("tags")]
     public List<string>? Tags { get; init; }
-
-    [JsonPropertyName("classes")]
-    public List<string>? Classes { get; init; }
 }
 
 public class StatDbModel

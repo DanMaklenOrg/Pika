@@ -3,197 +3,148 @@ name: Hades
 entities:
   - id: escaped_tartarus
     name: Escaped Tartarus
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: escaped_asphodel
     name: Escaped Asphodel
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: escaped_elysium
     name: Escaped Elysium
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: champion_of_elysium
     name: Champion of Elysium
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: hold_the_onions
     name: Hold the Onions
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: is_there_no_escape
     name: Is There No Escape?
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: weapon_of_fate
     name: Weapon of Fate
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: to_charons_credit
     name: To Charon's Credit
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: the_useless_trinket
     name: The Useless Trinket
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: skellys_last_lamentations
     name: Skelly's Last Lamentations
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: something_from_everyone
     name: Something From Everyone
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: friends_forever
     name: Friends Forever
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: rare_collectible
     name: Rare Collectible
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: complete_set
     name: Complete Set
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: blood_bound
     name: Blood Bound
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: infernal_arms
     name: Infernal Arms
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: blessed_by_the_gods
     name: Blessed by the Gods
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: thanks_but_no_thanks
     name: Thanks, But No Thanks
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: tools_of_the_architect
     name: Tools of the Architect
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: arms_collector
     name: Arms Collector
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: grown_close
     name: Grown Close
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: well_versed
     name: Well Versed
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: day_or_night_trader
     name: Day-or-Night Trader
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: home_makeover
     name: Home Makeover
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: had_to_happen
     name: Had to Happen
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: river_denizens
     name: River Denizens
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: urge_to_sing
     name: Urge to Sing
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: nyxs_mirror
     name: Nyx's Mirror
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: night_and_darkness
     name: Night and Darkness
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: chthonic_colleagues
     name: Chthonic Colleagues
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: war_gods_bloodlust
     name: War-God's Bloodlust
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: end_to_torment
     name: End to Torment
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: musician_and_muse
     name: Musician and Muse
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: divided_by_death
     name: Divided by Death
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: dark_reflections
     name: Dark Reflections
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: harsh_conditions
     name: Harsh Conditions
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: master_of_arms
     name: Master of Arms
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: slashed_benefits
     name: Slashed Benefits
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: back_to_work
     name: Back to Work
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: the_family_secret
     name: The Family Secret
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: one_for_the_ages
     name: One for the Ages
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: well_stocked
     name: Well Stocked
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: thorn_of_thanatos
     name: Thorn of Thanatos
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: haste_of_hermes
     name: Haste of Hermes
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: death_dealer
     name: Death Dealer
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: friends_in_high_places
     name: Friends in High Places
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: bad_call
     name: Bad Call
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: skelly_slayer
     name: Skelly Slayer
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: three_headed_boy
     name: Three-Headed Boy
-    classes:
-      - _/achievement
+    class: _/achievement
