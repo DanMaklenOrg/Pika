@@ -1,13 +1,10 @@
 namespace Pika.Model;
 
-public struct Stat
+public readonly record struct Stat(ResourceId Id, string Name, StatType Type)
 {
-    public ResourceId Id { get; set; }
-    public string Name { get; set; }
-    public StatType Type { get; set; }
-    public int? Min { get; set; }
-    public int? Max { get; set; }
-    public List<string>? EnumValues { get; set; }
+    public int? Min { get; init; }
+    public int? Max { get; init; }
+    public List<string>? EnumValues { get; init; }
 
     public override string ToString() => Id;
 }

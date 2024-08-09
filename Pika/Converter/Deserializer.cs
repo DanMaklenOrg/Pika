@@ -82,14 +82,11 @@ public class Deserializer
 
     private Stat Deserialize(StatNode node)
     {
-        var stat = new Stat
-        {
-            Id = ParseOrInduceId(node.Id, node.Name),
-            Name = node.Name,
-        };
+        var id = ParseOrInduceId(node.Id, node.Name);
+        var name = node.Name;
 
         var match = StatTypePattern.Match(node.Type);
-        stat.Type = match.Groups[1].Value switch
+        var type = match.Groups[1].Value switch
         {
             "BOOLEAN" => StatType.Boolean,
             "INTEGER_RANGE" => StatType.IntegerRange,
@@ -98,18 +95,19 @@ public class Deserializer
         };
 
         var typeArgs = match.Groups[3].Value.Split(',', StringSplitOptions.TrimEntries);
-        switch (stat.Type)
+        return type switch
         {
-            case StatType.IntegerRange:
-                stat.Min = int.Parse(typeArgs[0]);
-                stat.Max = int.Parse(typeArgs[1]);
-                break;
-            case StatType.OrderedEnum:
-                stat.EnumValues = typeArgs.ToList();
-                break;
-        }
-
-        return stat;
+            StatType.IntegerRange => new Stat(id, name, type)
+            {
+                Min = int.Parse(typeArgs[0]),
+                Max = int.Parse(typeArgs[1]),
+            },
+            StatType.OrderedEnum => new Stat(id, name, type)
+            {
+                EnumValues = typeArgs.ToList(),
+            },
+            _ => new Stat(id, name, type),
+        };
     }
 
     private ResourceId ParseOrInduceId(string? id, string name)

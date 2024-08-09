@@ -1,25 +1,15 @@
 ﻿namespace Pika.Model;
 
-public readonly struct Project
+public readonly record struct Project(string Name)
 {
-    public required string Name { get; init; }
     public required  List<Objective> Objectives { get; init; }
 
     public override string ToString() => Name;
 }
 
-public readonly struct Objective
+public readonly record struct Objective(string Name)
 {
-    public required string Name { get; init; }
-
     public required List<ObjectiveRequirement> Requirements { get; init; }
 }
 
-public readonly struct ObjectiveRequirement
-{
-    public required ResourceId Class { get; init; }
-
-    public required ResourceId Stat { get; init; }
-
-    public required int Min { get; init; }
-}
+public readonly record struct ObjectiveRequirement(ResourceId Class, ResourceId Stat, int Min);

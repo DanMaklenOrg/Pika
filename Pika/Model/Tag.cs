@@ -1,8 +1,3 @@
 namespace Pika.Model;
 
-public readonly struct Tag
-{
-    public ResourceId Id { get; init; }
-
-    public string Name { get; init; }
-}
+public readonly record struct Tag(ResourceId Id, string Name);
