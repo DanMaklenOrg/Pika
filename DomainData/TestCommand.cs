@@ -1,4 +1,5 @@
 using Cocona;
+using Pika.DataLayer.Dao;
 using Pika.Model;
 using Pika.Repository;
 
@@ -13,16 +14,22 @@ public static class TestCommand
         app.AddCommand("test", Test);
     }
 
-    private static async Task Test(IDomainRepo domainRepo)
+    private static async Task Test(IDomainRepo domainRepo, IUserStatsRepo userStatsRepo)
     {
         await foreach (var domain in GetAllDomains(domainRepo))
         {
             TestDomain(domain);
+            var userStat = await userStatsRepo.Get("DanMaklen", domain.Id);
+            if (userStat is not null) TestUserStat(domain, userStat.Value);
         }
         Console.Out.WriteLine("All Domains passed the test!");
     }
 
     private static void TestDomain(Domain domain)
+    {
+    }
+
+    private static void TestUserStat(Domain domain, UserStats userStats)
     {
     }
 
