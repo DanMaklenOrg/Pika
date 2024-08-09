@@ -85,7 +85,8 @@ public static class DtoMapper
             Name = model.Name,
             Stats = model.Stats.ConvertAll(x => x.FullyQualifiedId),
             Tags = model.Tags.ConvertAll(x => x.FullyQualifiedId),
-            Classes = model.Classes.ConvertAll(x => x.FullyQualifiedId),
+            Class = model.Class.FullyQualifiedId,
+            Classes_Deprecated = [model.Class.FullyQualifiedId],
         };
     }
 

@@ -141,89 +141,62 @@ projects:
             min: 1
 entities:
   - name: Friendship Amulet
-    classes:
-      - collection_entry
+    class: collection_entry
     tags:
       - pickup
   - name: Mad Forest
-    classes:
-      - stage
+    class: stage
   - name: Laborratory
-    classes:
-      - stage
+    class: stage
   - name: Eudaimonia M.
-    classes:
-      - stage
+    class: stage
   - name: Inlaid Library
-    classes:
-      - stage
+    class: stage
   - name: Neo Galuga
-    classes:
-      - stage
+    class: stage
   - name: Dairy Plant
-    classes:
-      - stage
+    class: stage
   - name: Gallo Tower
-    classes:
-      - stage
+    class: stage
   - name: Cappella Magna
-    classes:
-      - stage
+    class: stage
   - name: Il Molise
-    classes:
-      - stage
+    class: stage
   - name: Moongolow
-    classes:
-      - stage
+    class: stage
   - name: Carlo Cart
-    classes:
-      - stage
+    class: stage
   - name: Green Acres
-    classes:
-      - stage
+    class: stage
   - name: The Bone Zone
-    classes:
-      - stage
+    class: stage
   - name: Boss Rash
-    classes:
-      - stage
+    class: stage
   - name: Whiteout
-    classes:
-      - stage
+    class: stage
   - name: Space 54
-    classes:
-      - stage
+    class: stage
   - name: Bat Country
-    classes:
-      - stage
+    class: stage
   - name: Astral Stair
-    classes:
-      - stage
+    class: stage
   - name: Tiny Bridge
-    classes:
-      - stage
+    class: stage
   - name: Mt.Moonspell
-    classes:
-      - stage
+    class: stage
   - name: Lake Foscari
-    classes:
-      - stage
+    class: stage
   - name: Abyss Foscari
-    classes:
-      - stage
+    class: stage
   - name: Polus Replica
-    classes:
-      - stage
+    class: stage
   - name: Hectic Highway
-    classes:
-      - stage
+    class: stage
   - name: Super Candybox II Turbo
-    classes:
-      - collection_entry
+    class: collection_entry
     tags:
       - weapon
   - name: Sole Solution
-    classes:
-      - collection_entry
+    class: collection_entry
     tags:
       - weapon

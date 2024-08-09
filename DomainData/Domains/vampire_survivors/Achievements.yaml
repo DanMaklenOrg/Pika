@@ -2,152 +2,102 @@ id: vampire_survivors
 name: Vampire Survivors
 entities:
   - name: Crewmate (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Report! (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Impostor
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Sharp Tongue (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Scientist
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Engineer
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Lucky Swipe (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Science Rocks (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Shapeshifter
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Just Vent (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Unjust Ejection (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Lifesign Scan (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Ghost
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Guardian
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Clear Debris (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Clear Asteroids (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Horse (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Megalo Impostor
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Hyper Polus Replica
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Polus Replica Map (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Bill
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Long Gun (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Lance
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Short Gun (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Ariana (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Spread Shot (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Lucia
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: C-U-Laser (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Hyper Hectic Highway
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Brad
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Firearm (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Browny (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Sonic Bloom (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Sheena
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Blade Crossbow (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Probotector (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: BFC2000-AD (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Prism Lass (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Time Warp (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Stanley (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Homing Miss (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Multistage Missiles (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Newt
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Diver Mines (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Simondo
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Bahamut
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Metal Claw (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Big Fuzzy Fist (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Hyper Neo Galuga
-    classes:
-      - _/achievement
+    class: _/achievement
   - name: Neo Galuga Map (Achievement)
-    classes:
-      - _/achievement
+    class: _/achievement

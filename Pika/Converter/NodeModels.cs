@@ -17,7 +17,7 @@ public readonly struct EntityNode
 {
     public string? Id { get; init; }
     public string Name { get; init; }
-    public List<string>? Classes { get; init; }
+    public string Class { get; init; }
     public List<string>? Stats { get; init; }
     public List<string>? Tags { get; init; }
 }

@@ -38,7 +38,7 @@ public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = $"{index}: {name}",
-            Classes = [new ResourceId("pal", DomainId)],
+            Class = new ResourceId("pal", DomainId),
         };
     }
 }

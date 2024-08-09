@@ -70,167 +70,112 @@ classes:
       - _/owned
 entities:
   - name: Stamina
-    classes:
-      - passive
+    class: passive
   - name: Attack Damage
-    classes:
-      - passive
+    class: passive
   - name: Regeneration
-    classes:
-      - passive
+    class: passive
   - name: Focus
-    classes:
-      - passive
+    class: passive
   - name: Armor
-    classes:
-      - passive
+    class: passive
   - name: Agility
-    classes:
-      - passive
+    class: passive
   - name: Magic Damage
-    classes:
-      - passive
+    class: passive
   - name: Purity
-    classes:
-      - passive
+    class: passive
   - name: Greed
-    classes:
-      - passive
+    class: passive
   - name: Barbarian
-    classes:
-      - hero
+    class: hero
   - name: Archer
-    classes:
-      - hero
+    class: hero
   - name: Thief
-    classes:
-      - hero
+    class: hero
   - name: Warrior
-    classes:
-      - hero
+    class: hero
   - name: Wizard
-    classes:
-      - hero
+    class: hero
   - name: Cleric
-    classes:
-      - hero
+    class: hero
   - name: Necromancer
-    classes:
-      - hero
+    class: hero
   - name: Brawler
-    classes:
-      - hero
+    class: hero
   - name: Engineer
-    classes:
-      - hero
+    class: hero
   - name: Nightblade
-    classes:
-      - hero
+    class: hero
   - name: Fire Axe
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Fire Bow
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Fire Dagger
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Fire Scepter
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Fire Staff
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Fire Sword
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Friendly Cloud
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Herberk's Pendant
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Axe
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Bow
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Dagger
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Scepter
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Staff
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ice Sword
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Magic Core
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ninby's Essence
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Ninby's Grace
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Poltergeist Bow
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Poltergeist Dagger
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Poltergeist Staff
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Shell
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Storm Shield
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Axe
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Bow
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Dagger
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Scepter
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Staff
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Wind Sword
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Axe
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Bow
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Dagger
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Scepter
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Staff
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Power Sword
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Murderer Ring
-    classes:
-      - forge_recipe
+    class: forge_recipe
   - name: Zior's Wisdom
-    classes:
-      - forge_recipe
+    class: forge_recipe

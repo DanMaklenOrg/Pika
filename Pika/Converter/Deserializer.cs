@@ -84,7 +84,7 @@ public class Deserializer
             Name = node.Name,
             Stats = node.Stats?.ConvertAll(ParseId) ?? [],
             Tags = node.Tags?.ConvertAll(ParseId) ?? [],
-            Classes = node.Classes?.ConvertAll(ParseId) ?? [],
+            Class = ParseId(node.Class),
         };
     }
 

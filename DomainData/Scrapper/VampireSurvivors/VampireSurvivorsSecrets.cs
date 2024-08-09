@@ -34,7 +34,7 @@ public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrap
         {
             Id = ResourceId.InduceFromName(name, DomainId),
             Name = name,
-            Classes = [new ResourceId("secret_unlock", DomainId)],
+            Class = new ResourceId("secret_unlock", DomainId),
         };
     }
 }
