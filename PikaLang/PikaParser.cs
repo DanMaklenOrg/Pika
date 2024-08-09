@@ -64,9 +64,11 @@ public class PikaParser
     private Entity ParseEntity(PikaLangParser.EntityDeclarationContext context)
     {
         (string id, string name) = ParseNamedIdentifier(context.entityDecl().namedIdentifier());
+        var classId = ParseResourceId(context.entityDecl().IDENTIFIER().GetText());
         return new Entity(ParseResourceId(id), name)
         {
-            Classes = [ParseResourceId(context.entityDecl().IDENTIFIER().GetText())],
+            Class = classId,
+            Classes = [classId],
         };
     }
 

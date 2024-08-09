@@ -54,5 +54,6 @@ app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrappe
 });
 
 app.AddSyncCommand();
+app.AddTestCommand();
 
 app.Run();

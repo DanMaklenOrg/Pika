@@ -30,6 +30,7 @@ public class HadesProphecies(EntityNameContainer nameContainer) : IScrapper
             {
                 Id = ResourceId.InduceFromName(name, DomainId),
                 Name = name,
+                Class = new ResourceId("prophecy", DomainId),
                 Classes = [new ResourceId("prophecy", DomainId)],
             };
         }).ToList();

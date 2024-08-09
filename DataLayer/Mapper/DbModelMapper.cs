@@ -164,6 +164,7 @@ public static class DbModelMapper
             Name = model.Name,
             Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
             Classes = model.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Class = ResourceId.ParseResourceId(model.Classes![0]),
             Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }

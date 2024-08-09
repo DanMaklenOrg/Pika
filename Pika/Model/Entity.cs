@@ -2,6 +2,7 @@
 
 public readonly record struct Entity(ResourceId Id, string Name)
 {
+    public required ResourceId Class { get; init; }
     public List<ResourceId> Classes { get; init; } = [];
     public List<ResourceId> Stats { get; init; } = [];
     public List<ResourceId> Tags { get; init; } = [];
