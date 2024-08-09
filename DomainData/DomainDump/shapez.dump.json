@@ -1,626 +1,396 @@
 {
-  "Id": {
-    "Id": "shapez"
-  },
-  "Name": "Shapez",
-  "Stats": [
+  "id": "shapez",
+  "name": "Shapez",
+  "stats": [
     {
-      "Id": {
-        "Id": "achieved"
-      },
-      "Name": "Achievement Unlocked",
-      "Type": 1
+      "id": "achieved",
+      "name": "Achievement Unlocked",
+      "type": "Boolean"
     },
     {
-      "Id": {
-        "Id": "hub_level"
-      },
-      "Name": "Level",
-      "Type": 2,
-      "Min": 0,
-      "Max": 26
+      "id": "hub_level",
+      "name": "Level",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 26
     },
     {
-      "Id": {
-        "Id": "upgrade_tier"
-      },
-      "Name": "Tier",
-      "Type": 2,
-      "Min": 0,
-      "Max": 8
+      "id": "upgrade_tier",
+      "name": "Tier",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 8
     }
   ],
-  "Classes": [
+  "entities": [
     {
-      "Id": {
-        "Id": "achievement"
-      },
-      "Stats": [
-        {
-          "Id": "achieved"
-        }
-      ]
+      "id": "a_bit_early",
+      "name": "A bit early?",
+      "class": "achievement",
+      "stats": []
     },
     {
-      "Id": {
-        "Id": "hub"
-      },
-      "Stats": [
-        {
-          "Id": "hub_level"
-        }
-      ]
+      "id": "addicted",
+      "name": "Addicted",
+      "class": "achievement",
+      "stats": []
     },
     {
-      "Id": {
-        "Id": "upgrade"
-      },
-      "Stats": [
-        {
-          "Id": "upgrade_tier"
-        }
-      ]
+      "id": "branding_specialist_1",
+      "name": "Branding specialist 1",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "branding_specialist_2",
+      "name": "Branding specialist 2",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "cant_stop",
+      "name": "Can\u0027t stop",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "color_manipulators",
+      "name": "Color Manipulators",
+      "class": "upgrade",
+      "stats": []
+    },
+    {
+      "id": "computer_guy",
+      "name": "Computer Guy",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "copy_pasta",
+      "name": "Copy-Pasta",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "cutter",
+      "name": "Cutter",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "efficiency_1",
+      "name": "Efficiency 1",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "efficiency_2",
+      "name": "Efficiency 2",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "even_faster",
+      "name": "Even faster",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "extractors",
+      "name": "Extractors",
+      "class": "upgrade",
+      "stats": []
+    },
+    {
+      "id": "faster",
+      "name": "Faster",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "freedom",
+      "name": "Freedom",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "get_rid_of_them",
+      "name": "Get rid of them",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "getting_into_it",
+      "name": "Getting into it",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "gps",
+      "name": "GPS",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "hub",
+      "name": "Hub",
+      "class": "hub",
+      "stats": []
+    },
+    {
+      "id": "i_need_trains",
+      "name": "I need trains",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "ill_use_it_later",
+      "name": "I\u0027ll use it later",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "is_this_the_end",
+      "name": "Is this the end?",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "its_a_mess",
+      "name": "It\u0027s a mess",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "its_been_a_long_time",
+      "name": "It\u0027s been a long time",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "its_piling_up",
+      "name": "It\u0027s piling up",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "its_so_slow",
+      "name": "It\u0027s so slow",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "ive_seen_that_before",
+      "name": "I\u0027ve seen that before ..",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "king_of_inefficiency",
+      "name": "King of Inefficiency",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "mam_make_anything_machine",
+      "name": "MAM (Make Anything Machine)",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "memories_from_the_past",
+      "name": "Memories from the past",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "my_eyes_no_longer_hurt",
+      "name": "My eyes no longer hurt",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "not_an_idle_game",
+      "name": "Not an idle game",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "now_its_easy",
+      "name": "Now it\u0027s easy",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "oops",
+      "name": "Oops",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "painter",
+      "name": "Painter",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "perfectionist",
+      "name": "Perfectionist",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "preparing_to_launch",
+      "name": "Preparing to launch",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "rotater",
+      "name": "Rotater",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "shape_manipulators",
+      "name": "Shape Manipulators",
+      "class": "upgrade",
+      "stats": []
+    },
+    {
+      "id": "spacey",
+      "name": "SpaceY",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "speedrun_master",
+      "name": "Speedrun Master",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "speedrun_novice",
+      "name": "Speedrun Novice",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "stack_overflow",
+      "name": "Stack overflow",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "the_logo",
+      "name": "The logo!",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "the_next_dimension",
+      "name": "The next dimension",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "to_the_moon",
+      "name": "To the moon",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "transporters",
+      "name": "Transporters",
+      "class": "upgrade",
+      "stats": []
+    },
+    {
+      "id": "wait_they_stack",
+      "name": "Wait, they stack?",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "wires",
+      "name": "Wires",
+      "class": "achievement",
+      "stats": []
     }
   ],
-  "Entities": [
+  "projects": [
     {
-      "Id": {
-        "Id": "a_bit_early"
-      },
-      "Name": "A bit early?",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "addicted"
-      },
-      "Name": "Addicted",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "branding_specialist_1"
-      },
-      "Name": "Branding specialist 1",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "branding_specialist_2"
-      },
-      "Name": "Branding specialist 2",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "cant_stop"
-      },
-      "Name": "Can\u0027t stop",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "color_manipulators"
-      },
-      "Name": "Color Manipulators",
-      "Class": {
-        "Id": "upgrade"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "computer_guy"
-      },
-      "Name": "Computer Guy",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "copy_pasta"
-      },
-      "Name": "Copy-Pasta",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "cutter"
-      },
-      "Name": "Cutter",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "efficiency_1"
-      },
-      "Name": "Efficiency 1",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "efficiency_2"
-      },
-      "Name": "Efficiency 2",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "even_faster"
-      },
-      "Name": "Even faster",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "extractors"
-      },
-      "Name": "Extractors",
-      "Class": {
-        "Id": "upgrade"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "faster"
-      },
-      "Name": "Faster",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "freedom"
-      },
-      "Name": "Freedom",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "get_rid_of_them"
-      },
-      "Name": "Get rid of them",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "getting_into_it"
-      },
-      "Name": "Getting into it",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "gps"
-      },
-      "Name": "GPS",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "hub"
-      },
-      "Name": "Hub",
-      "Class": {
-        "Id": "hub"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "i_need_trains"
-      },
-      "Name": "I need trains",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "ill_use_it_later"
-      },
-      "Name": "I\u0027ll use it later",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "is_this_the_end"
-      },
-      "Name": "Is this the end?",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "its_a_mess"
-      },
-      "Name": "It\u0027s a mess",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "its_been_a_long_time"
-      },
-      "Name": "It\u0027s been a long time",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "its_piling_up"
-      },
-      "Name": "It\u0027s piling up",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "its_so_slow"
-      },
-      "Name": "It\u0027s so slow",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "ive_seen_that_before"
-      },
-      "Name": "I\u0027ve seen that before ..",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "king_of_inefficiency"
-      },
-      "Name": "King of Inefficiency",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "mam_make_anything_machine"
-      },
-      "Name": "MAM (Make Anything Machine)",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "memories_from_the_past"
-      },
-      "Name": "Memories from the past",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "my_eyes_no_longer_hurt"
-      },
-      "Name": "My eyes no longer hurt",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "not_an_idle_game"
-      },
-      "Name": "Not an idle game",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "now_its_easy"
-      },
-      "Name": "Now it\u0027s easy",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "oops"
-      },
-      "Name": "Oops",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "painter"
-      },
-      "Name": "Painter",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "perfectionist"
-      },
-      "Name": "Perfectionist",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "preparing_to_launch"
-      },
-      "Name": "Preparing to launch",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "rotater"
-      },
-      "Name": "Rotater",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "shape_manipulators"
-      },
-      "Name": "Shape Manipulators",
-      "Class": {
-        "Id": "upgrade"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "spacey"
-      },
-      "Name": "SpaceY",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "speedrun_master"
-      },
-      "Name": "Speedrun Master",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "speedrun_novice"
-      },
-      "Name": "Speedrun Novice",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "stack_overflow"
-      },
-      "Name": "Stack overflow",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "storage"
-      },
-      "Name": "Storage",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_logo"
-      },
-      "Name": "The logo!",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_next_dimension"
-      },
-      "Name": "The next dimension",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "to_the_moon"
-      },
-      "Name": "To the moon",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "transporters"
-      },
-      "Name": "Transporters",
-      "Class": {
-        "Id": "upgrade"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "wait_they_stack"
-      },
-      "Name": "Wait, they stack?",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "wires"
-      },
-      "Name": "Wires",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    }
-  ],
-  "Projects": [
-    {
-      "Name": "Max All Upgrades",
-      "Objectives": [
+      "name": "Max All Upgrades",
+      "objectives": [
         {
-          "Name": "Max all upgrades",
-          "Requirements": [
+          "name": "Max all upgrades",
+          "requirements": [
             {
-              "Class": {
-                "Id": "upgrade"
-              },
-              "Stat": {
-                "Id": "upgrade_tier"
-              },
-              "Min": 8
+              "class": "upgrade",
+              "stat": "upgrade_tier",
+              "min": 8
             }
           ]
         }
       ]
     },
     {
-      "Name": "Max Hub Level",
-      "Objectives": [
+      "name": "Max Hub Level",
+      "objectives": [
         {
-          "Name": "Reach max hub level",
-          "Requirements": [
+          "name": "Reach max hub level",
+          "requirements": [
             {
-              "Class": {
-                "Id": "hub"
-              },
-              "Stat": {
-                "Id": "hub_level"
-              },
-              "Min": 26
+              "class": "hub",
+              "stat": "hub_level",
+              "min": 26
             }
           ]
         }
       ]
     },
     {
-      "Name": "Unlock all achievements",
-      "Objectives": [
+      "name": "Unlock all achievements",
+      "objectives": [
         {
-          "Name": "Unlock all steam achievements",
-          "Requirements": [
+          "name": "Unlock all steam achievements",
+          "requirements": [
             {
-              "Class": {
-                "Id": "achievement"
-              },
-              "Stat": {
-                "Id": "achieved"
-              },
-              "Min": 1
+              "class": "achievement",
+              "stat": "achieved",
+              "min": 1
             }
           ]
         }
       ]
     }
-  ]
+  ],
+  "classes": [
+    {
+      "id": "achievement",
+      "stats": [
+        "achieved"
+      ]
+    },
+    {
+      "id": "hub",
+      "stats": [
+        "hub_level"
+      ]
+    },
+    {
+      "id": "upgrade",
+      "stats": [
+        "upgrade_tier"
+      ]
+    }
+  ],
+  "pk": "Domain#shapez",
+  "sk": "Domain"
 }

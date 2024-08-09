@@ -1,1821 +1,1139 @@
 {
-  "Id": {
-    "Id": "hades"
-  },
-  "Name": "Hades",
-  "Stats": [
+  "id": "hades",
+  "name": "Hades",
+  "stats": [
     {
-      "Id": {
-        "Id": "achieved"
-      },
-      "Name": "Achievement Unlocked",
-      "Type": 1
+      "id": "achieved",
+      "name": "Achievement Unlocked",
+      "type": "Boolean"
     },
     {
-      "Id": {
-        "Id": "aegis_aspect_beowulf"
-      },
-      "Name": "Aspect of Beowul Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "aegis_aspect_beowulf",
+      "name": "Aspect of Beowul Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "aegis_aspect_chaos"
-      },
-      "Name": "Aspect of Chaos Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "aegis_aspect_chaos",
+      "name": "Aspect of Chaos Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "aegis_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "aegis_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "aegis_aspect_zeus"
-      },
-      "Name": "Aspect of Zeus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "aegis_aspect_zeus",
+      "name": "Aspect of Zeus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "coronacht_aspect_chiron"
-      },
-      "Name": "Aspect of Chiron Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "coronacht_aspect_chiron",
+      "name": "Aspect of Chiron Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "coronacht_aspect_hera"
-      },
-      "Name": "Aspect of Hera Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "coronacht_aspect_hera",
+      "name": "Aspect of Hera Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "coronacht_aspect_rama"
-      },
-      "Name": "Aspect of Rama Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "coronacht_aspect_rama",
+      "name": "Aspect of Rama Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "coronacht_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "coronacht_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "exagryph_aspect_eris"
-      },
-      "Name": "Aspect of Eris Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "exagryph_aspect_eris",
+      "name": "Aspect of Eris Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "exagryph_aspect_hestia"
-      },
-      "Name": "Aspect of Hestia Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "exagryph_aspect_hestia",
+      "name": "Aspect of Hestia Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "exagryph_aspect_lucifer"
-      },
-      "Name": "Aspect of Lucifer Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "exagryph_aspect_lucifer",
+      "name": "Aspect of Lucifer Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "exagryph_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "exagryph_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "keepsake_rank"
-      },
-      "Name": "Rank",
-      "Type": 2,
-      "Min": 1,
-      "Max": 3
+      "id": "keepsake_rank",
+      "name": "Rank",
+      "type": "IntegerRange",
+      "min": 1,
+      "max": 3
     },
     {
-      "Id": {
-        "Id": "malphon_aspect_demeter"
-      },
-      "Name": "Aspect of Demeter Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "malphon_aspect_demeter",
+      "name": "Aspect of Demeter Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "malphon_aspect_gilgamesh"
-      },
-      "Name": "Aspect of Gilgamesh Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "malphon_aspect_gilgamesh",
+      "name": "Aspect of Gilgamesh Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "malphon_aspect_talos"
-      },
-      "Name": "Aspect of Talos Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "malphon_aspect_talos",
+      "name": "Aspect of Talos Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "malphon_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "malphon_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "prophecy_fulfilled"
-      },
-      "Name": "Fulfilled",
-      "Type": 1
+      "id": "prophecy_fulfilled",
+      "name": "Fulfilled",
+      "type": "Boolean"
     },
     {
-      "Id": {
-        "Id": "stygius_aspect_arthur"
-      },
-      "Name": "Aspect of Arthur Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "stygius_aspect_arthur",
+      "name": "Aspect of Arthur Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "stygius_aspect_nemesis"
-      },
-      "Name": "Aspect of Nemesis Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "stygius_aspect_nemesis",
+      "name": "Aspect of Nemesis Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "stygius_aspect_poseidon"
-      },
-      "Name": "Aspect of Poseidon Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "stygius_aspect_poseidon",
+      "name": "Aspect of Poseidon Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "stygius_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "stygius_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "unlocked"
-      },
-      "Name": "Unlocked",
-      "Type": 1
+      "id": "unlocked",
+      "name": "Unlocked",
+      "type": "Boolean"
     },
     {
-      "Id": {
-        "Id": "varatha_aspect_achilles"
-      },
-      "Name": "Aspect of Achilles Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "varatha_aspect_achilles",
+      "name": "Aspect of Achilles Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "varatha_aspect_guan_yu"
-      },
-      "Name": "Aspect of Guan Yu Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "varatha_aspect_guan_yu",
+      "name": "Aspect of Guan Yu Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "varatha_aspect_hades"
-      },
-      "Name": "Aspect of Hades Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "varatha_aspect_hades",
+      "name": "Aspect of Hades Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     },
     {
-      "Id": {
-        "Id": "varatha_aspect_zagreus"
-      },
-      "Name": "Aspect of Zagreus Rank",
-      "Type": 2,
-      "Min": 0,
-      "Max": 5
+      "id": "varatha_aspect_zagreus",
+      "name": "Aspect of Zagreus Rank",
+      "type": "IntegerRange",
+      "min": 0,
+      "max": 5
     }
   ],
-  "Classes": [
+  "entities": [
     {
-      "Id": {
-        "Id": "achievement"
-      },
-      "Stats": [
+      "id": "a_friendly_wager",
+      "name": "A Friendly Wager",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "a_place_of_revelry",
+      "name": "A Place of Revelry",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "a_simple_job",
+      "name": "A Simple Job",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "a_violent_past",
+      "name": "A Violent Past",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "adamant_arrowhead",
+      "name": "Adamant Arrowhead",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "aegis",
+      "name": "Aegis",
+      "class": "infernal_arm",
+      "stats": [
+        "aegis_aspect_zagreus",
+        "aegis_aspect_chaos",
+        "aegis_aspect_zeus",
+        "aegis_aspect_beowulf"
+      ]
+    },
+    {
+      "id": "amusing_chaos",
+      "name": "Amusing Chaos",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "arms_collector",
+      "name": "Arms Collector",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "back_to_work",
+      "name": "Back to Work",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "bad_call",
+      "name": "Bad Call",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "black_shawl",
+      "name": "Black Shawl",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "blessed_by_the_gods",
+      "name": "Blessed by the Gods",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "blood_bound",
+      "name": "Blood Bound",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "blood_filled_vial",
+      "name": "Blood-Filled Vial",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "bone_hourglass",
+      "name": "Bone Hourglass",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "broken_spearpoint",
+      "name": "Broken Spearpoint",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "champion_of_elysium",
+      "name": "Champion of Elysium",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "chthonic_coin_purse",
+      "name": "Chthonic Coin Purse",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "chthonic_colleagues",
+      "name": "Chthonic Colleagues",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "chthonic_colleagues_fate",
+      "name": "Chthonic Colleagues (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "chthonic_knowledge",
+      "name": "Chthonic Knowledge",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "close_at_heart",
+      "name": "Close at Heart",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "complete_set",
+      "name": "Complete Set",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "conch_shell",
+      "name": "Conch Shell",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "coronacht",
+      "name": "Coronacht",
+      "class": "infernal_arm",
+      "stats": [
+        "coronacht_aspect_zagreus",
+        "coronacht_aspect_chiron",
+        "coronacht_aspect_hera",
+        "coronacht_aspect_rama"
+      ]
+    },
+    {
+      "id": "cosmic_egg",
+      "name": "Cosmic Egg",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "customer_loyalty",
+      "name": "Customer Loyalty",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "dark_reflections",
+      "name": "Dark Reflections",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "dark_reflections_fate",
+      "name": "Dark Reflections (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "day_or_night_trader",
+      "name": "Day-or-Night Trader",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "death_dealer",
+      "name": "Death Dealer",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "denizens_of_the_deep",
+      "name": "Denizens of the Deep",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "distant_memory",
+      "name": "Distant Memory",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "distant_relatives",
+      "name": "Distant Relatives",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "divided_by_death",
+      "name": "Divided by Death",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "divided_by_death_fate",
+      "name": "Divided by Death (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "divine_pairings",
+      "name": "Divine Pairings",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "end_to_torment",
+      "name": "End to Torment",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "end_to_torment_fate",
+      "name": "End To Torment (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "escaped_asphodel",
+      "name": "Escaped Asphodel",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "escaped_elysium",
+      "name": "Escaped Elysium",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "escaped_tartarus",
+      "name": "Escaped Tartarus",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "eternal_rest",
+      "name": "Eternal Rest",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "eternal_rose",
+      "name": "Eternal Rose",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "evergreen_acorn",
+      "name": "Evergreen Acorn",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "exagryph",
+      "name": "Exagryph",
+      "class": "infernal_arm",
+      "stats": [
+        "exagryph_aspect_zagreus",
+        "exagryph_aspect_eris",
+        "exagryph_aspect_hestia",
+        "exagryph_aspect_lucifer"
+      ]
+    },
+    {
+      "id": "family_reunion",
+      "name": "Family Reunion",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "friends_forever",
+      "name": "Friends Forever",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "friends_in_high_places",
+      "name": "Friends in High Places",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "frostbitten_horn",
+      "name": "Frostbitten Horn",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "god_of_swiftness",
+      "name": "God of Swiftness",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "god_of_the_heavens",
+      "name": "God of the Heavens",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "god_of_the_sea",
+      "name": "God of the Sea",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "god_of_war",
+      "name": "God of War",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "god_of_wine",
+      "name": "God of Wine",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "goddess_of_love",
+      "name": "Goddess of Love",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "goddess_of_seasons",
+      "name": "Goddess of Seasons",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "goddess_of_the_hunt",
+      "name": "Goddess of the Hunt",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "goddess_of_wisdom",
+      "name": "Goddess of Wisdom",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "grown_close",
+      "name": "Grown Close",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "had_to_happen",
+      "name": "Had to Happen",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "harpy_feather_duster",
+      "name": "Harpy Feather Duster",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "harsh_conditions",
+      "name": "Harsh Conditions",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "harsh_conditions_fate",
+      "name": "Harsh Conditions (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "haste_of_hermes",
+      "name": "Haste of Hermes",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "hold_the_onions",
+      "name": "Hold the Onions",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "home_makeover",
+      "name": "Home Makeover",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "infernal_arms",
+      "name": "Infernal Arms",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "infernal_arms_fate",
+      "name": "Infernal Arms (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "is_there_no_escape",
+      "name": "Is There No Escape?",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "is_there_no_escape_fate",
+      "name": "Is There No Escape? (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "lambent_plume",
+      "name": "Lambent Plume",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "lucky_tooth",
+      "name": "Lucky Tooth",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "malphon",
+      "name": "Malphon",
+      "class": "infernal_arm",
+      "stats": [
+        "malphon_aspect_zagreus",
+        "malphon_aspect_talos",
+        "malphon_aspect_demeter",
+        "malphon_aspect_gilgamesh"
+      ]
+    },
+    {
+      "id": "master_of_arms",
+      "name": "Master of Arms",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "master_of_arms_fate",
+      "name": "Master of Arms (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "musician_and_muse",
+      "name": "Musician and Muse",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "musician_and_muse_fate",
+      "name": "Musician and Muse (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "myrmidon_bracer",
+      "name": "Myrmidon Bracer",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "night_and_darkness",
+      "name": "Night and Darkness",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "night_and_darkness_fate",
+      "name": "Night and Darkness (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "nyxs_mirror",
+      "name": "Nyx\u0027s Mirror",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "old_spiked_collar",
+      "name": "Old Spiked Collar",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "one_for_the_ages",
+      "name": "One for the Ages",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "overflowing_cup",
+      "name": "Overflowing Cup",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "owl_pendant",
+      "name": "Owl Pendant",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "pierced_butterfly",
+      "name": "Pierced Butterfly",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "pom_blossom",
+      "name": "Pom Blossom",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "power_without_equal",
+      "name": "Power Without Equal",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "primordial_banes",
+      "name": "Primordial Banes",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "primordial_boons",
+      "name": "Primordial Boons",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "rare_collectible",
+      "name": "Rare Collectible",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "river_denizens",
+      "name": "River Denizens",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "sea_gods_spite",
+      "name": "Sea-God\u0027s Spite",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "shattered_shackle",
+      "name": "Shattered Shackle",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "sigil_of_the_dead",
+      "name": "Sigil of the Dead",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "skelly_slayer",
+      "name": "Skelly Slayer",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "skellys_last_lamentations",
+      "name": "Skelly\u0027s Last Lamentations",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "skull_earring",
+      "name": "Skull Earring",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "slashed_benefits",
+      "name": "Slashed Benefits",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "slashed_benefits_fate",
+      "name": "Slashed Benefits (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "something_from_everyone",
+      "name": "Something From Everyone",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "stygius",
+      "name": "Stygius",
+      "class": "infernal_arm",
+      "stats": [
+        "stygius_aspect_zagreus",
+        "stygius_aspect_nemesis",
+        "stygius_aspect_poseidon",
+        "stygius_aspect_arthur"
+      ]
+    },
+    {
+      "id": "thanks_but_no_thanks",
+      "name": "Thanks, But No Thanks",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "the_adamant_rail",
+      "name": "The Adamant Rail",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_dawn_bringer",
+      "name": "The Dawn Bringer",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_dragons_rival",
+      "name": "The Dragon\u0027s Rival",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_eternal_spear",
+      "name": "The Eternal Spear",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_family_secret",
+      "name": "The Family Secret",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "the_fated_saint_of_war",
+      "name": "The Fated Saint of War",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_gift_of_song",
+      "name": "The Gift of Song",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_god_like_king",
+      "name": "The God-like King",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_heart_seeking_bow",
+      "name": "The Heart-Seeking Bow",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_holy_liege",
+      "name": "The Holy Liege",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_preservers_avatar",
+      "name": "The Preserver\u0027s Avatar",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_queens_plan",
+      "name": "The Queen\u0027s Plan",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_reluctant_musician",
+      "name": "The Reluctant Musician",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_shield_of_chaos",
+      "name": "The Shield of Chaos",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_stygian_blade",
+      "name": "The Stygian Blade",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_twin_fists",
+      "name": "The Twin Fists",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "the_useless_trinket",
+      "name": "The Useless Trinket",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "the_useless_trinket_fate",
+      "name": "The Useless Trinket (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "thorn_of_thanatos",
+      "name": "Thorn of Thanatos",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "three_headed_boy",
+      "name": "Three-Headed Boy",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "thunder_signet",
+      "name": "Thunder Signet",
+      "class": "keepsake",
+      "stats": []
+    },
+    {
+      "id": "to_charons_credit",
+      "name": "To Charon\u0027s Credit",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "tools_of_the_architect",
+      "name": "Tools of the Architect",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "urge_to_sing",
+      "name": "Urge to Sing",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "varatha",
+      "name": "Varatha",
+      "class": "infernal_arm",
+      "stats": [
+        "varatha_aspect_zagreus",
+        "varatha_aspect_achilles",
+        "varatha_aspect_hades",
+        "varatha_aspect_guan_yu"
+      ]
+    },
+    {
+      "id": "wanton_ransacking",
+      "name": "Wanton Ransacking",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "war_gods_bloodlust",
+      "name": "War-God\u0027s Bloodlust",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "war_gods_bloodlust_fate",
+      "name": "War-God\u0027s Bloodlust (Fate)",
+      "class": "prophecy",
+      "stats": []
+    },
+    {
+      "id": "weapon_of_fate",
+      "name": "Weapon of Fate",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "well_stocked",
+      "name": "Well Stocked",
+      "class": "achievement",
+      "stats": []
+    },
+    {
+      "id": "well_versed",
+      "name": "Well Versed",
+      "class": "achievement",
+      "stats": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "Fulfill all prophecies",
+      "objectives": [
         {
-          "Id": "achieved"
+          "name": "Fulfil all prophecies",
+          "requirements": [
+            {
+              "class": "prophecy",
+              "stat": "prophecy_fulfilled",
+              "min": 1
+            }
+          ]
         }
       ]
     },
     {
-      "Id": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
+      "name": "Max all infernal arms",
+      "objectives": [
         {
-          "Id": "unlocked"
+          "name": "Unlock all infernal arms",
+          "requirements": [
+            {
+              "class": "infernal_arm",
+              "stat": "unlocked",
+              "min": 1
+            }
+          ]
         }
       ]
     },
     {
-      "Id": {
-        "Id": "keepsake"
-      },
-      "Stats": [
+      "name": "Max all keepsakes",
+      "objectives": [
         {
-          "Id": "unlocked"
+          "name": "Unlock all keepsakes",
+          "requirements": [
+            {
+              "class": "keepsake",
+              "stat": "unlocked",
+              "min": 1
+            }
+          ]
         },
         {
-          "Id": "keepsake_rank"
+          "name": "Rank all keepsakes to max rank",
+          "requirements": [
+            {
+              "class": "keepsake",
+              "stat": "keepsake_rank",
+              "min": 3
+            }
+          ]
         }
       ]
     },
     {
-      "Id": {
-        "Id": "prophecy"
-      },
-      "Stats": [
+      "name": "Unlock all achievements",
+      "objectives": [
         {
-          "Id": "prophecy_fulfilled"
+          "name": "Unlock all steam achievements",
+          "requirements": [
+            {
+              "class": "achievement",
+              "stat": "achieved",
+              "min": 1
+            }
+          ]
         }
       ]
     }
   ],
-  "Entities": [
+  "classes": [
     {
-      "Id": {
-        "Id": "a_friendly_wager"
-      },
-      "Name": "A Friendly Wager",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "a_place_of_revelry"
-      },
-      "Name": "A Place of Revelry",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "a_simple_job"
-      },
-      "Name": "A Simple Job",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "a_violent_past"
-      },
-      "Name": "A Violent Past",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "adamant_arrowhead"
-      },
-      "Name": "Adamant Arrowhead",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "aegis"
-      },
-      "Name": "Aegis",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "aegis_aspect_zagreus"
-        },
-        {
-          "Id": "aegis_aspect_chaos"
-        },
-        {
-          "Id": "aegis_aspect_zeus"
-        },
-        {
-          "Id": "aegis_aspect_beowulf"
-        }
+      "id": "achievement",
+      "stats": [
+        "achieved"
       ]
     },
     {
-      "Id": {
-        "Id": "amusing_chaos"
-      },
-      "Name": "Amusing Chaos",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "arms_collector"
-      },
-      "Name": "Arms Collector",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "back_to_work"
-      },
-      "Name": "Back to Work",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "bad_call"
-      },
-      "Name": "Bad Call",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "black_shawl"
-      },
-      "Name": "Black Shawl",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "blessed_by_the_gods"
-      },
-      "Name": "Blessed by the Gods",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "blood_bound"
-      },
-      "Name": "Blood Bound",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "blood_filled_vial"
-      },
-      "Name": "Blood-Filled Vial",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "bone_hourglass"
-      },
-      "Name": "Bone Hourglass",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "broken_spearpoint"
-      },
-      "Name": "Broken Spearpoint",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "champion_of_elysium"
-      },
-      "Name": "Champion of Elysium",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "chthonic_coin_purse"
-      },
-      "Name": "Chthonic Coin Purse",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "chthonic_colleagues"
-      },
-      "Name": "Chthonic Colleagues",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "chthonic_colleagues_fate"
-      },
-      "Name": "Chthonic Colleagues (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "chthonic_knowledge"
-      },
-      "Name": "Chthonic Knowledge",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "close_at_heart"
-      },
-      "Name": "Close at Heart",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "complete_set"
-      },
-      "Name": "Complete Set",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "conch_shell"
-      },
-      "Name": "Conch Shell",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "coronacht"
-      },
-      "Name": "Coronacht",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "coronacht_aspect_zagreus"
-        },
-        {
-          "Id": "coronacht_aspect_chiron"
-        },
-        {
-          "Id": "coronacht_aspect_hera"
-        },
-        {
-          "Id": "coronacht_aspect_rama"
-        }
+      "id": "infernal_arm",
+      "stats": [
+        "unlocked"
       ]
     },
     {
-      "Id": {
-        "Id": "cosmic_egg"
-      },
-      "Name": "Cosmic Egg",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "customer_loyalty"
-      },
-      "Name": "Customer Loyalty",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "dark_reflections"
-      },
-      "Name": "Dark Reflections",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "dark_reflections_fate"
-      },
-      "Name": "Dark Reflections (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "day_or_night_trader"
-      },
-      "Name": "Day-or-Night Trader",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "death_dealer"
-      },
-      "Name": "Death Dealer",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "denizens_of_the_deep"
-      },
-      "Name": "Denizens of the Deep",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "distant_memory"
-      },
-      "Name": "Distant Memory",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "distant_relatives"
-      },
-      "Name": "Distant Relatives",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "divided_by_death"
-      },
-      "Name": "Divided by Death",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "divided_by_death_fate"
-      },
-      "Name": "Divided by Death (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "divine_pairings"
-      },
-      "Name": "Divine Pairings",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "end_to_torment"
-      },
-      "Name": "End to Torment",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "end_to_torment_fate"
-      },
-      "Name": "End To Torment (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "escaped_asphodel"
-      },
-      "Name": "Escaped Asphodel",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "escaped_elysium"
-      },
-      "Name": "Escaped Elysium",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "escaped_tartarus"
-      },
-      "Name": "Escaped Tartarus",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "eternal_rest"
-      },
-      "Name": "Eternal Rest",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "eternal_rose"
-      },
-      "Name": "Eternal Rose",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "evergreen_acorn"
-      },
-      "Name": "Evergreen Acorn",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "exagryph"
-      },
-      "Name": "Exagryph",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "exagryph_aspect_zagreus"
-        },
-        {
-          "Id": "exagryph_aspect_eris"
-        },
-        {
-          "Id": "exagryph_aspect_hestia"
-        },
-        {
-          "Id": "exagryph_aspect_lucifer"
-        }
+      "id": "keepsake",
+      "stats": [
+        "unlocked",
+        "keepsake_rank"
       ]
     },
     {
-      "Id": {
-        "Id": "family_reunion"
-      },
-      "Name": "Family Reunion",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "friends_forever"
-      },
-      "Name": "Friends Forever",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "friends_in_high_places"
-      },
-      "Name": "Friends in High Places",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "frostbitten_horn"
-      },
-      "Name": "Frostbitten Horn",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "god_of_swiftness"
-      },
-      "Name": "God of Swiftness",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "god_of_the_heavens"
-      },
-      "Name": "God of the Heavens",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "god_of_the_sea"
-      },
-      "Name": "God of the Sea",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "god_of_war"
-      },
-      "Name": "God of War",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "god_of_wine"
-      },
-      "Name": "God of Wine",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "goddess_of_love"
-      },
-      "Name": "Goddess of Love",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "goddess_of_seasons"
-      },
-      "Name": "Goddess of Seasons",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "goddess_of_the_hunt"
-      },
-      "Name": "Goddess of the Hunt",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "goddess_of_wisdom"
-      },
-      "Name": "Goddess of Wisdom",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "grown_close"
-      },
-      "Name": "Grown Close",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "had_to_happen"
-      },
-      "Name": "Had to Happen",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "harpy_feather_duster"
-      },
-      "Name": "Harpy Feather Duster",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "harsh_conditions"
-      },
-      "Name": "Harsh Conditions",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "harsh_conditions_fate"
-      },
-      "Name": "Harsh Conditions (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "haste_of_hermes"
-      },
-      "Name": "Haste of Hermes",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "hold_the_onions"
-      },
-      "Name": "Hold the Onions",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "home_makeover"
-      },
-      "Name": "Home Makeover",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "infernal_arms"
-      },
-      "Name": "Infernal Arms",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "infernal_arms_fate"
-      },
-      "Name": "Infernal Arms (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "is_there_no_escape"
-      },
-      "Name": "Is There No Escape?",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "is_there_no_escape_fate"
-      },
-      "Name": "Is There No Escape? (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "lambent_plume"
-      },
-      "Name": "Lambent Plume",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "lucky_tooth"
-      },
-      "Name": "Lucky Tooth",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "malphon"
-      },
-      "Name": "Malphon",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "malphon_aspect_zagreus"
-        },
-        {
-          "Id": "malphon_aspect_talos"
-        },
-        {
-          "Id": "malphon_aspect_demeter"
-        },
-        {
-          "Id": "malphon_aspect_gilgamesh"
-        }
+      "id": "prophecy",
+      "stats": [
+        "prophecy_fulfilled"
       ]
-    },
-    {
-      "Id": {
-        "Id": "master_of_arms"
-      },
-      "Name": "Master of Arms",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "master_of_arms_fate"
-      },
-      "Name": "Master of Arms (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "musician_and_muse"
-      },
-      "Name": "Musician and Muse",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "musician_and_muse_fate"
-      },
-      "Name": "Musician and Muse (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "myrmidon_bracer"
-      },
-      "Name": "Myrmidon Bracer",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "night_and_darkness"
-      },
-      "Name": "Night and Darkness",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "night_and_darkness_fate"
-      },
-      "Name": "Night and Darkness (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "nyxs_mirror"
-      },
-      "Name": "Nyx\u0027s Mirror",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "old_spiked_collar"
-      },
-      "Name": "Old Spiked Collar",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "one_for_the_ages"
-      },
-      "Name": "One for the Ages",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "overflowing_cup"
-      },
-      "Name": "Overflowing Cup",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "owl_pendant"
-      },
-      "Name": "Owl Pendant",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "pierced_butterfly"
-      },
-      "Name": "Pierced Butterfly",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "pom_blossom"
-      },
-      "Name": "Pom Blossom",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "power_without_equal"
-      },
-      "Name": "Power Without Equal",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "primordial_banes"
-      },
-      "Name": "Primordial Banes",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "primordial_boons"
-      },
-      "Name": "Primordial Boons",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "rare_collectible"
-      },
-      "Name": "Rare Collectible",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "river_denizens"
-      },
-      "Name": "River Denizens",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "sea_gods_spite"
-      },
-      "Name": "Sea-God\u0027s Spite",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "shattered_shackle"
-      },
-      "Name": "Shattered Shackle",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "sigil_of_the_dead"
-      },
-      "Name": "Sigil of the Dead",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "skelly_slayer"
-      },
-      "Name": "Skelly Slayer",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "skellys_last_lamentations"
-      },
-      "Name": "Skelly\u0027s Last Lamentations",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "skull_earring"
-      },
-      "Name": "Skull Earring",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "slashed_benefits"
-      },
-      "Name": "Slashed Benefits",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "slashed_benefits_fate"
-      },
-      "Name": "Slashed Benefits (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "something_from_everyone"
-      },
-      "Name": "Something From Everyone",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "stygius"
-      },
-      "Name": "Stygius",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "stygius_aspect_zagreus"
-        },
-        {
-          "Id": "stygius_aspect_nemesis"
-        },
-        {
-          "Id": "stygius_aspect_poseidon"
-        },
-        {
-          "Id": "stygius_aspect_arthur"
-        }
-      ]
-    },
-    {
-      "Id": {
-        "Id": "thanks_but_no_thanks"
-      },
-      "Name": "Thanks, But No Thanks",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_adamant_rail"
-      },
-      "Name": "The Adamant Rail",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_dawn_bringer"
-      },
-      "Name": "The Dawn Bringer",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_dragons_rival"
-      },
-      "Name": "The Dragon\u0027s Rival",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_eternal_spear"
-      },
-      "Name": "The Eternal Spear",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_family_secret"
-      },
-      "Name": "The Family Secret",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_fated_saint_of_war"
-      },
-      "Name": "The Fated Saint of War",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_gift_of_song"
-      },
-      "Name": "The Gift of Song",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_god_like_king"
-      },
-      "Name": "The God-like King",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_heart_seeking_bow"
-      },
-      "Name": "The Heart-Seeking Bow",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_holy_liege"
-      },
-      "Name": "The Holy Liege",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_preservers_avatar"
-      },
-      "Name": "The Preserver\u0027s Avatar",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_queens_plan"
-      },
-      "Name": "The Queen\u0027s Plan",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_reluctant_musician"
-      },
-      "Name": "The Reluctant Musician",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_shield_of_chaos"
-      },
-      "Name": "The Shield of Chaos",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_stygian_blade"
-      },
-      "Name": "The Stygian Blade",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_twin_fists"
-      },
-      "Name": "The Twin Fists",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_useless_trinket"
-      },
-      "Name": "The Useless Trinket",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "the_useless_trinket_fate"
-      },
-      "Name": "The Useless Trinket (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "thorn_of_thanatos"
-      },
-      "Name": "Thorn of Thanatos",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "three_headed_boy"
-      },
-      "Name": "Three-Headed Boy",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "thunder_signet"
-      },
-      "Name": "Thunder Signet",
-      "Class": {
-        "Id": "keepsake"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "to_charons_credit"
-      },
-      "Name": "To Charon\u0027s Credit",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "tools_of_the_architect"
-      },
-      "Name": "Tools of the Architect",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "urge_to_sing"
-      },
-      "Name": "Urge to Sing",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "varatha"
-      },
-      "Name": "Varatha",
-      "Class": {
-        "Id": "infernal_arm"
-      },
-      "Stats": [
-        {
-          "Id": "varatha_aspect_zagreus"
-        },
-        {
-          "Id": "varatha_aspect_achilles"
-        },
-        {
-          "Id": "varatha_aspect_hades"
-        },
-        {
-          "Id": "varatha_aspect_guan_yu"
-        }
-      ]
-    },
-    {
-      "Id": {
-        "Id": "wanton_ransacking"
-      },
-      "Name": "Wanton Ransacking",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "war_gods_bloodlust"
-      },
-      "Name": "War-God\u0027s Bloodlust",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "war_gods_bloodlust_fate"
-      },
-      "Name": "War-God\u0027s Bloodlust (Fate)",
-      "Class": {
-        "Id": "prophecy"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "weapon_of_fate"
-      },
-      "Name": "Weapon of Fate",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "well_stocked"
-      },
-      "Name": "Well Stocked",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
-    },
-    {
-      "Id": {
-        "Id": "well_versed"
-      },
-      "Name": "Well Versed",
-      "Class": {
-        "Id": "achievement"
-      },
-      "Stats": []
     }
   ],
-  "Projects": [
-    {
-      "Name": "Fulfill all prophecies",
-      "Objectives": [
-        {
-          "Name": "Fulfil all prophecies",
-          "Requirements": [
-            {
-              "Class": {
-                "Id": "prophecy"
-              },
-              "Stat": {
-                "Id": "prophecy_fulfilled"
-              },
-              "Min": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Max all infernal arms",
-      "Objectives": [
-        {
-          "Name": "Unlock all infernal arms",
-          "Requirements": [
-            {
-              "Class": {
-                "Id": "infernal_arm"
-              },
-              "Stat": {
-                "Id": "unlocked"
-              },
-              "Min": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Max all keepsakes",
-      "Objectives": [
-        {
-          "Name": "Unlock all keepsakes",
-          "Requirements": [
-            {
-              "Class": {
-                "Id": "keepsake"
-              },
-              "Stat": {
-                "Id": "unlocked"
-              },
-              "Min": 1
-            }
-          ]
-        },
-        {
-          "Name": "Rank all keepsakes to max rank",
-          "Requirements": [
-            {
-              "Class": {
-                "Id": "keepsake"
-              },
-              "Stat": {
-                "Id": "keepsake_rank"
-              },
-              "Min": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Unlock all achievements",
-      "Objectives": [
-        {
-          "Name": "Unlock all steam achievements",
-          "Requirements": [
-            {
-              "Class": {
-                "Id": "achievement"
-              },
-              "Stat": {
-                "Id": "achieved"
-              },
-              "Min": 1
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "pk": "Domain#hades",
+  "sk": "Domain"
 }
