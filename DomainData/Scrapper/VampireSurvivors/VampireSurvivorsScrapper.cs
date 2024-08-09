@@ -62,7 +62,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name),
             Name = name,
             Class = "collection_entry",
-            Tags = ["relic"],
         };
     }
 
@@ -108,7 +107,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name),
             Name = name,
             Class = "collection_entry",
-            Tags = ["passive_item"],
         };
     }
 
@@ -133,7 +131,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name),
             Name = name,
             Class = "collection_entry",
-            Tags = ["weapon"],
         };
     }
 
@@ -157,7 +154,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name),
             Name = name,
             Class = "collection_entry",
-            Tags = ["pickup"],
         };
     }
 
@@ -177,7 +173,6 @@ public class VampireSurvivorsScrapper(EntityNameContainer nameContainer) : IScra
             Id = ResourceId.InduceFromName(name),
             Name = name,
             Class = "collection_entry",
-            Tags = ["arcana"],
         };
     }
 }

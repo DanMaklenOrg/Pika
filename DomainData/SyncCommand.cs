@@ -46,7 +46,6 @@ public static class SyncCommand
             Entities = a.Entities.UnionBy(b.Entities, e => e.Id).ToList(),
             Projects = a.Projects.UnionBy(b.Projects, e => e.Name).ToList(),
             Stats = a.Stats.UnionBy(b.Stats, e => e.Id).ToList(),
-            Tags = a.Tags.UnionBy(b.Tags, e => e.Id).ToList(),
         })).ToList();
     }
 }

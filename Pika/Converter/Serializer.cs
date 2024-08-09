@@ -11,7 +11,6 @@ public class Serializer
             Id = domain.Id,
             Name = domain.Name,
             Stats = domain.Stats.ConvertAll(Serialize),
-            Tags = domain.Tags.ConvertAll(Serialize),
             Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
@@ -24,16 +23,6 @@ public class Serializer
         {
             Id = node.Id,
             Stats = node.Stats.ConvertAll<string>(s => s),
-            Tags = node.Tags.ConvertAll<string>(t => t),
-        };
-    }
-
-    private TagNode Serialize(Tag node)
-    {
-        return new TagNode
-        {
-            Id = node.Id,
-            Name = node.Name,
         };
     }
 
@@ -72,7 +61,6 @@ public class Serializer
             Id = node.Id,
             Name = node.Name,
             Stats = node.Stats.ConvertAll<string>(s => s),
-            Tags = node.Tags.ConvertAll<string>(t => t),
             Class = node.Class,
         };
     }

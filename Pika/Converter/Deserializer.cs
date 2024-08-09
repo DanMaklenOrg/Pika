@@ -14,7 +14,6 @@ public class Deserializer
             Id = node.Id,
             Name = node.Name ?? string.Empty,
             Stats = node.Stats?.ConvertAll(Deserialize) ?? [],
-            Tags = node.Tags?.ConvertAll(Deserialize) ?? [],
             Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
@@ -27,16 +26,6 @@ public class Deserializer
         {
             Id = node.Id,
             Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
-            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
-        };
-    }
-
-    private Tag Deserialize(TagNode node)
-    {
-        return new Tag
-        {
-            Id = ParseOrInduceId(node.Id, node.Name),
-            Name = node.Name,
         };
     }
 
@@ -75,7 +64,6 @@ public class Deserializer
             Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
             Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
-            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
             Class = node.Class,
         };
     }
