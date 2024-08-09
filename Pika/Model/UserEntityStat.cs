@@ -1,10 +1,10 @@
 namespace Pika.Model;
 
-public readonly struct UserEntityStat
+public class UserEntityStat
 {
-    public ResourceId EntityId { get; init; }
+    public ResourceId EntityId { get; set; }
 
-    public ResourceId StatId { get; init; }
+    public ResourceId StatId { get; set; }
 
-    public string Value { get; init; }
+    public string Value { get; set; }
 }

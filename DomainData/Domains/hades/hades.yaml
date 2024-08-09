@@ -6,8 +6,8 @@ projects:
     objectives:
       - title: Unlock all steam achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
   - id: max_keepsakes
     title: Max all keepsakes
@@ -15,7 +15,7 @@ projects:
       - title: Unlock all keepsakes
         require:
           - class: keepsake
-            stat: _/unlocked
+            stat: unlocked
             min: 1
       - title: Rank all keepsakes to max rank
         require:
@@ -28,7 +28,7 @@ projects:
       - title: Unlock all infernal arms
         require:
           - class: infernal_arm
-            stat: _/unlocked
+            stat: unlocked
             min: 1
   - id: fulfill_prophecy
     title: Fulfill all prophecies
@@ -45,11 +45,19 @@ stats:
   - id: prophecy_fulfilled
     name: Fulfilled
     type: BOOLEAN
+  - id: achieved
+    name: Achievement Unlocked
+    type: BOOLEAN
+  - name: Unlocked
+    type: BOOLEAN
 classes:
   - id: keepsake
     stats:
-      - _/unlocked
+      - unlocked
       - keepsake_rank
   - id: prophecy
     stats:
       - prophecy_fulfilled
+  - id: achievement
+    stats:
+      - achieved

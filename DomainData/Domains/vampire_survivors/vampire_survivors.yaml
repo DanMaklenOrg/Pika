@@ -123,8 +123,8 @@ projects:
     objectives:
       - title: Unlock all achievements
         require:
-          - class: _/achievement
-            stat: _/achieved
+          - class: achievement
+            stat: achieved
             min: 1
   - id: unlock_stage
     title: Unlock All Stages and Their Hyper Mode

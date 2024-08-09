@@ -30,6 +30,16 @@ public static class MigrateCommand
 
     private static void MigrateUserStat(Domain domain, UserStats stats)
     {
+        foreach (var stat in stats.EntityStats)
+        {
+            stat.StatId = stat.StatId.FullyQualifiedId switch
+            {
+                "_/owned" => "owned",
+                "_/unlocked" => "unlocked",
+                "_/achieved" => "achieved",
+                _ => stat.StatId,
+            };
+        }
     }
 
     private static async IAsyncEnumerable<Domain> GetAllDomains(IDomainRepo domainRepo)
