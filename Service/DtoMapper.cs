@@ -51,7 +51,7 @@ public static class DtoMapper
     {
         return new ProjectDto
         {
-            Title = model.Title,
+            Name = model.Name,
             Objectives = model.Objectives.ConvertAll(ToDto),
         };
     }
@@ -60,7 +60,7 @@ public static class DtoMapper
     {
         return new ObjectiveDto
         {
-            Title = model.Title,
+            Name = model.Name,
             Requirements = model.Requirements.ConvertAll(ToDto),
         };
     }

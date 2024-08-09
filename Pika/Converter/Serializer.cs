@@ -41,7 +41,7 @@ public class Serializer
     {
         return new ProjectNode
         {
-            Title = node.Title,
+            Name = node.Name,
             Objectives = node.Objectives.ConvertAll(Serialize),
         };
     }
@@ -50,7 +50,7 @@ public class Serializer
     {
         return new ObjectiveNode
         {
-            Title = node.Title,
+            Name = node.Name,
             Requirements = node.Requirements.ConvertAll(Serialize),
         };
     }

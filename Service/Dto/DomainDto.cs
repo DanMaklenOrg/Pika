@@ -49,8 +49,8 @@ public readonly struct TagDto
 
 public readonly struct ProjectDto
 {
-    [JsonPropertyName("title")]
-    public string Title { get; init; }
+    [JsonPropertyName("name")]
+    public string Name { get; init; }
 
     [JsonPropertyName("objectives")]
     public List<ObjectiveDto> Objectives { get; init; }
@@ -58,8 +58,8 @@ public readonly struct ProjectDto
 
 public readonly struct ObjectiveDto
 {
-    [JsonPropertyName("title")]
-    public string Title { get; init; }
+    [JsonPropertyName("name")]
+    public string Name { get; init; }
 
     [JsonPropertyName("requirements")]
     public List<ObjectiveRequirementDto> Requirements { get; init; }
