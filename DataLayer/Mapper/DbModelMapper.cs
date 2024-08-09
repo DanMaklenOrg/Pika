@@ -83,10 +83,8 @@ public static class DbModelMapper
     public static Domain? FromDbModel(DomainDbModel? model)
     {
         if (model is null) return null;
-        return new Domain
+        return new Domain(model.Id, model.Name)
         {
-            Id = model.Id,
-            Name = model.Name,
             Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],

@@ -1,7 +1,6 @@
 using System.Net;
-using HtmlAgilityPack;
 
-namespace Pika.DomainData.Scrapper;
+namespace Pika.DomainData.DomainScrapper;
 
 public class EntityNameContainer
 {

@@ -1,9 +1,9 @@
 using HtmlAgilityPack;
 using Pika.Model;
 
-namespace Pika.DomainData.Scrapper.Palworld;
+namespace Pika.DomainData.DomainScrapper.Palworld;
 
-public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
+public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapperOld
 {
     public ResourceId DomainId => "palworld";
     public string OutputDirectory => DomainId.ToString();
@@ -11,10 +11,8 @@ public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
 
     public async Task<Domain> Scrape()
     {
-        return new Domain
+        return new Domain(DomainId, "Palworld")
         {
-            Id = DomainId,
-            Name = "Palworld",
             Entities = await ScrapePals(),
         };
     }

@@ -1,9 +1,8 @@
-using HtmlAgilityPack;
 using Pika.Model;
 
-namespace Pika.DomainData.Scrapper.VampireSurvivors;
+namespace Pika.DomainData.DomainScrapper.VampireSurvivors;
 
-public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapper
+public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, SteamClient steamClient) : IScrapperOld
 {
     private readonly uint _steamAppId = 1794680;
 
@@ -13,10 +12,8 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
 
     public async Task<Domain> Scrape()
     {
-        return new Domain
+        return new Domain(DomainId, "Vampire Survivors")
         {
-            Id = DomainId,
-            Name = "Vampire Survivors",
             Entities = await ScrapeAchievements(),
         };
     }

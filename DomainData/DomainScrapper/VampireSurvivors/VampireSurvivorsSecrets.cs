@@ -1,9 +1,9 @@
 using HtmlAgilityPack;
 using Pika.Model;
 
-namespace Pika.DomainData.Scrapper.VampireSurvivors;
+namespace Pika.DomainData.DomainScrapper.VampireSurvivors;
 
-public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrapper
+public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrapperOld
 {
     public ResourceId DomainId => "vampire_survivors";
     public string OutputDirectory => DomainId.ToString();
@@ -11,10 +11,8 @@ public class VampireSurvivorsSecrets(EntityNameContainer nameContainer) : IScrap
 
     public async Task<Domain> Scrape()
     {
-        return new Domain
+        return new Domain(DomainId, "Vampire Survivors")
         {
-            Id = DomainId,
-            Name = "Vampire Survivors",
             Entities = await ScrapeSecrets(),
         };
     }

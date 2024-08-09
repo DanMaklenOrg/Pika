@@ -24,7 +24,7 @@ public class DomainController : ControllerBase
     {
         var domain = await _domainRepo.Get(domainId);
         if (domain is null) throw new Exception("Domain Not Found");
-        return DtoMapper.ToDto(domain.Value);
+        return DtoMapper.ToDto(domain);
     }
 
     [HttpGet("all")]
