@@ -15,7 +15,10 @@ objectiveDecl: OBJECTIVE STRING_LITERAL OPEN_BRACES REQUIRE IDENTIFIER SEMICOLON
 
 classDecl: CLASS IDENTIFIER OPEN_BRACES statDecl+ CLOSE_BRACES;
 
-entityDecl: IDENTIFIER namedIdentifier SEMICOLON;
+entityDecl
+    : IDENTIFIER namedIdentifier SEMICOLON
+    | IDENTIFIER namedIdentifier OPEN_BRACES statDecl+ CLOSE_BRACES
+    ;
 
 statDecl: STAT OPEN_ANGULAR_BRACES statType CLOSE_ANGULAR_BRACES namedIdentifier SEMICOLON;
 statType
@@ -45,7 +48,7 @@ INT: 'int';
 
 // Literals
 STRING_LITERAL: '\'' ~[\n]*? '\'';
-INTEGER_LITERAL: [1-9][0-9]*;
+INTEGER_LITERAL: [0-9]+;
 
 // Operators & Punctuations
 SEMICOLON: ';';

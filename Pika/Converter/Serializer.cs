@@ -10,7 +10,6 @@ public class Serializer
         {
             Id = domain.Id,
             Name = domain.Name,
-            Stats = domain.Stats.ConvertAll(Serialize),
             Classes = domain.Classes.ConvertAll(Serialize),
             Entities = domain.Entities.ConvertAll(Serialize),
             Projects = domain.Projects.ConvertAll(Serialize),
@@ -60,7 +59,7 @@ public class Serializer
         {
             Id = node.Id,
             Name = node.Name,
-            Stats = node.Stats.ConvertAll<string>(s => s),
+            // Stats = node.Stats.ConvertAll<string>(s => s),
             Class = node.Class,
         };
     }

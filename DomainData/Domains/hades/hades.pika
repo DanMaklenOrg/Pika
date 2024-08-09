@@ -41,45 +41,39 @@ class infernal_arm {
 }
 
 // Entities
-infernal_arm 'Stygius';
-/*
-  - stygius_aspect_zagreus
-  - stygius_aspect_nemesis
-  - stygius_aspect_poseidon
-  - stygius_aspect_arthur
-*/
-infernal_arm 'Varatha';
-/*
-  - varatha_aspect_zagreus
-  - varatha_aspect_achilles
-  - varatha_aspect_hades
-  - varatha_aspect_guan_yu
-*/
-infernal_arm 'Aegis';
-/*
-  - aegis_aspect_zagreus
-  - aegis_aspect_chaos
-  - aegis_aspect_zeus
-  - aegis_aspect_beowulf
-*/
-infernal_arm 'Coronacht';
-/*
-  - coronacht_aspect_zagreus
-  - coronacht_aspect_chiron
-  - coronacht_aspect_hera
-  - coronacht_aspect_rama
-*/
-infernal_arm 'Malphon';
-/*
-  - malphon_aspect_zagreus
-  - malphon_aspect_talos
-  - malphon_aspect_demeter
-  - malphon_aspect_gilgamesh
-*/
-infernal_arm 'Exagryph';
-/*
-  - exagryph_aspect_zagreus
-  - exagryph_aspect_eris
-  - exagryph_aspect_hestia
-  - exagryph_aspect_lucifer
-*/
+infernal_arm 'Stygius' {
+    stat<int(0, 5)> stygius_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> stygius_aspect_nemesis ~> 'Aspect of Nemesis Rank';
+    stat<int(0, 5)> stygius_aspect_poseidon ~> 'Aspect of Poseidon Rank';
+    stat<int(0, 5)> stygius_aspect_arthur ~> 'Aspect of Arthur Rank';
+}
+infernal_arm 'Varatha' {
+    stat<int(0, 5)> varatha_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> varatha_aspect_achilles ~> 'Aspect of Achilles Rank';
+    stat<int(0, 5)> varatha_aspect_hades ~> 'Aspect of Hades Rank';
+    stat<int(0, 5)> varatha_aspect_guan_yu ~> 'Aspect of Guan Yu Rank';
+}
+infernal_arm 'Aegis' {
+    stat<int(0, 5)> aegis_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> aegis_aspect_chaos ~> 'Aspect of Chaos Rank';
+    stat<int(0, 5)> aegis_aspect_zeus ~> 'Aspect of Zeus Rank';
+    stat<int(0, 5)> aegis_aspect_beowulf ~> 'Aspect of Beowul Rank';
+}
+infernal_arm 'Coronacht' {
+    stat<int(0, 5)> coronacht_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> coronacht_aspect_chiron ~> 'Aspect of Chiron Rank';
+    stat<int(0, 5)> coronacht_aspect_hera ~> 'Aspect of Hera Rank';
+    stat<int(0, 5)> coronacht_aspect_rama ~> 'Aspect of Rama Rank';
+}
+infernal_arm 'Malphon' {
+    stat<int(0, 5)> malphon_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> malphon_aspect_talos ~> 'Aspect of Talos Rank';
+    stat<int(0, 5)> malphon_aspect_demeter ~> 'Aspect of Demeter Rank';
+    stat<int(0, 5)> malphon_aspect_gilgamesh ~> 'Aspect of Gilgamesh Rank';
+}
+infernal_arm 'Exagryph' {
+    stat<int(0, 5)> exagryph_aspect_zagreus ~> 'Aspect of Zagreus Rank';
+    stat<int(0, 5)> exagryph_aspect_eris ~> 'Aspect of Eris Rank';
+    stat<int(0, 5)> exagryph_aspect_hestia ~> 'Aspect of Hestia Rank';
+    stat<int(0, 5)> exagryph_aspect_lucifer ~> 'Aspect of Lucifer Rank';
+}

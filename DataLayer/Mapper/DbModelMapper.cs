@@ -15,7 +15,6 @@ public static class DbModelMapper
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
             Classes = domain.Classes.ConvertAll(ToDbModel),
-            Stats = domain.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -63,7 +62,7 @@ public static class DbModelMapper
             Id = entity.Id,
             Name = entity.Name,
             Class = entity.Class,
-            Stats = entity.Stats.ConvertAll<string>(s => s),
+            Stats = entity.Stats.ConvertAll(ToDbModel),
         };
     }
 
@@ -91,7 +90,6 @@ public static class DbModelMapper
             Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
-            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
@@ -138,7 +136,7 @@ public static class DbModelMapper
             Id = model.Id,
             Name = model.Name,
             Class = model.Class,
-            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
     }
 

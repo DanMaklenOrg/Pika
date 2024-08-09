@@ -22,7 +22,6 @@ public static class DtoMapper
             Name = model.Name,
             Entities = model.Entities.ConvertAll(ToDto),
             Projects = model.Projects.ConvertAll(ToDto),
-            Stats = model.Stats.ConvertAll(ToDto),
             Classes = model.Classes.ConvertAll(ToDto),
         };
     }
@@ -71,7 +70,7 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Stats = model.Stats.ConvertAll<string>(s => s),
+            Stats = model.Stats.ConvertAll(ToDto),
             Class = model.Class,
         };
     }

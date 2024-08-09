@@ -13,7 +13,6 @@ public class Deserializer
         {
             Id = node.Id,
             Name = node.Name ?? string.Empty,
-            Stats = node.Stats?.ConvertAll(Deserialize) ?? [],
             Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
@@ -63,7 +62,7 @@ public class Deserializer
         {
             Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
-            Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            // Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
             Class = node.Class,
         };
     }

@@ -6,7 +6,6 @@ public readonly struct DomainNode
 {
     public string Id { get; init; }
     public string? Name { get; init; }
-    public List<StatNode>? Stats { get; init; }
     public List<ClassNode>? Classes { get; init; }
     public List<EntityNode>? Entities { get; init; }
     public List<ProjectNode>? Projects { get; init; }
