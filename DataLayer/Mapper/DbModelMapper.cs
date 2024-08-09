@@ -24,7 +24,6 @@ public static class DbModelMapper
     {
         return new ProjectDbModel
         {
-            Id = project.Id,
             Title = project.Title,
             Objectives = project.Objectives.ConvertAll(ToDbModel),
         };
@@ -113,7 +112,6 @@ public static class DbModelMapper
     {
         return new Project
         {
-            Id = model.Id,
             Title = model.Title,
             Objectives = model.Objectives.ConvertAll(FromDbModel),
         };
@@ -188,7 +186,6 @@ public static class DbModelMapper
             UserId = userStats.UserId,
             DomainId = userStats.DomainId,
             EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll<string>(pid => pid),
         };
     }
 
@@ -211,7 +208,6 @@ public static class DbModelMapper
             UserId = userStats.UserId,
             DomainId = userStats.DomainId,
             EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll<ResourceId>(p => p),
         };
     }
 

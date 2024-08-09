@@ -23,16 +23,14 @@ classes:
 tags:
   - name: Pal
 projects:
-  - id: pal_capture
-    title: Capture All Pals
+  - title: Capture All Pals
     objectives:
       - title: Capture all pals at least 12 times each
         require:
           - class: pal
             stat: captured
             min: 12
-  - id: achievement_hunter
-    title: Unlock all achievements
+  - title: Unlock all achievements
     objectives:
       - title: Unlock all steam achievements
         require:

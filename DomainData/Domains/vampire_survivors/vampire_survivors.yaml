@@ -76,16 +76,14 @@ classes:
     tags:
       - secret
 projects:
-  - id: unlock_characters
-    title: Unlock All Characters
+  - title: Unlock All Characters
     objectives:
       - title: Unlock all characters
         require:
           - class: character
             stat: unlocked
             min: 1
-  - id: max_power_ups
-    title: Max All Power Ups
+  - title: Max All Power Ups
     objectives:
       - title: Max all power ups
         require:
@@ -104,32 +102,28 @@ projects:
           - class: power_up_1
             stat: power_up_rank_1
             min: 1
-  - id: unlock_collection
-    title: Unlock All Collection Entries
+  - title: Unlock All Collection Entries
     objectives:
       - title: Unlock all characters
         require:
           - class: collection_entry
             stat: unlocked
             min: 1
-  - id: unlock_secrets
-    title: Unlock All Secrets
+  - title: Unlock All Secrets
     objectives:
       - title: Unlock all secrets
         require:
           - class: secret_unlock
             stat: unlocked
             min: 1
-  - id: unlock_achievements
-    title: Unlock All Achievements
+  - title: Unlock All Achievements
     objectives:
       - title: Unlock all achievements
         require:
           - class: achievement
             stat: achieved
             min: 1
-  - id: unlock_stage
-    title: Unlock All Stages and Their Hyper Mode
+  - title: Unlock All Stages and Their Hyper Mode
     objectives:
       - title: Unlock all stages
         require:

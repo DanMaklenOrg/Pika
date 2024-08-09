@@ -8,8 +8,6 @@ public struct UserStats
 
     public List<UserEntityStat> EntityStats { get; init; } = [];
 
-    public List<ResourceId> CompletedProjectIds { get; init; } = [];
-
     public UserStats(string userId, string domainId)
     {
         UserId = userId;

@@ -41,7 +41,6 @@ public class Serializer
     {
         return new ProjectNode
         {
-            Id = node.Id,
             Title = node.Title,
             Objectives = node.Objectives.ConvertAll(Serialize),
         };

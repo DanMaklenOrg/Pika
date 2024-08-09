@@ -49,9 +49,6 @@ public readonly struct TagDto
 
 public readonly struct ProjectDto
 {
-    [JsonPropertyName("id")]
-    public string Id { get; init; }
-
     [JsonPropertyName("title")]
     public string Title { get; init; }
 

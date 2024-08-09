@@ -1,32 +1,28 @@
 id: dungeon_souls
 name: Dungeon Souls
 projects:
-  - id: achievement_hunter
-    title: Unlock all achievements
+  - title: Unlock all achievements
     objectives:
       - title: Unlock all steam achievements
         require:
           - class: achievement
             stat: achieved
             min: 1
-  - id: collect_recipes
-    title: Collect all Arcane Forge Recipes
+  - title: Collect all Arcane Forge Recipes
     objectives:
       - title: Find all arcane forge recipes
         require:
           - class: forge_recipe
             stat: owned
             min: 1
-  - id: max_passives
-    title: Max all passives
+  - title: Max all passives
     objectives:
       - title: Reach level 10 in all passives
         require:
           - class: passive
             stat: passive_level
             min: 10
-  - id: max_heroes
-    title: Max all heroes
+  - title: Max all heroes
     objectives:
       - title: Unlock all heroes
         require:

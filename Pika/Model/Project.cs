@@ -2,12 +2,10 @@
 
 public readonly struct Project
 {
-    public required ResourceId Id { get; init; }
     public required string Title { get; init; }
     public required  List<Objective> Objectives { get; init; }
 
-
-    public override string ToString() => Id;
+    public override string ToString() => Title;
 }
 
 public readonly struct Objective
