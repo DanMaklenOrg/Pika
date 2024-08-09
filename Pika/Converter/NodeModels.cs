@@ -11,7 +11,6 @@ public readonly struct DomainNode
     public List<TagNode>? Tags { get; init; }
     public List<EntityNode>? Entities { get; init; }
     public List<ProjectNode>? Projects { get; init; }
-    public List<DomainNode>? SubDomains { get; init; }
 }
 
 public readonly struct EntityNode

@@ -15,8 +15,7 @@ public static class SyncCommand
     private static async Task Sync([Argument] string domainId, PikaConverter converter, IDomainRepo domainRepo)
     {
         var fileDomains = ReadAllDomains(converter, domainId);
-        var subDomains = MergeScrappedDomains(fileDomains);
-        var domains = MergeSubDomains(subDomains);
+        var domains = MergeScrappedDomains(fileDomains);
         foreach (var domain in domains)
         {
             await domainRepo.Create(domain);
@@ -49,13 +48,5 @@ public static class SyncCommand
             Stats = a.Stats.UnionBy(b.Stats, e => e.Id.FullyQualifiedId).ToList(),
             Tags = a.Tags.UnionBy(b.Tags, e => e.Id.FullyQualifiedId).ToList(),
         })).ToList();
-    }
-
-    private static List<Domain> MergeSubDomains(List<Domain> subDomains)
-    {
-        var rootDomains = subDomains.Where(d => !d.Id.IsSubDomainId).ToList();
-        foreach (var domain in rootDomains)
-            domain.SubDomains.AddRange(subDomains.Where(d => d.Id.Id == domain.Id.Id && d.Id.IsSubDomainId));
-        return rootDomains;
     }
 }

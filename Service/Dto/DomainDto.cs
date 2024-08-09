@@ -10,9 +10,6 @@ public readonly struct DomainDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonPropertyName("sub_domains")]
-    public List<DomainDto> SubDomains { get; init; }
-
     [JsonPropertyName("stats")]
     public List<StatDto> Stats { get; init; }
 

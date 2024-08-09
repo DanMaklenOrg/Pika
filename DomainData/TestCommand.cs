@@ -24,7 +24,6 @@ public static class TestCommand
 
     private static void TestDomain(Domain domain)
     {
-        if (domain.SubDomains.Count > 0) throw new TestFailureException(domain, "TestDomainHasNoSubDomains");
     }
 
     private static async IAsyncEnumerable<Domain> GetAllDomains(IDomainRepo domainRepo)

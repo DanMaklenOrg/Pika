@@ -25,7 +25,6 @@ public class Deserializer
             Classes = node.Classes?.ConvertAll(Deserialize) ?? [],
             Entities = node.Entities?.ConvertAll(Deserialize) ?? [],
             Projects = node.Projects?.ConvertAll(Deserialize) ?? [],
-            SubDomains = node.SubDomains?.ConvertAll(Deserialize) ?? [],
         };
     }
 
