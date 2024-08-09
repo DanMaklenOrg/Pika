@@ -45,7 +45,7 @@ public class PikaParser
         var name = ParseStringLiteral(context.STRING_LITERAL());
         return new Objective(name)
         {
-            Requirements = [new (context.IDENTIFIER().GetText())],
+            Requirements = [new(context.IDENTIFIER().GetText())],
         };
     }
 
@@ -95,6 +95,9 @@ public class PikaParser
 
     private string ParseStringLiteral(IParseTree stringLiteral)
     {
-        return stringLiteral.GetText().Trim('\'');
+        var str = stringLiteral.GetText();
+        str = str.Trim('\'');
+        str = str.Replace("\\'", "'");
+        return str;
     }
 }

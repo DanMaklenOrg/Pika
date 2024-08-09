@@ -47,7 +47,7 @@ BOOL: 'bool';
 INT: 'int';
 
 // Literals
-STRING_LITERAL: '\'' ~[\n]*? '\'';
+STRING_LITERAL: '\'' (~[\n'] | '\\\'')* '\'';
 INTEGER_LITERAL: [0-9]+;
 
 // Operators & Punctuations

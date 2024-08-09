@@ -21,4 +21,8 @@
       <ProjectReference Include="..\Pika\Pika.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="DomainScrapper\DungeonSouls\" />
+    </ItemGroup>
+
 </Project>

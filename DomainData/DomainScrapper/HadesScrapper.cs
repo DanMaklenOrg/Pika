@@ -2,17 +2,17 @@ using HtmlAgilityPack;
 using Pika.DomainData.ScrapperHelpers;
 using Pika.Model;
 
-namespace Pika.DomainData.DomainScrapper.Hades;
+namespace Pika.DomainData.DomainScrapper;
 
 public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 {
-    private readonly uint _steamAppId = 1145360;
+    private const uint SteamAppId = 1145360;
 
     public ResourceId DomainId => "hades";
 
     public async Task ScrapeInto(Domain domain)
     {
-        domain.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(_steamAppId, "achievement"));
+        domain.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement"));
         domain.Entities.AddRange(await ScrapeKeepsakes());
         domain.Entities.AddRange(await ScrapeProphecies());
     }
