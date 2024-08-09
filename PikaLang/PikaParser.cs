@@ -68,7 +68,6 @@ public class PikaParser
         return new Entity(ParseResourceId(id), name)
         {
             Class = classId,
-            Classes = [classId],
         };
     }
 
