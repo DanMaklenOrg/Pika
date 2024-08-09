@@ -1,6 +1,0 @@
-id: charging_gadgets.minecraft_atm9
-name: "Charging Gadgets"
-entities:
-  - name: Charging Station
-    stats:
-      - _/owned
