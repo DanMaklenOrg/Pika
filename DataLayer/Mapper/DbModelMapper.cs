@@ -33,7 +33,7 @@ public static class DbModelMapper
     {
         return new ObjectiveDbModel
         {
-            Title = project.Name,
+            Name = project.Name,
             Requirements = project.Requirements.ConvertAll(ToDbModel),
         };
     }
@@ -121,7 +121,7 @@ public static class DbModelMapper
     {
         return new Objective
         {
-            Name = model.Title,
+            Name = model.Name,
             Requirements = model.Requirements.ConvertAll(FromDbModel),
         };
     }
