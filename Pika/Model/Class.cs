@@ -1,8 +1,7 @@
 namespace Pika.Model;
 
-public class Class
+public readonly record struct Class(ResourceId Id)
 {
-    public ResourceId Id { get; set; }
-    public List<ResourceId> Stats { get; set; } = [];
-    public List<ResourceId> Tags { get; set; } = [];
+    public List<ResourceId> Stats { get; init; } = [];
+    public List<ResourceId> Tags { get; init; } = [];
 }
