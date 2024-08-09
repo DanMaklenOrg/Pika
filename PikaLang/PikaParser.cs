@@ -45,8 +45,14 @@ public class PikaParser
         var name = ParseStringLiteral(context.STRING_LITERAL());
         return new Objective(name)
         {
-            Requirements = [new(context.IDENTIFIER().GetText())],
+            Requirements = context.requireDecl().Select(ParseObjectiveRequirement).ToList(),
         };
+    }
+
+    private ObjectiveRequirement ParseObjectiveRequirement(PikaLangParser.RequireDeclContext context)
+    {
+        ResourceId classId = context.IDENTIFIER().GetText();
+        return new ObjectiveRequirement(classId);
     }
 
     private Class ParseClass(PikaLangParser.ClassDeclarationContext context)

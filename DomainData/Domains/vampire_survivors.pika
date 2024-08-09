@@ -1,0 +1,152 @@
+domain vampire_survivors ~> 'Vampire Survivors';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Unlock all characters' {
+    objective 'Unlock all characters' {
+        require character; //.unlocked == true;
+    }
+}
+project 'Max all power ups' {
+    objective 'Max all power ups' {
+        require power_up_10; //.rank == 10;
+        require power_up_5; //.rank == 5;
+        require power_up_3; //.rank == 3;
+        require power_up_2; //.rank == 2;
+        require power_up_1; //.rank == 1;
+    }
+}
+project 'Unlock all collection entries' {
+    objective 'Unlock all collection entries' {
+        require collection_entry; //.unlocked == true;
+    }
+}
+project 'Unlock all secrets' {
+    objective 'Unlock all secrets' {
+        require secret; //.unlocked == true;
+    }
+}
+project 'Unlock all stages and their hyper mode' {
+    objective 'Unlock all stages' {
+        require stage; //.unlocked == true;
+    }
+    objective 'Unlock hyper mode on all stages' {
+        require stage; //.hyper_mode_unlocked == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class character {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class power_up_10 {
+    stat<int(0, 10)> rank ~> 'Rank';
+}
+class power_up_5 {
+    stat<int(0, 5)> rank ~> 'Rank';
+}
+class power_up_3 {
+    stat<int(0, 3)> rank ~> 'Rank';
+}
+class power_up_2 {
+    stat<int(0, 2)> rank ~> 'Rank';
+}
+class power_up_1 {
+    stat<int(0, 1)> rank ~> 'Rank';
+}
+class collection_entry {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class stage {
+    stat<bool> unlocked ~> 'Unlocked';
+    stat<bool> hyper_mode_unlocked ~> 'Hyper Mode Unlocked';
+}
+class secret {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+
+// Entities
+achievement achievement_crewmate ~> 'Crewmate';
+achievement achievement_report ~> 'Report!';
+achievement achievement_impostor ~> 'Impostor';
+achievement achievement_sharp_tongue ~> 'Sharp Tongue';
+achievement achievement_scientist ~> 'Scientist';
+achievement achievement_engineer ~> 'Engineer';
+achievement achievement_lucky_swipe ~> 'Lucky Swipe';
+achievement achievement_science_rocks ~> 'Science Rocks';
+achievement achievement_shapeshifter ~> 'Shapeshifter';
+achievement achievement_just_vent ~> 'Just Vent';
+achievement achievement_unjust_ejection ~> 'Unjust Ejection';
+achievement achievement_lifesign_scan ~> 'Lifesign Scan';
+achievement achievement_ghost ~> 'Ghost';
+achievement achievement_guardian ~> 'Guardian';
+achievement achievement_clear_debris ~> 'Clear Debris';
+achievement achievement_clear_asteroids ~> 'Clear Asteroids';
+achievement achievement_horse ~> 'Horse';
+achievement achievement_megalo_impostor ~> 'Megalo Impostor';
+achievement achievement_hyper_polus_replica ~> 'Hyper Polus Replica';
+achievement achievement_polus_replica_map ~> 'Polus Replica Map';
+achievement achievement_bill ~> 'Bill';
+achievement achievement_long_gun ~> 'Long Gun';
+achievement achievement_lance ~> 'Lance';
+achievement achievement_short_gun ~> 'Short Gun';
+achievement achievement_ariana ~> 'Ariana';
+achievement achievement_spread_shot ~> 'Spread Shot';
+achievement achievement_lucia ~> 'Lucia';
+achievement achievement_culaser ~> 'C-U-Laser';
+achievement achievement_hyper_hectic_highway ~> 'Hyper Hectic Highway';
+achievement achievement_brad ~> 'Brad';
+achievement achievement_firearm ~> 'Firearm';
+achievement achievement_browny ~> 'Browny';
+achievement achievement_sonic_bloom ~> 'Sonic Bloom';
+achievement achievement_sheena ~> 'Sheena';
+achievement achievement_blade_crossbow ~> 'Blade Crossbow';
+achievement achievement_probotector ~> 'Probotector';
+achievement achievement_bfc2000ad ~> 'BFC2000-AD';
+achievement achievement_prism_lass ~> 'Prism Lass';
+achievement achievement_time_warp ~> 'Time Warp';
+achievement achievement_stanley ~> 'Stanley';
+achievement achievement_homing_miss ~> 'Homing Miss';
+achievement achievement_multistage_missiles ~> 'Multistage Missiles';
+achievement achievement_newt ~> 'Newt';
+achievement achievement_diver_mines ~> 'Diver Mines';
+achievement achievement_simondo ~> 'Simondo';
+achievement achievement_bahamut ~> 'Bahamut';
+achievement achievement_metal_claw ~> 'Metal Claw';
+achievement achievement_big_fuzzy_fist ~> 'Big Fuzzy Fist';
+achievement achievement_hyper_neo_galuga ~> 'Hyper Neo Galuga';
+achievement achievement_neo_galuga_map ~> 'Neo Galuga Map';
+stage 'Mad Forest';
+stage 'Laborratory';
+stage 'Eudaimonia M.';
+stage 'Inlaid Library';
+stage 'Neo Galuga';
+stage 'Dairy Plant';
+stage 'Gallo Tower';
+stage 'Cappella Magna';
+stage 'Il Molise';
+stage 'Moongolow';
+stage 'Carlo Cart';
+stage 'Green Acres';
+stage 'The Bone Zone';
+stage 'Boss Rash';
+stage 'Whiteout';
+stage 'Space 54';
+stage 'Bat Country';
+stage 'Astral Stair';
+stage 'Tiny Bridge';
+stage 'Mt.Moonspell';
+stage 'Lake Foscari';
+stage 'Abyss Foscari';
+stage 'Polus Replica';
+stage 'Hectic Highway';
+collection_entry 'Friendship Amulet';
+collection_entry 'Super Candybox II Turbo';
+collection_entry 'Sole Solution';
