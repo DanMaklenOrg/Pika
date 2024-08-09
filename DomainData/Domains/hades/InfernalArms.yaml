@@ -79,48 +79,42 @@ classes:
       - _/unlocked
 entities:
   - name: Stygius
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - stygius_aspect_zagreus
       - stygius_aspect_nemesis
       - stygius_aspect_poseidon
       - stygius_aspect_arthur
   - name: Varatha
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - varatha_aspect_zagreus
       - varatha_aspect_achilles
       - varatha_aspect_hades
       - varatha_aspect_guan_yu
   - name: Aegis
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - aegis_aspect_zagreus
       - aegis_aspect_chaos
       - aegis_aspect_zeus
       - aegis_aspect_beowulf
   - name: Coronacht
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - coronacht_aspect_zagreus
       - coronacht_aspect_chiron
       - coronacht_aspect_hera
       - coronacht_aspect_rama
   - name: Malphon
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - malphon_aspect_zagreus
       - malphon_aspect_talos
       - malphon_aspect_demeter
       - malphon_aspect_gilgamesh
   - name: Exagryph
-    classes:
-      - infernal_arm
+    class: infernal_arm
     stats:
       - exagryph_aspect_zagreus
       - exagryph_aspect_eris

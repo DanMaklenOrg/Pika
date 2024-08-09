@@ -74,7 +74,7 @@ public static class DbModelMapper
         {
             Id = entity.Id.FullyQualifiedId,
             Name = entity.Name,
-            Classes = entity.Classes.ConvertAll(c => c.FullyQualifiedId),
+            Class = entity.Class.FullyQualifiedId,
             Stats = entity.Stats.ConvertAll(s => s.FullyQualifiedId),
             Tags = entity.Tags.ConvertAll(t => t.FullyQualifiedId),
         };
@@ -163,7 +163,7 @@ public static class DbModelMapper
             Id = model.Id,
             Name = model.Name,
             Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
-            Classes = model.Classes?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Class = model.Class,
             Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
         };
     }

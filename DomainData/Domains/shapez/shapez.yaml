@@ -41,17 +41,12 @@ classes:
       - upgrade_tier
 entities:
   - name: Hub
-    classes:
-      - hub
+    class: hub
   - name: Transporters
-    classes:
-      - upgrade
+    class: upgrade
   - name: Extractors
-    classes:
-      - upgrade
+    class: upgrade
   - name: Shape Manipulators
-    classes:
-      - upgrade
+    class: upgrade
   - name: Color Manipulators
-    classes:
-      - upgrade
+    class: upgrade

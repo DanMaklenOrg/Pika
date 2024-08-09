@@ -3,41 +3,31 @@ name: Dungeon Souls
 entities:
   - id: the_whole_crews_here
     name: The Whole Crew's Here!
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: professional_baker
     name: Professional Baker!
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: can_someone_call_a_witch_doctor
     name: Can Someone Call a Witch Doctor?
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: indiana_jonesd
     name: Indiana Jones'd
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: gold_swimming
     name: Gold Swimming
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: puny_skeleton_king
     name: Puny Skeleton King
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: i_am_now_ready
     name: I Am Now Ready!
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: good_architecture
     name: Good Architecture
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: keep_em_coming
     name: Keep 'Em Coming!
-    classes:
-      - _/achievement
+    class: _/achievement
   - id: freedom
     name: Freedom
-    classes:
-      - _/achievement
+    class: _/achievement
