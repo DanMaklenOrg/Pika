@@ -41,7 +41,7 @@ var app = builder.Build();
 
 app.AddCommand("scrape", async ([Argument] string domainId, IEnumerable<IScrapper> scrappers, PikaConverter converter) =>
 {
-    foreach (var s in scrappers.Where(s => s.DomainId.FullyQualifiedId == domainId))
+    foreach (var s in scrappers.Where(s => s.DomainId == domainId))
     {
         Console.WriteLine($"Scraping {s.DomainId} ({s.FileName})");
         var domain = await s.Scrape();

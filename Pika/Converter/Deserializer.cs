@@ -7,13 +7,6 @@ public class Deserializer
 {
     private static readonly Regex StatTypePattern = new Regex(@"^([A-Z_]+)(\((.*)\))?$");
 
-    private readonly PikaContext _context;
-
-    public Deserializer(PikaContext context)
-    {
-        _context = context;
-    }
-
     public Domain Deserialize(DomainNode node)
     {
         return new Domain
@@ -32,9 +25,9 @@ public class Deserializer
     {
         return new Class
         {
-            Id = ParseId(node.Id),
-            Stats = node.Stats?.ConvertAll(ParseId) ?? [],
-            Tags = node.Tags?.ConvertAll(ParseId) ?? [],
+            Id = node.Id,
+            Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
         };
     }
 
@@ -51,7 +44,7 @@ public class Deserializer
     {
         return new Project
         {
-            Id = ParseId(node.Id),
+            Id = node.Id,
             Title = node.Title,
             Objectives = node.Objectives.ConvertAll(Deserialize),
         };
@@ -70,8 +63,8 @@ public class Deserializer
     {
         return new ObjectiveRequirement
         {
-            Class = ParseId(node.Class),
-            Stat = ParseId(node.Stat),
+            Class = node.Class,
+            Stat = node.Stat,
             Min = node.Min,
         };
     }
@@ -82,9 +75,9 @@ public class Deserializer
         {
             Id = ParseOrInduceId(node.Id, node.Name),
             Name = node.Name,
-            Stats = node.Stats?.ConvertAll(ParseId) ?? [],
-            Tags = node.Tags?.ConvertAll(ParseId) ?? [],
-            Class = ParseId(node.Class),
+            Stats = node.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Tags = node.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
+            Class = node.Class,
         };
     }
 
@@ -122,11 +115,6 @@ public class Deserializer
 
     private ResourceId ParseOrInduceId(string? id, string name)
     {
-        return string.IsNullOrWhiteSpace(id) ? ResourceId.InduceFromName(name, _context.ScopeDomainId) : ParseId(id);
-    }
-
-    private ResourceId ParseId(string id)
-    {
-        return !id.Contains('/') ? new ResourceId(id, _context.ScopeDomainId) : ResourceId.ParseResourceId(id);
+        return string.IsNullOrWhiteSpace(id) ? ResourceId.InduceFromName(name) : id;
     }
 }

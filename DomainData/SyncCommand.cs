@@ -38,15 +38,15 @@ public static class SyncCommand
 
     private static List<Domain> MergeScrappedDomains(List<Domain> fileDomains)
     {
-        return fileDomains.GroupBy(d => d.Id.FullyQualifiedId).Select(g => g.Aggregate((a, b) => new Domain
+        return fileDomains.GroupBy(d => d.Id).Select(g => g.Aggregate((a, b) => new Domain
         {
             Id = a.Id,
             Name = string.IsNullOrEmpty(a.Name) ? b.Name : a.Name,
-            Classes = a.Classes.UnionBy(b.Classes, e => e.Id.FullyQualifiedId).ToList(),
-            Entities = a.Entities.UnionBy(b.Entities, e => e.Id.FullyQualifiedId).ToList(),
-            Projects = a.Projects.UnionBy(b.Projects, e => e.Id.FullyQualifiedId).ToList(),
-            Stats = a.Stats.UnionBy(b.Stats, e => e.Id.FullyQualifiedId).ToList(),
-            Tags = a.Tags.UnionBy(b.Tags, e => e.Id.FullyQualifiedId).ToList(),
+            Classes = a.Classes.UnionBy(b.Classes, e => e.Id).ToList(),
+            Entities = a.Entities.UnionBy(b.Entities, e => e.Id).ToList(),
+            Projects = a.Projects.UnionBy(b.Projects, e => e.Id).ToList(),
+            Stats = a.Stats.UnionBy(b.Stats, e => e.Id).ToList(),
+            Tags = a.Tags.UnionBy(b.Tags, e => e.Id).ToList(),
         })).ToList();
     }
 }

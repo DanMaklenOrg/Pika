@@ -7,7 +7,7 @@ public readonly struct Project
     public required  List<Objective> Objectives { get; init; }
 
 
-    public override string ToString() => Id.FullyQualifiedId;
+    public override string ToString() => Id;
 }
 
 public readonly struct Objective

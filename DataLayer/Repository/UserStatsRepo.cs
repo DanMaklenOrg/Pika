@@ -20,9 +20,9 @@ public class UserStatsRepo : IUserStatsRepo
         await _userStatsDao.Create(dbModel);
     }
 
-    public async Task<UserStats?> Get(string userId, DomainId domainId)
+    public async Task<UserStats?> Get(string userId, ResourceId domainId)
     {
-        var userStat = await _userStatsDao.Get(userId, domainId.FullyQualifiedId);
+        var userStat = await _userStatsDao.Get(userId, domainId);
         return DbModelMapper.FromDbModel(userStat);
     }
 }

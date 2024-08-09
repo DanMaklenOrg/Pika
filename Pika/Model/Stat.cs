@@ -9,7 +9,7 @@ public struct Stat
     public int? Max { get; set; }
     public List<string>? EnumValues { get; set; }
 
-    public override string ToString() => Id.FullyQualifiedId;
+    public override string ToString() => Id;
 }
 
 public enum StatType

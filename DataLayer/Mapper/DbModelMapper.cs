@@ -10,7 +10,7 @@ public static class DbModelMapper
     {
         return new DomainDbModel
         {
-            Id = domain.Id.FullyQualifiedId,
+            Id = domain.Id,
             Name = domain.Name,
             Entities = domain.Entities.ConvertAll(ToDbModel),
             Projects = domain.Projects.ConvertAll(ToDbModel),
@@ -24,7 +24,7 @@ public static class DbModelMapper
     {
         return new ProjectDbModel
         {
-            Id = project.Id.FullyQualifiedId,
+            Id = project.Id,
             Title = project.Title,
             Objectives = project.Objectives.ConvertAll(ToDbModel),
         };
@@ -43,8 +43,8 @@ public static class DbModelMapper
     {
         return new ObjectiveRequirementDbModel
         {
-            Class = project.Class.FullyQualifiedId,
-            Stat = project.Stat.FullyQualifiedId,
+            Class = project.Class,
+            Stat = project.Stat,
             Min = project.Min,
         };
     }
@@ -53,9 +53,9 @@ public static class DbModelMapper
     {
         return new ClassDbModel
         {
-            Id = model.Id.FullyQualifiedId,
-            Stats = model.Stats.ConvertAll(s => s.FullyQualifiedId),
-            Tags = model.Tags.ConvertAll(t => t.FullyQualifiedId),
+            Id = model.Id,
+            Stats = model.Stats.ConvertAll<string>(s => s),
+            Tags = model.Tags.ConvertAll<string>(t => t),
         };
     }
 
@@ -63,7 +63,7 @@ public static class DbModelMapper
     {
         return new TagDbModel
         {
-            Id = model.Id.FullyQualifiedId,
+            Id = model.Id,
             Name = model.Name,
         };
     }
@@ -72,11 +72,11 @@ public static class DbModelMapper
     {
         return new EntityDbModel
         {
-            Id = entity.Id.FullyQualifiedId,
+            Id = entity.Id,
             Name = entity.Name,
-            Class = entity.Class.FullyQualifiedId,
-            Stats = entity.Stats.ConvertAll(s => s.FullyQualifiedId),
-            Tags = entity.Tags.ConvertAll(t => t.FullyQualifiedId),
+            Class = entity.Class,
+            Stats = entity.Stats.ConvertAll<string>(s => s),
+            Tags = entity.Tags.ConvertAll<string>(t => t),
         };
     }
 
@@ -84,7 +84,7 @@ public static class DbModelMapper
     {
         return new StatDbModel
         {
-            Id = stat.Id.FullyQualifiedId,
+            Id = stat.Id,
             Name = stat.Name,
             Type = stat.Type.ToString(),
             Min = stat.Min,
@@ -152,8 +152,8 @@ public static class DbModelMapper
         return new Class
         {
             Id = model.Id,
-            Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
-            Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
+            Tags = model.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
         };
     }
     private static Entity FromDbModel(EntityDbModel model)
@@ -162,9 +162,9 @@ public static class DbModelMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Tags = model.Tags?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Tags = model.Tags?.ConvertAll<ResourceId>(t => t) ?? [],
             Class = model.Class,
-            Stats = model.Stats?.ConvertAll(ResourceId.ParseResourceId) ?? [],
+            Stats = model.Stats?.ConvertAll<ResourceId>(s => s) ?? [],
         };
     }
 
@@ -186,9 +186,9 @@ public static class DbModelMapper
         return new UserStatsDbModel
         {
             UserId = userStats.UserId,
-            DomainId = userStats.DomainId.FullyQualifiedId,
+            DomainId = userStats.DomainId,
             EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(pid => pid.FullyQualifiedId),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll<string>(pid => pid),
         };
     }
 
@@ -196,8 +196,8 @@ public static class DbModelMapper
     {
         return new UserEntityStatDbModel
         {
-            EntityId = userEntityStat.EntityId.FullyQualifiedId,
-            StatId = userEntityStat.StatId.FullyQualifiedId,
+            EntityId = userEntityStat.EntityId,
+            StatId = userEntityStat.StatId,
             Value = userEntityStat.Value,
         };
     }
@@ -211,7 +211,7 @@ public static class DbModelMapper
             UserId = userStats.UserId,
             DomainId = userStats.DomainId,
             EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
-            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll(ResourceId.ParseResourceId),
+            CompletedProjectIds = userStats.CompletedProjectIds.ConvertAll<ResourceId>(p => p),
         };
     }
 

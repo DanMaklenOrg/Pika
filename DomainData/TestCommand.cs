@@ -40,7 +40,7 @@ public static class TestCommand
         var domains = await domainRepo.GetAll();
         foreach (var d in domains)
         {
-            yield return (await domainRepo.Get(d.Id.FullyQualifiedId))!;
+            yield return (await domainRepo.Get(d.Id))!;
         }
     }
 }

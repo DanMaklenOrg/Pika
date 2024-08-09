@@ -6,7 +6,7 @@ public class ShapezScrapper(SteamScrapper steamScrapper) : IScrapper
 {
     private readonly uint _steamAppId = 1318690;
 
-    public DomainId DomainId => "shapez";
+    public ResourceId DomainId => "shapez";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 

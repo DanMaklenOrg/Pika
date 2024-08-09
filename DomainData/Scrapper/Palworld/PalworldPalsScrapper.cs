@@ -5,7 +5,7 @@ namespace Pika.DomainData.Scrapper.Palworld;
 
 public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
 {
-    public DomainId DomainId => "palworld";
+    public ResourceId DomainId => "palworld";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => "Pals";
 
@@ -36,9 +36,9 @@ public class PalworldPalsScrapper(EntityNameContainer nameContainer) : IScrapper
         if (blacklist.Contains(name)) return null;
         return new Entity
         {
-            Id = ResourceId.InduceFromName(name, DomainId),
+            Id = ResourceId.InduceFromName(name),
             Name = $"{index}: {name}",
-            Class = new ResourceId("pal", DomainId),
+            Class = "pal",
         };
     }
 }
