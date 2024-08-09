@@ -7,7 +7,7 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
 {
     private readonly uint _steamAppId = 1794680;
 
-    public DomainId DomainId => "vampire_survivors";
+    public ResourceId DomainId => "vampire_survivors";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => "Achievements";
 
@@ -55,7 +55,7 @@ public class VampireSurvivorsAchievements(EntityNameContainer nameContainer, Ste
             if (namesToAnnotate.Contains(name)) name = $"{name} (Achievement)";
             return new Entity
             {
-                Id = ResourceId.InduceFromName(name, DomainId),
+                Id = ResourceId.InduceFromName(name),
                 Name = name,
                 Class = "achievement",
             };

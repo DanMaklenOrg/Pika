@@ -4,7 +4,7 @@ public struct UserStats
 {
     public string UserId { get; init; }
 
-    public DomainId DomainId { get; init; }
+    public ResourceId DomainId { get; init; }
 
     public List<UserEntityStat> EntityStats { get; init; } = [];
 

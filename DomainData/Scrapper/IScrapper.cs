@@ -4,7 +4,7 @@ namespace Pika.DomainData.Scrapper;
 
 public interface IScrapper
 {
-    DomainId DomainId { get; }
+    ResourceId DomainId { get; }
 
     string OutputDirectory { get; }
 

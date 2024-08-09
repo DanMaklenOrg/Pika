@@ -6,7 +6,7 @@ public class HadesScrapper(SteamScrapper steamScrapper) : IScrapper
 {
     private readonly uint _steamAppId = 1145360;
 
-    public DomainId DomainId => "hades";
+    public ResourceId DomainId => "hades";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => DomainId.ToString();
 

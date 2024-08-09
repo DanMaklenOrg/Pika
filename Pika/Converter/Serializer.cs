@@ -4,18 +4,11 @@ namespace Pika.Converter;
 
 public class Serializer
 {
-    private readonly PikaContext _context;
-
-    public Serializer(PikaContext context)
-    {
-        _context = context;
-    }
-
     public DomainNode Serialize(Domain domain)
     {
         return new DomainNode
         {
-            Id = domain.Id.FullyQualifiedId,
+            Id = domain.Id,
             Name = domain.Name,
             Stats = domain.Stats.ConvertAll(Serialize),
             Tags = domain.Tags.ConvertAll(Serialize),
@@ -29,9 +22,9 @@ public class Serializer
     {
         return new ClassNode
         {
-            Id = MinifyId(node.Id),
-            Stats = node.Stats.ConvertAll(MinifyId),
-            Tags = node.Tags.ConvertAll(MinifyId),
+            Id = node.Id,
+            Stats = node.Stats.ConvertAll<string>(s => s),
+            Tags = node.Tags.ConvertAll<string>(t => t),
         };
     }
 
@@ -39,7 +32,7 @@ public class Serializer
     {
         return new TagNode
         {
-            Id = MinifyId(node.Id),
+            Id = node.Id,
             Name = node.Name,
         };
     }
@@ -48,7 +41,7 @@ public class Serializer
     {
         return new ProjectNode
         {
-            Id = MinifyId(node.Id),
+            Id = node.Id,
             Title = node.Title,
             Objectives = node.Objectives.ConvertAll(Serialize),
         };
@@ -67,8 +60,8 @@ public class Serializer
     {
         return new ObjectiveRequirementNode
         {
-            Class = MinifyId(node.Class),
-            Stat = MinifyId(node.Stat),
+            Class = node.Class,
+            Stat = node.Stat,
             Min = node.Min,
         };
     }
@@ -77,11 +70,11 @@ public class Serializer
     {
         return new EntityNode
         {
-            Id = MinifyId(node.Id),
+            Id = node.Id,
             Name = node.Name,
-            Stats = node.Stats.ConvertAll(MinifyId),
-            Tags = node.Tags.ConvertAll(MinifyId),
-            Class = MinifyId(node.Class),
+            Stats = node.Stats.ConvertAll<string>(s => s),
+            Tags = node.Tags.ConvertAll<string>(t => t),
+            Class = node.Class,
         };
     }
 
@@ -89,7 +82,7 @@ public class Serializer
     {
         return new StatNode
         {
-            Id = MinifyId(stat.Id),
+            Id = stat.Id,
             Name = stat.Name,
             Type = stat.Type switch
             {
@@ -99,10 +92,5 @@ public class Serializer
                 _ => throw new Exception("Unknown Stat Type"),
             },
         };
-    }
-
-    private string MinifyId(ResourceId id)
-    {
-        return id.Domain.FullyQualifiedId == _context.ScopeDomainId.FullyQualifiedId ? id.Id : id.FullyQualifiedId;
     }
 }

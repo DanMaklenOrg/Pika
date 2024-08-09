@@ -1,5 +1,5 @@
 using Cocona;
-using Pika.DataLayer.Dao;
+using FluentAssertions;
 using Pika.Model;
 using Pika.Repository;
 
@@ -7,7 +7,7 @@ namespace Pika.DomainData;
 
 public static class TestCommand
 {
-    private class TestFailureException(Domain domain, string reason) : Exception($"Domain {domain.Id} ({domain.Name}) failed a test: {reason}");
+    private class TestFailureException(Domain domain, string details) : Exception($"Domain {domain.Id} ({domain.Name}) failed the test: {details}");
 
     public static void AddTestCommand(this CoconaApp app)
     {
@@ -24,6 +24,7 @@ public static class TestCommand
             if (userStat is not null) TestUserStat(domain, userStat.Value);
             Console.WriteLine($"Testing {domain.Id} ({domain.Name})... Passed!");
         }
+
         Console.Out.WriteLine("All Domains passed the test!");
     }
 
@@ -40,7 +41,7 @@ public static class TestCommand
         var domains = await domainRepo.GetAll();
         foreach (var d in domains)
         {
-            yield return (await domainRepo.Get(d.Id.FullyQualifiedId))!;
+            yield return (await domainRepo.Get(d.Id))!;
         }
     }
 }

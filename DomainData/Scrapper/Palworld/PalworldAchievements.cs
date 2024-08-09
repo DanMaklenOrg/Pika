@@ -7,7 +7,7 @@ public class PalworldAchievements(SteamScrapper steamScrapper) : IScrapper
 {
     private readonly uint _steamAppId = 1623730;
 
-    public DomainId DomainId => "palworld";
+    public ResourceId DomainId => "palworld";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => "Achievements";
 

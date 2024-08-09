@@ -12,5 +12,5 @@ public readonly struct Entity
     {
     }
 
-    public override string ToString() => Id.FullyQualifiedId;
+    public override string ToString() => Id;
 }

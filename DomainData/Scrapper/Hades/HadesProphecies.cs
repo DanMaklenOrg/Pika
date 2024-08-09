@@ -5,7 +5,7 @@ namespace Pika.DomainData.Scrapper.Hades;
 
 public class HadesProphecies(EntityNameContainer nameContainer) : IScrapper
 {
-    public DomainId DomainId => "hades";
+    public ResourceId DomainId => "hades";
     public string OutputDirectory => DomainId.ToString();
     public string FileName => "Prophecies";
 
@@ -28,9 +28,9 @@ public class HadesProphecies(EntityNameContainer nameContainer) : IScrapper
             var name = nameContainer.RegisterAndNormalize(n.InnerText, "Fate");
             return new Entity
             {
-                Id = ResourceId.InduceFromName(name, DomainId),
+                Id = ResourceId.InduceFromName(name),
                 Name = name,
-                Class = new ResourceId("prophecy", DomainId),
+                Class = "prophecy",
             };
         }).ToList();
     }
