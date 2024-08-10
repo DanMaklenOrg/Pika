@@ -31,6 +31,7 @@ public static class DtoMapper
         return new ClassDto
         {
             Id = model.Id,
+            Name = model.Name,
             Stats = model.Stats.ConvertAll(ToDto),
         };
     }
@@ -39,6 +40,7 @@ public static class DtoMapper
     {
         return new ProjectDto
         {
+            Id = model.Id,
             Name = model.Name,
             Objectives = model.Objectives.ConvertAll(ToDto),
         };
@@ -48,21 +50,16 @@ public static class DtoMapper
     {
         return new ObjectiveDto
         {
+            Id = model.Id,
             Name = model.Name,
-            Requirements = model.Requirements.ConvertAll(ToDto),
+            Requirements = model.Requirements.ConvertAll(r => new ObjectiveDto.RequirementDto()
+            {
+                Class = r.Class,
+                Stat = r.Stat,
+                Min = r.Min,
+            }),
         };
     }
-
-    private static ObjectiveRequirementDto ToDto(ObjectiveRequirement model)
-    {
-        return new ObjectiveRequirementDto
-        {
-            Class = model.Class,
-            Stat = model.Stat,
-            Min = model.Min,
-        };
-    }
-
 
     private static EntityDto ToDto(Entity model)
     {
@@ -83,9 +80,9 @@ public static class DtoMapper
             Name = model.Name,
             Type = model.Type switch
             {
-                StatType.Boolean => StatTypeEnumDto.Boolean,
-                StatType.IntegerRange => StatTypeEnumDto.IntegerRange,
-                StatType.OrderedEnum => StatTypeEnumDto.OrderedEnum,
+                Stat.StatType.Boolean => StatDto.StatTypeEnumDto.Boolean,
+                Stat.StatType.IntegerRange => StatDto.StatTypeEnumDto.IntegerRange,
+                Stat.StatType.OrderedEnum => StatDto.StatTypeEnumDto.OrderedEnum,
                 _ => throw new ArgumentOutOfRangeException()
             },
             Min = model.Min,

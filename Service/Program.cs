@@ -20,7 +20,11 @@ builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 
 // APIs
 // builder.Services.Configure<JsonSerializerOptions>(options => options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
-builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+});
 builder.Services.AddHealthChecks();
 
 // Lambda Hosting

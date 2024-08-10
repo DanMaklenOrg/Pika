@@ -10,11 +10,11 @@ declStmt
     | entityDecl    #entityDeclaration
     ;
 
-projectDecl: PROJECT STRING_LITERAL OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
-objectiveDecl: OBJECTIVE STRING_LITERAL OPEN_BRACES requireDecl+ CLOSE_BRACES;
+projectDecl: PROJECT namedIdentifier OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
+objectiveDecl: OBJECTIVE namedIdentifier OPEN_BRACES requireDecl+ CLOSE_BRACES;
 requireDecl: REQUIRE IDENTIFIER SEMICOLON;
 
-classDecl: CLASS IDENTIFIER OPEN_BRACES statDecl+ CLOSE_BRACES;
+classDecl: CLASS namedIdentifier OPEN_BRACES statDecl+ CLOSE_BRACES;
 
 entityDecl
     : IDENTIFIER namedIdentifier SEMICOLON
@@ -28,8 +28,9 @@ statType
     ;
 
 namedIdentifier
-    : IDENTIFIER WITH_NAME STRING_LITERAL
-    | STRING_LITERAL
+    : IDENTIFIER WITH_NAME STRING_LITERAL   #idWithName
+    | STRING_LITERAL                        #nameOnly
+    | IDENTIFIER                            #idOnly
     ;
 
 // Comments & Whitespaces
