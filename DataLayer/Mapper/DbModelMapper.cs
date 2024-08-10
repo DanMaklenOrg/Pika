@@ -22,27 +22,24 @@ public static class DbModelMapper
     {
         return new ProjectDbModel
         {
+            Id = project.Id,
             Name = project.Name,
             Objectives = project.Objectives.ConvertAll(ToDbModel),
         };
     }
 
-    private static ObjectiveDbModel ToDbModel(Objective project)
+    private static ObjectiveDbModel ToDbModel(Objective objective)
     {
         return new ObjectiveDbModel
         {
-            Name = project.Name,
-            Requirements = project.Requirements.ConvertAll(ToDbModel),
-        };
-    }
-
-    private static ObjectiveRequirementDbModel ToDbModel(ObjectiveRequirement project)
-    {
-        return new ObjectiveRequirementDbModel
-        {
-            Class = project.Class,
-            Stat = project.Stat,
-            Min = project.Min,
+            Id = objective.Id,
+            Name = objective.Name,
+            Requirements = objective.Requirements.ConvertAll(r => new ObjectiveDbModel.RequirementDbModel()
+            {
+                Class = r.Class,
+                Stat = r.Stat,
+                Min = r.Min,
+            }),
         };
     }
 
@@ -51,6 +48,7 @@ public static class DbModelMapper
         return new ClassDbModel
         {
             Id = model.Id,
+            Name = model.Name,
             Stats = model.Stats.ConvertAll(ToDbModel),
         };
     }
@@ -93,61 +91,48 @@ public static class DbModelMapper
 
     private static Project FromDbModel(ProjectDbModel model)
     {
-        return new Project
+        return new Project(model.Id, model.Name)
         {
-            Name = model.Name,
             Objectives = model.Objectives.ConvertAll(FromDbModel),
         };
     }
 
     private static Objective FromDbModel(ObjectiveDbModel model)
     {
-        return new Objective
+        return new Objective(model.Id, model.Name)
         {
-            Name = model.Name,
-            Requirements = model.Requirements.ConvertAll(FromDbModel),
-        };
-    }
-
-    private static ObjectiveRequirement FromDbModel(ObjectiveRequirementDbModel model)
-    {
-        return new ObjectiveRequirement
-        {
-            Class = model.Class,
-            Stat = model.Stat,
-            Min = model.Min,
+            Requirements = model.Requirements.ConvertAll(r => new Objective.Requirement
+            {
+                Class = r.Class,
+                Stat = r.Stat,
+                Min = r.Min,
+            }),
         };
     }
 
     private static Class FromDbModel(ClassDbModel model)
     {
-        return new Class
+        return new Class(model.Id, model.Name)
         {
-            Id = model.Id,
             Stats = model.Stats.ConvertAll(FromDbModel),
         };
     }
+
     private static Entity FromDbModel(EntityDbModel model)
     {
-        return new Entity
+        return new Entity(model.Id, model.Name, model.Class)
         {
-            Id = model.Id,
-            Name = model.Name,
-            Class = model.Class,
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    private static Stat FromDbModel(StatDbModel stat)
+    private static Stat FromDbModel(StatDbModel model)
     {
-        return new Stat
+        return new Stat(model.Id, model.Name, Enum.Parse<Stat.StatType>(model.Type))
         {
-            Id = stat.Id,
-            Name = stat.Name,
-            Type = Enum.Parse<StatType>(stat.Type),
-            Min = stat.Min,
-            Max = stat.Max,
-            EnumValues = stat.EnumValues,
+            Min = model.Min,
+            Max = model.Max,
+            EnumValues = model.EnumValues,
         };
     }
 

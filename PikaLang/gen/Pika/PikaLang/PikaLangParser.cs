@@ -301,7 +301,9 @@ public partial class PikaLangParser : Parser {
 
 	public partial class ProjectDeclContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PROJECT() { return GetToken(PikaLangParser.PROJECT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
+			return GetRuleContext<NamedIdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ObjectiveDeclContext[] objectiveDecl() {
@@ -334,7 +336,7 @@ public partial class PikaLangParser : Parser {
 			State = 39;
 			Match(PROJECT);
 			State = 40;
-			Match(STRING_LITERAL);
+			namedIdentifier();
 			State = 41;
 			Match(OPEN_BRACES);
 			State = 43;
@@ -368,7 +370,9 @@ public partial class PikaLangParser : Parser {
 
 	public partial class ObjectiveDeclContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OBJECTIVE() { return GetToken(PikaLangParser.OBJECTIVE, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
+			return GetRuleContext<NamedIdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public RequireDeclContext[] requireDecl() {
@@ -401,7 +405,7 @@ public partial class PikaLangParser : Parser {
 			State = 49;
 			Match(OBJECTIVE);
 			State = 50;
-			Match(STRING_LITERAL);
+			namedIdentifier();
 			State = 51;
 			Match(OPEN_BRACES);
 			State = 53;
@@ -478,7 +482,9 @@ public partial class PikaLangParser : Parser {
 
 	public partial class ClassDeclContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLASS() { return GetToken(PikaLangParser.CLASS, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
+			return GetRuleContext<NamedIdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public StatDeclContext[] statDecl() {
@@ -511,7 +517,7 @@ public partial class PikaLangParser : Parser {
 			State = 63;
 			Match(CLASS);
 			State = 64;
-			Match(IDENTIFIER);
+			namedIdentifier();
 			State = 65;
 			Match(OPEN_BRACES);
 			State = 67;
@@ -776,18 +782,46 @@ public partial class PikaLangParser : Parser {
 	}
 
 	public partial class NamedIdentifierContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode WITH_NAME() { return GetToken(PikaLangParser.WITH_NAME, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
 		public NamedIdentifierContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_namedIdentifier; } }
+	 
+		public NamedIdentifierContext() { }
+		public virtual void CopyFrom(NamedIdentifierContext context) {
+			base.CopyFrom(context);
+		}
+	}
+	public partial class IdWithNameContext : NamedIdentifierContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode WITH_NAME() { return GetToken(PikaLangParser.WITH_NAME, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
+		public IdWithNameContext(NamedIdentifierContext context) { CopyFrom(context); }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitNamedIdentifier(this);
+			if (typedVisitor != null) return typedVisitor.VisitIdWithName(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class IdOnlyContext : NamedIdentifierContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
+		public IdOnlyContext(NamedIdentifierContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIdOnly(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class NameOnlyContext : NamedIdentifierContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
+		public NameOnlyContext(NamedIdentifierContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNameOnly(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
@@ -797,10 +831,11 @@ public partial class PikaLangParser : Parser {
 		NamedIdentifierContext _localctx = new NamedIdentifierContext(Context, State);
 		EnterRule(_localctx, 20, RULE_namedIdentifier);
 		try {
-			State = 109;
+			State = 110;
 			ErrorHandler.Sync(this);
-			switch (TokenStream.LA(1)) {
-			case IDENTIFIER:
+			switch ( Interpreter.AdaptivePredict(TokenStream,8,Context) ) {
+			case 1:
+				_localctx = new IdWithNameContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 105;
@@ -811,15 +846,22 @@ public partial class PikaLangParser : Parser {
 				Match(STRING_LITERAL);
 				}
 				break;
-			case STRING_LITERAL:
+			case 2:
+				_localctx = new NameOnlyContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 108;
 				Match(STRING_LITERAL);
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
+			case 3:
+				_localctx = new IdOnlyContext(_localctx);
+				EnterOuterAlt(_localctx, 3);
+				{
+				State = 109;
+				Match(IDENTIFIER);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -834,37 +876,38 @@ public partial class PikaLangParser : Parser {
 	}
 
 	private static int[] _serializedATN = {
-		4,1,23,112,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+		4,1,23,113,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
 		7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,4,0,25,8,0,11,0,12,0,26,1,0,1,0,
 		1,1,1,1,1,1,1,1,1,2,1,2,1,2,3,2,38,8,2,1,3,1,3,1,3,1,3,4,3,44,8,3,11,3,
 		12,3,45,1,3,1,3,1,4,1,4,1,4,1,4,4,4,54,8,4,11,4,12,4,55,1,4,1,4,1,5,1,
 		5,1,5,1,5,1,6,1,6,1,6,1,6,4,6,68,8,6,11,6,12,6,69,1,6,1,6,1,7,1,7,1,7,
 		1,7,1,7,1,7,1,7,1,7,4,7,82,8,7,11,7,12,7,83,1,7,1,7,3,7,88,8,7,1,8,1,8,
 		1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,3,9,104,8,9,1,10,1,10,
-		1,10,1,10,3,10,110,8,10,1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,0,0,110,
-		0,22,1,0,0,0,2,30,1,0,0,0,4,37,1,0,0,0,6,39,1,0,0,0,8,49,1,0,0,0,10,59,
-		1,0,0,0,12,63,1,0,0,0,14,87,1,0,0,0,16,89,1,0,0,0,18,103,1,0,0,0,20,109,
-		1,0,0,0,22,24,3,2,1,0,23,25,3,4,2,0,24,23,1,0,0,0,25,26,1,0,0,0,26,24,
-		1,0,0,0,26,27,1,0,0,0,27,28,1,0,0,0,28,29,5,0,0,1,29,1,1,0,0,0,30,31,5,
-		4,0,0,31,32,3,20,10,0,32,33,5,14,0,0,33,3,1,0,0,0,34,38,3,6,3,0,35,38,
-		3,12,6,0,36,38,3,14,7,0,37,34,1,0,0,0,37,35,1,0,0,0,37,36,1,0,0,0,38,5,
-		1,0,0,0,39,40,5,5,0,0,40,41,5,12,0,0,41,43,5,15,0,0,42,44,3,8,4,0,43,42,
-		1,0,0,0,44,45,1,0,0,0,45,43,1,0,0,0,45,46,1,0,0,0,46,47,1,0,0,0,47,48,
-		5,16,0,0,48,7,1,0,0,0,49,50,5,6,0,0,50,51,5,12,0,0,51,53,5,15,0,0,52,54,
-		3,10,5,0,53,52,1,0,0,0,54,55,1,0,0,0,55,53,1,0,0,0,55,56,1,0,0,0,56,57,
-		1,0,0,0,57,58,5,16,0,0,58,9,1,0,0,0,59,60,5,7,0,0,60,61,5,23,0,0,61,62,
-		5,14,0,0,62,11,1,0,0,0,63,64,5,8,0,0,64,65,5,23,0,0,65,67,5,15,0,0,66,
-		68,3,16,8,0,67,66,1,0,0,0,68,69,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,70,
-		71,1,0,0,0,71,72,5,16,0,0,72,13,1,0,0,0,73,74,5,23,0,0,74,75,3,20,10,0,
-		75,76,5,14,0,0,76,88,1,0,0,0,77,78,5,23,0,0,78,79,3,20,10,0,79,81,5,15,
-		0,0,80,82,3,16,8,0,81,80,1,0,0,0,82,83,1,0,0,0,83,81,1,0,0,0,83,84,1,0,
-		0,0,84,85,1,0,0,0,85,86,5,16,0,0,86,88,1,0,0,0,87,73,1,0,0,0,87,77,1,0,
-		0,0,88,15,1,0,0,0,89,90,5,9,0,0,90,91,5,17,0,0,91,92,3,18,9,0,92,93,5,
-		18,0,0,93,94,3,20,10,0,94,95,5,14,0,0,95,17,1,0,0,0,96,104,5,10,0,0,97,
-		98,5,11,0,0,98,99,5,19,0,0,99,100,5,13,0,0,100,101,5,21,0,0,101,102,5,
-		13,0,0,102,104,5,20,0,0,103,96,1,0,0,0,103,97,1,0,0,0,104,19,1,0,0,0,105,
-		106,5,23,0,0,106,107,5,22,0,0,107,110,5,12,0,0,108,110,5,12,0,0,109,105,
-		1,0,0,0,109,108,1,0,0,0,110,21,1,0,0,0,9,26,37,45,55,69,83,87,103,109
+		1,10,1,10,1,10,3,10,111,8,10,1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,0,
+		0,112,0,22,1,0,0,0,2,30,1,0,0,0,4,37,1,0,0,0,6,39,1,0,0,0,8,49,1,0,0,0,
+		10,59,1,0,0,0,12,63,1,0,0,0,14,87,1,0,0,0,16,89,1,0,0,0,18,103,1,0,0,0,
+		20,110,1,0,0,0,22,24,3,2,1,0,23,25,3,4,2,0,24,23,1,0,0,0,25,26,1,0,0,0,
+		26,24,1,0,0,0,26,27,1,0,0,0,27,28,1,0,0,0,28,29,5,0,0,1,29,1,1,0,0,0,30,
+		31,5,4,0,0,31,32,3,20,10,0,32,33,5,14,0,0,33,3,1,0,0,0,34,38,3,6,3,0,35,
+		38,3,12,6,0,36,38,3,14,7,0,37,34,1,0,0,0,37,35,1,0,0,0,37,36,1,0,0,0,38,
+		5,1,0,0,0,39,40,5,5,0,0,40,41,3,20,10,0,41,43,5,15,0,0,42,44,3,8,4,0,43,
+		42,1,0,0,0,44,45,1,0,0,0,45,43,1,0,0,0,45,46,1,0,0,0,46,47,1,0,0,0,47,
+		48,5,16,0,0,48,7,1,0,0,0,49,50,5,6,0,0,50,51,3,20,10,0,51,53,5,15,0,0,
+		52,54,3,10,5,0,53,52,1,0,0,0,54,55,1,0,0,0,55,53,1,0,0,0,55,56,1,0,0,0,
+		56,57,1,0,0,0,57,58,5,16,0,0,58,9,1,0,0,0,59,60,5,7,0,0,60,61,5,23,0,0,
+		61,62,5,14,0,0,62,11,1,0,0,0,63,64,5,8,0,0,64,65,3,20,10,0,65,67,5,15,
+		0,0,66,68,3,16,8,0,67,66,1,0,0,0,68,69,1,0,0,0,69,67,1,0,0,0,69,70,1,0,
+		0,0,70,71,1,0,0,0,71,72,5,16,0,0,72,13,1,0,0,0,73,74,5,23,0,0,74,75,3,
+		20,10,0,75,76,5,14,0,0,76,88,1,0,0,0,77,78,5,23,0,0,78,79,3,20,10,0,79,
+		81,5,15,0,0,80,82,3,16,8,0,81,80,1,0,0,0,82,83,1,0,0,0,83,81,1,0,0,0,83,
+		84,1,0,0,0,84,85,1,0,0,0,85,86,5,16,0,0,86,88,1,0,0,0,87,73,1,0,0,0,87,
+		77,1,0,0,0,88,15,1,0,0,0,89,90,5,9,0,0,90,91,5,17,0,0,91,92,3,18,9,0,92,
+		93,5,18,0,0,93,94,3,20,10,0,94,95,5,14,0,0,95,17,1,0,0,0,96,104,5,10,0,
+		0,97,98,5,11,0,0,98,99,5,19,0,0,99,100,5,13,0,0,100,101,5,21,0,0,101,102,
+		5,13,0,0,102,104,5,20,0,0,103,96,1,0,0,0,103,97,1,0,0,0,104,19,1,0,0,0,
+		105,106,5,23,0,0,106,107,5,22,0,0,107,111,5,12,0,0,108,111,5,12,0,0,109,
+		111,5,23,0,0,110,105,1,0,0,0,110,108,1,0,0,0,110,109,1,0,0,0,111,21,1,
+		0,0,0,9,26,37,45,55,69,83,87,103,110
 	};
 
 	public static readonly ATN _ATN =

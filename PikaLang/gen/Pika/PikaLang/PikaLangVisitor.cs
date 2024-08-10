@@ -116,10 +116,25 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitIntRangeStatType([NotNull] PikaLangParser.IntRangeStatTypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.namedIdentifier"/>.
+	/// Visit a parse tree produced by the <c>idWithName</c>
+	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitNamedIdentifier([NotNull] PikaLangParser.NamedIdentifierContext context);
+	Result VisitIdWithName([NotNull] PikaLangParser.IdWithNameContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>nameOnly</c>
+	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNameOnly([NotNull] PikaLangParser.NameOnlyContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>idOnly</c>
+	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIdOnly([NotNull] PikaLangParser.IdOnlyContext context);
 }
 } // namespace Pika.PikaLang

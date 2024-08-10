@@ -28,6 +28,9 @@ public class DomainDbModel : BaseDbModel
 
 public class ProjectDbModel
 {
+    [JsonPropertyName("id")]
+    public required string Id { get; init; }
+
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
@@ -37,23 +40,27 @@ public class ProjectDbModel
 
 public class ObjectiveDbModel
 {
+    [JsonPropertyName("id")]
+    public required string Id { get; init; }
+
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+
     [JsonPropertyName("requirements")]
-    public required List<ObjectiveRequirementDbModel> Requirements { get; init; }
-}
+    public required List<RequirementDbModel> Requirements { get; init; }
 
-public class ObjectiveRequirementDbModel
-{
-    [JsonPropertyName("class")]
-    public required string Class { get; init; }
+    public class RequirementDbModel
+    {
+        [JsonPropertyName("class")]
+        public required string Class { get; init; }
 
-    [JsonPropertyName("stat")]
-    public required string Stat { get; init; }
+        [JsonPropertyName("stat")]
+        public required string Stat { get; init; }
 
-    [JsonPropertyName("min")]
-    public required int Min { get; init; }
+        [JsonPropertyName("min")]
+        public required int Min { get; init; }
+    }
 }
 
 public class EntityDbModel
@@ -96,6 +103,9 @@ public class ClassDbModel
 {
     [JsonPropertyName("id")]
     public required string Id { get; init; }
+
+    [JsonPropertyName("name")]
+    public required string Name { get; init; }
 
     [JsonPropertyName("stats")]
     public required List<StatDbModel> Stats { get; init; }

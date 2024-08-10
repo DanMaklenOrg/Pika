@@ -33,8 +33,8 @@ public class PikaParser
 
     private Project ParseProject(PikaLangParser.ProjectDeclarationContext context)
     {
-        var name = ParseStringLiteral(context.projectDecl().STRING_LITERAL());
-        return new Project(name)
+        (ResourceId id, string name) = ParseNamedIdentifier(context.projectDecl().namedIdentifier());
+        return new Project(id, name)
         {
             Objectives = context.projectDecl().objectiveDecl().Select(ParseObjective).ToList(),
         };
@@ -42,23 +42,21 @@ public class PikaParser
 
     private Objective ParseObjective(PikaLangParser.ObjectiveDeclContext context)
     {
-        var name = ParseStringLiteral(context.STRING_LITERAL());
-        return new Objective(name)
+        (ResourceId id, string name) = ParseNamedIdentifier(context.namedIdentifier());
+        return new Objective(id, name)
         {
-            Requirements = context.requireDecl().Select(ParseObjectiveRequirement).ToList(),
+            Requirements = context.requireDecl().Select(r =>
+            {
+                ResourceId classId = r.IDENTIFIER().GetText();
+                return new Objective.Requirement(classId);
+            }).ToList(),
         };
-    }
-
-    private ObjectiveRequirement ParseObjectiveRequirement(PikaLangParser.RequireDeclContext context)
-    {
-        ResourceId classId = context.IDENTIFIER().GetText();
-        return new ObjectiveRequirement(classId);
     }
 
     private Class ParseClass(PikaLangParser.ClassDeclarationContext context)
     {
-        ResourceId id = context.classDecl().IDENTIFIER().GetText();
-        return new Class(id)
+        (ResourceId id, string name) = ParseNamedIdentifier(context.classDecl().namedIdentifier());
+        return new Class(id, name)
         {
             Stats = context.classDecl().statDecl().Select(ParseStat).ToList(),
         };
@@ -80,8 +78,8 @@ public class PikaParser
         (ResourceId id, string name) = ParseNamedIdentifier(context.namedIdentifier());
         return context.statType() switch
         {
-            PikaLangParser.BoolStatTypeContext => new Stat(id, name, StatType.Boolean),
-            PikaLangParser.IntRangeStatTypeContext intRangeContext => new Stat(id, name, StatType.IntegerRange)
+            PikaLangParser.BoolStatTypeContext => new Stat(id, name, Stat.StatType.Boolean),
+            PikaLangParser.IntRangeStatTypeContext intRangeContext => new Stat(id, name, Stat.StatType.IntegerRange)
             {
                 Min = int.Parse(intRangeContext.INTEGER_LITERAL(0).GetText()),
                 Max = int.Parse(intRangeContext.INTEGER_LITERAL(1).GetText()),
@@ -92,11 +90,22 @@ public class PikaParser
 
     private (ResourceId id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
     {
-        var name = ParseStringLiteral(context.STRING_LITERAL());
-        var idNode = context.IDENTIFIER();
-        return idNode is null
-            ? (ResourceId.InduceFromName(name), name)
-            : (idNode.GetText(), name);
+        return context switch
+        {
+            PikaLangParser.IdWithNameContext ctx => (
+                ctx.IDENTIFIER().GetText(),
+                ParseStringLiteral(ctx.STRING_LITERAL())
+            ),
+            PikaLangParser.NameOnlyContext ctx => (
+                ResourceId.InduceFromName(ParseStringLiteral(ctx.STRING_LITERAL())),
+                ParseStringLiteral(ctx.STRING_LITERAL())
+            ),
+            PikaLangParser.IdOnlyContext ctx => (
+                ctx.IDENTIFIER().GetText(),
+                ctx.IDENTIFIER().GetText()
+            ),
+            _ => throw new UnreachableException(),
+        };
     }
 
     private string ParseStringLiteral(IParseTree stringLiteral)
