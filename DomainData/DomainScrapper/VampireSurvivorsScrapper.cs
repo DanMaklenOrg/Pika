@@ -115,7 +115,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
     private async Task<List<Entity>> ScrapeSecrets()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Secret");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]");
+        var nodes = doc.DocumentNode.SelectNodes("//tr/td[3]");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
