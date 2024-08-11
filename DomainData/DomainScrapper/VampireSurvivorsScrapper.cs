@@ -77,7 +77,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Weapons");
         var nodes =
-            doc.DocumentNode.SelectNodes("//table[preceding-sibling::h3[span/.='Base Weapons'] and following-sibling::h3[span/.='Gifts']]/tbody/tr/td/..");
+            doc.DocumentNode.SelectNodes("(//tbody)[position()>=2 and position() <= 4]/tr/td[2]");
         HashSet<string> blacklist = ["Anima of Mortaccio", "Profusione D'Amore", "Yatta Daikarin"];
         return nodes.Select(n =>
         {
@@ -103,7 +103,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
     private async Task<List<Entity>> ScrapeArcanas()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]");
+        var nodes = doc.DocumentNode.SelectNodes("//tr/td[3]");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
