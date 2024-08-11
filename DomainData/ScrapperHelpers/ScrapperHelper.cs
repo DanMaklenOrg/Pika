@@ -5,7 +5,6 @@ namespace Pika.DomainData.ScrapperHelpers;
 
 public static class ScrapperHelper
 {
-
     public static ResourceId InduceIdFromName(string name, string? idPrefix = null)
     {
         var id = ResourceId.InduceFromName(name);
@@ -15,6 +14,6 @@ public static class ScrapperHelper
 
     public static string CleanName(string name)
     {
-        return WebUtility.HtmlDecode(name).Trim(' ', '\n', '\t', '\u2014');
+        return WebUtility.HtmlDecode(name).Trim(' ', '\n', '\t', '\u00A0', '\u2014');
     }
 }
