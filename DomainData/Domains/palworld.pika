@@ -17,5 +17,5 @@ class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class pal {
-    stat<bool> captured ~> 'Captured';
+    stat<int(0, 12)> captured ~> 'Captured';
 }
