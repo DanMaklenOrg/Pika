@@ -103,7 +103,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
     private async Task<List<Entity>> ScrapeArcanas()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[3]");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td[3]");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);

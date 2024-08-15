@@ -17,5 +17,10 @@ class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class pal {
-    stat<bool> captured ~> 'Captured';
+    stat<int(0, 12)> captured ~> 'Captured';
 }
+
+// Entities
+pal pal_blazamut_ryu ~> '096B: Blazamut Ryu';
+pal pal_bellanoir ~> '112: Bellanoir';
+pal pal_bellanoir_libero ~> '112B: Bellanoir Libero';

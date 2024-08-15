@@ -14,6 +14,6 @@ public static class ScrapperHelper
 
     public static string CleanName(string name)
     {
-        return WebUtility.HtmlDecode(name).Trim();
+        return WebUtility.HtmlDecode(name).Trim(' ', '\n', '\t', '\u00A0', '\u2014');
     }
 }
