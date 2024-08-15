@@ -1,5 +1,7 @@
+using System.Diagnostics.CodeAnalysis;
 using Pika.Model;
 using Pika.Service.Dto;
+using Attribute = Pika.Model.Attribute;
 
 namespace Pika.Service;
 
@@ -32,6 +34,7 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
+            Attributes = model.Attributes.ConvertAll(ToDto),
             Stats = model.Stats.ConvertAll(ToDto),
         };
     }
@@ -67,8 +70,18 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
+            Attributes = model.Attributes.ConvertAll(ToDto),
             Stats = model.Stats.ConvertAll(ToDto),
             Class = model.Class,
+        };
+    }
+
+    private static AttributeDto ToDto(Attribute model)
+    {
+        return new AttributeDto
+        {
+            Id = model.Id,
+            Value = model.Value,
         };
     }
 
@@ -85,9 +98,20 @@ public static class DtoMapper
                 Stat.StatType.OrderedEnum => StatDto.StatTypeEnumDto.OrderedEnum,
                 _ => throw new ArgumentOutOfRangeException()
             },
-            Min = model.Min,
-            Max = model.Max,
+            Min = ToDto(model.Min),
+            Max = ToDto(model.Max),
             EnumValues = model.EnumValues,
+        };
+    }
+
+    [return: NotNullIfNotNull(nameof(intOrAttribute))]
+    private static StatDto.IntOrAttributeDto? ToDto(Stat.IntOrAttribute? intOrAttribute)
+    {
+        if (!intOrAttribute.HasValue) return null;
+        return new StatDto.IntOrAttributeDto
+        {
+            ConstValue = intOrAttribute.Value.ConstValue,
+            AttributeId = intOrAttribute.Value.AttributeId
         };
     }
 

@@ -40,6 +40,9 @@ public readonly struct ClassDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
+    [JsonPropertyName("attributes")]
+    public List<AttributeDto> Attributes { get; init; }
+
     [JsonPropertyName("stats")]
     public List<StatDto> Stats { get; init; }
 }
@@ -76,11 +79,23 @@ public readonly struct EntityDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
+    [JsonPropertyName("attributes")]
+    public List<AttributeDto> Attributes { get; init; }
+
     [JsonPropertyName("stats")]
     public List<StatDto> Stats { get; init; }
 
     [JsonPropertyName("class")]
     public string Class { get; init; }
+}
+
+public readonly struct AttributeDto
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; }
+
+    [JsonPropertyName("value")]
+    public int Value { get; init; }
 }
 
 public readonly struct StatDto
@@ -95,13 +110,22 @@ public readonly struct StatDto
     public StatTypeEnumDto Type { get; init; }
 
     [JsonPropertyName("min")]
-    public int? Min { get; init; }
+    public IntOrAttributeDto? Min { get; init; }
 
     [JsonPropertyName("max")]
-    public int? Max { get; init; }
+    public IntOrAttributeDto? Max { get; init; }
 
     [JsonPropertyName("enum_values")]
     public List<string>? EnumValues { get; init; }
+
+    public readonly struct IntOrAttributeDto
+    {
+        [JsonPropertyName("const_value")]
+        public int? ConstValue { get; init; }
+
+        [JsonPropertyName("attribute_id")]
+        public string? AttributeId { get; init; }
+    }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum StatTypeEnumDto

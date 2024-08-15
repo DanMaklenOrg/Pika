@@ -1,6 +1,8 @@
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Pika.DataLayer.Model;
 using Pika.Model;
+using Attribute = Pika.Model.Attribute;
 
 namespace Pika.DataLayer.Mapper;
 
@@ -49,6 +51,7 @@ public static class DbModelMapper
         {
             Id = model.Id,
             Name = model.Name,
+            Attributes = model.Attributes.ConvertAll(ToDbModel),
             Stats = model.Stats.ConvertAll(ToDbModel),
         };
     }
@@ -60,6 +63,7 @@ public static class DbModelMapper
             Id = entity.Id,
             Name = entity.Name,
             Class = entity.Class,
+            Attributes = entity.Attributes.ConvertAll(ToDbModel),
             Stats = entity.Stats.ConvertAll(ToDbModel),
         };
     }
@@ -71,11 +75,32 @@ public static class DbModelMapper
             Id = stat.Id,
             Name = stat.Name,
             Type = stat.Type.ToString(),
-            Min = stat.Min,
-            Max = stat.Max,
+            Min = ToDbModel(stat.Min),
+            Max = ToDbModel(stat.Max),
             EnumValues = stat.EnumValues,
         };
     }
+
+    private static AttributeDbModel ToDbModel(Attribute attribute)
+    {
+        return new AttributeDbModel
+        {
+            Id = attribute.Id,
+            Value = attribute.Value,
+        };
+    }
+
+    [return: NotNullIfNotNull("intOrAttribute")]
+    private static StatDbModel.IntOrAttributeDbModel? ToDbModel(Stat.IntOrAttribute? intOrAttribute)
+    {
+        if (!intOrAttribute.HasValue) return null;
+        return new StatDbModel.IntOrAttributeDbModel
+        {
+            ConstValue = intOrAttribute.Value.ConstValue,
+            AttributeId = intOrAttribute.Value.AttributeId,
+        };
+    }
+
 
     [return: NotNullIfNotNull("model")]
     public static Domain? FromDbModel(DomainDbModel? model)
@@ -114,6 +139,7 @@ public static class DbModelMapper
     {
         return new Class(model.Id, model.Name)
         {
+            Attributes = model.Attributes.ConvertAll(FromDbModel),
             Stats = model.Stats.ConvertAll(FromDbModel),
         };
     }
@@ -122,18 +148,33 @@ public static class DbModelMapper
     {
         return new Entity(model.Id, model.Name, model.Class)
         {
+            Attributes = model.Attributes.ConvertAll(FromDbModel),
             Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
         };
+    }
+
+    private static Attribute FromDbModel(AttributeDbModel model)
+    {
+        return new Attribute(model.Id, model.Value);
     }
 
     private static Stat FromDbModel(StatDbModel model)
     {
         return new Stat(model.Id, model.Name, Enum.Parse<Stat.StatType>(model.Type))
         {
-            Min = model.Min,
-            Max = model.Max,
+            Min = FromDbModel(model.Min),
+            Max = FromDbModel(model.Max),
             EnumValues = model.EnumValues,
         };
+    }
+
+    [return: NotNullIfNotNull("model")]
+    private static Stat.IntOrAttribute? FromDbModel(StatDbModel.IntOrAttributeDbModel? model)
+    {
+        if (model is null) return null;
+        if (model.ConstValue is not null) return new Stat.IntOrAttribute { ConstValue = model.ConstValue };
+        if (model.AttributeId is not null) return new Stat.IntOrAttribute { AttributeId = model.AttributeId };
+        throw new UnreachableException();
     }
 
     public static UserStatsDbModel ToDbModel(UserStats userStats)

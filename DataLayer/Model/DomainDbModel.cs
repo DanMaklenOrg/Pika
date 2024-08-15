@@ -74,6 +74,9 @@ public class EntityDbModel
     [JsonPropertyName("class")]
     public required string Class { get; init; }
 
+    [JsonPropertyName("attributes")]
+    public required List<AttributeDbModel> Attributes { get; init; }
+
     [JsonPropertyName("stats")]
     public List<StatDbModel>? Stats { get; init; }
 }
@@ -90,13 +93,22 @@ public class StatDbModel
     public required string Type { get; init; }
 
     [JsonPropertyName("min")]
-    public int? Min { get; init; }
+    public IntOrAttributeDbModel? Min { get; init; }
 
     [JsonPropertyName("max")]
-    public int? Max { get; init; }
+    public IntOrAttributeDbModel? Max { get; init; }
 
     [JsonPropertyName("enum_values")]
     public List<string>? EnumValues { get; init; }
+
+    public class IntOrAttributeDbModel
+    {
+        [JsonPropertyName("const_value")]
+        public int? ConstValue { get; init; }
+
+        [JsonPropertyName("attribute_id")]
+        public string? AttributeId { get; init; }
+    }
 }
 
 public class ClassDbModel
@@ -107,6 +119,18 @@ public class ClassDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("attributes")]
+    public required List<AttributeDbModel> Attributes { get; init; }
+
     [JsonPropertyName("stats")]
     public required List<StatDbModel> Stats { get; init; }
+}
+
+public class AttributeDbModel
+{
+    [JsonPropertyName("id")]
+    public required string Id { get; init; }
+
+    [JsonPropertyName("val")]
+    public required int Value { get; init; }
 }

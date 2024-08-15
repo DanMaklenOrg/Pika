@@ -24,6 +24,14 @@ project 'Fulfill all prophecies' {
         require prophecy; //.prophecy_fulfilled == true;
     }
 }
+project 'Max out Mirror of Night' {
+    objective 'Unlock all Mirror of Night abilities' {
+        require mirror_ability; //.unlocked == true;
+    }
+    objective 'Rank all Mirror of Night Abilities to max rank' {
+        require mirror_ability; //.rank == max_rank;
+    }
+}
 
 // Classes
 class achievement {
@@ -38,6 +46,11 @@ class prophecy {
 }
 class infernal_arm {
     stat<bool> unlocked ~> 'Unlocked';
+}
+class mirror_ability {
+    attribute max_rank = 5;
+    stat<bool> unlocked ~> 'Unlocked';
+    stat<int(0, max_rank)> ran ~> 'Rank';
 }
 
 // Entities
