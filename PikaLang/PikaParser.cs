@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using Pika.Model;
+using Attribute = Pika.Model.Attribute;
 
 namespace Pika.PikaLang;
 
@@ -58,6 +59,7 @@ public class PikaParser
         (ResourceId id, string name) = ParseNamedIdentifier(context.classDecl().namedIdentifier());
         return new Class(id, name)
         {
+            Attributes = context.classDecl().attrDecl().Select(ParseAttribute).ToList(),
             Stats = context.classDecl().statDecl().Select(ParseStat).ToList(),
         };
     }
@@ -68,9 +70,17 @@ public class PikaParser
         ResourceId classId = context.entityDecl().IDENTIFIER().GetText();
         var entity = new Entity(id, name, classId)
         {
+            Attributes = context.entityDecl().attrDecl().Select(ParseAttribute).ToList(),
             Stats = context.entityDecl().statDecl().Select(ParseStat).ToList(),
         };
         return entity;
+    }
+
+    private Attribute ParseAttribute(PikaLangParser.AttrDeclContext context)
+    {
+        ResourceId id = context.IDENTIFIER().GetText();
+        var val = ParseIntLiteral(context.INTEGER_LITERAL());
+        return new Attribute(id, val);
     }
 
     private Stat ParseStat(PikaLangParser.StatDeclContext context)
@@ -81,11 +91,18 @@ public class PikaParser
             PikaLangParser.BoolStatTypeContext => new Stat(id, name, Stat.StatType.Boolean),
             PikaLangParser.IntRangeStatTypeContext intRangeContext => new Stat(id, name, Stat.StatType.IntegerRange)
             {
-                Min = int.Parse(intRangeContext.INTEGER_LITERAL(0).GetText()),
-                Max = int.Parse(intRangeContext.INTEGER_LITERAL(1).GetText()),
+                Min = ParseIntOrAttribute(intRangeContext.intOrAttribute()[0]),
+                Max = ParseIntOrAttribute(intRangeContext.intOrAttribute()[1]),
             },
             _ => throw new UnreachableException(),
         };
+    }
+
+    private Stat.IntOrAttribute ParseIntOrAttribute(PikaLangParser.IntOrAttributeContext context)
+    {
+        if (context.INTEGER_LITERAL() is not null) return ParseIntLiteral(context.INTEGER_LITERAL());
+        if (context.IDENTIFIER() is not null) return (ResourceId)context.IDENTIFIER().GetText();
+        throw new UnreachableException();
     }
 
     private (ResourceId id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
@@ -114,5 +131,10 @@ public class PikaParser
         str = str.Trim('\'');
         str = str.Replace("\\'", "'");
         return str;
+    }
+
+    private int ParseIntLiteral(IParseTree intLiteral)
+    {
+        return int.Parse(intLiteral.GetText());
     }
 }

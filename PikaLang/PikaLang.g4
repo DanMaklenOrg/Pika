@@ -14,18 +14,21 @@ projectDecl: PROJECT namedIdentifier OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
 objectiveDecl: OBJECTIVE namedIdentifier OPEN_BRACES requireDecl+ CLOSE_BRACES;
 requireDecl: REQUIRE IDENTIFIER SEMICOLON;
 
-classDecl: CLASS namedIdentifier OPEN_BRACES statDecl+ CLOSE_BRACES;
+classDecl: CLASS namedIdentifier OPEN_BRACES attrDecl* statDecl+ CLOSE_BRACES;
 
 entityDecl
     : IDENTIFIER namedIdentifier SEMICOLON
-    | IDENTIFIER namedIdentifier OPEN_BRACES statDecl+ CLOSE_BRACES
+    | IDENTIFIER namedIdentifier OPEN_BRACES attrDecl* statDecl* CLOSE_BRACES
     ;
 
 statDecl: STAT OPEN_ANGULAR_BRACES statType CLOSE_ANGULAR_BRACES namedIdentifier SEMICOLON;
 statType
-    : BOOL                                                                          #boolStatType
-    | INT OPEN_PARENTHESES INTEGER_LITERAL COMMA INTEGER_LITERAL CLOSE_PARENTHESES  #intRangeStatType
+    : BOOL                                                              #boolStatType
+    | INT OPEN_PARENTHESES intOrAttribute COMMA intOrAttribute CLOSE_PARENTHESES    #intRangeStatType
     ;
+intOrAttribute: INTEGER_LITERAL | IDENTIFIER;
+
+attrDecl: ATTRIBUTE IDENTIFIER EQUALS INTEGER_LITERAL SEMICOLON;
 
 namedIdentifier
     : IDENTIFIER WITH_NAME STRING_LITERAL   #idWithName
@@ -47,10 +50,7 @@ CLASS: 'class';
 STAT: 'stat';
 BOOL: 'bool';
 INT: 'int';
-
-// Literals
-STRING_LITERAL: '\'' (~[\n'] | '\\\'')* '\'';
-INTEGER_LITERAL: [0-9]+;
+ATTRIBUTE: 'attribute';
 
 // Operators & Punctuations
 SEMICOLON: ';';
@@ -62,6 +62,11 @@ OPEN_PARENTHESES: '(';
 CLOSE_PARENTHESES: ')';
 COMMA: ',';
 WITH_NAME: '~>';
+EQUALS: '=';
+
+// Literals
+STRING_LITERAL: '\'' (~[\n'] | '\\\'')* '\'';
+INTEGER_LITERAL: [0-9]+;
 
 // Identifiers
 IDENTIFIER: [0-9a-z][0-9a-z_]*;

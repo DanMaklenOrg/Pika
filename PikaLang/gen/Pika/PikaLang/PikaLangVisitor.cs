@@ -116,6 +116,18 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitIntRangeStatType([NotNull] PikaLangParser.IntRangeStatTypeContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.intOrAttribute"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIntOrAttribute([NotNull] PikaLangParser.IntOrAttributeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.attrDecl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAttrDecl([NotNull] PikaLangParser.AttrDeclContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>idWithName</c>
 	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.
 	/// </summary>
