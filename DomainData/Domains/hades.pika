@@ -32,6 +32,11 @@ project 'Max out Mirror of Night' {
         require mirror_ability; //.rank == max_rank;
     }
 }
+project 'Fully unlock Codex' {
+    objective 'Fully unlock all codex entries' {
+        require codex_entry; //.unlocked == true;
+    }
+}
 
 // Classes
 class achievement {
@@ -51,6 +56,9 @@ class mirror_ability {
     attribute max_rank = 5;
     stat<bool> unlocked ~> 'Unlocked';
     stat<int(0, max_rank)> ran ~> 'Rank';
+}
+class codex_entry {
+    stat<bool> unlocked ~> 'Fully Unlocked';
 }
 
 // Entities

@@ -17,6 +17,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         domain.Entities.AddRange(await ScrapeKeepsakes());
         domain.Entities.AddRange(await ScrapeProphecies());
         domain.Entities.AddRange(await ScrapeMirrorAbilities());
+        domain.Entities.AddRange(await ScrapeCodexEntries());
     }
 
     private async Task<List<Entity>> ScrapeKeepsakes()
@@ -62,5 +63,17 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         }
 
         int ParseMaxRank(HtmlNode n) => n.InnerText.Count(c => c == '/') + 1;
+    }
+
+    private async Task<List<Entity>> ScrapeCodexEntries()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Codex");
+        var nodes = doc.DocumentNode.SelectNodes("//td");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "codex");
+            return new Entity(id, name, "codex_entry");
+        }).ToList();
     }
 }
