@@ -127,7 +127,8 @@ infernal_arm 'Exagryph' {
     stat<int(0, 5)> exagryph_aspect_hestia ~> 'Aspect of Hestia Rank';
     stat<int(0, 5)> exagryph_aspect_lucifer ~> 'Aspect of Lucifer Rank';
 }
-codex_entry codex_persphone 'Persephone';
+codex_entry codex_persphone ~> 'Persephone';
+codex_entry codex_greece ~> 'Greece';
 character 'Hades' {
     attribute max_affinity = 5;
 }
