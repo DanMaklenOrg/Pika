@@ -18,6 +18,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         domain.Entities.AddRange(await ScrapeProphecies());
         domain.Entities.AddRange(await ScrapeMirrorAbilities());
         domain.Entities.AddRange(await ScrapeCodexEntries());
+        domain.Entities.AddRange(await ScrapeCompanions());
     }
 
     private async Task<List<Entity>> ScrapeKeepsakes()
@@ -74,6 +75,18 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
             var name = ScrapperHelper.CleanName(n.InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "codex");
             return new Entity(id, name, "codex_entry");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeCompanions()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Companions");
+        var nodes = doc.DocumentNode.SelectNodes("(//table)[1]/tbody/tr/td[1]");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "companion");
+            return new Entity(id, name, "companion");
         }).ToList();
     }
 }
