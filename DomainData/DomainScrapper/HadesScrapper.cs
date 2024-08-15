@@ -1,6 +1,7 @@
 using HtmlAgilityPack;
 using Pika.DomainData.ScrapperHelpers;
 using Pika.Model;
+using Attribute = Pika.Model.Attribute;
 
 namespace Pika.DomainData.DomainScrapper;
 
@@ -15,6 +16,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         domain.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement"));
         domain.Entities.AddRange(await ScrapeKeepsakes());
         domain.Entities.AddRange(await ScrapeProphecies());
+        domain.Entities.AddRange(await ScrapeMirrorAbilities());
     }
 
     private async Task<List<Entity>> ScrapeKeepsakes()
@@ -39,5 +41,26 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
             var id = ScrapperHelper.InduceIdFromName(name, "prophecy");
             return new Entity(id, name, "prophecy");
         }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeMirrorAbilities()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Mirror_of_Night");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[2]/tr/td/..");
+        return nodes.SelectMany<HtmlNode, Entity>(n =>
+        [
+            ParseAttribute(n, 0),
+            ParseAttribute(n, 4),
+        ]).ToList();
+
+        Entity ParseAttribute(HtmlNode n, int columnOffset)
+        {
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode($"./td[{1 + columnOffset}]").InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "mirror");
+            var maxRank = ParseMaxRank(n.SelectSingleNode($"./td[{4 + columnOffset}]"));
+            return new Entity(id, name, "mirror_ability") { Attributes = [new("max_rank", maxRank)] };
+        }
+
+        int ParseMaxRank(HtmlNode n) => n.InnerText.Count(c => c == '/') + 1;
     }
 }
