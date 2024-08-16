@@ -19,6 +19,9 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         domain.Entities.AddRange(await ScrapeMirrorAbilities());
         domain.Entities.AddRange(await ScrapeCodexEntries());
         domain.Entities.AddRange(await ScrapeCompanions());
+        domain.Entities.AddRange(await ScrapeContractorUpgrades());
+
+        await ScrapeResourceDirectorRanks(domain);
     }
 
     private async Task<List<Entity>> ScrapeKeepsakes()
@@ -88,5 +91,29 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
             var id = ScrapperHelper.InduceIdFromName(name, "companion");
             return new Entity(id, name, "companion");
         }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeContractorUpgrades()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/House_Contractor");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[position() >= 2 and position()<=7]/tr/td[1]");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "contractor");
+            return new Entity(id, name, "contractor_upgrade");
+        }).ToList();
+    }
+
+    private async Task ScrapeResourceDirectorRanks(Domain domain)
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Resource_Director");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td[2]");
+        var ranks = nodes.Select(n => ScrapperHelper.CleanName(n.InnerText)).ToList();
+        domain.Classes.Add(new("resource_director", "Resource Director")
+        {
+            Stats = [new("rank", "Rank", Stat.StatType.OrderedEnum) { EnumValues = ranks }]
+        });
+        domain.Entities.Add(new("resource_director_entity", "Resource Director", "resource_director"));
     }
 }

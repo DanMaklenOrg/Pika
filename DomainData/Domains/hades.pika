@@ -55,6 +55,16 @@ project 'Unlock all skelly statues' {
         require challenge_statue; //.unlocked == true;
     }
 }
+project 'Unlock all house contractor upgrades' {
+    objective 'Purchase all house contractor upgrades' {
+        require contractor_upgrade; //.unlocked == true;
+    }
+}
+project 'Max resource director rank' {
+    objective 'Achieve max rank with the resource director' {
+        require resource_director; //.rank == 'Unseen One';
+    }
+}
 
 // Classes
 class achievement {
@@ -87,6 +97,9 @@ class character {
     stat<int(1, max_affinity)> affinity ~> 'Affinity';
 }
 class challenge_statue {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class contractor_upgrade {
     stat<bool> unlocked ~> 'Unlocked';
 }
 
