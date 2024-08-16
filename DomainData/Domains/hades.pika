@@ -18,6 +18,9 @@ project 'Max all infernal arms' {
     objective 'Unlock all infernal arms' {
         require infernal_arm; //.unlocked == true;
     }
+    objective 'Defeat at least heat level 20 with all infernal arms' {
+        require infernal_arm; //.heat >= 20;
+    }
 }
 project 'Fulfill all prophecies' {
     objective 'Fulfil all prophecies' {
@@ -79,6 +82,7 @@ class prophecy {
 }
 class infernal_arm {
     stat<bool> unlocked ~> 'Unlocked';
+    stat<int(0, 20)> heat ~> 'Heat Level Defeated';
 }
 class mirror_ability {
     attribute max_rank = 5;
