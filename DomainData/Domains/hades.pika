@@ -224,3 +224,4 @@ character 'Persephone' {
 challenge_statue 'Skelly Challenge Statue (8 Heat)';
 challenge_statue 'Skelly Challenge Statue (16 Heat)';
 challenge_statue 'Skelly Challenge Statue (32 Heat)';
+contractor_upgrade contractor_field_of_souls 'Field of Souls';
