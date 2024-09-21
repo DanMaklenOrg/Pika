@@ -1,0 +1,82 @@
+domain to_the_core ~> 'To The Core';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Max all upgrades' {
+    objective 'Max all upgrades' {
+        require upgrade; //.rank == max_rank
+    }
+}
+project 'Max mastery for all resources' {
+    objective 'Get max mastery for all resources'{
+        require resource; //.mastery = 25
+    }
+}
+project 'Unlock all milestones' {
+    objective 'Unlock max rank of all milestones' {
+        require milestone; //.unlock_rank == max_rank
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class upgrade {
+    attribute max_rank = 1;
+    stat<int(0, max_rank)> rank ~> 'Rank';
+}
+class resource {
+    stat<int(1, 25)> mastery ~> 'Mastery';
+}
+class milestones {
+    attribute max_rank = 40;
+    stat<int(0, max_rank)> unlock_rank ~> 'Rank Unlocked';
+}
+
+// Entities
+upgrade 'Vision Upgrade' { attribute max_rank = 1; }
+upgrade 'Vision Upgrade 2' { attribute max_rank = 1; }
+upgrade 'Unlock Gunpowder' { attribute max_rank = 1; }
+upgrade 'Siphon Expander' { attribute max_rank = 1; }
+upgrade 'Gravity Lock' { attribute max_rank = 1; }
+upgrade 'Thrusters' { attribute max_rank = 1; }
+upgrade 'Shockwave' { attribute max_rank = 1; }
+upgrade 'Milestones' { attribute max_rank = 1; }
+upgrade 'Lens Enhancer' { attribute max_rank = 1; }
+upgrade 'Speed' { attribute max_rank = 5; }
+upgrade speed2 ~> 'Speed+' { attribute max_rank = 5; }
+upgrade 'Acid Coating' { attribute max_rank = 5; }
+upgrade 'Drill Damage' { attribute max_rank = 10; }
+upgrade 'Silicon Plated Drill' { attribute max_rank = 10; }
+upgrade 'Aluminum Plated Drill' { attribute max_rank = 10; }
+upgrade 'Steel Plated Drill' { attribute max_rank = 10; }
+upgrade 'Ore Extraction' { attribute max_rank = 10; }
+upgrade 'Ore Refine' { attribute max_rank = 10; }
+upgrade 'Ore Purify' { attribute max_rank = 10; }
+upgrade 'Coin Siphon' { attribute max_rank = 10; }
+upgrade coin_siphon_2 ~> 'Coin Siphon++' { attribute max_rank = 10; }
+upgrade 'Ore Siphon' { attribute max_rank = 10; }
+upgrade 'Critical Strike' { attribute max_rank = 10; }
+upgrade 'Grenades' { attribute max_rank = 10; }
+upgrade 'Fuel Tank Size++' { attribute max_rank = 15; }
+upgrade 'Fuel Tank+' { attribute max_rank = 20; }
+upgrade 'Silicon Plating' { attribute max_rank = 20; }
+upgrade 'Aluminium Foil' { attribute max_rank = 20; }
+upgrade 'Regeneration' { attribute max_rank = 10; }
+upgrade 'Freeze Fuel' { attribute max_rank = 20; }
+upgrade 'Fossil Fuel' { attribute max_rank = 20; }
+upgrade 'Damage Booster' { attribute max_rank = 80; }
+
+resource 'Iron';
+resource 'Silicon';
+resource 'Aluminum';
+resource 'Rock';
+resource 'Coal';
+
+milestones 'Blocks Broken Milestone' { attribute max_rank = 40; }
+milestones 'Cores Broken Milestone' { attribute max_rank = 79; }
