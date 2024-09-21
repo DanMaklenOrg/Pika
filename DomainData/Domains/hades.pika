@@ -18,6 +18,9 @@ project 'Max all infernal arms' {
     objective 'Unlock all infernal arms' {
         require infernal_arm; //.unlocked == true;
     }
+    objective 'Defeat at least heat level 20 with all infernal arms' {
+        require infernal_arm; //.heat >= 20;
+    }
 }
 project 'Fulfill all prophecies' {
     objective 'Fulfil all prophecies' {
@@ -30,6 +33,39 @@ project 'Max out Mirror of Night' {
     }
     objective 'Rank all Mirror of Night Abilities to max rank' {
         require mirror_ability; //.rank == max_rank;
+    }
+}
+project 'Fully unlock Codex' {
+    objective 'Fully unlock all codex entries' {
+        require codex_entry; //.unlocked == true;
+    }
+}
+project 'Max all companions' {
+    objective 'Unlock all companions' {
+        require companion; //.unlocked == true;
+    }
+    objective 'Rank all companions to max rank' {
+        require companion; //.rank == max_rank;
+    }
+}
+project 'Max affinity with all characters' {
+    objective 'Max out the affinity of all characters' {
+        require character; //.affinity == max_affinity;
+    }
+}
+project 'Unlock all skelly statues' {
+    objective 'Unlock all 3 skelly challenge statues' {
+        require challenge_statue; //.unlocked == true;
+    }
+}
+project 'Unlock all house contractor upgrades' {
+    objective 'Purchase all house contractor upgrades' {
+        require contractor_upgrade; //.unlocked == true;
+    }
+}
+project 'Max resource director rank' {
+    objective 'Achieve max rank with the resource director' {
+        require resource_director; //.rank == 'Unseen One';
     }
 }
 
@@ -46,11 +82,29 @@ class prophecy {
 }
 class infernal_arm {
     stat<bool> unlocked ~> 'Unlocked';
+    stat<int(0, 20)> heat ~> 'Heat Level Defeated';
 }
 class mirror_ability {
     attribute max_rank = 5;
     stat<bool> unlocked ~> 'Unlocked';
     stat<int(0, max_rank)> ran ~> 'Rank';
+}
+class codex_entry {
+    stat<bool> unlocked ~> 'Fully Unlocked';
+}
+class companion {
+    stat<bool> unlocked ~> 'Unlocked';
+    stat<int(1, 5)> rank ~> 'Rank';
+}
+class character {
+    attribute max_affinity = 0;
+    stat<int(1, max_affinity)> affinity ~> 'Affinity';
+}
+class challenge_statue {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class contractor_upgrade {
+    stat<bool> unlocked ~> 'Unlocked';
 }
 
 // Entities
@@ -90,3 +144,85 @@ infernal_arm 'Exagryph' {
     stat<int(0, 5)> exagryph_aspect_hestia ~> 'Aspect of Hestia Rank';
     stat<int(0, 5)> exagryph_aspect_lucifer ~> 'Aspect of Lucifer Rank';
 }
+codex_entry codex_persphone ~> 'Persephone';
+codex_entry codex_greece ~> 'Greece';
+character 'Hades' {
+    attribute max_affinity = 5;
+}
+character 'Nyx' {
+    attribute max_affinity = 9;
+}
+character 'Charon' {
+    attribute max_affinity = 7;
+}
+character 'Chaos' {
+    attribute max_affinity = 8;
+}
+character 'Megaera' {
+    attribute max_affinity = 10;
+}
+character 'Thanatos' {
+    attribute max_affinity = 10;
+}
+character 'Hypnos' {
+    attribute max_affinity = 8;
+}
+character 'Zeus' {
+    attribute max_affinity = 7;
+}
+character 'Poseidon' {
+    attribute max_affinity = 7;
+}
+character 'Athena' {
+    attribute max_affinity = 7;
+}
+character 'Artemis' {
+    attribute max_affinity = 7;
+}
+character 'Aphrodite' {
+    attribute max_affinity = 7;
+}
+character 'Ares' {
+    attribute max_affinity = 7;
+}
+character 'Dionysus' {
+    attribute max_affinity = 7;
+}
+character 'Hermes' {
+    attribute max_affinity = 8;
+}
+character 'Demeter' {
+    attribute max_affinity = 7;
+}
+character 'Achilles' {
+    attribute max_affinity = 9;
+}
+character 'Patroclus' {
+    attribute max_affinity = 8;
+}
+character 'Dusa' {
+    attribute max_affinity = 10;
+}
+character 'Skelly' {
+    attribute max_affinity = 9;
+}
+character 'Eurydice' {
+    attribute max_affinity = 8;
+}
+character 'Orpheus' {
+    attribute max_affinity = 8;
+}
+character 'Sisyphus' {
+    attribute max_affinity = 9;
+}
+character 'Cerberus' {
+    attribute max_affinity = 9;
+}
+character 'Persephone' {
+    attribute max_affinity = 9;
+}
+challenge_statue 'Skelly Challenge Statue (8 Heat)';
+challenge_statue 'Skelly Challenge Statue (16 Heat)';
+challenge_statue 'Skelly Challenge Statue (32 Heat)';
+contractor_upgrade contractor_field_of_souls ~> 'Field of Souls';
+contractor_upgrade contractor_rage_of_the_myrmidons ~> 'Rage of the Myrmidons';
