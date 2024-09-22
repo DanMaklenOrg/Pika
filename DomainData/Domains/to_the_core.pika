@@ -21,6 +21,14 @@ project 'Unlock all milestones' {
         require milestone; //.unlock_rank == max_rank
     }
 }
+project 'Destroy the core of all planets' {
+    objective 'Unlock all planets' {
+        require planet; //.unlocked == true;
+    }
+    objective 'Destroy the core of all planets' {
+        require planet; //.core_destroyed == true;
+    }
+}
 
 // Classes
 class achievement {
@@ -37,10 +45,15 @@ class milestones {
     attribute max_rank = 40;
     stat<int(0, max_rank)> unlock_rank ~> 'Rank Unlocked';
 }
+class planet {
+    stat<bool> unlocked ~> 'Unlocked';
+    stat<bool> core_destroyed ~> 'Core Destroyed';
+}
 
 // Entities
 upgrade 'Vision Upgrade' { attribute max_rank = 1; }
 upgrade 'Vision Upgrade 2' { attribute max_rank = 1; }
+upgrade 'Vision Upgrade 3' { attribute max_rank = 1; }
 upgrade 'Unlock Gunpowder' { attribute max_rank = 1; }
 upgrade 'Siphon Expander' { attribute max_rank = 1; }
 upgrade 'Gravity Lock' { attribute max_rank = 1; }
@@ -48,35 +61,88 @@ upgrade 'Thrusters' { attribute max_rank = 1; }
 upgrade 'Shockwave' { attribute max_rank = 1; }
 upgrade 'Milestones' { attribute max_rank = 1; }
 upgrade 'Lens Enhancer' { attribute max_rank = 1; }
+upgrade 'Unlock Circuit Boards' { attribute max_rank = 1; }
+upgrade 'Unlock Quantum Boards' { attribute max_rank = 1; }
+upgrade 'Unlock Glass' { attribute max_rank = 1; }
+upgrade 'Unlock Steel' { attribute max_rank = 1; }
+upgrade 'Unlock Depth Meter' { attribute max_rank = 1; }
+upgrade 'Shiny Blocks' { attribute max_rank = 1; }
+upgrade 'Unlock Lightning Static' { attribute max_rank = 1; }
+upgrade 'Explosive Drill' { attribute max_rank = 1; }
+upgrade 'Grenade Regen Unlock' { attribute max_rank = 1; }
+upgrade 'Unlock Caustic Gas' { attribute max_rank = 1; }
+upgrade 'Electric Drops' { attribute max_rank = 3; }
+upgrade grenade_size_2 ~> 'Grenade Size+' { attribute max_rank = 5; }
 upgrade 'Speed' { attribute max_rank = 5; }
 upgrade speed2 ~> 'Speed+' { attribute max_rank = 5; }
 upgrade 'Acid Coating' { attribute max_rank = 5; }
+upgrade 'Acid Injection' { attribute max_rank = 5; }
 upgrade 'Drill Damage' { attribute max_rank = 10; }
 upgrade 'Silicon Plated Drill' { attribute max_rank = 10; }
 upgrade 'Aluminum Plated Drill' { attribute max_rank = 10; }
 upgrade 'Steel Plated Drill' { attribute max_rank = 10; }
+upgrade 'Diamond Plated Drill' { attribute max_rank = 10; }
 upgrade 'Ore Extraction' { attribute max_rank = 10; }
 upgrade 'Ore Refine' { attribute max_rank = 10; }
 upgrade 'Ore Purify' { attribute max_rank = 10; }
 upgrade 'Coin Siphon' { attribute max_rank = 10; }
 upgrade coin_siphon_2 ~> 'Coin Siphon++' { attribute max_rank = 10; }
 upgrade 'Ore Siphon' { attribute max_rank = 10; }
+upgrade 'Orbital Lasers' { attribute max_rank = 10; }
 upgrade 'Critical Strike' { attribute max_rank = 10; }
+upgrade 'Critical Chance' { attribute max_rank = 10; }
 upgrade 'Grenades' { attribute max_rank = 10; }
+upgrade grenades_2 ~> 'Grenades_' { attribute max_rank = 10; }
+upgrade 'Electricity Tank' { attribute max_rank = 10; }
+upgrade electric_tank_2 ~> 'Electricity Tank+' { attribute max_rank = 10; }
+upgrade 'Electric Fuel Boost' { attribute max_rank = 10; }
+upgrade 'Depth Fuel' { attribute max_rank = 10; }
+upgrade 'Depth Damage' { attribute max_rank = 10; }
+upgrade 'Grenade Size' { attribute max_rank = 10; }
+upgrade 'Electric Drill' { attribute max_rank = 10; }
+upgrade 'Gem Chance' { attribute max_rank = 10; }
+upgrade gem_chance_2 ~> 'Gem Chance+' { attribute max_rank = 10; }
+upgrade 'Gem Amount' { attribute max_rank = 10; }
+upgrade 'Gem Amount (2)' { attribute max_rank = 10; }
 upgrade 'Fuel Tank Size++' { attribute max_rank = 15; }
+upgrade 'Ore Infusion' { attribute max_rank = 15; }
 upgrade 'Fuel Tank+' { attribute max_rank = 20; }
 upgrade 'Silicon Plating' { attribute max_rank = 20; }
-upgrade 'Aluminium Foil' { attribute max_rank = 20; }
 upgrade 'Regeneration' { attribute max_rank = 10; }
+upgrade regeneration_2 ~> 'Regeneration+' { attribute max_rank = 10; }
+upgrade 'Drill Explosion Size' { attribute max_rank = 10; }
+upgrade 'Static Speed' { attribute max_rank = 10; }
+upgrade 'Static Size' { attribute max_rank = 10; }
+upgrade 'Missles' { attribute max_rank = 10; }
+upgrade 'Missle Size' { attribute max_rank = 10; }
+upgrade 'Grenade Damage (2)' { attribute max_rank = 10; }
+upgrade 'Aluminium Foil' { attribute max_rank = 20; }
 upgrade 'Freeze Fuel' { attribute max_rank = 20; }
 upgrade 'Fossil Fuel' { attribute max_rank = 20; }
+upgrade 'Drones' { attribute max_rank = 20; }
+upgrade 'Grenade Damage' { attribute max_rank = 20; }
+upgrade 'Rock Reinforcement' { attribute max_rank = 20; }
+upgrade regeneration_3 ~> 'Regeneration++' { attribute max_rank = 25; }
 upgrade 'Damage Booster' { attribute max_rank = 80; }
+upgrade 'Armor Booster' { attribute max_rank = 80; }
 
 resource 'Iron';
 resource 'Silicon';
 resource 'Aluminum';
 resource 'Rock';
+resource 'Sand';
+resource 'Sulfur';
+resource 'Gunpowder';
 resource 'Coal';
+resource 'Gem';
+resource 'Steel';
 
 milestones 'Blocks Broken Milestone' { attribute max_rank = 40; }
 milestones 'Cores Broken Milestone' { attribute max_rank = 79; }
+
+planet 'Home';
+planet 'Homes Moon';
+planet 'The Sun';
+planet 'Vita';
+planet 'Endura';
+planet 'Glacies';
