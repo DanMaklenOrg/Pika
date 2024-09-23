@@ -114,9 +114,9 @@ upgrade critical_drop_chance_2 ~> 'Critical Drop Chance++' { attribute max_rank 
 upgrade 'Drone Shoot Delay' { attribute max_rank = 5; }
 upgrade drone_shoot_delay_2 ~> 'Drone Shoot Delay+' { attribute max_rank = 5; }
 upgrade critical_chance_2 ~> 'Critical Chance+' { attribute max_rank = 5; }
-upgrade electric_drill_3 ~> 'Electric Drill++' { attribute max_rank = 5; }
 upgrade 'Grenade Regen Delay' { attribute max_rank = 9; }
 upgrade grenade_regen_delay_2 ~> 'Grenade Regen Delay+' { attribute max_rank = 9; }
+upgrade electric_drill_3 ~> 'Electric Drill++' { attribute max_rank = 10; }
 upgrade electric_drops_3 ~> 'Electric Drops++' { attribute max_rank = 10; }
 upgrade 'Drill Damage' { attribute max_rank = 10; }
 upgrade 'Silicon Plated Drill' { attribute max_rank = 10; }
@@ -231,10 +231,12 @@ planet 'Vita';
 planet 'Endura';
 planet 'Glacies';
 planet 'The Sun';
+planet 'Supernova';
 planet 'Mortem';
 planet 'Agricus';
 planet 'Diamond Glaciers';
 planet 'Letum';
+planet 'Cupid';
 
 equipment 'Lens Enchancer';
 equipment 'Siphon Expander';
