@@ -11,11 +11,6 @@ project 'Max all upgrades' {
         require upgrade; //.rank == max_rank
     }
 }
-project 'Max mastery for all resources' {
-    objective 'Get max mastery for all resources'{
-        require resource; //.mastery = 25
-    }
-}
 project 'Unlock all milestones' {
     objective 'Unlock max rank of all milestones' {
         require milestone; //.unlock_rank == max_rank
@@ -45,9 +40,6 @@ class achievement {
 class upgrade {
     attribute max_rank = 1;
     stat<int(0, max_rank)> rank ~> 'Rank';
-}
-class resource {
-    stat<int(1, 30)> mastery ~> 'Mastery';
 }
 class milestones {
     attribute max_rank = 40;
@@ -118,6 +110,7 @@ upgrade drone_shoot_delay_2 ~> 'Drone Shoot Delay+' { attribute max_rank = 5; }
 upgrade critical_chance_2 ~> 'Critical Chance+' { attribute max_rank = 5; }
 upgrade 'Grenade Regen Delay' { attribute max_rank = 9; }
 upgrade grenade_regen_delay_2 ~> 'Grenade Regen Delay+' { attribute max_rank = 9; }
+upgrade grenade_regen_delay_3 ~> 'Grenade Regen Delay++' { attribute max_rank = 9; }
 upgrade electric_drill_3 ~> 'Electric Drill++' { attribute max_rank = 10; }
 upgrade electric_drops_3 ~> 'Electric Drops++' { attribute max_rank = 10; }
 upgrade 'Drill Damage' { attribute max_rank = 10; }
@@ -206,28 +199,14 @@ upgrade 'Cobalt Covering' { attribute max_rank = 25; }
 upgrade 'Diamond Covering' { attribute max_rank = 25; }
 upgrade 'Shiny Block Multiplier' { attribute max_rank = 25; }
 upgrade 'Ore Cleaning' { attribute max_rank = 30; }
+upgrade 'Ore Distiling' { attribute max_rank = 30; }
 upgrade 'Freeze Fuel (2)' { attribute max_rank = 50; }
 upgrade 'Damage Booster' { attribute max_rank = 80; }
+upgrade damage_booster_2 ~> 'Damage Booster+' { attribute max_rank = 80; }
 upgrade 'Armor Booster' { attribute max_rank = 80; }
 upgrade 'Fuel Booster' { attribute max_rank = 80; }
 upgrade 'Drop Booster' { attribute max_rank = 80; }
 upgrade 'Seed Increase Chance' { attribute max_rank = 100; }
-
-resource 'Iron';
-resource 'Silicon';
-resource 'Aluminum';
-resource 'Rock';
-resource 'Ice';
-resource 'Sand';
-resource 'Sulfur';
-resource 'Gunpowder';
-resource 'Coal';
-resource 'Glass';
-resource 'Diamond';
-resource 'Circuit Board';
-resource 'Gem';
-resource 'Steel';
-resource 'Cobalt';
 
 milestones 'Blocks Broken Milestone' { attribute max_rank = 40; }
 milestones 'Cores Broken Milestone' { attribute max_rank = 79; }
@@ -239,6 +218,7 @@ planet 'Endura';
 planet 'Glacies';
 planet 'The Sun';
 planet 'Supernova';
+planet 'Blackhole';
 planet 'Mortem';
 planet 'Agricus';
 planet 'Diamond Glaciers';
@@ -247,5 +227,6 @@ planet 'Cupid';
 
 equipment 'Lens Enchancer';
 equipment 'Siphon Expander';
+equipment 'Infinity Box' { attribute max_rank = 500;}
 equipment 'Damage Diffuser'  { attribute max_rank = 50; }
 equipment 'Gem Materializer' { attribute max_rank = 100; }
