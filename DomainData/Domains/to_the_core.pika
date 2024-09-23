@@ -41,7 +41,7 @@ class upgrade {
     attribute max_rank = 1;
     stat<int(0, max_rank)> rank ~> 'Rank';
 }
-class milestones {
+class milestone {
     attribute max_rank = 40;
     stat<int(0, max_rank)> unlock_rank ~> 'Rank Unlocked';
 }
@@ -208,8 +208,8 @@ upgrade 'Fuel Booster' { attribute max_rank = 80; }
 upgrade 'Drop Booster' { attribute max_rank = 80; }
 upgrade 'Seed Increase Chance' { attribute max_rank = 100; }
 
-milestones 'Blocks Broken Milestone' { attribute max_rank = 40; }
-milestones 'Cores Broken Milestone' { attribute max_rank = 79; }
+milestone 'Blocks Broken Milestone' { attribute max_rank = 40; }
+milestone 'Cores Broken Milestone' { attribute max_rank = 79; }
 
 planet 'Homes Moon';
 planet 'Home';
