@@ -92,3 +92,29 @@ upgrade 'crowding' { attribute max_level = 15; }
 upgrade 'power' { attribute max_level = 15; }
 upgrade 'bit armor' { attribute max_level = 20; }
 upgrade 'byte armor' { attribute max_level = 30; }
+
+milestone 'Red Defeater';
+milestone 'Red Enemy';
+milestone 'Red Slayer';
+milestone 'Red Buster';
+milestone 'Red Hacker';
+milestone 'Red Destroyer';
+milestone 'Red Ender';
+milestone 'Red Rival';
+milestone 'Red Breaker';
+milestone 'Red Challenger';
+milestone 'Red Nemesis';
+milestone 'Blue Defeater';
+milestone 'Blue Enemy';
+milestone 'Blue Slayer';
+milestone 'Blue Buster';
+milestone 'Blue Hacker';
+milestone 'Blue Destroyer';
+milestone 'Blue Ender';
+milestone 'Blue Rival';
+milestone 'Blue Breaker';
+milestone 'Blue Challenger';
+milestone 'Blue Nemesis';
+milestone 'Yellow Defeater';
+milestone 'Yellow Enemy';
+milestone 'Yellow Slayer';
