@@ -6,10 +6,89 @@ project 'Unlock all achievements' {
         require achievement; //.achieved == true;
     }
 }
+project 'Max all upgrades' {
+    objective 'Max all upgrades' {
+        require upgrade; //.level == max_level;
+    }
+}
+project 'Claim all milestones' {
+    objective 'Claim all milestones' {
+        require milestone; //.claimed == true;
+    }
+}
 
 // Classes
 class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
+class upgrade {
+    attribute max_level = 1;
+    stat<int(0, max_level)> level ~> 'Level';
+}
+class milestone {
+    stat<bool> claimed ~> 'Claimed';
+}
 
 // Entities
+upgrade 'bit boost' { attribute max_level = 1; }
+upgrade 'node boost' { attribute max_level = 1; }
+upgrade 'spawn exploders' { attribute max_level = 1; }
+upgrade 'milestones' { attribute max_level = 1; }
+upgrade 'swarming' { attribute max_level = 1; }
+upgrade 'skilled salvager' { attribute max_level = 1; }
+upgrade 'domain expansion' { attribute max_level = 1; }
+upgrade 'self-repair' { attribute max_level = 1; }
+upgrade 'patcher' { attribute max_level = 1; }
+upgrade 'repeating' { attribute max_level = 1; }
+upgrade 'repeat-repeating' { attribute max_level = 1; }
+upgrade 'pulse bolts' { attribute max_level = 1; }
+upgrade 'crypto mine' { attribute max_level = 1; }
+upgrade 'processor acquisition' { attribute max_level = 1; }
+upgrade 'bolt burst' { attribute max_level = 1; }
+upgrade 'bolt barrage' { attribute max_level = 1; }
+upgrade 'auto-collect' { attribute max_level = 3; }
+upgrade 'drainer' { attribute max_level = 3; }
+upgrade 'nodeblade' { attribute max_level = 3; }
+upgrade 'bolt lethality' { attribute max_level = 3; }
+upgrade 'ambush' { attribute max_level = 4; }
+upgrade 'finishing blow' { attribute max_level = 4; }
+upgrade 'node finder' { attribute max_level = 5; }
+upgrade 'netblade' { attribute max_level = 5; }
+upgrade 'auto pulser' { attribute max_level = 5; }
+upgrade 'bolt count' { attribute max_level = 5; }
+upgrade 'antivirus' { attribute max_level = 5; }
+upgrade 'connection buster' { attribute max_level = 5; }
+upgrade 'exploder area' { attribute max_level = 5; }
+upgrade 'plundering' { attribute max_level = 5; }
+upgrade 'magnet' { attribute max_level = 5; }
+upgrade 'repair tool' { attribute max_level = 5; }
+upgrade 'salvaging' { attribute max_level = 5; }
+upgrade 'infesting' { attribute max_level = 5; }
+upgrade 'overloaded' { attribute max_level = 5; }
+upgrade 'sapper' { attribute max_level = 5; }
+upgrade 'first strike' { attribute max_level = 6; }
+upgrade 'last strike' { attribute max_level = 6; }
+upgrade 'b.i.g.' { attribute max_level = 8; }
+upgrade 'anti-purple' { attribute max_level = 8; }
+upgrade 'better endurance' { attribute max_level = 8; }
+upgrade 'influence' { attribute max_level = 10; }
+upgrade 'bolt damage' { attribute max_level = 10; }
+upgrade 'scaling regeneration' { attribute max_level = 10; }
+upgrade 'giant slayer' { attribute max_level = 10; }
+upgrade 'colossus slayer' { attribute max_level = 10; }
+upgrade 'proficiency' { attribute max_level = 10; }
+upgrade 'potency' { attribute max_level = 10; }
+upgrade 'crit chance' { attribute max_level = 10; }
+upgrade 'crit damage' { attribute max_level = 10; }
+upgrade 'endurance' { attribute max_level = 10; }
+upgrade 'big heart' { attribute max_level = 10; }
+upgrade 'transplant' { attribute max_level = 10; }
+upgrade 'swarm defense system' { attribute max_level = 10; }
+upgrade 'bolster' { attribute max_level = 10; }
+upgrade 'super armor' { attribute max_level = 10; }
+upgrade 'firewall' { attribute max_level = 10; }
+upgrade 'boss guard' { attribute max_level = 10; }
+upgrade 'crowding' { attribute max_level = 15; }
+upgrade 'power' { attribute max_level = 15; }
+upgrade 'bit armor' { attribute max_level = 20; }
+upgrade 'byte armor' { attribute max_level = 30; }
