@@ -16,6 +16,11 @@ project 'Claim all milestones' {
         require milestone; //.claimed == true;
     }
 }
+project 'Deploy god virus' {
+    objective 'Deploy god virus' {
+        require lab; //.virus_deployed == true;
+    }
+}
 
 // Classes
 class achievement {
@@ -27,6 +32,9 @@ class upgrade {
 }
 class milestone {
     stat<bool> claimed ~> 'Claimed';
+}
+class lab {
+    stat<bool> virus_deployed ~> 'Virus Deployed';
 }
 
 // Entities
@@ -153,3 +161,5 @@ milestone 'Blue Nemesis';
 milestone 'Yellow Defeater';
 milestone 'Yellow Enemy';
 milestone 'Yellow Slayer';
+
+lab 'Lab';
