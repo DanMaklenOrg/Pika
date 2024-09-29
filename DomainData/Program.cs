@@ -18,6 +18,7 @@ builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, ToTheCoreScrapper>();
 builder.Services.AddTransient<IScrapper, NodebusterScrapper>();
+builder.Services.AddTransient<IScrapper, TimeClickersScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapperHelper>();
