@@ -3,7 +3,7 @@ using Pika.Model;
 
 namespace Pika.DomainData.DomainScrapper;
 
-public class Nodebuster(SteamScrapperHelper steamScrapperHelper) : IScrapper
+public class NodebusterScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 {
     private const uint SteamAppId = 3107330;
 
