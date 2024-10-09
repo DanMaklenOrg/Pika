@@ -24,6 +24,7 @@ builder.Services.AddTransient<IScrapper, HexcellsScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsInfiniteScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsPlusScrapper>();
 builder.Services.AddTransient<IScrapper, CrossCellsScrapper>();
+builder.Services.AddTransient<IScrapper, SquareCellsScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapperHelper>();
