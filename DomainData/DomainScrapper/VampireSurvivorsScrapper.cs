@@ -50,7 +50,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
     private async Task<List<Entity>> ScrapePowerUps()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Powerups");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td/..");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td/..");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//td[2]").InnerText);
