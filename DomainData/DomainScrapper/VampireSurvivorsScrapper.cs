@@ -20,6 +20,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
         domain.Entities.AddRange(await ScrapePowerUps());
         domain.Entities.AddRange(await ScrapePickups());
         domain.Entities.AddRange(await ScrapeArcanas());
+        domain.Entities.AddRange(await ScrapeDarkanas());
         domain.Entities.AddRange(await ScrapeSecrets());
     }
 
@@ -108,6 +109,18 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "arcana");
+            return new Entity(id, name, "collection_entry");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeDarkanas()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[2]/tr/td[3]");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "darkana");
             return new Entity(id, name, "collection_entry");
         }).ToList();
     }

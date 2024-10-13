@@ -38,6 +38,11 @@ project 'Unlock all stages and their hyper mode' {
         require stage; //.hyper_mode_unlocked == true;
     }
 }
+project 'Complete all levels in all adventures' {
+    objective 'Complete all levels in all adventures' {
+        require adventure; //.level == max_level;
+    }
+}
 
 // Classes
 class achievement {
@@ -70,6 +75,10 @@ class stage {
 }
 class secret {
     stat<bool> unlocked ~> 'Unlocked';
+}
+class adventure {
+    attribute max_level = 10;
+    stat<int(0, max_level)> level ~> 'Level';
 }
 
 // Entities
@@ -150,3 +159,8 @@ stage 'Hectic Highway';
 stage 'Room 1665';
 collection_entry 'Super Candybox II Turbo';
 collection_entry 'Sole Solution';
+adventure 'A Garlic Paradise' { attribute max_level = 14; }
+adventure 'World of Light and Dark' { attribute max_level = 17; }
+adventure 'Legacy of the Moonspell' { attribute max_level = 14; }
+adventure 'Emergency Meeting' { attribute max_level = 19; }
+adventure 'Operation Guns' { attribute max_level = 28; }
