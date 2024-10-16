@@ -1,0 +1,15 @@
+domain spec_ops_the_line ~> 'Spec Ops: The Line';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+
+// Entities
