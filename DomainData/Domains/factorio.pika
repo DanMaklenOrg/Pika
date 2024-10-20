@@ -6,10 +6,39 @@ project 'Unlock all achievements' {
         require achievement; //.achieved == true;
     }
 }
+project 'Complete all unique single player scenarios' {
+    objective 'Complete unique all single player scenarios' {
+        require scenario; //.level == max_level;
+    }
+}
+project 'Build a Mega Factory' {
+    objective 'Build a factory that produces 1K science packs per minute' {
+        require science_pack; //.production_per_min >= 1000
+    }
+}
 
 // Classes
 class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
+class scenario {
+    attribute max_level = 5;
+    stat<int(0, max_level)> level ~> 'Level';
+}
+class science_pack {
+    stat<int(0, 1000)> production_per_min ~> 'Production Per Minute';
+}
 
 // Entities
+scenario 'Tutorial' { attribute max_level = 5; }
+scenario 'Transport Belt Madness' { attribute max_level = 3; }
+scenario 'Tight Spot' { attribute max_level = 5; }
+scenario 'Supply Challenge' { attribute max_level = 21; }
+
+science_pack 'Automation Science Pack (Red)';
+science_pack 'Logistic Science Pack (Green)';
+science_pack 'Military Science Pack (Black)';
+science_pack 'Chemical Science Pack (Blue)';
+science_pack 'Production Science Pack (Purple)';
+science_pack 'Utility Science Pack (Yellow)';
+science_pack 'Space Science Pack (White)';
