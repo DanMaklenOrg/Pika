@@ -35,10 +35,15 @@ scenario 'Transport Belt Madness' { attribute max_level = 3; }
 scenario 'Tight Spot' { attribute max_level = 5; }
 scenario 'Supply Challenge' { attribute max_level = 21; }
 
-science_pack 'Automation Science Pack (Red)';
-science_pack 'Logistic Science Pack (Green)';
-science_pack 'Military Science Pack (Black)';
-science_pack 'Chemical Science Pack (Blue)';
-science_pack 'Production Science Pack (Purple)';
-science_pack 'Utility Science Pack (Yellow)';
-science_pack 'Space Science Pack (White)';
+science_pack 'Automation Science Pack';
+science_pack 'Logistic Science Pack';
+science_pack 'Military Science Pack';
+science_pack 'Chemical Science Pack';
+science_pack 'Production Science Pack';
+science_pack 'Utility Science Pack';
+science_pack 'Space Science Pack';
+science_pack 'Metallurgic Science Pack';
+science_pack 'Electromagnetic Science Pack';
+science_pack 'Agricultural Science Pack';
+science_pack 'Cryogenic Science Pack';
+science_pack 'Promethium Science Pack';
