@@ -7,9 +7,15 @@ project 'Unlock all achievements' {
     }
 }
 project 'Finish the tutorial' {
-    require tutorial_mission; //.completed == true;
+    objective 'Complete all tutorial missions'{
+        require tutorial_mission; //.completed == true;
+    }
 }
-
+project 'Ace all challenges' {
+    objective 'Get 3 Axes in all challenges' {
+        require challenge; //.axes == 3;
+    }
+}
 // Classes
 class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
