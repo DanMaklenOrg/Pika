@@ -1,0 +1,19 @@
+domain minecraft_atm10 ~> 'Minecraft: ATM10';
+
+// Projects
+project 'Unlock all advancements' {
+    objective 'Unlock all Dimensional sStorage advancements' {
+        require unlocked; //.achieved == true;
+    }
+}
+
+// Classes
+class advancement {
+    stat<bool> unlocked ~> 'Advancement Unlocked';
+}
+
+// Entities
+advancement 'Dimensional Core';
+advancement 'Dimensional Chest';
+advancement 'Dimensional Tablet';
+advancement 'Dimensional Tank';
