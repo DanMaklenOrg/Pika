@@ -1,0 +1,16 @@
+domain minecraft_border_hoarder ~> 'Minecraft: Boarder Hoarder';
+
+// Projects
+project 'Find all Items' {
+    objective 'Find all items' {
+        require items_stat; //.achieved == true;
+    }
+}
+
+// Classes
+class items_stat {
+    stat<int(0, 1047)> value ~> 'Count';
+}
+
+// Entities
+items_stat 'Items Collected';

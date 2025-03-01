@@ -23,11 +23,11 @@ class achievement {
 }
 class artifact {
     attribute max_rank = 1;
-    stat<int(0, max_rank)> rank;
+    stat<int(0, max_rank)> rank ~> 'Rank';
 }
 class augment {
     attribute max_rank = 1;
-    stat<int(0, max_rank)> rank;
+    stat<int(0, max_rank)> rank ~> 'Rank';
 }
 // Entities
 artifact 'Start Wave' { attribute max_rank = 200; }

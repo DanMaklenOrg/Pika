@@ -1,0 +1,53 @@
+domain hexcells ~> 'Hexcells';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Perfect all levels' {
+    objective 'Complete all levels perfectly' {
+        require level; //.perfected == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class level {
+    stat<bool> perfected ~> 'Completed Perfectly';
+}
+
+// Entities
+level 'Level: 1-1';
+level 'Level: 1-2';
+level 'Level: 1-3';
+level 'Level: 1-4';
+level 'Level: 1-5';
+level 'Level: 1-6';
+level 'Level: 2-1';
+level 'Level: 2-2';
+level 'Level: 2-3';
+level 'Level: 2-4';
+level 'Level: 3-1';
+level 'Level: 3-2';
+level 'Level: 3-3';
+level 'Level: 3-4';
+level 'Level: 3-5';
+level 'Level: 4-1';
+level 'Level: 4-2';
+level 'Level: 4-3';
+level 'Level: 4-4';
+level 'Level: 4-5';
+level 'Level: 5-1';
+level 'Level: 5-2';
+level 'Level: 5-3';
+level 'Level: 5-4';
+level 'Level: 5-5';
+level 'Level: 6-1';
+level 'Level: 6-2';
+level 'Level: 6-3';
+level 'Level: 6-4';
+level 'Level: 6-5';
