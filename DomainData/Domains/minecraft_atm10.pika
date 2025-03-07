@@ -63,5 +63,6 @@ class mining_gadget {
     stat<bool> light ~> 'Light Placer';
     stat<bool> freezing ~> 'Freezing';
 }
+mining_gadget 'Mining Gadget';
 
 // AE2
