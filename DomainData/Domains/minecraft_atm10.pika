@@ -1,19 +1,67 @@
 domain minecraft_atm10 ~> 'Minecraft: ATM10';
 
-// Projects
+// Common Projects
 project 'Unlock all advancements' {
-    objective 'Unlock all Dimensional sStorage advancements' {
-        require unlocked; //.achieved == true;
+    objective 'Unlock all advancements' {
+        require advancement; //.unlocked == true;
     }
 }
 
-// Classes
+project 'Obtain all items' {
+    objective 'Obtain all generic items' {
+        require generic_item; //.obtained == true;
+    }
+}
+
+// Common Classes
 class advancement {
     stat<bool> unlocked ~> 'Advancement Unlocked';
 }
+class generic_item {
+    stat<bool> obtained ~> 'Obtained';
+}
 
 // Entities
+// Dimensional Storage
 advancement 'Dimensional Core';
 advancement 'Dimensional Chest';
 advancement 'Dimensional Tablet';
 advancement 'Dimensional Tank';
+generic_item 'Dimensional Chest';
+generic_item 'Dimensional Tablet';
+generic_item 'Dimensional Tank';
+
+// Mining Gadgets
+project 'Build a maxed out mining gadget' {
+    objective 'Build a mining gadget' {
+        require mining; //.obtained == true;
+    }
+
+    objective 'Max all upgrades of a mining gadget' {
+        require mining; //.silk_touch == true;
+        require mining; //.void_junk == true;
+        require mining; //.magnet == true;
+        require mining; //.radius == 3;
+        require mining; //.efficiency == 3;
+        require mining; //.battery == 3;
+        require mining; //.range == 3;
+        require mining; //.fortune == 3;
+        require mining; //.light == true;
+        require mining; //.freezing == true;
+    }
+}
+class mining_gadget {
+    stat<bool> obtained ~> 'Obtained';
+    stat<bool> silk_touch ~> 'Silk Touch';
+    stat<bool> void_junk ~> 'Void Junk';
+    stat<bool> magnet ~> 'Magnet';
+    stat<int(0, 3)> radius ~> 'Radius Tier';
+    stat<int(0, 5)> efficiency ~> 'Efficiency Tier';
+    stat<int(0, 3)> battery ~> 'Battery Tier';
+    stat<int(0, 3)> range ~> 'Range Tier';
+    stat<int(0, 3)> fortune ~> 'Fortune Tier';
+    stat<bool> light ~> 'Light Placer';
+    stat<bool> freezing ~> 'Freezing';
+}
+
+// AE2
