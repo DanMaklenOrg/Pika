@@ -1,0 +1,15 @@
+domain middle_earth_shadow_of_mordor ~> 'Middle Earth: Shadow of Mordor';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+
+// Entities
