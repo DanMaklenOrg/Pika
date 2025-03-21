@@ -29,6 +29,9 @@ project 'Unlock all appendices' {
     objective 'Unlock all Tutorials and Hints entries' {
         require hint; //.unlocked == true
     }
+    objective 'Unlock all War Letters' {
+        require war_letter; //.unlocked == true
+    }
 }
 
 project 'Obtain all runes' {
@@ -90,6 +93,9 @@ class artifact {
 class ithildin {
     stat<bool> unlocked ~> 'Unlocked';
 }
+class war_letter {
+    stat<bool> unlocked ~> 'Unlocked';
+}
 class progress {
     attribute max_count = 10;
     stat<int(0, max_count)> completed ~> 'Completed';
@@ -104,6 +110,18 @@ vision 'The Fall of Eregion';
 vision 'Concealed Power';
 vision the_bright_lord_vision ~> 'The Bright Lord';
 vision 'Return of the Shadow';
+
+hint 'Tutorial: Power of the One Ring';
+hint 'Tutorial: Shadow Brand';
+hint 'Tutorial: Flash Brand';
+hint 'Tutorial: Summon Followers';
+
+war_letter 'On the Origin of Orcses';
+war_letter 'Many Legs, Clanking Fangs';
+war_letter 'Black Screams';
+war_letter 'Elf Witchery';
+war_letter 'Promotion Problems';
+war_letter 'Endless Shadow';
 
 lore ithildin_lore ~> 'Ithildin';
 lore 'Mirian';
