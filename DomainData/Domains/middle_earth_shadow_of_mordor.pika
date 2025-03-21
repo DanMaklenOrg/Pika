@@ -33,28 +33,30 @@ project 'Unlock all appendices' {
         require war_letter; //.unlocked == true
     }
 }
-
 project 'Obtain all runes' {
     objective 'Obtain all runes' {
         require rune; //obtained == true;
     }
 }
-
 project 'Max all attributes' {
     objective 'Max all attributes' {
         require attr; //level == max_level;
     }
 }
-
 project 'Unlock all abilities' {
     objective 'Unlock all abilities' {
         require ability; //.unlocked == true;
     }
 }
-
 project 'Max all progress' {
     objective 'Max all progress' {
         require progress; //.completed == max_count;
+    }
+}
+project 'Complete DLC Stories' {
+    objective 'Complete all DLC Stories' {
+        require dlc_story; //.completed == true;
+        require dlc_story; //.bonus_completed == true;
     }
 }
 
@@ -99,6 +101,13 @@ class war_letter {
 class progress {
     attribute max_count = 10;
     stat<int(0, max_count)> completed ~> 'Completed';
+}
+class dlc_story {
+    stat<bool> completed ~> 'Completed';
+}
+class trial {
+    stat<bool> bonus_completed ~> 'Bonus Completed';
+    stat<bool> completed ~> 'Completed';
 }
 
 // Entities
@@ -318,3 +327,14 @@ progress 'Survival Challenges';
 progress 'Hunting Challenges';
 progress ithildin_progress ~> 'Ithildin' { attribute max_count = 32; }
 progress 'Artifacts' { attribute max_count = 42; }
+
+dlc_story 'The Bright Lord';
+dlc_story 'Lord of the Hunt';
+
+trial 'Test of Power';
+trial 'Test of Speed';
+trial 'Test of Wisdom';
+trial 'Endless Challenge';
+trial 'Test of the Wild';
+trial 'Test of the Ring';
+trial 'Test of Defiance';
