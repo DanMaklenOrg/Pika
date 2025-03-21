@@ -56,7 +56,14 @@ project 'Max all progress' {
 project 'Complete DLC Stories' {
     objective 'Complete all DLC Stories' {
         require dlc_story; //.completed == true;
-        require dlc_story; //.bonus_completed == true;
+    }
+}
+project 'Complete all Trials' {
+    objective 'Complete all Trials' {
+        require trial; //.completed == true;
+    }
+    objective 'Complete all Trials Bonus Objectives'  {
+        require trial; //.bonus_completed == true;
     }
 }
 
