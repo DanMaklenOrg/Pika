@@ -32,6 +32,9 @@ project 'Unlock all appendices' {
     objective 'Unlock all War Letters' {
         require war_letter; //.unlocked == true
     }
+    objective 'Unlock all Torvin\'s Journals' {
+        require torvin_journal; //.unlocked == true
+    }
 }
 project 'Obtain all runes' {
     objective 'Obtain all runes' {
@@ -105,6 +108,9 @@ class ithildin {
 class war_letter {
     stat<bool> unlocked ~> 'Unlocked';
 }
+class torvin_journal {
+    stat<bool> unlocked ~> 'Unlocked';
+}
 class progress {
     attribute max_count = 10;
     stat<int(0, max_count)> completed ~> 'Completed';
@@ -132,6 +138,7 @@ hint 'Tutorial: Shadow Brand';
 hint 'Tutorial: Flash Brand';
 hint 'Tutorial: Summon Followers';
 hint 'Tutorial: Consume';
+hint 'Tutorial: Caragath Attacks';
 
 war_letter 'On the Origin of Orcses';
 war_letter 'Many Legs, Clanking Fangs';
@@ -225,7 +232,18 @@ nature 'Carandol';
 nature 'Orchmarth';
 nature 'Athelas';
 nature 'Hithlas';
+nature 'Caragath';
 
+torvin_journal 'Dwarven Wheetstone';
+torvin_journal 'Mount Doom';
+torvin_journal 'Beasts of the Land: Caragor';
+torvin_journal 'Beasts of the Land: Great Beast';
+torvin_journal 'Elven Hammer';
+torvin_journal 'Talion\'s Blades';
+torvin_journal 'Beats of the Land: The Horned Graug';
+torvin_journal 'Uruk Captains';
+torvin_journal 'The Black Captains';
+torvin_journal 'The Statue of Gorthaur';
 
 artifact 'Mortar and Pestle';
 artifact 'Graven Idol Representing Morgoth';
