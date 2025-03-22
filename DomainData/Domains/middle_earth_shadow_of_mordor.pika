@@ -144,7 +144,8 @@ hint 'Tutorial: Ghul Bait';
 hint 'Tutorial: Wretched Graug Attacks';
 hint 'Tutorial: Caragath Swiftness';
 hint 'Tutorial: Wretched Graug Stun';
-hint 'Tutorial: Branded Ghul Dispatch';
+hint 'Tutorial: Dominate Ghuls';
+hint 'Tutorial: Blazing Steed';
 
 war_letter 'On the Origin of Orcses';
 war_letter 'Many Legs, Clanking Fangs';
