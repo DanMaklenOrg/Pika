@@ -139,6 +139,8 @@ hint 'Tutorial: Flash Brand';
 hint 'Tutorial: Summon Followers';
 hint 'Tutorial: Consume';
 hint 'Tutorial: Caragath Attacks';
+hint 'Tutorial: Graug Bait';
+hint 'Tutorial: Ghul Bait';
 
 war_letter 'On the Origin of Orcses';
 war_letter 'Many Legs, Clanking Fangs';
@@ -233,6 +235,7 @@ nature 'Orchmarth';
 nature 'Athelas';
 nature 'Hithlas';
 nature 'Caragath';
+nature 'Wretched Graug';
 
 torvin_journal 'Dwarven Wheetstone';
 torvin_journal 'Mount Doom';
