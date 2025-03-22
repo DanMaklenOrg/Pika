@@ -131,6 +131,7 @@ hint 'Tutorial: Power of the One Ring';
 hint 'Tutorial: Shadow Brand';
 hint 'Tutorial: Flash Brand';
 hint 'Tutorial: Summon Followers';
+hint 'Tutorial: Consume';
 
 war_letter 'On the Origin of Orcses';
 war_letter 'Many Legs, Clanking Fangs';
