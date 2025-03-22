@@ -141,6 +141,9 @@ hint 'Tutorial: Consume';
 hint 'Tutorial: Caragath Attacks';
 hint 'Tutorial: Graug Bait';
 hint 'Tutorial: Ghul Bait';
+hint 'Tutorial: Wretched Graug Attacks';
+hint 'Tutorial: Caragath Swiftness';
+hint 'Tutorial: Wretched Graug Stun';
 
 war_letter 'On the Origin of Orcses';
 war_letter 'Many Legs, Clanking Fangs';
@@ -244,8 +247,8 @@ torvin_journal 'Beasts of the Land: Great Beast';
 torvin_journal 'Elven Hammer';
 torvin_journal 'Talion\'s Blades';
 torvin_journal 'Beats of the Land: The Horned Graug';
-torvin_journal 'Uruk Captains (Torvin Journal)';
-torvin_journal 'The Black Captains (Torvin Journal)';
+torvin_journal torvin_journal_uruk_captains ~> 'Uruk Captains';
+torvin_journal torvin_journal_the_black_captains ~> 'The Black Captains';
 torvin_journal 'The Statue of Gorthaur';
 
 artifact 'Mortar and Pestle';
