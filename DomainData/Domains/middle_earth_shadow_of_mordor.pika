@@ -241,7 +241,7 @@ torvin_journal 'Beasts of the Land: Great Beast';
 torvin_journal 'Elven Hammer';
 torvin_journal 'Talion\'s Blades';
 torvin_journal 'Beats of the Land: The Horned Graug';
-torvin_journal 'Uruk Captains';
+torvin_journal torvin_journal_uruk_captains ~> 'Uruk Captains';
 torvin_journal 'The Black Captains';
 torvin_journal 'The Statue of Gorthaur';
 
