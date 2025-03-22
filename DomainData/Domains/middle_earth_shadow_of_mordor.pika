@@ -36,11 +36,6 @@ project 'Unlock all appendices' {
         require torvin_journal; //.unlocked == true
     }
 }
-project 'Obtain all runes' {
-    objective 'Obtain all runes' {
-        require rune; //obtained == true;
-    }
-}
 project 'Max all attributes' {
     objective 'Max all attributes' {
         require attr; //level == max_level;
@@ -73,9 +68,6 @@ project 'Complete all Trials' {
 // Classes
 class achievement {
     stat<bool> achieved ~> 'Achievement Unlocked';
-}
-class rune {
-    stat<bool> obtained ~> 'Obtained';
 }
 class ability {
     stat<bool> unlocked ~> 'Unlocked';

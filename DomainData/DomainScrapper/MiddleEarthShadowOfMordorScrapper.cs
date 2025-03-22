@@ -13,21 +13,8 @@ public class MiddleEarthShadowOfMordorScrapper(SteamScrapperHelper steamScrapper
     public async Task ScrapeInto(Domain domain)
     {
         domain.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement"));
-        domain.Entities.AddRange(await ScrapeRunes());
         domain.Entities.AddRange(await ScrapeAbilities());
         domain.Entities.AddRange(await ScrapeTutorialsAndHints());
-    }
-
-    private async Task<List<Entity>> ScrapeRunes()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://shadowofwar.fandom.com/wiki/Runes");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]/a");
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "rune");
-            return new Entity(id, name, "rune");
-        }).ToList();
     }
 
     private async Task<List<Entity>> ScrapeAbilities()
