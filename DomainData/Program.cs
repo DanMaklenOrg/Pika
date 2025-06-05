@@ -29,6 +29,7 @@ builder.Services.AddTransient<IScrapper, SpecOpsTheLineScrapper>();
 builder.Services.AddTransient<IScrapper, FactorioScrapper>();
 builder.Services.AddTransient<IScrapper, DwarfsScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfMordorScrapper>();
+builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapperHelper>();
