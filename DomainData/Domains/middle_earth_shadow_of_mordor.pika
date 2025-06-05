@@ -1,0 +1,366 @@
+domain middle_earth_shadow_of_mordor ~> 'Middle Earth: Shadow of Mordor';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+
+project 'Unlock all appendices' {
+    objective 'Unlock all Ithildin entries' {
+        require ithildin; //.unlocked == true
+    }
+    objective 'Unlock all Artifact entries' {
+        require artifact; //.unlocked == true
+    }
+    objective 'Unlock all Nature entries' {
+        require nature; //.unlocked == true
+    }
+    objective 'Unlock all People entries' {
+        require people; //.unlocked == true
+    }
+    objective 'Unlock all Lore entries' {
+        require lore; //.unlocked == true
+    }
+    objective 'Unlock all Vision entries' {
+        require vision; //.unlocked == true
+    }
+    objective 'Unlock all Tutorials and Hints entries' {
+        require hint; //.unlocked == true
+    }
+    objective 'Unlock all War Letters' {
+        require war_letter; //.unlocked == true
+    }
+    objective 'Unlock all Torvin\'s Journals' {
+        require torvin_journal; //.unlocked == true
+    }
+}
+project 'Max all attributes' {
+    objective 'Max all attributes' {
+        require attr; //level == max_level;
+    }
+}
+project 'Unlock all abilities' {
+    objective 'Unlock all abilities' {
+        require ability; //.unlocked == true;
+    }
+}
+project 'Max all progress' {
+    objective 'Max all progress' {
+        require progress; //.completed == max_count;
+    }
+}
+project 'Complete DLC Stories' {
+    objective 'Complete all DLC Stories' {
+        require dlc_story; //.completed == true;
+    }
+}
+project 'Complete all Trials' {
+    objective 'Complete all Trials' {
+        require trial; //.completed == true;
+    }
+    objective 'Complete all Trials Bonus Objectives'  {
+        require trial; //.bonus_completed == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class ability {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class attr {
+    attribute max_level = 5;
+    stat<int(0, max_level)> level ~> 'Level';
+}
+class hint {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class vision {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class lore {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class people {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class nature {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class artifact {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class ithildin {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class war_letter {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class torvin_journal {
+    stat<bool> unlocked ~> 'Unlocked';
+}
+class progress {
+    attribute max_count = 10;
+    stat<int(0, max_count)> completed ~> 'Completed';
+}
+class dlc_story {
+    stat<bool> completed ~> 'Completed';
+}
+class trial {
+    stat<bool> bonus_completed ~> 'Bonus Completed';
+    stat<bool> completed ~> 'Completed';
+}
+
+// Entities
+vision 'Murder';
+vision 'So Fine a Gift';
+vision 'Such Art';
+vision the_one_ring_vision ~> 'The One Ring';
+vision 'The Fall of Eregion';
+vision 'Concealed Power';
+vision the_bright_lord_vision ~> 'The Bright Lord';
+vision 'Return of the Shadow';
+
+hint 'Tutorial: Power of the One Ring';
+hint 'Tutorial: Shadow Brand';
+hint 'Tutorial: Flash Brand';
+hint 'Tutorial: Summon Followers';
+hint 'Tutorial: Consume';
+hint 'Tutorial: Caragath Attacks';
+hint 'Tutorial: Graug Bait';
+hint 'Tutorial: Ghul Bait';
+hint 'Tutorial: Wretched Graug Attacks';
+hint 'Tutorial: Caragath Swiftness';
+hint 'Tutorial: Wretched Graug Stun';
+hint 'Tutorial: Dominate Ghuls';
+hint 'Tutorial: Blazing Steed';
+
+war_letter 'On the Origin of Orcses';
+war_letter 'Many Legs, Clanking Fangs';
+war_letter 'Black Screams';
+war_letter 'Elf Witchery';
+war_letter 'Promotion Problems';
+war_letter 'Endless Shadow';
+
+lore ithildin_lore ~> 'Ithildin';
+lore 'Mirian';
+lore 'Runes';
+lore 'Mordor';
+lore 'Morannon';
+lore 'Udun';
+lore 'Orodruin';
+lore 'Brada-dur';
+lore 'Carach Angren';
+lore 'The Gorthaur';
+lore 'Uruk\'s Hollow';
+lore 'The Black Road';
+lore 'Barad Slime';
+lore 'The Barrows';
+lore 'Barad Num';
+lore 'Durthang';
+lore 'Nurn';
+lore 'Sea of Nurnen';
+lore 'Ered Glamhoth';
+lore 'Nurnen Fishery';
+lore 'Fort Morn';
+lore 'Ring of Power';
+lore the_one_ring_lore ~> 'The One Ring';
+
+people 'Talion';
+people 'Hirgon of Tarnost';
+people 'Eryn';
+people 'Ioreth';
+people 'Dirhael';
+people 'Rangers of The Black Gate';
+people 'Wraiths';
+people 'Uruks, the Great Orcs';
+people 'Gollum';
+people 'Ratbag';
+people 'Uruk Captains';
+people 'Uruk Warchiefs';
+people 'Sawbones';
+people 'Executioners';
+people 'Trainers';
+people 'Slavers';
+people 'Beastmasters';
+people 'Torvin';
+people 'Lithariel';
+people 'The Outcasts of Udun';
+people 'Tribesmen of Nurn';
+people 'Slaves';
+people 'Celebrimbor';
+people 'Lady Marwen';
+people 'The Hammer of Sauron';
+people 'The Tower of Sauron';
+people 'The Black Hand of Sauron';
+people 'Talons of the Black Hand';
+people 'The Black Captains';
+people the_bright_lord_people ~> 'The Bright Lord';
+people 'Sauron';
+
+nature 'Ghuls';
+nature 'Ghul Martons';
+nature 'Olog Graug';
+nature 'Horned Graug';
+nature 'Legendary Graug';
+nature 'Ungol';
+nature 'Morgai Flies';
+nature 'Hell-hawk';
+nature 'Mordor Rats';
+nature 'Caragor';
+nature 'Dire Caragore';
+nature 'Morgul Bats';
+nature 'Great Beast';
+nature 'Niphredil';
+nature 'Pipeweed';
+nature 'Lothrond';
+nature 'Remmenthond';
+nature 'Azuradan';
+nature 'Blue Milk';
+nature 'Mallos';
+nature 'Elgaran';
+nature 'Earthbread';
+nature 'Gwinuial';
+nature 'Alfirin';
+nature 'Naugrimbas';
+nature 'Carandol';
+nature 'Orchmarth';
+nature 'Athelas';
+nature 'Hithlas';
+nature 'Caragath';
+nature 'Wretched Graug';
+
+torvin_journal 'Dwarven Wheetstone';
+torvin_journal 'Mount Doom';
+torvin_journal 'Beasts of the Land: Caragor';
+torvin_journal 'Beasts of the Land: Great Beast';
+torvin_journal 'Elven Hammer';
+torvin_journal 'Talion\'s Blades';
+torvin_journal 'Beats of the Land: The Horned Graug';
+torvin_journal torvin_journal_uruk_captains ~> 'Uruk Captains';
+torvin_journal torvin_journal_the_black_captains ~> 'The Black Captains';
+torvin_journal 'The Statue of Gorthaur';
+
+artifact 'Mortar and Pestle';
+artifact 'Graven Idol Representing Morgoth';
+artifact 'Strange Rock';
+artifact 'Excavator Cog';
+artifact 'Hoe Blade';
+artifact 'Rusted Horn';
+artifact 'Pickaxe';
+artifact 'Grog Bowl';
+artifact 'Serpentine Blade';
+artifact 'Basket Fragment';
+artifact 'Ranger\'s Reading Primer';
+artifact 'Musty Tome';
+artifact 'Horned Helmet';
+artifact 'Tattered Note';
+artifact 'Ranger\'s Cloak Clasp';
+artifact 'Iron Shackle';
+artifact 'Coded Journal Entry #1';
+artifact 'Lockpick';
+artifact 'Branding Iron';
+artifact 'Herald\'s Scroll';
+artifact 'Weathered Azurite Figurine, The Two Istari';
+artifact 'Medallion Half 1, The Two Trees of Valinor';
+artifact 'Medallion Half 2, The Two Trees of Valinor';
+artifact 'Cook\'s Knife';
+artifact 'Ornate Cameo';
+artifact 'Whetstone';
+artifact 'Scrimshaw, Mûmak Tusk';
+artifact 'Pipeweed Pouch';
+artifact 'Blood-Stained Buckler';
+artifact 'Coded Journal Entry #2';
+artifact 'Coded Journal Entry #3';
+artifact 'Ritual Cup';
+artifact 'Apothecary Jar';
+artifact 'Frolum\'s Ring';
+artifact 'Star Chart';
+artifact 'Broken Staff';
+artifact 'Crushed Spider Egg';
+artifact 'Gondorian Coin';
+artifact 'Orcish Dagger';
+artifact 'Lockbox Key';
+artifact 'Frowning Skull';
+artifact 'Torn Banner';
+
+/*
+artifact 'Talion\'s Blades';
+artifact 'Mount Doom';
+artifact 'Dwarven Whetstone';
+artifact 'Elven Hammer';
+artifact 'Beasts of The Land : Caragor';
+artifact 'The Statue Of Gorthaur';
+artifact 'Uruk Captains';
+artifact 'The Black Captains';
+artifact 'Beasts of The Land : Horned Graug';
+artifact 'Beasts of The Land : Great Beast';
+*/
+
+ithildin 'Nan iChîr Gelair Mordor';
+ithildin 'Ivab gelebren';
+ithildin 'i achortha ivorn';
+ithildin 'Tridaeol chith efuin';
+ithildin 'Achared';
+ithildin 'di \'weriennin anann';
+ithildin 'Erio o thelaith gurth';
+ithildin 'Edwenno o gwath';
+ithildin 'Trî laich';
+ithildin 'puigadol dagor';
+ithildin 'Nathadhir edwegennin';
+ithildin 'i naudhir edhil';
+ithildin 'Nu nam nín';
+ithildin 'Natha Tognir inAinn';
+ithildin 'i\'Warth, dangarnen';
+ithildin 'Ochedin Valannor';
+ithildin 'An adleithad';
+ithildin 'nor edúath';
+ithildin 'Ah an noded rammas';
+ithildin 'enArdhon';
+ithildin 'Mi chand eMorchir';
+ithildin 'Natha le calad arphígad';
+ithildin 'Nin gostatha gwaith';
+ithildin 'ban a gellatha';
+ithildin 'tolo dan nan galad';
+ithildin 'A Elbereth Gilthoniel';
+ithildin 'Naur an edraith ammen';
+ithildin 'Nau dan I ngaurhoth';
+ithildin 'Lach Mâb Gelebren';
+ithildin 'Achortho Vorn';
+ithildin 'Galad na \'Lamhoth';
+ithildin 'Tôl acharn';
+
+attr 'Max Health';
+attr 'Max Elf-Shot';
+attr 'Max Focus';
+attr 'Sword Rune Slot' { attribute max_level = 4; }
+attr 'Bow Rune Slot' { attribute max_level = 4; }
+attr 'Dagger Rune Slot' { attribute max_level = 4; }
+attr 'Storm of Urfael' { attribute max_level = 1; }
+attr 'Flame of Azkar' { attribute max_level = 1; }
+attr 'Shadow of Acharn' { attribute max_level = 1; }
+
+progress 'Main Missions' { attribute max_count = 20; }
+progress 'Outcast Rescue Missions' { attribute max_count = 24; }
+progress 'Sword Legends';
+progress 'Bow Legends';
+progress 'Dagger Legends';
+progress 'Survival Challenges';
+progress 'Hunting Challenges';
+progress ithildin_progress ~> 'Ithildin' { attribute max_count = 32; }
+progress 'Artifacts' { attribute max_count = 42; }
+
+dlc_story 'The Bright Lord';
+dlc_story 'Lord of the Hunt';
+
+trial 'Test of Power';
+trial 'Test of Speed';
+trial 'Test of Wisdom';
+trial 'Endless Challenge';
+trial 'Test of the Wild';
+trial 'Test of the Ring';
+trial 'Test of Defiance';
