@@ -2,7 +2,7 @@ using Cocona;
 using Pika.Model;
 using Pika.Repository;
 
-namespace Pika.GameData;
+namespace Pika.GameData.Commands;
 
 public static class TestCommand
 {
@@ -24,7 +24,7 @@ public static class TestCommand
             Console.WriteLine($"Testing {game.Id} ({game.Name})... Passed!");
         }
 
-        Console.Out.WriteLine("All Games passed the test!");
+        Console.WriteLine("All Games passed the test!");
     }
 
     private static void TestGame(Game game)

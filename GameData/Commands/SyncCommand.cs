@@ -3,7 +3,7 @@ using Pika.Model;
 using Pika.PikaLang;
 using Pika.Repository;
 
-namespace Pika.GameData;
+namespace Pika.GameData.Commands;
 
 public static class SyncCommand
 {

@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Pika.DataLayer.Dao;
 using Pika.DataLayer.Repository;
 using Pika.GameData;
+using Pika.GameData.Commands;
 using Pika.GameData.GameScrapper;
 using Pika.GameData.ScrapperHelpers;
 using Pika.PikaLang;
@@ -45,5 +46,6 @@ var app = builder.Build();
 
 app.AddSyncCommand();
 app.AddTestCommand();
+app.AddMigrateCommand();
 
 app.Run();
