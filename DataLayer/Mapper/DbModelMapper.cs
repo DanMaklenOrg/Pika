@@ -8,15 +8,15 @@ namespace Pika.DataLayer.Mapper;
 
 public static class DbModelMapper
 {
-    public static DomainDbModel ToDbModel(Domain domain)
+    public static GameDbModel ToDbModel(Game game)
     {
-        return new DomainDbModel
+        return new GameDbModel
         {
-            Id = domain.Id,
-            Name = domain.Name,
-            Entities = domain.Entities.ConvertAll(ToDbModel),
-            Projects = domain.Projects.ConvertAll(ToDbModel),
-            Classes = domain.Classes.ConvertAll(ToDbModel),
+            Id = game.Id,
+            Name = game.Name,
+            Entities = game.Entities.ConvertAll(ToDbModel),
+            Projects = game.Projects.ConvertAll(ToDbModel),
+            Classes = game.Classes.ConvertAll(ToDbModel),
         };
     }
 
@@ -103,10 +103,10 @@ public static class DbModelMapper
 
 
     [return: NotNullIfNotNull("model")]
-    public static Domain? FromDbModel(DomainDbModel? model)
+    public static Game? FromDbModel(GameDbModel? model)
     {
         if (model is null) return null;
-        return new Domain(model.Id, model.Name)
+        return new Game(model.Id, model.Name)
         {
             Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
@@ -182,7 +182,7 @@ public static class DbModelMapper
         return new UserStatsDbModel
         {
             UserId = userStats.UserId,
-            DomainId = userStats.DomainId,
+            GameId = userStats.GameId,
             EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
         };
     }
@@ -204,7 +204,7 @@ public static class DbModelMapper
         return new UserStats
         {
             UserId = userStats.UserId,
-            DomainId = userStats.DomainId,
+            GameId = userStats.GameId,
             EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
         };
     }

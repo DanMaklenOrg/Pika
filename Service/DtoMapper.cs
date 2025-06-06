@@ -7,18 +7,18 @@ namespace Pika.Service;
 
 public static class DtoMapper
 {
-    public static DomainSummaryDto ToSummaryDto(Domain model)
+    public static GameSummaryDto ToSummaryDto(Game model)
     {
-        return new DomainSummaryDto
+        return new GameSummaryDto
         {
             Id = model.Id.ToString(),
             Name = model.Name,
         };
     }
 
-    public static DomainDto ToDto(Domain model)
+    public static GameDto ToDto(Game model)
     {
-        return new DomainDto
+        return new GameDto
         {
             Id = model.Id,
             Name = model.Name,
@@ -133,12 +133,12 @@ public static class DtoMapper
         };
     }
 
-    public static UserStats FromDto(UserStatsDto statsDto, string userId, string domainId)
+    public static UserStats FromDto(UserStatsDto statsDto, string userId, string GameId)
     {
         return new UserStats
         {
             UserId = userId,
-            DomainId = domainId,
+            GameId = GameId,
             EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
         };
     }

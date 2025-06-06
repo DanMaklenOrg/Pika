@@ -3,7 +3,7 @@ null
 null
 null
 null
-'domain'
+'game'
 'project'
 'objective'
 'require'
@@ -31,7 +31,7 @@ null
 SINGLE_LINE_COMMENT
 MULTI_LINE_COMMENT
 WHITESPACE
-DOMAIN
+GAME
 PROJECT
 OBJECTIVE
 REQUIRE
@@ -56,7 +56,7 @@ IDENTIFIER
 
 rule names:
 root
-domainDecl
+gameDecl
 declStmt
 projectDecl
 objectiveDecl

@@ -13,8 +13,8 @@ builder.Configuration.AddSystemsManager("/pika");
 
 // DB
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
-builder.Services.AddTransient<IDomainDao, DomainDao>();
-builder.Services.AddTransient<IDomainRepo, DomainRepo>();
+builder.Services.AddTransient<IGameDao, GameDao>();
+builder.Services.AddTransient<IGameRepo, GameRepo>();
 builder.Services.AddTransient<IUserStatsRepo, UserStatsRepo>();
 builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
 

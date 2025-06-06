@@ -1,0 +1,43 @@
+game dwarfs ~> 'Dwarfs!?';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Finish the tutorial' {
+    objective 'Complete all tutorial missions'{
+        require tutorial_mission; //.completed == true;
+    }
+}
+project 'Ace all challenges' {
+    objective 'Get 3 Axes in all challenges' {
+        require challenge; //.axes == 3;
+    }
+}
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class tutorial_mission {
+    stat<bool> completed ~> 'Completed';
+}
+class challenge {
+    stat<int(0, 3)> axes ~> 'Axes';
+}
+
+// Entities
+tutorial_mission 'Controls';
+tutorial_mission 'Lava and Water';
+tutorial_mission 'Cave Trapping';
+tutorial_mission 'Dark Caves';
+tutorial_mission 'Fighting Minions';
+tutorial_mission 'Outposts';
+tutorial_mission 'Graduation';
+
+challenge 'To Battle!';
+challenge 'Catastrophe';
+challenge 'To The Point';
+challenge 'The More The...';
+challenge 'Godspeed';

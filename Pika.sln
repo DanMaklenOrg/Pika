@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{0CCB514B-D577-49B4-B1C3-B2A6E31E62A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainData", "DomainData\DomainData.csproj", "{E4CED8BF-F9DE-473A-B1E4-FDA278591654}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameData", "GameData\GameData.csproj", "{E4CED8BF-F9DE-473A-B1E4-FDA278591654}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pika", "Pika\Pika.csproj", "{D051FD9B-5699-4353-8530-198AC48F1ECA}"
 EndProject

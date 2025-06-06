@@ -1,0 +1,102 @@
+game dungeon_souls ~> 'Dungeon Souls';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Collect all Arcane Forge Recipes' {
+    objective 'Find all arcane forge recipes' {
+        require forge_recipe; //.owned == true;
+    }
+}
+project 'Max all passives' {
+    objective 'Reach level 10 in all passives' {
+        require passive; //.level == 10;
+    }
+}
+project 'Max all heroes' {
+    objective 'Unlock all heroes' {
+        require hero; //.unlocked == true;
+    }
+    objective 'Max rank all heroes' {
+        require hero; //.rank == 5;
+    }
+    objective 'Free the soul of all heroes' {
+        require hero; //.soul_freed == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class passive {
+    stat<int(0, 10)> level ~> 'Level';
+}
+class hero {
+    stat<bool> unlocked ~> 'Unlocked';
+    stat<int(0, 5)> rank ~> 'Rank';
+    stat<bool> soul_freed ~> 'Soul Freed';
+}
+class forge_recipe {
+    stat<bool> owned ~> 'Owned';
+}
+
+// Entities
+passive 'Stamina';
+passive 'Attack Damage';
+passive 'Regeneration';
+passive 'Focus';
+passive 'Armor';
+passive 'Agility';
+passive 'Magic Damage';
+passive 'Purity';
+passive 'Greed';
+hero 'Barbarian';
+hero 'Archer';
+hero 'Thief';
+hero 'Warrior';
+hero 'Wizard';
+hero 'Cleric';
+hero 'Necromancer';
+hero 'Brawler';
+hero 'Engineer';
+hero 'Nightblade';
+forge_recipe 'Fire Axe';
+forge_recipe 'Fire Bow';
+forge_recipe 'Fire Dagger';
+forge_recipe 'Fire Scepter';
+forge_recipe 'Fire Staff';
+forge_recipe 'Fire Sword';
+forge_recipe 'Friendly Cloud';
+forge_recipe 'Herberk\'s Pendant';
+forge_recipe 'Ice Axe';
+forge_recipe 'Ice Bow';
+forge_recipe 'Ice Dagger';
+forge_recipe 'Ice Scepter';
+forge_recipe 'Ice Staff';
+forge_recipe 'Ice Sword';
+forge_recipe 'Magic Core';
+forge_recipe 'Ninby\'s Essence';
+forge_recipe 'Ninby\'s Grace';
+forge_recipe 'Poltergeist Bow';
+forge_recipe 'Poltergeist Dagger';
+forge_recipe 'Poltergeist Staff';
+forge_recipe 'Shell';
+forge_recipe 'Storm Shield';
+forge_recipe 'Wind Axe';
+forge_recipe 'Wind Bow';
+forge_recipe 'Wind Dagger';
+forge_recipe 'Wind Scepter';
+forge_recipe 'Wind Staff';
+forge_recipe 'Wind Sword';
+forge_recipe 'Power Axe';
+forge_recipe 'Power Bow';
+forge_recipe 'Power Dagger';
+forge_recipe 'Power Scepter';
+forge_recipe 'Power Staff';
+forge_recipe 'Power Sword';
+forge_recipe 'Murderer Ring';
+forge_recipe 'Zior\'s Wisdom';
