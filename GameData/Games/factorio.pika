@@ -1,24 +1,24 @@
 game factorio ~> 'Factorio';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Complete all unique single player scenarios' {
+achievement 'Complete all unique single player scenarios' {
     objective 'Complete unique all single player scenarios' {
         require scenario; //.level == max_level;
     }
 }
-project 'Build a Mega Factory' {
+achievement 'Build a Mega Factory' {
     objective 'Build a factory that produces 1K science packs per minute' {
         require science_pack; //.production_per_min >= 1000
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class scenario {

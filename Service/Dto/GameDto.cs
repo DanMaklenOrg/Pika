@@ -10,8 +10,8 @@ public readonly struct GameDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
-    [JsonPropertyName("projects")]
-    public List<ProjectDto> Projects { get; init; }
+    [JsonPropertyName("achievements")]
+    public List<AchievementDto> Achievements { get; init; }
 
     [JsonPropertyName("classes")]
     public List<ClassDto> Classes { get; init; }
@@ -20,7 +20,7 @@ public readonly struct GameDto
     public List<EntityDto> Entities { get; init; }
 }
 
-public readonly struct ProjectDto
+public readonly struct AchievementDto
 {
     [JsonPropertyName("id")]
     public string Id { get; init; }

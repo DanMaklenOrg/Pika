@@ -15,18 +15,18 @@ public static class DbModelMapper
             Id = game.Id,
             Name = game.Name,
             Entities = game.Entities.ConvertAll(ToDbModel),
-            Projects = game.Projects.ConvertAll(ToDbModel),
+            Achievements = game.Achievements.ConvertAll(ToDbModel),
             Classes = game.Classes.ConvertAll(ToDbModel),
         };
     }
 
-    private static ProjectDbModel ToDbModel(Project project)
+    private static AchievementDbModel ToDbModel(Achievement achievement)
     {
-        return new ProjectDbModel
+        return new AchievementDbModel
         {
-            Id = project.Id,
-            Name = project.Name,
-            Objectives = project.Objectives.ConvertAll(ToDbModel),
+            Id = achievement.Id,
+            Name = achievement.Name,
+            Objectives = achievement.Objectives.ConvertAll(ToDbModel),
         };
     }
 
@@ -108,15 +108,15 @@ public static class DbModelMapper
         if (model is null) return null;
         return new Game(model.Id, model.Name)
         {
-            Projects = model.Projects?.ConvertAll(FromDbModel) ?? [],
+            Achievements = model.Achievements?.ConvertAll(FromDbModel) ?? [],
             Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    private static Project FromDbModel(ProjectDbModel model)
+    private static Achievement FromDbModel(AchievementDbModel model)
     {
-        return new Project(model.Id, model.Name)
+        return new Achievement(model.Id, model.Name)
         {
             Objectives = model.Objectives.ConvertAll(FromDbModel),
         };

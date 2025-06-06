@@ -45,12 +45,12 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitGameDecl([NotNull] PikaLangParser.GameDeclContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>projectDeclaration</c>
+	/// Visit a parse tree produced by the <c>achievementDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitProjectDeclaration([NotNull] PikaLangParser.ProjectDeclarationContext context);
+	Result VisitAchievementDeclaration([NotNull] PikaLangParser.AchievementDeclarationContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>classDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
@@ -66,11 +66,11 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitEntityDeclaration([NotNull] PikaLangParser.EntityDeclarationContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.projectDecl"/>.
+	/// Visit a parse tree produced by <see cref="PikaLangParser.achievementDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitProjectDecl([NotNull] PikaLangParser.ProjectDeclContext context);
+	Result VisitAchievementDecl([NotNull] PikaLangParser.AchievementDeclContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PikaLangParser.objectiveDecl"/>.
 	/// </summary>

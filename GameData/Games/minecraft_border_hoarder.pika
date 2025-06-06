@@ -1,7 +1,7 @@
 game minecraft_border_hoarder ~> 'Minecraft: Boarder Hoarder';
 
-// Projects
-project 'Find all Items' {
+// Achievements
+achievement 'Find all Items' {
     objective 'Find all items' {
         require items_stat; //.achieved == true;
     }

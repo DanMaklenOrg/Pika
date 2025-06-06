@@ -18,13 +18,13 @@ public class PalworldPalsScrapper(SteamScrapperHelper steamScrapperHelper) : ISc
 
     private async Task<List<Entity>> ScrapePals()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://palworld.wiki.gg/wiki/Pals");
-        var nodes = doc.DocumentNode.SelectNodes("//td/span[@class='iconlink']/../..");
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://palworld.fandom.com/wiki/Palpedia#Visible");
+        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'wds-tab__content')]/table/tbody/tr");
         HashSet<string> blacklist = ["013B: Gumoss (Special)", "092B: Warsect Terra"];
-        return nodes.Select(n =>
+        return nodes.Where(n => !n.InnerHtml.Contains("<th>")).Where(n => n.SelectSingleNode("td[1]").InnerText != "???").Select(n =>
         {
-            var name = ScrapperHelper.CleanName(n.SelectSingleNode("td/span").InnerText);
-            var palIndex = ScrapperHelper.CleanName(n.SelectSingleNode("td[2]").InnerText);
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode("td[3]").InnerText);
+            var palIndex = ScrapperHelper.CleanName(n.SelectSingleNode("td[1]").InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "pal");
             return new Entity(id, $"{palIndex}: {name}", "pal");
         }).Where(e => !blacklist.Contains(e.Name)).ToList();

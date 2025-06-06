@@ -1,14 +1,14 @@
 game squarecells ~> 'SquareCells';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 

@@ -21,10 +21,10 @@ public record Game(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
     public List<Class> Classes { get; init; } = [];
     public List<Entity> Entities { get; init; } = [];
-    public List<Project> Projects { get; init; } = [];
+    public List<Achievement> Achievements { get; init; } = [];
 }
 
-public record Project(ResourceId Id, string Name) : PikaResource(Id, Name)
+public record Achievement(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
     public required List<Objective> Objectives { get; init; }
 

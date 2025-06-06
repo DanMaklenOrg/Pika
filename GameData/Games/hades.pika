@@ -1,12 +1,12 @@
 game hades ~> 'Hades';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Max all keepsakes' {
+achievement 'Max all keepsakes' {
     objective 'Unlock all keepsakes' {
         require keepsake; //.unlocked == true;
     }
@@ -14,7 +14,7 @@ project 'Max all keepsakes' {
         require keepsake; //.rank == 3;
     }
 }
-project 'Max all infernal arms' {
+achievement 'Max all infernal arms' {
     objective 'Unlock all infernal arms' {
         require infernal_arm; //.unlocked == true;
     }
@@ -22,12 +22,12 @@ project 'Max all infernal arms' {
         require infernal_arm; //.heat >= 20;
     }
 }
-project 'Fulfill all prophecies' {
+achievement 'Fulfill all prophecies' {
     objective 'Fulfil all prophecies' {
         require prophecy; //.prophecy_fulfilled == true;
     }
 }
-project 'Max out Mirror of Night' {
+achievement 'Max out Mirror of Night' {
     objective 'Unlock all Mirror of Night abilities' {
         require mirror_ability; //.unlocked == true;
     }
@@ -35,12 +35,12 @@ project 'Max out Mirror of Night' {
         require mirror_ability; //.rank == max_rank;
     }
 }
-project 'Fully unlock Codex' {
+achievement 'Fully unlock Codex' {
     objective 'Fully unlock all codex entries' {
         require codex_entry; //.unlocked == true;
     }
 }
-project 'Max all companions' {
+achievement 'Max all companions' {
     objective 'Unlock all companions' {
         require companion; //.unlocked == true;
     }
@@ -48,29 +48,29 @@ project 'Max all companions' {
         require companion; //.rank == max_rank;
     }
 }
-project 'Max affinity with all characters' {
+achievement 'Max affinity with all characters' {
     objective 'Max out the affinity of all characters' {
         require character; //.affinity == max_affinity;
     }
 }
-project 'Unlock all skelly statues' {
+achievement 'Unlock all skelly statues' {
     objective 'Unlock all 3 skelly challenge statues' {
         require challenge_statue; //.unlocked == true;
     }
 }
-project 'Unlock all house contractor upgrades' {
+achievement 'Unlock all house contractor upgrades' {
     objective 'Purchase all house contractor upgrades' {
         require contractor_upgrade; //.unlocked == true;
     }
 }
-project 'Max resource director rank' {
+achievement 'Max resource director rank' {
     objective 'Achieve max rank with the resource director' {
         require resource_director; //.rank == 'Unseen One';
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class keepsake {

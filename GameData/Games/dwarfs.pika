@@ -1,23 +1,23 @@
 game dwarfs ~> 'Dwarfs!?';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Finish the tutorial' {
+achievement 'Finish the tutorial' {
     objective 'Complete all tutorial missions'{
         require tutorial_mission; //.completed == true;
     }
 }
-project 'Ace all challenges' {
+achievement 'Ace all challenges' {
     objective 'Get 3 Axes in all challenges' {
         require challenge; //.axes == 3;
     }
 }
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class tutorial_mission {

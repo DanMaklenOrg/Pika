@@ -13,9 +13,6 @@ public class UserStatsDbModel : BaseDbModel
     [JsonPropertyName("entity_stats")]
     public List<UserEntityStatDbModel> EntityStats { get; init; } = [];
 
-    [JsonPropertyName("completed_project_ids")]
-    public List<string> CompletedProjectIds { get; init; } = [];
-
     protected override void SetKeys()
     {
         PartitionKey = $"UserStat#{UserId}#{GameId}";

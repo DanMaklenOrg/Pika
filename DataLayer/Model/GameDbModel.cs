@@ -13,8 +13,8 @@ public class GameDbModel : BaseDbModel
     [JsonPropertyName("entities")]
     public List<EntityDbModel>? Entities { get; init; }
 
-    [JsonPropertyName("projects")]
-    public List<ProjectDbModel>? Projects { get; init; }
+    [JsonPropertyName("achievements")]
+    public List<AchievementDbModel>? Achievements { get; init; }
 
     [JsonPropertyName("classes")]
     public List<ClassDbModel>? Classes { get; init; }
@@ -26,7 +26,7 @@ public class GameDbModel : BaseDbModel
     }
 }
 
-public class ProjectDbModel
+public class AchievementDbModel
 {
     [JsonPropertyName("id")]
     public required string Id { get; init; }

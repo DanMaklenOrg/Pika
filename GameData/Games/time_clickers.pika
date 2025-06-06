@@ -1,24 +1,24 @@
 game time_clickers ~> 'Time Clickers';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Max all artifacts' {
+achievement 'Max all artifacts' {
     objective 'Max all artifacts' {
         require artifact; //.rank == max_rank;
     }
 }
-project 'Max all augments' {
+achievement 'Max all augments' {
     objective 'Max all augments' {
         require augment; //.rank == max_rank;
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class artifact {
