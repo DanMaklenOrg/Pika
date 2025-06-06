@@ -25,19 +25,19 @@ public class PikaParser
         (ResourceId id, string name) = ParseNamedIdentifier(context.gameDecl().namedIdentifier());
         var game = new Game(id, name);
 
-        game.Projects.AddRange(context.declStmt().OfType<PikaLangParser.ProjectDeclarationContext>().Select(ParseProject));
+        game.Achievements.AddRange(context.declStmt().OfType<PikaLangParser.AchievementDeclarationContext>().Select(ParseAchievement));
         game.Classes.AddRange(context.declStmt().OfType<PikaLangParser.ClassDeclarationContext>().Select(ParseClass));
         game.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
 
         return game;
     }
 
-    private Project ParseProject(PikaLangParser.ProjectDeclarationContext context)
+    private Achievement ParseAchievement(PikaLangParser.AchievementDeclarationContext context)
     {
-        (ResourceId id, string name) = ParseNamedIdentifier(context.projectDecl().namedIdentifier());
-        return new Project(id, name)
+        (ResourceId id, string name) = ParseNamedIdentifier(context.achievementDecl().namedIdentifier());
+        return new Achievement(id, name)
         {
-            Objectives = context.projectDecl().objectiveDecl().Select(ParseObjective).ToList(),
+            Objectives = context.achievementDecl().objectiveDecl().Select(ParseObjective).ToList(),
         };
     }
 

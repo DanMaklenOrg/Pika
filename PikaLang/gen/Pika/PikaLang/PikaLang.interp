@@ -4,7 +4,7 @@ null
 null
 null
 'game'
-'project'
+'achievement'
 'objective'
 'require'
 'class'
@@ -32,7 +32,7 @@ SINGLE_LINE_COMMENT
 MULTI_LINE_COMMENT
 WHITESPACE
 GAME
-PROJECT
+ACHIEVEMENT
 OBJECTIVE
 REQUIRE
 CLASS
@@ -58,7 +58,7 @@ rule names:
 root
 gameDecl
 declStmt
-projectDecl
+achievementDecl
 objectiveDecl
 requireDecl
 classDecl

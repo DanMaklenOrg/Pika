@@ -23,7 +23,7 @@ public static class DtoMapper
             Id = model.Id,
             Name = model.Name,
             Entities = model.Entities.ConvertAll(ToDto),
-            Projects = model.Projects.ConvertAll(ToDto),
+            Achievements = model.Achievements.ConvertAll(ToDto),
             Classes = model.Classes.ConvertAll(ToDto),
         };
     }
@@ -39,9 +39,9 @@ public static class DtoMapper
         };
     }
 
-    private static ProjectDto ToDto(Project model)
+    private static AchievementDto ToDto(Achievement model)
     {
-        return new ProjectDto
+        return new AchievementDto
         {
             Id = model.Id,
             Name = model.Name,

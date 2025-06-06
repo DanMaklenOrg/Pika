@@ -1,29 +1,29 @@
 game nodebuster ~> 'Nodebuster';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Max all upgrades' {
+achievement 'Max all upgrades' {
     objective 'Max all upgrades' {
         require upgrade; //.level == max_level;
     }
 }
-project 'Claim all milestones' {
+achievement 'Claim all milestones' {
     objective 'Claim all milestones' {
         require milestone; //.claimed == true;
     }
 }
-project 'Deploy god virus' {
+achievement 'Deploy god virus' {
     objective 'Deploy god virus' {
         require lab; //.virus_deployed == true;
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class upgrade {

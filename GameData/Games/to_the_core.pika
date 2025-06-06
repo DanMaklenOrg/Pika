@@ -1,17 +1,17 @@
 game to_the_core ~> 'To The Core';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Max all upgrades' {
+achievement 'Max all upgrades' {
     objective 'Max all upgrades' {
         require upgrade; //.rank == max_rank
     }
 }
-project 'Destroy the core of all planets' {
+achievement 'Destroy the core of all planets' {
     objective 'Unlock all planets' {
         require planet; //.unlocked == true;
     }
@@ -19,7 +19,7 @@ project 'Destroy the core of all planets' {
         require planet; //.core_destroyed == true;
     }
 }
-project 'Max all equipments' {
+achievement 'Max all equipments' {
     objective 'Unlock all equipments' {
         require equipment; //.unlocked == true;
     }
@@ -29,7 +29,7 @@ project 'Max all equipments' {
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class upgrade {

@@ -1,24 +1,24 @@
 game shapez ~> 'Shapez';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Max hub level' {
+achievement 'Max hub level' {
     objective 'Reach max hub level' {
         require hub; //.level >= 26;
     }
 }
-project 'Max all upgrades' {
+achievement 'Max all upgrades' {
     objective 'Max all upgrades' {
         require upgrade; //tier >= 8;
     }
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class hub {

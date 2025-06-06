@@ -1,22 +1,22 @@
 game dungeon_souls ~> 'Dungeon Souls';
 
-// Projects
-project 'Unlock all achievements' {
+// Achievements
+achievement 'Unlock all achievements' {
     objective 'Unlock all steam achievements' {
-        require achievement; //.achieved == true;
+        require achievement_c; //.achieved == true;
     }
 }
-project 'Collect all Arcane Forge Recipes' {
+achievement 'Collect all Arcane Forge Recipes' {
     objective 'Find all arcane forge recipes' {
         require forge_recipe; //.owned == true;
     }
 }
-project 'Max all passives' {
+achievement 'Max all passives' {
     objective 'Reach level 10 in all passives' {
         require passive; //.level == 10;
     }
 }
-project 'Max all heroes' {
+achievement 'Max all heroes' {
     objective 'Unlock all heroes' {
         require hero; //.unlocked == true;
     }
@@ -29,7 +29,7 @@ project 'Max all heroes' {
 }
 
 // Classes
-class achievement {
+class achievement_c {
     stat<bool> achieved ~> 'Achievement Unlocked';
 }
 class passive {

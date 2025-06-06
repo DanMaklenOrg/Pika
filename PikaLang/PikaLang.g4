@@ -5,12 +5,12 @@ root: gameDecl declStmt+ EOF;
 gameDecl: GAME namedIdentifier SEMICOLON;
 
 declStmt
-    : projectDecl   #projectDeclaration
+    : achievementDecl   #achievementDeclaration
     | classDecl     #classDeclaration
     | entityDecl    #entityDeclaration
     ;
 
-projectDecl: PROJECT namedIdentifier OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
+achievementDecl: ACHIEVEMENT namedIdentifier OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
 objectiveDecl: OBJECTIVE namedIdentifier OPEN_BRACES requireDecl+ CLOSE_BRACES;
 requireDecl: REQUIRE IDENTIFIER SEMICOLON;
 
@@ -43,7 +43,7 @@ WHITESPACE: [ \n\t]+ -> skip;
 
 // Keywords
 GAME: 'game';
-PROJECT: 'project';
+ACHIEVEMENT: 'achievement';
 OBJECTIVE: 'objective';
 REQUIRE: 'require';
 CLASS: 'class';

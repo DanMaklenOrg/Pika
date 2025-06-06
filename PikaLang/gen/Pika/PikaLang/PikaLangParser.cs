@@ -37,33 +37,33 @@ public partial class PikaLangParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
-		SINGLE_LINE_COMMENT=1, MULTI_LINE_COMMENT=2, WHITESPACE=3, GAME=4, PROJECT=5, 
+		SINGLE_LINE_COMMENT=1, MULTI_LINE_COMMENT=2, WHITESPACE=3, GAME=4, ACHIEVEMENT=5, 
 		OBJECTIVE=6, REQUIRE=7, CLASS=8, STAT=9, BOOL=10, INT=11, ATTRIBUTE=12, 
 		SEMICOLON=13, OPEN_BRACES=14, CLOSE_BRACES=15, OPEN_ANGULAR_BRACES=16, 
 		CLOSE_ANGULAR_BRACES=17, OPEN_PARENTHESES=18, CLOSE_PARENTHESES=19, COMMA=20, 
 		WITH_NAME=21, EQUALS=22, STRING_LITERAL=23, INTEGER_LITERAL=24, IDENTIFIER=25;
 	public const int
-		RULE_root = 0, RULE_gameDecl = 1, RULE_declStmt = 2, RULE_projectDecl = 3, 
+		RULE_root = 0, RULE_gameDecl = 1, RULE_declStmt = 2, RULE_achievementDecl = 3, 
 		RULE_objectiveDecl = 4, RULE_requireDecl = 5, RULE_classDecl = 6, RULE_entityDecl = 7, 
 		RULE_statDecl = 8, RULE_statType = 9, RULE_intOrAttribute = 10, RULE_attrDecl = 11, 
 		RULE_namedIdentifier = 12;
 	public static readonly string[] ruleNames = {
-		"root", "gameDecl", "declStmt", "projectDecl", "objectiveDecl", "requireDecl", 
+		"root", "gameDecl", "declStmt", "achievementDecl", "objectiveDecl", "requireDecl", 
 		"classDecl", "entityDecl", "statDecl", "statType", "intOrAttribute", "attrDecl", 
 		"namedIdentifier"
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, null, null, null, "'game'", "'project'", "'objective'", "'require'", 
+		null, null, null, null, "'game'", "'achievement'", "'objective'", "'require'", 
 		"'class'", "'stat'", "'bool'", "'int'", "'attribute'", "';'", "'{'", "'}'", 
 		"'<'", "'>'", "'('", "')'", "','", "'~>'", "'='"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT", "WHITESPACE", "GAME", 
-		"PROJECT", "OBJECTIVE", "REQUIRE", "CLASS", "STAT", "BOOL", "INT", "ATTRIBUTE", 
-		"SEMICOLON", "OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", "CLOSE_ANGULAR_BRACES", 
-		"OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", "WITH_NAME", "EQUALS", 
-		"STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
+		"ACHIEVEMENT", "OBJECTIVE", "REQUIRE", "CLASS", "STAT", "BOOL", "INT", 
+		"ATTRIBUTE", "SEMICOLON", "OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", 
+		"CLOSE_ANGULAR_BRACES", "OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", 
+		"WITH_NAME", "EQUALS", "STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -229,15 +229,15 @@ public partial class PikaLangParser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
-	public partial class ProjectDeclarationContext : DeclStmtContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ProjectDeclContext projectDecl() {
-			return GetRuleContext<ProjectDeclContext>(0);
+	public partial class AchievementDeclarationContext : DeclStmtContext {
+		[System.Diagnostics.DebuggerNonUserCode] public AchievementDeclContext achievementDecl() {
+			return GetRuleContext<AchievementDeclContext>(0);
 		}
-		public ProjectDeclarationContext(DeclStmtContext context) { CopyFrom(context); }
+		public AchievementDeclarationContext(DeclStmtContext context) { CopyFrom(context); }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitProjectDeclaration(this);
+			if (typedVisitor != null) return typedVisitor.VisitAchievementDeclaration(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
@@ -262,12 +262,12 @@ public partial class PikaLangParser : Parser {
 			State = 41;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
-			case PROJECT:
-				_localctx = new ProjectDeclarationContext(_localctx);
+			case ACHIEVEMENT:
+				_localctx = new AchievementDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 38;
-				projectDecl();
+				achievementDecl();
 				}
 				break;
 			case CLASS:
@@ -301,8 +301,8 @@ public partial class PikaLangParser : Parser {
 		return _localctx;
 	}
 
-	public partial class ProjectDeclContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PROJECT() { return GetToken(PikaLangParser.PROJECT, 0); }
+	public partial class AchievementDeclContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ACHIEVEMENT() { return GetToken(PikaLangParser.ACHIEVEMENT, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
 			return GetRuleContext<NamedIdentifierContext>(0);
 		}
@@ -314,29 +314,29 @@ public partial class PikaLangParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ObjectiveDeclContext objectiveDecl(int i) {
 			return GetRuleContext<ObjectiveDeclContext>(i);
 		}
-		public ProjectDeclContext(ParserRuleContext parent, int invokingState)
+		public AchievementDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_projectDecl; } }
+		public override int RuleIndex { get { return RULE_achievementDecl; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitProjectDecl(this);
+			if (typedVisitor != null) return typedVisitor.VisitAchievementDecl(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public ProjectDeclContext projectDecl() {
-		ProjectDeclContext _localctx = new ProjectDeclContext(Context, State);
-		EnterRule(_localctx, 6, RULE_projectDecl);
+	public AchievementDeclContext achievementDecl() {
+		AchievementDeclContext _localctx = new AchievementDeclContext(Context, State);
+		EnterRule(_localctx, 6, RULE_achievementDecl);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 43;
-			Match(PROJECT);
+			Match(ACHIEVEMENT);
 			State = 44;
 			namedIdentifier();
 			State = 45;
