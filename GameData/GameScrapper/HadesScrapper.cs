@@ -12,7 +12,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 
     public async Task ScrapeInto(Game game)
     {
-        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement"));
+        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
         game.Entities.AddRange(await ScrapeKeepsakes());
         game.Entities.AddRange(await ScrapeProphecies());
         game.Entities.AddRange(await ScrapeMirrorAbilities());
@@ -95,7 +95,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
     private async Task<List<Entity>> ScrapeContractorUpgrades()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/House_Contractor");
-        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[position() >= 2 and position()<=7]/tr/td[1]");
+        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'wds-tab__content')]/table/tbody/tr/td[1]");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
