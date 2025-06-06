@@ -7,8 +7,8 @@ public class UserStatsDbModel : BaseDbModel
     [JsonPropertyName("user_id")]
     public required string UserId { get; init; }
 
-    [JsonPropertyName("domain_id")]
-    public required string DomainId { get; init; }
+    [JsonPropertyName("game_id")]
+    public required string GameId { get; init; }
 
     [JsonPropertyName("entity_stats")]
     public List<UserEntityStatDbModel> EntityStats { get; init; } = [];
@@ -18,7 +18,7 @@ public class UserStatsDbModel : BaseDbModel
 
     protected override void SetKeys()
     {
-        PartitionKey = $"UserStat#{UserId}#{DomainId}";
+        PartitionKey = $"UserStat#{UserId}#{GameId}";
         SortKey = "UserStat";
     }
 }

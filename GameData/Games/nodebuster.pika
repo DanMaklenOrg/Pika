@@ -1,0 +1,165 @@
+game nodebuster ~> 'Nodebuster';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+project 'Max all upgrades' {
+    objective 'Max all upgrades' {
+        require upgrade; //.level == max_level;
+    }
+}
+project 'Claim all milestones' {
+    objective 'Claim all milestones' {
+        require milestone; //.claimed == true;
+    }
+}
+project 'Deploy god virus' {
+    objective 'Deploy god virus' {
+        require lab; //.virus_deployed == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}
+class upgrade {
+    attribute max_level = 1;
+    stat<int(0, max_level)> level ~> 'Level';
+}
+class milestone {
+    stat<bool> claimed ~> 'Claimed';
+}
+class lab {
+    stat<bool> virus_deployed ~> 'Virus Deployed';
+}
+
+// Entities
+upgrade 'bit boost' { attribute max_level = 1; }
+upgrade 'node boost' { attribute max_level = 1; }
+upgrade 'spawn exploders' { attribute max_level = 1; }
+upgrade 'milestones' { attribute max_level = 1; }
+upgrade 'swarming' { attribute max_level = 1; }
+upgrade 'skilled salvager' { attribute max_level = 1; }
+upgrade 'game expansion' { attribute max_level = 1; }
+upgrade 'it\'s pulsing time' { attribute max_level = 1; }
+upgrade 'blood visage' { attribute max_level = 1; }
+upgrade 'self-repair' { attribute max_level = 1; }
+upgrade 'patcher' { attribute max_level = 1; }
+upgrade 'to infinity' { attribute max_level = 1; }
+upgrade 'going nowhere' { attribute max_level = 1; }
+upgrade 'void' { attribute max_level = 1; }
+upgrade 'no return' { attribute max_level = 1; }
+upgrade 'where' { attribute max_level = 1; }
+upgrade 'in the distance' { attribute max_level = 1; }
+upgrade 'something happens' { attribute max_level = 1; }
+upgrade 'event horizon' { attribute max_level = 1; }
+upgrade 'singularity' { attribute max_level = 1; }
+upgrade 'endless' { attribute max_level = 1; }
+upgrade 'the lab' { attribute max_level = 1; }
+upgrade 'repeating' { attribute max_level = 1; }
+upgrade 'repeat-repeating' { attribute max_level = 1; }
+upgrade 'pulse bolts' { attribute max_level = 1; }
+upgrade 'crypto mine' { attribute max_level = 1; }
+upgrade 'processor acquisition' { attribute max_level = 1; }
+upgrade 'bolt burst' { attribute max_level = 1; }
+upgrade 'bolt barrage' { attribute max_level = 1; }
+upgrade 'insatiable' { attribute max_level = 1; }
+upgrade 'bloodblade' { attribute max_level = 1; }
+upgrade 'chaining' { attribute max_level = 1; }
+upgrade 'unending parasite' { attribute max_level = 1; }
+upgrade 'parasite evolution' { attribute max_level = 1; }
+upgrade 'extraction' { attribute max_level = 2; }
+upgrade 'auto-collect' { attribute max_level = 3; }
+upgrade 'drainer' { attribute max_level = 3; }
+upgrade 'nodeblade' { attribute max_level = 3; }
+upgrade 'bolt lethality' { attribute max_level = 3; }
+upgrade 'blood injection' { attribute max_level = 3; }
+upgrade 'b.i.g.' { attribute max_level = 3; }
+upgrade 'learning' { attribute max_level = 3; }
+upgrade 'ambush' { attribute max_level = 4; }
+upgrade 'finishing blow' { attribute max_level = 4; }
+upgrade 'node finder' { attribute max_level = 5; }
+upgrade 'lightning rod' { attribute max_level = 5; }
+upgrade 'netblade' { attribute max_level = 5; }
+upgrade 'auto pulser' { attribute max_level = 5; }
+upgrade 'bolt count' { attribute max_level = 5; }
+upgrade 'antivirus' { attribute max_level = 5; }
+upgrade 'pulser pursuit' { attribute max_level = 5; }
+upgrade 'connection buster' { attribute max_level = 5; }
+upgrade 'fast pulsing' { attribute max_level = 5; }
+upgrade 'instant repair' { attribute max_level = 5; }
+upgrade 'indomitable' { attribute max_level = 5; }
+upgrade 'growing' { attribute max_level = 5; }
+upgrade 'exploder area' { attribute max_level = 5; }
+upgrade 'focus armor' { attribute max_level = 5; }
+upgrade 'net armor' { attribute max_level = 5; }
+upgrade 'blood armor' { attribute max_level = 5; }
+upgrade 'plundering' { attribute max_level = 5; }
+upgrade 'magnet' { attribute max_level = 5; }
+upgrade 'beyond' { attribute max_level = 5; }
+upgrade 'repair tool' { attribute max_level = 5; }
+upgrade 'salvaging' { attribute max_level = 5; }
+upgrade 'infesting' { attribute max_level = 5; }
+upgrade 'overloaded' { attribute max_level = 5; }
+upgrade 'sapper' { attribute max_level = 5; }
+upgrade 'first strike' { attribute max_level = 6; }
+upgrade 'bit explosion' { attribute max_level = 6; }
+upgrade 'last strike' { attribute max_level = 6; }
+upgrade 'pulse thumper' { attribute max_level = 6; }
+upgrade 'anti-purple' { attribute max_level = 8; }
+upgrade 'better endurance' { attribute max_level = 8; }
+upgrade 'big crit' { attribute max_level = 8; }
+upgrade 'thundering' { attribute max_level = 8; }
+upgrade 'influence' { attribute max_level = 10; }
+upgrade 'bolt damage' { attribute max_level = 10; }
+upgrade 'scaling regeneration' { attribute max_level = 10; }
+upgrade 'giant slayer' { attribute max_level = 10; }
+upgrade 'colossus slayer' { attribute max_level = 10; }
+upgrade 'proficiency' { attribute max_level = 10; }
+upgrade 'potency' { attribute max_level = 10; }
+upgrade 'crit chance' { attribute max_level = 10; }
+upgrade 'crit damage' { attribute max_level = 10; }
+upgrade 'endurance' { attribute max_level = 10; }
+upgrade 'big heart' { attribute max_level = 10; }
+upgrade 'transplant' { attribute max_level = 10; }
+upgrade 'swarm defense system' { attribute max_level = 10; }
+upgrade 'bolster' { attribute max_level = 10; }
+upgrade 'super armor' { attribute max_level = 10; }
+upgrade 'firewall' { attribute max_level = 10; }
+upgrade 'boss guard' { attribute max_level = 10; }
+upgrade 'crowding' { attribute max_level = 15; }
+upgrade 'power' { attribute max_level = 15; }
+upgrade 'bit armor' { attribute max_level = 20; }
+upgrade 'byte armor' { attribute max_level = 30; }
+
+milestone 'Red Defeater';
+milestone 'Red Enemy';
+milestone 'Red Slayer';
+milestone 'Red Buster';
+milestone 'Red Hacker';
+milestone 'Red Destroyer';
+milestone 'Red Ender';
+milestone 'Red Rival';
+milestone 'Red Breaker';
+milestone 'Red Challenger';
+milestone 'Red Nemesis';
+milestone 'Blue Defeater';
+milestone 'Blue Enemy';
+milestone 'Blue Slayer';
+milestone 'Blue Buster';
+milestone 'Blue Hacker';
+milestone 'Blue Destroyer';
+milestone 'Blue Ender';
+milestone 'Blue Rival';
+milestone 'Blue Breaker';
+milestone 'Blue Challenger';
+milestone 'Blue Nemesis';
+milestone 'Yellow Defeater';
+milestone 'Yellow Enemy';
+milestone 'Yellow Slayer';
+
+lab 'Lab';

@@ -1,8 +1,8 @@
 grammar PikaLang;
 
-root: domainDecl declStmt+ EOF;
+root: gameDecl declStmt+ EOF;
 
-domainDecl: DOMAIN namedIdentifier SEMICOLON;
+gameDecl: GAME namedIdentifier SEMICOLON;
 
 declStmt
     : projectDecl   #projectDeclaration
@@ -42,7 +42,7 @@ MULTI_LINE_COMMENT: '/*' .*? '*/' -> skip;
 WHITESPACE: [ \n\t]+ -> skip;
 
 // Keywords
-DOMAIN: 'domain';
+GAME: 'game';
 PROJECT: 'project';
 OBJECTIVE: 'objective';
 REQUIRE: 'require';

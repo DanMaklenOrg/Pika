@@ -1,0 +1,13 @@
+game middle_earth_shadow_of_war ~> 'Middle Earth: Shadow of War';
+
+// Projects
+project 'Unlock all achievements' {
+    objective 'Unlock all steam achievements' {
+        require achievement; //.achieved == true;
+    }
+}
+
+// Classes
+class achievement {
+    stat<bool> achieved ~> 'Achievement Unlocked';
+}

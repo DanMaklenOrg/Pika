@@ -8,7 +8,7 @@ namespace Pika.PikaLang;
 
 public class PikaParser
 {
-    public Domain Parse(TextReader textReader)
+    public Game Parse(TextReader textReader)
     {
         var antlrStream = new AntlrInputStream(textReader);
         var lexer = new PikaLangLexer(antlrStream);
@@ -16,20 +16,20 @@ public class PikaParser
         var parser = new PikaLangParser(tokenStream);
         var parseTree = parser.root();
 
-        var domain = ParseDomain(parseTree);
-        return domain;
+        var game = ParseGame(parseTree);
+        return game;
     }
 
-    private Domain ParseDomain(PikaLangParser.RootContext context)
+    private Game ParseGame(PikaLangParser.RootContext context)
     {
-        (ResourceId id, string name) = ParseNamedIdentifier(context.domainDecl().namedIdentifier());
-        var domain = new Domain(id, name);
+        (ResourceId id, string name) = ParseNamedIdentifier(context.gameDecl().namedIdentifier());
+        var game = new Game(id, name);
 
-        domain.Projects.AddRange(context.declStmt().OfType<PikaLangParser.ProjectDeclarationContext>().Select(ParseProject));
-        domain.Classes.AddRange(context.declStmt().OfType<PikaLangParser.ClassDeclarationContext>().Select(ParseClass));
-        domain.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
+        game.Projects.AddRange(context.declStmt().OfType<PikaLangParser.ProjectDeclarationContext>().Select(ParseProject));
+        game.Classes.AddRange(context.declStmt().OfType<PikaLangParser.ClassDeclarationContext>().Select(ParseClass));
+        game.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
 
-        return domain;
+        return game;
     }
 
     private Project ParseProject(PikaLangParser.ProjectDeclarationContext context)

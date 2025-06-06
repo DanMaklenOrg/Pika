@@ -13,9 +13,9 @@ public class UserStatsDao : IUserStatsDao
         _db = db;
     }
 
-    public async Task Create(UserStatsDbModel domain)
+    public async Task Create(UserStatsDbModel userStats)
     {
-        var serializedItem = BaseDbModel.SetKeysAndSerialize(domain);
+        var serializedItem = BaseDbModel.SetKeysAndSerialize(userStats);
         var request = new PutItemRequest
         {
             TableName = DynamoDbConstants.TableName,
@@ -24,14 +24,14 @@ public class UserStatsDao : IUserStatsDao
         await _db.PutItemAsync(request);
     }
 
-    public async Task<UserStatsDbModel?> Get(string userId, string domainId)
+    public async Task<UserStatsDbModel?> Get(string userId, string gameId)
     {
         var request = new GetItemRequest
         {
             TableName = DynamoDbConstants.TableName,
             Key =
             {
-                { "pk", new AttributeValue($"UserStat#{userId}#{domainId}") },
+                { "pk", new AttributeValue($"UserStat#{userId}#{gameId}") },
                 { "sk", new AttributeValue("UserStat") },
             }
         };

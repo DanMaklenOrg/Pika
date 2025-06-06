@@ -4,7 +4,7 @@ namespace Pika.DataLayer.Dao;
 
 public interface IUserStatsDao
 {
-    Task Create(UserStatsDbModel domain);
+    Task Create(UserStatsDbModel userStats);
 
-    Task<UserStatsDbModel?> Get(string userId, string domainId);
+    Task<UserStatsDbModel?> Get(string userId, string gameId);
 }
