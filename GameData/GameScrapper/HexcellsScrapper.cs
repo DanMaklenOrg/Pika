@@ -11,6 +11,6 @@ public class HexcellsScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapp
 
     public async Task ScrapeInto(Game game)
     {
-        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement"));
+        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
     }
 }
