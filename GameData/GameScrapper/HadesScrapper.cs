@@ -12,7 +12,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 
     public async Task ScrapeInto(Game game)
     {
-        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
         game.Entities.AddRange(await ScrapeKeepsakes());
         game.Entities.AddRange(await ScrapeProphecies());
         game.Entities.AddRange(await ScrapeMirrorAbilities());
@@ -62,7 +62,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
             var name = ScrapperHelper.CleanName(n.SelectSingleNode($"./td[{1 + columnOffset}]").InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "mirror");
             var maxRank = ParseMaxRank(n.SelectSingleNode($"./td[{4 + columnOffset}]"));
-            return new Entity(id, name, "mirror_ability") { Attributes = [new("max_rank", maxRank)] };
+            return new Entity(id, name, "mirror_ability");// { Attributes = [new("max_rank", maxRank)] };
         }
 
         int ParseMaxRank(HtmlNode n) => n.InnerText.Count(c => c == '/') + 1;
@@ -109,10 +109,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
         var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Resource_Director");
         var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td[2]");
         var ranks = nodes.Select(n => ScrapperHelper.CleanName(n.InnerText)).ToList();
-        game.Classes.Add(new("resource_director", "Resource Director")
-        {
-            Stats = [new("rank", "Rank", Stat.StatType.OrderedEnum) { EnumValues = ranks }]
-        });
+        game.Categories.Add(new("resource_director", "Resource Director"));
         game.Entities.Add(new("resource_director_entity", "Resource Director", "resource_director"));
     }
 }

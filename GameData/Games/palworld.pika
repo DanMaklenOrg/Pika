@@ -1,11 +1,6 @@
 game palworld ~> 'Palworld';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Capture All Pals' {
     objective 'Capture all pals at least 12 times each' {
         require pal; //.captured >= 12;
@@ -13,9 +8,6 @@ achievement 'Capture All Pals' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class pal {
     stat<int(0, 12)> captured ~> 'Captured';
 }

@@ -11,6 +11,6 @@ public class DwarfsScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 
     public async Task ScrapeInto(Game game)
     {
-        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
     }
 }

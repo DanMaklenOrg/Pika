@@ -1,11 +1,6 @@
 game shapez ~> 'Shapez';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Max hub level' {
     objective 'Reach max hub level' {
         require hub; //.level >= 26;

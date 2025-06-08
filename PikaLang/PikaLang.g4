@@ -1,6 +1,6 @@
 grammar PikaLang;
 
-root: gameDecl declStmt+ EOF;
+root: gameDecl declStmt* EOF;
 
 gameDecl: GAME namedIdentifier SEMICOLON;
 

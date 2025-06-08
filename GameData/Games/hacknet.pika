@@ -1,15 +1,7 @@
 game hacknet ~> 'Hacknet';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 
 // Entities

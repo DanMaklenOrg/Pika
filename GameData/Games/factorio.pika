@@ -1,11 +1,6 @@
 game factorio ~> 'Factorio';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Complete all unique single player scenarios' {
     objective 'Complete unique all single player scenarios' {
         require scenario; //.level == max_level;
@@ -18,9 +13,6 @@ achievement 'Build a Mega Factory' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class scenario {
     attribute max_level = 5;
     stat<int(0, max_level)> level ~> 'Level';

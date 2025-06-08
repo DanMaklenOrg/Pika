@@ -1,11 +1,6 @@
 game nodebuster ~> 'Nodebuster';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Max all upgrades' {
     objective 'Max all upgrades' {
         require upgrade; //.level == max_level;
@@ -23,9 +18,6 @@ achievement 'Deploy god virus' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class upgrade {
     attribute max_level = 1;
     stat<int(0, max_level)> level ~> 'Level';

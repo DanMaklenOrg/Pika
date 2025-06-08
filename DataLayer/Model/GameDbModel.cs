@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
 namespace Pika.DataLayer.Model;
@@ -19,6 +20,9 @@ public class GameDbModel : BaseDbModel
     [JsonPropertyName("classes")]
     public List<ClassDbModel>? Classes { get; init; }
 
+    [JsonPropertyName("categories")]
+    public List<CategoryDbModel>? Categories { get; init; }
+
     protected override void SetKeys()
     {
         PartitionKey = $"Game#{Id}";
@@ -34,8 +38,11 @@ public class AchievementDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("description")]
+    public string? Description { get; init; }
+
     [JsonPropertyName("objectives")]
-    public required List<ObjectiveDbModel> Objectives { get; init; }
+    public List<ObjectiveDbModel>? Objectives { get; init; }
 }
 
 public class ObjectiveDbModel
@@ -46,9 +53,14 @@ public class ObjectiveDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("description")]
+    public string? Description { get; init; }
+
+    [JsonPropertyName("criteria")]
+    public string? CriteriaCategory { get; init; }
 
     [JsonPropertyName("requirements")]
-    public required List<RequirementDbModel> Requirements { get; init; }
+    public List<RequirementDbModel> Requirements { get; init; }
 
     public class RequirementDbModel
     {
@@ -71,14 +83,37 @@ public class EntityDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("category")]
+    public string? Category { get; init; }
+
     [JsonPropertyName("class")]
-    public required string Class { get; init; }
+    public string? Class { get; init; }
 
     [JsonPropertyName("attributes")]
-    public required List<AttributeDbModel> Attributes { get; init; }
+    public List<AttributeDbModel>? Attributes { get; init; }
 
     [JsonPropertyName("stats")]
     public List<StatDbModel>? Stats { get; init; }
+}
+
+public class CategoryDbModel
+{
+    public CategoryDbModel()
+    {
+    }
+
+    [SetsRequiredMembers]
+    public CategoryDbModel(string id, string name)
+    {
+        Id = id;
+        Name = name;
+    }
+
+    [JsonPropertyName("id")]
+    public required string Id { get; init; }
+
+    [JsonPropertyName("name")]
+    public required string Name { get; init; }
 }
 
 public class StatDbModel

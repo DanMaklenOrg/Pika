@@ -1,11 +1,6 @@
 game dwarfs ~> 'Dwarfs!?';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Finish the tutorial' {
     objective 'Complete all tutorial missions'{
         require tutorial_mission; //.completed == true;
@@ -17,9 +12,6 @@ achievement 'Ace all challenges' {
     }
 }
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class tutorial_mission {
     stat<bool> completed ~> 'Completed';
 }

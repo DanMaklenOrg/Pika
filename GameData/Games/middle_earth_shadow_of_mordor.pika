@@ -1,12 +1,6 @@
 game middle_earth_shadow_of_mordor ~> 'Middle Earth: Shadow of Mordor';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
-
 achievement 'Unlock all appendices' {
     objective 'Unlock all Ithildin entries' {
         require ithildin; //.unlocked == true
@@ -66,9 +60,6 @@ achievement 'Complete all Trials' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class ability {
     stat<bool> unlocked ~> 'Unlocked';
 }

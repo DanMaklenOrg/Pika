@@ -1,8 +1,6 @@
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Pika.DataLayer.Model;
 using Pika.Model;
-using Attribute = Pika.Model.Attribute;
 
 namespace Pika.DataLayer.Mapper;
 
@@ -16,7 +14,7 @@ public static class DbModelMapper
             Name = game.Name,
             Entities = game.Entities.ConvertAll(ToDbModel),
             Achievements = game.Achievements.ConvertAll(ToDbModel),
-            Classes = game.Classes.ConvertAll(ToDbModel),
+            Categories = game.Categories.ConvertAll(model => new CategoryDbModel(model.Id, model.Name)),
         };
     }
 
@@ -36,23 +34,7 @@ public static class DbModelMapper
         {
             Id = objective.Id,
             Name = objective.Name,
-            Requirements = objective.Requirements.ConvertAll(r => new ObjectiveDbModel.RequirementDbModel()
-            {
-                Class = r.Class,
-                Stat = r.Stat,
-                Min = r.Min,
-            }),
-        };
-    }
-
-    private static ClassDbModel ToDbModel(Class model)
-    {
-        return new ClassDbModel
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Attributes = model.Attributes.ConvertAll(ToDbModel),
-            Stats = model.Stats.ConvertAll(ToDbModel),
+            CriteriaCategory = objective.CriteriaCategory,
         };
     }
 
@@ -62,45 +44,9 @@ public static class DbModelMapper
         {
             Id = entity.Id,
             Name = entity.Name,
-            Class = entity.Class,
-            Attributes = entity.Attributes.ConvertAll(ToDbModel),
-            Stats = entity.Stats.ConvertAll(ToDbModel),
+            Category = entity.Category,
         };
     }
-
-    private static StatDbModel ToDbModel(Stat stat)
-    {
-        return new StatDbModel
-        {
-            Id = stat.Id,
-            Name = stat.Name,
-            Type = stat.Type.ToString(),
-            Min = ToDbModel(stat.Min),
-            Max = ToDbModel(stat.Max),
-            EnumValues = stat.EnumValues,
-        };
-    }
-
-    private static AttributeDbModel ToDbModel(Attribute attribute)
-    {
-        return new AttributeDbModel
-        {
-            Id = attribute.Id,
-            Value = attribute.Value,
-        };
-    }
-
-    [return: NotNullIfNotNull("intOrAttribute")]
-    private static StatDbModel.IntOrAttributeDbModel? ToDbModel(Stat.IntOrAttribute? intOrAttribute)
-    {
-        if (!intOrAttribute.HasValue) return null;
-        return new StatDbModel.IntOrAttributeDbModel
-        {
-            ConstValue = intOrAttribute.Value.ConstValue,
-            AttributeId = intOrAttribute.Value.AttributeId,
-        };
-    }
-
 
     [return: NotNullIfNotNull("model")]
     public static Game? FromDbModel(GameDbModel? model)
@@ -109,7 +55,7 @@ public static class DbModelMapper
         return new Game(model.Id, model.Name)
         {
             Achievements = model.Achievements?.ConvertAll(FromDbModel) ?? [],
-            Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
+            Categories = model.Categories?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
         };
     }
@@ -118,7 +64,8 @@ public static class DbModelMapper
     {
         return new Achievement(model.Id, model.Name)
         {
-            Objectives = model.Objectives.ConvertAll(FromDbModel),
+            Description = model.Description,
+            Objectives = model.Objectives?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
@@ -126,55 +73,19 @@ public static class DbModelMapper
     {
         return new Objective(model.Id, model.Name)
         {
-            Requirements = model.Requirements.ConvertAll(r => new Objective.Requirement
-            {
-                Class = r.Class,
-                Stat = r.Stat,
-                Min = r.Min,
-            }),
+            Description = model.Description,
+            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
         };
     }
 
-    private static Class FromDbModel(ClassDbModel model)
+    private static Category FromDbModel(CategoryDbModel model)
     {
-        return new Class(model.Id, model.Name)
-        {
-            Attributes = model.Attributes.ConvertAll(FromDbModel),
-            Stats = model.Stats.ConvertAll(FromDbModel),
-        };
+        return new Category(model.Id, model.Name);
     }
 
     private static Entity FromDbModel(EntityDbModel model)
     {
-        return new Entity(model.Id, model.Name, model.Class)
-        {
-            Attributes = model.Attributes.ConvertAll(FromDbModel),
-            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
-        };
-    }
-
-    private static Attribute FromDbModel(AttributeDbModel model)
-    {
-        return new Attribute(model.Id, model.Value);
-    }
-
-    private static Stat FromDbModel(StatDbModel model)
-    {
-        return new Stat(model.Id, model.Name, Enum.Parse<Stat.StatType>(model.Type))
-        {
-            Min = FromDbModel(model.Min),
-            Max = FromDbModel(model.Max),
-            EnumValues = model.EnumValues,
-        };
-    }
-
-    [return: NotNullIfNotNull("model")]
-    private static Stat.IntOrAttribute? FromDbModel(StatDbModel.IntOrAttributeDbModel? model)
-    {
-        if (model is null) return null;
-        if (model.ConstValue is not null) return new Stat.IntOrAttribute { ConstValue = model.ConstValue };
-        if (model.AttributeId is not null) return new Stat.IntOrAttribute { AttributeId = model.AttributeId };
-        throw new UnreachableException();
+        return new Entity(model.Id, model.Name, model.Category);
     }
 
     public static UserStatsDbModel ToDbModel(UserStats userStats)

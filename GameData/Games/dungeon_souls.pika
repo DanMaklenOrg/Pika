@@ -1,11 +1,6 @@
 game dungeon_souls ~> 'Dungeon Souls';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Collect all Arcane Forge Recipes' {
     objective 'Find all arcane forge recipes' {
         require forge_recipe; //.owned == true;
@@ -29,9 +24,6 @@ achievement 'Max all heroes' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class passive {
     stat<int(0, 10)> level ~> 'Level';
 }

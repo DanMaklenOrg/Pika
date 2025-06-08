@@ -28,7 +28,7 @@ public static class DtoMapper
         };
     }
 
-    private static ClassDto ToDto(Class model)
+    private static ClassDto ToDto(Category model)
     {
         return new ClassDto
         {

@@ -1,11 +1,6 @@
 game to_the_core ~> 'To The Core';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Max all upgrades' {
     objective 'Max all upgrades' {
         require upgrade; //.rank == max_rank
@@ -29,9 +24,6 @@ achievement 'Max all equipments' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class upgrade {
     attribute max_rank = 1;
     stat<int(0, max_rank)> rank ~> 'Rank';
