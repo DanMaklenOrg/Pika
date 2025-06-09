@@ -40,7 +40,7 @@ builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IGameRepo, GameRepo>();
 builder.Services.AddTransient<IGameDao, GameDao>();
 builder.Services.AddTransient<IGameProgressRepo, GameProgressRepo>();
-builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
+builder.Services.AddTransient<IGameProgressDao, GameProgressDao>();
 
 var app = builder.Build();
 
