@@ -16,7 +16,7 @@ builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddTransient<IGameDao, GameDao>();
 builder.Services.AddTransient<IGameRepo, GameRepo>();
 builder.Services.AddTransient<IGameProgressRepo, GameProgressRepo>();
-builder.Services.AddTransient<IUserStatsDao, UserStatsDao>();
+builder.Services.AddTransient<IGameProgressDao, GameProgressDao>();
 
 // APIs
 // builder.Services.Configure<JsonSerializerOptions>(options => options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
