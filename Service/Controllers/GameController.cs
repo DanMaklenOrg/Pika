@@ -35,22 +35,22 @@ public class GameController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{gameId}/stats")]
-    public async Task<GameProgressDto> GetStats(string gameId)
+    [HttpGet("{gameId}/progress")]
+    public async Task<GameProgressDto> GetProgress(string gameId)
     {
         var userId = this.User.Identity!.Name!;
-        var stats = await _gameProgressRepo.Get(userId, gameId);
-        return DtoMapper.ToDto(stats ?? new GameProgress(userId, gameId));
+        var progress = await _gameProgressRepo.Get(userId, gameId);
+        return DtoMapper.ToDto(progress ?? new GameProgress(userId, gameId));
     }
 
     [Authorize]
-    [HttpPost("{gameId}/stats")]
-    public async Task<ActionResult> SetStats(string gameId, GameProgressDto dto)
+    [HttpPost("{gameId}/progress")]
+    public async Task<ActionResult> SetProgress(string gameId, GameProgressDto dto)
     {
         var userId = this.User.Identity!.Name!;
         if (userId != dto.UserId || gameId != dto.Game) return ValidationProblem();
-        var stats = DtoMapper.FromDto(dto);
-        await _gameProgressRepo.Create(stats);
+        var progress = DtoMapper.FromDto(dto);
+        await _gameProgressRepo.Create(progress);
         return Ok();
     }
 }
