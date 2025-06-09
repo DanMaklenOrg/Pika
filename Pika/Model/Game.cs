@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace Pika.Model;
 
 public abstract record PikaResource(ResourceId Id, string Name)
@@ -24,7 +22,7 @@ public record Game(ResourceId Id, string Name) : PikaResource(Id, Name)
 
 public record Achievement(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
-    public required string Description { get; init; }
+    public string? Description { get; init; } = string.Empty;
     public List<Objective> Objectives { get; init; } = [];
 
     public ResourceId? CriteriaCategory { get; init; }

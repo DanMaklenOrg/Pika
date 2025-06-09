@@ -6,29 +6,24 @@ gameDecl: GAME namedIdentifier SEMICOLON;
 
 declStmt
     : achievementDecl   #achievementDeclaration
-    | classDecl     #classDeclaration
-    | entityDecl    #entityDeclaration
+    | categoryDecl      #categoryDeclaration
+    | entityDecl        #entityDeclaration
     ;
 
-achievementDecl: ACHIEVEMENT namedIdentifier OPEN_BRACES objectiveDecl+ CLOSE_BRACES;
-objectiveDecl: OBJECTIVE namedIdentifier OPEN_BRACES requireDecl+ CLOSE_BRACES;
-requireDecl: REQUIRE IDENTIFIER SEMICOLON;
-
-classDecl: CLASS namedIdentifier OPEN_BRACES attrDecl* statDecl+ CLOSE_BRACES;
-
-entityDecl
-    : IDENTIFIER namedIdentifier SEMICOLON
-    | IDENTIFIER namedIdentifier OPEN_BRACES attrDecl* statDecl* CLOSE_BRACES
+achievementDecl
+    : ACHIEVEMENT namedIdentifier SEMICOLON
+    | ACHIEVEMENT namedIdentifier OPEN_BRACES describtionDecl? objectiveDecl* criterionDecl? CLOSE_BRACES
     ;
 
-statDecl: STAT OPEN_ANGULAR_BRACES statType CLOSE_ANGULAR_BRACES namedIdentifier SEMICOLON;
-statType
-    : BOOL                                                              #boolStatType
-    | INT OPEN_PARENTHESES intOrAttribute COMMA intOrAttribute CLOSE_PARENTHESES    #intRangeStatType
+objectiveDecl
+    : OBJECTIVE namedIdentifier SEMICOLON
+    | OBJECTIVE namedIdentifier OPEN_BRACES describtionDecl? criterionDecl? CLOSE_BRACES
     ;
-intOrAttribute: INTEGER_LITERAL | IDENTIFIER;
+criterionDecl: CRITERION IDENTIFIER SEMICOLON;
+describtionDecl: DESCRIPTION STRING_LITERAL SEMICOLON;
 
-attrDecl: ATTRIBUTE IDENTIFIER EQUALS INTEGER_LITERAL SEMICOLON;
+categoryDecl: CATEGORY namedIdentifier SEMICOLON;
+entityDecl: IDENTIFIER namedIdentifier SEMICOLON;
 
 namedIdentifier
     : IDENTIFIER WITH_NAME STRING_LITERAL   #idWithName
@@ -45,12 +40,9 @@ WHITESPACE: [ \n\t]+ -> skip;
 GAME: 'game';
 ACHIEVEMENT: 'achievement';
 OBJECTIVE: 'objective';
-REQUIRE: 'require';
-CLASS: 'class';
-STAT: 'stat';
-BOOL: 'bool';
-INT: 'int';
-ATTRIBUTE: 'attribute';
+CRITERION: 'criterion';
+CATEGORY: 'category';
+DESCRIPTION: 'description';
 
 // Operators & Punctuations
 SEMICOLON: ';';

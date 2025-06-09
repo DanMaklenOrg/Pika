@@ -25,7 +25,7 @@ public class PikaParser
         var game = new Game(id, name);
 
         game.Achievements.AddRange(context.declStmt().OfType<PikaLangParser.AchievementDeclarationContext>().Select(ParseAchievement));
-        game.Categories.AddRange(context.declStmt().OfType<PikaLangParser.ClassDeclarationContext>().Select(ParseClass));
+        game.Categories.AddRange(context.declStmt().OfType<PikaLangParser.CategoryDeclarationContext>().Select(ParseCategory));
         game.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
 
         return game;
@@ -33,23 +33,29 @@ public class PikaParser
 
     private Achievement ParseAchievement(PikaLangParser.AchievementDeclarationContext context)
     {
-        (ResourceId id, string name) = ParseNamedIdentifier(context.achievementDecl().namedIdentifier());
+        var ctx = context.achievementDecl();
+        (ResourceId id, string name) = ParseNamedIdentifier(ctx.namedIdentifier());
         return new Achievement(id, name)
         {
-            Description = string.Empty,
-            Objectives = context.achievementDecl().objectiveDecl().Select(ParseObjective).ToList(),
+            Description = ctx.describtionDecl() is null ? null : ParseStringLiteral(ctx.describtionDecl().STRING_LITERAL()),
+            Objectives = ctx.objectiveDecl().Select(ParseObjective).ToList(),
+            CriteriaCategory = ctx.criterionDecl() is null ? (ResourceId?)null : ctx.criterionDecl().IDENTIFIER().GetText(),
         };
     }
 
     private Objective ParseObjective(PikaLangParser.ObjectiveDeclContext context)
     {
         (ResourceId id, string name) = ParseNamedIdentifier(context.namedIdentifier());
-        return new Objective(id, name);
+        return new Objective(id, name)
+        {
+            Description = context.describtionDecl() is null ? null : ParseStringLiteral(context.describtionDecl().STRING_LITERAL()),
+            CriteriaCategory = context.criterionDecl() is null ? (ResourceId?)null : context.criterionDecl().IDENTIFIER().GetText(),
+        };
     }
 
-    private Category ParseClass(PikaLangParser.ClassDeclarationContext context)
+    private Category ParseCategory(PikaLangParser.CategoryDeclarationContext context)
     {
-        (ResourceId id, string name) = ParseNamedIdentifier(context.classDecl().namedIdentifier());
+        (ResourceId id, string name) = ParseNamedIdentifier(context.categoryDecl().namedIdentifier());
         return new Category(id, name);
     }
 

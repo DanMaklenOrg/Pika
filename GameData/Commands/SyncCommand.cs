@@ -14,37 +14,38 @@ public static class SyncCommand
 
     private static async Task Sync([Argument] string gameId, PikaParser parser, IGameRepo gameRepo, IEnumerable<IScrapper> scrappers)
     {
-        List<string> list =
-        [
-            "crosscells",
-            // "hacknet",
-            // "hexcells_plus",
-            // "nodebuster",
-            // "squarecells",
-            // "dungeon_souls",
-            // "hades",
-            // "middle_earth_shadow_of_mordor",
-            // "palworld",
-            // "time_clickers",
-            // "dwarfs",
-            // "hexcells",
-            // "middle_earth_shadow_of_war",
-            // "shapez",
-            // "to_the_core",
-            // "factorio",
-            // "hexcells_infinite",
-            // "minecraft_border_hoarder",
-            // "spec_ops_the_line",
-            // "vampire_survivors",
-        ];
-
-        foreach (var g in list)
-        {
-            gameId = g;
-            var game = ReadPikaFile(parser, gameId);
-            await RunScrapersAndUpdateGame(game, scrappers);
-            await gameRepo.Create(game);
-        }
+        // List<string> list =
+        // [
+        //     "crosscells",
+        //     "hacknet",
+        //     "hexcells_plus",
+        //     "nodebuster",
+        //     "squarecells",
+        //     "dungeon_souls",
+        //     "hades",
+        //     "middle_earth_shadow_of_mordor",
+        //     "palworld",
+        //     "time_clickers",
+        //     "dwarfs",
+        //     "hexcells",
+        //     "middle_earth_shadow_of_war",
+        //     "shapez",
+        //     "to_the_core",
+        //     "factorio",
+        //     "hexcells_infinite",
+        //     "minecraft_border_hoarder",
+        //     "spec_ops_the_line",
+        //     "vampire_survivors",
+        // ];
+        //
+        // foreach (var g in list)
+        // {
+        //     gameId = g;
+        var game = ReadPikaFile(parser, gameId);
+        await RunScrapersAndUpdateGame(game, scrappers);
+        await gameRepo.Create(game);
+        // }
+        Console.WriteLine("Sync complete");
     }
 
     private static Game ReadPikaFile(PikaParser parser, string gameId)

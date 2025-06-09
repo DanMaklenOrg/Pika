@@ -14,7 +14,7 @@ public static class DbModelMapper
             Name = game.Name,
             Entities = game.Entities.ConvertAll(ToDbModel),
             Achievements = game.Achievements.ConvertAll(ToDbModel),
-            Categories = game.Categories.ConvertAll(model => new CategoryDbModel(model.Id, model.Name)),
+            Categories = game.Categories.ConvertAll(ToDbModel),
         };
     }
 
@@ -48,6 +48,15 @@ public static class DbModelMapper
             Id = entity.Id,
             Name = entity.Name,
             Category = entity.Category,
+        };
+    }
+
+    private static CategoryDbModel ToDbModel(Category category)
+    {
+        return new CategoryDbModel
+        {
+            Id = category.Id,
+            Name = category.Name,
         };
     }
 

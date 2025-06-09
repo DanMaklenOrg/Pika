@@ -33,7 +33,7 @@ public readonly struct AchievementDto
     public List<ObjectiveDto> Objectives { get; init; }
 
     [JsonPropertyName("description")]
-    public string Description { get; init; }
+    public string? Description { get; init; }
 
     [JsonPropertyName("criteria_category")]
     public string? CriteriaCategory { get; init; }

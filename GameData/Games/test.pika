@@ -1,0 +1,35 @@
+game test ~> 'Test';
+
+// Achievements
+achievement 'Test Achievement';
+achievement 'Test Achievement with description' {
+    description 'Some Test Description';
+}
+achievement 'Test Achievement with criterion' {
+    criterion somecategory;
+}
+achievement 'Test Achievement with objectives' {
+    objective 'Test Objective';
+    objective 'Test Objective' {
+        description 'Objective Description';
+    }
+}
+achievement 'Test Achievement with objectives and criterion' {
+    description 'Achievement with everything';
+    objective 'Test Objective with Criterion' {
+        criterion somecategory;
+    }
+    objective 'Test Objective with Criterion' {
+        description 'Objective Description';
+        criterion somecategory;
+    }
+    criterion somecategory;
+}
+
+// Category
+category somecategory;
+
+// Entities
+somecategory entity1;
+somecategory entity2;
+somecategory entity3;

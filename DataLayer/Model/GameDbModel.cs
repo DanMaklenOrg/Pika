@@ -17,9 +17,6 @@ public class GameDbModel : BaseDbModel
     [JsonPropertyName("achievements")]
     public List<AchievementDbModel>? Achievements { get; init; }
 
-    [JsonPropertyName("classes")]
-    public List<ClassDbModel>? Classes { get; init; }
-
     [JsonPropertyName("categories")]
     public List<CategoryDbModel>? Categories { get; init; }
 
@@ -61,21 +58,6 @@ public class ObjectiveDbModel
 
     [JsonPropertyName("criteria_category")]
     public string? CriteriaCategory { get; init; }
-
-    [JsonPropertyName("requirements")]
-    public List<RequirementDbModel> Requirements { get; init; }
-
-    public class RequirementDbModel
-    {
-        [JsonPropertyName("class")]
-        public required string Class { get; init; }
-
-        [JsonPropertyName("stat")]
-        public required string Stat { get; init; }
-
-        [JsonPropertyName("min")]
-        public required int Min { get; init; }
-    }
 }
 
 public class EntityDbModel
@@ -87,88 +69,14 @@ public class EntityDbModel
     public required string Name { get; init; }
 
     [JsonPropertyName("category")]
-    public string? Category { get; init; }
-
-    [JsonPropertyName("class")]
-    public string? Class { get; init; }
-
-    [JsonPropertyName("attributes")]
-    public List<AttributeDbModel>? Attributes { get; init; }
-
-    [JsonPropertyName("stats")]
-    public List<StatDbModel>? Stats { get; init; }
+    public required string Category { get; init; }
 }
 
 public class CategoryDbModel
 {
-    public CategoryDbModel()
-    {
-    }
-
-    [SetsRequiredMembers]
-    public CategoryDbModel(string id, string name)
-    {
-        Id = id;
-        Name = name;
-    }
-
     [JsonPropertyName("id")]
     public required string Id { get; init; }
 
     [JsonPropertyName("name")]
     public required string Name { get; init; }
-}
-
-public class StatDbModel
-{
-    [JsonPropertyName("id")]
-    public required string Id { get; init; }
-
-    [JsonPropertyName("name")]
-    public required string Name { get; init; }
-
-    [JsonPropertyName("type")]
-    public required string Type { get; init; }
-
-    [JsonPropertyName("min")]
-    public IntOrAttributeDbModel? Min { get; init; }
-
-    [JsonPropertyName("max")]
-    public IntOrAttributeDbModel? Max { get; init; }
-
-    [JsonPropertyName("enum_values")]
-    public List<string>? EnumValues { get; init; }
-
-    public class IntOrAttributeDbModel
-    {
-        [JsonPropertyName("const_value")]
-        public int? ConstValue { get; init; }
-
-        [JsonPropertyName("attribute_id")]
-        public string? AttributeId { get; init; }
-    }
-}
-
-public class ClassDbModel
-{
-    [JsonPropertyName("id")]
-    public required string Id { get; init; }
-
-    [JsonPropertyName("name")]
-    public required string Name { get; init; }
-
-    [JsonPropertyName("attributes")]
-    public required List<AttributeDbModel> Attributes { get; init; }
-
-    [JsonPropertyName("stats")]
-    public required List<StatDbModel> Stats { get; init; }
-}
-
-public class AttributeDbModel
-{
-    [JsonPropertyName("id")]
-    public required string Id { get; init; }
-
-    [JsonPropertyName("val")]
-    public required int Value { get; init; }
 }
