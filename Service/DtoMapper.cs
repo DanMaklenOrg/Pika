@@ -53,13 +53,16 @@ public static class DtoMapper
         {
             UserId = model.UserId,
             Game = model.Game,
+            Completed = model.Completed,
             AchievementProgress = model.AchievementProgress.ConvertAll(a => new AchievementProgressDto
             {
                 Achievement = a.Achievement,
+                Completed = a.Completed,
                 EntitiesDone = a.EntitiesDone.ConvertAll(id => id.ToString()),
                 ObjectiveProgress = a.ObjectiveProgress.ConvertAll(o => new ObjectiveProgressDto
                 {
                     Objective = o.Objective,
+                    Completed = o.Completed,
                     EntitiesDone = o.EntitiesDone.ConvertAll(id => id.ToString()),
                 }),
             }),
@@ -70,11 +73,14 @@ public static class DtoMapper
     {
         return new GameProgress(dto.UserId, dto.Game)
         {
+            Completed = dto.Completed,
             AchievementProgress = dto.AchievementProgress.ConvertAll(a => new AchievementProgress(a.Achievement)
             {
+                Completed = a.Completed,
                 EntitiesDone = a.EntitiesDone.ConvertAll(id => new ResourceId(id)),
                 ObjectiveProgress = a.ObjectiveProgress.ConvertAll(o => new ObjectiveProgress(o.Objective)
                 {
+                    Completed = o.Completed,
                     EntitiesDone = o.EntitiesDone.ConvertAll(id => new ResourceId(id)),
                 }),
             }),

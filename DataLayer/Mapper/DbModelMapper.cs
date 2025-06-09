@@ -98,16 +98,18 @@ public static class DbModelMapper
         {
             UserId = model.UserId,
             Game = model.Game,
+            Completed = model.Completed,
             AchievementProgress = model.AchievementProgress.ConvertAll(ToDbModel),
         };
     }
-    private static AchievementProgressDbModel ToDbModel(AchievementProgress a)
+    private static AchievementProgressDbModel ToDbModel(AchievementProgress model)
     {
         return new AchievementProgressDbModel
         {
-            Achievement = a.Achievement,
-            EntitiesDone = a.EntitiesDone.ConvertAll(e => e.ToString()),
-            ObjectiveProgress = a.ObjectiveProgress.ConvertAll(ToDbModel),
+            Achievement = model.Achievement,
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
+            ObjectiveProgress = model.ObjectiveProgress.ConvertAll(ToDbModel),
         };
     }
 
@@ -116,6 +118,7 @@ public static class DbModelMapper
         return new ObjectiveProgressDbModel
         {
             Objective = model.Objective,
+            Completed = model.Completed,
             EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
         };
     }
@@ -124,20 +127,20 @@ public static class DbModelMapper
     public static GameProgress? FromDbModel(GameProgressDbModel? model)
     {
         if (model is null) return null;
-        return new GameProgress
+        return new GameProgress(model.UserId, model.Game)
         {
-            UserId = model.UserId,
-            Game = model.Game,
+            Completed = model.Completed,
             AchievementProgress = model.AchievementProgress?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    private static AchievementProgress FromDbModel(AchievementProgressDbModel a)
+    private static AchievementProgress FromDbModel(AchievementProgressDbModel model)
     {
-        return new AchievementProgress(a.Achievement)
+        return new AchievementProgress(model.Achievement)
         {
-            EntitiesDone = a.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
-            ObjectiveProgress = a.ObjectiveProgress?.ConvertAll(FromDbModel) ?? [],
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+            ObjectiveProgress = model.ObjectiveProgress?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
@@ -145,6 +148,7 @@ public static class DbModelMapper
     {
         return new ObjectiveProgress(model.Objective)
         {
+            Completed = model.Completed,
             EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
         };
     }
