@@ -24,7 +24,9 @@ public static class DbModelMapper
         {
             Id = achievement.Id,
             Name = achievement.Name,
+            Description = achievement.Description,
             Objectives = achievement.Objectives.ConvertAll(ToDbModel),
+            CriteriaCategory = achievement.CriteriaCategory,
         };
     }
 
@@ -34,6 +36,7 @@ public static class DbModelMapper
         {
             Id = objective.Id,
             Name = objective.Name,
+            Description = objective.Description,
             CriteriaCategory = objective.CriteriaCategory,
         };
     }
@@ -66,6 +69,7 @@ public static class DbModelMapper
         {
             Description = model.Description,
             Objectives = model.Objectives?.ConvertAll(FromDbModel) ?? [],
+            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
         };
     }
 
@@ -88,45 +92,60 @@ public static class DbModelMapper
         return new Entity(model.Id, model.Name, model.Category);
     }
 
-    public static UserStatsDbModel ToDbModel(UserStats userStats)
+    public static GameProgressDbModel ToDbModel(GameProgress model)
     {
-        return new UserStatsDbModel
+        return new GameProgressDbModel
         {
-            UserId = userStats.UserId,
-            GameId = userStats.GameId,
-            EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
+            UserId = model.UserId,
+            Game = model.Game,
+            AchievementProgress = model.AchievementProgress.ConvertAll(ToDbModel),
+        };
+    }
+    private static AchievementProgressDbModel ToDbModel(AchievementProgress a)
+    {
+        return new AchievementProgressDbModel
+        {
+            Achievement = a.Achievement,
+            EntitiesDone = a.EntitiesDone.ConvertAll(e => e.ToString()),
+            ObjectiveProgress = a.ObjectiveProgress.ConvertAll(ToDbModel),
         };
     }
 
-    private static UserEntityStatDbModel ToDbModel(UserEntityStat userEntityStat)
+    private static ObjectiveProgressDbModel ToDbModel(ObjectiveProgress model)
     {
-        return new UserEntityStatDbModel
+        return new ObjectiveProgressDbModel
         {
-            EntityId = userEntityStat.EntityId,
-            StatId = userEntityStat.StatId,
-            Value = userEntityStat.Value,
+            Objective = model.Objective,
+            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
         };
     }
 
-    [return: NotNullIfNotNull("userStats")]
-    public static UserStats? FromDbModel(UserStatsDbModel? userStats)
+    [return: NotNullIfNotNull("model")]
+    public static GameProgress? FromDbModel(GameProgressDbModel? model)
     {
-        if (userStats is null) return null;
-        return new UserStats
+        if (model is null) return null;
+        return new GameProgress
         {
-            UserId = userStats.UserId,
-            GameId = userStats.GameId,
-            EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
+            UserId = model.UserId,
+            Game = model.Game,
+            AchievementProgress = model.AchievementProgress?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    private static UserEntityStat FromDbModel(UserEntityStatDbModel userEntityStatDbModel)
+    private static AchievementProgress FromDbModel(AchievementProgressDbModel a)
     {
-        return new UserEntityStat
+        return new AchievementProgress(a.Achievement)
         {
-            EntityId = userEntityStatDbModel.EntityId,
-            StatId = userEntityStatDbModel.StatId,
-            Value = userEntityStatDbModel.Value,
+            EntitiesDone = a.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+            ObjectiveProgress = a.ObjectiveProgress?.ConvertAll(FromDbModel) ?? [],
+        };
+    }
+
+    private static ObjectiveProgress FromDbModel(ObjectiveProgressDbModel model)
+    {
+        return new ObjectiveProgress(model.Objective)
+        {
+            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
         };
     }
 }

@@ -26,6 +26,8 @@ public record Achievement(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
     public required string Description { get; init; }
     public List<Objective> Objectives { get; init; } = [];
+
+    public ResourceId? CriteriaCategory { get; init; }
 }
 
 public record Objective(ResourceId Id, string Name) : PikaResource(Id, Name)

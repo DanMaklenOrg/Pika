@@ -43,6 +43,9 @@ public class AchievementDbModel
 
     [JsonPropertyName("objectives")]
     public List<ObjectiveDbModel>? Objectives { get; init; }
+
+    [JsonPropertyName("criteria_category")]
+    public string? CriteriaCategory { get; init; }
 }
 
 public class ObjectiveDbModel
@@ -56,7 +59,7 @@ public class ObjectiveDbModel
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
-    [JsonPropertyName("criteria")]
+    [JsonPropertyName("criteria_category")]
     public string? CriteriaCategory { get; init; }
 
     [JsonPropertyName("requirements")]
