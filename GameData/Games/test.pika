@@ -10,7 +10,7 @@ achievement 'Test Achievement with criterion' {
 }
 achievement 'Test Achievement with objectives' {
     objective 'Test Objective';
-    objective 'Test Objective' {
+    objective 'Test Objective 2' {
         description 'Objective Description';
     }
 }
@@ -19,7 +19,7 @@ achievement 'Test Achievement with objectives and criterion' {
     objective 'Test Objective with Criterion' {
         criterion somecategory;
     }
-    objective 'Test Objective with Criterion' {
+    objective 'Test Objective with Criterion 2' {
         description 'Objective Description';
         criterion somecategory;
     }
