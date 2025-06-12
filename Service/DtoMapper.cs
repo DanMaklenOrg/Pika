@@ -35,6 +35,7 @@ public static class DtoMapper
                 {
                     Id = o.Id,
                     Name = o.Name,
+                    Description = o.Description,
                     CriteriaCategory = o.CriteriaCategory,
                 }),
                 CriteriaCategory = a.CriteriaCategory,

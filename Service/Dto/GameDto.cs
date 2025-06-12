@@ -56,6 +56,9 @@ public readonly struct ObjectiveDto
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
+    [JsonPropertyName("description")]
+    public string? Description { get; init; }
+
     [JsonPropertyName("criteria_category")]
     public string? CriteriaCategory { get; init; }
 }
