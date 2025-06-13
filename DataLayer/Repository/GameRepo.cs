@@ -28,7 +28,7 @@ public class GameRepo : IGameRepo
 
     public async Task<List<Game>> GetAll()
     {
-        var gamess = await _gameDao.GetAll();
-        return gamess.ConvertAll(DbModelMapper.FromDbModel)!;
+        var games = await _gameDao.GetAll();
+        return games.ConvertAll(DbModelMapper.FromDbModel)!;
     }
 }
