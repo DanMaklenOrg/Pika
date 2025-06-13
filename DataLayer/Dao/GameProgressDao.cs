@@ -24,8 +24,8 @@ public class GameProgressDao(IAmazonDynamoDB db) : IGameProgressDao
             TableName = DynamoDbConstants.TableName,
             Key =
             {
-                { "pk", new AttributeValue($"UserStat#{userId}#{gameId}") },
-                { "sk", new AttributeValue("UserStat") },
+                { "pk", new AttributeValue($"Game#{gameId}#Progress#{userId}") },
+                { "sk", new AttributeValue("GameProgress") },
             }
         };
         var response = await db.GetItemAsync(request);
