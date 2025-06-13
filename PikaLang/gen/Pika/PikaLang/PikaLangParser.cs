@@ -38,32 +38,30 @@ public partial class PikaLangParser : Parser {
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
 		SINGLE_LINE_COMMENT=1, MULTI_LINE_COMMENT=2, WHITESPACE=3, GAME=4, ACHIEVEMENT=5, 
-		OBJECTIVE=6, REQUIRE=7, CLASS=8, STAT=9, BOOL=10, INT=11, ATTRIBUTE=12, 
-		SEMICOLON=13, OPEN_BRACES=14, CLOSE_BRACES=15, OPEN_ANGULAR_BRACES=16, 
-		CLOSE_ANGULAR_BRACES=17, OPEN_PARENTHESES=18, CLOSE_PARENTHESES=19, COMMA=20, 
-		WITH_NAME=21, EQUALS=22, STRING_LITERAL=23, INTEGER_LITERAL=24, IDENTIFIER=25;
+		OBJECTIVE=6, CRITERION=7, CATEGORY=8, DESCRIPTION=9, SEMICOLON=10, OPEN_BRACES=11, 
+		CLOSE_BRACES=12, OPEN_ANGULAR_BRACES=13, CLOSE_ANGULAR_BRACES=14, OPEN_PARENTHESES=15, 
+		CLOSE_PARENTHESES=16, COMMA=17, WITH_NAME=18, EQUALS=19, STRING_LITERAL=20, 
+		INTEGER_LITERAL=21, IDENTIFIER=22;
 	public const int
 		RULE_root = 0, RULE_gameDecl = 1, RULE_declStmt = 2, RULE_achievementDecl = 3, 
-		RULE_objectiveDecl = 4, RULE_requireDecl = 5, RULE_classDecl = 6, RULE_entityDecl = 7, 
-		RULE_statDecl = 8, RULE_statType = 9, RULE_intOrAttribute = 10, RULE_attrDecl = 11, 
-		RULE_namedIdentifier = 12;
+		RULE_objectiveDecl = 4, RULE_criterionDecl = 5, RULE_describtionDecl = 6, 
+		RULE_categoryDecl = 7, RULE_entityDecl = 8, RULE_namedIdentifier = 9;
 	public static readonly string[] ruleNames = {
-		"root", "gameDecl", "declStmt", "achievementDecl", "objectiveDecl", "requireDecl", 
-		"classDecl", "entityDecl", "statDecl", "statType", "intOrAttribute", "attrDecl", 
-		"namedIdentifier"
+		"root", "gameDecl", "declStmt", "achievementDecl", "objectiveDecl", "criterionDecl", 
+		"describtionDecl", "categoryDecl", "entityDecl", "namedIdentifier"
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, null, null, null, "'game'", "'achievement'", "'objective'", "'require'", 
-		"'class'", "'stat'", "'bool'", "'int'", "'attribute'", "';'", "'{'", "'}'", 
-		"'<'", "'>'", "'('", "')'", "','", "'~>'", "'='"
+		null, null, null, null, "'game'", "'achievement'", "'objective'", "'criterion'", 
+		"'category'", "'description'", "';'", "'{'", "'}'", "'<'", "'>'", "'('", 
+		"')'", "','", "'~>'", "'='"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT", "WHITESPACE", "GAME", 
-		"ACHIEVEMENT", "OBJECTIVE", "REQUIRE", "CLASS", "STAT", "BOOL", "INT", 
-		"ATTRIBUTE", "SEMICOLON", "OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", 
-		"CLOSE_ANGULAR_BRACES", "OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", 
-		"WITH_NAME", "EQUALS", "STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
+		"ACHIEVEMENT", "OBJECTIVE", "CRITERION", "CATEGORY", "DESCRIPTION", "SEMICOLON", 
+		"OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", "CLOSE_ANGULAR_BRACES", 
+		"OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", "WITH_NAME", "EQUALS", 
+		"STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -129,23 +127,23 @@ public partial class PikaLangParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 26;
+			State = 20;
 			gameDecl();
-			State = 28;
+			State = 24;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			do {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 4194592L) != 0)) {
 				{
 				{
-				State = 27;
+				State = 21;
 				declStmt();
 				}
 				}
-				State = 30;
+				State = 26;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 33554720L) != 0) );
-			State = 32;
+			}
+			State = 27;
 			Match(Eof);
 			}
 		}
@@ -186,11 +184,11 @@ public partial class PikaLangParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 34;
+			State = 29;
 			Match(GAME);
-			State = 35;
+			State = 30;
 			namedIdentifier();
-			State = 36;
+			State = 31;
 			Match(SEMICOLON);
 			}
 		}
@@ -229,6 +227,18 @@ public partial class PikaLangParser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
+	public partial class CategoryDeclarationContext : DeclStmtContext {
+		[System.Diagnostics.DebuggerNonUserCode] public CategoryDeclContext categoryDecl() {
+			return GetRuleContext<CategoryDeclContext>(0);
+		}
+		public CategoryDeclarationContext(DeclStmtContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCategoryDeclaration(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
 	public partial class AchievementDeclarationContext : DeclStmtContext {
 		[System.Diagnostics.DebuggerNonUserCode] public AchievementDeclContext achievementDecl() {
 			return GetRuleContext<AchievementDeclContext>(0);
@@ -241,48 +251,36 @@ public partial class PikaLangParser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
-	public partial class ClassDeclarationContext : DeclStmtContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ClassDeclContext classDecl() {
-			return GetRuleContext<ClassDeclContext>(0);
-		}
-		public ClassDeclarationContext(DeclStmtContext context) { CopyFrom(context); }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitClassDeclaration(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
 
 	[RuleVersion(0)]
 	public DeclStmtContext declStmt() {
 		DeclStmtContext _localctx = new DeclStmtContext(Context, State);
 		EnterRule(_localctx, 4, RULE_declStmt);
 		try {
-			State = 41;
+			State = 36;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case ACHIEVEMENT:
 				_localctx = new AchievementDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 38;
+				State = 33;
 				achievementDecl();
 				}
 				break;
-			case CLASS:
-				_localctx = new ClassDeclarationContext(_localctx);
+			case CATEGORY:
+				_localctx = new CategoryDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 39;
-				classDecl();
+				State = 34;
+				categoryDecl();
 				}
 				break;
 			case IDENTIFIER:
 				_localctx = new EntityDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 40;
+				State = 35;
 				entityDecl();
 				}
 				break;
@@ -306,13 +304,20 @@ public partial class PikaLangParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
 			return GetRuleContext<NamedIdentifierContext>(0);
 		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public DescribtionDeclContext describtionDecl() {
+			return GetRuleContext<DescribtionDeclContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ObjectiveDeclContext[] objectiveDecl() {
 			return GetRuleContexts<ObjectiveDeclContext>();
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ObjectiveDeclContext objectiveDecl(int i) {
 			return GetRuleContext<ObjectiveDeclContext>(i);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public CriterionDeclContext criterionDecl() {
+			return GetRuleContext<CriterionDeclContext>(0);
 		}
 		public AchievementDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -333,30 +338,67 @@ public partial class PikaLangParser : Parser {
 		EnterRule(_localctx, 6, RULE_achievementDecl);
 		int _la;
 		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 43;
-			Match(ACHIEVEMENT);
-			State = 44;
-			namedIdentifier();
-			State = 45;
-			Match(OPEN_BRACES);
-			State = 47;
+			State = 59;
 			ErrorHandler.Sync(this);
-			_la = TokenStream.LA(1);
-			do {
+			switch ( Interpreter.AdaptivePredict(TokenStream,5,Context) ) {
+			case 1:
+				EnterOuterAlt(_localctx, 1);
 				{
+				State = 38;
+				Match(ACHIEVEMENT);
+				State = 39;
+				namedIdentifier();
+				State = 40;
+				Match(SEMICOLON);
+				}
+				break;
+			case 2:
+				EnterOuterAlt(_localctx, 2);
 				{
+				State = 42;
+				Match(ACHIEVEMENT);
+				State = 43;
+				namedIdentifier();
+				State = 44;
+				Match(OPEN_BRACES);
 				State = 46;
-				objectiveDecl();
-				}
-				}
-				State = 49;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
-			} while ( _la==OBJECTIVE );
-			State = 51;
-			Match(CLOSE_BRACES);
+				if (_la==DESCRIPTION) {
+					{
+					State = 45;
+					describtionDecl();
+					}
+				}
+
+				State = 51;
+				ErrorHandler.Sync(this);
+				_la = TokenStream.LA(1);
+				while (_la==OBJECTIVE) {
+					{
+					{
+					State = 48;
+					objectiveDecl();
+					}
+					}
+					State = 53;
+					ErrorHandler.Sync(this);
+					_la = TokenStream.LA(1);
+				}
+				State = 55;
+				ErrorHandler.Sync(this);
+				_la = TokenStream.LA(1);
+				if (_la==CRITERION) {
+					{
+					State = 54;
+					criterionDecl();
+					}
+				}
+
+				State = 57;
+				Match(CLOSE_BRACES);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -375,13 +417,14 @@ public partial class PikaLangParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
 			return GetRuleContext<NamedIdentifierContext>(0);
 		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public RequireDeclContext[] requireDecl() {
-			return GetRuleContexts<RequireDeclContext>();
+		[System.Diagnostics.DebuggerNonUserCode] public DescribtionDeclContext describtionDecl() {
+			return GetRuleContext<DescribtionDeclContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public RequireDeclContext requireDecl(int i) {
-			return GetRuleContext<RequireDeclContext>(i);
+		[System.Diagnostics.DebuggerNonUserCode] public CriterionDeclContext criterionDecl() {
+			return GetRuleContext<CriterionDeclContext>(0);
 		}
 		public ObjectiveDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -402,30 +445,53 @@ public partial class PikaLangParser : Parser {
 		EnterRule(_localctx, 8, RULE_objectiveDecl);
 		int _la;
 		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 53;
-			Match(OBJECTIVE);
-			State = 54;
-			namedIdentifier();
-			State = 55;
-			Match(OPEN_BRACES);
-			State = 57;
+			State = 76;
 			ErrorHandler.Sync(this);
-			_la = TokenStream.LA(1);
-			do {
+			switch ( Interpreter.AdaptivePredict(TokenStream,8,Context) ) {
+			case 1:
+				EnterOuterAlt(_localctx, 1);
 				{
+				State = 61;
+				Match(OBJECTIVE);
+				State = 62;
+				namedIdentifier();
+				State = 63;
+				Match(SEMICOLON);
+				}
+				break;
+			case 2:
+				EnterOuterAlt(_localctx, 2);
 				{
-				State = 56;
-				requireDecl();
-				}
-				}
-				State = 59;
+				State = 65;
+				Match(OBJECTIVE);
+				State = 66;
+				namedIdentifier();
+				State = 67;
+				Match(OPEN_BRACES);
+				State = 69;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
-			} while ( _la==REQUIRE );
-			State = 61;
-			Match(CLOSE_BRACES);
+				if (_la==DESCRIPTION) {
+					{
+					State = 68;
+					describtionDecl();
+					}
+				}
+
+				State = 72;
+				ErrorHandler.Sync(this);
+				_la = TokenStream.LA(1);
+				if (_la==CRITERION) {
+					{
+					State = 71;
+					criterionDecl();
+					}
+				}
+
+				State = 74;
+				Match(CLOSE_BRACES);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -439,35 +505,35 @@ public partial class PikaLangParser : Parser {
 		return _localctx;
 	}
 
-	public partial class RequireDeclContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode REQUIRE() { return GetToken(PikaLangParser.REQUIRE, 0); }
+	public partial class CriterionDeclContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CRITERION() { return GetToken(PikaLangParser.CRITERION, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
-		public RequireDeclContext(ParserRuleContext parent, int invokingState)
+		public CriterionDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_requireDecl; } }
+		public override int RuleIndex { get { return RULE_criterionDecl; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitRequireDecl(this);
+			if (typedVisitor != null) return typedVisitor.VisitCriterionDecl(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public RequireDeclContext requireDecl() {
-		RequireDeclContext _localctx = new RequireDeclContext(Context, State);
-		EnterRule(_localctx, 10, RULE_requireDecl);
+	public CriterionDeclContext criterionDecl() {
+		CriterionDeclContext _localctx = new CriterionDeclContext(Context, State);
+		EnterRule(_localctx, 10, RULE_criterionDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 63;
-			Match(REQUIRE);
-			State = 64;
+			State = 78;
+			Match(CRITERION);
+			State = 79;
 			Match(IDENTIFIER);
-			State = 65;
+			State = 80;
 			Match(SEMICOLON);
 			}
 		}
@@ -482,82 +548,81 @@ public partial class PikaLangParser : Parser {
 		return _localctx;
 	}
 
-	public partial class ClassDeclContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLASS() { return GetToken(PikaLangParser.CLASS, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
-			return GetRuleContext<NamedIdentifierContext>(0);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public AttrDeclContext[] attrDecl() {
-			return GetRuleContexts<AttrDeclContext>();
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public AttrDeclContext attrDecl(int i) {
-			return GetRuleContext<AttrDeclContext>(i);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public StatDeclContext[] statDecl() {
-			return GetRuleContexts<StatDeclContext>();
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public StatDeclContext statDecl(int i) {
-			return GetRuleContext<StatDeclContext>(i);
-		}
-		public ClassDeclContext(ParserRuleContext parent, int invokingState)
+	public partial class DescribtionDeclContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode DESCRIPTION() { return GetToken(PikaLangParser.DESCRIPTION, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING_LITERAL() { return GetToken(PikaLangParser.STRING_LITERAL, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
+		public DescribtionDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_classDecl; } }
+		public override int RuleIndex { get { return RULE_describtionDecl; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitClassDecl(this);
+			if (typedVisitor != null) return typedVisitor.VisitDescribtionDecl(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public ClassDeclContext classDecl() {
-		ClassDeclContext _localctx = new ClassDeclContext(Context, State);
-		EnterRule(_localctx, 12, RULE_classDecl);
-		int _la;
+	public DescribtionDeclContext describtionDecl() {
+		DescribtionDeclContext _localctx = new DescribtionDeclContext(Context, State);
+		EnterRule(_localctx, 12, RULE_describtionDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 67;
-			Match(CLASS);
-			State = 68;
-			namedIdentifier();
-			State = 69;
-			Match(OPEN_BRACES);
-			State = 73;
-			ErrorHandler.Sync(this);
-			_la = TokenStream.LA(1);
-			while (_la==ATTRIBUTE) {
-				{
-				{
-				State = 70;
-				attrDecl();
-				}
-				}
-				State = 75;
-				ErrorHandler.Sync(this);
-				_la = TokenStream.LA(1);
+			State = 82;
+			Match(DESCRIPTION);
+			State = 83;
+			Match(STRING_LITERAL);
+			State = 84;
+			Match(SEMICOLON);
 			}
-			State = 77;
-			ErrorHandler.Sync(this);
-			_la = TokenStream.LA(1);
-			do {
-				{
-				{
-				State = 76;
-				statDecl();
-				}
-				}
-				State = 79;
-				ErrorHandler.Sync(this);
-				_la = TokenStream.LA(1);
-			} while ( _la==STAT );
-			State = 81;
-			Match(CLOSE_BRACES);
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			ErrorHandler.ReportError(this, re);
+			ErrorHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class CategoryDeclContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CATEGORY() { return GetToken(PikaLangParser.CATEGORY, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
+			return GetRuleContext<NamedIdentifierContext>(0);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
+		public CategoryDeclContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_categoryDecl; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCategoryDecl(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public CategoryDeclContext categoryDecl() {
+		CategoryDeclContext _localctx = new CategoryDeclContext(Context, State);
+		EnterRule(_localctx, 14, RULE_categoryDecl);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 86;
+			Match(CATEGORY);
+			State = 87;
+			namedIdentifier();
+			State = 88;
+			Match(SEMICOLON);
 			}
 		}
 		catch (RecognitionException re) {
@@ -577,20 +642,6 @@ public partial class PikaLangParser : Parser {
 			return GetRuleContext<NamedIdentifierContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_BRACES() { return GetToken(PikaLangParser.OPEN_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_BRACES() { return GetToken(PikaLangParser.CLOSE_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public AttrDeclContext[] attrDecl() {
-			return GetRuleContexts<AttrDeclContext>();
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public AttrDeclContext attrDecl(int i) {
-			return GetRuleContext<AttrDeclContext>(i);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public StatDeclContext[] statDecl() {
-			return GetRuleContexts<StatDeclContext>();
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public StatDeclContext statDecl(int i) {
-			return GetRuleContext<StatDeclContext>(i);
-		}
 		public EntityDeclContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -607,305 +658,15 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public EntityDeclContext entityDecl() {
 		EntityDeclContext _localctx = new EntityDeclContext(Context, State);
-		EnterRule(_localctx, 14, RULE_entityDecl);
-		int _la;
-		try {
-			State = 104;
-			ErrorHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(TokenStream,8,Context) ) {
-			case 1:
-				EnterOuterAlt(_localctx, 1);
-				{
-				State = 83;
-				Match(IDENTIFIER);
-				State = 84;
-				namedIdentifier();
-				State = 85;
-				Match(SEMICOLON);
-				}
-				break;
-			case 2:
-				EnterOuterAlt(_localctx, 2);
-				{
-				State = 87;
-				Match(IDENTIFIER);
-				State = 88;
-				namedIdentifier();
-				State = 89;
-				Match(OPEN_BRACES);
-				State = 93;
-				ErrorHandler.Sync(this);
-				_la = TokenStream.LA(1);
-				while (_la==ATTRIBUTE) {
-					{
-					{
-					State = 90;
-					attrDecl();
-					}
-					}
-					State = 95;
-					ErrorHandler.Sync(this);
-					_la = TokenStream.LA(1);
-				}
-				State = 99;
-				ErrorHandler.Sync(this);
-				_la = TokenStream.LA(1);
-				while (_la==STAT) {
-					{
-					{
-					State = 96;
-					statDecl();
-					}
-					}
-					State = 101;
-					ErrorHandler.Sync(this);
-					_la = TokenStream.LA(1);
-				}
-				State = 102;
-				Match(CLOSE_BRACES);
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			ErrorHandler.ReportError(this, re);
-			ErrorHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class StatDeclContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STAT() { return GetToken(PikaLangParser.STAT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_ANGULAR_BRACES() { return GetToken(PikaLangParser.OPEN_ANGULAR_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public StatTypeContext statType() {
-			return GetRuleContext<StatTypeContext>(0);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_ANGULAR_BRACES() { return GetToken(PikaLangParser.CLOSE_ANGULAR_BRACES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public NamedIdentifierContext namedIdentifier() {
-			return GetRuleContext<NamedIdentifierContext>(0);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
-		public StatDeclContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_statDecl; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitStatDecl(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public StatDeclContext statDecl() {
-		StatDeclContext _localctx = new StatDeclContext(Context, State);
-		EnterRule(_localctx, 16, RULE_statDecl);
+		EnterRule(_localctx, 16, RULE_entityDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 106;
-			Match(STAT);
-			State = 107;
-			Match(OPEN_ANGULAR_BRACES);
-			State = 108;
-			statType();
-			State = 109;
-			Match(CLOSE_ANGULAR_BRACES);
-			State = 110;
-			namedIdentifier();
-			State = 111;
-			Match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			ErrorHandler.ReportError(this, re);
-			ErrorHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class StatTypeContext : ParserRuleContext {
-		public StatTypeContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_statType; } }
-	 
-		public StatTypeContext() { }
-		public virtual void CopyFrom(StatTypeContext context) {
-			base.CopyFrom(context);
-		}
-	}
-	public partial class IntRangeStatTypeContext : StatTypeContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode INT() { return GetToken(PikaLangParser.INT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_PARENTHESES() { return GetToken(PikaLangParser.OPEN_PARENTHESES, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public IntOrAttributeContext[] intOrAttribute() {
-			return GetRuleContexts<IntOrAttributeContext>();
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public IntOrAttributeContext intOrAttribute(int i) {
-			return GetRuleContext<IntOrAttributeContext>(i);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(PikaLangParser.COMMA, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_PARENTHESES() { return GetToken(PikaLangParser.CLOSE_PARENTHESES, 0); }
-		public IntRangeStatTypeContext(StatTypeContext context) { CopyFrom(context); }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitIntRangeStatType(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-	public partial class BoolStatTypeContext : StatTypeContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BOOL() { return GetToken(PikaLangParser.BOOL, 0); }
-		public BoolStatTypeContext(StatTypeContext context) { CopyFrom(context); }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitBoolStatType(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public StatTypeContext statType() {
-		StatTypeContext _localctx = new StatTypeContext(Context, State);
-		EnterRule(_localctx, 18, RULE_statType);
-		try {
-			State = 121;
-			ErrorHandler.Sync(this);
-			switch (TokenStream.LA(1)) {
-			case BOOL:
-				_localctx = new BoolStatTypeContext(_localctx);
-				EnterOuterAlt(_localctx, 1);
-				{
-				State = 113;
-				Match(BOOL);
-				}
-				break;
-			case INT:
-				_localctx = new IntRangeStatTypeContext(_localctx);
-				EnterOuterAlt(_localctx, 2);
-				{
-				State = 114;
-				Match(INT);
-				State = 115;
-				Match(OPEN_PARENTHESES);
-				State = 116;
-				intOrAttribute();
-				State = 117;
-				Match(COMMA);
-				State = 118;
-				intOrAttribute();
-				State = 119;
-				Match(CLOSE_PARENTHESES);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			ErrorHandler.ReportError(this, re);
-			ErrorHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class IntOrAttributeContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode INTEGER_LITERAL() { return GetToken(PikaLangParser.INTEGER_LITERAL, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
-		public IntOrAttributeContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_intOrAttribute; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitIntOrAttribute(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public IntOrAttributeContext intOrAttribute() {
-		IntOrAttributeContext _localctx = new IntOrAttributeContext(Context, State);
-		EnterRule(_localctx, 20, RULE_intOrAttribute);
-		int _la;
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 123;
-			_la = TokenStream.LA(1);
-			if ( !(_la==INTEGER_LITERAL || _la==IDENTIFIER) ) {
-			ErrorHandler.RecoverInline(this);
-			}
-			else {
-				ErrorHandler.ReportMatch(this);
-			    Consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			ErrorHandler.ReportError(this, re);
-			ErrorHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class AttrDeclContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ATTRIBUTE() { return GetToken(PikaLangParser.ATTRIBUTE, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(PikaLangParser.IDENTIFIER, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode EQUALS() { return GetToken(PikaLangParser.EQUALS, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode INTEGER_LITERAL() { return GetToken(PikaLangParser.INTEGER_LITERAL, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
-		public AttrDeclContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_attrDecl; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitAttrDecl(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public AttrDeclContext attrDecl() {
-		AttrDeclContext _localctx = new AttrDeclContext(Context, State);
-		EnterRule(_localctx, 22, RULE_attrDecl);
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 125;
-			Match(ATTRIBUTE);
-			State = 126;
+			State = 90;
 			Match(IDENTIFIER);
-			State = 127;
-			Match(EQUALS);
-			State = 128;
-			Match(INTEGER_LITERAL);
-			State = 129;
+			State = 91;
+			namedIdentifier();
+			State = 92;
 			Match(SEMICOLON);
 			}
 		}
@@ -968,20 +729,20 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public NamedIdentifierContext namedIdentifier() {
 		NamedIdentifierContext _localctx = new NamedIdentifierContext(Context, State);
-		EnterRule(_localctx, 24, RULE_namedIdentifier);
+		EnterRule(_localctx, 18, RULE_namedIdentifier);
 		try {
-			State = 136;
+			State = 99;
 			ErrorHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(TokenStream,10,Context) ) {
+			switch ( Interpreter.AdaptivePredict(TokenStream,9,Context) ) {
 			case 1:
 				_localctx = new IdWithNameContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 131;
+				State = 94;
 				Match(IDENTIFIER);
-				State = 132;
+				State = 95;
 				Match(WITH_NAME);
-				State = 133;
+				State = 96;
 				Match(STRING_LITERAL);
 				}
 				break;
@@ -989,7 +750,7 @@ public partial class PikaLangParser : Parser {
 				_localctx = new NameOnlyContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 134;
+				State = 97;
 				Match(STRING_LITERAL);
 				}
 				break;
@@ -997,7 +758,7 @@ public partial class PikaLangParser : Parser {
 				_localctx = new IdOnlyContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 135;
+				State = 98;
 				Match(IDENTIFIER);
 				}
 				break;
@@ -1015,46 +776,35 @@ public partial class PikaLangParser : Parser {
 	}
 
 	private static int[] _serializedATN = {
-		4,1,25,139,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
-		7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,1,0,1,0,4,0,29,8,0,11,
-		0,12,0,30,1,0,1,0,1,1,1,1,1,1,1,1,1,2,1,2,1,2,3,2,42,8,2,1,3,1,3,1,3,1,
-		3,4,3,48,8,3,11,3,12,3,49,1,3,1,3,1,4,1,4,1,4,1,4,4,4,58,8,4,11,4,12,4,
-		59,1,4,1,4,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,5,6,72,8,6,10,6,12,6,75,9,6,
-		1,6,4,6,78,8,6,11,6,12,6,79,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,5,
-		7,92,8,7,10,7,12,7,95,9,7,1,7,5,7,98,8,7,10,7,12,7,101,9,7,1,7,1,7,3,7,
-		105,8,7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,3,
-		9,122,8,9,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,1,12,1,12,1,12,1,12,
-		1,12,3,12,137,8,12,1,12,0,0,13,0,2,4,6,8,10,12,14,16,18,20,22,24,0,1,1,
-		0,24,25,138,0,26,1,0,0,0,2,34,1,0,0,0,4,41,1,0,0,0,6,43,1,0,0,0,8,53,1,
-		0,0,0,10,63,1,0,0,0,12,67,1,0,0,0,14,104,1,0,0,0,16,106,1,0,0,0,18,121,
-		1,0,0,0,20,123,1,0,0,0,22,125,1,0,0,0,24,136,1,0,0,0,26,28,3,2,1,0,27,
-		29,3,4,2,0,28,27,1,0,0,0,29,30,1,0,0,0,30,28,1,0,0,0,30,31,1,0,0,0,31,
-		32,1,0,0,0,32,33,5,0,0,1,33,1,1,0,0,0,34,35,5,4,0,0,35,36,3,24,12,0,36,
-		37,5,13,0,0,37,3,1,0,0,0,38,42,3,6,3,0,39,42,3,12,6,0,40,42,3,14,7,0,41,
-		38,1,0,0,0,41,39,1,0,0,0,41,40,1,0,0,0,42,5,1,0,0,0,43,44,5,5,0,0,44,45,
-		3,24,12,0,45,47,5,14,0,0,46,48,3,8,4,0,47,46,1,0,0,0,48,49,1,0,0,0,49,
-		47,1,0,0,0,49,50,1,0,0,0,50,51,1,0,0,0,51,52,5,15,0,0,52,7,1,0,0,0,53,
-		54,5,6,0,0,54,55,3,24,12,0,55,57,5,14,0,0,56,58,3,10,5,0,57,56,1,0,0,0,
-		58,59,1,0,0,0,59,57,1,0,0,0,59,60,1,0,0,0,60,61,1,0,0,0,61,62,5,15,0,0,
-		62,9,1,0,0,0,63,64,5,7,0,0,64,65,5,25,0,0,65,66,5,13,0,0,66,11,1,0,0,0,
-		67,68,5,8,0,0,68,69,3,24,12,0,69,73,5,14,0,0,70,72,3,22,11,0,71,70,1,0,
-		0,0,72,75,1,0,0,0,73,71,1,0,0,0,73,74,1,0,0,0,74,77,1,0,0,0,75,73,1,0,
-		0,0,76,78,3,16,8,0,77,76,1,0,0,0,78,79,1,0,0,0,79,77,1,0,0,0,79,80,1,0,
-		0,0,80,81,1,0,0,0,81,82,5,15,0,0,82,13,1,0,0,0,83,84,5,25,0,0,84,85,3,
-		24,12,0,85,86,5,13,0,0,86,105,1,0,0,0,87,88,5,25,0,0,88,89,3,24,12,0,89,
-		93,5,14,0,0,90,92,3,22,11,0,91,90,1,0,0,0,92,95,1,0,0,0,93,91,1,0,0,0,
-		93,94,1,0,0,0,94,99,1,0,0,0,95,93,1,0,0,0,96,98,3,16,8,0,97,96,1,0,0,0,
-		98,101,1,0,0,0,99,97,1,0,0,0,99,100,1,0,0,0,100,102,1,0,0,0,101,99,1,0,
-		0,0,102,103,5,15,0,0,103,105,1,0,0,0,104,83,1,0,0,0,104,87,1,0,0,0,105,
-		15,1,0,0,0,106,107,5,9,0,0,107,108,5,16,0,0,108,109,3,18,9,0,109,110,5,
-		17,0,0,110,111,3,24,12,0,111,112,5,13,0,0,112,17,1,0,0,0,113,122,5,10,
-		0,0,114,115,5,11,0,0,115,116,5,18,0,0,116,117,3,20,10,0,117,118,5,20,0,
-		0,118,119,3,20,10,0,119,120,5,19,0,0,120,122,1,0,0,0,121,113,1,0,0,0,121,
-		114,1,0,0,0,122,19,1,0,0,0,123,124,7,0,0,0,124,21,1,0,0,0,125,126,5,12,
-		0,0,126,127,5,25,0,0,127,128,5,22,0,0,128,129,5,24,0,0,129,130,5,13,0,
-		0,130,23,1,0,0,0,131,132,5,25,0,0,132,133,5,21,0,0,133,137,5,23,0,0,134,
-		137,5,23,0,0,135,137,5,25,0,0,136,131,1,0,0,0,136,134,1,0,0,0,136,135,
-		1,0,0,0,137,25,1,0,0,0,11,30,41,49,59,73,79,93,99,104,121,136
+		4,1,22,102,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+		7,7,2,8,7,8,2,9,7,9,1,0,1,0,5,0,23,8,0,10,0,12,0,26,9,0,1,0,1,0,1,1,1,
+		1,1,1,1,1,1,2,1,2,1,2,3,2,37,8,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,47,
+		8,3,1,3,5,3,50,8,3,10,3,12,3,53,9,3,1,3,3,3,56,8,3,1,3,1,3,3,3,60,8,3,
+		1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,3,4,70,8,4,1,4,3,4,73,8,4,1,4,1,4,3,4,
+		77,8,4,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,
+		1,9,1,9,1,9,1,9,1,9,3,9,100,8,9,1,9,0,0,10,0,2,4,6,8,10,12,14,16,18,0,
+		0,103,0,20,1,0,0,0,2,29,1,0,0,0,4,36,1,0,0,0,6,59,1,0,0,0,8,76,1,0,0,0,
+		10,78,1,0,0,0,12,82,1,0,0,0,14,86,1,0,0,0,16,90,1,0,0,0,18,99,1,0,0,0,
+		20,24,3,2,1,0,21,23,3,4,2,0,22,21,1,0,0,0,23,26,1,0,0,0,24,22,1,0,0,0,
+		24,25,1,0,0,0,25,27,1,0,0,0,26,24,1,0,0,0,27,28,5,0,0,1,28,1,1,0,0,0,29,
+		30,5,4,0,0,30,31,3,18,9,0,31,32,5,10,0,0,32,3,1,0,0,0,33,37,3,6,3,0,34,
+		37,3,14,7,0,35,37,3,16,8,0,36,33,1,0,0,0,36,34,1,0,0,0,36,35,1,0,0,0,37,
+		5,1,0,0,0,38,39,5,5,0,0,39,40,3,18,9,0,40,41,5,10,0,0,41,60,1,0,0,0,42,
+		43,5,5,0,0,43,44,3,18,9,0,44,46,5,11,0,0,45,47,3,12,6,0,46,45,1,0,0,0,
+		46,47,1,0,0,0,47,51,1,0,0,0,48,50,3,8,4,0,49,48,1,0,0,0,50,53,1,0,0,0,
+		51,49,1,0,0,0,51,52,1,0,0,0,52,55,1,0,0,0,53,51,1,0,0,0,54,56,3,10,5,0,
+		55,54,1,0,0,0,55,56,1,0,0,0,56,57,1,0,0,0,57,58,5,12,0,0,58,60,1,0,0,0,
+		59,38,1,0,0,0,59,42,1,0,0,0,60,7,1,0,0,0,61,62,5,6,0,0,62,63,3,18,9,0,
+		63,64,5,10,0,0,64,77,1,0,0,0,65,66,5,6,0,0,66,67,3,18,9,0,67,69,5,11,0,
+		0,68,70,3,12,6,0,69,68,1,0,0,0,69,70,1,0,0,0,70,72,1,0,0,0,71,73,3,10,
+		5,0,72,71,1,0,0,0,72,73,1,0,0,0,73,74,1,0,0,0,74,75,5,12,0,0,75,77,1,0,
+		0,0,76,61,1,0,0,0,76,65,1,0,0,0,77,9,1,0,0,0,78,79,5,7,0,0,79,80,5,22,
+		0,0,80,81,5,10,0,0,81,11,1,0,0,0,82,83,5,9,0,0,83,84,5,20,0,0,84,85,5,
+		10,0,0,85,13,1,0,0,0,86,87,5,8,0,0,87,88,3,18,9,0,88,89,5,10,0,0,89,15,
+		1,0,0,0,90,91,5,22,0,0,91,92,3,18,9,0,92,93,5,10,0,0,93,17,1,0,0,0,94,
+		95,5,22,0,0,95,96,5,18,0,0,96,100,5,20,0,0,97,100,5,20,0,0,98,100,5,22,
+		0,0,99,94,1,0,0,0,99,97,1,0,0,0,99,98,1,0,0,0,100,19,1,0,0,0,10,24,36,
+		46,51,55,59,69,72,76,99
 	};
 
 	public static readonly ATN _ATN =

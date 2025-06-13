@@ -1,8 +1,6 @@
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Pika.DataLayer.Model;
 using Pika.Model;
-using Attribute = Pika.Model.Attribute;
 
 namespace Pika.DataLayer.Mapper;
 
@@ -16,7 +14,7 @@ public static class DbModelMapper
             Name = game.Name,
             Entities = game.Entities.ConvertAll(ToDbModel),
             Achievements = game.Achievements.ConvertAll(ToDbModel),
-            Classes = game.Classes.ConvertAll(ToDbModel),
+            Categories = game.Categories.ConvertAll(ToDbModel),
         };
     }
 
@@ -26,7 +24,9 @@ public static class DbModelMapper
         {
             Id = achievement.Id,
             Name = achievement.Name,
+            Description = achievement.Description,
             Objectives = achievement.Objectives.ConvertAll(ToDbModel),
+            CriteriaCategory = achievement.CriteriaCategory,
         };
     }
 
@@ -36,23 +36,8 @@ public static class DbModelMapper
         {
             Id = objective.Id,
             Name = objective.Name,
-            Requirements = objective.Requirements.ConvertAll(r => new ObjectiveDbModel.RequirementDbModel()
-            {
-                Class = r.Class,
-                Stat = r.Stat,
-                Min = r.Min,
-            }),
-        };
-    }
-
-    private static ClassDbModel ToDbModel(Class model)
-    {
-        return new ClassDbModel
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Attributes = model.Attributes.ConvertAll(ToDbModel),
-            Stats = model.Stats.ConvertAll(ToDbModel),
+            Description = objective.Description,
+            CriteriaCategory = objective.CriteriaCategory,
         };
     }
 
@@ -62,45 +47,18 @@ public static class DbModelMapper
         {
             Id = entity.Id,
             Name = entity.Name,
-            Class = entity.Class,
-            Attributes = entity.Attributes.ConvertAll(ToDbModel),
-            Stats = entity.Stats.ConvertAll(ToDbModel),
+            Category = entity.Category,
         };
     }
 
-    private static StatDbModel ToDbModel(Stat stat)
+    private static CategoryDbModel ToDbModel(Category category)
     {
-        return new StatDbModel
+        return new CategoryDbModel
         {
-            Id = stat.Id,
-            Name = stat.Name,
-            Type = stat.Type.ToString(),
-            Min = ToDbModel(stat.Min),
-            Max = ToDbModel(stat.Max),
-            EnumValues = stat.EnumValues,
+            Id = category.Id,
+            Name = category.Name,
         };
     }
-
-    private static AttributeDbModel ToDbModel(Attribute attribute)
-    {
-        return new AttributeDbModel
-        {
-            Id = attribute.Id,
-            Value = attribute.Value,
-        };
-    }
-
-    [return: NotNullIfNotNull("intOrAttribute")]
-    private static StatDbModel.IntOrAttributeDbModel? ToDbModel(Stat.IntOrAttribute? intOrAttribute)
-    {
-        if (!intOrAttribute.HasValue) return null;
-        return new StatDbModel.IntOrAttributeDbModel
-        {
-            ConstValue = intOrAttribute.Value.ConstValue,
-            AttributeId = intOrAttribute.Value.AttributeId,
-        };
-    }
-
 
     [return: NotNullIfNotNull("model")]
     public static Game? FromDbModel(GameDbModel? model)
@@ -109,7 +67,7 @@ public static class DbModelMapper
         return new Game(model.Id, model.Name)
         {
             Achievements = model.Achievements?.ConvertAll(FromDbModel) ?? [],
-            Classes = model.Classes?.ConvertAll(FromDbModel) ?? [],
+            Categories = model.Categories?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
         };
     }
@@ -118,7 +76,9 @@ public static class DbModelMapper
     {
         return new Achievement(model.Id, model.Name)
         {
-            Objectives = model.Objectives.ConvertAll(FromDbModel),
+            Description = model.Description,
+            Objectives = model.Objectives?.ConvertAll(FromDbModel) ?? [],
+            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
         };
     }
 
@@ -126,96 +86,79 @@ public static class DbModelMapper
     {
         return new Objective(model.Id, model.Name)
         {
-            Requirements = model.Requirements.ConvertAll(r => new Objective.Requirement
-            {
-                Class = r.Class,
-                Stat = r.Stat,
-                Min = r.Min,
-            }),
+            Description = model.Description,
+            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
         };
     }
 
-    private static Class FromDbModel(ClassDbModel model)
+    private static Category FromDbModel(CategoryDbModel model)
     {
-        return new Class(model.Id, model.Name)
-        {
-            Attributes = model.Attributes.ConvertAll(FromDbModel),
-            Stats = model.Stats.ConvertAll(FromDbModel),
-        };
+        return new Category(model.Id, model.Name);
     }
 
     private static Entity FromDbModel(EntityDbModel model)
     {
-        return new Entity(model.Id, model.Name, model.Class)
+        return new Entity(model.Id, model.Name, model.Category);
+    }
+
+    public static GameProgressDbModel ToDbModel(GameProgress model)
+    {
+        return new GameProgressDbModel
         {
-            Attributes = model.Attributes.ConvertAll(FromDbModel),
-            Stats = model.Stats?.ConvertAll(FromDbModel) ?? [],
+            UserId = model.UserId,
+            Game = model.Game,
+            Completed = model.Completed,
+            AchievementProgress = model.AchievementProgress.ConvertAll(ToDbModel),
+        };
+    }
+    private static AchievementProgressDbModel ToDbModel(AchievementProgress model)
+    {
+        return new AchievementProgressDbModel
+        {
+            Achievement = model.Achievement,
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
+            ObjectiveProgress = model.ObjectiveProgress.ConvertAll(ToDbModel),
         };
     }
 
-    private static Attribute FromDbModel(AttributeDbModel model)
+    private static ObjectiveProgressDbModel ToDbModel(ObjectiveProgress model)
     {
-        return new Attribute(model.Id, model.Value);
-    }
-
-    private static Stat FromDbModel(StatDbModel model)
-    {
-        return new Stat(model.Id, model.Name, Enum.Parse<Stat.StatType>(model.Type))
+        return new ObjectiveProgressDbModel
         {
-            Min = FromDbModel(model.Min),
-            Max = FromDbModel(model.Max),
-            EnumValues = model.EnumValues,
+            Objective = model.Objective,
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
         };
     }
 
     [return: NotNullIfNotNull("model")]
-    private static Stat.IntOrAttribute? FromDbModel(StatDbModel.IntOrAttributeDbModel? model)
+    public static GameProgress? FromDbModel(GameProgressDbModel? model)
     {
         if (model is null) return null;
-        if (model.ConstValue is not null) return new Stat.IntOrAttribute { ConstValue = model.ConstValue };
-        if (model.AttributeId is not null) return new Stat.IntOrAttribute { AttributeId = model.AttributeId };
-        throw new UnreachableException();
-    }
-
-    public static UserStatsDbModel ToDbModel(UserStats userStats)
-    {
-        return new UserStatsDbModel
+        return new GameProgress(model.UserId, model.Game)
         {
-            UserId = userStats.UserId,
-            GameId = userStats.GameId,
-            EntityStats = userStats.EntityStats.ConvertAll(ToDbModel),
+            Completed = model.Completed,
+            AchievementProgress = model.AchievementProgress?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    private static UserEntityStatDbModel ToDbModel(UserEntityStat userEntityStat)
+    private static AchievementProgress FromDbModel(AchievementProgressDbModel model)
     {
-        return new UserEntityStatDbModel
+        return new AchievementProgress(model.Achievement)
         {
-            EntityId = userEntityStat.EntityId,
-            StatId = userEntityStat.StatId,
-            Value = userEntityStat.Value,
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+            ObjectiveProgress = model.ObjectiveProgress?.ConvertAll(FromDbModel) ?? [],
         };
     }
 
-    [return: NotNullIfNotNull("userStats")]
-    public static UserStats? FromDbModel(UserStatsDbModel? userStats)
+    private static ObjectiveProgress FromDbModel(ObjectiveProgressDbModel model)
     {
-        if (userStats is null) return null;
-        return new UserStats
+        return new ObjectiveProgress(model.Objective)
         {
-            UserId = userStats.UserId,
-            GameId = userStats.GameId,
-            EntityStats = userStats.EntityStats.ConvertAll(FromDbModel),
-        };
-    }
-
-    private static UserEntityStat FromDbModel(UserEntityStatDbModel userEntityStatDbModel)
-    {
-        return new UserEntityStat
-        {
-            EntityId = userEntityStatDbModel.EntityId,
-            StatId = userEntityStatDbModel.StatId,
-            Value = userEntityStatDbModel.Value,
+            Completed = model.Completed,
+            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
         };
     }
 }

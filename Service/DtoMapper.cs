@@ -1,7 +1,5 @@
-using System.Diagnostics.CodeAnalysis;
 using Pika.Model;
 using Pika.Service.Dto;
-using Attribute = Pika.Model.Attribute;
 
 namespace Pika.Service;
 
@@ -22,134 +20,71 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Entities = model.Entities.ConvertAll(ToDto),
-            Achievements = model.Achievements.ConvertAll(ToDto),
-            Classes = model.Classes.ConvertAll(ToDto),
-        };
-    }
-
-    private static ClassDto ToDto(Class model)
-    {
-        return new ClassDto
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Attributes = model.Attributes.ConvertAll(ToDto),
-            Stats = model.Stats.ConvertAll(ToDto),
-        };
-    }
-
-    private static AchievementDto ToDto(Achievement model)
-    {
-        return new AchievementDto
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Objectives = model.Objectives.ConvertAll(ToDto),
-        };
-    }
-
-    private static ObjectiveDto ToDto(Objective model)
-    {
-        return new ObjectiveDto
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Requirements = model.Requirements.ConvertAll(r => new ObjectiveDto.RequirementDto()
+            Entities = model.Entities.ConvertAll(e => new EntityDto
             {
-                Class = r.Class,
-                Stat = r.Stat,
-                Min = r.Min,
+                Id = e.Id,
+                Name = e.Name,
+                Category = e.Category,
+            }),
+            Achievements = model.Achievements.ConvertAll(a => new AchievementDto
+            {
+                Id = a.Id,
+                Name = a.Name,
+                Description = a.Description,
+                Objectives = a.Objectives.ConvertAll(o => new ObjectiveDto
+                {
+                    Id = o.Id,
+                    Name = o.Name,
+                    Description = o.Description,
+                    CriteriaCategory = o.CriteriaCategory,
+                }),
+                CriteriaCategory = a.CriteriaCategory,
+            }),
+            Categories = model.Categories.ConvertAll(c => new CategoryDto
+            {
+                Id = c.Id,
+                Name = c.Name,
             }),
         };
     }
 
-    private static EntityDto ToDto(Entity model)
+    public static GameProgressDto ToDto(GameProgress model)
     {
-        return new EntityDto
+        return new GameProgressDto
         {
-            Id = model.Id,
-            Name = model.Name,
-            Attributes = model.Attributes.ConvertAll(ToDto),
-            Stats = model.Stats.ConvertAll(ToDto),
-            Class = model.Class,
-        };
-    }
-
-    private static AttributeDto ToDto(Attribute model)
-    {
-        return new AttributeDto
-        {
-            Id = model.Id,
-            Value = model.Value,
-        };
-    }
-
-    private static StatDto ToDto(Stat model)
-    {
-        return new StatDto
-        {
-            Id = model.Id,
-            Name = model.Name,
-            Type = model.Type switch
+            UserId = model.UserId,
+            Game = model.Game,
+            Completed = model.Completed,
+            AchievementProgress = model.AchievementProgress.ConvertAll(a => new AchievementProgressDto
             {
-                Stat.StatType.Boolean => StatDto.StatTypeEnumDto.Boolean,
-                Stat.StatType.IntegerRange => StatDto.StatTypeEnumDto.IntegerRange,
-                Stat.StatType.OrderedEnum => StatDto.StatTypeEnumDto.OrderedEnum,
-                _ => throw new ArgumentOutOfRangeException()
-            },
-            Min = ToDto(model.Min),
-            Max = ToDto(model.Max),
-            EnumValues = model.EnumValues,
+                Achievement = a.Achievement,
+                Completed = a.Completed,
+                EntitiesDone = a.EntitiesDone.ConvertAll(id => id.ToString()),
+                ObjectiveProgress = a.ObjectiveProgress.ConvertAll(o => new ObjectiveProgressDto
+                {
+                    Objective = o.Objective,
+                    Completed = o.Completed,
+                    EntitiesDone = o.EntitiesDone.ConvertAll(id => id.ToString()),
+                }),
+            }),
         };
     }
 
-    [return: NotNullIfNotNull(nameof(intOrAttribute))]
-    private static StatDto.IntOrAttributeDto? ToDto(Stat.IntOrAttribute? intOrAttribute)
+    public static GameProgress FromDto(GameProgressDto dto)
     {
-        if (!intOrAttribute.HasValue) return null;
-        return new StatDto.IntOrAttributeDto
+        return new GameProgress(dto.UserId, dto.Game)
         {
-            ConstValue = intOrAttribute.Value.ConstValue,
-            AttributeId = intOrAttribute.Value.AttributeId
-        };
-    }
-
-    public static UserStatsDto ToDto(UserStats userStats)
-    {
-        return new UserStatsDto
-        {
-            EntityStats = userStats.EntityStats.ConvertAll(ToDto),
-        };
-    }
-
-    private static UserEntityStatDto ToDto(UserEntityStat entityStat)
-    {
-        return new UserEntityStatDto
-        {
-            EntityId = entityStat.EntityId,
-            StatId = entityStat.StatId,
-            Value = entityStat.Value,
-        };
-    }
-
-    public static UserStats FromDto(UserStatsDto statsDto, string userId, string GameId)
-    {
-        return new UserStats
-        {
-            UserId = userId,
-            GameId = GameId,
-            EntityStats = statsDto.EntityStats.ConvertAll(FromDbModel),
-        };
-    }
-
-    private static UserEntityStat FromDbModel(UserEntityStatDto entityStatDto)
-    {
-        return new UserEntityStat
-        {
-            EntityId = entityStatDto.EntityId,
-            StatId = entityStatDto.StatId,
-            Value = entityStatDto.Value,
+            Completed = dto.Completed,
+            AchievementProgress = dto.AchievementProgress.ConvertAll(a => new AchievementProgress(a.Achievement)
+            {
+                Completed = a.Completed,
+                EntitiesDone = a.EntitiesDone.ConvertAll(id => new ResourceId(id)),
+                ObjectiveProgress = a.ObjectiveProgress.ConvertAll(o => new ObjectiveProgress(o.Objective)
+                {
+                    Completed = o.Completed,
+                    EntitiesDone = o.EntitiesDone.ConvertAll(id => new ResourceId(id)),
+                }),
+            }),
         };
     }
 }

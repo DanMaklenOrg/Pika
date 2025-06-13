@@ -17,6 +17,7 @@ public static class SyncCommand
         var game = ReadPikaFile(parser, gameId);
         await RunScrapersAndUpdateGame(game, scrappers);
         await gameRepo.Create(game);
+        Console.WriteLine("Sync complete");
     }
 
     private static Game ReadPikaFile(PikaParser parser, string gameId)

@@ -52,12 +52,12 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAchievementDeclaration([NotNull] PikaLangParser.AchievementDeclarationContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>classDeclaration</c>
+	/// Visit a parse tree produced by the <c>categoryDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitClassDeclaration([NotNull] PikaLangParser.ClassDeclarationContext context);
+	Result VisitCategoryDeclaration([NotNull] PikaLangParser.CategoryDeclarationContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>entityDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
@@ -78,55 +78,29 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitObjectiveDecl([NotNull] PikaLangParser.ObjectiveDeclContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.requireDecl"/>.
+	/// Visit a parse tree produced by <see cref="PikaLangParser.criterionDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitRequireDecl([NotNull] PikaLangParser.RequireDeclContext context);
+	Result VisitCriterionDecl([NotNull] PikaLangParser.CriterionDeclContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.classDecl"/>.
+	/// Visit a parse tree produced by <see cref="PikaLangParser.describtionDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitClassDecl([NotNull] PikaLangParser.ClassDeclContext context);
+	Result VisitDescribtionDecl([NotNull] PikaLangParser.DescribtionDeclContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.categoryDecl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCategoryDecl([NotNull] PikaLangParser.CategoryDeclContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PikaLangParser.entityDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitEntityDecl([NotNull] PikaLangParser.EntityDeclContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.statDecl"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitStatDecl([NotNull] PikaLangParser.StatDeclContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>boolStatType</c>
-	/// labeled alternative in <see cref="PikaLangParser.statType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBoolStatType([NotNull] PikaLangParser.BoolStatTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>intRangeStatType</c>
-	/// labeled alternative in <see cref="PikaLangParser.statType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIntRangeStatType([NotNull] PikaLangParser.IntRangeStatTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.intOrAttribute"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIntOrAttribute([NotNull] PikaLangParser.IntOrAttributeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.attrDecl"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAttrDecl([NotNull] PikaLangParser.AttrDeclContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>idWithName</c>
 	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.

@@ -1,11 +1,6 @@
 game hexcells_plus ~> 'Hexcells: Plus';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
-}
 achievement 'Perfect all levels' {
     objective 'Complete all levels perfectly' {
         require level; //.perfected == true;
@@ -13,9 +8,6 @@ achievement 'Perfect all levels' {
 }
 
 // Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
 class level {
     stat<bool> perfected ~> 'Completed Perfectly';
 }

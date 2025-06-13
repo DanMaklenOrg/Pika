@@ -12,7 +12,7 @@ public class PalworldPalsScrapper(SteamScrapperHelper steamScrapperHelper) : ISc
 
     public async Task ScrapeInto(Game game)
     {
-        game.Entities.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
         game.Entities.AddRange(await ScrapePals());
     }
 

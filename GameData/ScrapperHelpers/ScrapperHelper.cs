@@ -7,7 +7,7 @@ public static class ScrapperHelper
 {
     public static ResourceId InduceIdFromName(string name, string? idPrefix = null)
     {
-        var id = ResourceId.InduceFromName(name);
+        var id = IdUtilities.Normalize(name);
         if (!string.IsNullOrWhiteSpace(idPrefix)) id = $"{idPrefix}_{id}";
         return id;
     }

@@ -67,7 +67,7 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitAchievementDeclaration([NotNull] PikaLangParser.AchievementDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by the <c>classDeclaration</c>
+	/// Visit a parse tree produced by the <c>categoryDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
@@ -76,7 +76,7 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitClassDeclaration([NotNull] PikaLangParser.ClassDeclarationContext context) { return VisitChildren(context); }
+	public virtual Result VisitCategoryDeclaration([NotNull] PikaLangParser.CategoryDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>entityDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
@@ -109,7 +109,7 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitObjectiveDecl([NotNull] PikaLangParser.ObjectiveDeclContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.requireDecl"/>.
+	/// Visit a parse tree produced by <see cref="PikaLangParser.criterionDecl"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -117,9 +117,9 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRequireDecl([NotNull] PikaLangParser.RequireDeclContext context) { return VisitChildren(context); }
+	public virtual Result VisitCriterionDecl([NotNull] PikaLangParser.CriterionDeclContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.classDecl"/>.
+	/// Visit a parse tree produced by <see cref="PikaLangParser.describtionDecl"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -127,7 +127,17 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitClassDecl([NotNull] PikaLangParser.ClassDeclContext context) { return VisitChildren(context); }
+	public virtual Result VisitDescribtionDecl([NotNull] PikaLangParser.DescribtionDeclContext context) { return VisitChildren(context); }
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.categoryDecl"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitCategoryDecl([NotNull] PikaLangParser.CategoryDeclContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PikaLangParser.entityDecl"/>.
 	/// <para>
@@ -138,58 +148,6 @@ public partial class PikaLangBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitEntityDecl([NotNull] PikaLangParser.EntityDeclContext context) { return VisitChildren(context); }
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.statDecl"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitStatDecl([NotNull] PikaLangParser.StatDeclContext context) { return VisitChildren(context); }
-	/// <summary>
-	/// Visit a parse tree produced by the <c>boolStatType</c>
-	/// labeled alternative in <see cref="PikaLangParser.statType"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitBoolStatType([NotNull] PikaLangParser.BoolStatTypeContext context) { return VisitChildren(context); }
-	/// <summary>
-	/// Visit a parse tree produced by the <c>intRangeStatType</c>
-	/// labeled alternative in <see cref="PikaLangParser.statType"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitIntRangeStatType([NotNull] PikaLangParser.IntRangeStatTypeContext context) { return VisitChildren(context); }
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.intOrAttribute"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitIntOrAttribute([NotNull] PikaLangParser.IntOrAttributeContext context) { return VisitChildren(context); }
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PikaLangParser.attrDecl"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitAttrDecl([NotNull] PikaLangParser.AttrDeclContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>idWithName</c>
 	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.

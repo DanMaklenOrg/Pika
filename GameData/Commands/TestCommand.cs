@@ -13,13 +13,13 @@ public static class TestCommand
         app.AddCommand("test", Test);
     }
 
-    private static async Task Test(IGameRepo gameRepo, IUserStatsRepo userStatsRepo)
+    private static async Task Test(IGameRepo gameRepo, IGameProgressRepo gameProgressRepo)
     {
         await foreach (var game in GetAllGames(gameRepo))
         {
             Console.WriteLine($"Testing {game.Id} ({game.Name})...");
             TestGame(game);
-            var userStat = await userStatsRepo.Get("DanMaklen", game.Id);
+            var userStat = await gameProgressRepo.Get("DanMaklen", game.Id);
             if (userStat is not null) TestUserStat(game, userStat.Value);
             Console.WriteLine($"Testing {game.Id} ({game.Name})... Passed!");
         }
@@ -31,7 +31,7 @@ public static class TestCommand
     {
     }
 
-    private static void TestUserStat(Game game, UserStats userStats)
+    private static void TestUserStat(Game game, GameProgress gameProgress)
     {
     }
 

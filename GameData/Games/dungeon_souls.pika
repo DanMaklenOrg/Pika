@@ -1,48 +1,30 @@
 game dungeon_souls ~> 'Dungeon Souls';
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
+achievement 'Recipes Collector' {
+    describe 'Collect all Arcane Forge Recipes';
+    criterion forge_recipe;
 }
-achievement 'Collect all Arcane Forge Recipes' {
-    objective 'Find all arcane forge recipes' {
-        require forge_recipe; //.owned == true;
-    }
+achievement 'Max Passives' {
+    describe 'Reach level 10 in all passives';
+    criterion passive;
 }
-achievement 'Max all passives' {
-    objective 'Reach level 10 in all passives' {
-        require passive; //.level == 10;
-    }
-}
-achievement 'Max all heroes' {
+achievement 'Max Heroes' {
     objective 'Unlock all heroes' {
-        require hero; //.unlocked == true;
+        criterion hero;
     }
     objective 'Max rank all heroes' {
-        require hero; //.rank == 5;
+        criterion hero;
     }
     objective 'Free the soul of all heroes' {
-        require hero; //.soul_freed == true;
+        criterion hero;
     }
 }
 
-// Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
-class passive {
-    stat<int(0, 10)> level ~> 'Level';
-}
-class hero {
-    stat<bool> unlocked ~> 'Unlocked';
-    stat<int(0, 5)> rank ~> 'Rank';
-    stat<bool> soul_freed ~> 'Soul Freed';
-}
-class forge_recipe {
-    stat<bool> owned ~> 'Owned';
-}
+// Categories
+category passive;
+category hero;
+category forge_recipe;
 
 // Entities
 passive 'Stamina';

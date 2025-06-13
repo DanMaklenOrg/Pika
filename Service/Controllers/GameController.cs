@@ -11,12 +11,12 @@ namespace Pika.Service.Controllers;
 public class GameController : ControllerBase
 {
     private readonly IGameRepo _gameRepo;
-    private readonly IUserStatsRepo _userStatsRepo;
+    private readonly IGameProgressRepo _gameProgressRepo;
 
-    public GameController(IGameRepo gameRepo, IUserStatsRepo userStatsRepo)
+    public GameController(IGameRepo gameRepo, IGameProgressRepo gameProgressRepo)
     {
         _gameRepo = gameRepo;
-        _userStatsRepo = userStatsRepo;
+        _gameProgressRepo = gameProgressRepo;
     }
 
     [HttpGet("{gameId}")]
@@ -35,20 +35,22 @@ public class GameController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("{gameId}/stats")]
-    public async Task<UserStatsDto> GetStats(string gameId)
+    [HttpGet("{gameId}/progress")]
+    public async Task<GameProgressDto> GetProgress(string gameId)
     {
         var userId = this.User.Identity!.Name!;
-        var stats = await _userStatsRepo.Get(userId, gameId);
-        return DtoMapper.ToDto(stats ?? new UserStats(userId, gameId));
+        var progress = await _gameProgressRepo.Get(userId, gameId);
+        return DtoMapper.ToDto(progress ?? new GameProgress(userId, gameId));
     }
 
     [Authorize]
-    [HttpPost("{gameId}/stats")]
-    public async Task SetStats(string gameId, UserStatsDto statsDto)
+    [HttpPost("{gameId}/progress")]
+    public async Task<ActionResult> SetProgress(string gameId, GameProgressDto dto)
     {
         var userId = this.User.Identity!.Name!;
-        var stats = DtoMapper.FromDto(statsDto, userId, gameId);
-        await _userStatsRepo.Create(stats);
+        if (userId != dto.UserId || gameId != dto.Game) return ValidationProblem();
+        var progress = DtoMapper.FromDto(dto);
+        await _gameProgressRepo.Create(progress);
+        return Ok();
     }
 }
