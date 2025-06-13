@@ -5,15 +5,8 @@ using Pika.DataLayer.Model;
 
 namespace Pika.DataLayer.Dao;
 
-public class GameDao : IGameDao
+public class GameDao(IAmazonDynamoDB db) : IGameDao
 {
-    private readonly IAmazonDynamoDB _db;
-
-    public GameDao(IAmazonDynamoDB db)
-    {
-        _db = db;
-    }
-
     public async Task Create(GameDbModel game)
     {
         var serializedItem = BaseDbModel.SetKeysAndSerialize(game);
@@ -22,7 +15,7 @@ public class GameDao : IGameDao
             TableName = DynamoDbConstants.TableName,
             Item = serializedItem,
         };
-        await _db.PutItemAsync(request);
+        await db.PutItemAsync(request);
     }
 
     public async Task<GameDbModel?> Get(string id)
@@ -36,7 +29,7 @@ public class GameDao : IGameDao
                 { "sk", new AttributeValue("Game") },
             }
         };
-        var response = await _db.GetItemAsync(request);
+        var response = await db.GetItemAsync(request);
 
         if (!response.IsItemSet) return null;
         return BaseDbModel.Deserialize<GameDbModel>(response.Item);
@@ -53,8 +46,9 @@ public class GameDao : IGameDao
                 { ":skValue", new AttributeValue("Game") },
             },
             IndexName = DynamoDbConstants.SkPkIndex,
+            FilterExpression = "attribute_exists(categories)",
         };
-        var response = await _db.QueryAsync(request);
+        var response = await db.QueryAsync(request);
         return response.Items.ConvertAll(BaseDbModel.Deserialize<GameDbModel>);
     }
 }
