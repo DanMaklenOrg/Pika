@@ -12,7 +12,7 @@ public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) :
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
         game.Entities.AddRange(await ScrapeCharacters());
         game.Entities.AddRange(await ScrapeRelics());
         game.Entities.AddRange(await ScrapePassiveItems());

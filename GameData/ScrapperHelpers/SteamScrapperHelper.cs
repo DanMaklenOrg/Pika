@@ -4,7 +4,7 @@ namespace Pika.GameData.ScrapperHelpers;
 
 public class SteamScrapperHelper(SteamClient client)
 {
-    public async Task<List<Achievement>> ScrapAchievements(uint steamAppId, ResourceId classId, string? idPrefix = "achievement")
+    public async Task<List<Achievement>> ScrapAchievements(uint steamAppId, string? idPrefix = "achievement")
     {
         var achievements = await client.GetAchievements(steamAppId);
         return achievements.Select(a =>

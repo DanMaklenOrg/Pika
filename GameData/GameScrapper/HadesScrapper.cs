@@ -12,7 +12,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
         game.Entities.AddRange(await ScrapeKeepsakes());
         game.Entities.AddRange(await ScrapeProphecies());
         game.Entities.AddRange(await ScrapeMirrorAbilities());
@@ -62,7 +62,7 @@ public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
             var name = ScrapperHelper.CleanName(n.SelectSingleNode($"./td[{1 + columnOffset}]").InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "mirror");
             var maxRank = ParseMaxRank(n.SelectSingleNode($"./td[{4 + columnOffset}]"));
-            return new Entity(id, name, "mirror_ability");// { Attributes = [new("max_rank", maxRank)] };
+            return new Entity(id, name, "mirror_ability");
         }
 
         int ParseMaxRank(HtmlNode n) => n.InnerText.Count(c => c == '/') + 1;

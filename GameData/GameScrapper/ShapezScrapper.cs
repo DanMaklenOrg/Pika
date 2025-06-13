@@ -11,6 +11,6 @@ public class ShapezScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
     }
 }

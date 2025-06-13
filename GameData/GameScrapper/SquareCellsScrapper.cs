@@ -11,6 +11,6 @@ public class SquareCellsScrapper(SteamScrapperHelper steamScrapperHelper) : IScr
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
     }
 }

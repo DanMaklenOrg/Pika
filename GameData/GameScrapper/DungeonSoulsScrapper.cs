@@ -11,6 +11,6 @@ public class DungeonSoulsScrapper(SteamScrapperHelper steamScrapperHelper) : ISc
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId, "achievement_c"));
+        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
     }
 }
