@@ -1,7 +1,2 @@
 game squarecells ~> 'SquareCells';
-
-// Achievements
-
-// Classes
-
-// Entities
+import steam(416770);
