@@ -7,6 +7,7 @@ gameDecl: GAME namedIdentifier SEMICOLON;
 declStmt
     : achievementDecl   #achievementDeclaration
     | categoryDecl      #categoryDeclaration
+    | tagDecl           #tagDeclaration
     | entityDecl        #entityDeclaration
     ;
 
@@ -25,7 +26,10 @@ criterionDecl: CRITERION IDENTIFIER SEMICOLON;
 describtionDecl: DESCRIPTION STRING_LITERAL SEMICOLON;
 
 categoryDecl: CATEGORY namedIdentifier SEMICOLON;
-entityDecl: IDENTIFIER namedIdentifier SEMICOLON;
+tagDecl: TAG namedIdentifier SEMICOLON;
+entityDecl: IDENTIFIER namedIdentifier entityTags* SEMICOLON;
+
+entityTags: HASH IDENTIFIER;
 
 namedIdentifier
     : IDENTIFIER WITH_NAME STRING_LITERAL   #idWithName
@@ -44,6 +48,7 @@ ACHIEVEMENT: 'achievement';
 OBJECTIVE: 'objective';
 CRITERION: 'criterion';
 CATEGORY: 'category';
+TAG: 'tag';
 DESCRIPTION: 'description';
 IMPORT: 'import';
 STEAM: 'steam';
@@ -59,6 +64,7 @@ CLOSE_PARENTHESES: ')';
 COMMA: ',';
 WITH_NAME: '~>';
 EQUALS: '=';
+HASH: '#';
 
 // Literals
 STRING_LITERAL: '\'' (~[\n'] | '\\\'')* '\'';

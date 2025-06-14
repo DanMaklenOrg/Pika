@@ -59,6 +59,13 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitCategoryDeclaration([NotNull] PikaLangParser.CategoryDeclarationContext context);
 	/// <summary>
+	/// Visit a parse tree produced by the <c>tagDeclaration</c>
+	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTagDeclaration([NotNull] PikaLangParser.TagDeclarationContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>entityDeclaration</c>
 	/// labeled alternative in <see cref="PikaLangParser.declStmt"/>.
 	/// </summary>
@@ -102,11 +109,23 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitCategoryDecl([NotNull] PikaLangParser.CategoryDeclContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.tagDecl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTagDecl([NotNull] PikaLangParser.TagDeclContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="PikaLangParser.entityDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitEntityDecl([NotNull] PikaLangParser.EntityDeclContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.entityTags"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEntityTags([NotNull] PikaLangParser.EntityTagsContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>idWithName</c>
 	/// labeled alternative in <see cref="PikaLangParser.namedIdentifier"/>.

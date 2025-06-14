@@ -24,10 +24,11 @@ public class PikaParser
         (ResourceId id, string name) = ParseNamedIdentifier(context.gameDecl().namedIdentifier());
         var game = new Game(id, name);
 
-        if(context.importStmt().Length > 0) game.SteamAppId = (uint)ParseIntLiteral(context.importStmt()[0].INTEGER_LITERAL());
+        if (context.importStmt().Length > 0) game.SteamAppId = (uint)ParseIntLiteral(context.importStmt()[0].INTEGER_LITERAL());
 
         game.Achievements.AddRange(context.declStmt().OfType<PikaLangParser.AchievementDeclarationContext>().Select(ParseAchievement));
         game.Categories.AddRange(context.declStmt().OfType<PikaLangParser.CategoryDeclarationContext>().Select(ParseCategory));
+        game.Tags.AddRange(context.declStmt().OfType<PikaLangParser.TagDeclarationContext>().Select(ParseTag));
         game.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
 
         return game;
@@ -61,12 +62,20 @@ public class PikaParser
         return new Category(id, name);
     }
 
+    private Tag ParseTag(PikaLangParser.TagDeclarationContext context)
+    {
+        (ResourceId id, string name) = ParseNamedIdentifier(context.tagDecl().namedIdentifier());
+        return new Tag(id, name);
+    }
+
     private Entity ParseEntity(PikaLangParser.EntityDeclarationContext context)
     {
         (ResourceId id, string name) = ParseNamedIdentifier(context.entityDecl().namedIdentifier());
         ResourceId classId = context.entityDecl().IDENTIFIER().GetText();
-        var entity = new Entity(id, name, classId);
-        return entity;
+        return new Entity(id, name, classId)
+        {
+            Tags = context.entityDecl().entityTags().Select(t => new ResourceId(t.IDENTIFIER().GetText())).ToList(),
+        };
     }
 
     private (ResourceId id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
