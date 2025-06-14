@@ -1,7 +1,2 @@
 game hacknet ~> 'Hacknet';
-
-// Achievements
-
-// Classes
-
-// Entities
+import steam(365450);

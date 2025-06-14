@@ -19,14 +19,11 @@ builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, ToTheCoreScrapper>();
 builder.Services.AddTransient<IScrapper, NodebusterScrapper>();
 builder.Services.AddTransient<IScrapper, TimeClickersScrapper>();
-builder.Services.AddTransient<IScrapper, HacknetScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsInfiniteScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsPlusScrapper>();
 builder.Services.AddTransient<IScrapper, SquareCellsScrapper>();
 builder.Services.AddTransient<IScrapper, SpecOpsTheLineScrapper>();
-builder.Services.AddTransient<IScrapper, FactorioScrapper>();
-builder.Services.AddTransient<IScrapper, DwarfsScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfMordorScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 

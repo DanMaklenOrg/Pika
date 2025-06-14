@@ -4,15 +4,12 @@ using Pika.Model;
 
 namespace Pika.GameData.GameScrapper;
 
-public class HadesScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
+public class HadesScrapper : IScrapper
 {
-    private const uint SteamAppId = 1145360;
-
     public ResourceId GameId => "hades";
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
         game.Entities.AddRange(await ScrapeKeepsakes());
         game.Entities.AddRange(await ScrapeProphecies());
         game.Entities.AddRange(await ScrapeMirrorAbilities());

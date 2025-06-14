@@ -1,23 +1,18 @@
 game dwarfs ~> 'Dwarfs!?';
+import steam(35480);
 
 // Achievements
 achievement 'Finish the tutorial' {
-    objective 'Complete all tutorial missions'{
-        require tutorial_mission; //.completed == true;
-    }
+    criterion tutorial_mission;
 }
 achievement 'Ace all challenges' {
-    objective 'Get 3 Axes in all challenges' {
-        require challenge; //.axes == 3;
-    }
+    description 'Get 3 Axes in all challenges';
+    criterion challenge;
 }
-// Classes
-class tutorial_mission {
-    stat<bool> completed ~> 'Completed';
-}
-class challenge {
-    stat<int(0, 3)> axes ~> 'Axes';
-}
+
+// Categories
+category tutorial_mission;
+category challenge;
 
 // Entities
 tutorial_mission 'Controls';

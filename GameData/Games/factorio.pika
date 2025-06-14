@@ -1,41 +1,19 @@
 game factorio ~> 'Factorio';
+import steam(427520);
 
 // Achievements
 achievement 'Complete all unique single player scenarios' {
-    objective 'Complete unique all single player scenarios' {
-        require scenario; //.level == max_level;
-    }
+    criterion scenario;
 }
 achievement 'Build a Mega Factory' {
-    objective 'Build a factory that produces 1K science packs per minute' {
-        require science_pack; //.production_per_min >= 1000
-    }
+    description 'Build a factory that produces 1K science packs per minute';
 }
 
-// Classes
-class scenario {
-    attribute max_level = 5;
-    stat<int(0, max_level)> level ~> 'Level';
-}
-class science_pack {
-    stat<int(0, 1000)> production_per_min ~> 'Production Per Minute';
-}
+// Categories
+category scenario;
 
 // Entities
-scenario 'Tutorial' { attribute max_level = 5; }
-scenario 'Transport Belt Madness' { attribute max_level = 3; }
-scenario 'Tight Spot' { attribute max_level = 5; }
-scenario 'Supply Challenge' { attribute max_level = 21; }
-
-science_pack 'Automation Science Pack';
-science_pack 'Logistic Science Pack';
-science_pack 'Military Science Pack';
-science_pack 'Chemical Science Pack';
-science_pack 'Production Science Pack';
-science_pack 'Utility Science Pack';
-science_pack 'Space Science Pack';
-science_pack 'Metallurgic Science Pack';
-science_pack 'Electromagnetic Science Pack';
-science_pack 'Agricultural Science Pack';
-science_pack 'Cryogenic Science Pack';
-science_pack 'Promethium Science Pack';
+scenario 'Tutorial';
+scenario 'Transport Belt Madness';
+scenario 'Tight Spot';
+scenario 'Supply Challenge';
