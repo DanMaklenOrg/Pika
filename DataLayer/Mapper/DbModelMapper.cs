@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Pika.DataLayer.Model;
 using Pika.Model;
+using Utility;
 
 namespace Pika.DataLayer.Mapper;
 
@@ -13,12 +14,12 @@ public static class DbModelMapper
             Id = game.Id,
             Name = game.Name,
             SteamAppId = game.SteamAppId,
-            Achievements = game.Achievements.ConvertAll(a => new AchievementDbModel
+            Achievements = game.Achievements.ConvertAllOrNull(a => new AchievementDbModel
             {
                 Id = a.Id,
                 Name = a.Name,
                 Description = a.Description,
-                Objectives = a.Objectives.ConvertAll(o => new ObjectiveDbModel
+                Objectives = a.Objectives.ConvertAllOrNull(o => new ObjectiveDbModel
                 {
                     Id = o.Id,
                     Name = o.Name,
@@ -27,14 +28,14 @@ public static class DbModelMapper
                 }),
                 CriteriaCategory = a.CriteriaCategory,
             }),
-            Categories = game.Categories.ConvertAll(c => new CategoryDbModel { Id = c.Id, Name = c.Name }),
-            Tags = game.Tags.ConvertAll(t => new TagDbModel { Id = t.Id, Name = t.Name }),
-            Entities = game.Entities.ConvertAll(e => new EntityDbModel
+            Categories = game.Categories.ConvertAllOrNull(c => new CategoryDbModel { Id = c.Id, Name = c.Name }),
+            Tags = game.Tags.ConvertAllOrNull(t => new TagDbModel { Id = t.Id, Name = t.Name }),
+            Entities = game.Entities.ConvertAllOrNull(e => new EntityDbModel
             {
                 Id = e.Id,
                 Name = e.Name,
                 Category = e.Category,
-                Tags = e.Tags.ConvertAll(t => t.ToString()),
+                Tags = e.Tags.ConvertAllOrNull(t => t.ToString()),
             })
         };
     }

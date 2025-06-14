@@ -11,7 +11,7 @@ public readonly struct GameDto
     public string Name { get; init; }
 
     [JsonPropertyName("achievements")]
-    public List<AchievementDto> Achievements { get; init; }
+    public List<AchievementDto>? Achievements { get; init; }
 
     [JsonPropertyName("categories")]
     public List<CategoryDto>? Categories { get; init; }
