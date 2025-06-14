@@ -1,6 +1,6 @@
 grammar PikaLang;
 
-root: gameDecl declStmt* EOF;
+root: gameDecl importStmt* declStmt* EOF;
 
 gameDecl: GAME namedIdentifier SEMICOLON;
 
@@ -9,6 +9,8 @@ declStmt
     | categoryDecl      #categoryDeclaration
     | entityDecl        #entityDeclaration
     ;
+
+importStmt: IMPORT STEAM OPEN_PARENTHESES INTEGER_LITERAL CLOSE_PARENTHESES SEMICOLON;
 
 achievementDecl
     : ACHIEVEMENT namedIdentifier SEMICOLON
@@ -43,6 +45,8 @@ OBJECTIVE: 'objective';
 CRITERION: 'criterion';
 CATEGORY: 'category';
 DESCRIPTION: 'description';
+IMPORT: 'import';
+STEAM: 'steam';
 
 // Operators & Punctuations
 SEMICOLON: ';';

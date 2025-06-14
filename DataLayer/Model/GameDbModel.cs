@@ -11,6 +11,9 @@ public class GameDbModel : BaseDbModel
     [JsonPropertyName("name")]
     public required string Name { get; init; }
 
+    [JsonPropertyName("steam_app_id")]
+    public uint? SteamAppId { get; init; }
+
     [JsonPropertyName("entities")]
     public List<EntityDbModel>? Entities { get; init; }
 

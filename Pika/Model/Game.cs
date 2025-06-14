@@ -15,6 +15,8 @@ public readonly record struct ResourceId(string Id)
 
 public record Game(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
+    public uint? SteamAppId { get; set; }
+
     public List<Category> Categories { get; init; } = [];
     public List<Entity> Entities { get; init; } = [];
     public List<Achievement> Achievements { get; init; } = [];

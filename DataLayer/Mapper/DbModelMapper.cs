@@ -12,6 +12,7 @@ public static class DbModelMapper
         {
             Id = game.Id,
             Name = game.Name,
+            SteamAppId = game.SteamAppId,
             Entities = game.Entities.ConvertAll(ToDbModel),
             Achievements = game.Achievements.ConvertAll(ToDbModel),
             Categories = game.Categories.ConvertAll(ToDbModel),
@@ -66,6 +67,7 @@ public static class DbModelMapper
         if (model is null) return null;
         return new Game(model.Id, model.Name)
         {
+            SteamAppId = model.SteamAppId,
             Achievements = model.Achievements?.ConvertAll(FromDbModel) ?? [],
             Categories = model.Categories?.ConvertAll(FromDbModel) ?? [],
             Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],

@@ -66,6 +66,12 @@ public interface IPikaLangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitEntityDeclaration([NotNull] PikaLangParser.EntityDeclarationContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="PikaLangParser.importStmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitImportStmt([NotNull] PikaLangParser.ImportStmtContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="PikaLangParser.achievementDecl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

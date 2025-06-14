@@ -1,12 +1,13 @@
 game dungeon_souls ~> 'Dungeon Souls';
+import steam(383230);
 
 // Achievements
 achievement 'Recipes Collector' {
-    describe 'Collect all Arcane Forge Recipes';
+    description 'Collect all Arcane Forge Recipes';
     criterion forge_recipe;
 }
 achievement 'Max Passives' {
-    describe 'Reach level 10 in all passives';
+    description 'Reach level 10 in all passives';
     criterion passive;
 }
 achievement 'Max Heroes' {

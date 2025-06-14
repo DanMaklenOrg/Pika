@@ -1,7 +1,2 @@
 game crosscells ~> 'CrossCells';
-
-// Achievements
-
-// Classes
-
-// Entities
+import steam(632000);
