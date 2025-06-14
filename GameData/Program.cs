@@ -25,7 +25,6 @@ builder.Services.AddTransient<IScrapper, HexcellsInfiniteScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsPlusScrapper>();
 builder.Services.AddTransient<IScrapper, SquareCellsScrapper>();
 builder.Services.AddTransient<IScrapper, SpecOpsTheLineScrapper>();
-builder.Services.AddTransient<IScrapper, FactorioScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfMordorScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 
