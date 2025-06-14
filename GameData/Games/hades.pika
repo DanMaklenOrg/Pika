@@ -57,12 +57,11 @@ achievement 'Unlock all skelly statues' {
     objective 'Skelly Challenge Statue (32 Heat)';
 }
 achievement 'Unlock all house contractor upgrades' {
-    objective 'Purchase all house contractor upgrades';
+    description 'Purchase all house contractor upgrades';
     criterion contractor_upgrade;
 }
 achievement 'Max resource director rank' {
-    objective 'Achieve max rank with the resource director';
-    criterion resource_director;
+    description 'Achieve max rank (Unseen One) with the resource director';
 }
 
 // Categories
@@ -82,32 +81,35 @@ infernal_arm 'Aegis';
 infernal_arm 'Coronacht';
 infernal_arm 'Malphon';
 infernal_arm 'Exagryph';
-codex_entry codex_persphone ~> 'Persephone';
-codex_entry codex_greece ~> 'Greece';
-character 'Hades';
-character 'Nyx';
-character 'Charon';
-character 'Chaos';
-character 'Megaera';
-character 'Thanatos';
-character 'Hypnos';
-character 'Zeus';
-character 'Poseidon';
-character 'Athena';
-character 'Artemis';
-character 'Aphrodite';
-character 'Ares';
-character 'Dionysus';
-character 'Hermes';
-character 'Demeter';
-character 'Achilles';
-character 'Patroclus';
-character 'Dusa';
-character 'Skelly';
-character 'Eurydice';
-character 'Orpheus';
-character 'Sisyphus';
-character 'Cerberus';
-character 'Persephone';
-contractor_upgrade contractor_field_of_souls ~> 'Field of Souls';
-contractor_upgrade contractor_rage_of_the_myrmidons ~> 'Rage of the Myrmidons';
+
+codex_entry codex_persphone ~> 'Persephone' #codex_others;
+codex_entry codex_greece ~> 'Greece' #codex_underworld;
+
+character 'Hades' #codex_chthonic;
+character 'Nyx' #codex_chthonic;
+character 'Charon' #codex_chthonic;
+character 'Hypnos' #codex_chthonic;
+character 'Thanatos' #codex_chthonic;
+character 'Megaera' #codex_chthonic;
+character 'Chaos' #codex_chthonic;
+character 'Zeus' #codex_olympian;
+character 'Poseidon' #codex_olympian;
+character 'Athena' #codex_olympian;
+character 'Aphrodite' #codex_olympian;
+character 'Artemis' #codex_olympian;
+character 'Ares' #codex_olympian;
+character 'Dionysus' #codex_olympian;
+character 'Hermes' #codex_olympian;
+character 'Demeter' #codex_olympian;
+character 'Achilles' #codex_others;
+character 'Orpheus' #codex_others;
+character 'Sisyphus' #codex_others;
+character 'Eurydice' #codex_others;
+character 'Patroclus' #codex_others;
+character 'Cerberus' #codex_others;
+character 'Dusa' #codex_others;
+character 'Skelly' #codex_others;
+character 'Persephone' #codex_others;
+
+contractor_upgrade contractor_field_of_souls ~> 'Field of Souls' #contractor_music;
+contractor_upgrade contractor_rage_of_the_myrmidons ~> 'Rage of the Myrmidons' #contractor_music;
