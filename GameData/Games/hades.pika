@@ -74,6 +74,27 @@ category companion;
 category character;
 category contractor_upgrade;
 
+// Tags
+tag codex_chthonic ~> 'Chthonic Gods';
+tag codex_olympian ~> 'Olympian Gods';
+tag codex_others ~> 'Others of Note';
+tag codex_underworld ~> 'The Underworld';
+tag codex_infernal_arms ~> 'Infernal Arms';
+tag codex_foes ~> 'Perlious Foes';
+tag codex_artifacts ~> 'Artifacts';
+tag codex_river ~> 'River Denizens';
+tag codex_fables ~> 'Fables';
+
+tag mirror_red ~> 'Red';
+tag mirror_green ~> 'Green';
+
+tag contractor_orders ~> 'Work Orders';
+tag contractor_great_hall ~> 'Great Hall';
+tag contractor_west_hall ~> 'West Hall';
+tag contractor_lounge ~> 'Lounge';
+tag contractor_bedchambers ~> 'Bedchambers';
+tag contractor_music ~> 'Court Music';
+
 // Entities
 infernal_arm 'Stygius';
 infernal_arm 'Varatha';
