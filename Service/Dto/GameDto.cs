@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using Pika.Model;
 
 namespace Pika.Service.Dto;
 
@@ -12,10 +11,13 @@ public readonly struct GameDto
     public string Name { get; init; }
 
     [JsonPropertyName("achievements")]
-    public List<AchievementDto> Achievements { get; init; }
+    public List<AchievementDto>? Achievements { get; init; }
 
     [JsonPropertyName("categories")]
     public List<CategoryDto>? Categories { get; init; }
+
+    [JsonPropertyName("tags")]
+    public List<TagDto>? Tags { get; init; }
 
     [JsonPropertyName("entities")]
     public List<EntityDto>? Entities { get; init; }
@@ -39,15 +41,6 @@ public readonly struct AchievementDto
     public string? CriteriaCategory { get; init; }
 }
 
-public readonly struct CategoryDto
-{
-    [JsonPropertyName("id")]
-    public string Id { get; init; }
-
-    [JsonPropertyName("name")]
-    public string Name { get; init; }
-}
-
 public readonly struct ObjectiveDto
 {
     [JsonPropertyName("id")]
@@ -63,6 +56,24 @@ public readonly struct ObjectiveDto
     public string? CriteriaCategory { get; init; }
 }
 
+public readonly struct CategoryDto
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; }
+
+    [JsonPropertyName("name")]
+    public string Name { get; init; }
+}
+
+public readonly struct TagDto
+{
+    [JsonPropertyName("id")]
+    public string Id { get; init; }
+
+    [JsonPropertyName("name")]
+    public string Name { get; init; }
+}
+
 public readonly struct EntityDto
 {
     [JsonPropertyName("id")]
@@ -73,4 +84,7 @@ public readonly struct EntityDto
 
     [JsonPropertyName("category")]
     public string Category { get; init; }
+
+    [JsonPropertyName("tags")]
+    public List<string>? Tags { get; init; }
 }

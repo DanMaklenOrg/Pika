@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Pika.DataLayer.Model;
 using Pika.Model;
+using Utility;
 
 namespace Pika.DataLayer.Mapper;
 
@@ -13,51 +14,29 @@ public static class DbModelMapper
             Id = game.Id,
             Name = game.Name,
             SteamAppId = game.SteamAppId,
-            Entities = game.Entities.ConvertAll(ToDbModel),
-            Achievements = game.Achievements.ConvertAll(ToDbModel),
-            Categories = game.Categories.ConvertAll(ToDbModel),
-        };
-    }
-
-    private static AchievementDbModel ToDbModel(Achievement achievement)
-    {
-        return new AchievementDbModel
-        {
-            Id = achievement.Id,
-            Name = achievement.Name,
-            Description = achievement.Description,
-            Objectives = achievement.Objectives.ConvertAll(ToDbModel),
-            CriteriaCategory = achievement.CriteriaCategory,
-        };
-    }
-
-    private static ObjectiveDbModel ToDbModel(Objective objective)
-    {
-        return new ObjectiveDbModel
-        {
-            Id = objective.Id,
-            Name = objective.Name,
-            Description = objective.Description,
-            CriteriaCategory = objective.CriteriaCategory,
-        };
-    }
-
-    private static EntityDbModel ToDbModel(Entity entity)
-    {
-        return new EntityDbModel
-        {
-            Id = entity.Id,
-            Name = entity.Name,
-            Category = entity.Category,
-        };
-    }
-
-    private static CategoryDbModel ToDbModel(Category category)
-    {
-        return new CategoryDbModel
-        {
-            Id = category.Id,
-            Name = category.Name,
+            Achievements = game.Achievements.ConvertAllOrNull(a => new AchievementDbModel
+            {
+                Id = a.Id,
+                Name = a.Name,
+                Description = a.Description,
+                Objectives = a.Objectives.ConvertAllOrNull(o => new ObjectiveDbModel
+                {
+                    Id = o.Id,
+                    Name = o.Name,
+                    Description = o.Description,
+                    CriteriaCategory = o.CriteriaCategory,
+                }),
+                CriteriaCategory = a.CriteriaCategory,
+            }),
+            Categories = game.Categories.ConvertAllOrNull(c => new CategoryDbModel { Id = c.Id, Name = c.Name }),
+            Tags = game.Tags.ConvertAllOrNull(t => new TagDbModel { Id = t.Id, Name = t.Name }),
+            Entities = game.Entities.ConvertAllOrNull(e => new EntityDbModel
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Category = e.Category,
+                Tags = e.Tags.ConvertAllOrNull(t => t.ToString()),
+            })
         };
     }
 
@@ -68,39 +47,29 @@ public static class DbModelMapper
         return new Game(model.Id, model.Name)
         {
             SteamAppId = model.SteamAppId,
-            Achievements = model.Achievements?.ConvertAll(FromDbModel) ?? [],
-            Categories = model.Categories?.ConvertAll(FromDbModel) ?? [],
-            Entities = model.Entities?.ConvertAll(FromDbModel) ?? [],
+            Achievements = model.Achievements?.ConvertAll(a => new Achievement(a.Id, a.Name)
+            {
+                Description = a.Description,
+                Objectives = a.Objectives?.ConvertAll(o => new Objective(o.Id, o.Name)
+                {
+                    Description = o.Description,
+                    CriteriaCategory = FromDbModel(o.CriteriaCategory),
+                }) ?? [],
+                CriteriaCategory = FromDbModel(a.CriteriaCategory),
+            }) ?? [],
+            Categories = model.Categories?.ConvertAll(c => new Category(c.Id, c.Name)) ?? [],
+            Tags = model.Tags?.ConvertAll(t => new Tag(t.Id, t.Name)) ?? [],
+            Entities = model.Entities?.ConvertAll(e => new Entity(e.Id, e.Name, e.Category)
+            {
+                Tags = e.Tags?.ConvertAll(t => FromDbModel(t).Value) ?? [],
+            }) ?? [],
         };
     }
 
-    private static Achievement FromDbModel(AchievementDbModel model)
+    [return: NotNullIfNotNull("model")]
+    private static ResourceId? FromDbModel(string? model)
     {
-        return new Achievement(model.Id, model.Name)
-        {
-            Description = model.Description,
-            Objectives = model.Objectives?.ConvertAll(FromDbModel) ?? [],
-            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
-        };
-    }
-
-    private static Objective FromDbModel(ObjectiveDbModel model)
-    {
-        return new Objective(model.Id, model.Name)
-        {
-            Description = model.Description,
-            CriteriaCategory = model.CriteriaCategory is null ? (ResourceId?)null : model.CriteriaCategory,
-        };
-    }
-
-    private static Category FromDbModel(CategoryDbModel model)
-    {
-        return new Category(model.Id, model.Name);
-    }
-
-    private static Entity FromDbModel(EntityDbModel model)
-    {
-        return new Entity(model.Id, model.Name, model.Category);
+        return model is null ? (ResourceId?)null : model;
     }
 
     public static GameProgressDbModel ToDbModel(GameProgress model)
@@ -110,27 +79,18 @@ public static class DbModelMapper
             UserId = model.UserId,
             Game = model.Game,
             Completed = model.Completed,
-            AchievementProgress = model.AchievementProgress.ConvertAll(ToDbModel),
-        };
-    }
-    private static AchievementProgressDbModel ToDbModel(AchievementProgress model)
-    {
-        return new AchievementProgressDbModel
-        {
-            Achievement = model.Achievement,
-            Completed = model.Completed,
-            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
-            ObjectiveProgress = model.ObjectiveProgress.ConvertAll(ToDbModel),
-        };
-    }
-
-    private static ObjectiveProgressDbModel ToDbModel(ObjectiveProgress model)
-    {
-        return new ObjectiveProgressDbModel
-        {
-            Objective = model.Objective,
-            Completed = model.Completed,
-            EntitiesDone = model.EntitiesDone.ConvertAll(e => e.ToString()),
+            AchievementProgress = model.AchievementProgress.ConvertAll(a => new AchievementProgressDbModel
+            {
+                Achievement = a.Achievement,
+                Completed = a.Completed,
+                EntitiesDone = a.EntitiesDone.ConvertAll(e => e.ToString()),
+                ObjectiveProgress = a.ObjectiveProgress.ConvertAll(o => new ObjectiveProgressDbModel
+                {
+                    Objective = o.Objective,
+                    Completed = o.Completed,
+                    EntitiesDone = o.EntitiesDone.ConvertAll(e => e.ToString()),
+                }),
+            }),
         };
     }
 
@@ -141,26 +101,16 @@ public static class DbModelMapper
         return new GameProgress(model.UserId, model.Game)
         {
             Completed = model.Completed,
-            AchievementProgress = model.AchievementProgress?.ConvertAll(FromDbModel) ?? [],
-        };
-    }
-
-    private static AchievementProgress FromDbModel(AchievementProgressDbModel model)
-    {
-        return new AchievementProgress(model.Achievement)
-        {
-            Completed = model.Completed,
-            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
-            ObjectiveProgress = model.ObjectiveProgress?.ConvertAll(FromDbModel) ?? [],
-        };
-    }
-
-    private static ObjectiveProgress FromDbModel(ObjectiveProgressDbModel model)
-    {
-        return new ObjectiveProgress(model.Objective)
-        {
-            Completed = model.Completed,
-            EntitiesDone = model.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+            AchievementProgress = model.AchievementProgress?.ConvertAll(a => new AchievementProgress(a.Achievement)
+            {
+                Completed = a.Completed,
+                EntitiesDone = a.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+                ObjectiveProgress = a.ObjectiveProgress?.ConvertAll(o => new ObjectiveProgress(o.Objective)
+                {
+                    Completed = o.Completed,
+                    EntitiesDone = o.EntitiesDone?.ConvertAll(e => new ResourceId(e)) ?? [],
+                }) ?? [],
+            }) ?? [],
         };
     }
 }

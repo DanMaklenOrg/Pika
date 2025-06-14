@@ -1,5 +1,6 @@
 using Pika.Model;
 using Pika.Service.Dto;
+using Utility;
 
 namespace Pika.Service;
 
@@ -7,11 +8,7 @@ public static class DtoMapper
 {
     public static GameSummaryDto ToSummaryDto(Game model)
     {
-        return new GameSummaryDto
-        {
-            Id = model.Id.ToString(),
-            Name = model.Name,
-        };
+        return new GameSummaryDto { Id = model.Id.ToString(), Name = model.Name };
     }
 
     public static GameDto ToDto(Game model)
@@ -20,18 +17,12 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Entities = model.Entities.ConvertAll(e => new EntityDto
-            {
-                Id = e.Id,
-                Name = e.Name,
-                Category = e.Category,
-            }),
-            Achievements = model.Achievements.ConvertAll(a => new AchievementDto
+            Achievements = model.Achievements.ConvertAllOrNull(a => new AchievementDto
             {
                 Id = a.Id,
                 Name = a.Name,
                 Description = a.Description,
-                Objectives = a.Objectives.ConvertAll(o => new ObjectiveDto
+                Objectives = a.Objectives.ConvertAllOrNull(o => new ObjectiveDto
                 {
                     Id = o.Id,
                     Name = o.Name,
@@ -40,11 +31,15 @@ public static class DtoMapper
                 }),
                 CriteriaCategory = a.CriteriaCategory,
             }),
-            Categories = model.Categories.ConvertAll(c => new CategoryDto
+            Categories = model.Categories.ConvertAllOrNull(c => new CategoryDto { Id = c.Id, Name = c.Name }),
+            Tags = model.Tags.ConvertAllOrNull(t => new TagDto { Id = t.Id, Name = t.Name }),
+            Entities = model.Entities.ConvertAllOrNull(e => new EntityDto
             {
-                Id = c.Id,
-                Name = c.Name,
-            }),
+                Id = e.Id,
+                Name = e.Name,
+                Category = e.Category,
+                Tags = e.Tags.ConvertAllOrNull(t => t.ToString()),
+            })
         };
     }
 
