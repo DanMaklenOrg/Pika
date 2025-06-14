@@ -46,7 +46,6 @@ public class GameDao(IAmazonDynamoDB db) : IGameDao
                 { ":skValue", new AttributeValue("Game") },
             },
             IndexName = DynamoDbConstants.SkPkIndex,
-            FilterExpression = "attribute_exists(categories)",
         };
         var response = await db.QueryAsync(request);
         return response.Items.ConvertAll(BaseDbModel.Deserialize<GameDbModel>);
