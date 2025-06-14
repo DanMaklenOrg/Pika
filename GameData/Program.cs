@@ -16,7 +16,6 @@ builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, ToTheCoreScrapper>();
-builder.Services.AddTransient<IScrapper, TimeClickersScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
