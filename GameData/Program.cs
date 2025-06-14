@@ -17,7 +17,6 @@ builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, ToTheCoreScrapper>();
-builder.Services.AddTransient<IScrapper, NodebusterScrapper>();
 builder.Services.AddTransient<IScrapper, TimeClickersScrapper>();
 builder.Services.AddTransient<IScrapper, SquareCellsScrapper>();
 builder.Services.AddTransient<IScrapper, SpecOpsTheLineScrapper>();
