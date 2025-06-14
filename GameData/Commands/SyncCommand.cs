@@ -1,4 +1,5 @@
 using Cocona;
+using Pika.GameData.GameScrapper;
 using Pika.Model;
 using Pika.PikaLang;
 using Pika.Repository;
@@ -12,9 +13,12 @@ public static class SyncCommand
         app.AddCommand("sync", Sync);
     }
 
-    private static async Task Sync([Argument] string gameId, PikaParser parser, IGameRepo gameRepo, IEnumerable<IScrapper> scrappers)
+    private static async Task Sync([Argument] string gameId, PikaParser parser, IGameRepo gameRepo, SteamScrapper steamScrapper, IEnumerable<IScrapper> scrappers)
     {
         var game = ReadPikaFile(parser, gameId);
+
+        if (game.SteamAppId.HasValue) await steamScrapper.ScrapeInto(game, game.SteamAppId.Value);
+
         await RunScrapersAndUpdateGame(game, scrappers);
         await gameRepo.Create(game);
         Console.WriteLine("Sync complete");

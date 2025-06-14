@@ -38,30 +38,31 @@ public partial class PikaLangParser : Parser {
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
 		SINGLE_LINE_COMMENT=1, MULTI_LINE_COMMENT=2, WHITESPACE=3, GAME=4, ACHIEVEMENT=5, 
-		OBJECTIVE=6, CRITERION=7, CATEGORY=8, DESCRIPTION=9, SEMICOLON=10, OPEN_BRACES=11, 
-		CLOSE_BRACES=12, OPEN_ANGULAR_BRACES=13, CLOSE_ANGULAR_BRACES=14, OPEN_PARENTHESES=15, 
-		CLOSE_PARENTHESES=16, COMMA=17, WITH_NAME=18, EQUALS=19, STRING_LITERAL=20, 
-		INTEGER_LITERAL=21, IDENTIFIER=22;
+		OBJECTIVE=6, CRITERION=7, CATEGORY=8, DESCRIPTION=9, IMPORT=10, STEAM=11, 
+		SEMICOLON=12, OPEN_BRACES=13, CLOSE_BRACES=14, OPEN_ANGULAR_BRACES=15, 
+		CLOSE_ANGULAR_BRACES=16, OPEN_PARENTHESES=17, CLOSE_PARENTHESES=18, COMMA=19, 
+		WITH_NAME=20, EQUALS=21, STRING_LITERAL=22, INTEGER_LITERAL=23, IDENTIFIER=24;
 	public const int
-		RULE_root = 0, RULE_gameDecl = 1, RULE_declStmt = 2, RULE_achievementDecl = 3, 
-		RULE_objectiveDecl = 4, RULE_criterionDecl = 5, RULE_describtionDecl = 6, 
-		RULE_categoryDecl = 7, RULE_entityDecl = 8, RULE_namedIdentifier = 9;
+		RULE_root = 0, RULE_gameDecl = 1, RULE_declStmt = 2, RULE_importStmt = 3, 
+		RULE_achievementDecl = 4, RULE_objectiveDecl = 5, RULE_criterionDecl = 6, 
+		RULE_describtionDecl = 7, RULE_categoryDecl = 8, RULE_entityDecl = 9, 
+		RULE_namedIdentifier = 10;
 	public static readonly string[] ruleNames = {
-		"root", "gameDecl", "declStmt", "achievementDecl", "objectiveDecl", "criterionDecl", 
-		"describtionDecl", "categoryDecl", "entityDecl", "namedIdentifier"
+		"root", "gameDecl", "declStmt", "importStmt", "achievementDecl", "objectiveDecl", 
+		"criterionDecl", "describtionDecl", "categoryDecl", "entityDecl", "namedIdentifier"
 	};
 
 	private static readonly string[] _LiteralNames = {
 		null, null, null, null, "'game'", "'achievement'", "'objective'", "'criterion'", 
-		"'category'", "'description'", "';'", "'{'", "'}'", "'<'", "'>'", "'('", 
-		"')'", "','", "'~>'", "'='"
+		"'category'", "'description'", "'import'", "'steam'", "';'", "'{'", "'}'", 
+		"'<'", "'>'", "'('", "')'", "','", "'~>'", "'='"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT", "WHITESPACE", "GAME", 
-		"ACHIEVEMENT", "OBJECTIVE", "CRITERION", "CATEGORY", "DESCRIPTION", "SEMICOLON", 
-		"OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", "CLOSE_ANGULAR_BRACES", 
-		"OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", "WITH_NAME", "EQUALS", 
-		"STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
+		"ACHIEVEMENT", "OBJECTIVE", "CRITERION", "CATEGORY", "DESCRIPTION", "IMPORT", 
+		"STEAM", "SEMICOLON", "OPEN_BRACES", "CLOSE_BRACES", "OPEN_ANGULAR_BRACES", 
+		"CLOSE_ANGULAR_BRACES", "OPEN_PARENTHESES", "CLOSE_PARENTHESES", "COMMA", 
+		"WITH_NAME", "EQUALS", "STRING_LITERAL", "INTEGER_LITERAL", "IDENTIFIER"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -100,6 +101,12 @@ public partial class PikaLangParser : Parser {
 			return GetRuleContext<GameDeclContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Eof() { return GetToken(PikaLangParser.Eof, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ImportStmtContext[] importStmt() {
+			return GetRuleContexts<ImportStmtContext>();
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ImportStmtContext importStmt(int i) {
+			return GetRuleContext<ImportStmtContext>(i);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public DeclStmtContext[] declStmt() {
 			return GetRuleContexts<DeclStmtContext>();
 		}
@@ -127,23 +134,37 @@ public partial class PikaLangParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 20;
+			State = 22;
 			gameDecl();
-			State = 24;
+			State = 26;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 4194592L) != 0)) {
+			while (_la==IMPORT) {
 				{
 				{
-				State = 21;
-				declStmt();
+				State = 23;
+				importStmt();
 				}
 				}
-				State = 26;
+				State = 28;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 			}
-			State = 27;
+			State = 32;
+			ErrorHandler.Sync(this);
+			_la = TokenStream.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 16777504L) != 0)) {
+				{
+				{
+				State = 29;
+				declStmt();
+				}
+				}
+				State = 34;
+				ErrorHandler.Sync(this);
+				_la = TokenStream.LA(1);
+			}
+			State = 35;
 			Match(Eof);
 			}
 		}
@@ -184,11 +205,11 @@ public partial class PikaLangParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 29;
+			State = 37;
 			Match(GAME);
-			State = 30;
+			State = 38;
 			namedIdentifier();
-			State = 31;
+			State = 39;
 			Match(SEMICOLON);
 			}
 		}
@@ -257,14 +278,14 @@ public partial class PikaLangParser : Parser {
 		DeclStmtContext _localctx = new DeclStmtContext(Context, State);
 		EnterRule(_localctx, 4, RULE_declStmt);
 		try {
-			State = 36;
+			State = 44;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case ACHIEVEMENT:
 				_localctx = new AchievementDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 33;
+				State = 41;
 				achievementDecl();
 				}
 				break;
@@ -272,7 +293,7 @@ public partial class PikaLangParser : Parser {
 				_localctx = new CategoryDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 34;
+				State = 42;
 				categoryDecl();
 				}
 				break;
@@ -280,12 +301,64 @@ public partial class PikaLangParser : Parser {
 				_localctx = new EntityDeclarationContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 35;
+				State = 43;
 				entityDecl();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			ErrorHandler.ReportError(this, re);
+			ErrorHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ImportStmtContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IMPORT() { return GetToken(PikaLangParser.IMPORT, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STEAM() { return GetToken(PikaLangParser.STEAM, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode OPEN_PARENTHESES() { return GetToken(PikaLangParser.OPEN_PARENTHESES, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode INTEGER_LITERAL() { return GetToken(PikaLangParser.INTEGER_LITERAL, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLOSE_PARENTHESES() { return GetToken(PikaLangParser.CLOSE_PARENTHESES, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SEMICOLON() { return GetToken(PikaLangParser.SEMICOLON, 0); }
+		public ImportStmtContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_importStmt; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IPikaLangVisitor<TResult> typedVisitor = visitor as IPikaLangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitImportStmt(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ImportStmtContext importStmt() {
+		ImportStmtContext _localctx = new ImportStmtContext(Context, State);
+		EnterRule(_localctx, 6, RULE_importStmt);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 46;
+			Match(IMPORT);
+			State = 47;
+			Match(STEAM);
+			State = 48;
+			Match(OPEN_PARENTHESES);
+			State = 49;
+			Match(INTEGER_LITERAL);
+			State = 50;
+			Match(CLOSE_PARENTHESES);
+			State = 51;
+			Match(SEMICOLON);
 			}
 		}
 		catch (RecognitionException re) {
@@ -335,67 +408,67 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public AchievementDeclContext achievementDecl() {
 		AchievementDeclContext _localctx = new AchievementDeclContext(Context, State);
-		EnterRule(_localctx, 6, RULE_achievementDecl);
+		EnterRule(_localctx, 8, RULE_achievementDecl);
 		int _la;
 		try {
-			State = 59;
+			State = 74;
 			ErrorHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(TokenStream,5,Context) ) {
+			switch ( Interpreter.AdaptivePredict(TokenStream,6,Context) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 38;
+				State = 53;
 				Match(ACHIEVEMENT);
-				State = 39;
+				State = 54;
 				namedIdentifier();
-				State = 40;
+				State = 55;
 				Match(SEMICOLON);
 				}
 				break;
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 42;
+				State = 57;
 				Match(ACHIEVEMENT);
-				State = 43;
+				State = 58;
 				namedIdentifier();
-				State = 44;
+				State = 59;
 				Match(OPEN_BRACES);
-				State = 46;
+				State = 61;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 				if (_la==DESCRIPTION) {
 					{
-					State = 45;
+					State = 60;
 					describtionDecl();
 					}
 				}
 
-				State = 51;
+				State = 66;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 				while (_la==OBJECTIVE) {
 					{
 					{
-					State = 48;
+					State = 63;
 					objectiveDecl();
 					}
 					}
-					State = 53;
+					State = 68;
 					ErrorHandler.Sync(this);
 					_la = TokenStream.LA(1);
 				}
-				State = 55;
+				State = 70;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 				if (_la==CRITERION) {
 					{
-					State = 54;
+					State = 69;
 					criterionDecl();
 					}
 				}
 
-				State = 57;
+				State = 72;
 				Match(CLOSE_BRACES);
 				}
 				break;
@@ -442,53 +515,53 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public ObjectiveDeclContext objectiveDecl() {
 		ObjectiveDeclContext _localctx = new ObjectiveDeclContext(Context, State);
-		EnterRule(_localctx, 8, RULE_objectiveDecl);
+		EnterRule(_localctx, 10, RULE_objectiveDecl);
 		int _la;
 		try {
-			State = 76;
+			State = 91;
 			ErrorHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(TokenStream,8,Context) ) {
+			switch ( Interpreter.AdaptivePredict(TokenStream,9,Context) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 61;
+				State = 76;
 				Match(OBJECTIVE);
-				State = 62;
+				State = 77;
 				namedIdentifier();
-				State = 63;
+				State = 78;
 				Match(SEMICOLON);
 				}
 				break;
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 65;
+				State = 80;
 				Match(OBJECTIVE);
-				State = 66;
+				State = 81;
 				namedIdentifier();
-				State = 67;
+				State = 82;
 				Match(OPEN_BRACES);
-				State = 69;
+				State = 84;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 				if (_la==DESCRIPTION) {
 					{
-					State = 68;
+					State = 83;
 					describtionDecl();
 					}
 				}
 
-				State = 72;
+				State = 87;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 				if (_la==CRITERION) {
 					{
-					State = 71;
+					State = 86;
 					criterionDecl();
 					}
 				}
 
-				State = 74;
+				State = 89;
 				Match(CLOSE_BRACES);
 				}
 				break;
@@ -525,15 +598,15 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public CriterionDeclContext criterionDecl() {
 		CriterionDeclContext _localctx = new CriterionDeclContext(Context, State);
-		EnterRule(_localctx, 10, RULE_criterionDecl);
+		EnterRule(_localctx, 12, RULE_criterionDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 78;
+			State = 93;
 			Match(CRITERION);
-			State = 79;
+			State = 94;
 			Match(IDENTIFIER);
-			State = 80;
+			State = 95;
 			Match(SEMICOLON);
 			}
 		}
@@ -568,15 +641,15 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public DescribtionDeclContext describtionDecl() {
 		DescribtionDeclContext _localctx = new DescribtionDeclContext(Context, State);
-		EnterRule(_localctx, 12, RULE_describtionDecl);
+		EnterRule(_localctx, 14, RULE_describtionDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 82;
+			State = 97;
 			Match(DESCRIPTION);
-			State = 83;
+			State = 98;
 			Match(STRING_LITERAL);
-			State = 84;
+			State = 99;
 			Match(SEMICOLON);
 			}
 		}
@@ -613,15 +686,15 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public CategoryDeclContext categoryDecl() {
 		CategoryDeclContext _localctx = new CategoryDeclContext(Context, State);
-		EnterRule(_localctx, 14, RULE_categoryDecl);
+		EnterRule(_localctx, 16, RULE_categoryDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 86;
+			State = 101;
 			Match(CATEGORY);
-			State = 87;
+			State = 102;
 			namedIdentifier();
-			State = 88;
+			State = 103;
 			Match(SEMICOLON);
 			}
 		}
@@ -658,15 +731,15 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public EntityDeclContext entityDecl() {
 		EntityDeclContext _localctx = new EntityDeclContext(Context, State);
-		EnterRule(_localctx, 16, RULE_entityDecl);
+		EnterRule(_localctx, 18, RULE_entityDecl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 90;
+			State = 105;
 			Match(IDENTIFIER);
-			State = 91;
+			State = 106;
 			namedIdentifier();
-			State = 92;
+			State = 107;
 			Match(SEMICOLON);
 			}
 		}
@@ -729,20 +802,20 @@ public partial class PikaLangParser : Parser {
 	[RuleVersion(0)]
 	public NamedIdentifierContext namedIdentifier() {
 		NamedIdentifierContext _localctx = new NamedIdentifierContext(Context, State);
-		EnterRule(_localctx, 18, RULE_namedIdentifier);
+		EnterRule(_localctx, 20, RULE_namedIdentifier);
 		try {
-			State = 99;
+			State = 114;
 			ErrorHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(TokenStream,9,Context) ) {
+			switch ( Interpreter.AdaptivePredict(TokenStream,10,Context) ) {
 			case 1:
 				_localctx = new IdWithNameContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 94;
+				State = 109;
 				Match(IDENTIFIER);
-				State = 95;
+				State = 110;
 				Match(WITH_NAME);
-				State = 96;
+				State = 111;
 				Match(STRING_LITERAL);
 				}
 				break;
@@ -750,7 +823,7 @@ public partial class PikaLangParser : Parser {
 				_localctx = new NameOnlyContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 97;
+				State = 112;
 				Match(STRING_LITERAL);
 				}
 				break;
@@ -758,7 +831,7 @@ public partial class PikaLangParser : Parser {
 				_localctx = new IdOnlyContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 98;
+				State = 113;
 				Match(IDENTIFIER);
 				}
 				break;
@@ -776,35 +849,40 @@ public partial class PikaLangParser : Parser {
 	}
 
 	private static int[] _serializedATN = {
-		4,1,22,102,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
-		7,7,2,8,7,8,2,9,7,9,1,0,1,0,5,0,23,8,0,10,0,12,0,26,9,0,1,0,1,0,1,1,1,
-		1,1,1,1,1,1,2,1,2,1,2,3,2,37,8,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,47,
-		8,3,1,3,5,3,50,8,3,10,3,12,3,53,9,3,1,3,3,3,56,8,3,1,3,1,3,3,3,60,8,3,
-		1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,3,4,70,8,4,1,4,3,4,73,8,4,1,4,1,4,3,4,
-		77,8,4,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,
-		1,9,1,9,1,9,1,9,1,9,3,9,100,8,9,1,9,0,0,10,0,2,4,6,8,10,12,14,16,18,0,
-		0,103,0,20,1,0,0,0,2,29,1,0,0,0,4,36,1,0,0,0,6,59,1,0,0,0,8,76,1,0,0,0,
-		10,78,1,0,0,0,12,82,1,0,0,0,14,86,1,0,0,0,16,90,1,0,0,0,18,99,1,0,0,0,
-		20,24,3,2,1,0,21,23,3,4,2,0,22,21,1,0,0,0,23,26,1,0,0,0,24,22,1,0,0,0,
-		24,25,1,0,0,0,25,27,1,0,0,0,26,24,1,0,0,0,27,28,5,0,0,1,28,1,1,0,0,0,29,
-		30,5,4,0,0,30,31,3,18,9,0,31,32,5,10,0,0,32,3,1,0,0,0,33,37,3,6,3,0,34,
-		37,3,14,7,0,35,37,3,16,8,0,36,33,1,0,0,0,36,34,1,0,0,0,36,35,1,0,0,0,37,
-		5,1,0,0,0,38,39,5,5,0,0,39,40,3,18,9,0,40,41,5,10,0,0,41,60,1,0,0,0,42,
-		43,5,5,0,0,43,44,3,18,9,0,44,46,5,11,0,0,45,47,3,12,6,0,46,45,1,0,0,0,
-		46,47,1,0,0,0,47,51,1,0,0,0,48,50,3,8,4,0,49,48,1,0,0,0,50,53,1,0,0,0,
-		51,49,1,0,0,0,51,52,1,0,0,0,52,55,1,0,0,0,53,51,1,0,0,0,54,56,3,10,5,0,
-		55,54,1,0,0,0,55,56,1,0,0,0,56,57,1,0,0,0,57,58,5,12,0,0,58,60,1,0,0,0,
-		59,38,1,0,0,0,59,42,1,0,0,0,60,7,1,0,0,0,61,62,5,6,0,0,62,63,3,18,9,0,
-		63,64,5,10,0,0,64,77,1,0,0,0,65,66,5,6,0,0,66,67,3,18,9,0,67,69,5,11,0,
-		0,68,70,3,12,6,0,69,68,1,0,0,0,69,70,1,0,0,0,70,72,1,0,0,0,71,73,3,10,
-		5,0,72,71,1,0,0,0,72,73,1,0,0,0,73,74,1,0,0,0,74,75,5,12,0,0,75,77,1,0,
-		0,0,76,61,1,0,0,0,76,65,1,0,0,0,77,9,1,0,0,0,78,79,5,7,0,0,79,80,5,22,
-		0,0,80,81,5,10,0,0,81,11,1,0,0,0,82,83,5,9,0,0,83,84,5,20,0,0,84,85,5,
-		10,0,0,85,13,1,0,0,0,86,87,5,8,0,0,87,88,3,18,9,0,88,89,5,10,0,0,89,15,
-		1,0,0,0,90,91,5,22,0,0,91,92,3,18,9,0,92,93,5,10,0,0,93,17,1,0,0,0,94,
-		95,5,22,0,0,95,96,5,18,0,0,96,100,5,20,0,0,97,100,5,20,0,0,98,100,5,22,
-		0,0,99,94,1,0,0,0,99,97,1,0,0,0,99,98,1,0,0,0,100,19,1,0,0,0,10,24,36,
-		46,51,55,59,69,72,76,99
+		4,1,24,117,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+		7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,5,0,25,8,0,10,0,12,0,28,9,0,1,0,
+		5,0,31,8,0,10,0,12,0,34,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,2,1,2,1,2,3,2,45,
+		8,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,3,4,62,
+		8,4,1,4,5,4,65,8,4,10,4,12,4,68,9,4,1,4,3,4,71,8,4,1,4,1,4,3,4,75,8,4,
+		1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,3,5,85,8,5,1,5,3,5,88,8,5,1,5,1,5,3,5,
+		92,8,5,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,
+		1,10,1,10,1,10,1,10,1,10,3,10,115,8,10,1,10,0,0,11,0,2,4,6,8,10,12,14,
+		16,18,20,0,0,118,0,22,1,0,0,0,2,37,1,0,0,0,4,44,1,0,0,0,6,46,1,0,0,0,8,
+		74,1,0,0,0,10,91,1,0,0,0,12,93,1,0,0,0,14,97,1,0,0,0,16,101,1,0,0,0,18,
+		105,1,0,0,0,20,114,1,0,0,0,22,26,3,2,1,0,23,25,3,6,3,0,24,23,1,0,0,0,25,
+		28,1,0,0,0,26,24,1,0,0,0,26,27,1,0,0,0,27,32,1,0,0,0,28,26,1,0,0,0,29,
+		31,3,4,2,0,30,29,1,0,0,0,31,34,1,0,0,0,32,30,1,0,0,0,32,33,1,0,0,0,33,
+		35,1,0,0,0,34,32,1,0,0,0,35,36,5,0,0,1,36,1,1,0,0,0,37,38,5,4,0,0,38,39,
+		3,20,10,0,39,40,5,12,0,0,40,3,1,0,0,0,41,45,3,8,4,0,42,45,3,16,8,0,43,
+		45,3,18,9,0,44,41,1,0,0,0,44,42,1,0,0,0,44,43,1,0,0,0,45,5,1,0,0,0,46,
+		47,5,10,0,0,47,48,5,11,0,0,48,49,5,17,0,0,49,50,5,23,0,0,50,51,5,18,0,
+		0,51,52,5,12,0,0,52,7,1,0,0,0,53,54,5,5,0,0,54,55,3,20,10,0,55,56,5,12,
+		0,0,56,75,1,0,0,0,57,58,5,5,0,0,58,59,3,20,10,0,59,61,5,13,0,0,60,62,3,
+		14,7,0,61,60,1,0,0,0,61,62,1,0,0,0,62,66,1,0,0,0,63,65,3,10,5,0,64,63,
+		1,0,0,0,65,68,1,0,0,0,66,64,1,0,0,0,66,67,1,0,0,0,67,70,1,0,0,0,68,66,
+		1,0,0,0,69,71,3,12,6,0,70,69,1,0,0,0,70,71,1,0,0,0,71,72,1,0,0,0,72,73,
+		5,14,0,0,73,75,1,0,0,0,74,53,1,0,0,0,74,57,1,0,0,0,75,9,1,0,0,0,76,77,
+		5,6,0,0,77,78,3,20,10,0,78,79,5,12,0,0,79,92,1,0,0,0,80,81,5,6,0,0,81,
+		82,3,20,10,0,82,84,5,13,0,0,83,85,3,14,7,0,84,83,1,0,0,0,84,85,1,0,0,0,
+		85,87,1,0,0,0,86,88,3,12,6,0,87,86,1,0,0,0,87,88,1,0,0,0,88,89,1,0,0,0,
+		89,90,5,14,0,0,90,92,1,0,0,0,91,76,1,0,0,0,91,80,1,0,0,0,92,11,1,0,0,0,
+		93,94,5,7,0,0,94,95,5,24,0,0,95,96,5,12,0,0,96,13,1,0,0,0,97,98,5,9,0,
+		0,98,99,5,22,0,0,99,100,5,12,0,0,100,15,1,0,0,0,101,102,5,8,0,0,102,103,
+		3,20,10,0,103,104,5,12,0,0,104,17,1,0,0,0,105,106,5,24,0,0,106,107,3,20,
+		10,0,107,108,5,12,0,0,108,19,1,0,0,0,109,110,5,24,0,0,110,111,5,20,0,0,
+		111,115,5,22,0,0,112,115,5,22,0,0,113,115,5,24,0,0,114,109,1,0,0,0,114,
+		112,1,0,0,0,114,113,1,0,0,0,115,21,1,0,0,0,11,26,32,44,61,66,70,74,84,
+		87,91,114
 	};
 
 	public static readonly ATN _ATN =

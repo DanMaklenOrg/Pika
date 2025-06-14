@@ -24,6 +24,8 @@ public class PikaParser
         (ResourceId id, string name) = ParseNamedIdentifier(context.gameDecl().namedIdentifier());
         var game = new Game(id, name);
 
+        if(context.importStmt().Length > 0) game.SteamAppId = (uint)ParseIntLiteral(context.importStmt()[0].INTEGER_LITERAL());
+
         game.Achievements.AddRange(context.declStmt().OfType<PikaLangParser.AchievementDeclarationContext>().Select(ParseAchievement));
         game.Categories.AddRange(context.declStmt().OfType<PikaLangParser.CategoryDeclarationContext>().Select(ParseCategory));
         game.Entities.AddRange(context.declStmt().OfType<PikaLangParser.EntityDeclarationContext>().Select(ParseEntity));
@@ -93,5 +95,10 @@ public class PikaParser
         str = str.Trim('\'');
         str = str.Replace("\\'", "'");
         return str;
+    }
+
+    private int ParseIntLiteral(IParseTree intLiteral)
+    {
+        return int.Parse(intLiteral.GetText());
     }
 }

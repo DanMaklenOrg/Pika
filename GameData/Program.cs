@@ -14,7 +14,6 @@ var builder = CoconaApp.CreateBuilder(args);
 
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
-builder.Services.AddTransient<IScrapper, DungeonSoulsScrapper>();
 builder.Services.AddTransient<IScrapper, ShapezScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
 builder.Services.AddTransient<IScrapper, ToTheCoreScrapper>();
@@ -24,7 +23,6 @@ builder.Services.AddTransient<IScrapper, HacknetScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsInfiniteScrapper>();
 builder.Services.AddTransient<IScrapper, HexcellsPlusScrapper>();
-builder.Services.AddTransient<IScrapper, CrossCellsScrapper>();
 builder.Services.AddTransient<IScrapper, SquareCellsScrapper>();
 builder.Services.AddTransient<IScrapper, SpecOpsTheLineScrapper>();
 builder.Services.AddTransient<IScrapper, FactorioScrapper>();
@@ -33,6 +31,7 @@ builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfMordorScrapper>();
 builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
+builder.Services.AddTransient<SteamScrapper>();
 builder.Services.AddTransient<SteamScrapperHelper>();
 builder.Services.AddPikaParser();
 
