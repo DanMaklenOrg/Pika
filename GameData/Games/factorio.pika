@@ -6,7 +6,7 @@ achievement 'Complete all unique single player scenarios' {
     criterion scenario;
 }
 achievement 'Build a Mega Factory' {
-    description 'Build a factory that produces 1K science packs per minute';
+    description 'Build a factory that produces 1K science packs per minute.';
 }
 
 // Categories

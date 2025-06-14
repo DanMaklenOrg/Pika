@@ -22,7 +22,7 @@ achievement 'Max all infernal arms' {
     }
 }
 achievement 'Gather all bounty rewards' {
-    description 'Get all bounty rewards from the first 20 heat levels per infernal arm';
+    description 'Get all bounty rewards from the first 20 heat levels per infernal arm.';
     criterion infernal_arm;
 }
 achievement 'Fulfill all prophecies' {
@@ -51,17 +51,17 @@ achievement 'Max affinity with all characters' {
     criterion character;
 }
 achievement 'Unlock all skelly statues' {
-    description 'Unlock all 3 skelly challenge statues';
+    description 'Unlock all 3 skelly challenge statues.';
     objective 'Skelly Challenge Statue (8 Heat)';
     objective 'Skelly Challenge Statue (16 Heat)';
     objective 'Skelly Challenge Statue (32 Heat)';
 }
 achievement 'Unlock all house contractor upgrades' {
-    description 'Purchase all house contractor upgrades';
+    description 'Purchase all house contractor upgrades.';
     criterion contractor_upgrade;
 }
 achievement 'Max resource director rank' {
-    description 'Achieve max rank (Unseen One) with the resource director';
+    description 'Achieve max rank (Unseen One) with the resource director.';
 }
 
 // Categories
