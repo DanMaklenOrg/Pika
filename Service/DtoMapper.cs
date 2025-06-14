@@ -7,11 +7,7 @@ public static class DtoMapper
 {
     public static GameSummaryDto ToSummaryDto(Game model)
     {
-        return new GameSummaryDto
-        {
-            Id = model.Id.ToString(),
-            Name = model.Name,
-        };
+        return new GameSummaryDto { Id = model.Id.ToString(), Name = model.Name };
     }
 
     public static GameDto ToDto(Game model)
@@ -20,12 +16,6 @@ public static class DtoMapper
         {
             Id = model.Id,
             Name = model.Name,
-            Entities = model.Entities.ConvertAll(e => new EntityDto
-            {
-                Id = e.Id,
-                Name = e.Name,
-                Category = e.Category,
-            }),
             Achievements = model.Achievements.ConvertAll(a => new AchievementDto
             {
                 Id = a.Id,
@@ -40,11 +30,15 @@ public static class DtoMapper
                 }),
                 CriteriaCategory = a.CriteriaCategory,
             }),
-            Categories = model.Categories.ConvertAll(c => new CategoryDto
+            Categories = model.Categories.ConvertAll(c => new CategoryDto { Id = c.Id, Name = c.Name }),
+            Tags = model.Tags.ConvertAll(t => new TagDto { Id = t.Id, Name = t.Name }),
+            Entities = model.Entities.ConvertAll(e => new EntityDto
             {
-                Id = c.Id,
-                Name = c.Name,
-            }),
+                Id = e.Id,
+                Name = e.Name,
+                Category = e.Category,
+                Tags = e.Tags.ConvertAll(t => t.ToString()),
+            })
         };
     }
 
