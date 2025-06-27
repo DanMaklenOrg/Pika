@@ -6,7 +6,7 @@ achievement 'Finish the tutorial' {
     criterion tutorial_mission;
 }
 achievement 'Ace all challenges' {
-    description 'Get 3 Axes in all challenges';
+    description 'Get 3 Axes in all challenges.';
     criterion challenge;
 }
 

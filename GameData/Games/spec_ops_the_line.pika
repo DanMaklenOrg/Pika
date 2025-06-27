@@ -1,7 +1,2 @@
 game spec_ops_the_line ~> 'Spec Ops: The Line';
-
-// Achievements
-
-// Classes
-
-// Entities
+import steam(50300);

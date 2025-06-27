@@ -15,9 +15,7 @@ public class HadesScrapper : IScrapper
         game.Entities.AddRange(await ScrapeMirrorAbilities());
         game.Entities.AddRange(await ScrapeCodexEntries());
         game.Entities.AddRange(await ScrapeCompanions());
-        game.Entities.AddRange(await ScrapeContractorUpgrades());
-
-        await ScrapeResourceDirectorRanks(game);
+        game.Entities.AddRange(await ScrapeContractorUpgrades(game));
     }
 
     private async Task<List<Entity>> ScrapeKeepsakes()
@@ -50,31 +48,51 @@ public class HadesScrapper : IScrapper
         var nodes = doc.DocumentNode.SelectNodes("(//tbody)[2]/tr/td/..");
         return nodes.SelectMany<HtmlNode, Entity>(n =>
         [
-            ParseAttribute(n, 0),
-            ParseAttribute(n, 4),
+            ParseAbility(n, 0, "mirror_red"),
+            ParseAbility(n, 4, "mirror_green"),
         ]).ToList();
 
-        Entity ParseAttribute(HtmlNode n, int columnOffset)
+        Entity ParseAbility(HtmlNode n, int columnOffset, ResourceId tag)
         {
             var name = ScrapperHelper.CleanName(n.SelectSingleNode($"./td[{1 + columnOffset}]").InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "mirror");
-            var maxRank = ParseMaxRank(n.SelectSingleNode($"./td[{4 + columnOffset}]"));
-            return new Entity(id, name, "mirror_ability");
+            return new Entity(id, name, "mirror_ability") { Tags = [tag] };
         }
-
-        int ParseMaxRank(HtmlNode n) => n.InnerText.Count(c => c == '/') + 1;
     }
 
     private async Task<List<Entity>> ScrapeCodexEntries()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Codex");
-        var nodes = doc.DocumentNode.SelectNodes("//td");
-        return nodes.Select(n =>
+        var nodes = doc.DocumentNode.SelectNodes("//table");
+        return nodes.SelectMany(groupNode =>
         {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "codex");
-            return new Entity(id, name, "codex_entry");
+            var tag = ParseTag(groupNode);
+            return groupNode.SelectNodes(".//td").Select(n =>
+            {
+                var name = ScrapperHelper.CleanName(n.InnerText);
+                if (name == "Lord Hades") name = "Hades";
+                var id = ScrapperHelper.InduceIdFromName(name, "codex");
+                return new Entity(id, name, "codex_entry") { Tags = [tag] };
+            });
         }).ToList();
+
+        ResourceId ParseTag(HtmlNode n)
+        {
+            var groupTitle = n.SelectSingleNode("./caption").InnerText.Trim();
+            return groupTitle switch
+            {
+                "Chthonic Gods" => "codex_chthonic",
+                "Olympian Gods" => "codex_olympian",
+                "Others of Note" => "codex_others",
+                "The Underworld" => "codex_underworld",
+                "Infernal Arms" => "codex_infernal_arms",
+                "Perilous Foes" => "codex_foes",
+                "Artifacts" => "codex_artifacts",
+                "River Denizens" => "codex_river",
+                "Fables" => "codex_fables",
+                _ => throw new Exception($"Unknown tag value {groupTitle}"),
+            };
+        }
     }
 
     private async Task<List<Entity>> ScrapeCompanions()
@@ -89,24 +107,34 @@ public class HadesScrapper : IScrapper
         }).ToList();
     }
 
-    private async Task<List<Entity>> ScrapeContractorUpgrades()
+    private async Task<List<Entity>> ScrapeContractorUpgrades(Game game)
     {
+        List<ResourceId> tagMap =
+        [
+            "contractor_orders",
+            "contractor_great_hall",
+            "contractor_west_hall",
+            "contractor_lounge",
+            "contractor_bedchambers",
+            "contractor_music",
+        ];
         var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/House_Contractor");
-        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'wds-tab__content')]/table/tbody/tr/td[1]");
-        return nodes.Select(n =>
+        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'wds-tab__content')]/table");
+        return nodes.SelectMany((nodeGroup, i) => nodeGroup.SelectNodes("./tbody/tr/td[1]").Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
+            name = name switch
+            {
+                "Pitch-Black Darkness" => "Darkness, Pitch-Black",
+                "Fated Keys" => "Chthonic Keys, Fated",
+                "Vintage Nectar" => "Nectar, Vintage",
+                "Brilliant Gemstones" => "Gemstones, Brilliant",
+                "Final Expense (Payback)" => "Final Expense (Payback Mix)",
+                _ => name,
+            };
+            if (name.StartsWith("Rug,")) name = $"{name} ({game.Tags.Single(t => t.Id == tagMap[i]).Name})";
             var id = ScrapperHelper.InduceIdFromName(name, "contractor");
-            return new Entity(id, name, "contractor_upgrade");
-        }).ToList();
-    }
-
-    private async Task ScrapeResourceDirectorRanks(Game game)
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://hades.fandom.com/wiki/Resource_Director");
-        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td[2]");
-        var ranks = nodes.Select(n => ScrapperHelper.CleanName(n.InnerText)).ToList();
-        game.Categories.Add(new("resource_director", "Resource Director"));
-        game.Entities.Add(new("resource_director_entity", "Resource Director", "resource_director"));
+            return new Entity(id, name, "contractor_upgrade") { Tags = [tagMap[i]]};
+        })).ToList();
     }
 }

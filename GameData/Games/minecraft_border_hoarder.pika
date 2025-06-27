@@ -2,15 +2,5 @@ game minecraft_border_hoarder ~> 'Minecraft: Boarder Hoarder';
 
 // Achievements
 achievement 'Find all Items' {
-    objective 'Find all items' {
-        require items_stat; //.achieved == true;
-    }
+    description 'Find all 1047 items';
 }
-
-// Classes
-class items_stat {
-    stat<int(0, 1047)> value ~> 'Count';
-}
-
-// Entities
-items_stat 'Items Collected';

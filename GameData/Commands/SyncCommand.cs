@@ -17,11 +17,13 @@ public static class SyncCommand
     {
         var game = ReadPikaFile(parser, gameId);
 
-        if (game.SteamAppId.HasValue) await steamScrapper.ScrapeInto(game, game.SteamAppId.Value);
+        if (game.SteamAppId.HasValue) await ScrapeSteamAchievements(steamScrapper, game);
 
         await RunScrapersAndUpdateGame(game, scrappers);
+
+        Console.WriteLine("Saving game...");
         await gameRepo.Create(game);
-        Console.WriteLine("Sync complete");
+        Console.WriteLine("Sync complete!");
     }
 
     private static Game ReadPikaFile(PikaParser parser, string gameId)
@@ -30,6 +32,13 @@ public static class SyncCommand
         Console.WriteLine($"Parsing File {file}...");
         TextReader stream = new StreamReader(file);
         return parser.Parse(stream);
+    }
+
+    private static async Task ScrapeSteamAchievements(SteamScrapper scrapper, Game game)
+    {
+        ArgumentNullException.ThrowIfNull(game.SteamAppId);
+        Console.WriteLine("Scrapping Steam Achievements...");
+        await scrapper.ScrapeInto(game, game.SteamAppId.Value);
     }
 
     private static async Task RunScrapersAndUpdateGame(Game game, IEnumerable<IScrapper> scrappers)

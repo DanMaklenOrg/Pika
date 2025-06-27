@@ -1,30 +1,18 @@
 game shapez ~> 'Shapez';
+import steam(1318690);
 
 // Achievements
 achievement 'Max hub level' {
-    objective 'Reach max hub level' {
-        require hub; //.level >= 26;
-    }
+    description 'Reach max hub level';
 }
 achievement 'Max all upgrades' {
-    objective 'Max all upgrades' {
-        require upgrade; //tier >= 8;
-    }
+    criterion upgrade;
 }
 
-// Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
-class hub {
-    stat<int(0, 26)> level ~> 'Level';
-}
-class upgrade {
-    stat<int(0, 8)> tier ~> 'Tier';
-}
+// Categories
+category upgrade;
 
 // Entities
-hub 'Hub';
 upgrade 'Transporters';
 upgrade 'Extractors';
 upgrade 'Shape Manipulators';
