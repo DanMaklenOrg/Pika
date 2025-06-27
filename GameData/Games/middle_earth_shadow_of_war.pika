@@ -1,5 +1,279 @@
 game middle_earth_shadow_of_war ~> 'Middle Earth: Shadow of War';
+import steam(356190);
 
 // Achievements
+achievement 'Gemstone Junkie' {
+    description 'Collect 6 perfect gems of each kind.';
+    criterion gem;
+}
+achievement 'Shiny Purple Sets' {
+    description 'Collect and max all legendary sets Main Game & DLCs. ALso include unique non-legendary sets';
+    objective 'Collect all legendary gear' {
+        criterion gear;
+    }
+    objective 'Level all legendary gear to max level' {
+        description 'Level your gear to max level. Level 80+ in Main game. Level 30/35/40 in Blade of Galadirel DLC.';
+        criterion gear;
+    }
+    objective 'Complete all legendary gear challenges' {
+        criterion gear;
+    }
+}
+achievement 'Reach Max Level' {
+    description 'Level up Talion to level 80';
+}
+achievement 'Jack of All, Master of All' {
+    description 'Unlock and max all skills and skill upgrades.';
+    objective 'Unlock all skills';
+    objective 'Unlock all skill upgrades';
+    objective 'Max all prestige skills'{
+        description 'Reach level 100 in all prestige skills.';
+    }
+    objective 'Unlock all skills in The Blade of Galadriel DLC';
+    objective 'Unlock all skill upgrades in The Blade of Galadriel DLC';
 
-// Classes
+    objective 'Unlock all Serka skills in The Desolation of Mordor DLC';
+    objective 'Unlock all Torvin skill upgrades in The Desolation of Mordor DLC';
+}
+achievement 'Lorekeeper' {
+    description 'Unlock all appendix entries.';
+    objective 'Unlock all \'Ithildin Door\' appendix entries';
+    objective 'Unlock all \'Web of Fate\' appendix entries';
+    objective 'Unlock all \'Gondorian Artifacts\' appendix entries';
+    objective 'Unlock all \'Main Characters\' appendix entries';
+    objective 'Unlock all \'Free Peoples\' appendix entries';
+    objective 'Unlock all \'Denizens of Mordor\' appendix entries';
+    objective 'Unlock all \'Orc Culture\' appendix entries';
+    objective 'Unlock all \'Beasts\' appendix entries';
+    objective 'Unlock all \'Locations\' appendix entries';
+    objective 'Unlock all \'Objects\' appendix entries';
+
+    objective 'Unlock all \'Blade Collectibles\' appendix entries';
+    objective 'Unlock all \'Main Characters\' appendix entries (Blade of Galadriel DLC)';
+    objective 'Unlock all \'Denizens of Mordor\' appendix entries (Blade of Galadriel DLC)';
+    objective 'Unlock all \'Orc Culture\' appendix entries (Blade of Galadriel DLC)';
+    objective 'Unlock all \'Beasts\' appendix entries (Blade of Galadriel DLC)';
+    objective 'Unlock all \'Locations\' appendix entries (Blade of Galadriel DLC)';
+    objective 'Unlock all \'Objects\' appendix entries (Blade of Galadriel DLC)';
+
+    objective 'Unlock all \'Numenorean Artifacts\' appendix entries';
+    objective 'Unlock all \'Main Characters\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Free Peoples\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Denizens of Mordor\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Orc Culture\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Beasts\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Locations\' appendix entries (Desolation of Mordor DLC)';
+    objective 'Unlock all \'Objects\' appendix entries (Desolation of Mordor DLC)';
+}
+achievement 'Second Skins' {
+    description 'Unlock all 8 skins';
+}
+achievement 'The Whole Story' {
+    description 'Complete all quests, sidequests and challenges.';
+    objective 'Complete all Gondor quests';
+    objective 'Complete all Shelob quests';
+    objective 'Complete all Eltariel quests';
+    objective 'Complete all Carnan quests';
+    objective 'Complete all Bruz quests';
+    objective 'Complete all Siege missions';
+    objective 'Complete all Nemesis missions';
+    objective 'Complete all Shadow of the past missions (Gold Rating)';
+    objective 'Collect all Web of Fate fragments';
+    objective 'Open all Ithldin doors';
+    objective 'Collect all Gondorian artifacts';
+    objective 'Complete all Tribal Outlaw missions';
+    objective 'Complete all Tribal Slaughter missions';
+    objective 'Complete the Eltariel quests (Blade of Galadriel DLC)';
+    objective 'Complete the Fallen Blades missions (Blade of Galadriel DLC)';
+    objective 'Complete all Baranor Quests (Desolation of Mordor DLC)';
+    objective 'Complete all Torvin Skill Upgrade missions (Desolation of Mordor DLC)';
+}
+achievement 'Built to Withstand' {
+    description 'Max out all siege defenses.';
+    objective 'Assign a level 80 overlord in all regions' {
+        criterion region;
+    }
+    objective 'Unlock all 6 Warchief slots in all regions' {
+        criterion region;
+    }
+    objective 'Unlock Citadel Upgrade in all regions' {
+        criterion region;
+    }
+    objective 'Assign 6 level 80 Warchiefs in all regions' {
+        criterion region;
+    }
+    objective 'Unlock all defensive upgrades in all regions' {
+        criterion region;
+    }
+}
+achievement 'Built to Destroy' {
+    description 'Max out all siege offenses.';
+    objective 'Unlock all 6 assault leader positions in all regions' {
+        criterion region;
+    }
+    objective 'Assign level 80 assault leaders in all regions' {
+        criterion region;
+    }
+    objective 'Unlock all offensive upgrades in all regions' {
+        criterion region;
+    }
+}
+achievement 'The Bright Marshal' {
+    description 'Get level 80 bodyguard in all regions';
+}
+achievement 'Master of the East' {
+    description 'Get Mithril rating in Desolation of Mordor DLC';
+}
+
+// Categories
+category gem;
+category region;
+category gear;
+
+// Tags
+tag dark ~> 'Dark';
+tag feral ~> 'Feral';
+tag machine ~> 'Machine';
+tag marauder ~> 'Marauder';
+tag vendetta ~> 'Vendetta';
+tag bright_lord ~> 'Bright Lord';
+tag mystic ~> 'Mystic';
+tag terror ~> 'Terror';
+tag warmonger ~> 'Warmonger';
+tag wring_wraith ~> 'Wring Wraith';
+tag slaughter ~> 'Slaughter';
+tag outlaw ~> 'Outlaw';
+tag huntress ~> 'Huntress';
+tag fire_chaser ~> 'Fire Chaser';
+tag serpent_tamer ~> 'Serpent Tamer';
+tag ice_stalker ~> 'Ice Stalker';
+tag beast_hunter ~> 'Beast Hunter';
+tag light_bringer ~> 'Light Bringer';
+
+// Entities
+gem 'Warrior';
+gem 'Life';
+gem 'Wealth';
+gem 'Light';
+
+region 'Cirith Ungol';
+region 'Gorgoroth';
+region 'Nurnen';
+region 'Sergost';
+region 'Lithlad';
+
+gear 'Fire Chaser\'s Blade' #fire_chaser;
+gear 'Fire Chaser\'s Dagger' #fire_chaser;
+gear 'Fire Chaser\'s Bow' #fire_chaser;
+gear 'Fire Chaser\'s Armor' #fire_chaser;
+gear 'Fire Chaser\'s Cloak' #fire_chaser;
+gear 'Fire Chaser\'s Rune' #fire_chaser;
+gear 'Serpent Tamer\'s Blade' #serpent_tamer;
+gear 'Serpent Tamer\'s Dagger' #serpent_tamer;
+gear 'Serpent Tamer\'s Bow' #serpent_tamer;
+gear 'Serpent Tamer\'s Armor' #serpent_tamer;
+gear 'Serpent Tamer\'s Cloak' #serpent_tamer;
+gear 'Serpent Tamer\'s Rune' #serpent_tamer;
+gear 'Ice Stalker\'s Blade' #ice_stalker;
+gear 'Ice Stalker\'s Dagger' #ice_stalker;
+gear 'Ice Stalker\'s Bow' #ice_stalker;
+gear 'Ice Stalker\'s Armor' #ice_stalker;
+gear 'Ice Stalker\'s Cloak' #ice_stalker;
+gear 'Ice Stalker\'s Rune' #ice_stalker;
+gear 'Beast Hunter\'s Blade' #beast_hunter;
+gear 'Beast Hunter\'s Dagger' #beast_hunter;
+gear 'Beast Hunter\'s Bow' #beast_hunter;
+gear 'Beast Hunter\'s Armor' #beast_hunter;
+gear 'Beast Hunter\'s Cloak' #beast_hunter;
+gear 'Beast Hunter\'s Rune' #beast_hunter;
+gear 'Light Bringer\'s Blade' #light_bringer;
+gear 'Light Bringer\'s Dagger' #light_bringer;
+gear 'Light Bringer\'s Bow' #light_bringer;
+gear 'Light Bringer\'s Armor' #light_bringer;
+gear 'Light Bringer\'s Cloak' #light_bringer;
+gear 'Light Bringer\'s Rune' #light_bringer;
+gear 'Huntress\'s Blade' #huntress;
+gear 'Huntress\'s Dagger' #huntress;
+gear 'Huntress\'s Bow' #huntress;
+gear 'Huntress\'s Armor' #huntress;
+gear 'Huntress\'s Cloak' #huntress;
+gear 'Huntress\'s Rune' #huntress;
+gear 'Darkest Sword' #dark;
+gear 'Darkest Dagger' #dark;
+gear 'Darkest Bow' #dark;
+gear 'Darkest Armor' #dark;
+gear 'Darkest Cloak' #dark;
+gear 'Darkest Rune' #dark;
+gear 'Sword of Bests' #feral;
+gear 'Dagger of Bests' #feral;
+gear 'Bow of Bests' #feral;
+gear 'Armor of Bests' #feral;
+gear 'Cloak of Bests' #feral;
+gear 'Rune of Bests' #feral;
+gear 'Threshing Sword' #machine;
+gear 'Threshing Dagger' #machine;
+gear 'Threshing Hammer' #machine;
+gear 'Threshing Armor' #machine;
+gear 'Threshing Cloak' #machine;
+gear 'Threshing Rune' #machine;
+gear 'Raider\'s Sword'  #marauder;
+gear 'Raider\'s Dagger'  #marauder;
+gear 'Raider\'s Hammer'  #marauder;
+gear 'Raider\'s Armor'  #marauder;
+gear 'Raider\'s Cloak'  #marauder;
+gear 'Raider\'s Rune'  #marauder;
+gear 'Sword of Vengeance' #vendetta;
+gear 'Dagger of Vengeance' #vendetta;
+gear 'Longbow of Vengeance' #vendetta;
+gear 'Armor of Vengeance' #vendetta;
+gear 'Cloak of Vengeance' #vendetta;
+gear 'Rune of Vengeance' #vendetta;
+gear 'Bright Lord\'s Sword' #bright_lord;
+gear 'Bright Lord\'s Dagger' #bright_lord;
+gear 'Bright Lord\'s Bow' #bright_lord;
+gear 'Bright Lord\'s Hammer' #bright_lord;
+gear 'Bright Lord\'s Armor' #bright_lord;
+gear 'Bright Lord\'s Cloak' #bright_lord;
+gear 'Bright Lord\'s Rune' #bright_lord;
+gear 'Arcane Sword' #mystic;
+gear 'Arcane Dagger' #mystic;
+gear 'Arcane Longbow' #mystic;
+gear 'Arcane Armor' #mystic;
+gear 'Arcane Cloak' #mystic;
+gear 'Arcane Rune' #mystic;
+gear 'Sword of Horrors' #terror;
+gear 'Dagger of Horrors' #terror;
+gear 'Bow of Horrors' #terror;
+gear 'Armor of Horrors' #terror;
+gear 'Cloak of Horrors' #terror;
+gear 'Rune of Horrors' #terror;
+gear 'Sword of War' #warmonger;
+gear 'Dagger of War' #warmonger;
+gear 'Hammer of War' #warmonger;
+gear 'Armor of War' #warmonger;
+gear 'Cloak of War' #warmonger;
+gear 'Rune of War' #warmonger;
+gear 'Urafel' #wring_wraith;
+gear 'Acharn' #wring_wraith;
+gear 'Helm\'s Hammer' #wring_wraith;
+gear 'Servant\'s Armor' #wring_wraith;
+gear 'Servant\'s Blackened Armor' #wring_wraith;
+gear 'Dark Embrace' #wring_wraith;
+gear 'Mask of the Undying' #wring_wraith;
+gear 'Mask of an Empress' #wring_wraith;
+gear 'Mask of the General' #wring_wraith;
+gear 'Mask of the Fell Rider' #wring_wraith;
+gear 'Mask of the High King' #wring_wraith;
+gear 'Isildur\'s Ring' #wring_wraith;
+gear 'Blood Sword' #slaughter;
+gear 'Blood Dagger' #slaughter;
+gear 'Blood Bow' #slaughter;
+gear 'Blood Armor' #slaughter;
+gear 'Blood Cloak' #slaughter;
+gear 'Blood Rune' #slaughter;
+gear 'Blackguard Sword' #outlaw;
+gear 'Blackguard Dagger' #outlaw;
+gear 'Blackguard Bow' #outlaw;
+gear 'Blackguard Armor' #outlaw;
+gear 'Blackguard Cloak' #outlaw;
+gear 'Blackguard Rune' #outlaw;

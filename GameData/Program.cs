@@ -15,7 +15,6 @@ var builder = CoconaApp.CreateBuilder(args);
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
-builder.Services.AddTransient<IScrapper, MiddleEarthShadowOfWarScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
