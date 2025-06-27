@@ -31,8 +31,9 @@ achievement 'Jack of All, Master of All' {
     }
     objective 'Unlock all skills in The Blade of Galadriel DLC';
     objective 'Unlock all skill upgrades in The Blade of Galadriel DLC';
-    objective 'Unlock all skills in The Desolation of Mordor DLC';
-    objective 'Unlock all skill upgrades in The Desolation of Mordor DLC';
+
+    objective 'Unlock all Serka skills in The Desolation of Mordor DLC';
+    objective 'Unlock all Torvin skill upgrades in The Desolation of Mordor DLC';
 }
 achievement 'Lorekeeper' {
     description 'Unlock all appendix entries.';
