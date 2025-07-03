@@ -1,166 +1,132 @@
 game vampire_survivors ~> 'Vampire Survivors';
+import steam(1794680);
 
 // Achievements
-achievement 'Unlock all achievements' {
-    objective 'Unlock all steam achievements' {
-        require achievement_c; //.achieved == true;
-    }
+achievement 'Full Circle of Power' {
+    description 'Get maximum rank in all power ups.';
+    criterion power_up;
 }
-achievement 'Unlock all characters' {
-    objective 'Unlock all characters' {
-        require character; //.unlocked == true;
-    }
+achievement 'Curator of the Damned' {
+    description 'Unlock all entries in the collection.';
+    criterion collection_entry;
 }
-achievement 'Max all power ups' {
-    objective 'Max all power ups' {
-        require power_up_10; //.rank == 10;
-        require power_up_5; //.rank == 5;
-        require power_up_3; //.rank == 3;
-        require power_up_2; //.rank == 2;
-        require power_up_1; //.rank == 1;
-    }
+achievement achievement_secrets ~> 'The Whisper Knows' {
+    description 'Find all secrets.';
+    // Objectives are populated from scrapper
 }
-achievement 'Unlock all collection entries' {
-    objective 'Unlock all collection entries' {
-        require collection_entry; //.unlocked == true;
-    }
+achievement 'Unlocked and Unhinged' {
+    description 'Complete all in-game unlocks/achievements.';
+    criterion unlock;
 }
-achievement 'Unlock all secrets' {
-    objective 'Unlock all secrets' {
-        require secret; //.unlocked == true;
-    }
+achievement 'Legion of Survivors' {
+    description 'Unlock all playable characters.';
+    criterion character;
 }
-achievement 'Unlock all stages and their hyper mode' {
+
+achievement 'Worlds Beyond Light' {
+    description 'Unlock all stages and their hyper mode.';
     objective 'Unlock all stages' {
-        require stage; //.unlocked == true;
+        criterion stage;
     }
     objective 'Unlock hyper mode on all stages' {
-        require stage; //.hyper_mode_unlocked == true;
+        criterion stage;
     }
 }
-achievement 'Complete all levels in all adventures' {
-    objective 'Complete all levels in all adventures' {
-        require adventure; //.level == max_level;
-    }
+achievement 'No Story Left Untold' {
+    description 'Complete all adventures.';
+    criterion adventure;
 }
 
-// Classes
-class achievement_c {
-    stat<bool> achieved ~> 'Achievement Unlocked';
-}
-class character {
-    stat<bool> unlocked ~> 'Unlocked';
-}
-class power_up_10 {
-    stat<int(0, 10)> rank ~> 'Rank';
-}
-class power_up_5 {
-    stat<int(0, 5)> rank ~> 'Rank';
-}
-class power_up_3 {
-    stat<int(0, 3)> rank ~> 'Rank';
-}
-class power_up_2 {
-    stat<int(0, 2)> rank ~> 'Rank';
-}
-class power_up_1 {
-    stat<int(0, 1)> rank ~> 'Rank';
-}
-class collection_entry {
-    stat<bool> unlocked ~> 'Unlocked';
-}
-class stage {
-    stat<bool> unlocked ~> 'Unlocked';
-    stat<bool> hyper_mode_unlocked ~> 'Hyper Mode Unlocked';
-}
-class secret {
-    stat<bool> unlocked ~> 'Unlocked';
-}
-class adventure {
-    attribute max_level = 10;
-    stat<int(0, max_level)> level ~> 'Level';
-}
+// Categories
+category power_up;
+category collection_entry;
+category unlock;
+category character;
+category stage;
+category adventure;
 
 // Entities
-achievement_s achievement_crewmate ~> 'Crewmate';
-achievement_s achievement_report ~> 'Report!';
-achievement_s achievement_impostor ~> 'Impostor';
-achievement_s achievement_sharp_tongue ~> 'Sharp Tongue';
-achievement_s achievement_scientist ~> 'Scientist';
-achievement_s achievement_engineer ~> 'Engineer';
-achievement_s achievement_lucky_swipe ~> 'Lucky Swipe';
-achievement_s achievement_science_rocks ~> 'Science Rocks';
-achievement_s achievement_shapeshifter ~> 'Shapeshifter';
-achievement_s achievement_just_vent ~> 'Just Vent';
-achievement_s achievement_unjust_ejection ~> 'Unjust Ejection';
-achievement_s achievement_lifesign_scan ~> 'Lifesign Scan';
-achievement_s achievement_ghost ~> 'Ghost';
-achievement_s achievement_guardian ~> 'Guardian';
-achievement_s achievement_clear_debris ~> 'Clear Debris';
-achievement_s achievement_clear_asteroids ~> 'Clear Asteroids';
-achievement_s achievement_horse ~> 'Horse';
-achievement_s achievement_megalo_impostor ~> 'Megalo Impostor';
-achievement_s achievement_hyper_polus_replica ~> 'Hyper Polus Replica';
-achievement_s achievement_polus_replica_map ~> 'Polus Replica Map';
-achievement_s achievement_bill ~> 'Bill';
-achievement_s achievement_long_gun ~> 'Long Gun';
-achievement_s achievement_lance ~> 'Lance';
-achievement_s achievement_short_gun ~> 'Short Gun';
-achievement_s achievement_ariana ~> 'Ariana';
-achievement_s achievement_spread_shot ~> 'Spread Shot';
-achievement_s achievement_lucia ~> 'Lucia';
-achievement_s achievement_culaser ~> 'C-U-Laser';
-achievement_s achievement_hyper_hectic_highway ~> 'Hyper Hectic Highway';
-achievement_s achievement_brad ~> 'Brad';
-achievement_s achievement_firearm ~> 'Firearm';
-achievement_s achievement_browny ~> 'Browny';
-achievement_s achievement_sonic_bloom ~> 'Sonic Bloom';
-achievement_s achievement_sheena ~> 'Sheena';
-achievement_s achievement_blade_crossbow ~> 'Blade Crossbow';
-achievement_s achievement_probotector ~> 'Probotector';
-achievement_s achievement_bfc2000ad ~> 'BFC2000-AD';
-achievement_s achievement_prism_lass ~> 'Prism Lass';
-achievement_s achievement_time_warp ~> 'Time Warp';
-achievement_s achievement_stanley ~> 'Stanley';
-achievement_s achievement_homing_miss ~> 'Homing Miss';
-achievement_s achievement_multistage_missiles ~> 'Multistage Missiles';
-achievement_s achievement_newt ~> 'Newt';
-achievement_s achievement_diver_mines ~> 'Diver Mines';
-achievement_s achievement_simondo ~> 'Simondo';
-achievement_s achievement_bahamut ~> 'Bahamut';
-achievement_s achievement_metal_claw ~> 'Metal Claw';
-achievement_s achievement_big_fuzzy_fist ~> 'Big Fuzzy Fist';
-achievement_s achievement_hyper_neo_galuga ~> 'Hyper Neo Galuga';
-achievement_s achievement_neo_galuga_map ~> 'Neo Galuga Map';
-stage 'Mad Forest';
-stage 'Laborratory';
-stage 'Eudaimonia M.';
-stage 'Inlaid Library';
-stage 'Neo Galuga';
-stage 'Dairy Plant';
-stage 'Gallo Tower';
-stage 'Cappella Magna';
-stage 'Il Molise';
-stage 'Moongolow';
-stage 'Carlo Cart';
-stage 'Green Acres';
-stage 'The Bone Zone';
-stage 'Boss Rash';
-stage 'Whiteout';
-stage 'Space 54';
-stage 'Bat Country';
-stage 'Astral Stair';
-stage 'Tiny Bridge';
-stage 'Mt.Moonspell';
-stage 'Lake Foscari';
-stage 'Abyss Foscari';
-stage 'Polus Replica';
-stage 'Hectic Highway';
-stage 'Room 1665';
-collection_entry 'Super Candybox II Turbo';
-collection_entry 'Sole Solution';
-adventure 'A Garlic Paradise' { attribute max_level = 14; }
-adventure 'World of Light and Dark' { attribute max_level = 17; }
-adventure 'Legacy of the Moonspell' { attribute max_level = 14; }
-adventure 'Emergency Meeting' { attribute max_level = 19; }
-adventure 'Operation Guns' { attribute max_level = 28; }
+unlock unlock_curved_knife ~> 'Curved Knife' #unlock_ode_to_castlevania;
+unlock unlock_alchemy_whip ~> 'Alchemy Whip' #unlock_ode_to_castlevania;
+unlock unlock_dragon_water_whip ~> 'Dragon Water Whip' #unlock_ode_to_castlevania;
+unlock unlock_shuriken ~> 'Shuriken' #unlock_ode_to_castlevania;
+unlock unlock_discus ~> 'Discus' #unlock_ode_to_castlevania;
+unlock unlock_ice_fang ~> 'Ice Fang' #unlock_ode_to_castlevania;
+unlock unlock_gale_force ~> 'Gale Force' #unlock_ode_to_castlevania;
+unlock unlock_alucart_sworb ~> 'Alucart Sowrb' #unlock_ode_to_castlevania;
+unlock unlock_jet_black_whip ~> 'Jet Black Whip' #unlock_ode_to_castlevania;
+unlock unlock_jet_rock_riot ~> 'Rock Riot' #unlock_ode_to_castlevania;
+unlock unlock_wind_whip ~> 'Wind Whip' #unlock_ode_to_castlevania;
+unlock unlock_raging_fire ~> 'Raging Fire' #unlock_ode_to_castlevania;
+unlock unlock_iron_ball ~> 'Iron Ball' #unlock_ode_to_castlevania;
+unlock unlock_hand_grenade ~> 'Hand Grenade' #unlock_ode_to_castlevania;
+unlock unlock_javelin ~> 'Javelin' #unlock_ode_to_castlevania;
+unlock unlock_alcurad_spear ~> 'Alcurad Spear' #unlock_ode_to_castlevania;
+unlock unlock_confodere ~> 'Confodere' #unlock_ode_to_castlevania;
+unlock unlock_guardians_tarage ~> 'Guardian\'s Tarage' #unlock_ode_to_castlevania;
+unlock unlock_reinhardt ~> 'Reinhardt' #unlock_ode_to_castlevania;
+unlock unlock_platinum_whip ~> 'Platinum Whip' #unlock_ode_to_castlevania;
+unlock unlock_dextro_custos ~> 'Dextro Custos' #unlock_ode_to_castlevania;
+unlock unlock_sinestro_custos ~> 'Sinestro Custos' #unlock_ode_to_castlevania;
+unlock unlock_famliar_forge ~> 'Familiar Forge' #unlock_ode_to_castlevania;
+unlock unlock_nathan ~> 'Nathan' #unlock_ode_to_castlevania;
+unlock unlock_sonic_whip ~> 'Sonic Whip' #unlock_ode_to_castlevania;
+unlock unlock_morning_star ~> 'Morning Star' #unlock_ode_to_castlevania;
+unlock unlock_wine_glass ~> 'Wine Glass' #unlock_ode_to_castlevania;
+unlock unlock_refectio ~> 'Refectio' #unlock_ode_to_castlevania;
+unlock unlock_hex ~> 'Hex' #unlock_ode_to_castlevania;
+unlock unlock_dominus_anger ~> 'Dominus Anger' #unlock_ode_to_castlevania;
+unlock unlock_dominus_hatred ~> 'Dominus Hatred' #unlock_ode_to_castlevania;
+unlock unlock_luminatio ~> 'Luminatio' #unlock_ode_to_castlevania;
+unlock unlock_umbra ~> 'Umbra' #unlock_ode_to_castlevania;
+unlock unlock_star_flail ~> 'Star Flail' #unlock_ode_to_castlevania;
+unlock unlock_keremet_bubbles ~> 'Keremet Bubbles' #unlock_ode_to_castlevania;
+unlock unlock_keremet_fulgur ~> 'Fulgur' #unlock_ode_to_castlevania;
+unlock unlock_belnades_spellbook ~> 'Belnades\' Spellbook' #unlock_ode_to_castlevania;
+unlock unlock_iron_shield ~> 'Iron Shield' #unlock_ode_to_castlevania;
+unlock unlock_optical_shot ~> 'Optical Shot' #unlock_ode_to_castlevania;
+unlock unlock_mace ~> 'Mace' #unlock_ode_to_castlevania;
+unlock unlock_trident ~> 'Trident' #unlock_ode_to_castlevania;
+unlock unlock_globus ~> 'Globus' #unlock_ode_to_castlevania;
+unlock unlock_maxim ~> 'Maxim' #unlock_ode_to_castlevania;
+unlock unlock_henry ~> 'Henry' #unlock_ode_to_castlevania;
+unlock unlock_cornell ~> 'Cornell' #unlock_ode_to_castlevania;
+unlock unlock_carrie ~> 'Carrie' #unlock_ode_to_castlevania;
+unlock unlock_vibhuti_whip ~> 'Vibhuti Whip' #unlock_ode_to_castlevania;
+unlock unlock_vanitas_whip ~> 'Vanitas Whip' #unlock_ode_to_castlevania;
+unlock unlock_silver_revolver ~> 'Silver Revolver' #unlock_ode_to_castlevania;
+unlock unlock_tyrfing ~> 'Tyrfing' #unlock_ode_to_castlevania;
+unlock unlock_sonic_dash ~> 'Sonic Dash' #unlock_ode_to_castlevania;
+unlock unlock_centralis_custos ~> 'Centralis Custos' #unlock_ode_to_castlevania;
+unlock unlock_dominus_agony ~> 'Dominus Agony' #unlock_ode_to_castlevania;
+unlock unlock_spectral_sword ~> 'Spectral Sword' #unlock_ode_to_castlevania;
+unlock unlock_ebony_diabologue ~> 'Ebony Diabologue' #unlock_ode_to_castlevania;
+unlock unlock_coat_of_arms ~> 'Coat of Arms' #unlock_ode_to_castlevania;
+unlock unlock_starting_weapon ~> 'New Starting Weapons' #unlock_ode_to_castlevania;
+
+unlock unlock_punch ~> 'Punch' #unlock_emerald_diorama;
+unlock unlock_final_emperor ~> 'Final Emperor' #unlock_emerald_diorama;
+unlock unlock_saber_machine_gun ~> 'Saber Machine Gun' #unlock_emerald_diorama;
+unlock unlock_solo_bonnie_blair ~> 'Solo Skin Bonnie Blair' #unlock_emerald_diorama;
+unlock unlock_solo_formina_franklyn ~> 'Solo Skin Formina Franklyn' #unlock_emerald_diorama;
+unlock unlock_kick ~> 'Kick' #unlock_emerald_diorama;
+unlock unlock_formina ~> 'Formina' #unlock_emerald_diorama;
+unlock unlock_eagle_gun ~> 'Eagle Gun' #unlock_emerald_diorama;
+unlock unlock_diva_no_5 ~> 'Diva No. 5' #unlock_emerald_diorama;
+unlock unlock_super_missile ~> 'Super Missile' #unlock_emerald_diorama;
+unlock unlock_virginia ~> 'Virginia' #unlock_emerald_diorama;
+unlock unlock_twin_dragon ~> 'Twin Dragon' #unlock_emerald_diorama;
+unlock unlock_ameya ~> 'Ameya' #unlock_emerald_diorama;
+unlock unlock_mr_s ~> 'Mr. S' #unlock_emerald_diorama;
+unlock unlock_mover ~> 'Mover' #unlock_emerald_diorama;
+unlock unlock_battle_tank ~> 'Battle Tank' #unlock_emerald_diorama;
+unlock unlock_shanks ~> 'Shanks' #unlock_emerald_diorama;
+unlock unlock_paradox ~> 'Paradox' #unlock_emerald_diorama;
+unlock unlock_spirit_rings ~> 'Spirit Rings' #unlock_emerald_diorama;
+unlock unlock_intuition_ameya ~> 'Intuition Ameya' #unlock_emerald_diorama;
+unlock unlock_mecha ~> 'Mecha' #unlock_emerald_diorama;
+unlock unlock_town_sword ~> 'Town Sword' #unlock_emerald_diorama;
+unlock unlock_star_siugnas ~> 'Star Siugnas' #unlock_emerald_diorama;
+unlock unlock_sanguine_star ~> 'Sanguine Star' #unlock_emerald_diorama;
+unlock unlock_intuition ~> 'Intuition' #unlock_emerald_diorama;
+unlock unlock_dolores ~> 'Dolores' #unlock_emerald_diorama;

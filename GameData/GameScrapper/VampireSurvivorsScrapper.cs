@@ -4,136 +4,123 @@ using Pika.Model;
 
 namespace Pika.GameData.GameScrapper;
 
-public class VampireSurvivorsScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
+public class VampireSurvivorsScrapper : IScrapper
 {
-    private const uint SteamAppId = 1794680;
-
     public ResourceId GameId => "vampire_survivors";
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
-        game.Entities.AddRange(await ScrapeCharacters());
-        game.Entities.AddRange(await ScrapeRelics());
-        game.Entities.AddRange(await ScrapePassiveItems());
-        game.Entities.AddRange(await ScrapeWeapons());
-        game.Entities.AddRange(await ScrapePowerUps());
-        game.Entities.AddRange(await ScrapePickups());
-        game.Entities.AddRange(await ScrapeArcanas());
-        game.Entities.AddRange(await ScrapeDarkanas());
-        game.Entities.AddRange(await ScrapeSecrets());
+        await ScrapePowerUps(game);
+        await ScrapeCollectionEntries(game);
+        await ScrapeSecrets(game);
+        await ScrapeUnlocks(game);
+        await ScrapeCharacters(game);
+        await ScrapeStages(game);
+        await ScrapeAdventures(game);
     }
 
-    private async Task<List<Entity>> ScrapeCharacters()
+    private async Task ScrapePowerUps(Game game)
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Characters");
-        var nodes = doc.DocumentNode.SelectNodes("//div/b/a");
-        return nodes.Select(n =>
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/PowerUps");
+        var nodes = doc.DocumentNode.SelectNodes("//td[3]");
+        game.Entities.AddRange(nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "power_up");
+            return new Entity(id, name, $"power_up");
+        }));
+    }
+
+    private async Task ScrapeCollectionEntries(Game game)
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Collection");
+        var entryTableNodeList = doc.DocumentNode.SelectNodes("//table");
+        foreach (var entryTableNode in entryTableNodeList)
+        {
+            var tagNode = entryTableNode.SelectSingleNode("./preceding-sibling::h2[1]/span[1]");
+            var tagName = ScrapperHelper.CleanName(tagNode.InnerText);
+            var tagId = ScrapperHelper.InduceIdFromName(tagName, "collection_entry");
+            var tag = new Tag(tagId, tagName);
+            game.Tags.Add(tag);
+            var entryNodeList = entryTableNode.SelectNodes(".//td");
+            game.Entities.AddRange(entryNodeList.Select(n =>
+            {
+                var entryName = ScrapperHelper.CleanName(n.InnerText);
+                var entryId = ScrapperHelper.InduceIdFromName(entryName, "collection_entry");
+                return new Entity(entryId, entryName, "collection_entry") { Tags = [tag.Id] };
+            }));
+        }
+    }
+
+    private async Task ScrapeSecrets(Game game)
+    {
+        var ach = game.Achievements.Single(a => a.Id == "achievement_secrets");
+
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Secrets");
+        var nodes = doc.DocumentNode.SelectNodes("//table[contains(@class, 'wikitable')]//tr[position()>1]");
+        ach.Objectives.AddRange(nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode("./td[1]").InnerText);
+            var description = n.SelectSingleNode("./td[2]").InnerText.Trim();
+            var id = ScrapperHelper.InduceIdFromName(name, "secret");
+            return new Objective(id, name) { Description = description };
+        }));
+    }
+
+    private async Task ScrapeUnlocks(Game game)
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Achievements");
+        var entryTableNodeList = doc.DocumentNode.SelectNodes("//table[contains(@class, 'wikitable')]");
+        foreach (var entryTableNode in entryTableNodeList)
+        {
+            var tagNode = entryTableNode.SelectSingleNode("./preceding-sibling::*[1]/span[1]");
+            var tagName = ScrapperHelper.CleanName(tagNode.InnerText);
+            var tagId = ScrapperHelper.InduceIdFromName(tagName, "unlock");
+            var tag = new Tag(tagId, tagName);
+            game.Tags.Add(tag);
+            var entryNodeList = entryTableNode.SelectNodes(".//tr[position()>1]/td[2]");
+            game.Entities.AddRange(entryNodeList.Select(n =>
+            {
+                var entryName = ScrapperHelper.CleanName(n.InnerText);
+                var entryId = ScrapperHelper.InduceIdFromName(entryName, "unlock");
+                return new Entity(entryId, entryName, "unlock") { Tags = [tag.Id] };
+            }));
+        }
+    }
+
+    private async Task ScrapeCharacters(Game game)
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Characters");
+        var nodes = doc.DocumentNode.SelectNodes("//span[contains(@class, 'character-tooltip')]");
+        game.Entities.AddRange(nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "character");
             return new Entity(id, name, "character");
-        }).ToList();
+        }));
     }
 
-    private async Task<List<Entity>> ScrapeRelics()
+    private async Task ScrapeStages(Game game)
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Relics");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]");
-        return nodes.Select(n =>
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Stages");
+        var nodes = doc.DocumentNode.SelectNodes("//tr/td[1]/div/a");
+        game.Entities.AddRange(nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "relic");
-            return new Entity(id, name, "collection_entry");
-        }).ToList();
+            var id = ScrapperHelper.InduceIdFromName(name, "stage");
+            return new Entity(id, name, "stage");
+        }));
     }
 
-    private async Task<List<Entity>> ScrapePowerUps()
+    private async Task ScrapeAdventures(Game game)
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Powerups");
-        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td/..");
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//td[2]").InnerText);
-            name = name == "MoveSpeed" ? "Move Speed" : name;
-            var maxRank = ScrapperHelper.CleanName(n.SelectSingleNode(".//td[4]").InnerText.Trim());
-            var id = ScrapperHelper.InduceIdFromName(name, "power_up");
-            return new Entity(id, name, $"power_up_{maxRank}");
-        }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapePassiveItems()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Passive_items");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]");
-        return nodes.Select(n =>
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire.survivors.wiki/w/Adventures");
+        var nodes = doc.DocumentNode.SelectNodes("//h2/span[1]");
+        game.Entities.AddRange(nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "passive_item");
-            return new Entity(id, name, "collection_entry");
-        }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeWeapons()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Weapons");
-        var nodes =
-            doc.DocumentNode.SelectNodes("(//tbody)[position()>=2 and position() <= 4]/tr/td[2]");
-        HashSet<string> blacklist = ["Anima of Mortaccio", "Profusione D'Amore", "Yatta Daikarin"];
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "weapon");
-            return new Entity(id, name, "collection_entry");
-        }).Where(e => !blacklist.Contains(e.Name)).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapePickups()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Pickups");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[2]");
-        HashSet<string> blacklist = ["Big Coin Bag", "Cheese", "Corn", "Little Heart", "Pie"];
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "pickup");
-            return new Entity(id, name, "collection_entry");
-        }).Where(e => !blacklist.Contains(e.Name)).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeArcanas()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
-        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[1]/tr/td[3]");
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "arcana");
-            return new Entity(id, name, "collection_entry");
-        }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeDarkanas()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Arcanas");
-        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[2]/tr/td[3]");
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "darkana");
-            return new Entity(id, name, "collection_entry");
-        }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeSecrets()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://vampire-survivors.fandom.com/wiki/Secret");
-        var nodes = doc.DocumentNode.SelectNodes("//tr/td[3]");
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "secret");
-            return new Entity(id, name, "secret");
-        }).ToList();
+            var id = ScrapperHelper.InduceIdFromName(name, "adventure");
+            return new Entity(id, name, "adventure");
+        }));
     }
 }
