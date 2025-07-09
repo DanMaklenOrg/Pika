@@ -1,18 +1,30 @@
 game palworld ~> 'Palworld';
+import steam(1623730);
 
 // Achievements
-achievement 'Capture All Pals' {
-    objective 'Capture all pals at least 12 times each' {
-        require pal; //.captured >= 12;
+achievement 'Ultimate Tamer' {
+    objective 'Capture all Pals x12' {
+        description 'Capture all pals at least 12 times each.';
+        criterion pal;
+    }
+    objective 'Capture all Terraria creatures' {
+        criterion terraria_creature;
     }
 }
-
-// Classes
-class pal {
-    stat<int(0, 12)> captured ~> 'Captured';
+achievement 'Max Player Level' {
+    description 'Reach level 65.';
+}
+achievement 'Max Player Stats' {
+    objective 'Max Health';
+    objective 'Max Stamina';
+    objective 'Max Attack';
+    objective 'Max Work Speed';
+    objective 'Max Weight';
+}
+achievement 'Max Capture Power Level' {
+    description 'Collect enough Lifmunk Effigies to reach capture power level of 14.';
 }
 
-// Entities
-pal pal_blazamut_ryu ~> '096B: Blazamut Ryu';
-pal pal_bellanoir ~> '112: Bellanoir';
-pal pal_bellanoir_libero ~> '112B: Bellanoir Libero';
+// Categories
+category pal;
+category terraria_creature;

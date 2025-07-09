@@ -1,32 +1,49 @@
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Pika.GameData.ScrapperHelpers;
 using Pika.Model;
 
 namespace Pika.GameData.GameScrapper;
 
-public class PalworldPalsScrapper(SteamScrapperHelper steamScrapperHelper) : IScrapper
+public class PalworldPalsScrapper : IScrapper
 {
-    private const uint SteamAppId = 1623730;
+    private static readonly Regex PalIndexIdRegex = new Regex(@"^#(\d{1,3})(\D)?$");
 
     public ResourceId GameId => "palworld";
 
     public async Task ScrapeInto(Game game)
     {
-        game.Achievements.AddRange(await steamScrapperHelper.ScrapAchievements(SteamAppId));
         game.Entities.AddRange(await ScrapePals());
+        game.Entities.AddRange(await ScrapeTerrariaCreatures());
     }
 
     private async Task<List<Entity>> ScrapePals()
     {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://palworld.fandom.com/wiki/Palpedia#Visible");
-        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'wds-tab__content')]/table/tbody/tr");
-        HashSet<string> blacklist = ["013B: Gumoss (Special)", "092B: Warsect Terra"];
-        return nodes.Where(n => !n.InnerHtml.Contains("<th>")).Where(n => n.SelectSingleNode("td[1]").InnerText != "???").Select(n =>
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pals");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='break border']/preceding-sibling::div");
+        return nodes.Select(n =>
         {
-            var name = ScrapperHelper.CleanName(n.SelectSingleNode("td[3]").InnerText);
-            var palIndex = ScrapperHelper.CleanName(n.SelectSingleNode("td[1]").InnerText);
+            var palIndexRaw = ScrapperHelper.CleanName(n.SelectSingleNode(".//span").InnerText);
+            var match = PalIndexIdRegex.Match(palIndexRaw);
+            var palId = int.Parse(match.Groups[1].Value);
+            var palVariant = match.Groups[2].Success ? match.Groups[2].Value : string.Empty;
+            var palIndex = $"#{palId:D3}{palVariant}";
+            var palName = ScrapperHelper.CleanName(n.SelectSingleNode(".//a[@class='itemname']").InnerText);
+            var name = $"{palIndex}: {palName}";
             var id = ScrapperHelper.InduceIdFromName(name, "pal");
-            return new Entity(id, $"{palIndex}: {name}", "pal");
-        }).Where(e => !blacklist.Contains(e.Name)).ToList();
+            return new Entity(id, name, "pal");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeTerrariaCreatures()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pals");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='break border']/following-sibling::div");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//a[@class='itemname']").InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "terraria_creature");
+            return new Entity(id, name, "terraria_creature");
+        }).ToList();
     }
 }
