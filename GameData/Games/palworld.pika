@@ -24,7 +24,124 @@ achievement 'Max Player Stats' {
 achievement 'Max Capture Power Level' {
     description 'Collect enough Lifmunk Effigies to reach capture power level of 14.';
 }
+achievement 'Max Base Level';
+achievement 'Field Bosses Defeated' {
+    description 'Defeat all field bosses present in the world at least once.';
+    criterion field_boss;
+}
+achievement 'Bounty Hunter' {
+    description 'Defeat all wanted fugitives at least once.';
+    criterion wanted_fugitive;
+}
 
 // Categories
 category pal;
 category terraria_creature;
+category pal_boss;
+category bounty_target;
+
+// Entities
+pal_boss 'Anubis';
+pal_boss 'Astegon';
+pal_boss 'Azurmane';
+pal_boss 'Azurobe';
+pal_boss 'Beakon';
+pal_boss 'Blazamut';
+pal_boss 'Broncherry';
+pal_boss 'Broncherry Aqua';
+pal_boss 'Bushi';
+pal_boss 'Caprity Noct';
+pal_boss 'Celesdir';
+pal_boss 'Chillet';
+pal_boss 'Cryolinx Terra';
+pal_boss 'Dazzi Noct';
+pal_boss 'Dinossom Lux';
+pal_boss 'Dumud';
+pal_boss 'Elizabee';
+pal_boss 'Elphidran';
+pal_boss 'Faleris Aqua';
+pal_boss 'Felbat';
+pal_boss 'Fenglope';
+pal_boss 'Fenglope Lux';
+pal_boss 'Foxparks Cryst';
+pal_boss 'Frostallion';
+pal_boss 'Frostallion Noct';
+pal_boss 'Gildane';
+pal_boss 'Grintale';
+pal_boss 'Gumoss';
+pal_boss 'Jetragon';
+pal_boss 'Jormuntide';
+pal_boss 'Katress';
+pal_boss 'Kingpaca';
+pal_boss 'Kingpaca Cryst';
+pal_boss 'Kitsun Noct';
+pal_boss 'Knocklem';
+pal_boss 'Loupmoon Cryst';
+pal_boss 'Lunaris';
+pal_boss 'Lyleen Noct';
+pal_boss 'Mammorest';
+pal_boss 'Menasting';
+pal_boss 'Menasting Terra';
+pal_boss 'Mossanda Lux';
+pal_boss 'Nepltilius';
+pal_boss 'Nitemary';
+pal_boss 'Nitewing';
+pal_boss 'Nyafia';
+pal_boss 'Omascul';
+pal_boss 'Paladius';
+pal_boss 'Penking';
+pal_boss 'Petallia';
+pal_boss 'Prunelia';
+pal_boss 'Quivern';
+pal_boss 'Relaxaurus Lux';
+pal_boss 'Ribbuny Botan';
+pal_boss 'Sibelyx';
+pal_boss 'Silvegis';
+pal_boss 'Smokie';
+pal_boss 'Splatterina';
+pal_boss 'Starryon';
+pal_boss 'Suzaku';
+pal_boss 'Sweepa';
+pal_boss 'Tarantriss';
+pal_boss 'Univolt';
+pal_boss 'Vaelet';
+pal_boss 'Verdash';
+pal_boss 'Warsect';
+pal_boss 'Warsect Terra';
+pal_boss 'Whalaska';
+pal_boss 'Whalaska Ignis';
+pal_boss 'Wumpo Botan';
+
+bounty_target 'Aloha';
+bounty_target 'Billy';
+bounty_target 'Brick';
+bounty_target 'Cache';
+bounty_target 'Clint';
+bounty_target 'Crash';
+bounty_target 'Dart';
+bounty_target 'Dazzle';
+bounty_target 'Dyna';
+bounty_target 'Ego';
+bounty_target 'Flare';
+bounty_target 'Fumble';
+bounty_target 'Gnaw';
+bounty_target 'Grill';
+bounty_target 'Hawk';
+bounty_target 'Jade';
+bounty_target 'Lasso';
+bounty_target 'Mimic';
+bounty_target 'Mite';
+bounty_target 'Nimble';
+bounty_target 'Phantom';
+bounty_target 'Pinch';
+bounty_target 'Quill';
+bounty_target 'Ram';
+bounty_target 'Scoot';
+bounty_target 'Shadow';
+bounty_target 'Siren';
+bounty_target 'Skim';
+bounty_target 'Turncoat';
+bounty_target 'Urchin';
+bounty_target 'Whip';
+bounty_target 'Whisk';
+bounty_target 'Whisper';
