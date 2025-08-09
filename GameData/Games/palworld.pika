@@ -24,7 +24,9 @@ achievement 'Max Player Stats' {
 achievement 'Max Capture Power Level' {
     description 'Collect enough Lifmunk Effigies to reach capture power level of 14.';
 }
-achievement 'Max Base Level';
+achievement 'Max Base Level' {
+    description 'Upgrade your base to level 30.';
+}
 achievement 'Field Bosses Defeated' {
     description 'Defeat all field bosses present in the world at least once.';
     criterion field_boss;
@@ -37,12 +39,92 @@ achievement 'Unlock Great Eagle Statues' {
     description 'Unlock fast travel points at all Great Eagle Statues';
     criterion great_eagle_statue;
 }
+achievement 'Perfect Party Pals' {
+    description 'Build a collection of perfect party pals all at max level and Rank 4.';
+    objective 'Nitemary' { description 'For farming souls. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
+
+    // ....
+    objective 'Smokie' {
+        description 'Useful for Chromite farming. Passives: [Mine Foreman]';
+    }
+    objective 'Dogen' {
+        description 'Useful for fast teleport home.';
+    }
+
+
+}
+achievement 'Breeder Pals' {
+    description 'Build a collection of pals for mass breeding. Male & Female couple. Passives [Nocturnal, Philanthropist]';
+    objective 'Smokie';
+    objective 'Dogen';
+}
+achievement 'Pal Sphere Factory (Maxed)' {
+    description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
+    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
+    objective 'Advanced Civilization Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
+    objective 'Gigantic Furnace' { description 'Count: 5. 2 for Pal Metal Ingot and 3 for Charcoal.'; }
+    objective 'Ore Mining Site II' { description 'Count: 2'; }
+    objective 'Stone Pit' { description 'Count: 1.'; }
+    objective 'Logging Site' { description 'Count: 1.'; }
+    objective 'Large Power Generator' { description 'Count: 1.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on <>.'; }
+    objective 'Stump and Axe' { description 'Count: 1.'; }
+    objective 'Flame Cauldron' { description 'Count: 1.'; }
+    objective 'Large Toolbox' { description 'Count: 1.'; }
+    objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
+    objective 'Snowman' { description 'Count: 1.'; }
+    objective 'Electric Pylon' { description 'Count: 1.'; }
+    objective 'Japanese-Style Hot Spring' { description 'Count: 3+.'; }
+    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Supply Chest' { description 'Count: 1. A chest with misc supplies like repair kits. Remember allow only needed items.'; }
+    objective 'Pal Pod' { description 'Count: 15+.'; }
+    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
+    objective 'Monitoring Stand' { description 'Count: 1.'; }
+    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
+    objective 'Beta Wave Generator' { description 'Count: 1.'; }
+    objective 'Paldium Fragment, Pal Fluids & Bones chest.' { description 'Count: 1. A chest to store the items bought from a merchant.'; }
+    objective 'Merchant' { description 'Count 1. A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
+
+    objective 'Freezer Pal' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Miner Pal' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Transport Pal' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
+
+    objective 'Electricity Generator Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Kindling Pal' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Handiwork Pal' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+
+}
+achievement 'Defeat Tower Bosses' {
+    objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
+    objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
+}
+achievement 'Implant Collector' {
+    description 'Collect all pal passive skill implants.';
+    criterion implant;
+}
+achievement 'Trader Pals' {
+    description 'TODO';
+}
+achievement 'Breeding Farm (Maxed)' {
+    description 'TODO';
+    objective 'Braloha' { description 'Count: 1. R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater]. Not Alpha'; }
+}
+achievement 'NPC Collection' {
+    description 'Capture key NPCs';
+    objective 'Dr. Brawn';
+}
+
 // Categories
 category pal;
 category terraria_creature;
 category field_boss;
 category wanted_fugitive;
 category great_eagle_statue;
+category tower_boss;
+category implant;
+category passive_skill;
 
 // Entities
 field_boss 'Anubis';
@@ -232,3 +314,18 @@ great_eagle_statue 'Stone Pillar Cave Entrance';
 great_eagle_statue 'Sunlit Isle';
 great_eagle_statue 'The Oculus Gate, Tower in Sight';
 great_eagle_statue 'Unthawable Lake';
+
+tower_boss 'Zoe & Grizzbolt';
+tower_boss 'Lily & Lyleen';
+tower_boss 'Axel & Orserk';
+tower_boss 'Marcus & Faleris';
+tower_boss 'Victor & Shadowbeak';
+tower_boss 'Saya & Selyne';
+tower_boss 'Bjorn & Bastigor';
+
+implant 'Implant: Serenity';
+implant 'Implant: Infinite Stamina';
+implant 'Implant: Runner';
+implant 'Implant: Burly Body';
+implant 'Implant: Artisan';
+implant 'Implant: Musclehead';

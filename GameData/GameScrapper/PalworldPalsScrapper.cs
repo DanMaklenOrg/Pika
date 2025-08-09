@@ -15,6 +15,7 @@ public class PalworldPalsScrapper : IScrapper
     {
         game.Entities.AddRange(await ScrapePals());
         game.Entities.AddRange(await ScrapeTerrariaCreatures());
+        game.Entities.AddRange(await ScrapePassiveSkills());
     }
 
     private async Task<List<Entity>> ScrapePals()
@@ -44,6 +45,18 @@ public class PalworldPalsScrapper : IScrapper
             var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//a[@class='itemname']").InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "terraria_creature");
             return new Entity(id, name, "terraria_creature");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapePassiveSkills()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Passive_Skills");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@id='PalPassiveSkills']//div[contains(@class, 'passive-rank')]");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "passive_skill");
+            return new Entity(id, name, "passive_skill");
         }).ToList();
     }
 }
