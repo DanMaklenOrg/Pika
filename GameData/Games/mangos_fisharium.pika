@@ -1,0 +1,21 @@
+game mangos_fisharium ~> 'Mango\'s Fisharium';
+import steam(3697890);
+
+achievement 'Shiny Hunter Extreme' {
+    description 'Capture all shiny fish in all regions';
+    criterion location;
+}
+
+category location;
+
+location 'The Bay';
+location 'Shallow Reef';
+location 'Coral Cove';
+location 'Open Waters';
+location 'Deep Blue';
+location 'Twilight Zone';
+location 'Drowned Veil';
+location 'Drift Hollow';
+location 'The Abyss';
+location 'Liminal Space';
+location 'Challenger Deep';
