@@ -39,26 +39,21 @@ achievement 'Unlock Great Eagle Statues' {
     description 'Unlock fast travel points at all Great Eagle Statues';
     criterion great_eagle_statue;
 }
-achievement 'Perfect Party Pals' {
+achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
-    objective 'Nitemary' { description 'For farming souls. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
+    objective 'Nitemary' { description 'Drop Booster: Souls. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
+    objective 'Smokie' { description 'Drop Booster: Chromite. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
 
     // ....
-    objective 'Smokie' {
-        description 'Useful for Chromite farming. Passives: [Mine Foreman]';
-    }
     objective 'Dogen' {
         description 'Useful for fast teleport home.';
     }
-
-
 }
-achievement 'Breeder Pals' {
-    description 'Build a collection of pals for mass breeding. Male & Female couple. Passives [Nocturnal, Philanthropist]';
-    objective 'Smokie';
-    objective 'Dogen';
+achievement 'Party Preset: Barter' {
+    description 'Mau (x5). R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].';
 }
-achievement 'Pal Sphere Factory (Maxed)' {
+
+achievement 'Base: Pal Sphere Factory' {
     description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
     objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
     objective 'Advanced Civilization Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
@@ -88,9 +83,8 @@ achievement 'Pal Sphere Factory (Maxed)' {
 
     objective 'Freezer Pal' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
     objective 'Miner Pal' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Transport Pal' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
-
     objective 'Electricity Generator Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Kindling Pal' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Handiwork Pal' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
@@ -104,10 +98,7 @@ achievement 'Implant Collector' {
     description 'Collect all pal passive skill implants.';
     criterion implant;
 }
-achievement 'Trader Pals' {
-    description 'TODO';
-}
-achievement 'Breeding Farm (Maxed)' {
+achievement 'Base: Breeding Farm' {
     description 'TODO';
     objective 'Braloha' { description 'Count: 1. R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater]. Not Alpha'; }
 }
