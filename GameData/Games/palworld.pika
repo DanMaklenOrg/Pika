@@ -115,7 +115,7 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Alpha Wave Generator' { description 'Count: 1.'; }
     objective 'Beta Wave Generator' { description 'Count: 1.'; }
 
-    objective 'Merchant' { description 'Count 1. A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
+    objective 'Merchant' { description 'Wandering Merchant (x1). A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
     objective 'Freezer Pal' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
     objective 'Miner Pal' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
