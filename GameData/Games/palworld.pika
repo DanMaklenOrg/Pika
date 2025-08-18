@@ -50,37 +50,72 @@ achievement 'Party: Misc' {
     }
 }
 achievement 'Party Preset: Barter' {
-    description 'Mau (x5). R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].';
+    objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].' };
 }
 
+achievement 'Base: Main' {
+    description 'Build a main base with storage, general crafting and collectables.';
+    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
+    objective 'Japanese-Style Hot Sprint' { description 'Count: 3+.'; }
+    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
+    objective 'Large Power Generator' { description 'Count: 1.'; }
+    objective 'Accumulator' { description 'Count: 2.'; }
+    objective 'Monitoring Stand' { description 'Count: 1.'; }
+
+    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
+    objective 'Advanced Workshop' { description 'Count: 1.'; }
+    objective 'Advanced Weapon Assembly Line' { description 'Count: 1.'; }
+    objective 'Pal Gear Workbench' { description 'Count: 1.'; }
+    objective 'Refrigerated Crusher' { description 'Count: 1.'; }
+    objective 'Advanced Medicine Workbench' { description 'Count: 1.'; }
+    objective 'Repair Bench' { description 'Count: 1.'; }
+    objective 'Drafting Table' { description 'Count: 1.'; }
+
+    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
+    objective 'Beta Wave Generator' { description 'Count: 1.'; }
+    objective 'Snowman' { description 'Count: 1.'; }
+    objective 'Electric Pylon' { description 'Count: 1.'; }
+    objective 'Witch Cauldron' { description 'Count: 1.'; }
+    objective 'Large Toolbox' { description 'Count: 1.'; }
+
+    objective 'Pal Expedition Station' { description 'Count: 1.'; }
+    objective 'Large Fishing Pond' { description 'Count: 1.'; }
+
+    objective 'Storage: Miscellaneous' { description 'Count: 1.'; }
+    objective 'Storage: Armory' { description 'Count: 1.'; }
+    objective 'Storage: Schematic' { description 'Count: 1.'; }
+}
 achievement 'Base: Pal Sphere Factory' {
     description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
+    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
+    objective 'Japanese-Style Hot Spring' { description 'Count: 3+.'; }
+    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
+    objective 'Large Power Generator' { description 'Count: 1.'; }
+    objective 'Accumulator' { description 'Count: 2.'; }
+    objective 'Monitoring Stand' { description 'Count: 1.'; }
+
     objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
-    objective 'Advanced Civilization Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
+    objective 'Advanced Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
     objective 'Gigantic Furnace' { description 'Count: 5. 2 for Pal Metal Ingot and 3 for Charcoal.'; }
     objective 'Ore Mining Site II' { description 'Count: 2'; }
     objective 'Stone Pit' { description 'Count: 1.'; }
     objective 'Logging Site' { description 'Count: 1.'; }
-    objective 'Large Power Generator' { description 'Count: 1.'; }
-    objective 'Cool Food Box' { description 'Count: 1. Stock up on <>.'; }
+
     objective 'Stump and Axe' { description 'Count: 1.'; }
     objective 'Flame Cauldron' { description 'Count: 1.'; }
     objective 'Large Toolbox' { description 'Count: 1.'; }
     objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
     objective 'Snowman' { description 'Count: 1.'; }
     objective 'Electric Pylon' { description 'Count: 1.'; }
-    objective 'Japanese-Style Hot Spring' { description 'Count: 3+.'; }
-    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
-    objective 'Guild Chest' { description 'Count: 1.'; }
-    objective 'Supply Chest' { description 'Count: 1. A chest with misc supplies like repair kits. Remember allow only needed items.'; }
     objective 'Pal Pod' { description 'Count: 15+.'; }
-    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
-    objective 'Monitoring Stand' { description 'Count: 1.'; }
     objective 'Alpha Wave Generator' { description 'Count: 1.'; }
     objective 'Beta Wave Generator' { description 'Count: 1.'; }
-    objective 'Paldium Fragment, Pal Fluids & Bones chest.' { description 'Count: 1. A chest to store the items bought from a merchant.'; }
-    objective 'Merchant' { description 'Count 1. A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
 
+    objective 'Merchant' { description 'Count 1. A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
     objective 'Freezer Pal' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
     objective 'Miner Pal' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
@@ -88,8 +123,8 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Electricity Generator Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Kindling Pal' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Handiwork Pal' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-
 }
+
 achievement 'Defeat Tower Bosses' {
     objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
     objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
