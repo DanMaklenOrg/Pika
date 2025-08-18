@@ -1,0 +1,18 @@
+game keep_on_mining ~> 'Keep on Mining!';
+import steam(3769130);
+
+// Achievements
+achievement 'All the Talent'{
+    description 'Obtain all talent cards.';
+}
+achievement 'Not So Endless' {
+    description 'Max out all endless upgrades.';
+    objective 'Max out \'Ore Value\' 1 upgrade.';
+    objective 'Max out \'Ore Value\' 2 upgrade.';
+    objective 'Max out \'Double Double!\' 1 upgrade.';
+    objective 'Max out \'Double Double!\' 2 upgrade.';
+    objective 'Max out \'More XP\' 1 upgrade.';
+    objective 'Max out \'More XP\' 2 upgrade.';
+    objective 'Max out \'Improved Pickaxe\' 1 upgrade.';
+    objective 'Max out \'Improved Pickaxe\' 2 upgrade.';
+}
