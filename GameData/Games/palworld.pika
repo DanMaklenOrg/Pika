@@ -72,6 +72,8 @@ achievement 'Base: Main' {
     objective 'Advanced Medicine Workbench' { description 'Count: 1.'; }
     objective 'Repair Bench' { description 'Count: 1.'; }
     objective 'Drafting Table' { description 'Count: 1.'; }
+    objective 'Pal Expedition Station' { description 'Count: 1.'; }
+    objective 'Large Fishing Pond' { description 'Count: 1.'; }
 
     objective 'Alpha Wave Generator' { description 'Count: 1.'; }
     objective 'Beta Wave Generator' { description 'Count: 1.'; }
@@ -80,12 +82,16 @@ achievement 'Base: Main' {
     objective 'Witch Cauldron' { description 'Count: 1.'; }
     objective 'Large Toolbox' { description 'Count: 1.'; }
 
-    objective 'Pal Expedition Station' { description 'Count: 1.'; }
-    objective 'Large Fishing Pond' { description 'Count: 1.'; }
-
     objective 'Storage: Miscellaneous' { description 'Count: 1.'; }
     objective 'Storage: Armory' { description 'Count: 1.'; }
     objective 'Storage: Schematic' { description 'Count: 1.'; }
+
+    objective 'Handiwork Pal' { description 'Splatterina (x3). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Base Booster Pal: SAN' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Freezer Pal' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Transport Pal' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
+    objective 'Electrician Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pharmacist Pal' { description 'Bellanoir Libero (x1). R4. +60% WS. Lv. 5 Medicine Production. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
 }
 achievement 'Base: Pal Sphere Factory' {
     description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
@@ -111,7 +117,7 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
     objective 'Snowman' { description 'Count: 1.'; }
     objective 'Electric Pylon' { description 'Count: 1.'; }
-    objective 'Pal Pod' { description 'Count: 15+.'; }
+    objective 'Pal Pod' { description 'Count: 20+.'; }
     objective 'Alpha Wave Generator' { description 'Count: 1.'; }
     objective 'Beta Wave Generator' { description 'Count: 1.'; }
 
@@ -120,9 +126,10 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Miner Pal' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Lumberjack Pal' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Transport Pal' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
-    objective 'Electricity Generator Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Electrician Pal' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Kindling Pal' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Handiwork Pal' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Base Booster Pal: SAN' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
 }
 
 achievement 'Defeat Tower Bosses' {
