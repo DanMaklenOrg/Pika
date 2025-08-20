@@ -50,7 +50,7 @@ achievement 'Party: Misc' {
     }
 }
 achievement 'Party Preset: Barter' {
-    objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].' };
+    objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
 }
 
 achievement 'Base: Main' {
@@ -92,6 +92,9 @@ achievement 'Base: Main' {
     objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
     objective 'Pal: Electrician' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Pharmacist' { description 'Bellanoir Libero (x1). R4. +60% WS. Lv. 5 Medicine Production. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Crusher' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+
+    objective 'NPC: ??' { description 'Count: 1.'; }
 }
 achievement 'Base: Pal Sphere Factory' {
     description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
