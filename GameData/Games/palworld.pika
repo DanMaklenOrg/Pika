@@ -69,6 +69,7 @@ achievement 'Base: Main' {
     objective 'Large Power Generator' { description 'Count: 1.'; }
     objective 'Accumulator' { description 'Count: 2.'; }
     objective 'Monitoring Stand' { description 'Count: 1.'; }
+    objective 'Pal Pod' { description 'Count: 20+.'; }
 
     objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
     objective 'Advanced Workshop' { description 'Count: 1.'; }
@@ -88,9 +89,9 @@ achievement 'Base: Main' {
     objective 'Witch Cauldron' { description 'Count: 1.'; }
     objective 'Large Toolbox' { description 'Count: 1.'; }
 
-    objective 'Storage: Miscellaneous' { description 'Count: 1.'; }
-    objective 'Storage: Armory' { description 'Count: 1.'; }
-    objective 'Storage: Schematic' { description 'Count: 1.'; }
+    objective 'Storage: Miscellaneous' { description 'Count: 1. Advanced Chest (x5+).'; }
+    objective 'Storage: Armory' { description 'Count: 1. Advanced Chest (x5+).'; }
+    objective 'Storage: Schematic' { description 'Count: 1. Advanced Chest (x5+).'; }
 
     objective 'Pal: Handiwork' { description 'Splatterina (x3). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
@@ -112,6 +113,7 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Large Power Generator' { description 'Count: 1.'; }
     objective 'Accumulator' { description 'Count: 2.'; }
     objective 'Monitoring Stand' { description 'Count: 1.'; }
+    objective 'Pal Pod' { description 'Count: 20+.'; }
 
     objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
     objective 'Advanced Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
@@ -126,7 +128,6 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
     objective 'Snowman' { description 'Count: 1.'; }
     objective 'Electric Pylon' { description 'Count: 1.'; }
-    objective 'Pal Pod' { description 'Count: 20+.'; }
     objective 'Alpha Wave Generator' { description 'Count: 1.'; }
     objective 'Beta Wave Generator' { description 'Count: 1.'; }
 
@@ -139,6 +140,15 @@ achievement 'Base: Pal Sphere Factory' {
     objective 'Pal: Kindling' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Handiwork' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+}
+achievement 'Base: Raid Boss' {
+    description 'Build base dedicated for fighting raid bosses.';
+
+    objective 'Pal Pod' { description 'Count: 20+.'; }
+    objective 'Palbox Control Device' { description 'Count: 1+.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Storage: Repair' { description 'Count: 1. Advanced Chest. For storing repair kits. Max Health/Defense to survive.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on attack food (e.g. Mammorest Curry).'; }
 }
 
 achievement 'Defeat Tower Bosses' {
