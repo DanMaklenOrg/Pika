@@ -50,10 +50,7 @@ achievement 'Party: Misc' {
     objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Chromite' { description 'Smokie. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
 
-    // ....
-    objective 'Dogen' {
-        description 'Useful for fast teleport home.';
-    }
+    objective 'Utility: Base Teleport' { description 'Dogen. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 achievement 'Party Preset: Barter' {
     objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
