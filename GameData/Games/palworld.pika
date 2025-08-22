@@ -41,13 +41,12 @@ achievement 'Unlock Great Eagle Statues' {
 }
 achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
-    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-
     objective 'Mount: Air - Sprint' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
     objective 'Mount: Air - Sustain' { description 'Xenolord. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Eternal Engine, Swift, Runner, Nimble].  Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
     objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
     objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
 
+    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Chromite' { description 'Smokie. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
 
