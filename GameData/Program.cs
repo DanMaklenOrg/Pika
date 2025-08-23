@@ -18,7 +18,6 @@ builder.Services.AddTransient<IScrapper, HadesScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();
-builder.Services.AddTransient<SteamScrapperHelper>();
 builder.Services.AddPikaParser();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();

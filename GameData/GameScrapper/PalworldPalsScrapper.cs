@@ -16,6 +16,8 @@ public class PalworldPalsScrapper : IScrapper
         game.Entities.AddRange(await ScrapePals());
         game.Entities.AddRange(await ScrapeTerrariaCreatures());
         game.Entities.AddRange(await ScrapePassiveSkills());
+        game.Entities.AddRange(await ScrapeAlphaBossPals());
+        game.Entities.AddRange(await ScrapeMissions());
     }
 
     private async Task<List<Entity>> ScrapePals()
@@ -58,5 +60,41 @@ public class PalworldPalsScrapper : IScrapper
             var id = ScrapperHelper.InduceIdFromName(name, "passive_skill");
             return new Entity(id, name, "passive_skill");
         }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeAlphaBossPals()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Alpha_Pals");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col']").Where(n => n.InnerText.Contains("Bounty Token"));
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//a[@class='itemname']").InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "pal_boss");
+            return new Entity(id, name, "pal_boss");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeMissions()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Mission");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col']/div/div[2]/div");
+        int palCriticRequestCount = 1;
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.SelectSingleNode("./div[1]").InnerText);
+            var missionType = ScrapperHelper.CleanName(n.SelectSingleNode("./div[2]").InnerText);
+            if (name == string.Empty)
+            {
+                name = $"Request from Pal Critic ({palCriticRequestCount++})";
+            }
+            var tag = missionType switch
+            {
+                "Main Mission" => "mission_main",
+                "Sub Mission" => "mission_sub",
+                _ => throw new NotSupportedException(),
+            };
+            var id = ScrapperHelper.InduceIdFromName(name, "mission");
+            return new Entity(id, name, "mission") { Tags = [tag] };
+        }).Where(e => e.Name != "How to Stay Alive").ToList();
     }
 }

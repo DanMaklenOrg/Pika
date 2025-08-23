@@ -10,6 +10,7 @@ achievement 'Ultimate Tamer' {
     objective 'Capture all Terraria creatures' {
         criterion terraria_creature;
     }
+    objective 'Befriend Zoe & Grizbolt';
 }
 achievement 'Max Player Level' {
     description 'Reach level 65.';
@@ -35,25 +36,36 @@ achievement 'Bounty Hunter' {
     description 'Defeat all wanted fugitives at least once.';
     criterion wanted_fugitive;
 }
+achievement 'Mission Complete' {
+    description 'Complete all the missions';
+    criterion mission;
+}
+achievement 'Alpha Killer' {
+    description 'Kill all alpha pal bosses at least once.'
+    criterion pal_boss;
+}
 achievement 'Unlock Great Eagle Statues' {
     description 'Unlock fast travel points at all Great Eagle Statues';
     criterion great_eagle_statue;
 }
 achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
-    objective 'Mount: Air - Sprint' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-    objective 'Mount: Air - Sustain' { description 'Xenolord. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Eternal Engine, Swift, Runner, Nimble].  Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-    objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Air - Sprint' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Mount: Air - Sustain' { description 'Xenolord. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Eternal Engine, Swift, Runner, Nimble].  Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
 
-    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-    objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Chromite' { description 'Smokie. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
 
     objective 'Utility: Base Teleport' { description 'Dogen. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 achievement 'Party Preset: Barter' {
     objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
+}
+achievement 'Party: Arena' {
+    objective 'Orserk' { description 'x3. R4. IVs: 3x100. +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives: [Legend, Demon God, Serenity, Musclehead]. Active Skills: [Lightning Bolt, Beam Slicer, Meteorain].'; }
 }
 
 achievement 'Base: Main' {
@@ -158,7 +170,7 @@ achievement 'Implant Collector' {
 }
 achievement 'Base: Breeding Farm' {
     description 'TODO';
-    objective 'Braloha' { description 'Count: 1. R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater]. Not Alpha'; }
+    objective 'Braloha' { description 'Count: 1. R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
 }
 achievement 'NPC Collection' {
     description 'Capture key NPCs';
@@ -174,6 +186,12 @@ category great_eagle_statue;
 category tower_boss;
 category implant;
 category passive_skill;
+category mission;
+category pal_boss;
+
+// Tags
+tag mission_main ~> 'Main Mission';
+tag mission_sub ~> 'Sub Mission';
 
 // Entities
 field_boss 'Anubis';
