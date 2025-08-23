@@ -106,7 +106,9 @@ achievement 'Base: Main' {
     objective 'Pal: Pharmacist' { description 'Bellanoir Libero (x1). R4. +60% WS. Lv. 5 Medicine Production. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Crusher' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
 
-    objective 'NPC: ??' { description 'Count: 1.'; }
+    objective 'NPC: Caravan Leader' { description 'Count: 1.'; }
+    objective 'NPC: Wandering Merchant' { description 'Count: 1.'; }
+    objective 'NPC: Medal Merchant' { description 'Count: 1.'; }
 }
 achievement 'Base: Pal Sphere Factory' {
     description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
@@ -166,11 +168,8 @@ achievement 'Implant Collector' {
 }
 achievement 'Base: Breeding Farm' {
     description 'TODO';
-    objective 'Braloha' { description 'Count: 1. R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-}
-achievement 'NPC Collection' {
-    description 'Capture key NPCs';
-    objective 'Dr. Brawn';
+    objective 'Base Booster: Breed Speed' { description 'Braloha (x1). R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'NPC: Dr. Brawn' { description 'Count: 1.'; }
 }
 
 // Categories
