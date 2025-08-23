@@ -12,9 +12,7 @@ achievement 'Ultimate Tamer' {
     }
     objective 'Befriend Zoe & Grizbolt';
 }
-achievement 'Max Player Level' {
-    description 'Reach level 65.';
-}
+achievement 'Max Player Level' { description 'Reach level 65.'; }
 achievement 'Max Player Stats' {
     objective 'Max Health';
     objective 'Max Stamina';
@@ -22,12 +20,8 @@ achievement 'Max Player Stats' {
     objective 'Max Work Speed';
     objective 'Max Weight';
 }
-achievement 'Max Capture Power Level' {
-    description 'Collect enough Lifmunk Effigies to reach capture power level of 14.';
-}
-achievement 'Max Base Level' {
-    description 'Upgrade your base to level 30.';
-}
+achievement 'Max Capture Power Level' { description 'Collect enough Lifmunk Effigies to reach capture power level of 14.'; }
+achievement 'Max Base Level' { description 'Upgrade your base to level 30.'; }
 achievement 'Field Bosses Defeated' {
     description 'Defeat all field bosses present in the world at least once.';
     criterion field_boss;
@@ -44,6 +38,15 @@ achievement 'Unlock Great Eagle Statues' {
     description 'Unlock fast travel points at all Great Eagle Statues';
     criterion great_eagle_statue;
 }
+achievement 'Defeat Tower Bosses' {
+    objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
+    objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
+}
+achievement 'Implant Collector' {
+    description 'Collect all pal passive skill implants.';
+    criterion implant;
+}
+
 achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
     objective 'Mount: Air - Sprint' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
@@ -156,15 +159,6 @@ achievement 'Base: Raid Boss' {
     objective 'Guild Chest' { description 'Count: 1.'; }
     objective 'Storage: Repair' { description 'Count: 1. Advanced Chest. For storing repair kits. Max Health/Defense to survive.'; }
     objective 'Cool Food Box' { description 'Count: 1. Stock up on attack food (e.g. Mammorest Curry).'; }
-}
-
-achievement 'Defeat Tower Bosses' {
-    objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
-    objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
-}
-achievement 'Implant Collector' {
-    description 'Collect all pal passive skill implants.';
-    criterion implant;
 }
 achievement 'Base: Breeding Farm' {
     description 'TODO';
