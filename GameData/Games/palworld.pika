@@ -90,7 +90,7 @@ achievement 'Base: Main' {
     objective 'Storage: Armory' { description 'Count: 1. Advanced Chest (x5+).'; }
     objective 'Storage: Schematic' { description 'Count: 1. Advanced Chest (x5+).'; }
 
-    objective 'Pal: Handiwork' { description 'Splatterina (x3). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Handiwork' { description 'Splatterina (x4). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
     objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
     objective 'Pal: Freezer' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
     objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
