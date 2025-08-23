@@ -16,7 +16,6 @@ public class PalworldPalsScrapper : IScrapper
         game.Entities.AddRange(await ScrapePals());
         game.Entities.AddRange(await ScrapeTerrariaCreatures());
         game.Entities.AddRange(await ScrapePassiveSkills());
-        game.Entities.AddRange(await ScrapeAlphaBossPals());
         game.Entities.AddRange(await ScrapeMissions());
     }
 
@@ -59,18 +58,6 @@ public class PalworldPalsScrapper : IScrapper
             var name = ScrapperHelper.CleanName(n.InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "passive_skill");
             return new Entity(id, name, "passive_skill");
-        }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeAlphaBossPals()
-    {
-        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Alpha_Pals");
-        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col']").Where(n => n.InnerText.Contains("Bounty Token"));
-        return nodes.Select(n =>
-        {
-            var name = ScrapperHelper.CleanName(n.SelectSingleNode(".//a[@class='itemname']").InnerText);
-            var id = ScrapperHelper.InduceIdFromName(name, "pal_boss");
-            return new Entity(id, name, "pal_boss");
         }).ToList();
     }
 

@@ -40,10 +40,6 @@ achievement 'Mission Complete' {
     description 'Complete all the missions';
     criterion mission;
 }
-achievement 'Alpha Killer' {
-    description 'Kill all alpha pal bosses at least once.'
-    criterion pal_boss;
-}
 achievement 'Unlock Great Eagle Statues' {
     description 'Unlock fast travel points at all Great Eagle Statues';
     criterion great_eagle_statue;
@@ -187,7 +183,6 @@ category tower_boss;
 category implant;
 category passive_skill;
 category mission;
-category pal_boss;
 
 // Tags
 tag mission_main ~> 'Main Mission';
