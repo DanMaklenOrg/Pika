@@ -42,10 +42,6 @@ achievement 'Defeat Tower Bosses' {
     objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
     objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
 }
-achievement 'Implant Collector' {
-    description 'Collect all pal passive skill implants.';
-    criterion implant;
-}
 
 achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
@@ -166,6 +162,9 @@ achievement 'Base: Breeding Farm' {
     objective 'NPC: Dr. Brawn' { description 'Count: 1.'; }
 }
 
+achievement 'Collector: Implant' { criterion implant; }
+//achievement 'Collector: Accessories' { criterion accessory; }
+
 // Categories
 category pal;
 category terraria_creature;
@@ -173,120 +172,15 @@ category field_boss;
 category wanted_fugitive;
 category great_eagle_statue;
 category tower_boss;
-category implant;
-category passive_skill;
 category mission;
+category implant;
+//category accessory;
 
 // Tags
 tag mission_main ~> 'Main Mission';
 tag mission_sub ~> 'Sub Mission';
 
 // Entities
-field_boss 'Anubis';
-field_boss 'Astegon';
-field_boss 'Azurmane';
-field_boss 'Azurobe';
-field_boss 'Beakon';
-field_boss 'Blazamut';
-field_boss 'Broncherry';
-field_boss 'Broncherry Aqua';
-field_boss 'Bushi';
-field_boss 'Caprity Noct';
-field_boss 'Celesdir';
-field_boss 'Chillet';
-field_boss 'Cryolinx Terra';
-field_boss 'Dazzi Noct';
-field_boss 'Dinossom Lux';
-field_boss 'Dumud';
-field_boss 'Elizabee';
-field_boss 'Elphidran';
-field_boss 'Faleris Aqua';
-field_boss 'Felbat';
-field_boss 'Fenglope';
-field_boss 'Fenglope Lux';
-field_boss 'Foxparks Cryst';
-field_boss 'Frostallion';
-field_boss 'Frostallion Noct';
-field_boss 'Gildane';
-field_boss 'Grintale';
-field_boss 'Gumoss';
-field_boss 'Jetragon';
-field_boss 'Jormuntide';
-field_boss 'Katress';
-field_boss 'Kingpaca';
-field_boss 'Kingpaca Cryst';
-field_boss 'Kitsun Noct';
-field_boss 'Knocklem';
-field_boss 'Loupmoon Cryst';
-field_boss 'Lunaris';
-field_boss 'Lyleen Noct';
-field_boss 'Mammorest';
-field_boss 'Menasting';
-field_boss 'Menasting Terra';
-field_boss 'Mossanda Lux';
-field_boss 'Nepltilius';
-field_boss 'Nitemary';
-field_boss 'Nitewing';
-field_boss 'Nyafia';
-field_boss 'Omascul';
-field_boss 'Paladius';
-field_boss 'Penking';
-field_boss 'Petallia';
-field_boss 'Prunelia';
-field_boss 'Quivern';
-field_boss 'Relaxaurus Lux';
-field_boss 'Ribbuny Botan';
-field_boss 'Sibelyx';
-field_boss 'Silvegis';
-field_boss 'Smokie';
-field_boss 'Splatterina';
-field_boss 'Starryon';
-field_boss 'Suzaku';
-field_boss 'Sweepa';
-field_boss 'Tarantriss';
-field_boss 'Univolt';
-field_boss 'Vaelet';
-field_boss 'Verdash';
-field_boss 'Warsect';
-field_boss 'Warsect Terra';
-field_boss 'Whalaska';
-field_boss 'Whalaska Ignis';
-field_boss 'Wumpo Botan';
-
-wanted_fugitive 'Aloha';
-wanted_fugitive 'Billy';
-wanted_fugitive 'Brick';
-wanted_fugitive 'Cache';
-wanted_fugitive 'Clint';
-wanted_fugitive 'Crash';
-wanted_fugitive 'Dart';
-wanted_fugitive 'Dazzle';
-wanted_fugitive 'Dyna';
-wanted_fugitive 'Ego';
-wanted_fugitive 'Flare';
-wanted_fugitive 'Fumble';
-wanted_fugitive 'Gnaw';
-wanted_fugitive 'Grill';
-wanted_fugitive 'Hawk';
-wanted_fugitive 'Jade';
-wanted_fugitive 'Lasso';
-wanted_fugitive 'Mimic';
-wanted_fugitive 'Mite';
-wanted_fugitive 'Nimble';
-wanted_fugitive 'Phantom';
-wanted_fugitive 'Pinch';
-wanted_fugitive 'Quill';
-wanted_fugitive 'Ram';
-wanted_fugitive 'Scoot';
-wanted_fugitive 'Shadow';
-wanted_fugitive 'Siren';
-wanted_fugitive 'Skim';
-wanted_fugitive 'Turncoat';
-wanted_fugitive 'Urchin';
-wanted_fugitive 'Whip';
-wanted_fugitive 'Whisk';
-wanted_fugitive 'Whisper';
-
 great_eagle_statue 'Ancient Civilization Ruins';
 great_eagle_statue 'Ancient Ritual Site';
 great_eagle_statue 'Arena Entrance';
@@ -369,14 +263,6 @@ great_eagle_statue 'Stone Pillar Cave Entrance';
 great_eagle_statue 'Sunlit Isle';
 great_eagle_statue 'The Oculus Gate, Tower in Sight';
 great_eagle_statue 'Unthawable Lake';
-
-tower_boss 'Zoe & Grizzbolt';
-tower_boss 'Lily & Lyleen';
-tower_boss 'Axel & Orserk';
-tower_boss 'Marcus & Faleris';
-tower_boss 'Victor & Shadowbeak';
-tower_boss 'Saya & Selyne';
-tower_boss 'Bjorn & Bastigor';
 
 implant 'Implant: Serenity';
 implant 'Implant: Infinite Stamina';
