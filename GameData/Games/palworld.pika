@@ -162,7 +162,7 @@ achievement 'Base: Breeding Farm' {
     objective 'NPC: Dr. Brawn' { description 'Count: 1.'; }
 }
 
-achievement 'Collector: Implant' { criterion implant; }
+achievement 'Collector: Implants' { criterion implant; }
 //achievement 'Collector: Accessories' { criterion accessory; }
 
 // Categories
@@ -263,10 +263,3 @@ great_eagle_statue 'Stone Pillar Cave Entrance';
 great_eagle_statue 'Sunlit Isle';
 great_eagle_statue 'The Oculus Gate, Tower in Sight';
 great_eagle_statue 'Unthawable Lake';
-
-implant 'Implant: Serenity';
-implant 'Implant: Infinite Stamina';
-implant 'Implant: Runner';
-implant 'Implant: Burly Body';
-implant 'Implant: Artisan';
-implant 'Implant: Musclehead';

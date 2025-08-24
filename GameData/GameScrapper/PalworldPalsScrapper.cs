@@ -20,6 +20,7 @@ public class PalworldPalsScrapper : IScrapper
         game.Entities.AddRange(await ScrapeFieldBosses());
         game.Entities.AddRange(await ScrapeWantedFugitives());
         game.Entities.AddRange(await ScrapeTowerBosses());
+        game.Entities.AddRange(await ScrapeImplants());
     }
 
     private async Task<List<Entity>> ScrapePals()
@@ -110,6 +111,18 @@ public class PalworldPalsScrapper : IScrapper
             var name = RenameTowerBoss(ScrapperHelper.CleanName(n.InnerText));
             var id = ScrapperHelper.InduceIdFromName(name, "tower_boss");
             return new Entity(id, name, "tower_boss");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeImplants()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pal_Surgery_Table#Surgery");
+        var nodes = doc.DocumentNode.SelectNodes("//table/tbody/tr/td[2 and contains(., 'Implant') and not(.//i)]//a");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText).Replace("Implant: ", string.Empty);
+            var id = ScrapperHelper.InduceIdFromName(name, "implant");
+            return new Entity(id, name, "implant");
         }).ToList();
     }
 
