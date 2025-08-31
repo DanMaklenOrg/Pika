@@ -21,6 +21,7 @@ public class PalworldPalsScrapper : IScrapper
         game.Entities.AddRange(await ScrapeWantedFugitives());
         game.Entities.AddRange(await ScrapeTowerBosses());
         game.Entities.AddRange(await ScrapeImplants());
+        game.Entities.AddRange(await ScrapeAccessories());
     }
 
     private async Task<List<Entity>> ScrapePals()
@@ -96,7 +97,7 @@ public class PalworldPalsScrapper : IScrapper
         var nodes = doc.DocumentNode.SelectNodes("//div[@class='col' and not(.//i) and not(contains(., 'Chopper'))]//a[@class = 'itemname']");
         return nodes.Select(n =>
         {
-            var name = RenameWantedFugitive(ScrapperHelper.CleanName(n.InnerText));
+            var name = RenameWantedFugitive(ScrapperHelper.CleanName(n.InnerText).Replace("  ", " "));
             var id = ScrapperHelper.InduceIdFromName(name, "wanted_fugitive");
             return new Entity(id, name, "wanted_fugitive");
         }).ToList();
@@ -123,6 +124,18 @@ public class PalworldPalsScrapper : IScrapper
             var name = ScrapperHelper.CleanName(n.InnerText).Replace("Implant: ", string.Empty);
             var id = ScrapperHelper.InduceIdFromName(name, "implant");
             return new Entity(id, name, "implant");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeAccessories()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Accessory");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col' and not(.//i)]//a[@class='itemname' and not(./img)]");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "accessory");
+            return new Entity(id, name, "accessory");
         }).ToList();
     }
 

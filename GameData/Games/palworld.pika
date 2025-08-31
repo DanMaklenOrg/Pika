@@ -163,7 +163,7 @@ achievement 'Base: Breeding Farm' {
 }
 
 achievement 'Collector: Implants' { criterion implant; }
-//achievement 'Collector: Accessories' { criterion accessory; }
+achievement 'Collector: Accessories' { criterion accessory; }
 
 // Categories
 category pal;
@@ -174,7 +174,7 @@ category great_eagle_statue;
 category tower_boss;
 category mission;
 category implant;
-//category accessory;
+category accessory;
 
 // Tags
 tag mission_main ~> 'Main Mission';
