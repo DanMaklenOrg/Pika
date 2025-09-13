@@ -47,7 +47,7 @@ achievement 'Party: Misc' {
     description 'Build a collection of perfect party pals all at max level and Rank 4.';
     objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
     objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
 
     objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
@@ -67,7 +67,7 @@ achievement 'Party Preset: Fishing' {
     objective 'Drop Booster: Fishing' { description 'Jelliette x3. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 achievement 'Party Preset: Salvage' {
-    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
     objective 'Drop Booster: Salvage' { description 'Jellroy x4. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 
@@ -81,7 +81,9 @@ achievement 'Base: Main' {
     objective 'Large Power Generator' { description 'Count: 1.'; }
     objective 'Accumulator' { description 'Count: 2.'; }
     objective 'Monitoring Stand' { description 'Count: 1.'; }
-    objective 'Pal Pod' { description 'Count: 20+.'; }
+    objective 'Pal Pod' { description 'Count: 15+.'; }
+    objective 'Global Palbox' { description 'Count: 1.'; }
+    objective 'Dimensional Pal Storage' { description 'Count: 1.'; }
 
     objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
     objective 'Advanced Workshop' { description 'Count: 1.'; }
