@@ -56,10 +56,19 @@ achievement 'Party: Misc' {
     objective 'Utility: Base Teleport' { description 'Dogen. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 achievement 'Party Preset: Barter' {
-    objective 'Mau' { description 'x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
+    objective 'Barter' { description ' Mau x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
 }
-achievement 'Party: Arena' {
-    objective 'Orserk' { description 'x3. R4. IVs: 3x100. +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives: [Legend, Demon God, Serenity, Musclehead]. Active Skills: [Lightning Bolt, Beam Slicer, Meteorain].'; }
+achievement 'Party Preset: Arena' {
+    objective 'Champion' { description 'Orserk x3. R4. IVs: 3x100. +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives: [Legend, Demon God, Serenity, Musclehead]. Active Skills: [Lightning Bolt, Beam Slicer, Meteorain].'; }
+}
+achievement 'Party Preset: Fishing' {
+    objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Fisherman' { description 'Whalaska Ignis. R4. Passives: [Vanguard, Stronghold Strategist, Swift, Runner].'; }
+    objective 'Drop Booster: Fishing' { description 'Jelliette x3. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
+}
+achievement 'Party Preset: Salvage' {
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Salvage' { description 'Jellroy x4. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
 
 achievement 'Base: Main' {
