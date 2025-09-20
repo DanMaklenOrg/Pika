@@ -1,0 +1,4 @@
+game hollow_knight ~> 'Hollow Knight';
+import steam(367520);
+
+achievement 'Tram Pass' { description 'Obtain the Tram Pass'; }
