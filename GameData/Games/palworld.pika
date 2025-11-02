@@ -1,18 +1,275 @@
 game palworld ~> 'Palworld';
+import steam(1623730);
 
 // Achievements
-achievement 'Capture All Pals' {
-    objective 'Capture all pals at least 12 times each' {
-        require pal; //.captured >= 12;
+achievement 'Ultimate Tamer' {
+    objective 'Capture all Pals x12' {
+        description 'Capture all pals at least 12 times each.';
+        criterion pal;
     }
+    objective 'Capture all Terraria creatures' {
+        criterion terraria_creature;
+    }
+    objective 'Befriend Zoe & Grizbolt';
+}
+achievement 'Max Player Level' { description 'Reach level 65.'; }
+achievement 'Max Player Stats' {
+    objective 'Max Health';
+    objective 'Max Stamina';
+    objective 'Max Attack';
+    objective 'Max Work Speed';
+    objective 'Max Weight';
+}
+achievement 'Max Capture Power Level' { description 'Collect enough Lifmunk Effigies to reach capture power level of 14.'; }
+achievement 'Max Base Level' { description 'Upgrade your base to level 30.'; }
+achievement 'Field Bosses Defeated' {
+    description 'Defeat all field bosses present in the world at least once.';
+    criterion field_boss;
+}
+achievement 'Bounty Hunter' {
+    description 'Defeat all wanted fugitives at least once.';
+    criterion wanted_fugitive;
+}
+achievement 'Mission Complete' {
+    description 'Complete all the missions';
+    criterion mission;
+}
+achievement 'Unlock Great Eagle Statues' {
+    description 'Unlock fast travel points at all Great Eagle Statues';
+    criterion great_eagle_statue;
+}
+achievement 'Defeat Tower Bosses' {
+    objective 'Defeat all tower bosses (Normal)' { criterion tower_boss; }
+    objective 'Defeat all tower bosses (Hard)' { criterion tower_boss; }
 }
 
-// Classes
-class pal {
-    stat<int(0, 12)> captured ~> 'Captured';
+achievement 'Party: Misc' {
+    description 'Build a collection of perfect party pals all at max level and Rank 4.';
+    objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+
+    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Chromite' { description 'Smokie. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
+
+    objective 'Utility: Base Teleport' { description 'Dogen. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
 }
+achievement 'Party Preset: Barter' {
+    objective 'Barter' { description ' Mau x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
+}
+achievement 'Party Preset: Arena' {
+    objective 'Champion' { description 'Orserk x3. R4. IVs: 3x100. +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives: [Legend, Demon God, Serenity, Musclehead]. Active Skills: [Lightning Bolt, Beam Slicer, Meteorain].'; }
+}
+achievement 'Party Preset: Fishing' {
+    objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
+    objective 'Fisherman' { description 'Whalaska Ignis. R4. Passives: [Vanguard, Stronghold Strategist, Swift, Runner].'; }
+    objective 'Drop Booster: Fishing' { description 'Jelliette x3. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
+}
+achievement 'Party Preset: Salvage' {
+    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
+    objective 'Drop Booster: Salvage' { description 'Jellroy x4. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
+}
+
+achievement 'Base: Main' {
+    description 'Build a main base with storage, general crafting and collectables.';
+    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
+    objective 'Japanese-Style Hot Sprint' { description 'Count: 3+.'; }
+    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
+    objective 'Large Power Generator' { description 'Count: 1.'; }
+    objective 'Accumulator' { description 'Count: 2.'; }
+    objective 'Monitoring Stand' { description 'Count: 1.'; }
+    objective 'Pal Pod' { description 'Count: 15+.'; }
+    objective 'Global Palbox' { description 'Count: 1.'; }
+    objective 'Dimensional Pal Storage' { description 'Count: 1.'; }
+
+    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
+    objective 'Advanced Workshop' { description 'Count: 1.'; }
+    objective 'Advanced Weapon Assembly Line' { description 'Count: 1.'; }
+    objective 'Pal Gear Workbench' { description 'Count: 1.'; }
+    objective 'Refrigerated Crusher' { description 'Count: 1.'; }
+    objective 'Advanced Medicine Workbench' { description 'Count: 1.'; }
+    objective 'Repair Bench' { description 'Count: 1.'; }
+    objective 'Drafting Table' { description 'Count: 1.'; }
+    objective 'Pal Expedition Station' { description 'Count: 1.'; }
+    objective 'Large Fishing Pond' { description 'Count: 1.'; }
+
+    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
+    objective 'Beta Wave Generator' { description 'Count: 1.'; }
+    objective 'Snowman' { description 'Count: 1.'; }
+    objective 'Electric Pylon' { description 'Count: 1.'; }
+    objective 'Witch Cauldron' { description 'Count: 1.'; }
+    objective 'Large Toolbox' { description 'Count: 1.'; }
+
+    objective 'Storage: Miscellaneous' { description 'Count: 1. Advanced Chest (x5+).'; }
+    objective 'Storage: Armory' { description 'Count: 1. Advanced Chest (x5+).'; }
+    objective 'Storage: Schematic' { description 'Count: 1. Advanced Chest (x5+).'; }
+
+    objective 'Pal: Handiwork' { description 'Splatterina (x4). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Pal: Freezer' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
+    objective 'Pal: Electrician' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Pharmacist' { description 'Bellanoir Libero (x1). R4. +60% WS. Lv. 5 Medicine Production. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Crusher' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+
+    objective 'NPC: Caravan Leader' { description 'Count: 1.'; }
+    objective 'NPC: Wandering Merchant' { description 'Count: 1.'; }
+    objective 'NPC: Medal Merchant' { description 'Count: 1.'; }
+}
+achievement 'Base: Pal Sphere Factory' {
+    description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
+    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
+    objective 'Japanese-Style Hot Spring' { description 'Count: 3+.'; }
+    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
+    objective 'Large Power Generator' { description 'Count: 1.'; }
+    objective 'Accumulator' { description 'Count: 2.'; }
+    objective 'Monitoring Stand' { description 'Count: 1.'; }
+    objective 'Pal Pod' { description 'Count: 20+.'; }
+
+    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
+    objective 'Advanced Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
+    objective 'Gigantic Furnace' { description 'Count: 5. 2 for Pal Metal Ingot and 3 for Charcoal.'; }
+    objective 'Ore Mining Site II' { description 'Count: 2'; }
+    objective 'Stone Pit' { description 'Count: 1.'; }
+    objective 'Logging Site' { description 'Count: 1.'; }
+
+    objective 'Stump and Axe' { description 'Count: 1.'; }
+    objective 'Flame Cauldron' { description 'Count: 1.'; }
+    objective 'Large Toolbox' { description 'Count: 1.'; }
+    objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
+    objective 'Snowman' { description 'Count: 1.'; }
+    objective 'Electric Pylon' { description 'Count: 1.'; }
+    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
+    objective 'Beta Wave Generator' { description 'Count: 1.'; }
+
+    objective 'NPC: Merchant' { description 'Wandering Merchant (x1). A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
+    objective 'Pal: Freezer' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'Pal: Miner' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Lumberjack' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
+    objective 'Pal: Electrician' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Kindling' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Handiwork' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
+    objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+}
+achievement 'Base: Raid Boss' {
+    description 'Build base dedicated for fighting raid bosses.';
+
+    objective 'Pal Pod' { description 'Count: 20+.'; }
+    objective 'Palbox Control Device' { description 'Count: 1+.'; }
+    objective 'Guild Chest' { description 'Count: 1.'; }
+    objective 'Storage: Repair' { description 'Count: 1. Advanced Chest. For storing repair kits. Max Health/Defense to survive.'; }
+    objective 'Cool Food Box' { description 'Count: 1. Stock up on attack food (e.g. Mammorest Curry).'; }
+}
+achievement 'Base: Breeding Farm' {
+    description 'TODO';
+    objective 'Base Booster: Breed Speed' { description 'Braloha (x1). R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
+    objective 'NPC: Dr. Brawn' { description 'Count: 1.'; }
+}
+
+achievement 'Collector: Implants' { criterion implant; }
+achievement 'Collector: Accessories' { criterion accessory; }
+
+// Categories
+category pal;
+category terraria_creature;
+category field_boss;
+category wanted_fugitive;
+category great_eagle_statue;
+category tower_boss;
+category mission;
+category implant;
+category accessory;
+
+// Tags
+tag mission_main ~> 'Main Mission';
+tag mission_sub ~> 'Sub Mission';
 
 // Entities
-pal pal_blazamut_ryu ~> '096B: Blazamut Ryu';
-pal pal_bellanoir ~> '112: Bellanoir';
-pal pal_bellanoir_libero ~> '112B: Bellanoir Libero';
+great_eagle_statue 'Ancient Civilization Ruins';
+great_eagle_statue 'Ancient Ritual Site';
+great_eagle_statue 'Arena Entrance';
+great_eagle_statue 'Ascetic Falls';
+great_eagle_statue 'Beach of Everlasting Summer';
+great_eagle_statue 'Bridge of the Twin Knights';
+great_eagle_statue 'Cherry Blossom Crossroads';
+great_eagle_statue 'Cinnamoth Forest';
+great_eagle_statue 'Cold Shore';
+great_eagle_statue 'Deep Bamboo Thicket';
+great_eagle_statue 'Deep Sand Dunes';
+great_eagle_statue 'Deserted Ash Plateau';
+great_eagle_statue 'Desolate Church';
+great_eagle_statue 'Duneshelter';
+great_eagle_statue 'Eastern Wild Island';
+great_eagle_statue 'Emberstone Plateau';
+great_eagle_statue 'Eternal Pyre Tower Entrance';
+great_eagle_statue 'Feybreak Shipwreck';
+great_eagle_statue 'Feybreak Tower Entrance';
+great_eagle_statue 'Fisherman\'s Point';
+great_eagle_statue 'Foot of the Volcano';
+great_eagle_statue 'Forgotten Island';
+great_eagle_statue 'Forgotten Island Church Ruins';
+great_eagle_statue 'Fort Ruins';
+great_eagle_statue 'Free Pal Alliance Tower Entrance';
+great_eagle_statue 'Frostbitten Isle';
+great_eagle_statue 'Gobfin\'s Turf';
+great_eagle_statue 'Grassy Behemoth Hills';
+great_eagle_statue 'Hidden Passage to the Oculus Gate';
+great_eagle_statue 'Hypocrite Hill';
+great_eagle_statue 'Ice Wind Island';
+great_eagle_statue 'Icy Weasel Hill';
+great_eagle_statue 'Investigator\'s Fork';
+great_eagle_statue 'Islandhopper Coast';
+great_eagle_statue 'Isle of Decayed Treasures';
+great_eagle_statue 'Isle of the Glacial Core';
+great_eagle_statue 'Kelpsea Hill';
+great_eagle_statue 'Lake Center';
+great_eagle_statue 'Land of Absolute Zero';
+great_eagle_statue 'Loess Plains';
+great_eagle_statue 'Marsh Island';
+great_eagle_statue 'Marsh Island Church Ruins';
+great_eagle_statue 'Moonflower Tower Entrance';
+great_eagle_statue 'Mossanda Forest';
+great_eagle_statue 'Mount Flopie Summit';
+great_eagle_statue 'Mount Obsidian - Anubis Statue';
+great_eagle_statue 'Mount Obsidian - Midpoint';
+great_eagle_statue 'Natural Bridge';
+great_eagle_statue 'No Man\'s Trail';
+great_eagle_statue 'Oasis Isle';
+great_eagle_statue 'PAL Genetic Research Unit Tower Entrance';
+great_eagle_statue 'Phantom Isle';
+great_eagle_statue 'PIDF Tower Entrance';
+great_eagle_statue 'Plateau of Beginnings';
+great_eagle_statue 'Pristine Snow Field';
+great_eagle_statue 'Ravine Entrance';
+great_eagle_statue 'Rayne Syndicate Tower Entrance';
+great_eagle_statue 'Ruined Fortress City';
+great_eagle_statue 'Sakurajima - Mushroom Wetlands';
+great_eagle_statue 'Sakurajima - Northern Rock Field';
+great_eagle_statue 'Sakurajima - Southern Sandbar';
+great_eagle_statue 'Sand Dunes Entrance';
+great_eagle_statue 'Scorched Ashland';
+great_eagle_statue 'Scorched Hill';
+great_eagle_statue 'Sea Breeze Archipelago - Castaway Beach';
+great_eagle_statue 'Sea Breeze Archipelago Church';
+great_eagle_statue 'Sealed Realm of Terraria';
+great_eagle_statue 'Sealed Realm of the Frozen Wings';
+great_eagle_statue 'Sealed Realm of the Guardian';
+great_eagle_statue 'Sealed Realm of the Swift';
+great_eagle_statue 'Sealed Realm of the Swordmaster';
+great_eagle_statue 'Sealed Realm of the Thunder Dragon';
+great_eagle_statue 'Sealed Realm of the Winged Tyrant';
+great_eagle_statue 'Secluded Cemetery';
+great_eagle_statue 'Shield Dragon Tunnel';
+great_eagle_statue 'Small Cove';
+great_eagle_statue 'Small Settlement';
+great_eagle_statue 'Snowy Mountain Crossroads';
+great_eagle_statue 'Stone Pillar Cave Entrance';
+great_eagle_statue 'Sunlit Isle';
+great_eagle_statue 'The Oculus Gate, Tower in Sight';
+great_eagle_statue 'Unthawable Lake';
