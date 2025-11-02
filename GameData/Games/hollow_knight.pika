@@ -1,0 +1,33 @@
+game hollow_knight ~> 'Hollow Knight';
+import steam(367520);
+
+achievement 'Tram Pass' { description 'Obtain the Tram Pass'; }
+achievement 'Unbreakable Charms' {
+    description 'Obtain all 3 unbreakable charms';
+    objective 'Unbreakable Greed';
+    objective 'Unbreakable Heart';
+    objective 'Unbreakable Strength';
+}
+achievement 'Complete Path of Pain';
+achievement 'Radiant Hall of Gods' {
+    objective 'Defeat all bosses in Hall of Gods on Attuned difficulty';
+    objective 'Defeat all bosses in Hall of Gods on Ascended difficulty';
+    objective 'Defeat all bosses in Hall of Gods on Radiant difficulty';
+}
+achievement 'Menu Style Collection' {
+    description 'Unlock all menu styles';
+    criterion menu_style;
+}
+
+category menu_style;
+
+menu_style 'Classic';
+menu_style 'Hidden Dreams';
+menu_style 'Grimm Troupe';
+menu_style 'Lifeblood';
+menu_style 'Infected';
+menu_style 'Void';
+menu_style 'Steel Soul';
+menu_style 'Godmaster';
+menu_style 'The Eternal Ordeal';
+menu_style 'Voidheart';
