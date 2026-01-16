@@ -1,0 +1,44 @@
+game horizon_zero_dawn ~> 'Horizon: Zero Dawn';
+import steam(2561580);
+
+// Achievements
+achievement 'Max Carry Capacity' {
+    description 'Upgrade all pouches, satchels and quivers to maximum capacity.';
+    objective 'Max out the Weapons Satchel';
+    objective 'Max out the Outfits Satchel';
+    objective 'Max out the Resources Satchel';
+    objective 'Max out the Modifications Satchel';
+    objective 'Max out the Potions Pouch';
+    objective 'Max out the Traps Pouch';
+    objective 'Max out the Hunter Bow Quiver';
+    objective 'Max out the Sharpshot Bow Quiver';
+    objective 'Max out the War Bow Quiver';
+    objective 'Max out the Sling Ammo Pouch';
+    objective 'Max out the Rattler Ammo Pouch';
+    objective 'Max out the Terablaster Ammo Pouch';
+    objective 'Max out the Ropecaster Ammo Pouch';
+    objective 'Max out the Tripcaster Ammo Pouch';
+    objective 'Max out the Blast Sling Ammo Pouch';
+    objective 'Max out the Forgefire Ammo Pouch';
+    objective 'Max out the Icerail Ammo Pouch';
+    objective 'Max out the Stormslinger Ammo Pouch';
+}
+
+achievement 'True Completionist' {
+    description 'Finish 100% of the game progression.';
+    objective 'Complete Base Game';
+    objective 'Complete Froze Wilds DLC';
+}
+
+achievement 'Find All Datapoints' {
+    objective 'Find All Audio Datapoints';
+    objective 'Find All Hologram Datapoints';
+    objective 'Find All Text Datapoints - Quests';
+    objective 'Find All Text Datapoints - World';
+    objective 'Find All Text Datapoints - Machines';
+    objective 'Find All Scanned Glyphs';
+    objective 'Find All Frozen Wilds Audio Datapoints';
+    objective 'Find All Frozen Wilds Text Datapoints - World';
+    objective 'Find All Frozen Wilds Text Datapoints - Quest';
+    objective 'Find All Frozen Wilds Hologram Datapoints';
+}
