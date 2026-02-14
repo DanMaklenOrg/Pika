@@ -172,8 +172,9 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Where(k =>
                 k.ContainsKey("type") &&
                 !k["$$ID$$"]!.GetValue<string>().StartsWith("EventNode") &&
-                k["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" &&
-                k["type"]!.GetValue<string>() is not "Conclave" and not "Relay" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
+                k["value"]!.GetValue<string>() is not "Vesper Relay (Venus)" and not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
+                k["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" and not "Ganalen's Grave (Veil)" and not "Gian Point (Veil)" and not "Ruse War Field (Veil)" and not "Rya (Veil)" &&
+                k["type"]!.GetValue<string>() is not "Conclave" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
             .Select(x =>
             {
                 var rawName = x["value"]!.GetValue<string>();
@@ -189,6 +190,9 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Append(new Entity("solar_node_aladv", "Mutalist Alad V Assassinate", "solar_node") { Tags = ["solar_eris"] })
             .Append(new Entity("solar_node_jordas_golem", "Jordas Golem Assassinate", "solar_node") { Tags = ["solar_eris"] })
             .Append(new Entity("solar_node_isleweaver", "Isleweaver", "solar_node") { Tags = ["solar_duviri"] })
+            .Append(new Entity("solar_node_iron_wake", "Iron Wake", "solar_node") { Tags = ["solar_earth"] })
+            .Append(new Entity("solar_node_cetus", "Cetus", "solar_node") { Tags = ["solar_earth"] })
+            .Append(new Entity("solar_node_free flight", "Free Flight", "solar_node") { Tags = ["solar_earth_proxima"] })
             .ToList();
     }
 
