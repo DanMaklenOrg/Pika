@@ -25,6 +25,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         game.Entities.AddRange(await ScrapePets());
         game.Entities.AddRange(await ScrapeVehicles());
         game.Entities.AddRange(await ScrapeSolarNodes());
+        game.Entities.AddRange(await ScrapeQuests());
     }
 
     private async Task<List<Entity>> ScrapeWarframes()
@@ -196,6 +197,19 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .ToList();
     }
 
+    private async Task<List<Entity>> ScrapeQuests()
+    {
+        var resp = await GetFromApi("items/search/quests?by=category&only=name");
+        return resp
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "quest");
+                return new Entity(id, name, "quest");
+            })
+            .ToList();
+    }
+
     private async Task<JsonObject[]> GetFromApi(string path, bool objToArray = false)
     {
         if (objToArray)
@@ -212,10 +226,5 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         }
 
         return (await _client.GetFromJsonAsync<JsonObject[]>($"https://api.warframestat.us/{path}"))!;
-    }
-
-    private async Task<JsonObject> GetJsonObject(string path)
-    {
-        return (await _client.GetFromJsonAsync<JsonObject>($"https://api.warframestat.us/{path}"))!;
     }
 }
