@@ -1,0 +1,110 @@
+game warframe ~> 'Warframe';
+import steam(230410);
+
+achievement 'Reach Maximum Mastery' {
+    objective 'Master all Warframes' { criterion warframe; }
+    objective 'Master all Archwings' { criterion archwing; }
+    objective 'Master all Nechramechs' { criterion necramech; }
+
+    objective 'Master all Primary Weapons' { criterion weapon_primary; }
+    objective 'Master all Secondary Weapons' { criterion weapon_secondary; }
+    objective 'Master all Melee Weapons' { criterion weapon_melee; }
+    objective 'Master all Kit Gun Weapons' { criterion weapon_kitgun; }
+    objective 'Master all Zaw Weapons' { criterion weapon_zaw; }
+    objective 'Master all Sentinel Weapons' { criterion weapon_sentinel; }
+    objective 'Master all Arch Gun Weapons' { criterion weapon_arch_gun; }
+    objective 'Master all Arch Melee Weapons' { criterion weapon_arch_melee; }
+
+    objective 'Master all Sentinels' { criterion companion_sentinel; }
+    objective 'Master all Kubrews' { criterion companion_kubrew; }
+    objective 'Master all Kavats' { criterion companion_kavat; }
+    objective 'Master all Moas' { criterion companion_moa; }
+    objective 'Master all Hounds' { criterion companion_hound; }
+
+    objective 'Master all K Drives' { criterion kdrive; }
+    objective 'Master all Amps' { criterion amp; }
+    objective 'Master Railjack Plexus';
+    objective 'Master Railjack Intrinsics' { criterion railjack_intrinsic; }
+    objective 'Master Drifter Intrinsics' { criterion drifter_intrinsic; }
+
+    objective 'Complete all Solar System Missions' { criterion solar_node; }
+    objective 'Complete all Solar System Missions (Steel Path)' { criterion solar_node; }
+}
+
+// Categories
+category warframe;
+category archwing;
+category necramech;
+category weapon_primary;
+category weapon_secondary;
+category weapon_kitgun;
+category weapon_melee;
+category weapon_zaw;
+category weapon_sentinel;
+category weapon_arch_gun;
+category weapon_arch_melee;
+category companion_sentinel;
+category companion_kubrew;
+category companion_kavat;
+category companion_moa;
+category companion_hound;
+category kdrive;
+category amp;
+category railjack_intrinsic;
+category drifter_intrinsic;
+category solar_node;
+
+// Tags
+tag solar_mercury ~> 'Mercury';
+tag solar_venus ~> 'Venus';
+tag solar_earth ~> 'Earth';
+tag solar_lua ~> 'Lua';
+tag solar_mars ~> 'Mars';
+tag solar_deimos ~> 'Deimos';
+tag solar_phobos ~> 'Phobos';
+tag solar_ceres ~> 'Ceres';
+tag solar_jupiter ~> 'Jupiter';
+tag solar_europa ~> 'Europa';
+tag solar_saturn ~> 'Saturn';
+tag solar_uranus ~> 'Uranus';
+tag solar_neptune ~> 'Neptune';
+tag solar_pluto ~> 'Pluto';
+tag solar_sedna ~> 'Sedna';
+tag solar_eris ~> 'Eris';
+tag solar_kuva_fortress ~> 'Kuva Fortress';
+tag solar_void ~> 'Void';
+tag solar_zariman ~> 'Zariman';
+tag solar_duviri ~> 'Duviri';
+tag solar_venus_proxima ~> 'Venus Proxima';
+tag solar_earth_proxima ~> 'Earth Proxima';
+tag solar_saturn_proxima ~> 'Saturn Proxima';
+tag solar_neptune_proxima ~> 'Neptune Proxima';
+tag solar_pluto_proxima ~> 'Pluto Proxima';
+tag solar_veil_proxima ~> 'Veil Proxima';
+tag solar_junction ~> 'Junction';
+
+// Entities
+railjack_intrinsic railjack_intrinsic_tactical ~> 'Tactical';
+railjack_intrinsic railjack_intrinsic_piloting ~> 'Piloting';
+railjack_intrinsic railjack_intrinsic_gunnery ~> 'Gunnery';
+railjack_intrinsic railjack_intrinsic_engineering ~> 'Engineering';
+railjack_intrinsic railjack_intrinsic_command ~> 'Command';
+
+drifter_intrinsic drifter_intrinsic_combat ~> 'Combat';
+drifter_intrinsic drifter_intrinsic_riding ~> 'Riding';
+drifter_intrinsic drifter_intrinsic_opportunity ~> 'Opportunity';
+drifter_intrinsic drifter_intrinsic_endurance ~> 'Endurance';
+
+solar_node solar_node_venus_junction ~> 'Venus Junction' #solar_junction;
+solar_node solar_node_mercury_junction ~> 'Mercury Junction' #solar_junction;
+solar_node solar_node_mars_junction ~> 'Mars Junction' #solar_junction;
+solar_node solar_node_phobos_junction ~> 'Phobos Junction' #solar_junction;
+solar_node solar_node_ceres_junction ~> 'Ceres Junction' #solar_junction;
+solar_node solar_node_jupiter_junction ~> 'Jupiter Junction' #solar_junction;
+solar_node solar_node_europa_junction ~> 'Europa Junction' #solar_junction;
+solar_node solar_node_saturn_junction ~> 'Saturn Junction' #solar_junction;
+solar_node solar_node_uranus_junction ~> 'Uranus Junction' #solar_junction;
+solar_node solar_node_neptune_junction ~> 'Neptune Junction' #solar_junction;
+solar_node solar_node_pluto_junction ~> 'Pluto Junction' #solar_junction;
+solar_node solar_node_eris_junction ~> 'Eris Junction' #solar_junction;
+solar_node solar_node_sedna_junction ~> 'Sedna Junction' #solar_junction;
