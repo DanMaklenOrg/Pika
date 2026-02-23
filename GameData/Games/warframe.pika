@@ -34,6 +34,7 @@ achievement 'Reach Maximum Mastery' {
 }
 
 achievement 'Complete all Quests' { criterion quest; }
+achievement 'Thousand Days and More' { description 'Login for more than 1000 days.'; }
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }

@@ -201,12 +201,17 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
     {
         var resp = await GetFromApi("items/search/quests?by=category&only=name");
         return resp
+            .Where(x =>
+                x["name"]!.GetValue<string>() != "Clan Key" &&
+                x["name"]!.GetValue<string>() != "The Hex Finale" &&
+                x["name"]!.GetValue<string>() != "Mutalist Alad V Assassinate")
             .Select(x =>
             {
                 var name = x["name"]!.GetValue<string>();
                 var id = ScrapperHelper.InduceIdFromName(name, "quest");
                 return new Entity(id, name, "quest");
             })
+            .Append(new Entity("quest_the_maker", "The Maker", "quest"))
             .ToList();
     }
 
