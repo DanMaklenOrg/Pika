@@ -173,6 +173,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Where(k =>
                 k.ContainsKey("type") &&
                 !k["$$ID$$"]!.GetValue<string>().StartsWith("EventNode") &&
+                k["value"]!.GetValue<string>() is not "Testudo (Deimos)" && // Hidden Nodes
                 k["value"]!.GetValue<string>() is not "Vesper Relay (Venus)" and not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
                 k["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" and not "Ganalen's Grave (Veil)" and not "Gian Point (Veil)" and not "Ruse War Field (Veil)" and not "Rya (Veil)" &&
                 k["type"]!.GetValue<string>() is not "Conclave" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
@@ -187,6 +188,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                 var id = ScrapperHelper.InduceIdFromName(name, "solar_node");
                 return new Entity(id, name, "solar_node") { Tags = [tag] };
             })
+            .Append(new Entity("solar_node_sayas_visions", "Saya's Visions", "solar_node") { Tags = ["solar_earth"] })
             .Append(new Entity("solar_node_index", "The Index: Endurance", "solar_node") { Tags = ["solar_neptune"] })
             .Append(new Entity("solar_node_aladv", "Mutalist Alad V Assassinate", "solar_node") { Tags = ["solar_eris"] })
             .Append(new Entity("solar_node_jordas_golem", "Jordas Golem Assassinate", "solar_node") { Tags = ["solar_eris"] })
