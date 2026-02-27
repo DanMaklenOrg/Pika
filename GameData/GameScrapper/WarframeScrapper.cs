@@ -195,7 +195,18 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Append(new Entity("solar_node_isleweaver", "Isleweaver", "solar_node") { Tags = ["solar_duviri"] })
             .Append(new Entity("solar_node_iron_wake", "Iron Wake", "solar_node") { Tags = ["solar_earth"] })
             .Append(new Entity("solar_node_cetus", "Cetus", "solar_node") { Tags = ["solar_earth"] })
-            .Append(new Entity("solar_node_free flight", "Free Flight", "solar_node") { Tags = ["solar_earth_proxima"] })
+            .Append(new Entity("solar_node_free_flight", "Free Flight", "solar_node") { Tags = ["solar_earth_proxima"] })
+            .Append(new Entity("solar_node_backroom", "Backroom", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_hollvania_central_mall", "Hollvania Central Mall", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_lower_vehrvod", "Lower Vehrvod", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_vehrvod_district", "Vehrvod District", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_kobinn_west", "Kobinn West", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_solstice_square", "Solstice Square", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_victory_plaza", "Victory Plaza", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_old_konderuk", "Old Konderuk", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_mischta_ramparts", "Mischta Ramparts", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_mausoleum_east", "Mausoleum East", "solar_node") { Tags = ["solar_1999"] })
+            .Append(new Entity("solar_node_rhu_manor", "Rhu Manor", "solar_node") { Tags = ["solar_1999"] })
             .ToList();
     }
 

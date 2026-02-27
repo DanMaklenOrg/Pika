@@ -102,6 +102,7 @@ tag solar_kuva_fortress ~> 'Kuva Fortress';
 tag solar_void ~> 'Void';
 tag solar_zariman ~> 'Zariman';
 tag solar_duviri ~> 'Duviri';
+tag solar_1999 ~> '1999';
 tag solar_venus_proxima ~> 'Venus Proxima';
 tag solar_earth_proxima ~> 'Earth Proxima';
 tag solar_saturn_proxima ~> 'Saturn Proxima';
