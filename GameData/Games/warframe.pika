@@ -36,6 +36,11 @@ achievement 'Reach Maximum Mastery' {
 achievement 'Complete all Quests' { criterion quest; }
 achievement 'Thousand Days and More' { description 'Login for more than 1000 days.'; }
 
+achievement 'Max Affiliations' {
+    description 'Reach max rank with all syndicates. For base syndicates, achieve max rank at least once. Ignore Conclave.';
+    criterion syndicate;
+}
+
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
 achievement 'Jugger-Not' { description 'Kill 5 Juggernauts in Cambion Drift.'; }
@@ -80,6 +85,7 @@ category drifter_intrinsic;
 category solar_node;
 category quest;
 category mr_test;
+category syndicate;
 
 // Tags
 tag solar_mercury ~> 'Mercury';
@@ -137,39 +143,39 @@ solar_node solar_node_pluto_junction ~> 'Pluto Junction' #solar_junction;
 solar_node solar_node_eris_junction ~> 'Eris Junction' #solar_junction;
 solar_node solar_node_sedna_junction ~> 'Sedna Junction' #solar_junction;
 
-mr_test mr_test_r01 ~> '[R01] Initiate';
-mr_test mr_test_r02 ~> '[R02] Silver Initiate';
-mr_test mr_test_r03 ~> '[R03] Gold Initiate';
-mr_test mr_test_r04 ~> '[R04] Novice';
-mr_test mr_test_r05 ~> '[R05] Silver Novice';
-mr_test mr_test_r06 ~> '[R06] Gold Novice';
-mr_test mr_test_r07 ~> '[R07] Disciple';
-mr_test mr_test_r08 ~> '[R08] Silver Disciple';
-mr_test mr_test_r09 ~> '[R09] Gold Disciple';
-mr_test mr_test_r10 ~> '[R10] Seeker';
-mr_test mr_test_r11 ~> '[R11] Silver Seeker';
-mr_test mr_test_r12 ~> '[R12] Gold Seeker';
-mr_test mr_test_r13 ~> '[R13] Hunter';
-mr_test mr_test_r14 ~> '[R14] Silver Hunter';
-mr_test mr_test_r15 ~> '[R15] Gold Hunter';
-mr_test mr_test_r16 ~> '[R16] Eagle';
-mr_test mr_test_r17 ~> '[R17] Silver Eagle';
-mr_test mr_test_r18 ~> '[R18] Gold Eagle';
-mr_test mr_test_r19 ~> '[R19] Tiger';
-mr_test mr_test_r20 ~> '[R20] Silver Tiger';
-mr_test mr_test_r21 ~> '[R21] Gold Tiger';
-mr_test mr_test_r22 ~> '[R22] Dragon';
-mr_test mr_test_r23 ~> '[R23] Silver Dragon';
-mr_test mr_test_r24 ~> '[R24] Gold Dragon';
-mr_test mr_test_r25 ~> '[R25] Sage';
-mr_test mr_test_r26 ~> '[R26] Silver Sage';
-mr_test mr_test_r27 ~> '[R27] Gold Sage';
-mr_test mr_test_r28 ~> '[R28] Master';
-mr_test mr_test_r29 ~> '[R29] Silver Master';
-mr_test mr_test_r30 ~> '[R30] Gold Master';
-mr_test mr_test_l01 ~> '[L01] Legendary 1';
-mr_test mr_test_l02 ~> '[L02] Legendary 2';
-mr_test mr_test_l03 ~> '[L03] Legendary 3';
-mr_test mr_test_l04 ~> '[L04] Legendary 4';
-mr_test mr_test_l05 ~> '[L05] Legendary 5';
-mr_test mr_test_l06 ~> '[L06] Legendary 6';
+mr_test mr_test_r01 ~> '[MR01] Initiate';
+mr_test mr_test_r02 ~> '[MR02] Silver Initiate';
+mr_test mr_test_r03 ~> '[MR03] Gold Initiate';
+mr_test mr_test_r04 ~> '[MR04] Novice';
+mr_test mr_test_r05 ~> '[MR05] Silver Novice';
+mr_test mr_test_r06 ~> '[MR06] Gold Novice';
+mr_test mr_test_r07 ~> '[MR07] Disciple';
+mr_test mr_test_r08 ~> '[MR08] Silver Disciple';
+mr_test mr_test_r09 ~> '[MR09] Gold Disciple';
+mr_test mr_test_r10 ~> '[MR10] Seeker';
+mr_test mr_test_r11 ~> '[MR11] Silver Seeker';
+mr_test mr_test_r12 ~> '[MR12] Gold Seeker';
+mr_test mr_test_r13 ~> '[MR13] Hunter';
+mr_test mr_test_r14 ~> '[MR14] Silver Hunter';
+mr_test mr_test_r15 ~> '[MR15] Gold Hunter';
+mr_test mr_test_r16 ~> '[MR16] Eagle';
+mr_test mr_test_r17 ~> '[MR17] Silver Eagle';
+mr_test mr_test_r18 ~> '[MR18] Gold Eagle';
+mr_test mr_test_r19 ~> '[MR19] Tiger';
+mr_test mr_test_r20 ~> '[MR20] Silver Tiger';
+mr_test mr_test_r21 ~> '[MR21] Gold Tiger';
+mr_test mr_test_r22 ~> '[MR22] Dragon';
+mr_test mr_test_r23 ~> '[MR23] Silver Dragon';
+mr_test mr_test_r24 ~> '[MR24] Gold Dragon';
+mr_test mr_test_r25 ~> '[MR25] Sage';
+mr_test mr_test_r26 ~> '[MR26] Silver Sage';
+mr_test mr_test_r27 ~> '[MR27] Gold Sage';
+mr_test mr_test_r28 ~> '[MR28] Master';
+mr_test mr_test_r29 ~> '[MR29] Silver Master';
+mr_test mr_test_r30 ~> '[MR30] Gold Master';
+mr_test mr_test_l01 ~> '[LR01] Legendary 1';
+mr_test mr_test_l02 ~> '[LR02] Legendary 2';
+mr_test mr_test_l03 ~> '[LR03] Legendary 3';
+mr_test mr_test_l04 ~> '[LR04] Legendary 4';
+mr_test mr_test_l05 ~> '[LR05] Legendary 5';
+mr_test mr_test_l06 ~> '[LR06] Legendary 6';

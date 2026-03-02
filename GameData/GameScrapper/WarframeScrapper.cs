@@ -26,6 +26,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         game.Entities.AddRange(await ScrapeVehicles());
         game.Entities.AddRange(await ScrapeSolarNodes());
         game.Entities.AddRange(await ScrapeQuests());
+        game.Entities.AddRange(await ScrapeSyndicates());
     }
 
     private async Task<List<Entity>> ScrapeWarframes()
@@ -225,6 +226,22 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                 return new Entity(id, name, "quest");
             })
             .Append(new Entity("quest_the_maker", "The Maker", "quest"))
+            .ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeSyndicates()
+    {
+        var resp = await GetFromApi("syndicates", objToArray: true);
+        return resp
+            .Where(x =>
+                x["$$ID$$"]!.GetValue<string>() != "AssassinsSyndicate" &&
+                !x["$$ID$$"]!.GetValue<string>().StartsWith("RadioLegion"))
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "syndicate");
+                return new Entity(id, name, "syndicate");
+            })
             .ToList();
     }
 
