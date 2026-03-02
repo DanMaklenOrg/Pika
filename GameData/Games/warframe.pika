@@ -36,9 +36,14 @@ achievement 'Reach Maximum Mastery' {
 achievement 'Complete all Quests' { criterion quest; }
 achievement 'Thousand Days and More' { description 'Login for more than 1000 days.'; }
 
-achievement 'Max Affiliations' {
+achievement 'Max Syndicate Rank' {
     description 'Reach max rank with all syndicates. For base syndicates, achieve max rank at least once. Ignore Conclave.';
     criterion syndicate;
+}
+
+achievement 'Complete Research Imprints' {
+    description 'Complete all cephalon simaris research imprints.';
+    criterion simaris_research_imprint;
 }
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
@@ -86,6 +91,7 @@ category solar_node;
 category quest;
 category mr_test;
 category syndicate;
+category simaris_research_imprint;
 
 // Tags
 tag solar_mercury ~> 'Mercury';
@@ -179,3 +185,11 @@ mr_test mr_test_l03 ~> '[LR03] Legendary 3';
 mr_test mr_test_l04 ~> '[LR04] Legendary 4';
 mr_test mr_test_l05 ~> '[LR05] Legendary 5';
 mr_test mr_test_l06 ~> '[LR06] Legendary 6';
+
+simaris_research_imprint simaris_research_imprint_lancer ~> 'Lancer';
+simaris_research_imprint simaris_research_imprint_anti_moa ~> 'Anti Moa';
+simaris_research_imprint simaris_research_imprint_arid_eviscerator ~> 'Arid Eviscerator';
+simaris_research_imprint simaris_research_imprint_corrupted_ancient ~> 'Corrupted Ancient';
+simaris_research_imprint simaris_research_imprint_crewman ~> 'Crewman';
+simaris_research_imprint simaris_research_imprint_runner ~> 'Runner';
+simaris_research_imprint simaris_research_imprint_guardsman ~> 'Guardsman';
