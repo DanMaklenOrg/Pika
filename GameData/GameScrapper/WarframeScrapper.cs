@@ -217,7 +217,6 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         return resp
             .Where(x =>
                 x["name"]!.GetValue<string>() != "Clan Key" &&
-                x["name"]!.GetValue<string>() != "The Hex Finale" &&
                 x["name"]!.GetValue<string>() != "Mutalist Alad V Assassinate")
             .Select(x =>
             {
