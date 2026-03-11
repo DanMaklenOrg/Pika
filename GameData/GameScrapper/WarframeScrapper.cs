@@ -242,6 +242,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                 return new Entity(id, name, "syndicate");
             })
             .Append(new Entity("syndicate_cephalon_simaris", "Cephalon Simaris", "syndicate"))
+            .Append(new Entity("syndicate_nightcap", "Nightcap", "syndicate"))
             .ToList();
     }
 
