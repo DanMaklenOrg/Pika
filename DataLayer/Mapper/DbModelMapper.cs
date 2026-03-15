@@ -29,14 +29,12 @@ public static class DbModelMapper
                         Category = o.Criterion.Category,
                         Tags =  o.Criterion!.Tags.ConvertAllOrNull(t => t.ToString()),
                     },
-                    CriteriaCategory = o.Criterion?.Category,
                 }),
                 Criterion = a.Criterion is null ? null : new CriterionDbModel
                 {
                     Category = a.Criterion.Category,
                     Tags =  a.Criterion!.Tags.ConvertAllOrNull(t => t.ToString()),
                 },
-                CriteriaCategory = a.Criterion?.Category,
             }),
             Categories = game.Categories.ConvertAllOrNull(c => new CategoryDbModel { Id = c.Id, Name = c.Name }),
             Tags = game.Tags.ConvertAllOrNull(t => new TagDbModel { Id = t.Id, Name = t.Name }),
@@ -63,9 +61,9 @@ public static class DbModelMapper
                 Objectives = a.Objectives?.ConvertAll(o => new Objective(o.Id, o.Name)
                 {
                     Description = o.Description,
-                    Criterion = FromDbModel(o.Criterion, o.CriteriaCategory),
+                    Criterion = FromDbModel(o.Criterion),
                 }) ?? [],
-                Criterion = FromDbModel(a.Criterion, a.CriteriaCategory),
+                Criterion = FromDbModel(a.Criterion),
             }) ?? [],
             Categories = model.Categories?.ConvertAll(c => new Category(c.Id, c.Name)) ?? [],
             Tags = model.Tags?.ConvertAll(t => new Tag(t.Id, t.Name)) ?? [],
@@ -77,11 +75,9 @@ public static class DbModelMapper
     }
 
     [return: NotNullIfNotNull("model")]
-    [return: NotNullIfNotNull("oldModel")]
-    private static Criterion? FromDbModel(CriterionDbModel? model, string? oldModel)
+    private static Criterion? FromDbModel(CriterionDbModel? model)
     {
-        if(model is null && oldModel is null) return null;
-        if(oldModel is not null) return new Criterion(FromDbModel(oldModel).Value);
+        if(model is null) return null;
         return new Criterion(model!.Category)
         {
             Tags = model.Tags?.ConvertAll(t => FromDbModel(t).Value) ?? [],

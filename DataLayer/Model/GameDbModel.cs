@@ -48,10 +48,6 @@ public class AchievementDbModel
 
     [JsonPropertyName("criterion")]
     public CriterionDbModel? Criterion { get; init; }
-
-    // Deprecated
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
 }
 
 public class ObjectiveDbModel
@@ -67,10 +63,6 @@ public class ObjectiveDbModel
 
     [JsonPropertyName("criterion")]
     public CriterionDbModel? Criterion { get; init; }
-
-    // Deprecated
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
 }
 
 public class CriterionDbModel

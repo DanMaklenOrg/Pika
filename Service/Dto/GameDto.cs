@@ -39,10 +39,6 @@ public readonly struct AchievementDto
 
     [JsonPropertyName("criterion")]
     public CriterionDto? Criterion { get; init; }
-
-    // Deprecated
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
 }
 
 public readonly struct ObjectiveDto
@@ -58,10 +54,6 @@ public readonly struct ObjectiveDto
 
     [JsonPropertyName("criterion")]
     public CriterionDto? Criterion { get; init; }
-
-    // Deprecated
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
 }
 
 public readonly struct CriterionDto
