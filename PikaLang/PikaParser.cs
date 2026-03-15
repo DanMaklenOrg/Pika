@@ -42,7 +42,7 @@ public class PikaParser
         {
             Description = ctx.describtionDecl() is null ? null : ParseStringLiteral(ctx.describtionDecl().STRING_LITERAL()),
             Objectives = ctx.objectiveDecl().Select(ParseObjective).ToList(),
-            CriteriaCategory = ctx.criterionDecl() is null ? (ResourceId?)null : ctx.criterionDecl().IDENTIFIER().GetText(),
+            Criterion = ctx.criterionDecl() is null ? null : ParseCriterion(ctx.criterionDecl()),
         };
     }
 
@@ -52,7 +52,15 @@ public class PikaParser
         return new Objective(id, name)
         {
             Description = context.describtionDecl() is null ? null : ParseStringLiteral(context.describtionDecl().STRING_LITERAL()),
-            CriteriaCategory = context.criterionDecl() is null ? (ResourceId?)null : context.criterionDecl().IDENTIFIER().GetText(),
+            Criterion = context.criterionDecl() is null ? null : ParseCriterion(context.criterionDecl()),
+        };
+    }
+
+    private Criterion ParseCriterion(PikaLangParser.CriterionDeclContext context)
+    {
+        return new Criterion(context.IDENTIFIER().GetText())
+        {
+            Tags = context.entityTags().Select(ParseEntityTags).ToList(),
         };
     }
 
@@ -74,9 +82,15 @@ public class PikaParser
         ResourceId classId = context.entityDecl().IDENTIFIER().GetText();
         return new Entity(id, name, classId)
         {
-            Tags = context.entityDecl().entityTags().Select(t => new ResourceId(t.IDENTIFIER().GetText())).ToList(),
+            Tags = context.entityDecl().entityTags().Select(ParseEntityTags).ToList(),
         };
     }
+
+    private static ResourceId ParseEntityTags(PikaLangParser.EntityTagsContext context)
+    {
+        return new ResourceId(context.IDENTIFIER().GetText());
+    }
+
 
     private (ResourceId id, string name) ParseNamedIdentifier(PikaLangParser.NamedIdentifierContext context)
     {

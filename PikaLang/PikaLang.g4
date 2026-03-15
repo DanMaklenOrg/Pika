@@ -22,7 +22,7 @@ objectiveDecl
     : OBJECTIVE namedIdentifier SEMICOLON
     | OBJECTIVE namedIdentifier OPEN_BRACES describtionDecl? criterionDecl? CLOSE_BRACES
     ;
-criterionDecl: CRITERION IDENTIFIER SEMICOLON;
+criterionDecl: CRITERION IDENTIFIER entityTags* SEMICOLON;
 describtionDecl: DESCRIPTION STRING_LITERAL SEMICOLON;
 
 categoryDecl: CATEGORY namedIdentifier SEMICOLON;
