@@ -27,9 +27,17 @@ public static class DtoMapper
                     Id = o.Id,
                     Name = o.Name,
                     Description = o.Description,
-                    CriteriaCategory = o.CriteriaCategory,
+                    Criterion = o.Criterion is null ? null : new CriterionDto
+                    {
+                        Category = o.Criterion.Category,
+                        Tags = o.Criterion.Tags.ConvertAll(t => t.ToString()),
+                    },
                 }),
-                CriteriaCategory = a.CriteriaCategory,
+                Criterion = a.Criterion is null ? null : new CriterionDto
+                {
+                    Category = a.Criterion.Category,
+                    Tags = a.Criterion.Tags.ConvertAll(t => t.ToString()),
+                },
             }),
             Categories = model.Categories.ConvertAllOrNull(c => new CategoryDto { Id = c.Id, Name = c.Name }),
             Tags = model.Tags.ConvertAllOrNull(t => new TagDto { Id = t.Id, Name = t.Name }),

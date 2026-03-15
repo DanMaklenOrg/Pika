@@ -27,13 +27,18 @@ public record Achievement(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
     public string? Description { get; init; } = string.Empty;
     public List<Objective> Objectives { get; init; } = [];
-    public ResourceId? CriteriaCategory { get; init; }
+    public Criterion? Criterion { get; init; }
 }
 
 public record Objective(ResourceId Id, string Name) : PikaResource(Id, Name)
 {
     public string? Description { get; init; } = string.Empty;
-    public ResourceId? CriteriaCategory { get; init; }
+    public Criterion? Criterion { get; init; }
+}
+
+public record Criterion(ResourceId Category)
+{
+    public List<ResourceId> Tags { get; init; } = [];
 }
 
 public record Category(ResourceId Id, string Name) : PikaResource(Id, Name);

@@ -37,8 +37,8 @@ public readonly struct AchievementDto
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
+    [JsonPropertyName("criterion")]
+    public CriterionDto? Criterion { get; init; }
 }
 
 public readonly struct ObjectiveDto
@@ -52,8 +52,17 @@ public readonly struct ObjectiveDto
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
-    [JsonPropertyName("criteria_category")]
-    public string? CriteriaCategory { get; init; }
+    [JsonPropertyName("criterion")]
+    public CriterionDto? Criterion { get; init; }
+}
+
+public readonly struct CriterionDto
+{
+    [JsonPropertyName("category")]
+    public string Category { get; init; }
+
+    [JsonPropertyName("tags")]
+    public List<string>? Tags { get; init; }
 }
 
 public readonly struct CategoryDto
