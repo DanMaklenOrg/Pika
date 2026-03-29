@@ -5,45 +5,30 @@ achievement 'Reach Maximum Mastery' {
     objective 'Master all Warframes' { criterion warframe; }
     objective 'Master all Archwings' { criterion archwing; }
     objective 'Master all Nechramechs' { criterion necramech; }
-
-    objective 'Master all Primary Weapons' { criterion weapon_primary; }
-    objective 'Master all Secondary Weapons' { criterion weapon_secondary; }
-    objective 'Master all Melee Weapons' { criterion weapon_melee; }
-    objective 'Master all Kit Gun Weapons' { criterion weapon_kitgun; }
-    objective 'Master all Zaw Weapons' { criterion weapon_zaw; }
-    objective 'Master all Sentinel Weapons' { criterion weapon_sentinel; }
-    objective 'Master all Arch Gun Weapons' { criterion weapon_arch_gun; }
-    objective 'Master all Arch Melee Weapons' { criterion weapon_arch_melee; }
-
-    objective 'Master all Sentinels' { criterion companion_sentinel; }
-    objective 'Master all Kubrews' { criterion companion_kubrew; }
-    objective 'Master all Kavats' { criterion companion_kavat; }
-    objective 'Master all Moas' { criterion companion_moa; }
-    objective 'Master all Hounds' { criterion companion_hound; }
-
+    objective 'Master all Weapons' { criterion weapon; }
+    objective 'Master all Companions' { criterion companion; }
     objective 'Master all K Drives' { criterion kdrive; }
     objective 'Master all Amps' { criterion amp; }
     objective 'Master Railjack Plexus';
     objective 'Master Railjack Intrinsics' { criterion railjack_intrinsic; }
     objective 'Master Drifter Intrinsics' { criterion drifter_intrinsic; }
-
     objective 'Complete all Solar System Missions' { criterion solar_node; }
     objective 'Complete all Solar System Missions (Steel Path)' { criterion solar_node; }
-
     objective 'Complete all Mastery Rank Tests' { criterion mr_test; }
 }
-
 achievement 'Complete all Quests' { criterion quest; }
 achievement 'Thousand Days and More' { description 'Login for more than 1000 days.'; }
-
 achievement 'Max Syndicate Rank' {
     description 'Reach max rank with all syndicates. For base syndicates, achieve max rank at least once. Ignore Conclave.';
     criterion syndicate;
 }
-
 achievement 'Complete Research Imprints' {
     description 'Complete all cephalon simaris research imprints.';
     criterion simaris_research_imprint;
+}
+achievement 'Unlock All Incarnon Evolutions' {
+    objective 'Complete All Incarnon Weapon Challenges' { criterion weapon #weapon_incarnon; }
+    objective 'Complete All Incarnon Genesis Challenges' { criterion incarnon_genesis; }
 }
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
@@ -70,19 +55,8 @@ achievement 'We\'re Gonna Need a Bigger Boat' { description 'Enter the Dry Dock.
 category warframe;
 category archwing;
 category necramech;
-category weapon_primary;
-category weapon_secondary;
-category weapon_kitgun;
-category weapon_melee;
-category weapon_zaw;
-category weapon_sentinel;
-category weapon_arch_gun;
-category weapon_arch_melee;
-category companion_sentinel;
-category companion_kubrew;
-category companion_kavat;
-category companion_moa;
-category companion_hound;
+category weapon;
+category companion;
 category kdrive;
 category amp;
 category railjack_intrinsic;
@@ -92,8 +66,23 @@ category quest;
 category mr_test;
 category syndicate;
 category simaris_research_imprint;
+category incarnon_genesis;
 
 // Tags
+tag weapon_primary ~> 'Primary';
+tag weapon_secondary ~> 'Secondary';
+tag weapon_melee ~> 'Melee';
+tag weapon_kitgun ~> 'Kitgun';
+tag weapon_zaw ~> 'Zaw';
+tag weapon_arch_gun ~> 'Arch-Gun';
+tag weapon_arch_melee ~> 'Arch-Melee';
+tag weapon_sentinel ~> 'Sentinel Weapon';
+tag weapon_incarnon ~> 'Incarnon Weapon';
+tag companion_sentinel ~> 'Sentinel';
+tag companion_kubrew ~> 'Kubrew';
+tag companion_kavat ~> 'Kavat';
+tag companion_moa ~> 'Moa';
+tag companion_hound ~> 'Hound';
 tag solar_mercury ~> 'Mercury';
 tag solar_venus ~> 'Venus';
 tag solar_earth ~> 'Earth';

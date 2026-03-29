@@ -22,11 +22,12 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         game.Entities.AddRange(await ScrapeKitGuns());
         game.Entities.AddRange(await ScrapeSentinels());
         game.Entities.AddRange(await ScrapeSentinelWeapons());
-        game.Entities.AddRange(await ScrapePets());
+        game.Entities.AddRange(await ScrapeCompanions());
         game.Entities.AddRange(await ScrapeVehicles());
         game.Entities.AddRange(await ScrapeSolarNodes());
         game.Entities.AddRange(await ScrapeQuests());
         game.Entities.AddRange(await ScrapeSyndicates());
+        game.Entities.AddRange(await ScrapeIncarnonGenesis());
     }
 
     private async Task<List<Entity>> ScrapeWarframes()
@@ -51,41 +52,30 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
 
     private async Task<List<Entity>> ScrapeWeapons()
     {
-        var resp = await GetFromApi("weapons?only=name,category,uniqueName,type,masterable");
-        return resp.Where(x => x["name"]!.GetValue<string>() is not "Braton Prime" and not "Lato Prime" and not "Skana Prime" and not "Sirocco"
+        var resp = await GetFromApi("weapons?only=name,category,uniqueName,type,masterable,tags");
+        return resp.Where(x => x["name"]!.GetValue<string>() is not "Lato Prime" and not "Skana Prime" and not "Sirocco"
                                && !x["uniqueName"]!.GetValue<string>().Contains("TnDoppelgangerGrimoire")
                                && x["masterable"]!.GetValue<bool>())
             .Select(x =>
             {
                 var name = x["name"]!.GetValue<string>();
-                var category = (x["category"]!.GetValue<string>(), x["type"]!.GetValue<string>()) switch
+                List<ResourceId> tags = (x["category"]!.GetValue<string>(), x["type"]!.GetValue<string>()) switch
                 {
-                    ("Primary", _) => "weapon_primary",
-                    ("Secondary", _) => "weapon_secondary",
-                    ("Melee", "Zaw Component") => "weapon_zaw",
-                    ("Melee", _) => "weapon_melee",
-                    ("Arch-Gun", _) => "weapon_arch_gun",
-                    ("Arch-Melee", _) => "weapon_arch_melee",
+                    ("Primary", _) => ["weapon_primary"],
+                    ("Secondary", _) => ["weapon_secondary"],
+                    ("Melee", "Zaw Component") => ["weapon_zaw"],
+                    ("Melee", _) => ["weapon_melee"],
+                    ("Arch-Gun", _) => ["weapon_arch_gun"],
+                    ("Arch-Melee", _) => ["weapon_arch_melee"],
                     _ => throw new ArgumentOutOfRangeException((x["category"]!.GetValue<string>(), x["type"]!.GetValue<string>()).ToString()),
                 };
-                var id = ScrapperHelper.InduceIdFromName(name, category);
-                return new Entity(id, name, category);
-            }).ToList();
-    }
 
-    private async Task<List<Entity>> ScrapeAmps()
-    {
-        var resp = await GetFromApi("items/search/OperatorAmplifiers?by=uniqueName&only=name,uniqueName");
-        return resp.Where(x => x["uniqueName"]!.GetValue<string>().Contains("/Barrel/"))
-            .Select(x =>
-            {
-                var name = x["name"]!.GetValue<string>();
-                var id = ScrapperHelper.InduceIdFromName(name, "amp");
-                return new Entity(id, name, "amp");
-            })
-            .Append(new Entity("amp_sirocco", "Sirocco", "amp"))
-            .Append(new Entity("amp_melee", "Mote Amp", "amp"))
-            .ToList();
+                if(x.ContainsKey("tags") && x["tags"]!.AsArray().Any(t => t!.GetValue<string>() == "Incarnon"))
+                    tags.Add("weapon_incarnon");
+
+                var id = ScrapperHelper.InduceIdFromName(name, "weapon");
+                return new Entity(id, name, "weapon") { Tags = tags };
+            }).ToList();
     }
 
     private async Task<List<Entity>> ScrapeKitGuns()
@@ -100,22 +90,9 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Select(x =>
             {
                 var name = x["name"]!.GetValue<string>();
-                var id = ScrapperHelper.InduceIdFromName(name, "weapon_kitgun");
-                return new Entity(id, name, "weapon_kitgun");
+                var id = ScrapperHelper.InduceIdFromName(name, "weapon");
+                return new Entity(id, name, "weapon") { Tags = ["weapon_kitgun"]};
             }).ToList();
-    }
-
-    private async Task<List<Entity>> ScrapeSentinels()
-    {
-        var resp = await GetFromApi("items/search/Sentinel?by=type&only=name");
-        return resp
-            .Select(x =>
-            {
-                var name = x["name"]!.GetValue<string>();
-                var id = ScrapperHelper.InduceIdFromName(name, "companion_sentinel");
-                return new Entity(id, name, "companion_sentinel");
-            })
-            .ToList();
     }
 
     private async Task<List<Entity>> ScrapeSentinelWeapons()
@@ -125,20 +102,33 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .Select(x =>
             {
                 var name = x["name"]!.GetValue<string>();
-                var id = ScrapperHelper.InduceIdFromName(name, "weapon_sentinel");
-                return new Entity(id, name, "weapon_sentinel");
+                var id = ScrapperHelper.InduceIdFromName(name, "weapon");
+                return new Entity(id, name, "weapon") { Tags = ["weapon_sentinel"] };
             })
             .ToList();
     }
 
-    private async Task<List<Entity>> ScrapePets()
+    private async Task<List<Entity>> ScrapeSentinels()
+    {
+        var resp = await GetFromApi("items/search/Sentinel?by=type&only=name");
+        return resp
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "companion");
+                return new Entity(id, name, "companion")  { Tags = ["companion_sentinel"] };
+            })
+            .ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeCompanions()
     {
         var resp = await GetFromApi("items/search/pets?by=type&only=name,uniqueName");
         return resp
             .Select(x =>
             {
                 var name = x["name"]!.GetValue<string>();
-                var category = x["uniqueName"]!.GetValue<string>() switch
+                var tag = x["uniqueName"]!.GetValue<string>() switch
                 {
                     var s when s.Contains("KubrowPet") => "companion_kubrew",
                     var s when s.Contains("CatbrowPet") => "companion_kavat",
@@ -146,11 +136,26 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                     var s when s.Contains("ZanukaPet") => "companion_hound",
                     _ => throw new ArgumentOutOfRangeException(),
                 };
-                var id = ScrapperHelper.InduceIdFromName(name, category);
-                return new Entity(id, name, category);
+                var id = ScrapperHelper.InduceIdFromName(name, "companion");
+                return new Entity(id, name, "companion") { Tags = [tag] };
             })
-            .Append(new Entity("companion_kavat_venari", "Venari", "companion_kavat"))
-            .Append(new Entity("companion_kavat_venari_prime", "Venari Prime", "companion_kavat"))
+            .Append(new Entity("companion_venari", "Venari", "companion") { Tags = ["companion_kavat"]})
+            .Append(new Entity("companion_venari_prime", "Venari Prime", "companion") { Tags = ["companion_kavat"]})
+            .ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeAmps()
+    {
+        var resp = await GetFromApi("items/search/OperatorAmplifiers?by=uniqueName&only=name,uniqueName");
+        return resp.Where(x => x["uniqueName"]!.GetValue<string>().Contains("/Barrel/"))
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "amp");
+                return new Entity(id, name, "amp");
+            })
+            .Append(new Entity("amp_sirocco", "Sirocco", "amp"))
+            .Append(new Entity("amp_melee", "Mote Amp", "amp"))
             .ToList();
     }
 
@@ -243,6 +248,19 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             })
             .Append(new Entity("syndicate_cephalon_simaris", "Cephalon Simaris", "syndicate"))
             .Append(new Entity("syndicate_nightcap", "Nightcap", "syndicate"))
+            .ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeIncarnonGenesis()
+    {
+        var resp = await GetFromApi("/items/search/IncarnonAdapters?by=uniqueName");
+        return resp
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>().Replace(" Incarnon Genesis", "");
+                var id = ScrapperHelper.InduceIdFromName(name, "incarnon_genesis");
+                return new Entity(id, name, "incarnon_genesis");
+            })
             .ToList();
     }
 
