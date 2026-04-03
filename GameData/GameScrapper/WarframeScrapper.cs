@@ -180,7 +180,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                 k.ContainsKey("type") &&
                 !k["$$ID$$"]!.GetValue<string>().StartsWith("EventNode") &&
                 k["value"]!.GetValue<string>() is not "Testudo (Deimos)" && // Hidden Nodes
-                k["value"]!.GetValue<string>() is not "Vesper Relay (Venus)" and not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
+                k["value"]!.GetValue<string>() is not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
                 k["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" and not "Ganalen's Grave (Veil)" and not "Gian Point (Veil)" and not "Ruse War Field (Veil)" and not "Rya (Veil)" &&
                 k["type"]!.GetValue<string>() is not "Conclave" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
             .Select(x =>

@@ -30,6 +30,8 @@ achievement 'Unlock All Incarnon Evolutions' {
     objective 'Complete All Incarnon Weapon Challenges' { criterion weapon #weapon_incarnon; }
     objective 'Complete All Incarnon Genesis Challenges' { criterion incarnon_genesis; }
 }
+achievement 'Collect All Incarnon Genesis' { criterion incarnon_genesis; }
+achievement 'Scan All Kuria Relics';
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
