@@ -32,7 +32,6 @@ achievement 'Unlock All Incarnon Evolutions' {
 }
 achievement 'Collect All Incarnon Genesis' { criterion incarnon_genesis; }
 achievement 'Scan All Kuria Relics';
-achievement 'Unlock all Aspirant Zorba Letters';
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
