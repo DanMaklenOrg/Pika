@@ -32,6 +32,12 @@ achievement 'Unlock All Incarnon Evolutions' {
 }
 achievement 'Collect All Incarnon Genesis' { criterion incarnon_genesis; }
 achievement 'Scan All Kuria Relics';
+achievement 'Complete The Mod Collection' {
+    objective 'Collect All Mods' { criterion mod; }
+    objective 'Upgrade All Mods to Max Rank' { criterion mod; }
+    objective 'Unlock All Atragraph Visuals' { criterion mod #mod_atragraph; }
+}
+achievement 'Max all Focus Nodes' { criterion focus_node; }
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
@@ -69,6 +75,8 @@ category mr_test;
 category syndicate;
 category simaris_research_imprint;
 category incarnon_genesis;
+category mod;
+category focus_node;
 
 // Tags
 tag weapon_primary ~> 'Primary';
@@ -113,6 +121,27 @@ tag solar_neptune_proxima ~> 'Neptune Proxima';
 tag solar_pluto_proxima ~> 'Pluto Proxima';
 tag solar_veil_proxima ~> 'Veil Proxima';
 tag solar_junction ~> 'Junction';
+tag mod_archgun ~> 'Arch-Gun';
+tag mod_archmelee ~> 'Arch-Melee';
+tag mod_archwing ~> 'Archwing';
+tag mod_companion ~> 'Companion';
+tag mod_kdrive ~> 'K-Drive';
+tag mod_melee ~> 'Melee';
+tag mod_necramech ~> 'Necramech';
+tag mod_parazon ~> 'Parazon';
+tag mod_peculiar ~> 'Peculiar';
+tag mod_plexus ~> 'Plexus';
+tag mod_posture ~> 'Posture';
+tag mod_primary ~> 'Primary';
+tag mod_railjack ~> 'Railjack';
+tag mod_secondary ~> 'Secondary';
+tag mod_shotgun ~> 'Shotgun';
+tag mod_stance ~> 'Stance';
+tag mod_tektolyst_artifact ~> 'Tektolyst Artifact';
+tag mod_transmutation ~> 'Transmutation';
+tag mod_warframe ~> 'Warframe';
+tag mod_flawed ~> 'Flawed';
+tag mod_atragraph ~> 'Atragraph';
 
 // Entities
 railjack_intrinsic railjack_intrinsic_tactical ~> 'Tactical';

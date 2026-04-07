@@ -28,6 +28,8 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         game.Entities.AddRange(await ScrapeQuests());
         game.Entities.AddRange(await ScrapeSyndicates());
         game.Entities.AddRange(await ScrapeIncarnonGenesis());
+        game.Entities.AddRange(AnnotateAtragraphMod(await ScrapeMods()));
+        game.Entities.AddRange(await ScrapeFocusNodes());
     }
 
     private async Task<List<Entity>> ScrapeWarframes()
@@ -176,13 +178,13 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
     {
         var resp = await GetFromApi("solNodes", objToArray: true);
         return resp
-            .Where(k =>
-                k.ContainsKey("type") &&
-                !k["$$ID$$"]!.GetValue<string>().StartsWith("EventNode") &&
-                k["value"]!.GetValue<string>() is not "Testudo (Deimos)" && // Hidden Nodes
-                k["value"]!.GetValue<string>() is not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
-                k["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" and not "Ganalen's Grave (Veil)" and not "Gian Point (Veil)" and not "Ruse War Field (Veil)" and not "Rya (Veil)" &&
-                k["type"]!.GetValue<string>() is not "Conclave" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
+            .Where(x =>
+                x.ContainsKey("type") &&
+                !x["$$ID$$"]!.GetValue<string>().StartsWith("EventNode") &&
+                x["value"]!.GetValue<string>() is not "Testudo (Deimos)" && // Hidden Nodes
+                x["value"]!.GetValue<string>() is not "Leonov Relay (Europa)" and not "Kuiper Relay (Eris)" && // Destroyed Relays
+                x["value"]!.GetValue<string>() is not "Sortie Boss: Phorid" and not "Vesper (Venus)" and not "Tikoloshe (Sedna)" and not "Phithale (Sedna)" and not "Ganalen's Grave (Veil)" and not "Gian Point (Veil)" and not "Ruse War Field (Veil)" and not "Rya (Veil)" &&
+                x["type"]!.GetValue<string>() is not "Conclave" and not "Ancient Retribution" and not "Hive Sabotage" and not "The Perita Rebellion")
             .Select(x =>
             {
                 var rawName = x["value"]!.GetValue<string>();
@@ -260,6 +262,87 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
                 var name = x["name"]!.GetValue<string>().Replace(" Incarnon Genesis", "");
                 var id = ScrapperHelper.InduceIdFromName(name, "incarnon_genesis");
                 return new Entity(id, name, "incarnon_genesis");
+            })
+            .ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeMods()
+    {
+        var resp = await GetFromApi("/mods?only=name,type,uniqueName");
+        return resp
+            .Where(x =>
+                !x["type"]!.GetValue<string>().EndsWith("Riven Mod") &&
+                !x["type"]!.GetValue<string>().EndsWith("Focus Way") && // Focus Nodes
+                !x["type"]!.GetValue<string>().EndsWith("Mod Set Mod"))
+            .Select(x =>
+            {
+                var isFlawed = x["uniqueName"]!.GetValue<string>().Contains("/Beginner/");
+                var name = x["name"]!.GetValue<string>();
+                if (isFlawed) name += " (Flawed)";
+                var id = ScrapperHelper.InduceIdFromName(name, "mod");
+                List<ResourceId> tags = [ScrapperHelper.InduceIdFromName(x["type"]!.GetValue<string>().Replace(" Mod", "").Replace("-", ""), "mod")];
+                if(isFlawed) tags.Add("mod_flawed");
+                return new Entity(id, name, "mod") { Tags = tags };
+            })
+            .DistinctBy(x => x.Name)
+            .ToList();
+    }
+
+    private List<Entity> AnnotateAtragraphMod(List<Entity> mods)
+    {
+        HashSet<string> atragraphMods =
+        [
+            "Vitality",
+            "Archon Vitality",
+            "Vitality (Flawed)",
+            "Parasitic Vitality",
+            "Umbral Vitality",
+            "Fury",
+            "Fury (Flawed)",
+            "Berserker Fury",
+            "Berserker Fury (Flawed)",
+            "Primed Fury",
+            "Organ Shatter",
+            "Amalgam Organ Shatter",
+            "Organ Shatter (Flawed)",
+            "Target Cracker",
+            "Target Cracker (Flawed)",
+            "Primed Target Cracker",
+            "Serration",
+            "Amalgam Serration",
+            "Serration (Flawed)",
+            "Higasa Serration",
+            "Spectral Serration",
+            "Hell's Chamber",
+            "Hell's Chamber (Flawed)",
+            "Galvanized Hell",
+            "Hellfire",
+            "Hellfire (Flawed)",
+            "Barrel Diffusion",
+            "Amalgam Barrel Diffusion",
+            "Barrel Diffusion (Flawed)",
+            "Galvanized Diffusion",
+            "Animal Instinct",
+            "Primed Animal Instinct",
+            "Streamline",
+            "Streamline (Flawed)"
+        ];
+
+        foreach (var mod in mods.Where(m => atragraphMods.Contains(m.Name)))
+            mod.Tags.Add("mod_atragraph");
+
+        return mods;
+    }
+
+    private async Task<List<Entity>> ScrapeFocusNodes()
+    {
+        var resp = await GetFromApi("/mods/search/Focus Way?only=name&by=type");
+        return resp
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "focus_node");
+                return new Entity(id, name, "focus_node");
             })
             .ToList();
     }
