@@ -347,6 +347,19 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
             .ToList();
     }
 
+    private async Task<List<Entity>> ScrapeCaveArts()
+    {
+        var resp = await GetFromApi("/items/search/NokkoMushroomScrawlPoster?by=uniqueName&only=name");
+        return resp
+            .Select(x =>
+            {
+                var name = x["name"]!.GetValue<string>();
+                var id = ScrapperHelper.InduceIdFromName(name, "cave_art");
+                return new Entity(id, name, "cave_art");
+            })
+            .ToList();
+    }
+
     private async Task<JsonObject[]> GetFromApi(string path, bool objToArray = false)
     {
         if (objToArray)
