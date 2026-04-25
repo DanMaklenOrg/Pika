@@ -30,6 +30,7 @@ public class WarframeScrapper(IHttpClientFactory httpClientFactory) : IScrapper
         game.Entities.AddRange(await ScrapeIncarnonGenesis());
         game.Entities.AddRange(AnnotateAtragraphMod(await ScrapeMods()));
         game.Entities.AddRange(await ScrapeFocusNodes());
+        game.Entities.AddRange(await ScrapeCaveArts());
     }
 
     private async Task<List<Entity>> ScrapeWarframes()
