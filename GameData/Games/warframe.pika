@@ -39,6 +39,11 @@ achievement 'Complete The Mod Collection' {
 }
 achievement 'Max all Focus Nodes' { criterion focus_node; }
 achievement 'Build all Cave Arts' { criterion cave_art; }
+achievement 'Unlock all The Prince\'s Stem Paths' {
+    objective 'Unlock Purple Steam Path';
+    objective 'Unlock Blue Steam Path';
+    objective 'Unlock Green Steam Path';
+}
 
 achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
 achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
