@@ -42,6 +42,7 @@ achievement 'Build all Cave Arts' { criterion cave_art; }
 achievement 'Unlock all The Prince\'s Stem Paths' {
     objective 'Unlock Purple Steam Path';
     objective 'Unlock Blue Steam Path';
+
     objective 'Unlock Green Steam Path';
 }
 
