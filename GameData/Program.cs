@@ -6,15 +6,17 @@ using Pika.DataLayer.Repository;
 using Pika.GameData;
 using Pika.GameData.Commands;
 using Pika.GameData.GameScrapper;
-using Pika.GameData.ScrapperHelpers;
 using Pika.PikaLang;
 using Pika.Repository;
 
 var builder = CoconaApp.CreateBuilder(args);
 
+builder.Services.AddHttpClient();
+
 builder.Services.AddTransient<IScrapper, VampireSurvivorsScrapper>();
 builder.Services.AddTransient<IScrapper, PalworldPalsScrapper>();
 builder.Services.AddTransient<IScrapper, HadesScrapper>();
+builder.Services.AddTransient<IScrapper, WarframeScrapper>();
 
 builder.Services.AddTransient<SteamClient>();
 builder.Services.AddTransient<SteamScrapper>();

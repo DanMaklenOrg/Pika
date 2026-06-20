@@ -1,0 +1,223 @@
+game warframe ~> 'Warframe';
+import steam(230410);
+
+achievement 'Reach Maximum Mastery' {
+    objective 'Master all Warframes' { criterion warframe; }
+    objective 'Master all Archwings' { criterion archwing; }
+    objective 'Master all Nechramechs' { criterion necramech; }
+    objective 'Master all Weapons' { criterion weapon; }
+    objective 'Master all Companions' { criterion companion; }
+    objective 'Master all K Drives' { criterion kdrive; }
+    objective 'Master all Amps' { criterion amp; }
+    objective 'Master Railjack Plexus';
+    objective 'Master Railjack Intrinsics' { criterion railjack_intrinsic; }
+    objective 'Master Drifter Intrinsics' { criterion drifter_intrinsic; }
+    objective 'Complete all Solar System Missions' { criterion solar_node; }
+    objective 'Complete all Solar System Missions (Steel Path)' { criterion solar_node; }
+    objective 'Complete all Mastery Rank Tests' { criterion mr_test; }
+}
+achievement 'Complete all Quests' { criterion quest; }
+achievement 'Thousand Days and More' { description 'Login for more than 1000 days.'; }
+achievement 'Max Syndicate Rank' {
+    description 'Reach max rank with all syndicates. For base syndicates, achieve max rank at least once. Ignore Conclave.';
+    criterion syndicate;
+}
+achievement 'Complete Research Imprints' {
+    description 'Complete all cephalon simaris research imprints.';
+    criterion simaris_research_imprint;
+}
+achievement 'Unlock All Incarnon Evolutions' {
+    objective 'Complete All Incarnon Weapon Challenges' { criterion weapon #weapon_incarnon; }
+    objective 'Complete All Incarnon Genesis Challenges' { criterion incarnon_genesis; }
+}
+achievement 'Collect All Incarnon Genesis' { criterion incarnon_genesis; }
+achievement 'Scan All Kuria Relics';
+achievement 'Complete The Mod Collection' {
+    objective 'Collect All Mods' { criterion mod; }
+    objective 'Upgrade All Mods to Max Rank' { criterion mod; }
+    objective 'Unlock All Atragraph Visuals' { criterion mod #mod_atragraph; }
+}
+achievement 'Max all Focus Nodes' { criterion focus_node; }
+achievement 'Build all Cave Arts' { criterion cave_art; }
+achievement 'Unlock all The Prince\'s Stem Paths' {
+    objective 'Unlock Purple Steam Path';
+    objective 'Unlock Blue Steam Path';
+
+    objective 'Unlock Green Steam Path';
+}
+
+achievement 'Bug Out Ride' { description 'Ride 20 Velocipods.'; }
+achievement 'Forbidden Fruit' { description 'Collect 50 Ganglion from Haptic Frond.'; }
+achievement 'Jugger-Not' { description 'Kill 5 Juggernauts in Cambion Drift.'; }
+achievement 'Kill It With Fire' { description 'Burn 100 Infested Pods.'; }
+achievement 'Meeting Adjourned' { description 'Craft a Sisters of Parvos Tenet Weapon.'; }
+achievement 'Octavia\'s Anthem' { description 'Complete Octavia\'s Anthem Quest.'; }
+achievement 'Plague Doctor' { description 'Defeat Phorid and get to extraction.'; }
+achievement 'Saviour of Ceres' { description 'Kill the boss in the Ceres region (Lieutenant Lech Kril) and get to extraction.'; }
+achievement 'Saviour of Earth' { description 'Kill the boss of the Earth region (Vay Hek) and get to extraction.'; }
+achievement 'Saviour of Europa' { description 'Kill the boss of the Europa region (Raptors) and get to extraction.'; }
+achievement 'Saviour of Jupiter' { description 'Kill the boss of the Jupiter region (Alad V) and get to extraction.'; }
+achievement 'Saviour of Mars' { description 'Kill the boss of the Mars region (The Sergeant) and get to extraction.'; }
+achievement 'Saviour of Neptune' { description 'Kill the bosses of the Neptune region (Hyena Pack) and get to extraction.'; }
+achievement 'Saviour of Phobos' { description 'Kill the bosses of the Phobos region (Captain Vor and Lieutenant Lech Kril) and get to extraction.'; }
+achievement 'Saviour of Pluto' { description 'Kill the boss of the Pluto region (Ambulas), and get to extraction.'; }
+achievement 'Saviour of Saturn' { description 'Kill the boss of the Saturn region (General Sargas Ruk), and get to extraction.'; }
+achievement 'Squad Goals' { description 'Attain Command Rank 10'; }
+achievement 'Strategic Development' { description 'Complete all Corpus Proxima Railjack Nodes'; }
+achievement 'We\'re Gonna Need a Bigger Boat' { description 'Enter the Dry Dock.'; }
+
+// Categories
+category warframe;
+category archwing;
+category necramech;
+category weapon;
+category companion;
+category kdrive;
+category amp;
+category railjack_intrinsic;
+category drifter_intrinsic;
+category solar_node;
+category quest;
+category mr_test;
+category syndicate;
+category simaris_research_imprint;
+category incarnon_genesis;
+category mod;
+category focus_node;
+category cave_art;
+
+// Tags
+tag weapon_primary ~> 'Primary';
+tag weapon_secondary ~> 'Secondary';
+tag weapon_melee ~> 'Melee';
+tag weapon_kitgun ~> 'Kitgun';
+tag weapon_zaw ~> 'Zaw';
+tag weapon_arch_gun ~> 'Arch-Gun';
+tag weapon_arch_melee ~> 'Arch-Melee';
+tag weapon_sentinel ~> 'Sentinel Weapon';
+tag weapon_incarnon ~> 'Incarnon Weapon';
+tag companion_sentinel ~> 'Sentinel';
+tag companion_kubrew ~> 'Kubrew';
+tag companion_kavat ~> 'Kavat';
+tag companion_moa ~> 'Moa';
+tag companion_hound ~> 'Hound';
+tag solar_mercury ~> 'Mercury';
+tag solar_venus ~> 'Venus';
+tag solar_earth ~> 'Earth';
+tag solar_lua ~> 'Lua';
+tag solar_mars ~> 'Mars';
+tag solar_deimos ~> 'Deimos';
+tag solar_phobos ~> 'Phobos';
+tag solar_ceres ~> 'Ceres';
+tag solar_jupiter ~> 'Jupiter';
+tag solar_europa ~> 'Europa';
+tag solar_saturn ~> 'Saturn';
+tag solar_uranus ~> 'Uranus';
+tag solar_neptune ~> 'Neptune';
+tag solar_pluto ~> 'Pluto';
+tag solar_sedna ~> 'Sedna';
+tag solar_eris ~> 'Eris';
+tag solar_kuva_fortress ~> 'Kuva Fortress';
+tag solar_void ~> 'Void';
+tag solar_zariman ~> 'Zariman';
+tag solar_duviri ~> 'Duviri';
+tag solar_1999 ~> '1999';
+tag solar_venus_proxima ~> 'Venus Proxima';
+tag solar_earth_proxima ~> 'Earth Proxima';
+tag solar_saturn_proxima ~> 'Saturn Proxima';
+tag solar_neptune_proxima ~> 'Neptune Proxima';
+tag solar_pluto_proxima ~> 'Pluto Proxima';
+tag solar_veil_proxima ~> 'Veil Proxima';
+tag solar_junction ~> 'Junction';
+tag mod_archgun ~> 'Arch-Gun';
+tag mod_archmelee ~> 'Arch-Melee';
+tag mod_archwing ~> 'Archwing';
+tag mod_companion ~> 'Companion';
+tag mod_kdrive ~> 'K-Drive';
+tag mod_melee ~> 'Melee';
+tag mod_necramech ~> 'Necramech';
+tag mod_parazon ~> 'Parazon';
+tag mod_peculiar ~> 'Peculiar';
+tag mod_plexus ~> 'Plexus';
+tag mod_posture ~> 'Posture';
+tag mod_primary ~> 'Primary';
+tag mod_railjack ~> 'Railjack';
+tag mod_secondary ~> 'Secondary';
+tag mod_shotgun ~> 'Shotgun';
+tag mod_stance ~> 'Stance';
+tag mod_tektolyst_artifact ~> 'Tektolyst Artifact';
+tag mod_transmutation ~> 'Transmutation';
+tag mod_warframe ~> 'Warframe';
+tag mod_flawed ~> 'Flawed';
+tag mod_atragraph ~> 'Atragraph';
+
+// Entities
+railjack_intrinsic railjack_intrinsic_tactical ~> 'Tactical';
+railjack_intrinsic railjack_intrinsic_piloting ~> 'Piloting';
+railjack_intrinsic railjack_intrinsic_gunnery ~> 'Gunnery';
+railjack_intrinsic railjack_intrinsic_engineering ~> 'Engineering';
+railjack_intrinsic railjack_intrinsic_command ~> 'Command';
+
+drifter_intrinsic drifter_intrinsic_combat ~> 'Combat';
+drifter_intrinsic drifter_intrinsic_riding ~> 'Riding';
+drifter_intrinsic drifter_intrinsic_opportunity ~> 'Opportunity';
+drifter_intrinsic drifter_intrinsic_endurance ~> 'Endurance';
+
+solar_node solar_node_venus_junction ~> 'Venus Junction' #solar_junction;
+solar_node solar_node_mercury_junction ~> 'Mercury Junction' #solar_junction;
+solar_node solar_node_mars_junction ~> 'Mars Junction' #solar_junction;
+solar_node solar_node_phobos_junction ~> 'Phobos Junction' #solar_junction;
+solar_node solar_node_ceres_junction ~> 'Ceres Junction' #solar_junction;
+solar_node solar_node_jupiter_junction ~> 'Jupiter Junction' #solar_junction;
+solar_node solar_node_europa_junction ~> 'Europa Junction' #solar_junction;
+solar_node solar_node_saturn_junction ~> 'Saturn Junction' #solar_junction;
+solar_node solar_node_uranus_junction ~> 'Uranus Junction' #solar_junction;
+solar_node solar_node_neptune_junction ~> 'Neptune Junction' #solar_junction;
+solar_node solar_node_pluto_junction ~> 'Pluto Junction' #solar_junction;
+solar_node solar_node_eris_junction ~> 'Eris Junction' #solar_junction;
+solar_node solar_node_sedna_junction ~> 'Sedna Junction' #solar_junction;
+
+mr_test mr_test_r01 ~> '[MR01] Initiate';
+mr_test mr_test_r02 ~> '[MR02] Silver Initiate';
+mr_test mr_test_r03 ~> '[MR03] Gold Initiate';
+mr_test mr_test_r04 ~> '[MR04] Novice';
+mr_test mr_test_r05 ~> '[MR05] Silver Novice';
+mr_test mr_test_r06 ~> '[MR06] Gold Novice';
+mr_test mr_test_r07 ~> '[MR07] Disciple';
+mr_test mr_test_r08 ~> '[MR08] Silver Disciple';
+mr_test mr_test_r09 ~> '[MR09] Gold Disciple';
+mr_test mr_test_r10 ~> '[MR10] Seeker';
+mr_test mr_test_r11 ~> '[MR11] Silver Seeker';
+mr_test mr_test_r12 ~> '[MR12] Gold Seeker';
+mr_test mr_test_r13 ~> '[MR13] Hunter';
+mr_test mr_test_r14 ~> '[MR14] Silver Hunter';
+mr_test mr_test_r15 ~> '[MR15] Gold Hunter';
+mr_test mr_test_r16 ~> '[MR16] Eagle';
+mr_test mr_test_r17 ~> '[MR17] Silver Eagle';
+mr_test mr_test_r18 ~> '[MR18] Gold Eagle';
+mr_test mr_test_r19 ~> '[MR19] Tiger';
+mr_test mr_test_r20 ~> '[MR20] Silver Tiger';
+mr_test mr_test_r21 ~> '[MR21] Gold Tiger';
+mr_test mr_test_r22 ~> '[MR22] Dragon';
+mr_test mr_test_r23 ~> '[MR23] Silver Dragon';
+mr_test mr_test_r24 ~> '[MR24] Gold Dragon';
+mr_test mr_test_r25 ~> '[MR25] Sage';
+mr_test mr_test_r26 ~> '[MR26] Silver Sage';
+mr_test mr_test_r27 ~> '[MR27] Gold Sage';
+mr_test mr_test_r28 ~> '[MR28] Master';
+mr_test mr_test_r29 ~> '[MR29] Silver Master';
+mr_test mr_test_r30 ~> '[MR30] Gold Master';
+mr_test mr_test_l01 ~> '[LR01] Legendary 1';
+mr_test mr_test_l02 ~> '[LR02] Legendary 2';
+mr_test mr_test_l03 ~> '[LR03] Legendary 3';
+mr_test mr_test_l04 ~> '[LR04] Legendary 4';
+mr_test mr_test_l05 ~> '[LR05] Legendary 5';
+mr_test mr_test_l06 ~> '[LR06] Legendary 6';
+
+simaris_research_imprint simaris_research_imprint_lancer ~> 'Lancer';
+simaris_research_imprint simaris_research_imprint_anti_moa ~> 'Anti Moa';
+simaris_research_imprint simaris_research_imprint_arid_eviscerator ~> 'Arid Eviscerator';
+simaris_research_imprint simaris_research_imprint_corrupted_ancient ~> 'Corrupted Ancient';
+simaris_research_imprint simaris_research_imprint_crewman ~> 'Crewman';
+simaris_research_imprint simaris_research_imprint_runner ~> 'Runner';
+simaris_research_imprint simaris_research_imprint_guardsman ~> 'Guardsman';
