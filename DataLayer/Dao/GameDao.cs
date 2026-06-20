@@ -23,7 +23,7 @@ public class GameDao(IAmazonDynamoDB db) : IGameDao
         var request = new GetItemRequest
         {
             TableName = DynamoDbConstants.TableName,
-            Key =
+            Key = new Dictionary<string, AttributeValue>
             {
                 { "pk", new AttributeValue($"Game#{id}") },
                 { "sk", new AttributeValue("Game") },
