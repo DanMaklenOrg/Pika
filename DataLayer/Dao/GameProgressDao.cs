@@ -22,7 +22,7 @@ public class GameProgressDao(IAmazonDynamoDB db) : IGameProgressDao
         var request = new GetItemRequest
         {
             TableName = DynamoDbConstants.TableName,
-            Key =
+            Key = new Dictionary<string, AttributeValue>
             {
                 { "pk", new AttributeValue($"Game#{gameId}#Progress#{userId}") },
                 { "sk", new AttributeValue("GameProgress") },
