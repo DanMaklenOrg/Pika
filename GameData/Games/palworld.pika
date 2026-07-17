@@ -29,8 +29,7 @@ achievement 'Max Player Stats' {
     objective 'Max EXP Gain';
     objective 'Max Rainbow Fortune';
 }
-achievement 'Max Capture Power Level' { description 'Collect enough Lifmunk Effigies to reach capture power level of 14.'; }
-achievement 'Max Base Level' { description 'Upgrade your base to level 30.'; }
+achievement 'Max Base Level' { description 'Upgrade your base to level 35.'; }
 achievement 'Bosses Defeated' {
     description 'Defeat all bosses at least once';
     objective 'Defeat Field Bosses' { criterion pal #field_boss; }
