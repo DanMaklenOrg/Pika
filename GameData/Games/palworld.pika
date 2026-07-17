@@ -167,6 +167,17 @@ achievement 'Base: Breeding Farm' {
 
 achievement 'Collector: Implants' { criterion implant; }
 achievement 'Collector: Accessories' { criterion accessory; }
+achievement 'Equipped Pals' {
+    description 'Build all Pal Gear.';
+    criterion pal_gear;
+}
+achievement 'Upgraded Inventory' {
+    objective 'Get max inventory size' { criterion inventory_upgrade #inventory_upgrade_pouch; }
+    objective 'Unlock all weapon slots' { criterion inventory_upgrade #inventory_upgrade_holster; }
+    objective 'Unlock all accessory slots' { criterion inventory_upgrade #inventory_upgrade_accessory; }
+    objective 'Unlock all food slots' { criterion inventory_upgrade #inventory_upgrade_feed; }
+}
+achievement 'Misc Tools Obtained' { criterion misc_tool; }
 
 // Categories
 category pal;
@@ -177,8 +188,18 @@ category tower_boss;
 category mission;
 category implant;
 category accessory;
+category pal_gear;
+category inventory_upgrade;
+category misc_tool;
 
 // Tags
 tag mission_main ~> 'Main Mission';
 tag mission_sub ~> 'Sub Mission';
 tag field_boss ~> 'Field Boss';
+tag inventory_upgrade_pouch ~> 'Pouch';
+tag inventory_upgrade_holster ~> 'Weapon Holster';
+tag inventory_upgrade_feed ~> 'Feed Bag';
+tag inventory_upgrade_accessory ~> 'Accessory Box';
+tag misc_tool_lantern ~> 'Hip Lantern';
+tag misc_tool_lockpick ~> 'Lockpicks';
+tag misc_tool_misc ~> 'Misc';

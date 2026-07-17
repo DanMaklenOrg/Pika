@@ -21,6 +21,8 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
         game.Entities.AddRange(await ScrapeWatchTowers());
         game.Entities.AddRange(await ScrapeMissions());
         game.Entities.AddRange(await ScrapeImplants());
+        game.Entities.AddRange(await ScrapePalGear());
+        game.Entities.AddRange(await ScrapeKeyItems());
         game.Entities.AddRange(await ScrapeAccessories());
     }
 
@@ -152,7 +154,68 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             var name = ScrapperHelper.CleanName(n.InnerText).Replace("Implant: ", string.Empty);
             var id = ScrapperHelper.InduceIdFromName(name, "implant");
             return new Entity(id, name, "implant");
+        }).Where(i => !i.Name.Contains("Disposable")).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapePalGear()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pal_Gear_Workbench");
+        var nodes = doc.DocumentNode.SelectNodes("(//tbody)[2]//td/a/.");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "pal_gear");
+            return new Entity(id, name, "pal_gear");
         }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeKeyItems()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Key_Items");
+        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class, 'hover_banner') and not(.//i)]//a");
+        return nodes
+            .Where(n =>
+                !n.InnerText.StartsWith("Implant: ")
+                && !n.InnerText.EndsWith("Bounty Token")
+                && !n.InnerText.EndsWith("Saddle")
+                && !n.InnerText.StartsWith("'s")
+                && !n.InnerText.EndsWith("Effigy")
+                && !n.InnerText.StartsWith("Key Sphere of")
+                && !n.InnerText.EndsWith("Harness")
+                && !n.InnerText.EndsWith("Necklace")
+                && !n.InnerText.EndsWith("Gloves")
+                && !n.InnerText.EndsWith("Launcher")
+                && !n.InnerText.EndsWith("Launcher")
+                && n.InnerText is not
+                    "Tanzee's Assault Rifle" and not
+                    "Tanzee Ignis's Assault Rifle" and not
+                    "Modified Pal's Contaminated Core" and not
+                    "Bastigor's Hammer" and not
+                    "Lifmunk's Submachine Gun" and not
+                    "Hangyu Cryst's Glove" and not
+                    "Grizzbolt's Minigun" and not
+                    "Nyafia's Shotgun" and not
+                    "Digtoise's Headband"
+            ).Select(n =>
+            {
+                var name = ScrapperHelper.CleanName(n.InnerText);
+
+                var (c, t) = name switch
+                {
+                    _ when name.EndsWith("Pouch") => ("inventory_upgrade", "inventory_upgrade_pouch"),
+                    _ when name.Contains("Weapon Holster") => ("inventory_upgrade", "inventory_upgrade_holster"),
+                    _ when name.EndsWith("Accessory Box") => ("inventory_upgrade", "inventory_upgrade_accessory"),
+                    _ when name.EndsWith("Feed Bag") => ("inventory_upgrade", "inventory_upgrade_feed"),
+                    _ when name.EndsWith("Feed Bag") => ("inventory_upgrade", "inventory_upgrade_feed"),
+                    _ when name.EndsWith("Hip Lantern") => ("misc_tool", "misc_tool_lantern"),
+                    _ when name.StartsWith("Lockpicking Tool") => ("misc_tool", "misc_tool_lockpick"),
+                    _ when name.EndsWith("Construction Kit") => ("misc_tool", "misc_tool_misc"),
+                    _ => throw new ArgumentOutOfRangeException(),
+                };
+
+                var id = ScrapperHelper.InduceIdFromName(name, c);
+                return new Entity(id, name, c) { Tags = [t] };
+            }).ToList();
     }
 
     private async Task<List<Entity>> ScrapeAccessories()
