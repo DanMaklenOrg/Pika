@@ -23,6 +23,7 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
         game.Entities.AddRange(await ScrapeImplants());
         game.Entities.AddRange(await ScrapePalGear());
         game.Entities.AddRange(await ScrapeKeyItems());
+        game.Entities.AddRange(await ScrapTechnologies());
         game.Entities.AddRange(await ScrapeAccessories());
     }
 
@@ -216,6 +217,22 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
                 var id = ScrapperHelper.InduceIdFromName(name, c);
                 return new Entity(id, name, c) { Tags = [t] };
             }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapTechnologies()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Technologies");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='hoverTechFooter']");
+        return nodes.Select(n =>
+        {
+            var nameRaw = ScrapperHelper.CleanName(n.InnerText);
+            var techLevel = int.Parse(ScrapperHelper.CleanName(n.SelectSingleNode("./../../div[1]").InnerText));
+            var tag = n.ParentNode.HasClass("BossTechnology") ? "tech_ancient" : "tech_tech";
+
+            var name = $"Lv. {techLevel:D2}: {nameRaw}";
+            var id = ScrapperHelper.InduceIdFromName(name, "tech");
+            return new Entity(id, name, "tech") { Tags = [tag] };
+        }).ToList();
     }
 
     private async Task<List<Entity>> ScrapeAccessories()

@@ -178,6 +178,7 @@ achievement 'Upgraded Inventory' {
     objective 'Unlock all food slots' { criterion inventory_upgrade #inventory_upgrade_feed; }
 }
 achievement 'Misc Tools Obtained' { criterion misc_tool; }
+achievement 'Technology Maxed' { criterion tech; }
 
 // Categories
 category pal;
@@ -191,6 +192,7 @@ category accessory;
 category pal_gear;
 category inventory_upgrade;
 category misc_tool;
+category tech;
 
 // Tags
 tag mission_main ~> 'Main Mission';
@@ -203,3 +205,5 @@ tag inventory_upgrade_accessory ~> 'Accessory Box';
 tag misc_tool_lantern ~> 'Hip Lantern';
 tag misc_tool_lockpick ~> 'Lockpicks';
 tag misc_tool_misc ~> 'Misc';
+tag tech_tech ~> 'Technology';
+tag tech_ancient ~> 'Ancient Technology';
