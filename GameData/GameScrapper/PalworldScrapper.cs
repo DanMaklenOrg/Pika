@@ -24,6 +24,7 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
         game.Entities.AddRange(await ScrapePalGear());
         game.Entities.AddRange(await ScrapeKeyItems());
         game.Entities.AddRange(await ScrapTechnologies());
+        game.Entities.AddRange(await ScrapeExpeditions());
         game.Entities.AddRange(await ScrapeAccessories());
     }
 
@@ -232,6 +233,18 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             var name = $"Lv. {techLevel:D2}: {nameRaw}";
             var id = ScrapperHelper.InduceIdFromName(name, "tech");
             return new Entity(id, name, "tech") { Tags = [tag] };
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeExpeditions()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pal_Expedition_Station#PalExpeditions");
+        var nodes = doc.DocumentNode.SelectNodes("//h4");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "expedition");
+            return new Entity(id, name, "expedition");
         }).ToList();
     }
 

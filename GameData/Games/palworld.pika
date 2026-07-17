@@ -16,6 +16,18 @@ achievement 'Max Player Stats' {
     objective 'Max Attack';
     objective 'Max Work Speed';
     objective 'Max Weight';
+    objective 'Max Capture Power';
+    objective 'Max Satiety Duration';
+    objective 'Max Swimming Ability';
+    objective 'Max Food Preservation';
+    objective 'Max Jump Power';
+    objective 'Max Flight capacity';
+    objective 'Max Climbing Proficiency';
+    objective 'Max Status Resistance';
+    objective 'Max Endurance';
+    objective 'Max Sphere Tracking';
+    objective 'Max EXP Gain';
+    objective 'Max Rainbow Fortune';
 }
 achievement 'Max Capture Power Level' { description 'Collect enough Lifmunk Effigies to reach capture power level of 14.'; }
 achievement 'Max Base Level' { description 'Upgrade your base to level 30.'; }
@@ -179,6 +191,7 @@ achievement 'Upgraded Inventory' {
 }
 achievement 'Misc Tools Obtained' { criterion misc_tool; }
 achievement 'Technology Maxed' { criterion tech; }
+achievement 'Pal Expeditions Unlocked' { criterion expedition; }
 
 // Categories
 category pal;
@@ -193,6 +206,7 @@ category pal_gear;
 category inventory_upgrade;
 category misc_tool;
 category tech;
+category expedition;
 
 // Tags
 tag mission_main ~> 'Main Mission';
