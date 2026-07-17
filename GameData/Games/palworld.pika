@@ -192,6 +192,14 @@ achievement 'Upgraded Inventory' {
 achievement 'Misc Tools Obtained' { criterion misc_tool; }
 achievement 'Technology Maxed' { criterion tech; }
 achievement 'Pal Expeditions Unlocked' { criterion expedition; }
+achievement 'Scientist' {
+    description 'Research all research subjects in the Pal Labor Research Lab.';
+    criterion research;
+}
+achievement 'Diary Found' {
+    description 'Find all Journal Entries';
+    criterion journal;
+}
 
 // Categories
 category pal;
@@ -207,6 +215,8 @@ category inventory_upgrade;
 category misc_tool;
 category tech;
 category expedition;
+category research;
+category journal;
 
 // Tags
 tag mission_main ~> 'Main Mission';
@@ -221,3 +231,15 @@ tag misc_tool_lockpick ~> 'Lockpicks';
 tag misc_tool_misc ~> 'Misc';
 tag tech_tech ~> 'Technology';
 tag tech_ancient ~> 'Ancient Technology';
+tag work_suitability_kindling ~> 'Kindling';
+tag work_suitability_watering ~> 'Watering';
+tag work_suitability_planting ~> 'Planting';
+tag work_suitability_generating_electricity ~> 'Generating Electricity';
+tag work_suitability_handiwork ~> 'Handiwork';
+tag work_suitability_gathering ~> 'Gathering';
+tag work_suitability_lumbering ~> 'Lumbering';
+tag work_suitability_mining ~> 'Mining';
+tag work_suitability_medicine_production ~> 'Medicine Production';
+tag work_suitability_cooling ~> 'Cooling';
+tag work_suitability_transporting ~> 'Transporting';
+tag work_suitability_farming ~> 'Farming';

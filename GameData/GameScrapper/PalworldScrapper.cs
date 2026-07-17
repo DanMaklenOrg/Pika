@@ -26,6 +26,8 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
         game.Entities.AddRange(await ScrapTechnologies());
         game.Entities.AddRange(await ScrapeExpeditions());
         game.Entities.AddRange(await ScrapeAccessories());
+        game.Entities.AddRange(await ScrapeResearch());
+        game.Entities.AddRange(await ScrapeJournals());
     }
 
     private async Task<List<Entity>> ScrapePals()
@@ -257,6 +259,42 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             var name = ScrapperHelper.CleanName(n.InnerText);
             var id = ScrapperHelper.InduceIdFromName(name, "accessory");
             return new Entity(id, name, "accessory");
+        }).ToList();
+    }
+
+    private async Task<List<Entity>> ScrapeResearch()
+    {
+        List<string> workSuitabilities = [ "Handiwork", "Kindling", "Watering", "Planting", "Generating_Electricity", "Lumbering", "Mining", "Cooling", "Medicine_Production" ];
+
+        List<Entity> entities = [];
+
+        foreach (var suitability in workSuitabilities)
+        {
+            var doc = await new HtmlWeb().LoadFromWebAsync($"https://paldb.cc/en/{suitability}#Research");
+            var nodes = doc.DocumentNode.SelectNodes("//div[@class = 'col']/div/div[1]");
+            entities.AddRange(nodes.Select(n =>
+            {
+                var nameRaw = ScrapperHelper.CleanName(n.SelectSingleNode("./div[1]").InnerText);
+                var lvl = int.Parse(n.SelectSingleNode("./div[2]").InnerText.Split('.').Last());
+                var tag = ScrapperHelper.InduceIdFromName(suitability, "work_suitability");
+                var name = $"Lv. {lvl}: {nameRaw}";
+                var id = ScrapperHelper.InduceIdFromName(name, "research");
+                return new Entity(id, name, "research") { Tags = [tag] };
+            }));
+        }
+
+        return entities;
+    }
+
+    private async Task<List<Entity>> ScrapeJournals()
+    {
+        var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Journals");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='card-body']//a");
+        return nodes.Select(n =>
+        {
+            var name = ScrapperHelper.CleanName(n.InnerText);
+            var id = ScrapperHelper.InduceIdFromName(name, "journal");
+            return new Entity(id, name, "journal");
         }).ToList();
     }
 }
