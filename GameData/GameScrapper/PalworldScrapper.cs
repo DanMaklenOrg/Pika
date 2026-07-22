@@ -152,13 +152,13 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
     private async Task<List<Entity>> ScrapeImplants()
     {
         var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pal_Surgery_Table#Surgery");
-        var nodes = doc.DocumentNode.SelectNodes("//table/tbody/tr/td[2 and contains(., 'Implant') and not(.//i)]//a");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col']//div[3]/a[@class='itemname']");
         return nodes.Select(n =>
         {
             var name = ScrapperHelper.CleanName(n.InnerText).Replace("Implant: ", string.Empty);
             var id = ScrapperHelper.InduceIdFromName(name, "implant");
             return new Entity(id, name, "implant");
-        }).Where(i => !i.Name.Contains("Disposable")).ToList();
+        }).ToList();
     }
 
     private async Task<List<Entity>> ScrapePalGear()
@@ -182,23 +182,25 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
                 !n.InnerText.StartsWith("Implant: ")
                 && !n.InnerText.EndsWith("Bounty Token")
                 && !n.InnerText.EndsWith("Saddle")
-                && !n.InnerText.StartsWith("'s")
                 && !n.InnerText.EndsWith("Effigy")
                 && !n.InnerText.StartsWith("Key Sphere of")
                 && !n.InnerText.EndsWith("Harness")
                 && !n.InnerText.EndsWith("Necklace")
                 && !n.InnerText.EndsWith("Gloves")
                 && !n.InnerText.EndsWith("Launcher")
-                && !n.InnerText.EndsWith("Launcher")
+                && !n.InnerText.EndsWith("Echobone")
                 && n.InnerText is not
                     "Tanzee's Assault Rifle" and not
                     "Tanzee Ignis's Assault Rifle" and not
                     "Modified Pal's Contaminated Core" and not
+                    "Dandilord's Petal" and not
+                    "Silvance's Plume" and not
                     "Bastigor's Hammer" and not
                     "Lifmunk's Submachine Gun" and not
                     "Hangyu Cryst's Glove" and not
                     "Grizzbolt's Minigun" and not
                     "Nyafia's Shotgun" and not
+                    "Echoing Flute" and not
                     "Digtoise's Headband"
             ).Select(n =>
             {

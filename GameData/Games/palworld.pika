@@ -45,6 +45,7 @@ achievement 'Map Unlocked' {
     description 'Unlock fast travel points at all Great Eagle Statues and Watchtowers';
     objective 'Unlock all Great Eagle Statues' { criterion great_eagle_statue; }
     objective 'Unlock all Watchtowers' { criterion watchtower; }
+    objective 'Unlock all Warp Alters in Sunreach';
 }
 
 achievement 'Party: Misc' {
