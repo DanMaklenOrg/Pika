@@ -39,7 +39,8 @@ achievement 'Bosses Defeated' {
 }
 achievement 'Mission Complete' {
     description 'Complete all the missions';
-    criterion mission;
+    objective 'Complete all main missions' { criterion mission #mission_main; }
+    objective 'Complete all sub missions' { criterion mission #mission_sub; }
 }
 achievement 'Map Unlocked' {
     description 'Unlock fast travel points at all Great Eagle Statues and Watchtowers';
