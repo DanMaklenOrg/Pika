@@ -36,6 +36,7 @@ achievement 'Bosses Defeated' {
     objective 'Defeat Wanted Fugitives' { criterion wanted_fugitive; }
     objective 'Defeat Tower Bosses (Normal)' { criterion tower_boss; }
     objective 'Defeat Tower Bosses (Hard)' { criterion tower_boss; }
+    objective 'Defeat Panthalus';
 }
 achievement 'Mission Complete' {
     description 'Complete all the missions';
