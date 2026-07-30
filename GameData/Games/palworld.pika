@@ -37,6 +37,9 @@ achievement 'Bosses Defeated' {
     objective 'Defeat Tower Bosses (Normal)' { criterion tower_boss; }
     objective 'Defeat Tower Bosses (Hard)' { criterion tower_boss; }
     objective 'Defeat Panthalus';
+    objective 'Defeat Boss in Rotmist Root';
+    objective 'Defeat Boss in Shinespore Root';
+    objective 'Defeat Boss in Forbidden Laboratory';
 }
 achievement 'Mission Complete' {
     description 'Complete all the missions';
