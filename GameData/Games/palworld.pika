@@ -48,6 +48,8 @@ achievement 'Map Unlocked' {
     objective 'Unlock all Great Eagle Statues' { criterion great_eagle_statue; }
     objective 'Unlock all Watchtowers' { criterion watchtower; }
     objective 'Unlock all Warp Alters in Sunreach';
+    objective 'Fully reveal Palpagos Islands Map';
+    objective 'Fully reveal World Tree Map';
 }
 
 achievement 'Party: Misc' {

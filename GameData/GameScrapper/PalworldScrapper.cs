@@ -36,7 +36,7 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
         var worldTreeItems = await jsScraper.ScrapeJsVariable("https://paldb.cc/js/treemap_data_en.js", PalDbMapDataVariable);
         HashSet<string> fieldBosses = items.Union(worldTreeItems)
             .Where(x => x["type"]!.GetValue<string>() == "Alpha Pal")
-            .Select(x => ScrapperHelper.CleanName(x["item"]!.GetValue<string>()))
+            .Select(x => ScrapperHelper.CleanName(x["item"]!.GetValue<string>().Split('<').First()))
             .ToHashSet();
 
         var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Pals");
