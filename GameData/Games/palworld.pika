@@ -55,137 +55,31 @@ achievement 'Map Unlocked' {
     objective 'Fully reveal World Tree Map';
 }
 
-achievement 'Party: Misc' {
-    description 'Build a collection of perfect party pals all at max level and Rank 4.';
-    objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-    objective 'Mount: Ground' { description 'Necromus. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-
-    objective 'Drop Booster: Neutral' { description 'Blazehowl Noct. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-    objective 'Drop Booster: Souls' { description 'Nitemary. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Demon God, Legend, Musclehead, Ferocious]. Active Skills [Wind Edge, Air Blade, Holy Burst].'; }
-    objective 'Drop Booster: Chromite' { description 'Smokie. R4. Passives: [Mine Foreman, Vanguard, Stronghold Strategist, Motivational Leader].'; }
-
-    objective 'Utility: Base Teleport' { description 'Dogen. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
+achievement 'Maxed Parties' {
+    description 'Have a party preset with maxed pals for common use cases';
+    objective 'Maxed Exploration Party' { description 'For general exploration. No specialized use case.'; }
+    objective 'Maxed Haggling Party' { description 'For better deals while trading wiy=th merchants.'; }
+    objective 'Maxed Work Suitability Party' { description 'For crafting and assisting in base work.'; }
+    objective 'Maxed World Tree Farm Party' { description 'For farming holy water, relics, dog coin, ... etc.'; }
+    objective 'Maxed Bounty Token Farm Party' { description 'For farming bounty tokens.'; }
+    objective 'Maxed Player Damage Party' { description 'For player focused gameplay.'; }
+    objective 'Maxed Arena Party' { description 'For farming arena tokens.'; }
+    objective 'Maxed Fishing Party' { description 'For fishing farms.'; }
+    objective 'Maxed Salvage Party' { description 'For Salvage farms.'; }
+    objective 'Maxed EXP Farm Party' { description 'For maximizing EXP gain for maxing out pals.'; }
 }
-achievement 'Party Preset: Barter' {
-    objective 'Barter' { description ' Mau x5. R4. Passives: [Nobel, Fine Furs, Vanguard, Stronghold Strategist].'; }
-}
-achievement 'Party Preset: Arena' {
-    objective 'Champion' { description 'Orserk x3. R4. IVs: 3x100. +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives: [Legend, Demon God, Serenity, Musclehead]. Active Skills: [Lightning Bolt, Beam Slicer, Meteorain].'; }
-}
-achievement 'Party Preset: Fishing' {
-    objective 'Mount: Air' { description 'Jetragon. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Legend, Swift, Runner, Nimble]. Active Skills [Meteorain, Air Blade, Holy Burst].'; }
-    objective 'Fisherman' { description 'Whalaska Ignis. R4. Passives: [Vanguard, Stronghold Strategist, Swift, Runner].'; }
-    objective 'Drop Booster: Fishing' { description 'Jelliette x3. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
-}
-achievement 'Party Preset: Salvage' {
-    objective 'Mount: Water' { description 'Neptilius. IVs: 3x100. R4. Souls +60% Attack/Defense/Health. Trust Lv. 10. Level: Max. Passives [Swift, King of the Waves, Ace Swimmer, Sleek Stroke]. Active Skills [Blast Cannon, Air Blade, Holy Burst].'; }
-    objective 'Drop Booster: Salvage' { description 'Jellroy x4. R4. Passives: [Vanguard, Stronghold Strategist, Motivational Leader, Mine Foreman].'; }
+achievement 'Maxed Base' {
+    description 'Have a maxed out base for common use cases';
+    objective 'Build a HQ Base' { description 'Core storage, Player house, various crafts, ... etc.'; }
+    objective 'Build a Warehouse Base' { description 'Mass storage.'; }
+    objective 'Build a Genetics Lab' { description 'For Breeding and maxing Pals.'; }
+    objective 'Build a Coin Farm Base' { description 'For farming Coins.'; }
+    objective 'Build a Farmland' { description 'For crops, ranching, mass breading + butchering.'; }
+    objective 'Build an AI Core Factory' { description 'For mass production of AI Cores.'; }
+    objective 'Build a Cake factory' { description 'For mass production of all cake variants'; }
+    objective 'Build a Raid Boss Base' { description 'For speed killing of Raid Bosses.'; }
 }
 
-achievement 'Base: Main' {
-    description 'Build a main base with storage, general crafting and collectables.';
-    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
-    objective 'Guild Chest' { description 'Count: 1.'; }
-    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
-    objective 'Japanese-Style Hot Sprint' { description 'Count: 3+.'; }
-    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
-    objective 'Large Power Generator' { description 'Count: 1.'; }
-    objective 'Accumulator' { description 'Count: 2.'; }
-    objective 'Monitoring Stand' { description 'Count: 1.'; }
-    objective 'Pal Pod' { description 'Count: 15+.'; }
-    objective 'Global Palbox' { description 'Count: 1.'; }
-    objective 'Dimensional Pal Storage' { description 'Count: 1.'; }
-
-    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
-    objective 'Advanced Workshop' { description 'Count: 1.'; }
-    objective 'Advanced Weapon Assembly Line' { description 'Count: 1.'; }
-    objective 'Pal Gear Workbench' { description 'Count: 1.'; }
-    objective 'Refrigerated Crusher' { description 'Count: 1.'; }
-    objective 'Advanced Medicine Workbench' { description 'Count: 1.'; }
-    objective 'Repair Bench' { description 'Count: 1.'; }
-    objective 'Drafting Table' { description 'Count: 1.'; }
-    objective 'Pal Expedition Station' { description 'Count: 1.'; }
-    objective 'Large Fishing Pond' { description 'Count: 1.'; }
-
-    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
-    objective 'Beta Wave Generator' { description 'Count: 1.'; }
-    objective 'Snowman' { description 'Count: 1.'; }
-    objective 'Electric Pylon' { description 'Count: 1.'; }
-    objective 'Witch Cauldron' { description 'Count: 1.'; }
-    objective 'Large Toolbox' { description 'Count: 1.'; }
-
-    objective 'Storage: Miscellaneous' { description 'Count: 1. Advanced Chest (x5+).'; }
-    objective 'Storage: Armory' { description 'Count: 1. Advanced Chest (x5+).'; }
-    objective 'Storage: Schematic' { description 'Count: 1. Advanced Chest (x5+).'; }
-
-    objective 'Pal: Handiwork' { description 'Splatterina (x4). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-    objective 'Pal: Freezer' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-    objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
-    objective 'Pal: Electrician' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Pharmacist' { description 'Bellanoir Libero (x1). R4. +60% WS. Lv. 5 Medicine Production. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Crusher' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-
-    objective 'NPC: Caravan Leader' { description 'Count: 1.'; }
-    objective 'NPC: Wandering Merchant' { description 'Count: 1.'; }
-    objective 'NPC: Medal Merchant' { description 'Count: 1.'; }
-}
-achievement 'Base: Pal Sphere Factory' {
-    description 'Build a Pal Sphere Factory base with maximal production & automation. At least 1 Legendary Sphere per second. This build will require manual queuing every 15 minutes.';
-    objective 'Item Retrieval Machine' { description 'Count: 1.'; }
-    objective 'Guild Chest' { description 'Count: 1.'; }
-    objective 'Cool Food Box' { description 'Count: 1. Stock up on Work Speed food (e.g. Salad).'; }
-    objective 'Japanese-Style Hot Spring' { description 'Count: 3+.'; }
-    objective 'Medicine Rack' { description 'Count: 1. Stock up with variety of medicine.'; }
-    objective 'Large Power Generator' { description 'Count: 1.'; }
-    objective 'Accumulator' { description 'Count: 2.'; }
-    objective 'Monitoring Stand' { description 'Count: 1.'; }
-    objective 'Pal Pod' { description 'Count: 20+.'; }
-
-    objective 'Advanced Sphere Assembly Line' { description 'Count: 1.'; }
-    objective 'Advanced Workshop' { description 'Count: 5. 3 for Cement and 2 for Carbon Fiber.'; }
-    objective 'Gigantic Furnace' { description 'Count: 5. 2 for Pal Metal Ingot and 3 for Charcoal.'; }
-    objective 'Ore Mining Site II' { description 'Count: 2'; }
-    objective 'Stone Pit' { description 'Count: 1.'; }
-    objective 'Logging Site' { description 'Count: 1.'; }
-
-    objective 'Stump and Axe' { description 'Count: 1.'; }
-    objective 'Flame Cauldron' { description 'Count: 1.'; }
-    objective 'Large Toolbox' { description 'Count: 1.'; }
-    objective 'Pickaxe and Helmet' { description 'Count: 1.'; }
-    objective 'Snowman' { description 'Count: 1.'; }
-    objective 'Electric Pylon' { description 'Count: 1.'; }
-    objective 'Alpha Wave Generator' { description 'Count: 1.'; }
-    objective 'Beta Wave Generator' { description 'Count: 1.'; }
-
-    objective 'NPC: Merchant' { description 'Wandering Merchant (x1). A Merchant that sells Paldium Fragment, Pal Fluids & Bones. Remember to use the traders party preset when buying/selling.'; }
-    objective 'Pal: Freezer' { description 'Vanwyrm Cryst (x1). R4. +60% WS. Lv. 5 Cooling. Passives [Remarkable Craftsmanship, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-    objective 'Pal: Miner' { description 'Astegon (x7). R4, +60% WS. Lv. 5 Mining. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Lumberjack' { description 'Bushi Noct (x3). R4. +60% WS. Lv. 5 Lumbering. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Transport' { description 'Eye of Cthulhu (x3). R4. Lv. 5 Transporting. Passives [Swift, Runner, Mastery of Fasting, Diet Lover].'; }
-    objective 'Pal: Electrician' { description 'Helzephyr Lux (x1). R4. +60% WS. Lv. 5 Generating Electricity. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Kindling' { description 'Sootseer (x2). R4. +60% WS. Lv. 5 Kindling. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Handiwork' { description 'Splatterina (x1). R4. +60% WS. Lv. 5 Handiwork. Passives [Remarkable Craftsmanship, Artisan, Work Slave, Serious].'; }
-    objective 'Pal: Base Booster (SAN)' { description 'Shroomer Noct (x1). R4. Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-}
-achievement 'Base: Raid Boss' {
-    description 'Build base dedicated for fighting raid bosses.';
-
-    objective 'Pal Pod' { description 'Count: 20+.'; }
-    objective 'Palbox Control Device' { description 'Count: 1+.'; }
-    objective 'Guild Chest' { description 'Count: 1.'; }
-    objective 'Storage: Repair' { description 'Count: 1. Advanced Chest. For storing repair kits. Max Health/Defense to survive.'; }
-    objective 'Cool Food Box' { description 'Count: 1. Stock up on attack food (e.g. Mammorest Curry).'; }
-}
-achievement 'Base: Breeding Farm' {
-    description 'TODO';
-    objective 'Base Booster: Breed Speed' { description 'Braloha (x1). R4, Passives [Heart of the Immovable King, Mastery of Fasting, Diet Lover, Dainty Eater].'; }
-    objective 'NPC: Dr. Brawn' { description 'Count: 1.'; }
-}
-
-achievement 'Collector: Implants' { criterion implant; }
-achievement 'Collector: Accessories' { criterion accessory; }
 achievement 'Equipped Pals' {
     description 'Build all Pal Gear.';
     criterion pal_gear;
@@ -207,6 +101,9 @@ achievement 'Diary Found' {
     description 'Find all Journal Entries';
     criterion journal;
 }
+
+achievement 'Collector: Implants' { criterion implant; }
+achievement 'Collector: Accessories' { criterion accessory; }
 
 // Categories
 category pal;
