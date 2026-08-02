@@ -122,30 +122,40 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
 
     private async Task<List<Entity>> ScrapeMissions()
     {
+        HashSet<string> blacklist =
+        [
+            "A Cozy Base", "Base of Operations", "Capture any 30 Pals.", "Capturing Device", "First Boss Battle",
+            "First Gathering Run", "Hunger is the Greatest Foe", "Mining Paldium", "Pal Eggs", "Palbox", "Paldium",
+            "Partner Skills", "Path to the Abyss", "Safety Measures", "Sealed Pals", "Starting Base", "The Adventure Begins",
+            "The Girl and the Tower", "Unlock Technology", "Wildlife Sanctuaries", "Your First Pal", "Protect Yourself",
+            "Fill Your Belly", "Put Pals to Work",
+        ];
         var doc = await new HtmlWeb().LoadFromWebAsync("https://paldb.cc/en/Mission");
-        var nodes = doc.DocumentNode.SelectNodes("//div[@class='col']/div/div[2]/div");
+        var nodes = doc.DocumentNode.SelectNodes("//div[@data-id]");
         int palCriticRequestCount = 1;
         return nodes
+            .Where(n =>
+            {
+                var dataId = n.GetAttributeValue("data-id", string.Empty);
+                var isMainMission =  dataId.StartsWith("Main_");
+                var isOld = dataId.EndsWith("_Old");
+                var isOldEnhanceStatsMission = dataId == "Main_GainStatus";
+                var name = ScrapperHelper.CleanName(n.InnerText);
+                return !isMainMission || !isOld && ! isOldEnhanceStatsMission && !blacklist.Contains(name);
+            })
             .Select(n =>
             {
-                var name = ScrapperHelper.CleanName(n.SelectSingleNode("./div[1]").InnerText);
-                var missionType = ScrapperHelper.CleanName(n.SelectSingleNode("./div[2]").InnerText);
-                if (missionType == "Sub Mission" && name == string.Empty)
+                var name = ScrapperHelper.CleanName(n.InnerText);
+                var isMainMission =  n.GetAttributeValue("data-id", string.Empty).StartsWith("Main_");
+                if (!isMainMission && name == string.Empty)
                 {
                     name = $"Request from Pal Critic ({palCriticRequestCount++})";
                 }
 
-                var tag = missionType switch
-                {
-                    "Main Mission" => "mission_main",
-                    "Sub Mission" => "mission_sub",
-                    _ => throw new NotSupportedException(),
-                };
                 var id = ScrapperHelper.InduceIdFromName(name, "mission");
+                var tag = isMainMission ? "mission_main" : "mission_sub";
                 return new Entity(id, name, "mission") { Tags = [tag] };
             })
-            .Where(e => e.Name is not "" and not "Fill Your Belly" and not "Put Pals to Work")
-            .DistinctBy(e => e.Id)
             .ToList();
     }
 
