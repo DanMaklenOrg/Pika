@@ -139,9 +139,12 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
                 var dataId = n.GetAttributeValue("data-id", string.Empty);
                 var isMainMission =  dataId.StartsWith("Main_");
                 var isOld = dataId.EndsWith("_Old");
+                var isReplay = dataId.EndsWith("_Replay");
+                var isTest =  dataId.StartsWith("Test_");
                 var isOldEnhanceStatsMission = dataId == "Main_GainStatus";
                 var name = ScrapperHelper.CleanName(n.InnerText);
-                return !isMainMission || !isOld && ! isOldEnhanceStatsMission && !blacklist.Contains(name);
+                return isMainMission && !isOld && !isOldEnhanceStatsMission && !blacklist.Contains(name) ||
+                       !isMainMission && !isReplay && !isTest;
             })
             .Select(n =>
             {
