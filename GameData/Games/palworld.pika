@@ -68,8 +68,8 @@ achievement 'Maxed Parties' {
     objective 'Maxed Salvage Party' { description 'For Salvage farms.'; }
     objective 'Maxed EXP Farm Party' { description 'For maximizing EXP gain for maxing out pals.'; }
 }
-achievement 'Maxed Base' {
-    description 'Have a maxed out base for common use cases';
+achievement 'Build a Mega Base' {
+    description 'Have a fully kitted bases next to each other and connected for common all use cases';
     objective 'Build a HQ Base' { description 'Core storage, Player house, various crafts, ... etc.'; }
     objective 'Build a Warehouse Base' { description 'Mass storage.'; }
     objective 'Build a Genetics Lab' { description 'For Breeding and maxing Pals.'; }
@@ -78,6 +78,7 @@ achievement 'Maxed Base' {
     objective 'Build an AI Core Factory' { description 'For mass production of AI Cores.'; }
     objective 'Build a Cake factory' { description 'For mass production of all cake variants'; }
     objective 'Build a Raid Boss Base' { description 'For speed killing of Raid Bosses.'; }
+    objective 'Build a Mega Mall' { description 'Full of Humans and merchants.'; }
 }
 
 achievement 'Equipped Pals' {
