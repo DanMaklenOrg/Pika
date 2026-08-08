@@ -290,7 +290,7 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             entities.AddRange(nodes.Select(n =>
             {
                 var nameRaw = ScrapperHelper.CleanName(n.SelectSingleNode("./div[1]").InnerText);
-                var suitabilityAndLvl = n.SelectSingleNode("./div[2]").InnerText;
+                var suitabilityAndLvl = ScrapperHelper.CleanName(n.SelectSingleNode("./div[2]").InnerText);
                 var tag = ScrapperHelper.InduceIdFromName(suitability, "work_suitability");
                 var name = $"{suitabilityAndLvl}: {nameRaw}";
                 var id = ScrapperHelper.InduceIdFromName(name, "research");
