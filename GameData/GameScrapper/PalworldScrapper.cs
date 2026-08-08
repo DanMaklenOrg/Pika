@@ -64,7 +64,7 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             var name = $"{palIndex}: {palNameRaw}";
             var id = ScrapperHelper.InduceIdFromName(name, "pal");
             return new Entity(id, name, "pal") { Tags = tags };
-        }).ToList();
+        }).Where(e => e.Name != "#204 Astralym").ToList();
     }
 
     private async Task<List<Entity>> ScrapeWantedFugitive()
@@ -290,9 +290,9 @@ public class PalworldScrapper(JsScrapperHelper jsScraper) : IScrapper
             entities.AddRange(nodes.Select(n =>
             {
                 var nameRaw = ScrapperHelper.CleanName(n.SelectSingleNode("./div[1]").InnerText);
-                var lvl = int.Parse(n.SelectSingleNode("./div[2]").InnerText.Split('.').Last());
+                var suitabilityAndLvl = n.SelectSingleNode("./div[2]");
                 var tag = ScrapperHelper.InduceIdFromName(suitability, "work_suitability");
-                var name = $"Lv. {lvl}: {nameRaw}";
+                var name = $"{suitabilityAndLvl}: {nameRaw}";
                 var id = ScrapperHelper.InduceIdFromName(name, "research");
                 return new Entity(id, name, "research") { Tags = [tag] };
             }));
