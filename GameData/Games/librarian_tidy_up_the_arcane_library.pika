@@ -1,0 +1,2 @@
+game librarian_tidy_up_the_arcane_library ~> 'Librarian: Tidy Up the Arcane Library!';
+import steam(4197610);
